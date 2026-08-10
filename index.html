@@ -147,6 +147,24 @@
   .fr:hover, .example:hover { background: var(--lightblue); }
   .speaking { background: #d7e6c8 !important; }
   .speak-hint { font-size: 13px; color: #666; margin: -8px 0 20px; }
+  .prof-notes {
+  background: #f3eefa;
+  border: 1px solid #8a5fc4;
+  border-radius: 8px;
+  margin: 18px 0;
+  overflow: hidden;
+}
+.prof-notes summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 12px 16px;
+  font-weight: 700;
+  color: #8a5fc4;
+}
+.prof-notes summary::-webkit-details-marker { display: none; }
+.prof-notes[open] summary { border-bottom: 1px solid #8a5fc4; }
+.prof-notes-body { padding: 10px 18px 16px; }
+.prof-notes-body li { margin-bottom: 12px; line-height: 1.6; }
 </style>
 </head>
 <body>
