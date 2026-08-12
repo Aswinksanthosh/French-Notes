@@ -1944,6 +1944,51 @@ Bonsoir, je vous rappelle vos rendez-vous de demain, mardi: à 11h00 vous avez r
 
 - Some language and place names carry a French equivalent (allemand for German, chinois for Chinese), but many don't — Indian regional languages like Hindi and Tamil, and place names like Ahmedabad, are simply said as-is in French. Examiners are tolerant of this; there's no need to force a translation that doesn't exist.
 
+### Student Self-Introductions (from the class recording)
+
+Reconstructed from the recorded practice session — each student's polished, corrected version after working through it with the instructor. A few individual words were unclear in the recording and are left out below rather than guessed.
+
+**Srihari**
+- Bonjour, je m'appelle Srihari. — Hello, my name is Srihari.
+- Je suis indien et j'ai 33 ans. — I am Indian and I am 33 years old.
+- Je suis né le 11 janvier 1993 à Guruvayur, au Kerala, en Inde. — I was born on January 11, 1993 in Guruvayur, Kerala, India.
+- Je parle malayalam, tamoul, anglais, hindi et un peu de français. — I speak Malayalam, Tamil, English, Hindi, and a little French.
+- Je suis ingénieur et informaticien. — I am an engineer and an IT specialist.
+- Je suis marié et je vis à Toronto, au Canada, avec ma femme. — I am married and I live in Toronto, Canada, with my wife.
+- Dans ma famille, nous sommes trois personnes : mes parents et moi. — In my family, there are three of us: my parents and me.
+
+**Sri**
+- Bonjour, je m'appelle Sri. J'ai 32 ans. — Hello, my name is Sri. I am 32 years old.
+- Je viens de l'Inde et j'habite à Vancouver, au Canada. — I come from India and I live in Vancouver, Canada.
+- Ma famille compte quatre personnes : mon père, ma mère, ma sœur et moi. — My family has four people: my father, my mother, my sister, and me.
+- Je parle anglais, tamoul et un peu de français. — I speak English, Tamil, and a little French.
+- J'aime regarder des films et voyager. — I like watching movies and traveling.
+
+**Arti**
+- Bonjour, je m'appelle Arti. J'ai 35 ans. — Hello, my name is Arti. I am 35 years old.
+- Je suis indienne et j'habite à Toronto. — I am Indian and I live in Toronto.
+- Je suis mariée et j'ai un enfant de 4 ans. — I am married and I have a 4-year-old child.
+- Je suis ingénieure en logiciel. — I am a software engineer.
+
+**Antara**
+- Bonjour, je m'appelle Antara. — Hello, my name is Antara.
+- Je suis indienne et je suis née à Mumbai. J'ai 25 ans. — I am Indian and I was born in Mumbai. I am 25 years old.
+- Mon anniversaire, c'est le 5 mai. — My birthday is May 5th.
+- Je parle quatre langues ; le gujarati est ma langue maternelle. — I speak four languages; Gujarati is my mother tongue.
+- Dans ma famille, nous sommes trois personnes : ma mère, mon père et moi. — In my family, there are three of us: my mother, my father, and me.
+- Je suis célibataire et je travaille comme analyste des opérations dans une banque. — I am single and I work as an operations analyst at a bank.
+- Pendant mon temps libre, j'aime écouter de la musique et regarder des films. — In my free time, I like listening to music and watching movies.
+- J'apprends le français actuellement, parce que je trouve cette langue intéressante. — I am currently learning French, because I find this language interesting.
+
+**Kartik**
+- Bonjour, je m'appelle Kartik. Je viens d'Inde. J'ai 37 ans. — Hello, my name is Kartik. I come from India. I am 37 years old.
+- Je suis né en 1988. — I was born in 1988.
+- J'habite à Ajax, en Ontario, au Canada. — I live in Ajax, Ontario, Canada.
+- Je vis avec mon père, ma femme, mon fils de 9 ans et ma fille de 4 ans. — I live with my father, my wife, my 9-year-old son, and my 4-year-old daughter.
+- Ma mère est décédée. — My mother has passed away.
+- Je suis ingénieur, avec plus de 15 ans d'expérience. — I am an engineer, with more than 15 years of experience.
+- J'aime jouer au badminton et au cricket. J'aime aussi regarder des films d'action et des thrillers. — I like playing badminton and cricket. I also like watching action movies and thrillers.
+
 ---
 
 ### Classroom Discussion & Q&A
