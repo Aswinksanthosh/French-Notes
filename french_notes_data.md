@@ -1890,3 +1890,70 @@ Bonsoir, je vous rappelle vos rendez-vous de demain, mardi: à 11h00 vous avez r
 - **Regional accent question — French from France vs. Ivory Coast vs. Canadian French, addressed directly:** a student asked whether the instructor's French (Ivorian) differs from France's or Canada's the way American and British English differ. The instructor's answer: yes, real accent and some vocabulary differences exist between regions (citing a specific example: how "baguette" or certain everyday words can differ colloquially in Canadian French), but mutual intelligibility holds as long as speakers articulate clearly, especially when talking to someone from a different French-speaking region.
 - **léger/légère and lourd/lourde — the standard masculine/feminine adjective pattern, but flagged for a silent-letter trap:** léger (light, masculine) drops the final r sound; the feminine légère adds the r sound back audibly. Lourd (heavy, masculine) has a silent d; lourde (feminine) pronounces the d. A student asked to confirm the general "feminine adjectives often end in a pronounced consonant that's silent in the masculine" pattern — confirmed as a recognizable trend, not an absolute rule.
 - **A true/false reading-comprehension exercise about a French clothing-size chart, worked through as a group — and a student caught an error in real time:** students read a passage stating someone's waist size and had to evaluate a matching true/false statement against a size conversion table. A student flagged that the instructor's initial answer didn't match the table's actual data, prompting a joint re-check — the instructor acknowledged the mistake and confirmed the corrected answer was false, modeling that even the instructor double-checks against source data rather than asserting from memory.
+
+## Class 21 — Sunday, August 9, 2026
+
+*Exam-prep speaking review — the full self-introduction structure, marital status vocabulary, question formation by inversion, hobby phrasing (noun vs verb), and live correction of students' recorded self-introductions.*
+
+### Grammar: The Self-Introduction Structure
+
+- Recommended order for a spoken self-introduction (greeting → name → nationality come first; the rest can flow in any order): greeting, name, nationality, age, date & place of birth, where you live, languages spoken, marital status, who you live with, profession, hobbies.
+
+### Vocabulary: Three Ways to Give Your Name
+
+- Je m'appelle Arti. — My name is Arti.
+- Mon nom est Arti. — My name is Arti.
+- Je suis Arti. — I am Arti.
+
+### Grammar: Nationality & Profession — Always Feminine Agreement
+
+- Quelle est votre nationalité ? (formal) / Quelle est ta nationalité ? (informal) — "nationalité" is a feminine noun, so the answer always takes the feminine adjective form regardless of the speaker's own gender: je suis indienne is correct even said by a man, because you're agreeing with "nationalité", not with yourself.
+- Same logic for profession: quelle est votre profession ? uses quelle, not quel, because "profession" is feminine.
+
+### Vocabulary: Marital Status (le statut marital)
+
+| French | English |
+|---|---|
+| célibataire | single |
+| marié / mariée | married |
+| divorcé / divorcée | divorced |
+| veuf / veuve | widowed |
+| séparé / séparée | separated |
+| fiancé / fiancée | engaged |
+
+- Quel est votre statut marital ? — What is your marital status? (formal)
+- Quel est ton statut marital ? — What is your marital status? (informal)
+
+### Grammar: Asking Questions by Inversion
+
+- Swapping the verb before the subject turns a statement into a question without needing a rising tone — the word order itself signals it's a question. Compare: tu habites (statement) vs habites-tu ? (question). With pronoun subjects, a linking -t- is inserted for pronunciation when the verb ends in a vowel: où habite-t-il ? With a named subject the verb stays as is: où habite Sri ?
+- Où habitez-vous ? — Where do you live? (formal)
+- Où habites-tu ? — Where do you live? (informal)
+- Où habitons-nous ? — Where do we live?
+- Combien de langues parlez-vous ? — How many languages do you speak?
+
+### Grammar: Hobbies — Noun Form vs Verb Form
+
+- Both forms are correct and mean essentially the same thing for A1 — this isn't a level-dependent distinction. Use whichever feels natural.
+- J'aime la danse. — I like dancing. (noun form)
+- J'aime danser. — I like to dance. (verb form)
+- J'aime le cinéma. — I like going to the movies.
+- J'aime regarder des films. — I like watching movies.
+
+### Note: Names That Don't Translate
+
+- Some language and place names carry a French equivalent (allemand for German, chinois for Chinese), but many don't — Indian regional languages like Hindi and Tamil, and place names like Ahmedabad, are simply said as-is in French. Examiners are tolerant of this; there's no need to force a translation that doesn't exist.
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Why the class opened with reassurance about mistakes, ten days out from the A1 exam:** several students admitted they didn't feel ready. The instructor's response was direct: no one ever feels fully ready before an exam — the point of this class is to make mistakes now, in a room with no stakes, precisely so the exam itself isn't the first time you're tested.
+- **"Does the subject always come after the verb in a question?" — a student pushed on this directly, and the instructor drew a clear line:** both tu es là ? (statement + rising tone) and es-tu là ? (inversion) are valid questions in speech. But inversion is what lets a question be recognized by word order alone, without relying on tone — which is why it shows up constantly in formal written French.
+- **Why there's no linking "-t-" in some inverted questions but there is in others — a student noticed the inconsistency and asked directly:** the instructor clarified it's about pronunciation, not grammar. A named subject like où habite Sri ? needs nothing extra, but a pronoun subject where the verb ends in a vowel (habite-t-il ?) gets a linking -t- inserted purely so the two vowel sounds don't collide.
+- **The present continuous "doesn't exist" in French — repeated more forcefully than in earlier classes, in response to a student trying to force an English structure onto French:** a student asked whether où habitons-nous should use être en train de since "living" feels ongoing. The instructor's answer: no — plain present tense already covers ongoing action in French; forcing en train de here doesn't just sound unnatural, it's the wrong tool, and trying to translate English tense-for-tense into French was flagged as a recurring trap to actively unlearn.
+- **Do Indian language and place names get "translated" into French, the way Chinese becomes chinois? — a student asked this directly, worried about being marked wrong:** the instructor's answer was reassuring: some European language names do have French equivalents (allemand for German), but Hindi, Tamil, and place names like Ahmedabad are simply said as-is — there's no invented French version to memorize, and examiners are tolerant of real names that don't translate.
+- **"J'aime la danse" vs "j'aime danser" — a student pressed hard on whether these mean different things, and the instructor used a concrete contrast to settle it:** liking "la danse" (the noun) doesn't necessarily mean you enjoy dancing yourself — you could like watching someone else's dance performance. Liking "danser" (the verb) specifically means you enjoy the act of dancing. In casual hobby-listing context, though, both are treated as interchangeable and neither is wrong for A1.
+- **Is "le cinéma" as a hobby the same as "regarder un film"? — a genuinely extended back-and-forth, because a student worried they meant different activities:** the instructor clarified "le cinéma" implicitly means going out to a movie theater to watch something, while "regarder un film" is more neutral about location (home or theater) — but for the purpose of listing a hobby, either is understood and sufficient without needing to spell out further detail.
+- **A live, good-natured correction that became the best teaching moment of the class:** a student (Kartik) tried to say "I married the love of my life in December 2015" and it came out garbled mid-recording. Talking it through live, the class worked out the correct form together — j'ai épousé l'amour de ma vie — using it as a real example of passé composé (introduced here as roughly the English present perfect), deliberately distinguished from simply saying je suis marié. The instructor noted, genuinely, that the class also taught him something that day — a student's use of "thriller" to mean a suspense film, which he hadn't been sure translated the same way in French.
+- **Closing note on why the instructor wanted students' practice recordings shared with the group, not just submitted privately:** several students hesitated to have their audio/video posted. The instructor's case: seeing classmates visibly nervous but still trying is more motivating for the group than a polished performance would be — the goal was reframed from "avoid embarrassment" to "normalize trying," especially for students who'd skipped the session out of nerves.
