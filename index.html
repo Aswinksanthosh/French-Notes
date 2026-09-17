@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>French Class Notes - A1 & A2 Levels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #222;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .app-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 16px 80px;
+        }
+
+        /* ── Level Toggle ── */
+        .level-toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .level-toggle {
+            display: flex;
+            gap: 12px;
+            background: white;
+            border-radius: 50px;
+            padding: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+        }
+
+        .level-btn {
+            padding: 12px 32px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .level-btn:hover {
+            color: #1a4d8f;
+            background: rgba(26, 77, 143, 0.05);
+        }
+
+        .level-btn.active {
+            background: linear-gradient(135deg, #1a4d8f 0%, #2a5cb8 100%);
+            color: white;
+            box-shadow: 0 2px 10px rgba(26, 77, 143, 0.3);
+        }
+
+        .level-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* ── Content Panels ── */
+        .level-panel {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .level-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Header ── */
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #1a4d8f;
+        }
+
+        .header h1 {
+            margin: 0 0 8px;
+            color: #1a4d8f;
+            font-size: 2.2rem;
+        }
+
+        .header p {
+            margin: 0;
+            color: #666;
+            font-size: 1.05rem;
+        }
+
+        /* ── Content Styles ── */
+        .content {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            line-height: 1.8;
+        }
+
+        .content h2 {
+            color: #1a4d8f;
+            font-size: 1.8rem;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            border-bottom: 3px solid #eef2fa;
+            padding-bottom: 12px;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            color: #2a5cb8;
+            font-size: 1.3rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .content p {
+            margin: 12px 0;
+            color: #333;
+        }
+
+        .content ul, .content ol {
+            margin: 12px 0;
+            padding-left: 24px;
+        }
+
+        .content li {
+            margin: 8px 0;
+            color: #333;
+        }
+
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        .content th {
+            background: #eef2fa;
+            color: #1a4d8f;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #1a4d8f;
+        }
+
+        .content td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .content tr:hover {
+            background: #f9fbfd;
+        }
+
+        /* ── Examples ── */
+        .example {
+            background: #f9f3e6;
+            border-left: 4px solid #f0ad4e;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* ── Notes ── */
+        .note {
+            background: #e8f4f8;
+            border-left: 4px solid #5bc0de;
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+            color: #333;
+        }
+
+        .note strong {
+            color: #1a4d8f;
+        }
+
+        /* ── Code/Pre ── */
+        .content pre {
+            background: #f5f5f5;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border-left: 4px solid #1a4d8f;
+        }
+
+        .content code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #d63384;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .app-wrapper {
+                padding: 16px 12px 60px;
+            }
+
+            .header {
+                padding: 24px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .level-btn {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+
+            .level-toggle {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .level-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a4d8f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(26, 77, 143, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+        }
+
+        .scroll-to-top:hover {
+            background: #2a5cb8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-wrapper">
+        <!-- Level Toggle -->
+        <div class="level-toggle-container">
+            <div class="level-toggle">
+                <button class="level-btn" data-level="a1" onclick="switchLevel('a1')">
+                    <i class="fas fa-book"></i> A1 (Beginner)
+                </button>
+                <button class="level-btn active" data-level="a2" onclick="switchLevel('a2')">
+                    <i class="fas fa-book"></i> A2 (Elementary)
+                </button>
+            </div>
+        </div>
+
+        <!-- A1 Panel -->
+        <div id="a1-panel" class="level-panel">
+            <div class="header">
+                <h1>A1 Level - French Foundations</h1>
+                <p>Beginner level: Alphabet, greetings, basic verbs, pronouns, and essential vocabulary</p>
+            </div>
+            <div class="content" id="a1-content">
+                <p>Loading A1 content...</p>
+            </div>
+        </div>
+
+        <!-- A2 Panel -->
+        <div id="a2-panel" class="level-panel active">
+            <div class="header">
+                <h1>A2 Level - Building Fluency</h1>
+                <p>Elementary level: Adjectives, advanced grammar, expanded vocabulary, and conversational skills</p>
+            </div>
+            <div class="content" id="a2-content">
+                <p>Loading A2 content...</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Load content files
+        async function loadContent() {
+            try {
+                // Load A1 content from markdown
+                const a1Response = await fetch('french_notes_data.md');
+                const a1Text = await a1Response.text();
+                const a1Html = markdownToHtml(a1Text);
+                document.getElementById('a1-content').innerHTML = a1Html;
+
+                // Load A2 content from text file
+                const a2Response = await fetch('A2/Adjectives-Class-1.txt');
+                const a2Text = await a2Response.text();
+                const a2Html = textToHtml(a2Text);
+                document.getElementById('a2-content').innerHTML = a2Html;
+            } catch (error) {
+                console.error('Error loading content:', error);
+                document.getElementById('a1-content').innerHTML = '<p>Error loading A1 content</p>';
+                document.getElementById('a2-content').innerHTML = '<p>Error loading A2 content</p>';
+            }
+        }
+
+        // Convert markdown to HTML
+        function markdownToHtml(markdown) {
+            let html = markdown
+                .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
+                .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
+                .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/^- (.*?)$/gm, '<li>$1</li>')
+                .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^(?!<[^>]*>)/gm, '<p>');
+
+            html = html.replace(/<p><\/p>/g, '');
+            return html;
+        }
+
+        // Convert plain text to formatted HTML
+        function textToHtml(text) {
+            let html = text
+                .split('\n')
+                .map(line => {
+                    line = line.trim();
+                    if (!line) return '';
+
+                    // Headings
+                    if (line.match(/^[A-Z][A-Z0-9\s]+$/) && line.length < 100) {
+                        return `<h2>${line}</h2>`;
+                    }
+                    if (line.match(/^[A-Z][A-Za-z0-9\s\-&:()]+$/) && line.length < 80 && line.includes('-')) {
+                        return `<h3>${line}</h3>`;
+                    }
+
+                    // Examples and notes
+                    if (line.startsWith('Example:') || line.startsWith('Examples:')) {
+                        return `<div class="example"><strong>Examples:</strong> ${line.replace(/^Examples?:\s*/, '')}</div>`;
+                    }
+                    if (line.startsWith('-')) {
+                        return `<li>${line.substring(1).trim()}</li>`;
+                    }
+
+                    return `<p>${line}</p>`;
+                })
+                .join('\n');
+
+            // Wrap consecutive list items in ul
+            html = html.replace(/(<li>.*?<\/li>\n?)+/gs, (match) => `<ul>${match}</ul>`);
+
+            return html;
+        }
+
+        // Switch between A1 and A2
+        function switchLevel(level) {
+            // Update buttons
+            document.querySelectorAll('.level-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-level="${level}"]`).classList.add('active');
+
+            // Update panels
+            document.querySelectorAll('.level-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            document.getElementById(`${level}-panel`).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Scroll to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Load content on page load
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+
+</html>
