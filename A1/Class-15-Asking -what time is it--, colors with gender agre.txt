@@ -1,0 +1,98 @@
+ Sunday, July 26, 2026
+
+*Asking "what time is it?", colors with gender agreement, introduction of the 5 core connectors (pour, parce que, à cause de, mais, avec, sans), present continuous (en train de).*
+
+### Grammar: Asking "What time is it?"
+
+| French | English |
+|---|---|
+| Quelle heure est-il? | What time is it? |
+| Quelle heure fait-il? | What time is it? (alternate form) |
+
+- Both mean the same thing — literal translation doesn't always work between languages (e.g. "fait" = "does," but this isn't about doing anything here).
+
+### Grammar: Colors (les couleurs) — gender agreement
+
+- "Couleur" is feminine. Most color adjectives change form for feminine nouns — usually by adding "e."
+
+| Color | Masculine | Feminine |
+|---|---|---|
+| Black | noir | noire |
+| White | blanc | blanche |
+| Green | vert | verte |
+| Blue | bleu | bleue |
+| Red | rouge | rouge |
+| Pink | rose | rose |
+| Yellow | jaune | jaune |
+| Orange | orange | orange |
+| Brown | marron | marron |
+| Purple / Violet | violet | violette |
+| Grey | gris | grise |
+
+- une voiture noire — a black car (feminine noun → color takes "e")
+
+### Vocabulary: word-lookalikes with "vert/verre/vers"
+
+- Same or similar pronunciation, different meanings — context decides:
+- vert = green  |  un ver de terre = earthworm  |  un verre = a glass (drinking)  |  vers = towards
+- rouge à lèvres = lipstick (don't translate word-for-word: "red for lips")
+
+### Grammar: The 5 Core Connectors (introduced here)
+
+| Connector | Meaning | Expresses | Followed by |
+|---|---|---|---|
+| pour | for / in order to | the goal | verb (infinitive) or noun |
+| parce que | because | the cause | full clause (subject + verb + noun) |
+| à cause de | because of / due to | the cause | noun or pronoun only |
+| mais | but | opposition | full clause |
+| avec | with | presence | noun/pronoun |
+| sans | without | absence | noun/pronoun |
+
+- See Class 16 for more worked examples and the assignment correction on these same connectors.
+
+- Je vais au collège pour étudier. — I go to college to study.
+- L'Espagne a gagné parce qu'ils ont bien joué. — Spain won because they played well.
+- Je ne suis pas venu à cause de toi. — I didn't come because of you.
+- Il est drôle mais il est méchant. — He's funny but he's mean.
+- Je vais au magasin avec mon ami. — I go to the shop with my friend.
+- Je vais au magasin sans mon ami. — I go to the shop without my friend.
+
+### Grammar: pour + infinitive (detail)
+
+- Whenever pour is followed by a verb, that verb is automatically in the infinitive (unconjugated) form.
+- In English, "for" is often followed by "-ing" (for studying), but in French it maps to "to + verb" (pour étudier = to study / for studying).
+
+### Grammar: Present Continuous → "en train de"
+
+- French has no direct equivalent of English "-ing" (present continuous). Two options:
+- 1) Just use the present tense: J'étudie. = I study / I am studying.
+- 2) Use "être en train de + infinitive" for extra emphasis on an action in progress: Je suis en train d'étudier. = I am (in the middle of) studying.
+- Both are correct — the second is more precise/emphatic.
+
+| French | English |
+|---|---|
+| je suis en train d'étudier | I'm studying |
+| je suis en train de laver | I'm washing |
+| je suis en train de manger | I'm eating |
+
+### Grammar: Recognizing verb groups by infinitive ending
+
+| Ending | Group |
+|---|---|
+| -er | 1st group (e.g. laver — to wash) |
+| -ir | 2nd group (e.g. finir — to finish) |
+| -re / -oir | 3rd group (e.g. prendre — to take) |
+
+- The infinitive is the base/dictionary form of a verb, before it's conjugated for a subject (je, tu, il...).
+
+### Homework / Action Items
+
+- Complete assignment on page 47 of the Cahier (connectors: pour, parce que, mais, avec, sans)
+- Continue revising ER verbs
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Note:** only the professor's typed summary notes were available for this class (no raw video transcript was provided), so there's no classroom back-and-forth to add here beyond what's already in the main notes above.
+

@@ -1,0 +1,93 @@
+ Sunday, July 5, 2026
+
+*Masculine/feminine noun vocabulary, nationality adjective formation rules, and liaison (linking sounds).*
+
+### Vocabulary: Masculine nouns
+
+| French | English |
+|---|---|
+| le livre | book |
+| le boulot | job |
+| le canapé | couch |
+| le revenu | revenue |
+| le stylo | pen |
+| l'ordinateur | computer |
+| le cahier | notebook |
+| le chien | dog |
+| le sac | bag |
+| le téléphone | phone |
+| l'âge | age |
+| l'époux | husband |
+| le poisson | fish |
+| l'hôpital | hospital |
+| l'océan | ocean |
+| le peuple | people |
+| le week-end | weekend |
+
+### Vocabulary: Feminine nouns
+
+| French | English |
+|---|---|
+| la tablette | tablet |
+| la baguette | loaf |
+| l'obligation | obligation |
+| l'agence | agency |
+| la voiture | car |
+| la maison | home |
+| l'école | school |
+| la banque | bank |
+| la porte | door |
+| l'épouse | spouse |
+| la femme | woman |
+| la clé | key |
+| la valise | suitcase |
+| la lampe | lamp |
+| la montagne | mountain |
+| la rue | street |
+| la mer | sea |
+
+### Note: la carte
+
+- la carte — always feminine, but covers several meanings: map, card (ID/bank/gift), or a restaurant menu. Context tells you which.
+
+### Grammar: Nationality Adjectives — feminine formation rules
+
+- Rule 1 (general rule): to form the feminine of a nationality adjective, generally add an "e" to the masculine.
+- Rule 2: add "ne" to masculine adjectives ending in IEN or EEN.
+- Rule 3: masculine adjectives already ending in "e" don't change (tchèque, belge, russe...).
+- The masculine form is what you should learn by heart first — the feminine is usually built from it using these rules.
+
+### Nationality Adjectives — reference table
+
+| Masculine | Feminine | Plural |
+|---|---|---|
+| le Français | la Française | les Français / Françaises |
+| le Chinois | la Chinoise | les Chinois / Chinoises |
+| l'Américain | l'Américaine | les Américains / Américaines |
+| l'Allemand | l'Allemande | les Allemands / Allemandes |
+| l'Espagnol | l'Espagnole | les Espagnols / Espagnoles |
+| l'Italien | l'Italienne | les Italiens / Italiennes |
+| le Coréen | la Coréenne | les Coréens / Coréennes |
+| tchèque | tchèque | tchèques |
+| japonais | japonaise | japonais / japonaises |
+| indien | indienne | indiens / indiennes |
+
+### Grammar: Liaison (linking sounds)
+
+- When a word ending in a normally-silent consonant is followed by a word starting with a vowel (or mute h), the consonant is pronounced to link the two words smoothly. This is called liaison.
+- un Américain — the "n" of "un" links to "Américain".
+- les Allemands — the "s" of "les" links as a "z" sound into "Allemands".
+- les amis — liaison happens ("lez-ami") since "amis" starts with a vowel.
+- les villages — no liaison, since "village" starts with a consonant (v).
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Recap logic for "what day is it today?":** the instructor showed multiple interchangeable ways to answer — nous sommes le..., on est le..., aujourd'hui c'est le..., aujourd'hui est le... — and confirmed a student's own observation that "nous sommes" (we are) idiomatically works the same way English uses "it is" or "today is" for dates, even though it looks literally like "we are."
+- **les vs le/la, pronunciation contrast:** a student asked directly why le/la is pronounced with a clear vowel sound but les is pronounced "lay" with a silent s — confirmed this is just how French treats a final s (almost always silent) plus the vowel shift from e to é-like sound in les.
+- **l'homme — walking through why, step by step:** a student asked specifically how to decide between l'ahom and l'am (i.e. how the apostrophe contraction actually forms) — the instructor rebuilt it live: homme is masculine, so it would normally take le, but because homme starts with a vowel sound (the h is silent), le's e drops and becomes l', giving l'homme.
+- **Why "des" needs no gender check:** a student asked whether liaison/pronunciation before des changes with masculine vs feminine — confirmed no, what determines the linking sound is purely whether the following word starts with a vowel, regardless of gender.
+- **Vocabulary gender-guessing exercise, word by word (from the assigned homework list):** the class worked through roughly 20 nouns live, guessing gender aloud before the instructor confirmed each — le livre (book, masc.), la tablette (tablet, fem. — flagged by a student as following the "-ette ending = feminine" pattern), le boulot (job, masc.), le canapé (couch, masc.), la baguette (baguette, fem.), l'obligation (obligation, fem.), le revenu (revenue, masc. — the instructor initially mis-typed it, corrected live), l'agence (agency, fem.), le stylo (pen, masc.), l'ordinateur (computer, masc.), le cahier (notebook, masc.), le chien (dog, masc.), la montre (watch, fem.), le sac (bag, masc.), le téléphone (phone, masc.), la maison (house/home, fem.), l'école (school, fem.), la banque (bank, fem.), la porte (door, fem.), l'âge (age, masc.), la femme (woman, fem.), la clé (key, fem.), le poisson (fish, masc.), la valise (suitcase, fem.), la lampe (lamp, fem.), l'hôpital (hospital, masc.), la montagne (mountain, fem.), l'océan (ocean, masc.), la rue (street, fem.), la mer (sea, fem.), le peuple (people, masc.).
+- **époux vs épouse — a real vocabulary trap:** a student pointed out that English "spouse" is gender-neutral, but French makes a sharp distinction — épouse specifically means wife (and implies married), époux specifically means husband. Confirmed there's no single French word that stays neutral the way "spouse" does in English.
+

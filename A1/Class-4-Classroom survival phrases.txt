@@ -1,0 +1,30 @@
+ Tuesday, June 30, 2026
+
+*Classroom survival phrases — asking for repetition, apologizing, and asking how to say something in French.*
+
+### Vocabulary: Classroom survival phrases
+
+| French | English |
+|---|---|
+| Comment ça s'écrit ? | How do you spell it? |
+| Vous pouvez répéter s'il vous plaît ? | Can you repeat, please? |
+| s'il vous plaît | please (formal) |
+| s'il te plaît | please (informal) |
+| Excusez-moi, je suis en retard. | Excuse me, I'm late. |
+| Je ne comprends pas. | I don't understand. |
+| Comment on dit … en français ? | How do we say … in French? |
+
+---
+
+### Classroom Discussion & Q&A
+
+- **quel vs comment — the difference students kept tripping on:** a student asked why "quel âge as-tu?" uses quel and not comment, since both can translate loosely to "how old are you?" The instructor's answer: comment means "how" and can't be swapped in here — quel âge (literally "what age") is simply the fixed way French asks the question, and you can't always translate word-for-word between the two languages.
+- **quel vs quels — singular vs plural:** a student directly asked whether it's "quel" or "quels" and what decides it. Confirmed: quel is singular (asking about one thing, e.g. "what is the first day of the week"), quels is plural (asking about several, e.g. "what are the seven days of the week") — this is what grammarians call a relative pronoun (le pronom relatif) agreeing in number with what's being asked about.
+- **j'ai 20 ans — why "have" not "am":** flagged as a clean example of why literal word-for-word translation breaks down between English and French — English says "I am 20 years old" (to be), French says "j'ai 20 ans" (to have). The instructor used this to reinforce a running theme: don't translate word by word, learn the French sentence pattern directly.
+- **Counting 0–10 called "non-negotiable":** the instructor was explicit that knowing 0–10 instantly, without hesitation, is a hard baseline expectation — compared to knowing your own name. 11–31 builds on top of that base.
+- **The pattern behind 11–16 vs 17–19:** the numbers 11–16 (onze–seize) are their own distinct words, but from 17 onward the pattern becomes visibly "10 + digit" (dix-sept = 10+7, dix-huit = 10+8, dix-neuf = 10+9) — the instructor pointed this out as a memory shortcut rather than 31 words to memorize individually.
+- **Why 21, 31 use "et" but 22, 23 don't:** vingt et un (21), trente et un (31) insert "et" (and) before un, but vingt-deux (22), vingt-trois (23) don't — the "et" only shows up specifically before un in these decades.
+- **Liaison with numbers, worked live:** un euro is pronounced as one linked word ("un-neuro") because of the vowel starting "euro"; the class contrasted this with un stylo (pen), where no liaison happens because "stylo" starts with a consonant. A student explicitly asked to confirm the rule was about the vowel triggering the link, not something else — confirmed yes.
+- **s'il te plaît vs s'il vous plaît, and a side note on pronoun types:** a student asked about "te" vs "tu" — the instructor flagged that te is a different category of pronoun from the personal pronouns (je/tu/il...) and promised to explain pronoun types in more depth later, without fully resolving it in this class.
+- **"..." (ellipsis) in a fill-in-the-blank phrase:** comment on dit ... en français? uses three dots to show a missing word slot — students practiced by inserting a specific word into that blank (e.g. comment on dit stylo en français?).
+

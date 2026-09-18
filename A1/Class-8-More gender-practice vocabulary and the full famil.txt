@@ -1,0 +1,63 @@
+ Thursday, July 9, 2026
+
+*More gender-practice vocabulary and the full family members (famille) vocabulary set.*
+
+### Vocabulary: Gender practice words
+
+- un jeune — a young boy / un jeune homme — a young man / un jeune garçon — a young boy
+- une jeune — a young girl / une jeune femme — a young lady / une jeune fille — a young girl
+- une chance — luck (e.g. j'ai de la chance)
+- une équipe — team (e.g. c'est une bonne équipe)
+- la cuisine — kitchen / cuisiner — to cook (e.g. j'aime la cuisine)
+- la famille — family (e.g. j'aime ma famille)
+- un/une enfant — child; l'amour — love; aimer — to love (e.g. mon enfant est mon amour)
+- une fille — girl/daughter (e.g. une fille chante)
+- une idée — idea (e.g. j'ai une idée)
+- la joie — joy (e.g. j'ai une joie)
+- grand(e) — big (e.g. j'ai un grand garçon / j'ai une grande fille)
+- un/une artiste — artist (e.g. l'artiste chante bien)
+- le magasin — shop (e.g. je vais au magasin)
+- la ville — city (e.g. la ville est très belle)
+
+### Vocabulary: Family members (les membres de la famille)
+
+| French | English |
+|---|---|
+| la famille | the family |
+| les grands-parents | grandparents |
+| la grand-mère | grandmother |
+| le grand-père | grandfather |
+| les parents | parents |
+| la mère (maman) | mother (mom) |
+| le père (papa) | father (dad) |
+| les enfants | children |
+| le fils | son |
+| la fille (unique) | daughter (only child) |
+| le frère | brother |
+| la sœur | sister |
+| les petits-enfants | grandchildren |
+| le petit-fils | grandson |
+| la petite-fille | granddaughter |
+| l'oncle | uncle |
+| la tante | aunt |
+| le cousin | cousin (male) |
+| la cousine | cousin (female) |
+| le neveu | nephew |
+| la nièce | niece |
+
+---
+
+### Classroom Discussion & Q&A
+
+- **jeune / jeune homme / jeune garçon — how the meaning narrows:** un jeune on its own already implies "a young boy"; adding homme (jeune homme) specifically means "young man," and garçon (jeune garçon) is interchangeable with the bare jeune for "young boy." For female, une jeune = young girl, une jeune femme = young lady, une jeune fille = young girl (more explicit).
+- **fille — daughter vs girl, resolved by context only:** a student asked directly whether fille always means "daughter." Confirmed no — alone it can mean either "girl" or "daughter"; only surrounding context tells you which. Paired with jeune (une jeune fille) it reads as "young girl," not "young daughter."
+- **j'ai de la chance ≠ literal translation:** literally "I have some luck," but idiomatically means "I'm lucky." instructor flagged this as another case where word-for-word translation misleads — the meaning, not the individual words, is what carries over.
+- **j'aime — one word covering both "like" and "love":** a student noticed the same verb aimer is used both casually (j'aime la cuisine = I like cooking) and romantically (je t'aime = I love you), unlike English which uses two different words. The instructor confirmed context is the only way to tell which sense is meant — and joked it can even work in a proposal's favor, since the ambiguity lets the other person interpret it as they choose.
+- **enfant — confirmed épicène (same word, either gender), verified through peer questioning:** the instructor deliberately asked several students in a row whether they agreed enfant was épicène, to get them practicing the reasoning rather than just accepting the answer.
+- **amour (noun) vs aimer (verb) — a mix-up worked through live:** a student tried to use amour where the sentence needed a verb ("the child loves chocolate"), prompting the instructor to explicitly separate the noun (l'amour = love, the concept) from the conjugated verb (aime, from aimer = to love/like) — you can't substitute one for the other grammatically even though they're related words.
+- **Sentence structure explained mid-tangent:** subject–verb–object was introduced briefly to explain why l'enfant aime le chocolat is ordered the way it is, in response to a student's confusion about where amour could fit.
+- **artiste, journaliste, touriste flagged as a recognizable épicène pattern:** a student proposed that words ending in "-iste" tend to be épicène (same form for male/female), and the instructor agreed this is a useful pattern to notice — while cautioning that exceptions always exist in French and this isn't a hard rule.
+- **A tangent about a Bollywood song (Chammak Challo) accidentally became a live grammar example:** the class briefly debated whether Shah Rukh Khan sang or just acted in the video (he acted; Akon and Amitabh Bachchan/RDB performed the vocals), which the instructor used opportunistically as a real sentence to test l'artiste chante bien ("the artist sings well").
+- **"I'm going to the store" — the aller + à + le = au contraction, explained through real back-and-forth:** several students pushed on this from different angles — one asked why there's no article visible before magasin (there is one, it's just fused into au); another asked whether à/au apply outside of city/country contexts (yes — the instructor clarified this rule isn't just for geography, it applies broadly whenever à meets a masculine noun starting with a consonant); a third asked about the feminine case using boutique, prompting the instructor to confirm à + la stays as à la (no contraction) — contraction into one word (au) only happens with masculine nouns, not feminine ones.
+- **"Present continuous" doesn't exist in French — the core explanation, given here for the first time:** introduced as: French only has one present tense, and to convey the sense of an ongoing action in progress (English "-ing"), you either just use plain present tense (je vais = I go / I'm going) or the phrase être en train de + infinitive (je suis en train d'aller = I'm in the process of going). A student asked to confirm both were interchangeable — confirmed yes, both correct.
+

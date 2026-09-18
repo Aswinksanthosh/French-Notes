@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>French Class Notes - A1 & A2 Levels</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-light.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         * {
             box-sizing: border-box;
@@ -27,15 +25,16 @@
             padding: 20px 16px 80px;
         }
 
-        /* ── Level Toggle ── */
-        .level-toggle-container {
+        /* ── Level & Class Toggle ── */
+        .controls-container {
             display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
+            flex-direction: column;
             gap: 20px;
+            align-items: center;
+            margin-bottom: 40px;
         }
 
-        .level-toggle {
+        .toggle-row {
             display: flex;
             gap: 12px;
             background: white;
@@ -45,7 +44,7 @@
             border: 2px solid #e0e0e0;
         }
 
-        .level-btn {
+        .btn {
             padding: 12px 32px;
             border: none;
             border-radius: 40px;
@@ -60,22 +59,45 @@
             gap: 8px;
         }
 
-        .level-btn:hover {
+        .btn:hover {
             color: #1a4d8f;
             background: rgba(26, 77, 143, 0.05);
         }
 
-        .level-btn.active {
+        .btn.active {
             background: linear-gradient(135deg, #1a4d8f 0%, #2a5cb8 100%);
             color: white;
             box-shadow: 0 2px 10px rgba(26, 77, 143, 0.3);
         }
 
-        .level-label {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-top: 8px;
-            text-align: center;
+        /* ── Class Selector ── */
+        .class-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            max-width: 900px;
+        }
+
+        .class-btn {
+            padding: 10px 20px;
+            border: 2px solid #1a4d8f;
+            background: white;
+            color: #1a4d8f;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .class-btn:hover {
+            background: rgba(26, 77, 143, 0.1);
+        }
+
+        .class-btn.active {
+            background: #1a4d8f;
+            color: white;
         }
 
         /* ── Content Panels ── */
@@ -128,24 +150,24 @@
             padding: 32px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             line-height: 1.8;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        .content h2 {
+        .content h1, .content h2 {
             color: #1a4d8f;
-            font-size: 1.8rem;
             margin-top: 32px;
             margin-bottom: 16px;
             border-bottom: 3px solid #eef2fa;
             padding-bottom: 12px;
         }
 
-        .content h2:first-child {
+        .content h1:first-child, .content h2:first-child {
             margin-top: 0;
         }
 
         .content h3 {
             color: #2a5cb8;
-            font-size: 1.3rem;
             margin-top: 24px;
             margin-bottom: 12px;
         }
@@ -169,7 +191,6 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: white;
         }
 
         .content th {
@@ -190,44 +211,10 @@
             background: #f9fbfd;
         }
 
-        /* ── Examples ── */
-        .example {
-            background: #f9f3e6;
-            border-left: 4px solid #f0ad4e;
-            padding: 12px 16px;
-            margin: 16px 0;
-            border-radius: 4px;
-            font-style: italic;
-            color: #555;
-        }
-
-        /* ── Notes ── */
-        .note {
-            background: #e8f4f8;
-            border-left: 4px solid #5bc0de;
-            padding: 12px 16px;
-            margin: 16px 0;
-            border-radius: 4px;
-            color: #333;
-        }
-
-        .note strong {
-            color: #1a4d8f;
-        }
-
-        /* ── Code/Pre ── */
-        .content pre {
-            background: #f5f5f5;
-            padding: 16px;
-            border-radius: 8px;
-            overflow-x: auto;
-            border-left: 4px solid #1a4d8f;
-        }
-
-        .content code {
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-            color: #d63384;
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
         }
 
         /* ── Responsive ── */
@@ -244,23 +231,23 @@
                 font-size: 1.6rem;
             }
 
-            .content {
-                padding: 20px;
-            }
-
-            .level-btn {
-                padding: 10px 24px;
-                font-size: 0.95rem;
-            }
-
-            .level-toggle {
+            .toggle-row {
                 flex-direction: column;
                 width: 100%;
             }
 
-            .level-btn {
+            .btn {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .class-selector {
+                gap: 8px;
+            }
+
+            .class-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
         }
 
@@ -293,26 +280,30 @@
 
 <body>
     <div class="app-wrapper">
-        <!-- Level Toggle -->
-        <div class="level-toggle-container">
-            <div class="level-toggle">
-                <button class="level-btn" data-level="a1" onclick="switchLevel('a1')">
-                    <i class="fas fa-book"></i> A1 (Beginner)
+        <!-- Controls -->
+        <div class="controls-container">
+            <!-- Level Toggle -->
+            <div class="toggle-row">
+                <button class="btn" data-level="a1" onclick="switchLevel('a1')">
+                    📚 A1 (Beginner)
                 </button>
-                <button class="level-btn active" data-level="a2" onclick="switchLevel('a2')">
-                    <i class="fas fa-book"></i> A2 (Elementary)
+                <button class="btn active" data-level="a2" onclick="switchLevel('a2')">
+                    📚 A2 (Elementary)
                 </button>
             </div>
+
+            <!-- Class Selector -->
+            <div class="class-selector" id="class-selector"></div>
         </div>
 
         <!-- A1 Panel -->
         <div id="a1-panel" class="level-panel">
             <div class="header">
                 <h1>A1 Level - French Foundations</h1>
-                <p>Beginner level: Alphabet, greetings, basic verbs, pronouns, and essential vocabulary</p>
+                <p id="a1-header-text">20 Classes | Beginner fundamentals</p>
             </div>
             <div class="content" id="a1-content">
-                <p>Loading A1 content...</p>
+                <div class="loading">Loading...</div>
             </div>
         </div>
 
@@ -320,125 +311,144 @@
         <div id="a2-panel" class="level-panel active">
             <div class="header">
                 <h1>A2 Level - Building Fluency</h1>
-                <p>Elementary level: Adjectives, advanced grammar, expanded vocabulary, and conversational skills</p>
+                <p id="a2-header-text">Classes Available | Elementary level</p>
             </div>
             <div class="content" id="a2-content">
-                <p>Loading A2 content...</p>
+                <div class="loading">Loading...</div>
             </div>
         </div>
     </div>
 
-    <button class="scroll-to-top" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
 
     <script>
-        // Load content files
-        async function loadContent() {
-            try {
-                // Load A1 content from markdown
-                const a1Response = await fetch('french_notes_data.md');
-                const a1Text = await a1Response.text();
-                const a1Html = markdownToHtml(a1Text);
-                document.getElementById('a1-content').innerHTML = a1Html;
+        let manifest = {};
+        let currentLevel = 'a2';
+        let currentClass = 1;
 
-                // Load A2 content from text file
-                const a2Response = await fetch('A2/Adjectives-Class-1.txt');
-                const a2Text = await a2Response.text();
-                const a2Html = textToHtml(a2Text);
-                document.getElementById('a2-content').innerHTML = a2Html;
+        // Load manifest and initialize
+        async function init() {
+            try {
+                const response = await fetch('classes-manifest.json');
+                manifest = await response.json();
+                updateClassSelector();
+                loadContent();
             } catch (error) {
-                console.error('Error loading content:', error);
-                document.getElementById('a1-content').innerHTML = '<p>Error loading A1 content</p>';
-                document.getElementById('a2-content').innerHTML = '<p>Error loading A2 content</p>';
+                console.error('Error loading manifest:', error);
+                document.getElementById('a1-content').innerHTML = '<p>Error loading classes</p>';
+                document.getElementById('a2-content').innerHTML = '<p>Error loading classes</p>';
             }
         }
 
-        // Convert markdown to HTML
-        function markdownToHtml(markdown) {
-            let html = markdown
-                .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
-                .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
-                .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                .replace(/^- (.*?)$/gm, '<li>$1</li>')
-                .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/^(?!<[^>]*>)/gm, '<p>');
+        // Switch level
+        function switchLevel(level) {
+            currentLevel = level;
+            currentClass = manifest[level]?.[0]?.num || 1;
 
-            html = html.replace(/<p><\/p>/g, '');
-            return html;
+            document.querySelectorAll('[data-level]').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-level="${level}"]`).classList.add('active');
+
+            document.querySelectorAll('.level-panel').forEach(panel => panel.classList.remove('active'));
+            document.getElementById(`${level}-panel`).classList.add('active');
+
+            updateClassSelector();
+            loadContent();
+            scrollToTop();
         }
 
-        // Convert plain text to formatted HTML
-        function textToHtml(text) {
-            let html = text
+        // Update class selector
+        function updateClassSelector() {
+            const selector = document.getElementById('class-selector');
+            selector.innerHTML = '';
+
+            const classes = manifest[currentLevel] || [];
+            classes.forEach(cls => {
+                const btn = document.createElement('button');
+                btn.className = `class-btn ${cls.num === currentClass ? 'active' : ''}`;
+                btn.textContent = `Class ${cls.num}`;
+                btn.onclick = () => selectClass(cls.num);
+                selector.appendChild(btn);
+            });
+
+            // Update header count
+            const headerText = `${classes.length} Class${classes.length !== 1 ? 'es' : ''} | ${currentLevel === 'a1' ? 'Beginner' : 'Elementary'} level`;
+            document.getElementById(`${currentLevel}-header-text`).textContent = headerText;
+        }
+
+        // Select class
+        function selectClass(classNum) {
+            currentClass = classNum;
+            updateClassSelector();
+            loadContent();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Load content
+        async function loadContent() {
+            const contentId = `${currentLevel}-content`;
+            const contentDiv = document.getElementById(contentId);
+
+            const classes = manifest[currentLevel] || [];
+            const classData = classes.find(c => c.num === currentClass);
+
+            if (!classData) {
+                contentDiv.innerHTML = '<p>Class not found</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch(classData.file);
+                if (!response.ok) throw new Error('File not found');
+
+                const text = await response.text();
+                contentDiv.innerHTML = formatContent(text);
+            } catch (error) {
+                contentDiv.innerHTML = `<p>Error loading class: ${error.message}</p>`;
+            }
+        }
+
+        // Format content
+        function formatContent(text) {
+            return text
                 .split('\n')
                 .map(line => {
                     line = line.trim();
                     if (!line) return '';
 
                     // Headings
-                    if (line.match(/^[A-Z][A-Z0-9\s]+$/) && line.length < 100) {
-                        return `<h2>${line}</h2>`;
-                    }
-                    if (line.match(/^[A-Z][A-Za-z0-9\s\-&:()]+$/) && line.length < 80 && line.includes('-')) {
-                        return `<h3>${line}</h3>`;
+                    if (line.match(/^#{1,3}\s/)) {
+                        const level = line.match(/^#+/)[0].length;
+                        const content = line.replace(/^#+\s/, '');
+                        return `<h${level}>${content}</h${level}>`;
                     }
 
-                    // Examples and notes
-                    if (line.startsWith('Example:') || line.startsWith('Examples:')) {
-                        return `<div class="example"><strong>Examples:</strong> ${line.replace(/^Examples?:\s*/, '')}</div>`;
-                    }
-                    if (line.startsWith('-')) {
-                        return `<li>${line.substring(1).trim()}</li>`;
+                    // Bold & Italic
+                    line = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    line = line.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+                    // Lists
+                    if (line.startsWith('- ')) {
+                        return `<li>${line.substring(2)}</li>`;
                     }
 
                     return `<p>${line}</p>`;
                 })
-                .join('\n');
-
-            // Wrap consecutive list items in ul
-            html = html.replace(/(<li>.*?<\/li>\n?)+/gs, (match) => `<ul>${match}</ul>`);
-
-            return html;
-        }
-
-        // Switch between A1 and A2
-        function switchLevel(level) {
-            // Update buttons
-            document.querySelectorAll('.level-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`[data-level="${level}"]`).classList.add('active');
-
-            // Update panels
-            document.querySelectorAll('.level-panel').forEach(panel => {
-                panel.classList.remove('active');
-            });
-            document.getElementById(`${level}-panel`).classList.add('active');
-
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+                .join('\n')
+                .replace(/(<li>.*?<\/li>\n?)+/gs, (match) => `<ul>${match}</ul>`);
         }
 
         // Scroll to top button
         window.addEventListener('scroll', () => {
             const btn = document.querySelector('.scroll-to-top');
-            if (window.pageYOffset > 300) {
-                btn.classList.add('show');
-            } else {
-                btn.classList.remove('show');
-            }
+            btn.classList.toggle('show', window.pageYOffset > 300);
         });
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Load content on page load
-        document.addEventListener('DOMContentLoaded', loadContent);
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 

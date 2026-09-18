@@ -1,0 +1,66 @@
+ Tuesday, July 14, 2026
+
+*First-group verb practice (manger, voyager) and pronominal (reflexive) verbs — s'appeler and laver vs se laver.*
+
+### Grammar: Manger & Voyager (ER verbs with a spelling quirk)
+
+- Verbs ending in -ger keep an extra "e" before the "-ons" ending (nous mangeons, not mangons) to keep the soft "j" sound.
+
+| manger (to eat) | voyager (to travel) |
+|---|---|
+| je mange | je voyage |
+| tu manges | tu voyages |
+| il/elle mange | il/elle voyage |
+| nous mangeons | nous voyageons |
+| vous mangez | vous voyagez |
+| ils/elles mangent | ils/elles voyagent |
+
+### Grammar: Pronominal (reflexive) verbs — pronoun table
+
+- Pronominal verbs pair a subject pronoun with a matching reflexive pronoun before the verb.
+
+| Subject | Reflexive pronoun | Meaning |
+|---|---|---|
+| je | me (m') | myself |
+| tu | te (t') | yourself |
+| il / elle | se (s') | himself / herself |
+| nous | nous | ourselves |
+| vous | vous | yourselves |
+| ils / elles | se (s') | themselves |
+
+### Grammar: S'appeler (recap)
+
+| Pronoun | Conjugation |
+|---|---|
+| je | m'appelle |
+| tu | t'appelles |
+| il / elle | s'appelle |
+| nous | nous appelons |
+| vous | vous appelez |
+| ils / elles | s'appellent |
+
+### Grammar: Laver vs Se laver (non-reflexive vs reflexive)
+
+- laver = to wash something/someone else. se laver = to wash yourself. Same verb, the reflexive pronoun changes who receives the action.
+
+| laver (to wash — something) | se laver (to wash — oneself) |
+|---|---|
+| je lave | je me lave |
+| tu laves | tu te laves |
+| il/elle lave | il/elle se lave |
+| nous lavons | nous nous lavons |
+| vous lavez | vous vous lavez |
+| ils/elles lavent | ils/elles se lavent |
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Why manger needs an extra E before -ons — worked out live, not just stated:** a student noticed "nous mangeons" doesn't follow the plain -ons pattern and asked why. The instructor's answer: without the extra e, "mangons" would be pronounced with a hard G sound (like "gone"), which changes the verb's sound entirely — the e is purely there to preserve the soft "j" sound before o/a. The same logic was then confirmed for voyager (nous voyageons).
+- **"My family and I eat vegetables" — working out which pronoun this maps to, as a group:** the instructor deliberately made several students guess independently which person/pronoun "my family and I" corresponds to before confirming — multiple students converged on nous (first-person plural) on their own, which the instructor used as a teaching moment about spotting the implied "we" in an English sentence that doesn't literally say "we."
+- **faire — one verb, three possible translations depending on context:** a student asked directly why faire (literally "to do") gets translated as "play" in "faire du sport." The instructor's answer: faire's core meaning is "to do," but in context with a sport, it functions like "practice" or "play" — the same word shifts meaning by context, similar to earlier de/pour examples. Contrasted directly with jouer (jouer de la guitare), which is the more literal "to play."
+- **Pronominal (reflexive) verbs — the mechanical breakdown, spelled out explicitly:** the instructor built a full table live: subject pronoun + matching reflexive pronoun. je+me=myself, tu+te=yourself, il/elle+se=himself/herself, nous+nous=ourselves, vous+vous=yourselves, ils/elles+se=themselves. Emphasized that seeing an apostrophe'd s' or m' before a verb is the signal it's pronominal.
+- **"We wash our hair" vs "we wash" (nous lavons vs nous nous lavons) — a subtle distinction a student pushed hard on:** a student repeatedly asked why "ma mère et moi, nous lavons" wasn't sufficient and why "nous nous lavons" was needed instead. The instructor's resolution: without the doubled nous nous, the sentence is just plain present tense ("we wash [something]") with no reflexive meaning attached — the doubled reflexive pronoun is literally what marks a verb as pronominal ("we wash ourselves"). Without it, there's no pronominal sense at all, just an ordinary transitive verb missing its object.
+- **vous (formal "you") can refer to one person or several — resolved with a concrete example:** a student was confused about how the same nous nous / vous vous doubling logic works when vous is being used formally to address a single person. The instructor clarified using named students as an example: vous can be grammatically "you-plural" while semantically referring to just one formally-addressed person — the reflexive pronoun that follows still doubles as vous regardless of whether one or several people are meant.
+- **Comment tu t'appelles? — revisited as the clearest possible example of a pronominal verb students already knew:** used specifically to anchor the new grammar concept (pronominal verbs) to something already familiar from Class 3, rather than introducing it as something totally new.
+

@@ -1,0 +1,119 @@
+ Thursday, July 16, 2026
+
+*Future tense of first-group (ER) verbs, everyday documents vocabulary, and restaurant/meals vocabulary.*
+
+### Grammar: Future tense of First Group (ER) verbs
+
+- For the present tense, we replace or remove the -ER ending.
+- For the future tense, we keep the whole infinitive (including -er) and add the ending on top: -ai, -as, -a, -ons, -ez, -ont.
+
+| habiter (to live) | manger (to eat) |
+|---|---|
+| j'habiterai | je mangerai |
+| tu habiteras | tu mangeras |
+| il/elle habitera | il/elle mangera |
+| nous habiterons | nous mangerons |
+| vous habiterez | vous mangerez |
+| ils/elles habiteront | ils/elles mangeront |
+
+- Je mangerai du riz aujourd'hui. — I will eat rice today.
+
+### Grammar: Appeler in the future tense (doubled consonant)
+
+- Appeler doubles its "l" throughout the future tense (and present tense) — j'appellerai, not j'appelerai.
+
+| Future | Present (for comparison) |
+|---|---|
+| j'appellerai | j'appelle |
+| tu appelleras | tu appelles |
+| il/elle appellera | il/elle appelle |
+| nous appellerons | nous appelons |
+| vous appellerez | vous appelez |
+| ils/elles appelleront | ils/elles appellent |
+
+### Vocabulary: Everyday documents
+
+| French | English |
+|---|---|
+| un passeport (m.) | a passport |
+| un titre de transport | a transport ticket |
+| une carte d'étudiant(e) | a student card |
+| une carte d'identité | an ID card |
+| un permis de conduire | a driving licence |
+| une carte bibliothèque | a library card |
+| un ticket | a ticket |
+| un billet d'avion | a flight ticket |
+| un billet | a note / ticket |
+
+### Vocabulary: At the restaurant
+
+| French | English |
+|---|---|
+| l'addition (f.) | the bill / check |
+| la carte | the menu |
+| le menu | the set menu |
+| le/la chef(fe) | the chef |
+| commander | to order |
+| l'entrée (f.) | the starter |
+| le plat | the main course |
+| le dessert | the dessert |
+| la formule | the fixed-price meal deal |
+| le plat du jour | the daily special |
+| le sel | the salt |
+| le poivre | the pepper |
+| le sucre | the sugar |
+
+### Vocabulary: Drinks
+
+| French | English |
+|---|---|
+| le café | coffee |
+| le café crème | coffee with cream |
+| l'eau (f.) | water |
+| le jus de fruits | fruit juice |
+| le soda | soda |
+| le thé | tea |
+
+### Vocabulary: Dishes
+
+| French | English |
+|---|---|
+| la blanquette de veau | veal stew in white sauce |
+| le croque-monsieur végétarien | the vegetarian croque-monsieur |
+| l'omelette (f.) | the omelet |
+| le magret de canard | duck breast |
+| le steak-frites | steak and fries |
+| la quiche | quiche |
+
+### Vocabulary: Desserts
+
+| French | English |
+|---|---|
+| le gâteau au chocolat | chocolate cake |
+| la mousse au chocolat | chocolate mousse |
+| la glace | ice cream |
+| le riz au lait | rice pudding |
+| la tarte aux pommes | apple pie / tart |
+
+### Vocabulary: Tableware (la vaisselle)
+
+| French | English |
+|---|---|
+| l'assiette (f.) | the plate |
+| la carafe | the carafe / pitcher |
+| le couteau | the knife |
+| la cuillère | the spoon |
+| la fourchette | the fork |
+| le verre | the glass |
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Future tense — the core rule, contrasted explicitly against the present tense:** the instructor was careful to state the mechanical difference clearly: present tense replaces/removes -er; future tense keeps the whole infinitive and adds an ending on top. A student asked to confirm this was really a different rule, not just a special case, and the instructor confirmed it applies across the whole first group.
+- **appeler in the future — why it doubles its L, and where exactly:** a student pushed on this in detail, asking whether the double-L applies to every form. The instructor mapped it out precisely: at the present tense, double-L appears at je/tu/il/ils forms but single-L at nous/vous; at the future tense, double-L appears in every single form (j'appellerai, tu appelleras, etc.) — flagged as something to just memorize since there's no deeper phonetic rule explaining the pattern, only a personal memory trick the instructor shared (associating double-L with a stressed "appelle" sound vs single-L with an unstressed one).
+- **Testing informal texting shorthand (j'appell' instead of j'appellerai) — instructor firmly discourages it:** a student asked whether dropping a vowel + adding an apostrophe (the way "you're" replaces "you are" casually in English) works generally in French. Confirmed: it exists but is very informal (SMS-speak between close friends) and the instructor explicitly recommends against using it, especially since it doesn't apply universally — you can't just apostrophize any vowel-ending word.
+- **il/elle appellent — why the final "ent" is silent, tied back to an English-vs-French contrast:** a student connected this to English words like "comment," where the final consonant cluster IS pronounced, and asked whether French always drops it. The instructor clarified this isn't a universal spelling rule but specific to verb endings — the -ent ending on 3rd-person-plural verbs is consistently silent across all verb groups, which is different from unrelated words that happen to end in similar letters.
+- **Third-group future stems are irregular and don't follow one universal pattern — demonstrated, then explicitly walked back to avoid over-generalizing:** the instructor showed prendre (je prendrai) and vouloir (je voudrai — stem changes from vouloir to voudr-) as two "third group" verbs that don't share the same future-stem transformation, specifically to head off a student's assumption that all -DRE-ending third-group verbs behave identically. Confirmed only vendre-type -DRE verbs are that consistent; vouloir is its own irregular case.
+- **passer — another verb whose meaning shifts entirely with context, similar to faire/de earlier:** a student asked whether passer always implies literally handing something to someone. The instructor confirmed no — it can mean "to pass [an object]" or "to pass [an exam]" depending on context, reinforcing the running theme that many French verbs carry multiple English translations depending on what follows them.
+

@@ -1,0 +1,113 @@
+ Thursday, June 25, 2026
+
+*Subject pronouns, times of day, greetings (formal & informal), saying goodbye, and the verbs être and avoir.*
+
+### Grammar: Subject Pronouns
+
+| French | English |
+|---|---|
+| je | I |
+| tu | you (informal) |
+| il / elle | he / she |
+| nous | we |
+| vous | you (formal / plural) |
+| ils / elles | they |
+
+### Vocabulary: Times of the Day
+
+| French | English |
+|---|---|
+| le matin | the morning |
+| midi | noon |
+| l'après-midi | the afternoon |
+| le soir | the evening |
+| minuit | midnight |
+| la nuit | the night |
+
+### Vocabulary: Common Greetings
+
+| French | English |
+|---|---|
+| Bonjour ! | Hello! / Good morning! |
+| Bonne journée ! | Have a nice day! |
+| Bon après-midi ! | Good afternoon! |
+| Bonsoir ! | Good evening! |
+| Bonne soirée ! | Have a nice evening! |
+| Bonne nuit ! | Good night! |
+
+### Vocabulary: Formal Greetings (vous)
+
+| French | English |
+|---|---|
+| Bonjour madame ! | Good morning/Hello, ma'am! |
+| Bonjour mademoiselle ! | Good morning/Hello, miss! |
+| Bonsoir monsieur ! | Good evening, sir! |
+| Comment allez-vous ? | How are you? |
+| Vous allez bien ? | Are you doing well? |
+| Et vous ? | And you? |
+
+### Vocabulary: Informal Greetings (tu)
+
+| French | English |
+|---|---|
+| Bonjour ! | Hello! |
+| Bonsoir ! | Good evening! |
+| Salut ! | Hi! |
+| Coucou ! | Hi there! |
+| Ça va ? | How's it going? |
+| Ça va bien ? | Are you doing well? |
+| Comment ça va ? | How are you? |
+| Comment vas-tu ? | How are you? |
+| Tu vas bien ? | Are you doing well? |
+| Et toi ? | And you? |
+
+### Vocabulary: Saying Goodbye
+
+| French | English |
+|---|---|
+| Au revoir ! | Goodbye! |
+| À bientôt ! | See you soon! |
+| À plus tard ! | See you later! |
+| À tout à l'heure ! | See you in a little while! |
+| À demain ! | See you tomorrow! |
+| À lundi ! | See you on Monday! |
+| À mardi ! | See you on Tuesday! |
+| Bon week-end ! | Have a nice weekend! |
+| À la prochaine ! | See you next time! |
+| À plus ! | See you! |
+| Salut ! | Bye! |
+| À ce soir ! | See you this evening! |
+
+### Grammar: Être (to be) — present tense
+
+| Pronoun | Conjugation |
+|---|---|
+| je suis | I'm |
+| tu es | you are |
+| il / elle est | he/she is |
+| nous sommes | we are |
+| vous êtes | you are |
+| ils / elles sont | they are |
+
+### Grammar: Avoir (to have) — present tense
+
+| Pronoun | Conjugation |
+|---|---|
+| j'ai | I have |
+| tu as | you have |
+| il / elle a | he/she has |
+| nous avons | we have |
+| vous avez | you have |
+| ils / elles ont | they have |
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Why vous is "formal":** vous is grammatically a plural form, even when addressing a single person — using the plural on purpose, as a sign of distance/respect, is literally what makes it formal. tu is reserved for people you know well (friends, family) and is considered too familiar for a stranger or a boss.
+- **Liaison, explained through vous/nous:** the final "s" on vous or nous is normally silent, but when the next word starts with a vowel, that "s" is pronounced as a "z" sound linking the two words together — vous allez is said as "vou-zallez", nous allons as "nou-zallons". Without a following vowel, the s stays silent (vous, nous on their own).
+- **Gender rule for groups (il vs elle in the plural):** if a group has even one male member, the whole group is referred to with ils (masculine plural) — no matter how many females are in the group or how few males. Only an all-female group takes elles. The instructor explicitly flagged this as a quirk English speakers find surprising, since English "they" doesn't carry gender at all.
+- **Why j'ai, not je ai:** je ends in a vowel sound, and ai (from avoir) also starts with one — French doesn't allow two vowel sounds to collide like that, so je drops its e and takes an apostrophe instead: j'ai. This is the same elision pattern behind le/la becoming l', and is worth remembering as a general rule, not just for this one verb.
+- **Where the "-s" ending actually goes:** a genuinely useful contrast for English speakers — English marks the *third* person singular with an -s (he/she plays), but French marks the *second* person singular instead (tu joues). It's easy to instinctively expect the French "marked" form to land on the same person as in English, and it doesn't.
+- **Word check — conjugaison:** a student asked what "conjugation" means; the instructor defined it as everything related to how a verb's form changes — present tense, past tense, and so on.
+

@@ -1,0 +1,110 @@
+ Sunday, June 28, 2026
+
+*Asking & spelling names, age, days of the week, months of the year, pronominal verbs (s'appeler), and aller (to go).*
+
+### Asking & spelling names
+
+- Comment s'écrit votre nom ? (formal) — How do you spell your name?
+- Comment s'écrit ton nom ? (informal) — How do you spell your name?
+- Mon nom s'écrit A.R.T.H.U.R — My name is spelled A-R-T-H-U-R.
+- Comment vous vous appelez ? — What is your name? (formal)
+- Comment tu t'appelles ? — What is your name? (informal)
+- Je m'appelle Arthur — My name is Arthur.
+- Mon nom est Arthur — My name is Arthur.
+
+### Age & how's it going
+
+- I'm 20 years old — j'ai 20 ans
+- Ça va ? — casual "how's it going?"
+- Comment ça va ? — How is it going?
+
+### Vocabulary: Time reference words
+
+| French | English |
+|---|---|
+| demain | tomorrow |
+| aujourd'hui | today |
+| hier | yesterday |
+| avant-hier | day before yesterday |
+| après-demain | day after tomorrow |
+
+### Days of the week
+
+- Quel est le premier jour de la semaine ? — What is the first day of the week?
+- Le premier jour de la semaine est lundi. — The first day of the week is Monday.
+- Quels sont les 7 jours de la semaine ? — What are the 7 days of the week?
+
+| French | English |
+|---|---|
+| lundi | Monday |
+| mardi | Tuesday |
+| mercredi | Wednesday |
+| jeudi | Thursday |
+| vendredi | Friday |
+| samedi | Saturday |
+| dimanche | Sunday |
+
+### Asking age
+
+| French | English |
+|---|---|
+| Quel âge avez-vous ? | How old are you? (formal) |
+| Quel âge as-tu ? | How old are you? / What is your age? (informal) |
+| J'ai 20 ans / j'ai 20 années | I'm 20 years old |
+
+### Months of the year
+
+- année — year
+- Quels sont les 12 mois de l'année ? — What are the 12 months of the year?
+- 1 mois = 1 month, 2 mois = 2 months
+
+| French | English |
+|---|---|
+| janvier | January |
+| février | February |
+| mars | March |
+| avril | April |
+| mai | May |
+| juin | June |
+| juillet | July |
+| août | August |
+| septembre | September |
+| octobre | October |
+| novembre | November |
+| décembre | December |
+
+### Grammar: Pronominal verbs — s'appeler
+
+- Pronominal verbs are verbs whose infinitive starts with "se" (reflexive — the action reflects back on the subject).
+- s'appeler — literally "to call oneself", used to say your name.
+
+| Pronoun | Conjugation |
+|---|---|
+| je | m'appelle |
+| tu | t'appelles |
+| il / elle | s'appelle |
+| nous | nous appelons |
+| vous | vous appelez |
+| ils / elles | s'appellent |
+
+### Grammar: Aller (to go) — present tense
+
+| Pronoun | Conjugation |
+|---|---|
+| je vais | I go |
+| tu vas | you go |
+| il / elle va | he/she goes |
+| nous allons | we go |
+| vous allez | you go |
+| ils / elles vont | they go |
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Ça va? vs Ça va. — question vs statement:** a student specifically asked whether "ça va" as a question and "ça va" as an answer are the same words. They are — the *only* difference is the question mark/intonation. Literally translated, ça va means "it is fine"; said as a question it becomes "is it going well? / how's it going?", and said as a statement it means "I'm fine / it's fine". The instructor used this to make a broader point: what turns a phrase into a question in speech is tone, not different wording.
+- **Comment ça va = ça va:** confirmed as fully interchangeable — comment just adds the literal word "how", but the meaning and use are the same.
+- **Salut is not just "bye":** salut means hello/hi. It can also be used to say bye, but only because of context — in the sample dialogue, the same word salut opens the conversation (hi) and closes it (bye). The instructor's point: don't memorize salut as meaning "bye" — memorize it as a casual greeting that works at both ends of a conversation.
+- **de l'année — another elision:** "de la année" would collide two vowel sounds (a + a), so la drops its a and becomes l': de l'année. Directly parallels the je → j' pattern from Class 2 — French consistently avoids stacking vowel sounds this way.
+- **Août's silent letters:** the accent circonflexe on the û in août marks another historically-dropped letter (like hôpital's story in Class 1). In modern spoken French the word is essentially just "oo" — the a and t are not pronounced.
+

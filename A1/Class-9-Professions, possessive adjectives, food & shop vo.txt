@@ -1,0 +1,168 @@
+ Sunday, July 12, 2026
+
+*Professions, possessive adjectives, food & shop vocabulary, and first-group (ER) verbs at the present tense.*
+
+### Vocabulary: Professions
+
+| French | English |
+|---|---|
+| l'acteur / l'actrice | actor / actress |
+| le coiffeur / la coiffeuse | hairdresser (male) / hairdresser (female) |
+| l'étudiant / l'étudiante | student (male) / student (female) |
+| le/la fleuriste | florist |
+| l'infirmier / l'infirmière | nurse (male) / nurse (female) |
+| l'informaticien / l'informaticienne | IT specialist (male / female) |
+| le professeur / la professeure | teacher / professor (male / female) |
+
+### Grammar: Possessive Adjectives — masculine singular
+
+| French | English |
+|---|---|
+| mon | my |
+| ton | your |
+| son | his / her |
+| notre | our |
+| votre | your |
+| leur | their |
+
+- son stylo — his pen
+- son stylo — her pen (same word — context tells you which)
+
+### Exception: feminine words starting with a vowel or mute h
+
+- Even for a feminine noun, use mon / ton / son (not ma / ta / sa) when the noun starts with a vowel or mute "h" — purely for smoother pronunciation.
+- mon amie, ton amie, son amie
+- son honnêteté — his/her honesty
+
+### Grammar: Possessive Adjectives — feminine singular
+
+| French | English |
+|---|---|
+| ma | my |
+| ta | your |
+| sa | his / her |
+| notre | our |
+| votre | your |
+| leur | their |
+
+- sa voiture — his car
+- sa voiture — her car (same word — context tells you which)
+
+### Grammar: Possessive Adjectives — plural (masculine or feminine)
+
+| French | English |
+|---|---|
+| mes | my |
+| tes | your |
+| ses | his / her |
+| nos | our |
+| vos | your |
+| leurs | their |
+
+- mes cousins — my cousins
+- tes sœurs — your sisters
+- ses frères — his/her brothers
+- nos enfants — our kids
+- vos neveux — your nephews
+- leurs animaux de compagnie — their pets
+- mes filles — my daughters
+- mes fils — my sons
+
+### Vocabulary: Food shops
+
+| French | English |
+|---|---|
+| la boucherie | butcher's shop |
+| le boucher / la bouchère | butcher (m/f) |
+| la boulangerie | bakery |
+| le boulanger / la boulangère | baker (m/f) |
+| l'épicerie | grocery store |
+| l'épicier / l'épicière | grocer (m/f) |
+| la fromagerie | cheese shop |
+| le fromager / la fromagère | cheesemonger (m/f) |
+| la poissonnerie | fish market |
+| le poissonnier / la poissonnière | fishmonger (m/f) |
+| le marché | market |
+| le supermarché | supermarket |
+
+### Vocabulary: Fruits & vegetables
+
+| French | English |
+|---|---|
+| les fruits | fruits |
+| l'abricot | apricot |
+| la cerise | cherry |
+| la fraise | strawberry |
+| la pêche | peach |
+| la pomme | apple |
+| la tomate | tomato |
+| les légumes | vegetables |
+| la courgette | zucchini |
+| les haricots verts | green beans |
+| le poivron | bell pepper |
+| la pomme de terre | potato |
+| la salade | lettuce / salad |
+
+### Vocabulary: Bread, pastries & dairy
+
+| French | English |
+|---|---|
+| le pain | bread |
+| les viennoiseries | pastries |
+| la baguette | baguette |
+| le croissant | croissant |
+| l'huile d'olive | olive oil |
+| les produits laitiers | dairy products |
+| le beurre | butter |
+| la crème | cream |
+| le fromage | cheese |
+| le fromage de chèvre | goat cheese |
+| le yaourt | yogurt |
+
+### Vocabulary: Grains & other staples
+
+| French | English |
+|---|---|
+| les céréales | cereals / grains |
+| la farine | flour |
+| les pâtes | pasta |
+| le riz | rice |
+| l'œuf | egg |
+| le poisson | fish |
+| le poulet | chicken |
+| la viande | meat |
+
+### Grammar: The three verb groups & First Group (ER) — present tense
+
+- French verbs fall into three groups: First group (infinitive ends in -ER), Second group (-IR), Third group (-RE, -OIR, -DRE).
+- For first-group verbs at the present tense, replace the -ER ending with: -e, -es, -e, -ons, -ez, -ent.
+
+| habiter (to live) | parler (to speak) |
+|---|---|
+| j'habite | je parle |
+| tu habites | tu parles |
+| il/elle habite | il/elle parle |
+| nous habitons | nous parlons |
+| vous habitez | vous parlez |
+| ils/elles habitent | ils/elles parlent |
+
+- All first-group present-tense forms sound identical for je/tu/il-elle and ils/elles — the endings are silent.
+- French always adds "s" to the second-person singular (tu manges), the same way English adds "s" to third-person singular (he/she eats) — it's just a different person that gets the "s".
+- Aller (to go) looks like a first-group verb (ends in -er) but is actually irregular — the one big exception.
+
+---
+
+### Classroom Discussion & Q&A
+
+- **étudiant vs l'étudiant — when the article disappears, worked through by direct question:** a student asked specifically why l' sometimes isn't pronounced/used before étudiant. Clarified: étudiant alone (no article) is used when speaking generically about "a student" with no specific reference; l'étudiant (with the contracted article) refers to a specific, definite student — the same le/la → l' contraction rule as always, just applied to a profession noun this time.
+- **mon/ton/son vs ma/ta/sa — a student worked out the underlying logic themselves mid-class:** after some back-and-forth, a student correctly summarized that the possessive adjective's gender is decided by the noun that follows it, not by the gender of the person the sentence is about (the possessor) — confirmed correct by the instructor. This was flagged as commonly confusing because "son" can mean "his" or "her" depending on context, which feels backwards coming from English.
+- **son stylo / sa voiture — the same example run for both a male and female possessor, to isolate the pattern:** son stylo (his/her pen) stays son regardless of who owns it, because stylo is masculine; sa voiture (his/her car) stays sa regardless of owner, because voiture is feminine. The instructor deliberately swapped which student "owned" the object mid-explanation to prove the noun's gender — not the person's — is what controls the word choice.
+- **mon ami — the vowel-exception rule, and a student explicitly testing its limits:** a student asked directly whether saying "ma amie" (the technically "expected" feminine form) would simply be wrong. Confirmed yes, flatly incorrect — when a feminine noun starts with a vowel or silent h, mon/ton/son must be used instead of ma/ta/sa, purely to avoid two vowel sounds colliding, and there's no flexibility on this.
+- **son honnêteté — the same exception applied to an abstract noun, not just a person:** used to show the vowel-exception rule isn't limited to words like amie — it applies to any feminine noun starting with a vowel or silent h, including abstract concepts like honnêteté (honesty).
+- **Plural possessives (mes/tes/ses/nos/vos/leurs) don't distinguish gender at all — flagged explicitly:** unlike the singular forms, the plural possessive adjectives are the same regardless of whether the noun is masculine or feminine (mes fils / mes filles both use mes) — the instructor called this out as one of the rare places French is actually simpler than the singular pattern might suggest.
+- **A family-gender mix-up, resolved live:** a student briefly conflated "family" (always feminine as a word) with the gender of individual family members being discussed — the instructor separated the two: la famille is a fixed feminine noun regardless of who's in it, while individual members (fils/fille, etc.) carry their own separate genders.
+- **boulangerie vs boulanger/boulangère — shop vs shopkeeper, and how to pluralize the shop itself:** a student asked specifically how to say "bakeries" (plural) — confirmed both les boulangeries (definite plural) and des boulangeries (indefinite plural) are correct, following the same le/les and un/des pattern already established for articles.
+- **"Same sound, different spelling" — the core first-group verb insight, stated explicitly:** the instructor emphasized that je parle, tu parles, il/elle parle, and ils/elles parlent are all pronounced identically despite different spellings — only nous parlons and vous parlez sound distinct. A student asked to confirm this pattern held for habiter too, and the instructor walked through it in parallel to prove the rule is general to the whole first verb group, not specific to one verb.
+- **tu manges / tu parles — the "S lands on a different person than in English" point, restated with a fresh example:** building on earlier classes, the instructor reused this specific contrast (English marks 3rd-person singular with -s; French marks 2nd-person singular with -s) with manger and parler as the concrete pair, since it had come up as a recurring point of confusion.
+- **J'habite vs J'habit' — a student asked about a shorthand spelling seen elsewhere:** the instructor clarified j'habit' (dropping the e) is informal texting shorthand, not proper written French, and advised against using it except casually with friends.
+

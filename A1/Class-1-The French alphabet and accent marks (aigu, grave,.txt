@@ -1,0 +1,37 @@
+ Tuesday, June 23, 2026
+
+*The French alphabet and accent marks (aigu, grave, cédille, tréma).*
+
+### The Alphabet
+
+A — B — C — D — E — F — G — H — I — J — K — L — M — N — O — P — Q — R — S — T — U — V — W — X — Y — Z
+
+### Grammar: Accents
+
+- French uses accent marks that change pronunciation.
+- Accent aigu (é) — acute accent.
+- Accent grave (è) — grave accent.
+- Cédille (ç) — turns a "c" before a/o/u into a soft "s" sound instead of a hard "k" sound.
+- Tréma (ï) — shows two vowels next to each other are pronounced separately, not blended into one sound.
+
+- français — the cédille makes this "franss-ay", not "frank-ay".
+- François — a common first name using the same cédille.
+- maïs (corn) vs mais (but) — the tréma on maïs keeps the "a" and "i" as two separate sounds; without it, "mais" is one blended sound meaning "but".
+
+### Pronunciation practice: flagged letters
+
+- Letters flagged in class for extra pronunciation practice: D, E, G, J, Q, R, U, V, W, Y.
+- E — a drawn-out "euh" sound.
+- R — the guttural French R; compared in class to the "r" sound in "Air India".
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Accent aigu vs accent grave, in more depth:** accent aigu (é) is a rising "ay" sound; accent grave (è) is a flatter, more open "eh" sound — the two accents exist specifically to distinguish those two E sounds in writing.
+- **Accent circonflexe (ê/â/ô/î/û):** a third accent, not covered in the printed notes. Historically many circumflexed words used to be spelled with an "s" that was later dropped (e.g. hôpital used to be "hospital" — the accent is a trace of that lost letter). It can sit on a, e, i, o, or u. Examples given in class: hôpital (hospital), j'ai hâte de te voir ("I can't wait to see you" — hâte = haste), île (island).
+- **Cédille, why it exists:** without it, "c" before a/o/u is a hard "k" sound. Adding the cédille (ç) softens it to "s". Example walked through live: françois written without the cédille would sound like "frank-wa"; with it, français correctly sounds like "fran-say". It's only ever used with the letter C.
+- **Tréma, which vowels it applies to:** a student asked directly which letters can take a tréma — the instructor confirmed only O, E, and I (not A or U), and specifically it goes on the *second* of two vowels sitting next to each other, to show they're pronounced separately rather than blended into one sound.
+- **Tréma example drilled in class:** maïs (corn) vs mais (but) — removing the tréma from maïs changes both the pronunciation and the meaning of the word, which is why the instructor called accents "very important", not decorative.
+- **Student question on E vs U:** a student asked how to tell the E sound and the U sound apart, since they can sound similar to a beginner's ear — the instructor worked through it live using the word "élément" to isolate the E sound by contrast.
+

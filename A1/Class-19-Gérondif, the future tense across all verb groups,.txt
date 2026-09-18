@@ -1,0 +1,126 @@
+ Tuesday, August 4, 2026
+
+*Gérondif, the future tense across all verb groups, and the conditional tense (should/could).*
+
+### Grammar: Gérondif — en + present participle
+
+- Gérondif = en + present participle (either -ANT or -ISSANT ending) = "while / by doing something".
+
+- En marchant j'ai vu Karthik. — While walking, I saw Karthik.
+- En choisissant j'étais confus. — While choosing, I got confused.
+
+### Grammar: Present continuous — recap
+
+- Je suis en train de travailler. / Je travaille. — Both mean "I'm working".
+
+### Grammar: Future tense — First & Second group
+
+- Add these endings straight onto the infinitive: -ai, -as, -a, -ons, -ez, -ont.
+
+| Pronoun | manger (1st group) | finir (2nd group) |
+|---|---|---|
+| je | mangerai | finirai |
+| tu | mangeras | finiras |
+| il / elle | mangera | finira |
+| nous | mangerons | finirons |
+| vous | mangerez | finirez |
+| ils / elles | mangeront | finiront |
+
+### Grammar: Future tense — Third group ending in -DRE or -RE
+
+- Drop the final "e" from the infinitive, then add the same endings (-ai/-as/-a/-ons/-ez/-ont).
+
+| Pronoun | vendre (to sell) | perdre (to lose) | mettre (to put) |
+|---|---|---|---|
+| je | vendrai | perdrai | mettrai |
+| tu | vendras | perdras | mettras |
+| il / elle | vendra | perdra | mettra |
+| nous | vendrons | perdrons | mettrons |
+| vous | vendrez | perdrez | mettrez |
+| ils / elles | vendront | perdront | mettront |
+
+### Grammar: Future tense — Être (irregular)
+
+| Pronoun | Conjugation |
+|---|---|
+| je | serai |
+| tu | seras |
+| il / elle | sera |
+| nous | serons |
+| vous | serez |
+| ils / elles | seront |
+
+### Grammar: Future tense — Third group ending in -OIR (irregular stems)
+
+- devoir → stem devr-, vouloir → stem voudr-, pouvoir → stem pourr-, then the same endings.
+
+| Pronoun | devoir (have to) | vouloir (to want) | pouvoir (can) |
+|---|---|---|---|
+| je | devrai | voudrai | pourrai |
+| tu | devras | voudras | pourras |
+| il / elle | devra | voudra | pourra |
+| nous | devrons | voudrons | pourrons |
+| vous | devrez | voudrez | pourrez |
+| ils / elles | devront | voudront | pourront |
+
+### Grammar: Future tense — Third group ending in -IR
+
+- partir and sortir just add the endings onto the full infinitive. venir is irregular — its stem is viendr-, not venir-.
+
+| Pronoun | partir (to leave) | sortir (to go out) | venir (to come) |
+|---|---|---|---|
+| je | partirai | sortirai | viendrai |
+| tu | partiras | sortiras | viendras |
+| il / elle | partira | sortira | viendra |
+| nous | partirons | sortirons | viendrons |
+| vous | partirez | sortirez | viendrez |
+| ils / elles | partiront | sortiront | viendront |
+
+### Grammar: Future tense — Aller (fully irregular)
+
+- Aller doesn't follow any of the patterns above — its future stem is simply "ir-".
+
+| Pronoun | Conjugation |
+|---|---|
+| j' | irai |
+| tu | iras |
+| il / elle | ira |
+| nous | irons |
+| vous | irez |
+| ils / elles | iront |
+
+### Grammar: Conditional tense (le conditionnel)
+
+- The conditional uses the exact same stem as the future tense, but different endings: -ais, -ais, -ait, -ions, -iez, -aient.
+
+| Pronoun | manger (1st group) | choisir (2nd group) |
+|---|---|---|
+| je | mangerais — I would eat | choisirais — I would choose |
+| tu | mangerais — you would eat | choisirais — you would choose |
+| il / elle | mangerait — would eat | choisirait — would choose |
+| nous | mangerions — we would eat | choisirions — we would choose |
+| vous | mangeriez — you would eat | choisiriez — you would choose |
+| ils / elles | mangeraient — they would eat | choisiraient — they would choose |
+
+### Grammar: Should & Could
+
+- "Should" = devoir in the conditional. "Could" = pouvoir in the conditional — same future stem (devr-/pourr-) plus the conditional endings.
+- je devrais manger — I should eat.
+- je pourrais manger — I could eat.
+
+---
+
+### Classroom Discussion & Q&A
+
+- **The second-vs-third-group -IR distinction, properly taught this time (the gap flagged at the end of Class 18):** worked through with two paired examples side by side — choisir (to choose, second group, present participle choisissant) vs partir (to leave, third group, present participle partant). Both verbs end in -IR and satisfy "condition one," but only the -ISSANT ending satisfies "condition two" for second group; anything ending in -ANT instead is first or third group. Multiple students asked follow-up questions to confirm they had the rule right, and the instructor confirmed: -ISSANT is unique to second group, no exceptions; -ANT covers everything else (first and third group).
+- **"Is there a finite list of these verbs?" — students pushed hard for a complete reference, and the instructor was honest that one doesn't practically exist:** several students asked directly for a full list of exceptions/irregular verbs rather than scattered examples. The instructor agreed this was a fair ask and promised to compile a working list of commonly-used verbs (rather than claiming to give an exhaustive one, which isn't realistic for irregular verbs) — comparable to how English speakers just learn irregular past tenses (go→went) as a fixed set to memorize, not derive from rules.
+- **Gérondif, explained through direct comparison with English "while/by + -ing":** en marchant, j'ai vu Karthik ("while walking, I saw Karthik") was built live, with a student explicitly asking whether "by walking" or "while walking" was the better translation — the instructor clarified it depends entirely on context; both can be valid English renderings of the same French construction depending on what makes sense in the sentence.
+- **Present participle vs true "present continuous" — students kept conflating the two, and the instructor drew a hard line between them:** a student directly asked whether the present participle (en marchant) is the same thing as saying "I am walking" as an ongoing action. The instructor was explicit: no — the present participle is used to identify a verb's group and to build gérondif phrases (while/by doing X), but it is NOT how French expresses an ongoing action in the sense of "I am currently doing this." For that, French uses either être en train de + infinitive or simply the present tense — this distinction was called out as a common point of confusion worth remembering.
+- **A direct question about scope: "which tenses do we actually need for A1?"** — the instructor listed them out on request: present, future (first group so far, this class extended to second and third), and conditional; explicitly said imperfect (l'imparfait) and passé composé are A2 content and won't be needed for the A1 exam, though A1 revisits earlier material in more depth rather than introducing entirely new ground.
+- **Future tense stems for DRE-ending third-group verbs — presented with an explicit disclaimer against over-generalizing:** vendre → je vendrai, perdre → je perdrai (drop the e, add the ending) worked as a reliable pattern for -DRE verbs specifically. A student asked whether this generalizes to all -RE endings; the instructor was careful to say no — être (je serai) breaks the pattern completely, and mettre also doesn't follow the simple "remove e" rule the same way, so the -DRE shortcut is real but narrower than it first appears.
+- **devoir/vouloir/pouvoir future stems — flagged explicitly as needing rote memorization, no derivable rule:** je devrai, je voudrai, je pourrai were presented as irregular stems that simply have to be learned, with the instructor being upfront that there's no trick to derive them logically — only repeated exposure and memorization work here.
+- **venir — singled out by name as "the exception verb," with a running classroom joke attached:** a student named Karthik had the verb venir (viendrai) associated with his name as a memory device by the instructor, turning a grammatical irregularity into a personalized mnemonic for the class.
+- **Conditional tense — introduced as structurally parallel to future, not a new system to learn from scratch:** the instructor explicitly told students that if they already know a verb's future stem, they already know 90% of its conditional form — only the endings change (future: -ai/-as/-a/-ons/-ez/-ont; conditional: -ais/-ais/-ait/-ions/-iez/-aient). This was presented as good news specifically to reduce the feeling of an ever-growing pile of unrelated rules.
+- **"Should" and "could" in French — not separate vocabulary, but devoir/pouvoir at the conditional:** a student's question about how to say "I should eat" led directly into showing that English modal verbs like "should" and "could" map onto devoir and pouvoir conjugated at the conditional tense (je devrais, je pourrais) — not new standalone words, which the instructor flagged as a useful simplification once students already know devoir/pouvoir's future stems.
+- **TEF speaking exam format, described in more concrete detail after a student asked directly what kinds of questions to expect:** the instructor played part of a real TEF simulation video and explained the two sections — asking for information (5 minutes, e.g. approaching a stranger formally to ask directions) and a persuasive/convincing dialogue (10 minutes, e.g. convincing a friend to attend an event). A student specifically asked whether the exam would be a live one-on-one interaction — confirmed yes, live and time-boxed, not multiple choice.
+
