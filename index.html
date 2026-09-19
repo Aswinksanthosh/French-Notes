@@ -195,6 +195,21 @@
             font-size: 0.95rem;
         }
 
+        /* ── Clickable French Words ── */
+        .french-word {
+            cursor: pointer;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            color: #1a4d8f;
+        }
+
+        .french-word:hover {
+            background: rgba(26, 77, 143, 0.15);
+            text-decoration: underline;
+        }
+
         /* ── Full Content ── */
         .content {
             background: white;
@@ -440,7 +455,6 @@
 
         function renderContentWithCheatSheet(text) {
             const cheatSheet = extractCheatSheet(text);
-            const content = escapeHtml(text);
 
             let html = '';
 
@@ -455,7 +469,7 @@
                         items.slice(0, 8).forEach(item => {
                             html += `
                                 <div class="cheat-sheet-item">
-                                    <strong>${escapeHtml(item.french)}</strong>
+                                    <strong class="french-word" onclick="speakFrench('${item.french.replace(/'/g, "\\'")}')">${escapeHtml(item.french)} 🔊</strong>
                                     <em>${escapeHtml(item.english)}</em>
                                 </div>
                             `;
@@ -466,10 +480,43 @@
                 html += '</div></div>';
             }
 
-            // Add full content
-            html += `<div style="white-space: pre-wrap; word-wrap: break-word; font-size: 0.95rem;">${content}</div>`;
+            // Add full content with clickable French words
+            const contentWithSpeech = addSpeechToFrench(text);
+            html += `<div style="white-space: pre-wrap; word-wrap: break-word; font-size: 0.95rem;">${contentWithSpeech}</div>`;
 
             return html;
+        }
+
+        function addSpeechToFrench(text) {
+            const escaped = escapeHtml(text);
+
+            // Find French words with accents and common French words
+            const frenchPattern = /\b([a-zàâäéèêëïîôöùûüœæçA-ZÀÂÄÉÈÊËÏÎÔÖÙÛÜŒÆÇ][a-zàâäéèêëïîôöùûüœæç'-]*)\b/g;
+
+            const commonFrench = ['je', 'tu', 'il', 'elle', 'nous', 'vous', 'ils', 'elles', 'le', 'la', 'les',
+                                'un', 'une', 'des', 'de', 'du', 'être', 'avoir', 'aller', 'faire', 'venir',
+                                'pouvoir', 'vouloir', 'devoir', 'dire', 'voir', 'savoir', 'parler', 'écouter',
+                                'bonjour', 'bonsoir', 'merci', 'oui', 'non', 'amour', 'amis'];
+
+            let result = escaped;
+            result = result.replace(frenchPattern, (match) => {
+                const hasAccent = /[àâäéèêëïîôöùûüœæç]/i.test(match);
+                const isCommon = commonFrench.includes(match.toLowerCase());
+
+                if (hasAccent || isCommon) {
+                    return `<span class="french-word" onclick="speakFrench('${match.replace(/'/g, "\\'")}')">${match}</span>`;
+                }
+                return match;
+            });
+
+            return result;
+        }
+
+        function speakFrench(word) {
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.9;
+            speechSynthesis.speak(utterance);
         }
 
         function extractCheatSheet(text) {
