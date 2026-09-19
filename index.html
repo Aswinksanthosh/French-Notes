@@ -54,7 +54,7 @@
   table { border-collapse: collapse; width: 100%; margin: 10px 0 18px; font-size: 15px; }
   th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
   th { background: var(--lightblue); }
-  .fr { font-weight: bold; color: var(--blue); }
+  .fr { font-weight: bold; color: var(--blue); cursor: pointer; user-select: none; }
   .note { background: var(--notebg); border-left: 4px solid #f0ad4e; padding: 10px 14px; margin: 12px 0; border-radius: 0 4px 4px 0; }
   .example { font-style: italic; color: #444; }
   nav {
@@ -335,9 +335,9 @@
   <b>Cédille (ç)</b> — turns a "c" before a/o/u into a soft "s" sound instead of a hard "k" sound.<br>
   <b>Tréma (ï)</b> — shows two vowels next to each other are pronounced separately, not blended into one sound.
   </div>
-  <p class="example">français — the cédille makes this "franss-ay", not "frank-ay".<br>
-  François — a common first name using the same cédille.<br>
-  maïs (corn) vs mais (but) — the tréma on maïs keeps the "a" and "i" as two separate sounds; without it, "mais" is one blended sound meaning "but".</p>
+  <p class="example"><span class="fr">français</span> — the cédille makes this "franss-ay", not "frank-ay".<br>
+  <span class="fr">François</span> — a common first name using the same cédille.<br>
+  <span class="fr">maïs</span> (corn) vs <span class="fr">mais</span> (but) — the tréma on maïs keeps the "a" and "i" as two separate sounds; without it, "mais" is one blended sound meaning "but".</p>
 
   <h3>Pronunciation practice: flagged letters</h3>
   <div class="note">
@@ -449,12 +449,12 @@
   <div class="table-wrap">
 <table>
   <tr><th>French</th><th>English</th></tr>
-  <tr><td>je</td><td>I</td></tr>
-  <tr><td>tu</td><td>you (informal)</td></tr>
-  <tr><td>il / elle</td><td>he / she</td></tr>
-  <tr><td>nous</td><td>we</td></tr>
-  <tr><td>vous</td><td>you (formal / plural)</td></tr>
-  <tr><td>ils / elles</td><td>they</td></tr>
+  <tr><td><span class="fr">je</span></td><td>I</td></tr>
+  <tr><td><span class="fr">tu</span></td><td>you (informal)</td></tr>
+  <tr><td><span class="fr">il / elle</span></td><td>he / she</td></tr>
+  <tr><td><span class="fr">nous</span></td><td>we</td></tr>
+  <tr><td><span class="fr">vous</span></td><td>you (formal / plural)</td></tr>
+  <tr><td><span class="fr">ils / elles</span></td><td>they</td></tr>
   </table>
 </div>
 
@@ -671,12 +671,12 @@
   <div class="table-wrap">
 <table>
   <tr><th>Pronoun</th><th>Conjugation</th></tr>
-  <tr><td>je suis</td><td>I'm</td></tr>
-  <tr><td>tu es</td><td>you are</td></tr>
-  <tr><td>il / elle est</td><td>he/she is</td></tr>
-  <tr><td>nous sommes</td><td>we are</td></tr>
-  <tr><td>vous êtes</td><td>you are</td></tr>
-  <tr><td>ils / elles sont</td><td>they are</td></tr>
+  <tr><td><span class="fr">je suis</span></td><td>I'm</td></tr>
+  <tr><td><span class="fr">tu es</span></td><td>you are</td></tr>
+  <tr><td><span class="fr">il / elle est</span></td><td>he/she is</td></tr>
+  <tr><td><span class="fr">nous sommes</span></td><td>we are</td></tr>
+  <tr><td><span class="fr">vous êtes</span></td><td>you are</td></tr>
+  <tr><td><span class="fr">ils / elles sont</span></td><td>they are</td></tr>
   </table>
 </div>
 
@@ -710,12 +710,12 @@
   <div class="table-wrap">
 <table>
   <tr><th>Pronoun</th><th>Conjugation</th></tr>
-  <tr><td>j'ai</td><td>I have</td></tr>
-  <tr><td>tu as</td><td>you have</td></tr>
-  <tr><td>il / elle a</td><td>he/she has</td></tr>
-  <tr><td>nous avons</td><td>we have</td></tr>
-  <tr><td>vous avez</td><td>you have</td></tr>
-  <tr><td>ils / elles ont</td><td>they have</td></tr>
+  <tr><td><span class="fr">j'ai</span></td><td>I have</td></tr>
+  <tr><td><span class="fr">tu as</span></td><td>you have</td></tr>
+  <tr><td><span class="fr">il / elle a</span></td><td>he/she has</td></tr>
+  <tr><td><span class="fr">nous avons</span></td><td>we have</td></tr>
+  <tr><td><span class="fr">vous avez</span></td><td>you have</td></tr>
+  <tr><td><span class="fr">ils / elles ont</span></td><td>they have</td></tr>
   </table>
 </div>
 
@@ -930,12 +930,12 @@
   <div class="table-wrap">
 <table>
   <tr><th>Pronoun</th><th>Conjugation</th></tr>
-  <tr><td>je vais</td><td>I go</td></tr>
-  <tr><td>tu vas</td><td>you go</td></tr>
-  <tr><td>il / elle va</td><td>he/she goes</td></tr>
-  <tr><td>nous allons</td><td>we go</td></tr>
-  <tr><td>vous allez</td><td>you go</td></tr>
-  <tr><td>ils / elles vont</td><td>they go</td></tr>
+  <tr><td><span class="fr">je vais</span></td><td>I go</td></tr>
+  <tr><td><span class="fr">tu vas</span></td><td>you go</td></tr>
+  <tr><td><span class="fr">il / elle va</span></td><td>he/she goes</td></tr>
+  <tr><td><span class="fr">nous allons</span></td><td>we go</td></tr>
+  <tr><td><span class="fr">vous allez</span></td><td>you go</td></tr>
+  <tr><td><span class="fr">ils / elles vont</span></td><td>they go</td></tr>
   </table>
 </div>
 
