@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>French Class Notes - A1 & A2 Levels</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-light.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         * {
@@ -71,11 +70,37 @@
             box-shadow: 0 2px 10px rgba(26, 77, 143, 0.3);
         }
 
-        .level-label {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-top: 8px;
-            text-align: center;
+        /* ── Topic/Class Buttons ── */
+        .topic-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+        }
+
+        .topic-btn {
+            padding: 10px 20px;
+            border: 2px solid #1a4d8f;
+            background: white;
+            color: #1a4d8f;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .topic-btn:hover {
+            background: rgba(26, 77, 143, 0.1);
+        }
+
+        .topic-btn.active {
+            background: #1a4d8f;
+            color: white;
+            box-shadow: 0 2px 8px rgba(26, 77, 143, 0.3);
         }
 
         /* ── Content Panels ── */
@@ -121,7 +146,56 @@
             font-size: 1.05rem;
         }
 
-        /* ── Content Styles ── */
+        /* ── Cheat Sheet Section ── */
+        .cheat-sheet {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+            border-left: 5px solid #f0ad4e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(240, 173, 78, 0.15);
+        }
+
+        .cheat-sheet h2 {
+            color: #d9851f;
+            margin: 0 0 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cheat-sheet h2 i {
+            font-size: 1.3rem;
+        }
+
+        .cheat-sheet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .cheat-sheet-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #f0ad4e;
+        }
+
+        .cheat-sheet-item strong {
+            color: #1a4d8f;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+
+        .cheat-sheet-item em {
+            color: #666;
+            font-style: normal;
+            font-size: 0.95rem;
+        }
+
+        /* ── Full Content ── */
         .content {
             background: white;
             border-radius: 12px;
@@ -190,46 +264,6 @@
             background: #f9fbfd;
         }
 
-        /* ── Examples ── */
-        .example {
-            background: #f9f3e6;
-            border-left: 4px solid #f0ad4e;
-            padding: 12px 16px;
-            margin: 16px 0;
-            border-radius: 4px;
-            font-style: italic;
-            color: #555;
-        }
-
-        /* ── Notes ── */
-        .note {
-            background: #e8f4f8;
-            border-left: 4px solid #5bc0de;
-            padding: 12px 16px;
-            margin: 16px 0;
-            border-radius: 4px;
-            color: #333;
-        }
-
-        .note strong {
-            color: #1a4d8f;
-        }
-
-        /* ── Code/Pre ── */
-        .content pre {
-            background: #f5f5f5;
-            padding: 16px;
-            border-radius: 8px;
-            overflow-x: auto;
-            border-left: 4px solid #1a4d8f;
-        }
-
-        .content code {
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-            color: #d63384;
-        }
-
         /* ── Responsive ── */
         @media (max-width: 768px) {
             .app-wrapper {
@@ -253,14 +287,13 @@
                 font-size: 0.95rem;
             }
 
-            .level-toggle {
-                flex-direction: column;
-                width: 100%;
+            .topic-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
             }
 
-            .level-btn {
-                width: 100%;
-                justify-content: center;
+            .cheat-sheet-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -311,8 +344,9 @@
                 <h1>A1 Level - French Foundations</h1>
                 <p>Beginner level: Alphabet, greetings, basic verbs, pronouns, and essential vocabulary</p>
             </div>
+            <div class="topic-selector" id="a1-topics"></div>
             <div class="content" id="a1-content">
-                <p>Loading A1 content...</p>
+                <p>Loading A1 topics...</p>
             </div>
         </div>
 
@@ -322,6 +356,7 @@
                 <h1>A2 Level - Building Fluency</h1>
                 <p>Elementary level: Adjectives, advanced grammar, expanded vocabulary, and conversational skills</p>
             </div>
+            <div class="topic-selector" id="a2-topics"></div>
             <div class="content" id="a2-content">
                 <p>Loading A2 content...</p>
             </div>
@@ -333,97 +368,142 @@
     </button>
 
     <script>
-        // Load content files
-        async function loadContent() {
-            try {
-                // Load A1 content from markdown
-                const a1Response = await fetch('french_notes_data.md');
-                const a1Text = await a1Response.text();
-                const a1Html = markdownToHtml(a1Text);
-                document.getElementById('a1-content').innerHTML = a1Html;
+        let manifest = {};
+        let currentLevel = 'a2';
+        let currentClass = 1;
 
-                // Load A2 content from text file
-                const a2Response = await fetch('A2/Adjectives-Class-1.txt');
-                const a2Text = await a2Response.text();
-                const a2Html = textToHtml(a2Text);
-                document.getElementById('a2-content').innerHTML = a2Html;
+        async function init() {
+            try {
+                const response = await fetch('classes-manifest.json');
+                manifest = await response.json();
+                buildTopicSelectors();
+                loadContent();
             } catch (error) {
-                console.error('Error loading content:', error);
-                document.getElementById('a1-content').innerHTML = '<p>Error loading A1 content</p>';
-                document.getElementById('a2-content').innerHTML = '<p>Error loading A2 content</p>';
+                console.error('Error loading manifest:', error);
             }
         }
 
-        // Convert markdown to HTML
-        function markdownToHtml(markdown) {
-            let html = markdown
-                .replace(/^### (.*?)$/gm, '<h3>$1</h3>')
-                .replace(/^## (.*?)$/gm, '<h2>$1</h2>')
-                .replace(/^# (.*?)$/gm, '<h1>$1</h1>')
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                .replace(/^- (.*?)$/gm, '<li>$1</li>')
-                .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/^(?!<[^>]*>)/gm, '<p>');
-
-            html = html.replace(/<p><\/p>/g, '');
-            return html;
-        }
-
-        // Convert plain text to formatted HTML
-        function textToHtml(text) {
-            let html = text
-                .split('\n')
-                .map(line => {
-                    line = line.trim();
-                    if (!line) return '';
-
-                    // Headings
-                    if (line.match(/^[A-Z][A-Z0-9\s]+$/) && line.length < 100) {
-                        return `<h2>${line}</h2>`;
-                    }
-                    if (line.match(/^[A-Z][A-Za-z0-9\s\-&:()]+$/) && line.length < 80 && line.includes('-')) {
-                        return `<h3>${line}</h3>`;
-                    }
-
-                    // Examples and notes
-                    if (line.startsWith('Example:') || line.startsWith('Examples:')) {
-                        return `<div class="example"><strong>Examples:</strong> ${line.replace(/^Examples?:\s*/, '')}</div>`;
-                    }
-                    if (line.startsWith('-')) {
-                        return `<li>${line.substring(1).trim()}</li>`;
-                    }
-
-                    return `<p>${line}</p>`;
-                })
-                .join('\n');
-
-            // Wrap consecutive list items in ul
-            html = html.replace(/(<li>.*?<\/li>\n?)+/gs, (match) => `<ul>${match}</ul>`);
-
-            return html;
-        }
-
-        // Switch between A1 and A2
         function switchLevel(level) {
-            // Update buttons
-            document.querySelectorAll('.level-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            currentLevel = level;
+            currentClass = manifest[level][0].num;
+
+            document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector(`[data-level="${level}"]`).classList.add('active');
 
-            // Update panels
-            document.querySelectorAll('.level-panel').forEach(panel => {
-                panel.classList.remove('active');
-            });
+            document.querySelectorAll('.level-panel').forEach(panel => panel.classList.remove('active'));
             document.getElementById(`${level}-panel`).classList.add('active');
 
-            // Scroll to top
+            buildTopicSelectors();
+            loadContent();
+            scrollToTop();
+        }
+
+        function buildTopicSelectors() {
+            const classes = manifest[currentLevel] || [];
+            const selector = document.getElementById(`${currentLevel}-topics`);
+            selector.innerHTML = '';
+
+            classes.forEach(cls => {
+                const btn = document.createElement('button');
+                btn.className = `topic-btn ${cls.num === currentClass ? 'active' : ''}`;
+                btn.textContent = cls.name;
+                btn.onclick = () => selectTopic(cls.num);
+                selector.appendChild(btn);
+            });
+        }
+
+        function selectTopic(classNum) {
+            currentClass = classNum;
+            buildTopicSelectors();
+            loadContent();
+            scrollToTop();
+        }
+
+        async function loadContent() {
+            const classes = manifest[currentLevel] || [];
+            const classData = classes.find(c => c.num === currentClass);
+
+            if (!classData) {
+                document.getElementById(`${currentLevel}-content`).innerHTML = '<p>Content not found</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch(classData.file);
+                const text = await response.text();
+                const html = renderContentWithCheatSheet(text);
+                document.getElementById(`${currentLevel}-content`).innerHTML = html;
+            } catch (error) {
+                document.getElementById(`${currentLevel}-content`).innerHTML = `<p>Error loading: ${error.message}</p>`;
+            }
+        }
+
+        function renderContentWithCheatSheet(text) {
+            const cheatSheet = extractCheatSheet(text);
+            const content = escapeHtml(text);
+
+            let html = '';
+
+            // Add cheat sheet section if items found
+            if (Object.values(cheatSheet).some(arr => arr.length > 0)) {
+                html += '<div class="cheat-sheet">';
+                html += '<h2><i class="fas fa-star"></i> Quick Reference</h2>';
+                html += '<div class="cheat-sheet-grid">';
+
+                for (const [category, items] of Object.entries(cheatSheet)) {
+                    if (items.length > 0) {
+                        items.slice(0, 8).forEach(item => {
+                            html += `
+                                <div class="cheat-sheet-item">
+                                    <strong>${escapeHtml(item.french)}</strong>
+                                    <em>${escapeHtml(item.english)}</em>
+                                </div>
+                            `;
+                        });
+                    }
+                }
+
+                html += '</div></div>';
+            }
+
+            // Add full content
+            html += `<div style="white-space: pre-wrap; word-wrap: break-word; font-size: 0.95rem;">${content}</div>`;
+
+            return html;
+        }
+
+        function extractCheatSheet(text) {
+            const items = { vocab: [] };
+            const lines = text.split('\n');
+
+            lines.forEach(line => {
+                const trimmed = line.trim();
+                if (trimmed.includes('—') || (trimmed.includes('-') && trimmed.match(/—|-.+—|-\s/))) {
+                    const parts = trimmed.split(/[—-]/);
+                    if (parts.length >= 2) {
+                        const french = parts[0].trim();
+                        const english = parts.slice(1).join('-').trim();
+
+                        if (french && english && french.length > 1 && english.length > 1 && !french.match(/^[*#]/)) {
+                            items.vocab.push({ french, english });
+                        }
+                    }
+                }
+            });
+
+            return items;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Scroll to top button
         window.addEventListener('scroll', () => {
             const btn = document.querySelector('.scroll-to-top');
             if (window.pageYOffset > 300) {
@@ -433,12 +513,7 @@
             }
         });
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Load content on page load
-        document.addEventListener('DOMContentLoaded', loadContent);
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 
