@@ -1,37 +1,217 @@
- Tuesday, June 23, 2026
+═══════════════════════════════════════════════════════════════
+FRENCH ALPHABET & ACCENT MARKS (Accents Diacritiques)
+═══════════════════════════════════════════════════════════════
 
-*The French alphabet and accent marks (aigu, grave, cédille, tréma).*
+WHAT YOU WILL LEARN:
+✓ The French alphabet (26 letters - same as English!)
+✓ How accent marks change pronunciation
+✓ Why French uses accents (they're not decorative - they change meaning!)
+✓ How to pronounce tricky French letters
 
-### The Alphabet
+═══════════════════════════════════════════════════════════════
+PART 1: THE FRENCH ALPHABET
+═══════════════════════════════════════════════════════════════
+
+The alphabet is the same as English! Just 26 letters:
 
 A — B — C — D — E — F — G — H — I — J — K — L — M — N — O — P — Q — R — S — T — U — V — W — X — Y — Z
 
-### Grammar: Accents
+LETTERS THAT SOUND DIFFERENT IN FRENCH (Pay attention!):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-- French uses accent marks that change pronunciation.
-- Accent aigu (é) — acute accent.
-- Accent grave (è) — grave accent.
-- Cédille (ç) — turns a "c" before a/o/u into a soft "s" sound instead of a hard "k" sound.
-- Tréma (ï) — shows two vowels next to each other are pronounced separately, not blended into one sound.
+Letter  | French Sound              | English Example
+--------|---------------------------|------------------
+R       | Guttural (throat sound)   | Like "Air India" - roll from throat, not tongue
+W       | Double-V (vé-vé)          | Sounds like "W" in English
+J       | "zh" (like measure)        | The "s" sound in "Asia"
+G       | Can be hard or soft        | Hard before A, O, U (gato)
+                                     | Soft before E, I (gent = "zhent")
 
-- français — the cédille makes this "franss-ay", not "frank-ay".
-- François — a common first name using the same cédille.
-- maïs (corn) vs mais (but) — the tréma on maïs keeps the "a" and "i" as two separate sounds; without it, "mais" is one blended sound meaning "but".
+REMEMBER: French spelling looks similar to English, but LISTEN to native speakers -
+many letters sound quite different!
 
-### Pronunciation practice: flagged letters
+═══════════════════════════════════════════════════════════════
+PART 2: ACCENT MARKS (Accents Diacritiques)
+═══════════════════════════════════════════════════════════════
 
-- Letters flagged in class for extra pronunciation practice: D, E, G, J, Q, R, U, V, W, Y.
-- E — a drawn-out "euh" sound.
-- R — the guttural French R; compared in class to the "r" sound in "Air India".
+WHY DO FRENCH WORDS HAVE ACCENTS?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Accents are NOT optional! They change:
+  1. HOW you pronounce the word
+  2. WHAT the word means
+
+Example: mais vs maïs
+  • mais = "but" (one sound "eh")
+  • maïs = "corn" (two sounds "ah-ee")
+  Same spelling, different accents = DIFFERENT WORDS!
 
 ---
 
-### Classroom Discussion & Q&A
+THE 4 MAIN ACCENT MARKS:
 
-- **Accent aigu vs accent grave, in more depth:** accent aigu (é) is a rising "ay" sound; accent grave (è) is a flatter, more open "eh" sound — the two accents exist specifically to distinguish those two E sounds in writing.
-- **Accent circonflexe (ê/â/ô/î/û):** a third accent, not covered in the printed notes. Historically many circumflexed words used to be spelled with an "s" that was later dropped (e.g. hôpital used to be "hospital" — the accent is a trace of that lost letter). It can sit on a, e, i, o, or u. Examples given in class: hôpital (hospital), j'ai hâte de te voir ("I can't wait to see you" — hâte = haste), île (island).
-- **Cédille, why it exists:** without it, "c" before a/o/u is a hard "k" sound. Adding the cédille (ç) softens it to "s". Example walked through live: françois written without the cédille would sound like "frank-wa"; with it, français correctly sounds like "fran-say". It's only ever used with the letter C.
-- **Tréma, which vowels it applies to:** a student asked directly which letters can take a tréma — the instructor confirmed only O, E, and I (not A or U), and specifically it goes on the *second* of two vowels sitting next to each other, to show they're pronounced separately rather than blended into one sound.
-- **Tréma example drilled in class:** maïs (corn) vs mais (but) — removing the tréma from maïs changes both the pronunciation and the meaning of the word, which is why the instructor called accents "very important", not decorative.
-- **Student question on E vs U:** a student asked how to tell the E sound and the U sound apart, since they can sound similar to a beginner's ear — the instructor worked through it live using the word "élément" to isolate the E sound by contrast.
+1️⃣  ACCENT AIGU (´)  - ON THE LETTER E ONLY
 
+   Symbol: é
+   How to say it: "accent aigu" (ah-koo ah-goo)
+   Pronunciation: Sounds like "ay" (rhymes with "day")
+
+   Examples:
+   • été = "summer" (ay-tay)
+   • café = "coffee" (ka-fay)
+   • élève = "student" (ay-lev)
+
+   💡 TIP: If you see é, your mouth rounds to say "ay" sound
+
+---
+
+2️⃣  ACCENT GRAVE (`)  - ON E, A, OR U
+
+   Symbol: è, à, ù
+   How to say it: "accent grave" (ah-koo grahv)
+   Pronunciation on E: Sounds like "eh" (flatter, more open than é)
+
+   Examples with È:
+   • mère = "mother" (mehr)
+   • où = "where" (oo)
+   • là = "there" (lah)
+
+   KEY DIFFERENCE: é = "ay" (bright), è = "eh" (open/relaxed)
+
+   💡 TIP: Grave accent makes vowels sound more "open" and relaxed
+
+---
+
+3️⃣  CÉDILLE (¸)  - ONLY ON THE LETTER C
+
+   Symbol: ç
+   How to say it: "cédille" (say-dee)
+   What it does: Makes C soft (like "s" sound) even before A, O, U
+
+   Why is this important?
+   In French:
+   • C before E or I = soft "s" sound automatically (c, ci)
+   • C before A, O, U = hard "k" sound (ca, co, cu)
+
+   Without ç: français would be "frank-ay" (hard K)
+   With ç: français is "fran-say" (soft S)
+
+   Examples:
+   • français = "French" (fran-say)
+   • François = "François" (a first name, fran-swah)
+   • ça = "that" (sah - soft S, not "kah")
+   • reçu = "received" (ruh-soo)
+
+   💡 REMEMBER: Cédille softens the hard C sound before A, O, U letters
+
+---
+
+4️⃣  TRÉMA (¨)  - DOTS OVER A VOWEL
+
+   Symbol: ä, ë, ï, ö, ü
+   How to say it: "tréma" (tray-mah)
+   What it does: When two vowels are together, tréma says "pronounce them SEPARATELY"
+
+   Example:
+   • mais = "but" (one sound: meh)
+   • maïs = "corn" (two sounds: mah-ee)
+
+   When you see tréma: DON'T blend the vowels - say them as TWO sounds!
+
+   More examples:
+   • naïf = "naive" (nah-eef - two sounds)
+   • Noël = "Christmas" (no-el - two sounds)
+
+   💡 RULE: Tréma = "Say both vowels separately, not blended together"
+
+---
+
+BONUS: ACCENT CIRCONFLEXE (^)  - Less common but good to know
+
+   Symbol: â, ê, î, ô, û
+   Found on: Any vowel
+   Historical note: This accent marks where an "S" used to be in old French
+
+   Examples:
+   • hôpital = "hospital" (used to be "hospital" with an S!)
+   • île = "island" (used to be "isle")
+   • hâte = "haste" (used to have an S)
+   • forêt = "forest" (used to have an S)
+
+   Pronunciation: Usually just changes the vowel sound slightly
+   💡 INTERESTING FACT: This accent is a time machine showing French history!
+
+═══════════════════════════════════════════════════════════════
+PART 3: ACCENT MARK QUICK REFERENCE TABLE
+═══════════════════════════════════════════════════════════════
+
+Accent Type    | Symbol | Where Used | Sound Change | Example
+---------------|--------|------------|--------------|----------
+AIGU           | é      | E only     | "ay" sound   | café
+GRAVE          | è, à, ù| E, A, U    | "eh" (open)  | mère
+CÉDILLE        | ç      | C only     | Soft S sound | français
+TRÉMA          | ï, ü   | Any vowel  | 2 sounds     | maïs
+CIRCONFLEXE    | ê, â   | Any vowel  | Subtle shift | hôtel
+
+═══════════════════════════════════════════════════════════════
+PART 4: PRACTICE & PRONUNCIATION
+═══════════════════════════════════════════════════════════════
+
+DIFFICULT FRENCH LETTERS TO PRACTICE:
+(These are the ones beginners struggle with most)
+
+Letter | Sound Tips                    | Practice Words
+--------|-------------------------------|----------------------
+R       | Guttural - from throat       | rouge (red), rencontre
+U       | Rounded lips - "oo"          | tu (you), une (a)
+G       | Soft before E, I             | gentil (kind), genre
+J       | Like "zh" in "Asia"          | je (I), jamais (never)
+W       | "vé-vé" (double V)           | wagon, web
+Y       | Acts as vowel or consonant   | yoga, yeux (eyes)
+
+---
+
+COMMON MISTAKES - DON'T DO THIS!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ WRONG: Ignoring accents as "decorative"
+✅ RIGHT: Accents CHANGE meaning. mais ≠ maïs. Learn them!
+
+❌ WRONG: Pronouncing R from tongue like English
+✅ RIGHT: French R comes from throat (guttural)
+
+❌ WRONG: Using hard "k" for C in words like "ça"
+✅ RIGHT: Use soft "s" sound - "sa"
+
+❌ WRONG: Blending two vowels together (maïs = "mess")
+✅ RIGHT: When tréma is present, say both sounds (mah-ee)
+
+❌ WRONG: Trying to sound like an English speaker
+✅ RIGHT: Listen to native French speakers and imitate them!
+
+═══════════════════════════════════════════════════════════════
+PART 5: STUDY CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+Can you:
+☐ Recite the 26 letters of the alphabet?
+☐ Explain what each accent mark does?
+☐ Pronounce "café" with the é sound?
+☐ Pronounce "mère" with the è sound (different from "café")?
+☐ Explain why "français" has a ç (and what it does)?
+☐ Explain the difference between "mais" and "maïs"?
+☐ Do the guttural R from your throat?
+☐ Recognize that accents change MEANING, not just pronunciation?
+
+If you checked all boxes, you're ready for the next class!
+
+═══════════════════════════════════════════════════════════════
+USEFUL RESOURCES
+═══════════════════════════════════════════════════════════════
+
+• Click on any word in the Quick Reference to hear it pronounced!
+• YouTube: Search "French accent pronunciation guide"
+• Practice sites: Forvo.com (hear native speakers say any word)
+• Remember: Real French speakers guide you more than rules!
+
+═══════════════════════════════════════════════════════════════
