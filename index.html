@@ -187,27 +187,17 @@
             display: block;
             margin-bottom: 5px;
             font-size: 1.05rem;
+            cursor: pointer;
+        }
+
+        .cheat-sheet-item strong:hover {
+            text-decoration: underline;
         }
 
         .cheat-sheet-item em {
             color: #666;
             font-style: normal;
             font-size: 0.95rem;
-        }
-
-        /* ── Clickable French Words ── */
-        .french-word {
-            cursor: pointer;
-            padding: 2px 4px;
-            border-radius: 3px;
-            transition: all 0.2s ease;
-            font-weight: 500;
-            color: #1a4d8f;
-        }
-
-        .french-word:hover {
-            background: rgba(26, 77, 143, 0.15);
-            text-decoration: underline;
         }
 
         /* ── Full Content ── */
@@ -219,64 +209,26 @@
             line-height: 1.8;
         }
 
-        .content h2 {
-            color: #1a4d8f;
-            font-size: 1.8rem;
-            margin-top: 32px;
-            margin-bottom: 16px;
-            border-bottom: 3px solid #eef2fa;
-            padding-bottom: 12px;
-        }
-
-        .content h2:first-child {
-            margin-top: 0;
-        }
-
-        .content h3 {
-            color: #2a5cb8;
-            font-size: 1.3rem;
-            margin-top: 24px;
-            margin-bottom: 12px;
-        }
-
-        .content p {
-            margin: 12px 0;
+        .full-notes {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.95rem;
+            line-height: 1.9;
+            font-family: 'Segoe UI', sans-serif;
             color: #333;
         }
 
-        .content ul, .content ol {
-            margin: 12px 0;
-            padding-left: 24px;
-        }
-
-        .content li {
-            margin: 8px 0;
-            color: #333;
-        }
-
-        .content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: white;
-        }
-
-        .content th {
-            background: #eef2fa;
+        .full-notes .french-sentence {
+            cursor: pointer;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.2s ease;
             color: #1a4d8f;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-            border-bottom: 2px solid #1a4d8f;
+            font-weight: 500;
         }
 
-        .content td {
-            padding: 10px 12px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .content tr:hover {
-            background: #f9fbfd;
+        .full-notes .french-sentence:hover {
+            background: rgba(26, 77, 143, 0.1);
         }
 
         /* ── Responsive ── */
@@ -469,7 +421,7 @@
                         items.slice(0, 8).forEach(item => {
                             html += `
                                 <div class="cheat-sheet-item">
-                                    <strong class="french-word" onclick="speakFrench('${item.french.replace(/'/g, "\\'")}')">${escapeHtml(item.french)} 🔊</strong>
+                                    <strong onclick="speakFrench('${item.french.replace(/'/g, "\\'")}')">${escapeHtml(item.french)} 🔊</strong>
                                     <em>${escapeHtml(item.english)}</em>
                                 </div>
                             `;
@@ -480,43 +432,43 @@
                 html += '</div></div>';
             }
 
-            // Add full content with clickable French words
-            const contentWithSpeech = addSpeechToFrench(text);
-            html += `<div style="white-space: pre-wrap; word-wrap: break-word; font-size: 0.95rem;">${contentWithSpeech}</div>`;
+            // Add full content with clickable French sentences
+            const contentWithSpeech = addSpeechToSentences(text);
+            html += `<div class="full-notes">${contentWithSpeech}</div>`;
 
             return html;
         }
 
-        function addSpeechToFrench(text) {
+        function addSpeechToSentences(text) {
             const escaped = escapeHtml(text);
 
-            // Find French words with accents and common French words
-            const frenchPattern = /\b([a-zàâäéèêëïîôöùûüœæçA-ZÀÂÄÉÈÊËÏÎÔÖÙÛÜŒÆÇ][a-zàâäéèêëïîôöùûüœæç'-]*)\b/g;
+            // Split by sentence boundaries but keep the punctuation
+            const sentencePattern = /([^.!?]*[.!?])/g;
+            let result = '';
+            let matches;
 
-            const commonFrench = ['je', 'tu', 'il', 'elle', 'nous', 'vous', 'ils', 'elles', 'le', 'la', 'les',
-                                'un', 'une', 'des', 'de', 'du', 'être', 'avoir', 'aller', 'faire', 'venir',
-                                'pouvoir', 'vouloir', 'devoir', 'dire', 'voir', 'savoir', 'parler', 'écouter',
-                                'bonjour', 'bonsoir', 'merci', 'oui', 'non', 'amour', 'amis'];
+            while ((matches = sentencePattern.exec(escaped)) !== null) {
+                const sentence = matches[1];
+                const trimmed = sentence.trim();
 
-            let result = escaped;
-            result = result.replace(frenchPattern, (match) => {
-                const hasAccent = /[àâäéèêëïîôöùûüœæç]/i.test(match);
-                const isCommon = commonFrench.includes(match.toLowerCase());
-
-                if (hasAccent || isCommon) {
-                    return `<span class="french-word" onclick="speakFrench('${match.replace(/'/g, "\\'")}')">${match}</span>`;
+                if (!trimmed) {
+                    result += sentence;
+                    continue;
                 }
-                return match;
-            });
 
-            return result;
-        }
+                // Check if sentence has French content (accents or common words)
+                const hasFrench = /[àâäéèêëïîôöùûüœæç]|bonjour|bonsoir|merci|oui|non|je|tu|il|elle|nous|vous|ils|elles|monsieur|madame|être|avoir|café|français|classe/i.test(trimmed);
 
-        function speakFrench(word) {
-            const utterance = new SpeechSynthesisUtterance(word);
-            utterance.lang = 'fr-FR';
-            utterance.rate = 0.9;
-            speechSynthesis.speak(utterance);
+                if (hasFrench && trimmed.length > 3) {
+                    // Extract just the French text (remove punctuation for speaking)
+                    const frenchOnly = trimmed.replace(/[.!?]/g, '').trim();
+                    result += `<span class="french-sentence" onclick="speakFrench('${frenchOnly.replace(/'/g, "\\'")}')">${sentence}</span>`;
+                } else {
+                    result += sentence;
+                }
+            }
+
+            return result || escaped;
         }
 
         function extractCheatSheet(text) {
@@ -545,6 +497,14 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        function speakFrench(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.85;
+            utterance.pitch = 1;
+            speechSynthesis.speak(utterance);
         }
 
         function scrollToTop() {
