@@ -1,416 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>French Class Notes</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<style>
-  :root {
-    --blue: #1a4d8f;
-    --lightblue: #eef2fa;
-    --notebg: #fff8e1;
-    --border: #e0e0e0;
-    --cheatbg: #fff9e6;
-  }
-  * { box-sizing: border-box; }
-  body {
-    font-family: 'Segoe UI', Georgia, serif;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.65;
-    color: #222;
-    background: #fafafa;
-  }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>French Class Notes - A1 & A2 Levels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-  .header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #222;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
 
-  .header h1 {
-    border-bottom: 3px solid var(--blue);
-    padding-bottom: 10px;
-    color: var(--blue);
-    margin-bottom: 5px;
-  }
+        .app-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 16px 80px;
+        }
 
-  .header .hint {
-    font-size: 14px;
-    color: #666;
-    margin: 15px 0;
-  }
+        /* ── Level Toggle ── */
+        .level-toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
 
-  /* Level & Chapter Selection */
-  .controls {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
+        .level-toggle {
+            display: flex;
+            gap: 12px;
+            background: white;
+            border-radius: 50px;
+            padding: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+        }
 
-  .level-selector {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+        .level-btn {
+            padding: 12px 32px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-  .level-btn, .chapter-btn {
-    padding: 10px 20px;
-    border: 2px solid var(--blue);
-    background: white;
-    color: var(--blue);
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
+        .level-btn:hover {
+            color: #1a4d8f;
+            background: rgba(26, 77, 143, 0.05);
+        }
 
-  .level-btn:hover, .chapter-btn:hover {
-    background: var(--lightblue);
-  }
+        .level-btn.active {
+            background: linear-gradient(135deg, #1a4d8f 0%, #2a5cb8 100%);
+            color: white;
+            box-shadow: 0 2px 10px rgba(26, 77, 143, 0.3);
+        }
 
-  .level-btn.active, .chapter-btn.active {
-    background: var(--blue);
-    color: white;
-  }
+        /* ── Topic/Class Buttons ── */
+        .topic-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+        }
 
-  .chapter-selector {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+        .topic-btn {
+            padding: 10px 20px;
+            border: 2px solid #1a4d8f;
+            background: white;
+            color: #1a4d8f;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
 
-  .chapter-btn {
-    padding: 8px 14px;
-    font-size: 13px;
-  }
+        .topic-btn:hover {
+            background: rgba(26, 77, 143, 0.1);
+        }
 
-  .lesson-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 28px 32px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
+        .topic-btn.active {
+            background: #1a4d8f;
+            color: white;
+            box-shadow: 0 2px 8px rgba(26, 77, 143, 0.3);
+        }
 
-  .lesson-header {
-    background: var(--blue);
-    color: white;
-    padding: 12px 18px;
-    border-radius: 8px;
-    margin: -28px -32px 20px;
-  }
+        /* ── Content Panels ── */
+        .level-panel {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
 
-  .lesson-header h2 { margin: 0; font-size: 22px; }
-  .lesson-header .date { font-weight: normal; font-size: 14px; opacity: 0.85; }
-  .topic { font-style: italic; color: #555; margin-bottom: 24px; }
+        .level-panel.active {
+            display: block;
+        }
 
-  /* Cheat Sheet */
-  .cheat-sheet {
-    background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
-    border-left: 5px solid #f0ad4e;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 25px;
-  }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .cheat-sheet h3 {
-    color: #d9851f;
-    margin: 0 0 15px;
-    border: none;
-    padding: 0;
-    font-size: 16px;
-  }
+        /* ── Header ── */
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #1a4d8f;
+        }
 
-  .cheat-sheet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-  }
+        .header h1 {
+            margin: 0 0 8px;
+            color: #1a4d8f;
+            font-size: 2.2rem;
+        }
 
-  .cheat-item {
-    background: white;
-    padding: 12px;
-    border-left: 3px solid #f0ad4e;
-    border-radius: 4px;
-  }
+        .header p {
+            margin: 0;
+            color: #666;
+            font-size: 1.05rem;
+        }
 
-  .cheat-item strong {
-    color: var(--blue);
-    font-size: 14px;
-    display: block;
-    margin-bottom: 3px;
-    cursor: pointer;
-  }
+        /* ── Cheat Sheet Section ── */
+        .cheat-sheet {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+            border-left: 5px solid #f0ad4e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(240, 173, 78, 0.15);
+        }
 
-  .cheat-item strong:hover {
-    text-decoration: underline;
-  }
+        .cheat-sheet h2 {
+            color: #d9851f;
+            margin: 0 0 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-  .cheat-item em {
-    font-style: normal;
-    color: #666;
-    font-size: 13px;
-  }
+        .cheat-sheet h2 i {
+            font-size: 1.3rem;
+        }
 
-  h3 {
-    color: var(--blue);
-    border-bottom: 2px solid var(--lightblue);
-    padding-bottom: 5px;
-    margin-top: 28px;
-    font-size: 17px;
-  }
+        .cheat-sheet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
 
-  h3:first-of-type { margin-top: 0; }
+        .cheat-sheet-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #f0ad4e;
+        }
 
-  table { border-collapse: collapse; width: 100%; margin: 10px 0 18px; font-size: 15px; }
-  th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
-  th { background: var(--lightblue); }
+        .cheat-sheet-item strong {
+            color: #1a4d8f;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+            cursor: pointer;
+        }
 
-  .fr { font-weight: bold; color: var(--blue); cursor: pointer; }
-  .fr:hover { background: var(--lightblue); padding: 0 4px; border-radius: 3px; }
+        .cheat-sheet-item strong:hover {
+            text-decoration: underline;
+        }
 
-  .note {
-    background: var(--notebg);
-    border-left: 4px solid #f0ad4e;
-    padding: 12px 14px;
-    margin: 12px 0;
-    border-radius: 0 4px 4px 0;
-  }
+        .cheat-sheet-item em {
+            color: #666;
+            font-style: normal;
+            font-size: 0.95rem;
+        }
 
-  .example { font-style: italic; color: #444; cursor: pointer; }
-  .example:hover { background: var(--lightblue); padding: 0 4px; }
+        /* ── Full Content ── */
+        .content {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            line-height: 1.8;
+        }
 
-  /* Checklist */
-  .checklist { list-style: none; padding: 0; margin: 10px 0 18px; }
-  .checklist li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 7px 10px;
-    border-radius: 6px;
-  }
-  .checklist li:hover { background: var(--lightblue); }
-  .checklist input[type="checkbox"] {
-    margin-top: 3px;
-    width: 17px;
-    height: 17px;
-    accent-color: var(--blue);
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-  .checklist label { cursor: pointer; }
-  .checklist input:checked + label { text-decoration: line-through; color: #999; }
+        .full-notes {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.95rem;
+            line-height: 1.9;
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+        }
 
-  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px 0 18px; }
-  .table-wrap table { margin: 0; }
+        .full-notes .french-sentence {
+            cursor: pointer;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            color: #1a4d8f;
+            font-weight: 500;
+        }
 
-  @media (max-width: 600px) {
-    body { padding: 12px 10px; font-size: 15px; }
-    h1 { font-size: 24px; }
-    .lesson-card { padding: 18px 14px; border-radius: 8px; }
-    .lesson-header { margin: -18px -14px 16px; padding: 10px 14px; }
-    .lesson-header h2 { font-size: 18px; }
-    h3 { font-size: 15px; margin-top: 24px; }
-    table { font-size: 13px; min-width: 420px; }
-    th, td { padding: 6px 8px; }
-    .chapter-btn { padding: 6px 10px; font-size: 12px; }
-    .cheat-sheet-grid { grid-template-columns: 1fr; }
-  }
-</style>
+        .full-notes .french-sentence:hover {
+            background: rgba(26, 77, 143, 0.1);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .app-wrapper {
+                padding: 16px 12px 60px;
+            }
+
+            .header {
+                padding: 24px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .level-btn {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+
+            .topic-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .cheat-sheet-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1a4d8f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(26, 77, 143, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+        }
+
+        .scroll-to-top:hover {
+            background: #2a5cb8;
+        }
+    </style>
 </head>
+
 <body>
-
-<div class="header">
-  <h1>🇫🇷 French Class Notes</h1>
-  <p class="hint">🔊 Tap any French word to hear it spoken aloud</p>
-</div>
-
-<!-- Level Selection -->
-<div class="controls">
-  <div class="level-selector">
-    <button class="level-btn active" onclick="switchLevel('a1')">A1 (Beginner)</button>
-    <button class="level-btn" onclick="switchLevel('a2')">A2 (Elementary)</button>
-  </div>
-
-  <!-- Chapter Selection -->
-  <div class="chapter-selector" id="chapter-selector"></div>
-</div>
-
-<!-- Content Area -->
-<div class="lesson-card" id="content"></div>
-
-<script>
-  let manifest = {};
-  let currentLevel = 'a1';
-  let currentClass = 1;
-
-  const cheatSheetClasses = [1, 2, 3]; // Only add cheat sheets for first 3 classes
-
-  async function init() {
-    try {
-      const response = await fetch('classes-manifest.json');
-      manifest = await response.json();
-      buildChapterSelector();
-      loadChapter();
-    } catch (error) {
-      console.error('Error:', error);
-      document.getElementById('content').innerHTML = '<p>Error loading content</p>';
-    }
-  }
-
-  function switchLevel(level) {
-    currentLevel = level;
-    currentClass = manifest[level][0].num;
-
-    document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-
-    buildChapterSelector();
-    loadChapter();
-  }
-
-  function buildChapterSelector() {
-    const classes = manifest[currentLevel] || [];
-    const selector = document.getElementById('chapter-selector');
-    selector.innerHTML = '';
-
-    classes.forEach(cls => {
-      const btn = document.createElement('button');
-      btn.className = `chapter-btn ${cls.num === currentClass ? 'active' : ''}`;
-      btn.textContent = cls.name;
-      btn.onclick = () => selectChapter(cls.num);
-      selector.appendChild(btn);
-    });
-  }
-
-  function selectChapter(classNum) {
-    currentClass = classNum;
-    buildChapterSelector();
-    loadChapter();
-    window.scrollTo(0, 0);
-  }
-
-  async function loadChapter() {
-    const classes = manifest[currentLevel] || [];
-    const classData = classes.find(c => c.num === currentClass);
-
-    if (!classData) {
-      document.getElementById('content').innerHTML = '<p>Chapter not found</p>';
-      return;
-    }
-
-    try {
-      const response = await fetch(classData.file);
-      const text = await response.text();
-      const html = renderChapter(text, classData.name, classData.num);
-      document.getElementById('content').innerHTML = html;
-    } catch (error) {
-      document.getElementById('content').innerHTML = `<p>Error: ${error.message}</p>`;
-    }
-  }
-
-  function renderChapter(text, name, num) {
-    let html = `
-      <div class="lesson-header">
-        <h2>${name}</h2>
-      </div>
-    `;
-
-    // Add cheat sheet for first 3 classes only
-    if (cheatSheetClasses.includes(num)) {
-      const cheatSheet = extractCheatSheet(text);
-      if (cheatSheet.length > 0) {
-        html += '<div class="cheat-sheet">';
-        html += '<h3><i class="fas fa-star"></i> Quick Reference</h3>';
-        html += '<div class="cheat-sheet-grid">';
-
-        cheatSheet.slice(0, 6).forEach(item => {
-          html += `
-            <div class="cheat-item">
-              <strong onclick="speak('${item.french.replace(/'/g, "\\'")}')">${escapeHtml(item.french)} 🔊</strong>
-              <em>${escapeHtml(item.english)}</em>
+    <div class="app-wrapper">
+        <!-- Level Toggle -->
+        <div class="level-toggle-container">
+            <div class="level-toggle">
+                <button class="level-btn" data-level="a1" onclick="switchLevel('a1')">
+                    <i class="fas fa-book"></i> A1 (Beginner)
+                </button>
+                <button class="level-btn active" data-level="a2" onclick="switchLevel('a2')">
+                    <i class="fas fa-book"></i> A2 (Elementary)
+                </button>
             </div>
-          `;
+        </div>
+
+        <!-- A1 Panel -->
+        <div id="a1-panel" class="level-panel">
+            <div class="header">
+                <h1>A1 Level - French Foundations</h1>
+                <p>Beginner level: Alphabet, greetings, basic verbs, pronouns, and essential vocabulary</p>
+            </div>
+            <div class="topic-selector" id="a1-topics"></div>
+            <div class="content" id="a1-content">
+                <p>Loading A1 topics...</p>
+            </div>
+        </div>
+
+        <!-- A2 Panel -->
+        <div id="a2-panel" class="level-panel active">
+            <div class="header">
+                <h1>A2 Level - Building Fluency</h1>
+                <p>Elementary level: Adjectives, advanced grammar, expanded vocabulary, and conversational skills</p>
+            </div>
+            <div class="topic-selector" id="a2-topics"></div>
+            <div class="content" id="a2-content">
+                <p>Loading A2 content...</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        let manifest = {};
+        let currentLevel = 'a2';
+        let currentClass = 1;
+
+        async function init() {
+            try {
+                const response = await fetch('classes-manifest.json');
+                manifest = await response.json();
+                buildTopicSelectors();
+                loadContent();
+            } catch (error) {
+                console.error('Error loading manifest:', error);
+            }
+        }
+
+        function switchLevel(level) {
+            currentLevel = level;
+            currentClass = manifest[level][0].num;
+
+            document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-level="${level}"]`).classList.add('active');
+
+            document.querySelectorAll('.level-panel').forEach(panel => panel.classList.remove('active'));
+            document.getElementById(`${level}-panel`).classList.add('active');
+
+            buildTopicSelectors();
+            loadContent();
+            scrollToTop();
+        }
+
+        function buildTopicSelectors() {
+            const classes = manifest[currentLevel] || [];
+            const selector = document.getElementById(`${currentLevel}-topics`);
+            selector.innerHTML = '';
+
+            classes.forEach(cls => {
+                const btn = document.createElement('button');
+                btn.className = `topic-btn ${cls.num === currentClass ? 'active' : ''}`;
+                btn.textContent = cls.name;
+                btn.onclick = () => selectTopic(cls.num);
+                selector.appendChild(btn);
+            });
+        }
+
+        function selectTopic(classNum) {
+            currentClass = classNum;
+            buildTopicSelectors();
+            loadContent();
+            scrollToTop();
+        }
+
+        async function loadContent() {
+            const classes = manifest[currentLevel] || [];
+            const classData = classes.find(c => c.num === currentClass);
+
+            if (!classData) {
+                document.getElementById(`${currentLevel}-content`).innerHTML = '<p>Content not found</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch(classData.file);
+                const text = await response.text();
+                const html = renderContentWithCheatSheet(text);
+                document.getElementById(`${currentLevel}-content`).innerHTML = html;
+            } catch (error) {
+                document.getElementById(`${currentLevel}-content`).innerHTML = `<p>Error loading: ${error.message}</p>`;
+            }
+        }
+
+        function renderContentWithCheatSheet(text) {
+            const cheatSheet = extractCheatSheet(text);
+
+            let html = '';
+
+            // Add cheat sheet section if items found
+            if (Object.values(cheatSheet).some(arr => arr.length > 0)) {
+                html += '<div class="cheat-sheet">';
+                html += '<h2><i class="fas fa-star"></i> Quick Reference</h2>';
+                html += '<div class="cheat-sheet-grid">';
+
+                for (const [category, items] of Object.entries(cheatSheet)) {
+                    if (items.length > 0) {
+                        items.slice(0, 8).forEach(item => {
+                            html += `
+                                <div class="cheat-sheet-item">
+                                    <strong onclick="speakFrench('${item.french.replace(/'/g, "\\'")}')">${escapeHtml(item.french)} 🔊</strong>
+                                    <em>${escapeHtml(item.english)}</em>
+                                </div>
+                            `;
+                        });
+                    }
+                }
+
+                html += '</div></div>';
+            }
+
+            // Add full content with clickable French sentences
+            const contentWithSpeech = addSpeechToSentences(text);
+            html += `<div class="full-notes">${contentWithSpeech}</div>`;
+
+            return html;
+        }
+
+        function addSpeechToSentences(text) {
+            const escaped = escapeHtml(text);
+
+            // Split by sentence boundaries but keep the punctuation
+            const sentencePattern = /([^.!?]*[.!?])/g;
+            let result = '';
+            let matches;
+
+            while ((matches = sentencePattern.exec(escaped)) !== null) {
+                const sentence = matches[1];
+                const trimmed = sentence.trim();
+
+                if (!trimmed) {
+                    result += sentence;
+                    continue;
+                }
+
+                // Check if sentence has French content (accents or common words)
+                const hasFrench = /[àâäéèêëïîôöùûüœæç]|bonjour|bonsoir|merci|oui|non|je|tu|il|elle|nous|vous|ils|elles|monsieur|madame|être|avoir|café|français|classe/i.test(trimmed);
+
+                if (hasFrench && trimmed.length > 3) {
+                    // Extract just the French text (remove punctuation for speaking)
+                    const frenchOnly = trimmed.replace(/[.!?]/g, '').trim();
+                    result += `<span class="french-sentence" onclick="speakFrench('${frenchOnly.replace(/'/g, "\\'")}')">${sentence}</span>`;
+                } else {
+                    result += sentence;
+                }
+            }
+
+            return result || escaped;
+        }
+
+        function extractCheatSheet(text) {
+            const items = { vocab: [] };
+            const lines = text.split('\n');
+
+            lines.forEach(line => {
+                const trimmed = line.trim();
+                if (trimmed.includes('—') || (trimmed.includes('-') && trimmed.match(/—|-.+—|-\s/))) {
+                    const parts = trimmed.split(/[—-]/);
+                    if (parts.length >= 2) {
+                        const french = parts[0].trim();
+                        const english = parts.slice(1).join('-').trim();
+
+                        if (french && english && french.length > 1 && english.length > 1 && !french.match(/^[*#]/)) {
+                            items.vocab.push({ french, english });
+                        }
+                    }
+                }
+            });
+
+            return items;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function speakFrench(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            utterance.rate = 0.85;
+            utterance.pitch = 1;
+            speechSynthesis.speak(utterance);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
         });
 
-        html += '</div></div>';
-      }
-    }
-
-    // Add full content with clickable French text
-    html += '<div>' + formatContent(text) + '</div>';
-
-    return html;
-  }
-
-  function extractCheatSheet(text) {
-    const items = [];
-    const lines = text.split('\n');
-
-    lines.forEach(line => {
-      const trimmed = line.trim();
-      if (trimmed.includes('—') || (trimmed.includes('-') && !trimmed.startsWith('-'))) {
-        const parts = trimmed.split(/[—-]/);
-        if (parts.length >= 2) {
-          const french = parts[0].trim();
-          const english = parts.slice(1).join('-').trim();
-
-          if (french && english && french.length > 1 && !french.match(/^[*#]/)) {
-            items.push({ french, english });
-          }
-        }
-      }
-    });
-
-    return items;
-  }
-
-  function formatContent(text) {
-    const escaped = escapeHtml(text);
-
-    // Wrap sentences with French content
-    let result = '';
-    const sentences = escaped.split(/([.!?]+)/);
-
-    for (let i = 0; i < sentences.length; i += 2) {
-      const sentence = sentences[i];
-      const punct = sentences[i + 1] || '';
-
-      if (!sentence.trim()) continue;
-
-      const hasFrench = /[àâäéèêëïîôöùûüœæç]|bonjour|bonsoir|merci|café|français|classe/i.test(sentence);
-
-      if (hasFrench && sentence.trim().length > 3) {
-        const clean = sentence.trim();
-        result += `<span class="example" onclick="speak('${clean.replace(/'/g, "\\'")}')">${sentence}</span>${punct}`;
-      } else {
-        result += sentence + punct;
-      }
-    }
-
-    return `<p class="topic">${result}</p>`;
-  }
-
-  function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-  }
-
-  function speak(word) {
-    const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = 'fr-FR';
-    utterance.rate = 0.85;
-    speechSynthesis.speak(utterance);
-  }
-
-  document.addEventListener('DOMContentLoaded', init);
-</script>
-
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
+
 </html>
