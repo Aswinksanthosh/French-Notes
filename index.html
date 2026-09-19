@@ -221,6 +221,14 @@
 <h1>French Class Notes</h1>
 <p class="speak-hint">🔊 Tap any French word or example sentence to hear it spoken aloud.</p>
 
+<div id="globalProgress" style="background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%); border-radius: 8px; padding: 16px; margin-bottom: 24px; text-align: center;">
+  <div style="font-weight: 700; color: #2e7d32; font-size: 14px; margin-bottom: 8px;">📊 Overall Progress</div>
+  <div style="background: white; border-radius: 20px; height: 8px; overflow: hidden; margin-bottom: 8px;">
+    <div id="globalProgressBar" style="background: #2e7d32; height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+  </div>
+  <div id="globalProgressText" style="color: #1b5e20; font-weight: 600; font-size: 15px;">0 / 0 items completed</div>
+</div>
+
 <div class="chapter-nav">
   <button class="chapter-btn" id="prevBtn" onclick="previousChapter()">← Previous</button>
   <span id="chapterIndicator" style="padding: 8px 16px; align-self: center; color: var(--blue); font-weight: 600;">Class 1 of 20</span>
@@ -2493,7 +2501,7 @@ function previousChapter() {
   }
 }
 
-// CHECKLIST PROGRESS TRACKING
+// CHECKLIST PROGRESS TRACKING WITH PERSISTENT STORAGE
 function updateProgress(lesson) {
   const checklist = document.querySelector(`.checklist[data-lesson="${lesson}"]`);
   if (!checklist) return;
@@ -2508,9 +2516,55 @@ function updateProgress(lesson) {
     progressBar.style.width = percentage + '%';
     progressCount.textContent = `${checked} / ${total} done`;
   }
+
+  // Save to localStorage
+  saveChecklistState(lesson, checklist);
+
+  // Update global progress
+  updateGlobalProgress();
 }
 
-document.querySelectorAll('.checklist').forEach(list => updateProgress(list.dataset.lesson));
+function saveChecklistState(lesson, checklist) {
+  const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+  const states = {};
+  checkboxes.forEach((checkbox, index) => {
+    states[index] = checkbox.checked;
+  });
+  localStorage.setItem(`checklist_${lesson}`, JSON.stringify(states));
+}
+
+function loadChecklistState(lesson, checklist) {
+  const saved = localStorage.getItem(`checklist_${lesson}`);
+  if (!saved) return;
+
+  const states = JSON.parse(saved);
+  const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach((checkbox, index) => {
+    if (states[index] !== undefined) {
+      checkbox.checked = states[index];
+    }
+  });
+}
+
+function updateGlobalProgress() {
+  let totalItems = 0;
+  let completedItems = 0;
+
+  document.querySelectorAll('.checklist').forEach(checklist => {
+    const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+    totalItems += checkboxes.length;
+    completedItems += checklist.querySelectorAll('input[type="checkbox"]:checked').length;
+  });
+
+  const percentage = totalItems > 0 ? (completedItems / totalItems) * 100 : 0;
+  document.getElementById('globalProgressBar').style.width = percentage + '%';
+  document.getElementById('globalProgressText').textContent = `${completedItems} / ${totalItems} items completed`;
+}
+
+document.querySelectorAll('.checklist').forEach(list => {
+  loadChecklistState(list.dataset.lesson, list);
+  updateProgress(list.dataset.lesson);
+});
 
 // TEXT-TO-SPEECH FOR FRENCH WORDS
 function speakFrench(text, el) {
@@ -2576,15 +2630,23 @@ function copyPromptText(button, promptText) {
 window.addEventListener('DOMContentLoaded', function() {
   showClass(1);
 
-  // Setup checklist progress tracking
+  // Setup checklist progress tracking with persistent storage
   document.querySelectorAll('.checklist').forEach(list => {
     const lesson = list.getAttribute('data-lesson');
+
+    // Load saved state
+    loadChecklistState(lesson, list);
+
+    // Attach change listeners
     list.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       checkbox.addEventListener('change', function() {
         updateProgress(lesson);
       });
     });
   });
+
+  // Update global progress on load
+  updateGlobalProgress();
 });
 </script>
 
