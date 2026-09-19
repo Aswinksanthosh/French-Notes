@@ -147,35 +147,86 @@
   .fr:hover, .example:hover { background: var(--lightblue); }
   .speaking { background: #d7e6c8 !important; }
   .speak-hint { font-size: 13px; color: #666; margin: -8px 0 20px; }
+
+  /* One chapter at a time feature */
+  .lesson-card { display: none; }
+  .lesson-card.active { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .chapter-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+
+  .chapter-btn {
+    padding: 8px 16px;
+    background: var(--lightblue);
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .chapter-btn:hover {
+    background: var(--blue);
+    color: white;
+  }
+
+  .chapter-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  nav a.active {
+    background: var(--blue);
+    color: white;
+  }
 </style>
 </head>
 <body>
 
 <h1>French Class Notes</h1>
 <p class="speak-hint">🔊 Tap any French word or example sentence to hear it spoken aloud.</p>
+
+<div class="chapter-nav">
+  <button class="chapter-btn" id="prevBtn" onclick="previousChapter()">← Previous</button>
+  <span id="chapterIndicator" style="padding: 8px 16px; align-self: center; color: var(--blue); font-weight: 600;">Class 1 of 20</span>
+  <button class="chapter-btn" id="nextBtn" onclick="nextChapter()">Next →</button>
+</div>
+
 <nav id="toc">
   <strong>Jump to a class:</strong>
   <div class="nav-scroll">
-  <a href="#class1">Class 1</a>
-  <a href="#class2">Class 2</a>
-  <a href="#class3">Class 3</a>
-  <a href="#class4">Class 4</a>
-  <a href="#class5">Class 5</a>
-  <a href="#class6">Class 6</a>
-  <a href="#class7">Class 7</a>
-  <a href="#class8">Class 8</a>
-  <a href="#class9">Class 9</a>
-  <a href="#class10">Class 10</a>
-  <a href="#class11">Class 11</a>
-  <a href="#class12">Class 12</a>
-  <a href="#class13">Class 13</a>
-  <a href="#class14">Class 14</a>
-  <a href="#class15">Class 15</a>
-  <a href="#class16">Class 16</a>
-  <a href="#class17">Class 17</a>
-  <a href="#class18">Class 18</a>
-  <a href="#class19">Class 19</a>
-  <a href="#class20">Class 20</a>
+  <a href="#" onclick="goToClass(1)">Class 1</a>
+  <a href="#" onclick="goToClass(2)">Class 2</a>
+  <a href="#" onclick="goToClass(3)">Class 3</a>
+  <a href="#" onclick="goToClass(4)">Class 4</a>
+  <a href="#" onclick="goToClass(5)">Class 5</a>
+  <a href="#" onclick="goToClass(6)">Class 6</a>
+  <a href="#" onclick="goToClass(7)">Class 7</a>
+  <a href="#" onclick="goToClass(8)">Class 8</a>
+  <a href="#" onclick="goToClass(9)">Class 9</a>
+  <a href="#" onclick="goToClass(10)">Class 10</a>
+  <a href="#" onclick="goToClass(11)">Class 11</a>
+  <a href="#" onclick="goToClass(12)">Class 12</a>
+  <a href="#" onclick="goToClass(13)">Class 13</a>
+  <a href="#" onclick="goToClass(14)">Class 14</a>
+  <a href="#" onclick="goToClass(15)">Class 15</a>
+  <a href="#" onclick="goToClass(16)">Class 16</a>
+  <a href="#" onclick="goToClass(17)">Class 17</a>
+  <a href="#" onclick="goToClass(18)">Class 18</a>
+  <a href="#" onclick="goToClass(19)">Class 19</a>
+  <a href="#" onclick="goToClass(20)">Class 20</a>
   </div>
 </nav>
 
@@ -2355,52 +2406,139 @@
   }
 
   // Init progress bars on load
-  document.querySelectorAll('.checklist').forEach(list => updateProgress(list.dataset.lesson));
+  // ONE CHAPTER AT A TIME FEATURE
+let currentClass = 1;
+const totalClasses = 20;
 
-  // Click-to-speak: uses the browser's built-in text-to-speech (free, no library, no internet call).
-  function speakFrench(text, el) {
-    if (!('speechSynthesis' in window) || !text) return;
-    window.speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = 'fr-FR';
-    utter.rate = 0.85;
-    const voices = window.speechSynthesis.getVoices();
-    const frVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('fr'));
-    if (frVoice) utter.voice = frVoice;
-    window.speechSynthesis.speak(utter);
-    if (el) {
-      el.classList.add('speaking');
-      setTimeout(() => el.classList.remove('speaking'), 400);
-    }
-  }
-
-  // Preload voice list (some browsers load it asynchronously)
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.getVoices();
-    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-  }
-
-  document.addEventListener('click', function (e) {
-    const frEl = e.target.closest('.fr');
-    if (frEl) {
-      speakFrench(frEl.textContent.trim(), frEl);
-      return;
-    }
-    const exEl = e.target.closest('.example');
-    if (exEl) {
-      // Examples are formatted "French — English", one per line (separated by <br>).
-      // Only the French part (before the em dash) should be spoken.
-      const lines = exEl.innerHTML.split(/<br\s*\/?>/i);
-      const frenchParts = lines.map(line => {
-        const tmp = document.createElement('div');
-        tmp.innerHTML = line;
-        const text = (tmp.textContent || '').trim();
-        const dashIndex = text.indexOf('—');
-        return (dashIndex > -1 ? text.slice(0, dashIndex) : text).trim();
-      }).filter(Boolean);
-      if (frenchParts.length) speakFrench(frenchParts.join('. '), exEl);
-    }
+function showClass(classNum) {
+  // Hide all chapters
+  document.querySelectorAll('.lesson-card').forEach(card => {
+    card.classList.remove('active');
   });
+
+  // Show selected chapter
+  const selectedClass = document.getElementById(`class${classNum}`);
+  if (selectedClass) {
+    selectedClass.classList.add('active');
+    currentClass = classNum;
+
+    // Update indicator
+    document.getElementById('chapterIndicator').textContent = `Class ${classNum} of ${totalClasses}`;
+
+    // Update nav buttons
+    document.getElementById('prevBtn').disabled = classNum === 1;
+    document.getElementById('nextBtn').disabled = classNum === totalClasses;
+
+    // Update nav link highlighting
+    document.querySelectorAll('nav a').forEach((link, index) => {
+      link.classList.remove('active');
+      if (index + 1 === classNum) {
+        link.classList.add('active');
+      }
+    });
+
+    // Scroll to top
+    window.scrollTo(0, 0);
+  }
+}
+
+function goToClass(classNum) {
+  event.preventDefault();
+  if (classNum >= 1 && classNum <= totalClasses) {
+    showClass(classNum);
+  }
+}
+
+function nextChapter() {
+  if (currentClass < totalClasses) {
+    showClass(currentClass + 1);
+  }
+}
+
+function previousChapter() {
+  if (currentClass > 1) {
+    showClass(currentClass - 1);
+  }
+}
+
+// CHECKLIST PROGRESS TRACKING
+function updateProgress(lesson) {
+  const checklist = document.querySelector(`.checklist[data-lesson="${lesson}"]`);
+  if (!checklist) return;
+  const total = checklist.querySelectorAll('input[type="checkbox"]').length;
+  const checked = checklist.querySelectorAll('input[type="checkbox"]:checked').length;
+
+  const progressBar = document.querySelector(`.progress-bar[data-lesson="${lesson}"]`);
+  const progressCount = document.querySelector(`.progress-count[data-lesson="${lesson}"]`);
+
+  if (progressBar && progressCount) {
+    const percentage = (checked / total) * 100;
+    progressBar.style.width = percentage + '%';
+    progressCount.textContent = `${checked} / ${total} done`;
+  }
+}
+
+document.querySelectorAll('.checklist').forEach(list => updateProgress(list.dataset.lesson));
+
+// TEXT-TO-SPEECH FOR FRENCH WORDS
+function speakFrench(text, el) {
+  if (!('speechSynthesis' in window) || !text) return;
+  window.speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = 'fr-FR';
+  utter.rate = 0.85;
+  const voices = window.speechSynthesis.getVoices();
+  const frVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('fr'));
+  if (frVoice) utter.voice = frVoice;
+  window.speechSynthesis.speak(utter);
+  if (el) {
+    el.classList.add('speaking');
+    setTimeout(() => el.classList.remove('speaking'), 400);
+  }
+}
+
+// Preload voice list (some browsers load it asynchronously)
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+
+document.addEventListener('click', function (e) {
+  const frEl = e.target.closest('.fr');
+  if (frEl) {
+    speakFrench(frEl.textContent.trim(), frEl);
+    return;
+  }
+  const exEl = e.target.closest('.example');
+  if (exEl) {
+    // Examples are formatted "French — English", one per line (separated by <br>).
+    // Only the French part (before the em dash) should be spoken.
+    const lines = exEl.innerHTML.split(/<br\s*\/?>/i);
+    const frenchParts = lines.map(line => {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = line;
+      const text = (tmp.textContent || '').trim();
+      const dashIndex = text.indexOf('—');
+      return (dashIndex > -1 ? text.slice(0, dashIndex) : text).trim();
+    }).filter(Boolean);
+    if (frenchParts.length) speakFrench(frenchParts.join('. '), exEl);
+  }
+});
+
+// INITIALIZE ON PAGE LOAD
+window.addEventListener('DOMContentLoaded', function() {
+  showClass(1);
+
+  // Setup checklist progress tracking
+  document.querySelectorAll('.checklist').forEach(list => {
+    const lesson = list.getAttribute('data-lesson');
+    list.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        updateProgress(lesson);
+      });
+    });
+  });
+});
 </script>
 
 </body>
