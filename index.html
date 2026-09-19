@@ -214,6 +214,59 @@
   .copy-btn.copied {
     background: #4caf50;
   }
+
+  /* Expandable sections */
+  .expand-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s ease;
+  }
+
+  .expand-btn:hover {
+    background: #229954;
+  }
+
+  .expandable-section {
+    margin: 16px 0;
+    padding: 12px 0;
+  }
+
+  .expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 8px;
+  }
+
+  .expandable-content.open {
+    max-height: 2000px;
+  }
+
+  .expandable-text {
+    background: #f9f9f9;
+    border-left: 4px solid #27ae60;
+    padding: 14px;
+    border-radius: 4px;
+    line-height: 1.6;
+  }
+
+  .expandable-text p {
+    margin: 8px 0;
+  }
+
+  .expandable-text strong {
+    color: var(--blue);
+  }
 </style>
 </head>
 <body>
@@ -318,6 +371,81 @@
   <p class="topic">Topic: Subject pronouns, times of day, greetings (formal & informal), saying goodbye, and the verbs être and avoir.</p>
 
   <h3>Grammar: Subject Pronouns</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Subject pronouns are words that replace a noun when a person or thing is doing an action or is in the subject position of a sentence. For example, instead of saying Jean is tall, we say He is tall. In French, we have six subject pronouns that change depending on who is doing the action. These are: Je, Tu, Il or Elle, Nous, Vous, and Ils or Elles. Each pronoun tells us who the subject is and affects how we conjugate verbs. This is one of the most important grammar concepts in French because you will use subject pronouns in almost every sentence you write or speak." data-lang="en-US">
+      🎧 What are subject pronouns?
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <p><strong>Subject pronouns</strong> are words that replace a noun when they do an action or are at the beginning of a sentence.</p>
+        <p><strong>For example:</strong> Instead of saying "Jean is tall" → we say "He is tall"</p>
+        <p><strong>In French, we have 6 subject pronouns:</strong> each one changes depending on who does the action and affects how we conjugate verbs.</p>
+        <p>This is one of the most important concepts in French!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="The six subject pronouns in French. Je means I and is used when talking about yourself, for example Je suis étudiant. Tu means you informal and is used with friends and family, for example Tu es gentil. Il or Elle means he or she. Il for boys and Elle for girls, for example Il est français or Elle est française. Nous means we and is used for groups, for example Nous sommes amis. Vous means you formal or plural and is used with teachers, bosses or multiple people, for example Vous êtes professeur. Ils or Elles means they. Ils for boys or mixed groups and Elles for girls, for example Ils sont étudiants or Elles sont intelligentes. Each pronoun is important and changes the verb conjugation." data-lang="en-US">
+      🎧 The 6 pronouns: Je, Tu, Il/Elle, Nous, Vous, Ils/Elles
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <p><strong>1. Je (I)</strong> — Used when talking about yourself<br/>
+        Example: <span class="fr">Je suis étudiant</span> = I am a student</p>
+        <p><strong>2. Tu (you - informal)</strong> — With friends, family<br/>
+        Example: <span class="fr">Tu es gentil</span> = You are kind</p>
+        <p><strong>3. Il / Elle (he / she)</strong> — Il for boys, Elle for girls<br/>
+        Example: <span class="fr">Il est français</span> = He is French</p>
+        <p><strong>4. Nous (we)</strong> — For groups<br/>
+        Example: <span class="fr">Nous sommes amis</span> = We are friends</p>
+        <p><strong>5. Vous (you - formal/plural)</strong> — Teachers, bosses, plural<br/>
+        Example: <span class="fr">Vous êtes professeur</span> = You are a teacher</p>
+        <p><strong>6. Ils / Elles (they)</strong> — Ils for boys/mixed, Elles for girls<br/>
+        Example: <span class="fr">Ils sont étudiants</span> = They are students</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Using pronouns in sentences. The subject pronoun comes at the beginning of a sentence before the verb and tells us who is doing the action. For example, Je parle means I speak. Tu danses means you dance. Elle chante means she sings. Nous courons means we run. Notice that the verb changes depending on the pronoun used. This change is called conjugation. When you learn a new verb in French, you must memorize how it changes for each pronoun. For example, the verb être becomes Je suis, Tu es, Il est, Nous sommes, Vous êtes, Ils sont. Every verb has its own changes, but the subject pronoun is always the first word of the sentence telling us who does the action." data-lang="en-US">
+      🎧 Using pronouns in sentences
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <p>The subject pronoun comes at the beginning of a sentence before the verb. It tells us <strong>WHO does the action.</strong></p>
+        <p><strong>Examples:</strong></p>
+        <p><span class="fr">Je parle</span> = I speak<br/>
+        <span class="fr">Tu danses</span> = You dance<br/>
+        <span class="fr">Elle chante</span> = She sings<br/>
+        <span class="fr">Nous courons</span> = We run</p>
+        <p><strong>Important:</strong> The verb changes based on the pronoun used. This is called <strong>conjugation.</strong></p>
+        <p>Memorize how each verb changes for each pronoun!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Tu versus Vous. This is very important in French. Tu and Vous both mean you, but they are used in different situations. Tu is informal and is used with people you know well, like friends, family members, classmates, or people your own age. Tu creates a friendly and personal atmosphere. For example, you would say Tu es mon ami, which means You are my friend, to a close friend. Vous is formal and respectful. It is used with people you do not know well, such as teachers, your boss, your grandparents, or anyone you want to show respect to. Vous is also used when you are talking to more than one person, even if they are your friends. For example, you would say Vous êtes professeur, which means You are a teacher, when speaking to your teacher. In group settings with multiple people, you always use Vous, even if some are your friends. Getting this right is crucial for French culture because using Tu with someone you just met can seem rude, and using Vous with close friends can seem too formal and cold. Pay attention to this distinction when learning French." data-lang="en-US">
+      🎧 Tu vs Vous: Formal vs Informal
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <p><strong>Tu vs Vous (The Most Important Distinction!):</strong></p>
+        <p><strong>Tu = Informal (You with friends/family)</strong></p>
+        <p>Used with: friends, family, classmates, people your age<br/>
+        Creates a friendly, personal atmosphere<br/>
+        Example: <span class="fr">Tu es mon ami</span> = You are my friend (to a close friend)</p>
+        <p><strong>Vous = Formal/Respectful (You with strangers/authority)</strong></p>
+        <p>Used with: teachers, boss, grandparents, strangers, people you want to show respect to<br/>
+        <strong>Also used when talking to multiple people (even friends!)</strong><br/>
+        Example: <span class="fr">Vous êtes professeur</span> = You are a teacher (to your teacher)</p>
+        <p><strong>⚠️ Cultural Note:</strong> Using Tu with someone you just met can seem rude. Using Vous with close friends can seem too formal. Getting this right is crucial in French society!</p>
+      </div>
+    </div>
+  </div>
+
   <div class="table-wrap">
 <table>
   <tr><th>French</th><th>English</th></tr>
@@ -2446,6 +2574,23 @@
     const total = boxes.length;
     document.querySelector('.progress-count[data-lesson="' + lesson + '"]').textContent = done + ' / ' + total + ' done';
     document.querySelector('.progress-bar[data-lesson="' + lesson + '"]').style.width = (done / total * 100) + '%';
+  }
+
+  // Expandable sections toggle
+  function toggleExpandable(button) {
+    const section = button.closest('.expandable-section');
+    const content = section.querySelector('.expandable-content');
+    const audio = button.getAttribute('data-audio');
+    const lang = button.getAttribute('data-lang');
+
+    content.classList.toggle('open');
+
+    if (content.classList.contains('open') && audio) {
+      const utterance = new SpeechSynthesisUtterance(audio);
+      utterance.lang = lang || 'en-US';
+      utterance.rate = 0.9;
+      speechSynthesis.speak(utterance);
+    }
   }
 
   // Init progress bars on load
