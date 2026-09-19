@@ -193,56 +193,18 @@
   }
 
   /* Gemini Prompt Styling */
-  .gemini-prompt {
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-    border-left: 5px solid #1976d2;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 24px;
-    position: relative;
-  }
-
-  .gemini-prompt-label {
-    font-weight: 700;
-    color: #1565c0;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .gemini-prompt-text {
-    background: white;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #333;
-    border: 1px solid #90caf9;
-    cursor: pointer;
-    user-select: all;
-    word-wrap: break-word;
-    transition: background-color 0.2s ease;
-  }
-
-  .gemini-prompt-text:hover {
-    background-color: #f5f5f5;
-  }
-
   .copy-btn {
     background: #1976d2;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    margin-top: 8px;
+    margin-bottom: 16px;
     transition: background-color 0.2s ease;
+    display: inline-block;
   }
 
   .copy-btn:hover {
@@ -297,11 +259,7 @@
     <h2>Class 1 <span class="date">— Tuesday, June 23, 2026</span></h2>
   </div>
 
-  <div class="gemini-prompt">
-    <div class="gemini-prompt-label">💡 Ask Gemini to teach you this topic:</div>
-    <div class="gemini-prompt-text" onclick="copyToClipboard(this)">Teach me about the French alphabet and accent marks (aigu, grave, cédille, tréma). Teach me slowly, one concept at a time, making sure I understand each before moving to the next. Ask me questions to check my understanding. Include examples and pronunciation tips. Don't show everything at once - guide me through step by step.</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">📋 Copy Prompt</button>
-  </div>
+  <button class="copy-btn" onclick="copyPromptText(this, 'Teach me about the French alphabet and accent marks (aigu, grave, cédille, tréma). Teach me slowly, one concept at a time, making sure I understand each before moving to the next. Ask me questions to check my understanding. Include examples and pronunciation tips. Don\'t show everything at once - guide me through step by step.')">💡 Copy Gemini Prompt</button>
 
   <p class="topic">Topic: The French alphabet and accent marks (aigu, grave, cédille, tréma).</p>
 
@@ -344,11 +302,7 @@
     <h2>Class 2 <span class="date">— Thursday, June 25, 2026</span></h2>
   </div>
 
-  <div class="gemini-prompt">
-    <div class="gemini-prompt-label">💡 Ask Gemini to teach you this topic:</div>
-    <div class="gemini-prompt-text" onclick="copyToClipboard(this)">Teach me about French subject pronouns (je, tu, il, elle, nous, vous, ils, elles), when to use tu vs vous, times of day, formal and informal greetings, how to say goodbye, and how to conjugate être and avoir. Teach slowly, one concept at a time. Ask me questions to verify I understand. Use real examples. Don't overwhelming me - guide me step by step.</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">📋 Copy Prompt</button>
-  </div>
+  <button class="copy-btn" onclick="copyPromptText(this, 'Teach me about French subject pronouns (je, tu, il, elle, nous, vous, ils, elles), when to use tu vs vous, times of day, formal and informal greetings, how to say goodbye, and how to conjugate être and avoir. Teach slowly, one concept at a time. Ask me questions to verify I understand. Use real examples. Don\'t overwhelm me - guide me step by step.')">💡 Copy Gemini Prompt</button>
 
   <p class="topic">Topic: Subject pronouns, times of day, greetings (formal & informal), saying goodbye, and the verbs être and avoir.</p>
 
@@ -487,11 +441,7 @@
     <h2>Class 3 <span class="date">— Sunday, June 28, 2026</span></h2>
   </div>
 
-  <div class="gemini-prompt">
-    <div class="gemini-prompt-label">💡 Ask Gemini to teach you this topic:</div>
-    <div class="gemini-prompt-text" onclick="copyToClipboard(this)">Teach me about asking and spelling names in French, how to say age, all 7 days of the week, all 12 months of the year, pronominal verbs like s'appeler, and how to conjugate aller (to go). Teach me slowly, step by step. Ask me questions to check my understanding. Give examples for each concept. Don't rush - make sure I understand each part before moving on.</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">📋 Copy Prompt</button>
-  </div>
+  <button class="copy-btn" onclick="copyPromptText(this, 'Teach me about asking and spelling names in French, how to say age, all 7 days of the week, all 12 months of the year, pronominal verbs like s\'appeler, and how to conjugate aller (to go). Teach me slowly, step by step. Ask me questions to check my understanding. Give examples for each concept. Don\'t rush - make sure I understand each part before moving on.')">💡 Copy Gemini Prompt</button>
 
   <p class="topic">Topic: Asking & spelling names, age, days of the week, months of the year, pronominal verbs (s'appeler), and aller (to go).</p>
 
@@ -2608,8 +2558,7 @@ document.addEventListener('click', function (e) {
 });
 
 // COPY PROMPTS TO CLIPBOARD
-function copyPrompt(button) {
-  const promptText = button.previousElementSibling.textContent;
+function copyPromptText(button, promptText) {
   navigator.clipboard.writeText(promptText).then(() => {
     const originalText = button.textContent;
     button.textContent = '✓ Copied!';
@@ -2620,15 +2569,6 @@ function copyPrompt(button) {
     }, 2000);
   }).catch(() => {
     alert('Copy failed. Try selecting the text and copying manually.');
-  });
-}
-
-function copyToClipboard(element) {
-  const text = element.textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    alert('✓ Prompt copied! Paste it into Gemini now.');
-  }).catch(() => {
-    alert('Copy failed. Please select and copy manually.');
   });
 }
 
