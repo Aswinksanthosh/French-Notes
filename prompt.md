@@ -37,7 +37,37 @@ When I say "feature update", check these 5 core features are present:
 
 ---
 
-## ✨ LATEST UPDATE: Navigation Menu Synchronized
+## ✨ LATEST UPDATE: Feature Audit - Classes 1-5 (A1 Level)
+
+**Date:** September 21, 2026 (~17:00 UTC)  
+**Change:** Completed feature audit for first 5 A1 classes
+
+### Feature Audit Results
+
+| Class | Name | Gemini | Audio | Mistakes | Examples | Checklist | Total |
+|-------|------|--------|-------|----------|----------|-----------|-------|
+| 1 | Alphabet | ✅ | ❌ | ❌ | ❌ | ✅ | 2/5 |
+| 2 | Greetings | ✅ | ✅ | ❌ | ❌ | ❌ | 2/5 |
+| 3 | Calendar | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 |
+| 4 | Classroom | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 |
+| 5 | Articles | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 |
+
+**Key Finding:** A1 Classes 1-2 are missing critical features:
+- ❌ **Common mistakes tables** — MISSING from all A1 classes
+- ❌ **Clickable pronunciation examples** — MISSING from all A1 classes
+- ⚠️ **Checklists** — Inconsistent (Class 1 has it, Class 2 doesn't)
+- ⚠️ **Audio explanations** — Inconsistent (Class 2 has it, Class 1 doesn't)
+
+**A2 Reference:** Classes 21-22 have ALL 5 features ✅ (template for upgrades)
+
+### Action Items
+- [ ] Add missing features 2 & 3 to Classes 1-5
+- [ ] Standardize checklist format across all classes
+- [ ] Verify Classes 3-5 feature completeness
+
+---
+
+## 📋 PREVIOUS UPDATE: Navigation Menu Synchronized
 
 **Date:** September 21, 2026 (~16:00 UTC)  
 **Change:** Updated navigation menu (lines 327-346) to display new single-word class names
