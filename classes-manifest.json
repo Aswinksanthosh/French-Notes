@@ -2,115 +2,125 @@
   "a1": [
     {
       "num": 1,
-      "file": "A1/1-French-Alphabet-and-Accent-Marks.txt",
-      "name": "1 - French Alphabet and Accent Marks"
+      "file": "A1/1-Alphabet.txt",
+      "name": "1 - Alphabet"
     },
     {
       "num": 2,
-      "file": "A1/2-Subject-Pronouns-Times-Greetings.txt",
-      "name": "2 - Subject Pronouns Times Greetings"
+      "file": "A1/2-Greetings.txt",
+      "name": "2 - Greetings"
     },
     {
       "num": 3,
-      "file": "A1/3-Names-Age-Days-Months.txt",
-      "name": "3 - Names Age Days Months"
+      "file": "A1/3-Calendar.txt",
+      "name": "3 - Calendar"
     },
     {
       "num": 4,
-      "file": "A1/4-Classroom-Survival-Phrases.txt",
-      "name": "4 - Classroom Survival Phrases"
+      "file": "A1/4-Classroom.txt",
+      "name": "4 - Classroom"
     },
     {
       "num": 5,
-      "file": "A1/5-Articles-Definite-Indefinite-Partitive.txt",
-      "name": "5 - Articles Definite Indefinite Partitive"
+      "file": "A1/5-Articles.txt",
+      "name": "5 - Articles"
     },
     {
       "num": 6,
-      "file": "A1/6-Gender-Nouns-Nationality.txt",
-      "name": "6 - Gender Nouns Nationality"
+      "file": "A1/6-Gender.txt",
+      "name": "6 - Gender"
     },
     {
       "num": 7,
-      "file": "A1/7-Hobbies-Numbers-Prepositions.txt",
-      "name": "7 - Hobbies Numbers Prepositions"
+      "file": "A1/7-Hobbies.txt",
+      "name": "7 - Hobbies"
     },
     {
       "num": 8,
-      "file": "A1/8-Family-Vocabulary.txt",
-      "name": "8 - Family Vocabulary"
+      "file": "A1/8-Family.txt",
+      "name": "8 - Family"
     },
     {
       "num": 9,
-      "file": "A1/9-Professions-Possessives-Food.txt",
-      "name": "9 - Professions Possessives Food"
+      "file": "A1/9-Professions.txt",
+      "name": "9 - Professions"
     },
     {
       "num": 10,
-      "file": "A1/10-ER-Verbs-Pronominal-Verbs.txt",
-      "name": "10 - ER Verbs Pronominal Verbs"
+      "file": "A1/10-Reflexive.txt",
+      "name": "10 - Reflexive"
     },
     {
       "num": 11,
-      "file": "A1/11-Future-Tense-Restaurant-Vocabulary.txt",
-      "name": "11 - Future Tense Restaurant Vocabulary"
+      "file": "A1/11-Future.txt",
+      "name": "11 - Future"
     },
     {
       "num": 12,
-      "file": "A1/12-ER-Verbs-Revision-Demonstratives.txt",
-      "name": "12 - ER Verbs Revision Demonstratives"
+      "file": "A1/12-Demonstratives.txt",
+      "name": "12 - Demonstratives"
     },
     {
       "num": 13,
-      "file": "A1/13-Large-Numbers-Frequency-Negation.txt",
-      "name": "13 - Large Numbers Frequency Negation"
+      "file": "A1/13-Negation.txt",
+      "name": "13 - Negation"
     },
     {
       "num": 14,
-      "file": "A1/14-Time-Telling.txt",
-      "name": "14 - Time Telling"
+      "file": "A1/14-Telling.txt",
+      "name": "14 - Telling"
     },
     {
       "num": 15,
-      "file": "A1/15-Colors-Connectors-Present-Continuous.txt",
-      "name": "15 - Colors Connectors Present Continuous"
+      "file": "A1/15-Colors.txt",
+      "name": "15 - Colors"
     },
     {
       "num": 16,
-      "file": "A1/16-Connectors-Meal-Vocabulary.txt",
-      "name": "16 - Connectors Meal Vocabulary"
+      "file": "A1/16-Meals.txt",
+      "name": "16 - Meals"
     },
     {
       "num": 17,
-      "file": "A1/17-Self-Assessment-Listening.txt",
-      "name": "17 - Self Assessment Listening"
+      "file": "A1/17-Listening.txt",
+      "name": "17 - Listening"
     },
     {
       "num": 18,
-      "file": "A1/18-3rd-Group-Verbs-Prepositions.txt",
-      "name": "18 - 3rd Group Verbs Prepositions"
+      "file": "A1/18-Irregular.txt",
+      "name": "18 - Irregular"
     },
     {
       "num": 19,
-      "file": "A1/19-Gerund-Future-Conditional.txt",
-      "name": "19 - Gerund Future Conditional"
+      "file": "A1/19-Conditional.txt",
+      "name": "19 - Conditional"
     },
     {
       "num": 20,
-      "file": "A1/20-Descriptive-Adjectives-Clothes-Weather.txt",
-      "name": "20 - Descriptive Adjectives Clothes Weather"
+      "file": "A1/20-Description.txt",
+      "name": "20 - Description"
     }
   ],
   "a2": [
     {
       "num": 1,
-      "file": "A2/Class-1-Adjectives.txt",
-      "name": "1-Adjectives"
+      "file": "A2/1-Foundation.txt",
+      "name": "1 - Foundation"
     },
     {
       "num": 2,
-      "file": "A2/Class-2-Adjectives.txt",
-      "name": "2-Adjectives"
+      "file": "A2/2-Nuance.txt",
+      "name": "2 - Nuance"
+    },
+    {
+      "num": 21,
+      "file": "A2/21-Position.txt",
+      "name": "21 - Position"
+    },
+    {
+      "num": 22,
+      "file": "A2/22-Adverbs.txt",
+      "name": "22 - Adverbs"
     }
   ]
 }
