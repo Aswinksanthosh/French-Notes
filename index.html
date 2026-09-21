@@ -366,6 +366,25 @@
   <p>A — B — C — D — E — F — G — H — I — J — K — L — M — N — O — P — Q — R — S — T — U — V — W — X — Y — Z</p>
 
   <h3>Grammar: Accents</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="French accent marks change how you pronounce words. There are four main accent marks. Accent aigu (é) makes an acute accent above the e, sounding like 'ay'. Accent grave (è) makes a grave accent, sounding like 'eh' with a more open sound. Cédille (ç) adds a comma below the c to make a soft 's' sound before the letters a, o, or u. Without the cédille, c would sound like a hard 'k'. Tréma (ï) shows two vowels next to each other are pronounced separately, not blended together. These accents are essential for correct French pronunciation and spelling." data-lang="en-US">
+      🎧 Accent Marks Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <p><strong>French uses 4 accent marks that change pronunciation:</strong></p>
+        <p><strong>1. Accent aigu (é)</strong> — acute accent, sounds like "ay"<br/>
+        Example: <span class="fr">é</span> in "café" = kah-FAY</p>
+        <p><strong>2. Accent grave (è)</strong> — grave accent, sounds like "eh" (more open)<br/>
+        Example: <span class="fr">è</span> in "mère" = MEHR</p>
+        <p><strong>3. Cédille (ç)</strong> — soft 's' sound before a/o/u<br/>
+        Example: <span class="fr">ç</span> in "français" = franss-AY (not frank-AY)</p>
+        <p><strong>4. Tréma (ï)</strong> — keeps two vowels as separate sounds<br/>
+        Example: <span class="fr">maïs</span> (corn) — mah-EE (not rhymes with "but")</p>
+      </div>
+    </div>
+  </div>
+
   <div class="note">
   French uses accent marks that change pronunciation.<br>
   <b>Accent aigu (é)</b> — acute accent.<br>
@@ -373,9 +392,41 @@
   <b>Cédille (ç)</b> — turns a "c" before a/o/u into a soft "s" sound instead of a hard "k" sound.<br>
   <b>Tréma (ï)</b> — shows two vowels next to each other are pronounced separately, not blended into one sound.
   </div>
-  <p class="example"><span class="fr">français</span> — the cédille makes this "franss-ay", not "frank-ay".<br>
-  <span class="fr">François</span> — a common first name using the same cédille.<br>
-  <span class="fr">maïs</span> (corn) vs <span class="fr">mais</span> (but) — the tréma on maïs keeps the "a" and "i" as two separate sounds; without it, "mais" is one blended sound meaning "but".</p>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">francais</span></td><td><span class="fr">français</span></td><td>Missing cédille changes pronunciation from "franss-ay" to "frank-ay"</td></tr>
+    <tr><td><span class="fr">mais</span> (thinking corn)</td><td><span class="fr">maïs</span></td><td>Without tréma, sounds like "but" (one blended vowel). With tréma, sounds like "corn" (two separate vowels)</td></tr>
+    <tr><td><span class="fr">cafe</span></td><td><span class="fr">café</span></td><td>Missing accent aigu. "Cafe" sounds flat; "café" has the proper "ay" sound</td></tr>
+    <tr><td><span class="fr">mere</span></td><td><span class="fr">mère</span></td><td>Missing accent grave. Affects pronunciation of the vowel</td></tr>
+  </table>
+
+  <h4>📚 Real-World French Examples</h4>
+  <button class="expand-btn" style="width: 100%; text-align: left; padding: 12px; margin: 10px 0; background: #f0f7ff; border: 2px solid #1a4d8f; border-radius: 6px; cursor: pointer; font-weight: 600; color: #1a4d8f;" onclick="this.nextElementSibling.classList.toggle('open')">
+    ▼ Tap to see 4 real-world examples (click blue words to hear pronunciation)
+  </button>
+  <div style="display: none; background: #f9f9f9; padding: 16px; border-radius: 6px; margin-bottom: 16px;">
+    <div style="margin-bottom: 14px;">
+      <p><strong>Example 1:</strong> <span class="fr" style="color: #0066cc; cursor: pointer;" onclick="speakFrench('français')">français</span> (French language/person)</p>
+      <p style="margin-top: 4px; font-size: 14px; color: #666;">The cédille makes it "franss-ay" instead of "frank-ay". Critical pronunciation difference!</p>
+    </div>
+    <hr style="margin: 12px 0; border: none; border-top: 1px solid #ddd;">
+    <div style="margin-bottom: 14px;">
+      <p><strong>Example 2:</strong> <span class="fr" style="color: #0066cc; cursor: pointer;" onclick="speakFrench('maïs')">maïs</span> (corn)</p>
+      <p style="margin-top: 4px; font-size: 14px; color: #666;">The tréma keeps "a" and "i" as two separate sounds (mah-EE). Without it, it's "mais" meaning "but".</p>
+    </div>
+    <hr style="margin: 12px 0; border: none; border-top: 1px solid #ddd;">
+    <div style="margin-bottom: 14px;">
+      <p><strong>Example 3:</strong> <span class="fr" style="color: #0066cc; cursor: pointer;" onclick="speakFrench('café')">café</span> (coffee/café)</p>
+      <p style="margin-top: 4px; font-size: 14px; color: #666;">The accent aigu (é) makes it sound like "kah-FAY". A common word you'll use often!</p>
+    </div>
+    <hr style="margin: 12px 0; border: none; border-top: 1px solid #ddd;">
+    <div>
+      <p><strong>Example 4:</strong> <span class="fr" style="color: #0066cc; cursor: pointer;" onclick="speakFrench('François')">François</span> (a common French name)</p>
+      <p style="margin-top: 4px; font-size: 14px; color: #666;">Shows cédille in a real name. You'll hear this name often in French contexts.</p>
+    </div>
+  </div>
 
   <h3>Pronunciation practice: flagged letters</h3>
   <div class="note">
