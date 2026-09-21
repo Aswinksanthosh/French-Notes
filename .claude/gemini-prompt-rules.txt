@@ -1,0 +1,120 @@
+═══════════════════════════════════════════════════════════════════════════════
+GEMINI PROMPT TEMPLATE & RULES FOR ALL FRENCH CLASSES
+═══════════════════════════════════════════════════════════════════════════════
+
+USE THIS TEMPLATE FOR ALL GEMINI PROMPTS (Copy and fill in blanks)
+
+═══════════════════════════════════════════════════════════════════════════════
+TEMPLATE STRUCTURE
+═══════════════════════════════════════════════════════════════════════════════
+
+Teach me [TOPIC] using this content:
+
+[INSERT CLASS NOTES/CONTENT HERE - Key concepts, vocabulary, grammar rules]
+
+STUDY OBJECTIVES:
+[List what student should be able to do after mastering]
+
+EXAM REQUIREMENTS (to pass):
+- SPEAKING: [What they should be able to say/pronounce]
+- WRITING: [What they should be able to write]
+- READING: [What they should be able to understand]
+- LISTENING: [What they should be able to hear and understand]
+
+TEACH ME SLOWLY:
+1. [Topic 1] — I'll check off when [specific achievement]
+2. [Topic 2] — I'll check off when [specific achievement]
+3. [Topic 3] — I'll check off when [specific achievement]
+[Continue for all main topics]
+
+For each topic, when I fully understand it AND can do a short speaking/writing/reading test, I'll check it off in my checklist. Ask me questions to verify understanding before I check each one.
+
+═══════════════════════════════════════════════════════════════════════════════
+MANDATORY ADDITIONS TO EVERY PROMPT
+═══════════════════════════════════════════════════════════════════════════════
+
+AT THE BEGINNING:
+"If you don't have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content."
+
+AT THE END OF "TEACH ME SLOWLY":
+"Also, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you."
+
+═══════════════════════════════════════════════════════════════════════════════
+KEY RULES FOR ALL PROMPTS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. STRUCTURE:
+   - Always include content section first
+   - Always include STUDY OBJECTIVES
+   - Always include EXAM REQUIREMENTS (speaking/writing/reading/listening)
+   - Always include TEACH ME SLOWLY framework
+   - Always end with asking about speaking practice
+
+2. TONE:
+   - Conversational and encouraging
+   - Break concepts into small, digestible pieces
+   - Reference the actual class content provided
+
+3. INTERACTIVITY:
+   - Mention the checklist system (student will check off topics)
+   - Ask Gemini to verify understanding with questions
+   - Encourage speaking practice
+
+4. FORMATTING:
+   - Use consistent sections
+   - Use bullet points for lists
+   - Highlight important grammar rules or vocabulary
+
+5. CONTENT:
+   - Copy relevant content from class notes
+   - Focus on what's most important for exams
+   - Include examples from the class notes
+
+═══════════════════════════════════════════════════════════════════════════════
+EXAMPLE: HOW TO FILL IN THE TEMPLATE
+═══════════════════════════════════════════════════════════════════════════════
+
+Teach me French pronouns using this content:
+
+[CLASS CONTENT GOES HERE]
+
+STUDY OBJECTIVES:
+- Master all 6 subject pronouns
+- Understand tu vs vous distinction
+- Use pronouns correctly in sentences
+
+EXAM REQUIREMENTS:
+- SPEAKING: Say pronouns correctly and use them in sentences
+- WRITING: Write sentences with correct pronoun usage
+- READING: Identify pronouns in French text
+- LISTENING: Hear pronouns and understand who they refer to
+
+TEACH ME SLOWLY:
+1. The 6 pronouns (je, tu, il/elle, nous, vous, ils/elles) — I'll check off when I can name all 6 and use them in sentences
+2. Tu vs Vous distinction — I'll check off when I understand when to use each and can apply the rule
+3. Pronouns in sentences — I'll check off after I can write 5 sentences with correct pronouns
+
+[REST OF TEMPLATE...]
+
+If you don't have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.
+
+Also, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.
+
+═══════════════════════════════════════════════════════════════════════════════
+TIPS FOR BEST RESULTS
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ DO:
+- Include real examples from class notes
+- Make objectives specific and measurable
+- Reference the checklist system
+- Mention speaking practice
+- Ask for note files if not provided
+
+❌ DON'T:
+- Make prompts too long (Gemini works best with clear, focused prompts)
+- Include unnecessary content from class
+- Forget to ask about speaking practice
+- Skip the "Ask me questions to verify" part
+
+═══════════════════════════════════════════════════════════════════════════════
