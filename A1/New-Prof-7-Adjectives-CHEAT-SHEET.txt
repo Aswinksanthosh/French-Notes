@@ -1,0 +1,182 @@
+================================================================================
+                     FRENCH ADJECTIVES - QUICK REFERENCE
+                                Class 7
+================================================================================
+
+✨ GOLDEN RULE: Adjectives MUST agree with nouns in GENDER and NUMBER!
+
+================================================================================
+GENDER AGREEMENT (Masculine ↔ Feminine)
+================================================================================
+
+Add E to make feminine (usually):
+  grand → grande (big)
+  blond → blonde (blond)
+  intelligent → intelligente (intelligent)
+  content → contente (happy/satisfied)
+
+Double final consonant then add E:
+  bon → bonne (good)
+  gros → grosse (fat/big)
+  heureux → heureuse (happy) - changes -eux to -euse
+
+Change -er to -ère:
+  premier → première (first)
+
+Irregular forms (MEMORIZE):
+  beau → belle (beautiful)
+  nouveau → nouvelle (new)
+  vieux → vieille (old)
+  blanc → blanche (white)
+  cher → chère (dear)
+  sec → sèche (dry)
+
+No change (already end in E):
+  facile → facile (easy)
+  possible → possible (possible)
+  rouge → rouge (red)
+
+================================================================================
+NUMBER AGREEMENT (Singular ↔ Plural)
+================================================================================
+
+Add S to make plural (usually):
+  grand → grands
+  belle → belles
+  intelligent → intelligents
+
+Already ends in S or X (no change):
+  gris → gris (gray)
+  heureux → heureux (happy)
+
+Change -al to -aux:
+  normal → normaux
+  principal → principaux
+  spécial → spéciaux
+
+================================================================================
+POSITION: BEFORE or AFTER Noun?
+================================================================================
+
+MOST adjectives come AFTER noun:
+  une maison blanche (a white house)
+  un garçon intelligent (an intelligent boy)
+  une voiture rapide (a fast car)
+  des fleurs rouges (red flowers)
+
+THESE common adjectives come BEFORE noun:
+  petit (small)
+  grand (big)
+  bon (good)
+  mauvais (bad)
+  joli (pretty)
+  nouveau (new)
+  vieux (old)
+  autre (other)
+  premier (first)
+  dernier (last)
+  jeune (young)
+  ancien (former)
+
+Examples:
+  un petit garçon (a small boy)
+  une belle maison (a beautiful house)
+  un mauvais livre (a bad book)
+  une nouvelle voiture (a new car)
+
+================================================================================
+AGREEMENT IN SENTENCES
+================================================================================
+
+Subject + Adjective:
+  Je suis heureux (I am happy - m.)
+  Je suis heureuse (I am happy - f.)
+
+Article + Adjective + Noun:
+  Un grand livre (a big book)
+  Une grande maison (a big house)
+  Les grands livres (the big books)
+  Les grandes maisons (the big houses)
+
+Two adjectives:
+  Une petite maison blanche (a small white house)
+  Des garçons intelligents et heureux (intelligent and happy boys)
+
+================================================================================
+⚠️ COMMON MISTAKES
+================================================================================
+
+Wrong                        | Correct                  | Rule
+---------------------------------------------------------------------------
+un livre rouges             | un livre rouge          | Singular adjective
+des maisons blanc            | des maisons blanches    | Plural, feminine
+un enfant intelligents       | un enfant intelligent   | Singular adjective
+belle le maison              | la belle maison         | Word order (before noun)
+intelligent fille            | une fille intelligente  | After noun + agrees
+beau nouvelle voiture        | une nouvelle belle voiture | beau doesn't work here
+un grand ami heureux       | un grand ami heureux    | Both before or special
+
+================================================================================
+IRREGULAR ADJECTIVES (MEMORIZE THESE!)
+================================================================================
+
+beau/beaux → belle/belles (beautiful)
+  Before noun: Un beau garçon, Une belle fille
+
+bon/bons → bonne/bonnes (good)
+  Before noun: Un bon ami, Une bonne idée
+
+nouveau/nouveaux → nouvelle/nouvelles (new)
+  Before noun: Un nouveau livre, Une nouvelle voiture
+
+vieux/vieux → vieille/vieilles (old)
+  Before noun: Un vieux homme, Une vieille femme
+
+blanc/blancs → blanche/blanches (white)
+  Can be after: Une maison blanche
+
+heureux/heureux → heureuse/heureuses (happy)
+  Can be after: Un jour heureux, Une vie heureuse
+
+premier/premiers → première/premières (first)
+  Usually before: Le premier jour, La première fois
+
+================================================================================
+📝 PRACTICE
+================================================================================
+
+□ Know gender agreement rule (add E usually)
+□ Know number agreement rule (add S usually)
+□ Know which 10 adjectives go BEFORE noun
+□ Know irregular forms (beau/bon/nouveau/vieux)
+□ Practice 25+ adjectives with correct agreement
+□ Identify position correctly (before/after)
+□ Use adjectives in 20 sentences
+□ Form plural of adjectives correctly
+□ Identify agreement errors
+
+================================================================================
+QUICK REFERENCE: Common Adjectives
+================================================================================
+
+Masculine | Feminine   | Plural (any) | Position  | Meaning
+-----------------------------------------------------------
+petit     | petite     | petits(es)   | BEFORE    | small
+grand     | grande     | grands(es)   | BEFORE    | big
+bon       | bonne      | bons(nes)    | BEFORE    | good
+mauvais   | mauvaise   | mauvais(es)  | BEFORE    | bad
+beau      | belle      | beaux/belles | BEFORE    | beautiful
+joli      | jolie      | jolis(es)    | BEFORE    | pretty
+bleu      | bleue      | bleus(es)    | AFTER     | blue
+rouge     | rouge      | rouges       | AFTER     | red
+blanc     | blanche    | blancs(hes)  | AFTER     | white
+noir      | noire      | noirs(es)    | AFTER     | black
+vert      | verte      | verts(es)    | AFTER     | green
+gris      | grise      | gris         | AFTER     | gray
+heureux   | heureuse   | heureux(es)  | AFTER     | happy
+triste    | triste     | tristes      | AFTER     | sad
+
+================================================================================
+Last Updated: September 2026
+Status: CRITICAL for writing - practice daily!
+================================================================================

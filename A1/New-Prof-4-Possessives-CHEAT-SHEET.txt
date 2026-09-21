@@ -1,0 +1,137 @@
+================================================================================
+                   FRENCH POSSESSIVES - QUICK REFERENCE
+                                Class 4
+================================================================================
+
+⚡ CRITICAL RULE: Possessives agree with NOUN GENDER, NOT SPEAKER GENDER!
+
+If noun is masculine → use masculine possessive
+If noun is feminine → use feminine possessive
+(It doesn't matter if YOU are male or female!)
+
+================================================================================
+SINGULAR POSSESSORS (1 person owns something)
+================================================================================
+
+MY (mon/ma/mon):
+  • Masc: mon livre, mon ami → "mon" (my book/friend)
+  • Fem (consonant): ma maison, ma sœur → "ma" (my house/sister)
+  • Fem (vowel): mon école, mon amie → "mon" (my school/friend - for pronunciation!)
+
+YOUR (ton/ta/ton):
+  • Masc: ton livre, ton ami → "ton"
+  • Fem (consonant): ta maison, ta sœur → "ta"
+  • Fem (vowel): ton école, ton amie → "ton"
+
+HIS/HER (son/sa/son):
+  • Masc: son livre, son ami → "son"
+  • Fem (consonant): sa maison, sa sœur → "sa"
+  • Fem (vowel): son école, son amie → "son"
+
+================================================================================
+PLURAL POSSESSORS (2+ people own something)
+================================================================================
+
+OUR (notre/nos):
+  • Sing noun: notre maison, notre ami → "notre" (our house/friend)
+  • Plural noun: nos maisons, nos amis → "nos" (our houses/friends)
+
+YOUR - Formal/Plural (votre/vos):
+  • Sing noun: votre livre, votre maison → "votre"
+  • Plural noun: vos livres, vos maisons → "vos"
+
+THEIR (leur/leurs):
+  • Sing noun: leur ami, leur maison → "leur"
+  • Plural noun: leurs amis, leurs maisons → "leurs"
+
+================================================================================
+THE PRONUNCIATION TRICK: MON/TON/SON before VOWEL WORDS
+================================================================================
+
+French doesn't like vowel sounds colliding!
+
+❌ ma école (sounds terrible - ma + école)
+✅ mon école (sounds smooth - mon + école)
+
+❌ ta amie (awkward)
+✅ ton amie (natural!)
+
+❌ sa armoire (ugly sound)
+✅ son armoire (better!)
+
+This applies to FEMININE nouns starting with vowels/silent h only!
+
+================================================================================
+📊 QUICK REFERENCE TABLE
+================================================================================
+
+Person    | Masc Sing. | Fem Sing. (Consonant) | Fem Sing. (Vowel) | Plural
+--------------------------------------------------------------------------
+My        | mon        | ma                    | mon               | mes
+Your      | ton        | ta                    | ton               | tes
+His/Her   | son        | sa                    | son               | ses
+Our       | notre      | notre                 | notre             | nos
+Your (pl) | votre      | votre                 | votre             | vos
+Their     | leur       | leur                  | leur              | leurs
+
+================================================================================
+⚠️ COMMON MISTAKES
+================================================================================
+
+Wrong           | Correct       | Reason
+---------------------------------------------------------------------------
+ma école        | mon école     | Feminine + vowel: use mon
+sa ami          | son ami       | Feminine + vowel: use son
+ta armoire      | ton armoire   | Feminine + vowel: use ton
+mes maison      | ma maison     | Singular: use ma, not mes
+tes amis        | tes amis      | OK - plural!
+notre livre     | notre livre   | OK - singular!
+nos maisons     | nos maisons   | OK - plural!
+mon crayon      | ma crayon     | "crayon" is masculine: use mon!
+
+================================================================================
+🎯 GENDER AGREEMENT: The Core Issue
+================================================================================
+
+Remember: The possessive DEPENDS ON THE NOUN, not the person speaking!
+
+Example: Even if YOU are a woman, if you own a masculine book:
+  → mon livre (my book) NOT "ma livre"
+
+Even if YOU are a man, if you own a feminine house:
+  → ma maison (my house) NOT "mon maison"
+
+The NOUN'S gender drives the choice!
+
+================================================================================
+📝 PRACTICE
+================================================================================
+
+□ Know mon/ton/son for ALL masculine singular nouns
+□ Know ma/ta/sa for feminine singular (consonant) nouns
+□ Know mon/ton/son for feminine singular (vowel) nouns
+□ Know mes/tes/ses for ALL plural nouns
+□ Know notre/nos, votre/vos, leur/leurs perfectly
+□ Practice with 40+ nouns in possessive forms
+□ Use possessives in 15 sentences
+□ Identify possessive agreement errors (quiz)
+
+================================================================================
+DRILL: Fill in Correct Possessive
+================================================================================
+
+1. ___ maison (my - fem) = ma maison
+2. ___ ami (my - masc) = mon ami
+3. ___ école (my - fem + vowel) = mon école
+4. ___ livres (your - plural) = tes livres
+5. ___ sœur (his - fem) = sa sœur
+6. ___ enfants (our - plural) = nos enfants
+7. ___ voiture (our - fem) = notre voiture
+8. ___ professeur (your formal - masc) = votre professeur
+9. ___ amies (their - plural) = leurs amies
+10. ___ hôtel (her - masc + vowel) = son hôtel
+
+================================================================================
+Last Updated: September 2026
+Status: Master this - it's CRITICAL for writing!
+================================================================================

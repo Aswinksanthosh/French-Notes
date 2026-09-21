@@ -1,0 +1,199 @@
+================================================================================
+                     FRENCH ADVERBS - QUICK REFERENCE
+                                Class 8
+================================================================================
+
+✨ ADVERBS: Words that modify verbs, adjectives, or other adverbs
+   (Usually end in -ment, modify HOW/WHEN/WHERE something happens)
+
+================================================================================
+FORMING ADVERBS: THE -MENT SUFFIX RULE
+================================================================================
+
+BASIC RULE: Take adjective + add -ment
+
+Adjective Ending in Consonant → Add -ment:
+  lent (slow) → lentement (slowly)
+  heureux (happy) → heureusement (happily)
+  facile (easy) → facilement (easily)
+  intelligent (intelligent) → intelligemment (intelligently)
+
+Adjective Ending in E → Drop E, add -ment:
+  seul (sole/alone) → seulement (only)
+  vrai (true) → vraiment (truly/really)
+  absolu (absolute) → absolument (absolutely)
+  certain (certain) → certainement (certainly)
+
+Adjective Ending in -ant → Change to -amment:
+  constant (constant) → constamment (constantly)
+  courant (current) → couramment (fluently)
+  différent (different) → différemment (differently)
+
+Adjective Ending in -ent → Change to -emment:
+  différent (different) → différemment (differently)
+  prudent (prudent) → prudemment (prudently)
+  patient (patient) → patiemment (patiently)
+
+================================================================================
+IRREGULAR ADVERBS (MEMORIZE THESE!)
+================================================================================
+
+bien = well (NOT "bonement"!)
+mal = badly (NOT "mauvaisement"!)
+mieux = better (adverb form of "better")
+pire = worse
+vite = quickly/fast
+tôt = early
+tard = late
+bientôt = soon
+très = very
+assez = enough/quite
+peu = little
+beaucoup = a lot/much
+plus = more
+moins = less
+trop = too much
+aussi = also/as
+ne... que = only (negative construction)
+
+================================================================================
+25+ COMMON ADVERBS - ORGANIZED BY CATEGORY
+================================================================================
+
+MANNER (How?):
+  lentement = slowly
+  rapidement = quickly
+  doucement = gently
+  durement = harshly
+  gentiment = kindly
+  sérieusement = seriously
+  facilement = easily
+  difficilement = with difficulty
+  bien = well
+  mal = badly
+  mieux = better
+  vite = fast
+
+TIME (When?):
+  maintenant = now
+  aujourd'hui = today
+  hier = yesterday
+  demain = tomorrow
+  tôt = early
+  tard = late
+  bientôt = soon
+  toujours = always
+  jamais = never
+  souvent = often
+  quelquefois = sometimes
+  rarement = rarely
+
+PLACE (Where?):
+  ici = here
+  là = there
+  là-bas = over there
+  partout = everywhere
+  quelque part = somewhere
+  nulle part = nowhere
+  dedans = inside
+  dehors = outside
+
+QUANTITY/DEGREE:
+  très = very
+  beaucoup = a lot/much
+  peu = little
+  assez = enough/quite
+  plus = more
+  moins = less
+  trop = too much
+
+================================================================================
+ADVERB POSITION IN SENTENCE
+================================================================================
+
+⚠️ GOLDEN RULE: Adverbs usually come AFTER the verb
+
+With simple tense (present, imparfait):
+  Je parle lentement (I speak slowly)
+  Elle travaille sérieusement (She works seriously)
+  Nous mangeons rapidement (We eat quickly)
+
+With passé composé (2-word past):
+  Adverbs go AFTER the past participle usually:
+  Je suis allé rapidement (I went quickly)
+  Elle a parlé sérieusement (She spoke seriously)
+  Ils ont travaillé diligent... (They worked diligently)
+
+Common adverbs (bien, mal, vite, tôt, tard) go BEFORE past participle:
+  Je n'ai pas bien compris (I didn't understand well)
+  Elle a mal dormi (She slept badly)
+
+================================================================================
+⚠️ COMMON MISTAKES
+================================================================================
+
+Wrong                      | Correct                | Rule
+---------------------------------------------------------------------------
+rapidement → rapide       | rapidement             | Adverb modifies verb
+Il parle très rapidement  | Il parle très rapidement| Word order OK
+sérieusement aller        | aller sérieusement     | Adverb after verb
+bien → goodement          | bien                   | bien is irregular
+mieux → better-ment       | mieux                  | mieux is irregular
+lent                      | lentement              | Need -ment suffix
+heureusly                 | heureusement           | -ment spelling
+j'ai rapide parlé         | j'ai parlé rapidement  | After past participle
+
+================================================================================
+📝 PRACTICE
+================================================================================
+
+□ Know -ment suffix rule (base formation)
+□ Know -ant → -amment rule
+□ Know -ent → -emment rule
+□ Know 15+ irregular adverbs (bien/mal/mieux/vite/tôt/tard/bientôt)
+□ Know adverb position (after verb, before in passé composé sometimes)
+□ Practice forming 30+ adverbs from adjectives
+□ Use adverbs correctly in 20 sentences
+□ Identify adverbs by hearing
+□ Distinguish adverbs from adjectives (both modify but different targets)
+
+================================================================================
+QUICK REFERENCE: Common Adverbs by Use
+================================================================================
+
+FREQUENCY:
+  toujours = always
+  souvent = often
+  quelquefois = sometimes
+  rarement = rarely
+  jamais = never
+
+INTENSITY:
+  très = very
+  beaucoup = a lot
+  peu = little
+  trop = too much
+  assez = enough
+  plus = more
+  moins = less
+
+MANNER:
+  bien = well
+  mal = badly
+  facilement = easily
+  difficilement = with difficulty
+  vite = quickly
+  lentement = slowly
+
+TIME:
+  maintenant = now
+  hier = yesterday
+  demain = tomorrow
+  bientôt = soon
+  tôt = early
+  tard = late
+
+================================================================================
+Last Updated: September 2026
+Status: Important for expressing HOW actions happen - practice daily!
+================================================================================

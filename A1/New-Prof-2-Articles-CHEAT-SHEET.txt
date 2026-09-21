@@ -1,0 +1,140 @@
+================================================================================
+                          FRENCH ARTICLES - QUICK REFERENCE
+                                Class 2
+================================================================================
+
+⚡ THE RULE: Always learn nouns WITH their articles!
+   "la maison" not just "maison"
+   "le livre" not just "livre"
+
+================================================================================
+📍 DEFINITE ARTICLES (THE = "specific/known things")
+================================================================================
+
+LE = masculine singular
+  • le garçon (the boy)
+  • le livre (the book)
+  • le café (the café)
+
+LA = feminine singular
+  • la fille (the girl)
+  • la maison (the house)
+  • la solution (the solution)
+
+LES = plural (ANY gender)
+  • les enfants (the children)
+  • les livres (the books)
+  • les maisons (the houses)
+
+L' = before vowels/silent h (le → l', la → l')
+  • l'école (the school)
+  • l'ami (the friend)
+  • l'appareil (the device)
+  • l'hôpital (the hospital)
+
+================================================================================
+📍 INDEFINITE ARTICLES (A/SOME = "unspecific/unknown things")
+================================================================================
+
+UN = masculine singular
+  • un garçon (a boy)
+  • un livre (a book)
+  • un ami (a friend)
+
+UNE = feminine singular
+  • une fille (a girl)
+  • une maison (a house)
+  • une école (a school)
+
+DES = plural (ANY gender, means "some")
+  • des enfants (children/some children)
+  • des livres (books/some books)
+  • des maisons (houses/some houses)
+
+================================================================================
+🎯 QUICK COMPARISON TABLE
+================================================================================
+
+Type          | Masculine Sg. | Feminine Sg. | Plural     | Before Vowels
+---------------------------------------------------------------------------
+DEFINITE      | LE            | LA           | LES        | L'
+INDEFINITE    | UN            | UNE          | DES        | (use UN/UNE)
+ENGLISH       | THE           | THE          | THE        | THE
+MEANING       | Specific      | Specific     | Specific   | Specific
+
+================================================================================
+⚠️ COMMON MISTAKES
+================================================================================
+
+❌ WRONG → ✅ CORRECT (REASON)
+1. "le école" → "l'école" (vowel rule)
+2. "un maison" → "une maison" (feminine noun)
+3. "la ami" → "l'ami" (vowel rule)
+4. "les enfant" → "les enfants" (plural needs -s)
+5. "de les" → "des" (contraction rule)
+6. "à le" → "au" (contraction rule)
+
+================================================================================
+💡 USAGE TIPS
+================================================================================
+
+✓ USE DEFINITE (le/la/les) WHEN:
+  • Talking about something specific you know
+  • Referring to something mentioned before
+  • Making general statements about things
+  Example: "Je vois LE garçon" (I see the specific boy)
+
+✓ USE INDEFINITE (un/une/des) WHEN:
+  • Talking about something for the first time
+  • It's not specific or you don't know which one
+  • Making general statements
+  Example: "Je vois UN garçon" (I see a/some boy)
+
+================================================================================
+📝 PRACTICE CHECKLIST
+================================================================================
+
+□ Identify 20+ nouns with correct definite article
+□ Identify 20+ nouns with correct indefinite article
+□ Know vowel rule (l' before vowels/silent h) perfectly
+□ Practice contractions (au, aux, du, des)
+□ Use articles correctly in 10 sentences
+□ Listen and identify articles by ear
+□ Know gender of 30+ common nouns with articles
+□ Pass quiz on article selection (90%+ accuracy)
+
+================================================================================
+🎧 PRONUNCIATION REMINDERS
+================================================================================
+
+LE = "luh" (neutral vowel)
+LA = "lah" (short a sound)
+LES = "lay" (like "lay down")
+L' = "l" (just the L sound)
+
+UN = "uhn" (nasal, one sound)
+UNE = "oon" (nasal, one sound)
+DES = "day" (like "day")
+
+================================================================================
+🔗 ARTICLE CONTRACTION RULES
+================================================================================
+
+These are NOT new articles - just how articles combine with prepositions:
+
+à + le = AU (to/at the)
+à + les = AUX (to/at the - plural)
+
+de + le = DU (from/of the)
+de + les = DES (from/of the - plural)
+
+Examples:
+- Je vais AU parc (I go to the park)
+- Il parle AUX enfants (He talks to the children)
+- Je reviens DU café (I come from the café)
+- C'est à nous DES livres (These books belong to us)
+
+================================================================================
+Last Updated: September 2026
+Status: Reference material - review daily!
+================================================================================

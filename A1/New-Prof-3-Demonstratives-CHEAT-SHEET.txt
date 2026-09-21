@@ -1,0 +1,132 @@
+================================================================================
+                    FRENCH DEMONSTRATIVES - QUICK REFERENCE
+                                Class 3
+================================================================================
+
+🎯 KEY RULE: French doesn't separate "this" vs "that" — context tells the difference!
+
+================================================================================
+4 MAIN FORMS
+================================================================================
+
+CE = masculine singular (before consonant)
+  • ce garçon (this/that boy)
+  • ce livre (this/that book)
+  • ce canapé (this/that sofa)
+
+CET = masculine singular (before vowel/silent h)
+  • cet arbre (this/that tree)
+  • cet ami (this/that friend)
+  • cet hôpital (this/that hospital)
+  • cet appareil (this/that device)
+
+CETTE = feminine singular (ANY consonant/vowel)
+  • cette fille (this/that girl)
+  • cette maison (this/that house)
+  • cette école (this/that school)
+
+CES = plural (ANY gender)
+  • ces enfants (these/those children)
+  • ces livres (these/those books)
+  • ces maisons (these/those houses)
+
+================================================================================
+⚠️ THE CRITICAL RULE: CE vs CET
+================================================================================
+
+CE is ONLY for masculine nouns beginning with CONSONANT SOUNDS.
+CET is REQUIRED for masculine nouns beginning with VOWEL SOUNDS or SILENT H.
+
+❌ ce ami → ✅ cet ami (vowel!)
+❌ ce arbre → ✅ cet arbre (vowel!)
+❌ ce hôtel → ✅ cet hôtel (silent h!)
+
+✅ ce garçon (consonant - OK!)
+✅ ce livre (consonant - OK!)
+
+WHY? Pronunciation! "ce ami" sounds terrible; "cet ami" flows better.
+
+================================================================================
+REFERENCE TABLE
+================================================================================
+
+Gender    | Singular Before Consonant | Singular Before Vowel | Plural
+------------------------------------------------------------------------
+Masculine | CE (ce garçon)            | CET (cet ami)         | CES
+Feminine  | CETTE (cette fille)       | CETTE (cette école)   | CES
+Meaning   | this/that                 | this/that             | these/those
+
+================================================================================
+🎯 PRACTICE: CHOOSE THE CORRECT FORM
+================================================================================
+
+1. _____ garçon = ce garçon
+2. _____ ami = cet ami
+3. _____ fille = cette fille
+4. _____ hôtel = cet hôtel
+5. _____ maison = cette maison
+6. _____ enfants = ces enfants
+7. _____ école = cette école
+8. _____ arbre = cet arbre
+9. _____ livre = ce livre
+10. _____ appareil = cet appareil
+
+================================================================================
+✨ ADVANCED: SHOWING DISTANCE (Optional)
+================================================================================
+
+Use suffixes to clarify NEAR vs FAR:
+
+CE...CI = this one (here, close to me)
+  • ce garçon-ci (THIS boy, here)
+  • cette fille-ci (THIS girl, here)
+
+CE...LÀ = that one (there, far from me)
+  • ce garçon-là (THAT boy, there)
+  • cette fille-là (THAT girl, there)
+
+However, in basic French, just use CE/CET/CETTE/CES without -ci/-là.
+
+================================================================================
+❌ COMMON MISTAKES
+================================================================================
+
+Wrong                   | Correct           | Reason
+---------------------------------------------------------------------------
+ce ami                  | cet ami           | Vowel begins word
+cet fille               | cette fille       | Feminine: use cette
+ce école                | cette école       | Feminine: use cette
+ces garçon              | ce garçon         | Singular: use ce/cet
+cette arbre             | cet arbre         | Masculine + vowel: cet
+ces enfant              | ces enfants       | Plural needs -s
+
+================================================================================
+📝 DAILY PRACTICE
+================================================================================
+
+□ Identify 30+ nouns with correct demonstrative
+□ Know CE vs CET rule perfectly
+□ Know CETTE works for all feminine
+□ Know CES works for all plural
+□ Practice with compound sentences
+□ Identify demonstratives by hearing
+□ Write 10 sentences using demonstratives
+□ Pass quiz on demonstrative selection
+
+================================================================================
+QUICK CONJUGATION TRICK
+================================================================================
+
+Make a chart and practice:
+
+I see...
+    this/that boy → je vois CE garçon
+    this/that girl → je vois CETTE fille
+    this/that friend (m) → je vois CET ami
+    this/that friend (f) → je vois CETTE amie
+    these/those children → je vois CES enfants
+
+================================================================================
+Last Updated: September 2026
+Status: Essential! Review daily!
+================================================================================
