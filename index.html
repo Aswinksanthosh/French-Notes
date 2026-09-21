@@ -3879,6 +3879,9 @@ function showClass(classNum) {
     selectedClass.classList.add('active');
     currentClass = classNum;
 
+    // Save to localStorage
+    localStorage.setItem('lastViewedClass', classNum);
+
     // Update indicator
     document.getElementById('chapterIndicator').textContent = `Class ${classNum} of ${totalClasses}`;
 
@@ -3983,6 +3986,20 @@ document.querySelectorAll('.checklist').forEach(list => {
   updateProgress(list.dataset.lesson);
 });
 
+// RESTORE LAST VIEWED CHAPTER ON PAGE LOAD
+function restoreLastViewedChapter() {
+  const lastViewed = localStorage.getItem('lastViewedClass');
+  if (lastViewed) {
+    const classNum = parseInt(lastViewed, 10);
+    if (classNum >= 1 && classNum <= totalClasses) {
+      showClass(classNum);
+      return;
+    }
+  }
+  // Fallback to chapter 1 if no saved chapter or invalid
+  showClass(1);
+}
+
 // TEXT-TO-SPEECH FOR FRENCH WORDS
 function speakFrench(text, el) {
   if (!('speechSynthesis' in window) || !text) return;
@@ -4053,7 +4070,7 @@ function toggleNav() {
 
 // INITIALIZE ON PAGE LOAD
 window.addEventListener('DOMContentLoaded', function() {
-  showClass(1);
+  restoreLastViewedChapter();
 
   // Setup checklist progress tracking with persistent storage
   document.querySelectorAll('.checklist').forEach(list => {
