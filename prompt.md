@@ -37,33 +37,42 @@ When I say "feature update", check these 5 core features are present:
 
 ---
 
-## ✨ LATEST UPDATE: Feature Audit - Classes 1-5 (A1 Level)
+## ✨ LATEST UPDATE: Feature Fixes - Classes 1-2 Now Complete
 
-**Date:** September 21, 2026 (~17:00 UTC)  
-**Change:** Completed feature audit for first 5 A1 classes
+**Date:** September 21, 2026 (~18:00 UTC)  
+**Change:** Fixed missing features in Classes 1-2
 
-### Feature Audit Results
+### Feature Fix Results
 
-| Class | Name | Gemini | Audio | Mistakes | Examples | Checklist | Total |
-|-------|------|--------|-------|----------|----------|-----------|-------|
-| 1 | Alphabet | ✅ | ❌ | ❌ | ❌ | ✅ | 2/5 |
-| 2 | Greetings | ✅ | ✅ | ❌ | ❌ | ❌ | 2/5 |
-| 3 | Calendar | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 |
-| 4 | Classroom | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 |
-| 5 | Articles | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 |
+| Class | Name | Gemini | Audio | Mistakes | Examples | Checklist | Total | Status |
+|-------|------|--------|-------|----------|----------|-----------|-------|--------|
+| 1 | Alphabet | ✅ | ✅ ADDED | ✅ ADDED | ✅ ADDED | ✅ | 5/5 | ✅ COMPLETE |
+| 2 | Greetings | ✅ | ✅ | ✅ ADDED | ✅ ADDED | ✅ | 5/5 | ✅ COMPLETE |
+| 3 | Calendar | ✅ | 🔍 | 🔍 | 🔍 | 🔍 | ? | 🔄 PENDING |
+| 4 | Classroom | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | ? | 🔄 PENDING |
+| 5 | Articles | 🔍 | 🔍 | 🔍 | 🔍 | 🔍 | ? | 🔄 PENDING |
 
-**Key Finding:** A1 Classes 1-2 are missing critical features:
-- ❌ **Common mistakes tables** — MISSING from all A1 classes
-- ❌ **Clickable pronunciation examples** — MISSING from all A1 classes
-- ⚠️ **Checklists** — Inconsistent (Class 1 has it, Class 2 doesn't)
-- ⚠️ **Audio explanations** — Inconsistent (Class 2 has it, Class 1 doesn't)
+**Changes Made:**
 
-**A2 Reference:** Classes 21-22 have ALL 5 features ✅ (template for upgrades)
+**Class 1 (Alphabet):**
+- ✅ Added 🎧 Expandable audio explanation for accent marks
+- ✅ Added ❌ Common mistakes table (4 rows: français, maïs, café, mère)
+- ✅ Added 📚 Real-world pronunciation examples with speakFrench():
+  - français, maïs, café, François
+
+**Class 2 (Greetings):**
+- ✅ Added ❌ Common mistakes table (5 rows: tu/vous confusion, contractions, conjugations)
+- ✅ Added 📚 Real-world pronunciation examples with speakFrench():
+  - Bonjour, comment allez-vous?
+  - Ça va bien, et toi?
+  - J'ai 20 ans
+  - Au revoir, à demain!
+  - Vous êtes professeur?
 
 ### Action Items
-- [ ] Add missing features 2 & 3 to Classes 1-5
-- [ ] Standardize checklist format across all classes
-- [ ] Verify Classes 3-5 feature completeness
+- [ ] Verify Classes 3-5 have all 5 features
+- [ ] Add missing features to Classes 3-5 if needed
+- [ ] Commit fixes for remaining classes
 
 ---
 
