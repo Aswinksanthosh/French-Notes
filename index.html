@@ -60,14 +60,37 @@
   nav {
     background: white;
     border: 1px solid var(--border);
-    padding: 16px 20px;
+    padding: 0;
     border-radius: 10px;
     margin-bottom: 34px;
-    position: sticky;
-    top: 12px;
-    z-index: 10;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
+  nav.collapsed {
+    max-height: 50px;
+  }
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--lightblue);
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    font-weight: 600;
+    color: var(--blue);
+    font-size: 14px;
+    border-radius: 10px 10px 0 0;
+  }
+  nav.collapsed .nav-toggle {
+    border-radius: 10px;
+  }
+  .nav-toggle:hover { background: var(--blue); color: white; }
+  .nav-toggle span { font-size: 18px; }
+  .nav-scroll { padding: 16px 20px 20px; }
   nav strong { display: block; margin-bottom: 8px; color: var(--blue); }
   nav a {
     display: inline-block;
@@ -128,14 +151,15 @@
     .lesson-header h2 { font-size: 18px; }
     .lesson-header .date { display: block; font-size: 12px; margin-top: 2px; }
     h3 { font-size: 15px; margin-top: 24px; }
-    nav { padding: 10px 12px; margin-bottom: 20px; top: 6px; }
+    nav { margin-bottom: 20px; }
+    .nav-toggle { padding: 10px 12px; font-size: 13px; }
     nav strong { font-size: 13px; }
     nav .nav-scroll {
       display: flex;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       gap: 6px;
-      padding-bottom: 2px;
+      padding: 12px;
     }
     nav a { flex: 0 0 auto; margin: 0; font-size: 13px; padding: 6px 10px; }
     table { font-size: 13px; min-width: 420px; }
@@ -288,8 +312,11 @@
   <button class="chapter-btn" id="nextBtn" onclick="nextChapter()">Next →</button>
 </div>
 
-<nav id="toc">
-  <strong>Jump to a class:</strong>
+<nav id="toc" class="collapsed">
+  <button class="nav-toggle" onclick="toggleNav()">
+    <span>📚 Jump to a class</span>
+    <span id="toggleIcon">▼</span>
+  </button>
   <div class="nav-scroll">
   <strong style="color: var(--blue); margin-top: 8px; display: block;">A1 Level:</strong>
   <a href="#" onclick="goToClass(1)">Alphabet</a>
@@ -4010,6 +4037,14 @@ function copyPromptText(button, promptText) {
   }).catch(() => {
     alert('Copy failed. Try selecting the text and copying manually.');
   });
+}
+
+// NAV TOGGLE FUNCTION
+function toggleNav() {
+  const nav = document.getElementById('toc');
+  const icon = document.getElementById('toggleIcon');
+  nav.classList.toggle('collapsed');
+  icon.textContent = nav.classList.contains('collapsed') ? '▼' : '▲';
 }
 
 // INITIALIZE ON PAGE LOAD
