@@ -10,6 +10,10 @@ TEMPLATE STRUCTURE
 
 Teach me [TOPIC] using this content:
 
+[COPY THE FULL HTML OF YOUR LESSON HERE - See "HOW TO COPY CHAPTER HTML" below]
+
+OR (if HTML not available):
+
 [INSERT CLASS NOTES/CONTENT HERE - Key concepts, vocabulary, grammar rules]
 
 STUDY OBJECTIVES:
@@ -28,6 +32,62 @@ TEACH ME SLOWLY:
 [Continue for all main topics]
 
 For each topic, when I fully understand it AND can do a short speaking/writing/reading test, I'll check it off in my checklist. Ask me questions to verify understanding before I check each one.
+
+═══════════════════════════════════════════════════════════════════════════════
+HOW TO COPY FULL CHAPTER HTML (RECOMMENDED FOR BEST RESULTS)
+═══════════════════════════════════════════════════════════════════════════════
+
+WHY COPY HTML?
+When you copy the full HTML of your lesson (exactly as it appears on screen), Gemini can see:
+✓ All content and structure exactly as you see it
+✓ Tables, lists, formatted sections, examples
+✓ The visual organization and emphasis
+✓ Expandable sections and all details
+✓ Common mistakes and real-world examples
+
+HOW TO COPY THE CHAPTER:
+1. Open your French Notes website (index.html)
+2. Find the chapter you want to study
+3. Right-click on the chapter section → "Inspect" (or press F12)
+4. In the Inspector, find the <div> that contains your chapter
+   - Look for: <div class="lesson-card" id="classXX">
+   - This div contains the ENTIRE chapter
+5. Right-click on this <div> → "Copy" → "Copy element"
+6. Paste into your Gemini prompt where it says "[COPY THE FULL HTML...]"
+
+EXAMPLE:
+The HTML will look something like:
+<div class="lesson-card" id="class21">
+  <div class="lesson-header">
+    <h2>A2: CLASS 1 — French Adjectives</h2>
+  </div>
+
+  <button class="copy-btn">💡 Copy Gemini Prompt</button>
+
+  <p class="topic">Topic: Adjective agreement, placement, formation patterns...</p>
+
+  <h3>📚 Learning Objectives</h3>
+  <div class="note">
+  Understand and apply adjective agreement...
+  </div>
+
+  <h3>Grammar: Adjective Agreement</h3>
+  <div class="expandable-section">
+    <button class="expand-btn">🎧 Adjective Agreement Explained</button>
+    ...
+  </div>
+
+  [MORE SECTIONS...]
+</div>
+
+Copy the ENTIRE <div> from opening tag to closing </div> and paste it into Gemini.
+
+FORMATTING NOTE:
+The HTML may be long, but Gemini can handle it! The complete HTML ensures Gemini sees:
+- All tables with all rows
+- All expandable sections (audio explanations, common mistakes, examples)
+- All formatting and emphasis
+- Everything exactly as you see it on screen
 
 ═══════════════════════════════════════════════════════════════════════════════
 MANDATORY ADDITIONS TO EVERY PROMPT
@@ -71,12 +131,88 @@ KEY RULES FOR ALL PROMPTS
    - Include examples from the class notes
 
 ═══════════════════════════════════════════════════════════════════════════════
-EXAMPLE: HOW TO FILL IN THE TEMPLATE
+EXAMPLE 1: FULL HTML APPROACH (RECOMMENDED)
+═══════════════════════════════════════════════════════════════════════════════
+
+If you don't have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.
+
+Teach me French adjectives using this exact content that I copied from my lesson page:
+
+<div class="lesson-card" id="class21">
+  <div class="lesson-header">
+    <h2>A2: CLASS 1 — French Adjectives — Tuesday, September 21, 2026</h2>
+  </div>
+
+  <p class="topic">Topic: Adjective agreement, placement, formation patterns, epithète vs attribut, and adjective practice.</p>
+
+  <h3>📚 Learning Objectives</h3>
+  <div class="note">
+  Understand and apply adjective agreement (gender & number), learn placement rules, master formation patterns (feminine -e, -f/-ve, -x/-se, -ien/-ienne, -on/-onne), distinguish between epithète and attribut adjectives, and practice using adjectives in context.
+  </div>
+
+  <h3>Grammar: Adjective Agreement</h3>
+  <div class="note">Adjectives MUST AGREE with the noun in gender and number.</div>
+
+  <table>
+    <tr><th>Pattern</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+    <tr><td>Basic + -e</td><td>grand</td><td>grande</td><td>un grand garçon, une grande fille</td></tr>
+    <tr><td>Already -e</td><td>calme</td><td>calme</td><td>un enfant calme</td></tr>
+    [MORE TABLE ROWS...]
+  </table>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    [COMMON MISTAKES...]
+  </table>
+
+  <h4>📚 Real-World French Examples</h4>
+  [EXAMPLES WITH CLICKABLE PRONUNCIATION...]
+
+  [REST OF CHAPTER CONTENT...]
+</div>
+
+STUDY OBJECTIVES (from my lesson):
+- Master adjective agreement patterns (gender & number)
+- Understand adjective placement rules (before/after noun)
+- Learn meaning changes based on placement
+- Distinguish epithète vs attribut
+- Use adjectives correctly in sentences
+
+EXAM REQUIREMENTS (to pass):
+- SPEAKING: Describe objects/people using correct adjectives with proper agreement
+- WRITING: Write sentences with adjectives in correct gender/number/position
+- READING: Identify adjective-noun agreement in French text
+- LISTENING: Hear adjectives and identify what noun they modify
+
+TEACH ME SLOWLY:
+1. Adjective agreement patterns (gender/number) — I'll check off when I can apply all 7 patterns
+2. Adjective placement rules (before/after noun) — I'll check off when I understand BAGS rule
+3. Meaning shifts (ancien, grand, pauvre, etc.) — I'll check off when I can explain 4+ examples
+4. Special forms before vowels (bel, nouvel, vieil) — I'll check off when I can use them correctly
+5. Epithète vs attribut distinction — I'll check off when I can identify both types
+6. Can use adjectives correctly in complete sentences — Speaking & writing test passed
+
+For each topic, when I fully understand it AND can do a short speaking/writing/reading test, I'll check it off in my checklist. Ask me questions to verify understanding before I check each one.
+
+Also, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.
+
+═══════════════════════════════════════════════════════════════════════════════
+EXAMPLE 2: TEXT-ONLY APPROACH (When you can't copy HTML)
 ═══════════════════════════════════════════════════════════════════════════════
 
 Teach me French pronouns using this content:
 
-[CLASS CONTENT GOES HERE]
+PRONOUNS - KEY CONCEPTS:
+- 6 subject pronouns: je (I), tu (you singular), il (he), elle (she), nous (we), vous (you plural/formal), ils (they masculine), elles (they feminine)
+- Tu vs Vous: tu is informal/familiar, vous is formal/polite or plural
+- Subject pronouns are used as the subject of the verb
+- Example: Je parle français (I speak French)
+- Example: Vous êtes intelligent (You are intelligent - formal)
+
+IMPORTANT DISTINCTIONS:
+- Tu = singular informal (friend, family, children)
+- Vous = singular formal (boss, stranger, elderly) or plural (any group of 2+)
 
 STUDY OBJECTIVES:
 - Master all 6 subject pronouns
@@ -105,16 +241,37 @@ TIPS FOR BEST RESULTS
 ═══════════════════════════════════════════════════════════════════════════════
 
 ✅ DO:
-- Include real examples from class notes
+- Copy the FULL HTML of the chapter (recommended for best results)
+- Include all tables, examples, and expandable sections
 - Make objectives specific and measurable
 - Reference the checklist system
 - Mention speaking practice
-- Ask for note files if not provided
+- Ask Gemini to reference specific sections from the HTML you pasted
+- Use this approach on your LAPTOP (easier to copy HTML than on phone)
 
 ❌ DON'T:
-- Make prompts too long (Gemini works best with clear, focused prompts)
-- Include unnecessary content from class
+- Skip the file upload option if you have your own notes
+- Copy only partial content or just text summaries
 - Forget to ask about speaking practice
 - Skip the "Ask me questions to verify" part
+- Worry about the prompt being "too long" — Gemini handles full chapter HTML well
+
+═══════════════════════════════════════════════════════════════════════════════
+WORKFLOW FOR PHONE + LAPTOP
+═══════════════════════════════════════════════════════════════════════════════
+
+LAPTOP WORKFLOW (Best for copying HTML):
+1. Open index.html in browser on your laptop
+2. Find the chapter you want to study
+3. Copy the full <div class="lesson-card"> HTML (see instructions above)
+4. Paste into Gemini on your phone or laptop
+5. Start learning with Gemini on your phone
+
+PHONE WORKFLOW (If using only phone):
+- Use the "Copy Gemini Prompt" button in each chapter (simplified prompt)
+- OR upload a screenshot of the chapter to Gemini
+- OR describe what you see in the chapter to Gemini
+
+TIP: Most effective = laptop to copy HTML → phone to learn with Gemini
 
 ═══════════════════════════════════════════════════════════════════════════════
