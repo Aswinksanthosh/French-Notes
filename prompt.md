@@ -30,14 +30,18 @@ When I say "feature update", check these 5 core features are present:
    - Checklist items track completion with checkboxes
    - Reference: A2 Class 1, lines 3873-3880
 
-5. **💡 Gemini prompt templates for AI-assisted studying**
-   - Each lesson needs: `<button class="copy-btn" onclick="copyPromptText(this, '...')">💡 Copy Gemini Prompt</button>`
-   - HTML structure: Button placed immediately after `<div class="lesson-header">` closing tag
-   - Function signature: `copyPromptText(buttonElement, promptText)` — copies prompt to clipboard and shows "Copied!" feedback
-   - Prompt format: Plain text with "TEACH ME SLOWLY:" section listing 5-7 numbered subtopics for structured learning
-   - Example: `<button class="copy-btn" onclick="copyPromptText(this, 'Teach me [topic]...\n\nTEACH ME SLOWLY:\n1. [Subtopic] - I\'ll check off when...\n2. [Subtopic]...')">💡 Copy Gemini Prompt</button>`
+5. **💡 Gemini prompt templates + 📋 Copy class content**
+   - Each lesson has TWO copy buttons:
+     - **💡 Copy Gemini Prompt:** Pre-written structured prompt for AI learning
+     - **📋 Copy Class Content:** Copies all lesson HTML for Gemini to see exactly what student is viewing
+   - Buttons placed immediately after `<div class="lesson-header">` closing tag
+   - Function signatures:
+     - `copyPromptText(buttonElement, promptText)` — copies text prompt to clipboard
+     - `copyClassHTML(buttonElement)` — copies entire lesson HTML (minus buttons) to clipboard
+   - Prompt format: "Teach me [topic]..." with "TEACH ME SLOWLY:" breakdown
+   - HTML format: Full lesson content stripped of onclick handlers for clean copy
    - CSS styling: `.copy-btn` with hover effects, `.copied` state shows checkmark
-   - Reference: All A1 Classes (lines 361-4050), A2 Classes (lines 4240-4511)
+   - Reference: All 23 classes have both buttons (line 361+ for each class)
 
 ---
 
