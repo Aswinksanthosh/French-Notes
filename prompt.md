@@ -6,6 +6,37 @@
 
 ---
 
+## 🔍 FEATURE CHECKLIST (for every update)
+
+When I say "feature update", check these 5 core features are present:
+
+1. **🎧 Expandable audio explanations**
+   - Each grammar section should have: `<div class="expandable-section">` + audio button with `🎧` icon
+   - Clicking should play audio explanation via `toggleExpandable()` function
+   - Reference: A2 Class 1, lines 3631-3642
+
+2. **❌ Common mistakes tables**
+   - Each section needs: `<h4>❌ Common Mistakes to Avoid</h4>` + table with wrong/correct examples
+   - Table format: `<th>❌ WRONG | ✓ CORRECT | Explanation</th>`
+   - Reference: A2 Class 1, lines 3658-3667
+
+3. **📚 Real-world examples with clickable pronunciation**
+   - Examples section: `<h4>📚 Real-World French Examples</h4>` + clickable blue French text
+   - Blue text must have: `class="fr"` + `onclick="speakFrench('...')"` for audio
+   - Reference: A2 Class 1, lines 3669-3688
+
+4. **✅ Interactive checklists with progress tracking**
+   - Lesson must have: `<div class="progress-label">` + `<div class="checklist" data-lesson="classX">`
+   - Checklist items track completion with checkboxes
+   - Reference: A2 Class 1, lines 3873-3880
+
+5. **💡 Gemini prompt templates for AI-assisted studying**
+   - Each lesson needs: `<button class="copy-btn" onclick="copyPromptText(...)">💡 Copy Gemini Prompt</button>`
+   - Prompt contains structured learning objectives + "TEACH ME SLOWLY" breakdown
+   - Reference: A2 Class 1, lines 3621
+
+---
+
 ## ✨ LATEST UPDATE: Navigation Menu Synchronized
 
 **Date:** September 21, 2026 (~16:00 UTC)  
