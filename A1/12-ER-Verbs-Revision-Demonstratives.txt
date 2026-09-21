@@ -1,0 +1,100 @@
+ Sunday, July 19, 2026
+
+*Full revision of first group (ER) verbs, demonstrative adjectives (ce/cet/cette/ces), and c'est vs il/elle est.*
+
+### Vocabulary: First Group (ER) Verbs — full list
+
+| French | English |
+|---|---|
+| parler | to speak |
+| manger | to eat |
+| aimer | to like / to love |
+| regarder | to watch / to look at |
+| écouter | to listen |
+| travailler | to work |
+| habiter | to live (reside) — the "h" is silent |
+| marcher | to walk |
+| chanter | to sing |
+| danser | to dance |
+| jouer | to play |
+| donner | to give |
+| demander | to ask |
+| chercher | to look for |
+| trouver | to find |
+| penser | to think |
+| arriver | to arrive |
+| entrer | to enter |
+| rester | to stay |
+| passer | to pass / to spend (time) |
+| préparer | to prepare |
+| acheter | to buy |
+| laver | to wash |
+| nettoyer | to clean |
+| cuisiner | to cook |
+| étudier | to study |
+| commencer | to begin |
+| terminer | to finish |
+| utiliser | to use |
+| appeler | to call |
+| montrer | to show |
+| aider | to help |
+| oublier | to forget |
+| rencontrer | to meet |
+| visiter | to visit |
+| voyager | to travel |
+| gagner | to win / to earn |
+| porter | to wear / to carry |
+| fermer | to close |
+| tourner | to turn |
+| continuer | to continue |
+
+- This is the complete list drilled across Classes 12–17 — treat this table as the master reference and keep testing yourself on it.
+
+### Grammar: Demonstrative Adjectives (les adjectifs démonstratifs)
+
+- Used to say "this/that/these/those." Like all French adjectives, they agree in gender and number with the noun.
+
+| Form | Used for | Example |
+|---|---|---|
+| ce | masculine singular | ce stylo — this pen |
+| cet | masculine singular, noun starts with a vowel or (silent) "h" | cet ami — this friend; cet étudiant — this student; cet homme — this man; cet hôpital — this hospital |
+| cette | feminine singular | cette voiture — this car; cette femme — this woman; cette fille — this girl |
+| ces | plural (masc. or fem.) | ces stylos — these pens; ces valises — these suitcases |
+
+- "Cet" exists purely for pronunciation — it links smoothly with a following vowel/h sound. Context tells you gender when the pronunciation is identical (e.g. "cet ami" for a male friend vs "cette amie" for a female friend sound similar spoken).
+
+### Grammar: c'est vs il/elle est
+
+| Form | Meaning | Used for |
+|---|---|---|
+| c'est | it is / this is | followed by an article + noun (un/une/le/la + noun) |
+| il est / elle est | he is / she is | followed directly by an adjective or nationality |
+
+- C'est un artiste. — This is an artist.
+- C'est une visite d'1 heure. — This is a one-hour visit.
+- C'est le quartier historique. — This is the historical neighborhood.
+- C'est la place du Capitole. — This is the Capitol place.
+- Il est américain. — He is American.
+- Elle est calme. — She is calm.
+
+### ⚠️ Reminder (flagged for follow-up)
+
+- Plural exception related to "pour" — instructor noted this needs more research/a dedicated explanation in a future class. Also: exam format (DELF A1) discussion planned for a future session with full attendance.
+
+### Homework / Action Items
+
+- Master the full ER verb list (this week's focus) — be ready to recall any verb on request
+- Revise demonstrative adjectives (ce/cet/cette/ces)
+- Revise possessive adjectives (mon/ton/son...)
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Why the 39-verb ER list needs to be memorized, not just recognized — explained via an English parallel:** a student asked directly whether they really need to memorize the whole list. The instructor compared it to English irregular past tenses (go → went/gone) that just have to be learned outright — these are common verbs students will encounter constantly on the exam, so recognition alone isn't enough; active recall matters.
+- **cet vs cette — the exact same masculine-vowel-exception logic from possessive adjectives, reapplied to demonstratives:** a student asked directly whether cette also has a special vowel-triggered form the way cet does for masculine nouns. Confirmed: no — cette is used for ALL feminine singular nouns regardless of whether they start with a vowel; the vowel-linking exception only exists on the masculine side (ce → cet), because cette already ends in a vowel sound and doesn't need the fix.
+- **cet ami vs cette amie — a student asked how you'd ever tell these apart by ear in a real listening exercise:** the instructor's honest answer: you often can't, from sound alone — it comes down to context (who's being discussed, established earlier in the conversation), the same resolution given for son/sa ambiguity back in Class 9.
+- **c'est vs il/elle est — introduced for the first time here, with a live contrast built sentence by sentence:** c'est un artiste ("this is an artist," using an indefinite article + noun) vs il est américain ("he is American," adjective directly, no article). A student asked whether the rule generalizes reliably — instructor confirmed the pattern: c'est pairs with an article+noun, il/elle est pairs with a bare adjective or nationality.
+- **Grenoblois vs "il est de Grenoble" — two valid ways to say someone's from a place, and when each fits:** a student asked whether these are fully interchangeable. Instructor's answer: yes, but with a subtlety — a demonym like Grenoblois (built from the city name, similar to "Bengalurean") implies more of an identity/origin claim, whereas "il est de Grenoble" is a plainer statement of current or past location, comparable to the American/from America distinction discussed in the same breath.
+- **Plural exceptions flagged but deliberately deferred:** a student asked whether French plurals always just add S (as in English) — the instructor confirmed there are exceptions (e.g., words ending in -eau take -x, not -s, like tableau → tableaux) but declined to go deep into it here, promising to return to it as a dedicated topic and asking the class to remind them later.
+

@@ -1,0 +1,62 @@
+ Thursday, July 2, 2026
+
+*Definite articles (le/la/l'/les), indefinite articles (un/une/des), and partitive articles (du/de la/de l'/des).*
+
+### Grammar: Definite Articles (le / la / l' / les)
+
+- Le, la, l' = "the" in English.
+- LE is used for masculine nouns.
+- LA is used for feminine nouns.
+- L' is used before nouns starting with a vowel, including a mute "h".
+- LES is used for the plural of masculine or feminine nouns.
+
+### Examples: Definite articles
+
+| Masculine | Feminine | Plural (either) |
+|---|---|---|
+| le village — the village | la ville — the city | les villages |
+| le pont — the bridge | la région — the region | les villes |
+| l'homme — the man | l'amie — girlfriend | les amis |
+| l'ami — the friend |  | les amies |
+
+### Grammar: Indefinite Articles (un / une / des)
+
+- Un, une = "a / an" in English.
+- UN is used for masculine nouns.
+- UNE is used for feminine nouns.
+- DES is used for the plural of masculine or feminine nouns.
+
+### Examples: Indefinite articles
+
+| Masculine | Feminine | Plural (either) |
+|---|---|---|
+| un village — a village | une ville — a city | des villages |
+| un pont — a bridge | une région — a region | des villes |
+| un homme — a man | une amie — a girlfriend | des amis |
+| un ami — a friend |  | des amies |
+
+### Grammar: Partitive Articles (some / any)
+
+- Used for an unspecified quantity of something — "some" in English.
+- de + le → du
+- de + l' → de l'
+- de + la → de la
+- de + les → des
+
+- Je voudrais du pain. — I would like some bread.
+- Elle mange du chocolat. — She eats (some) chocolate.
+- Nous buvons de l'eau minérale. — We drink (some) mineral water.
+- Il achète de la viande. — He is buying (some) meat.
+- Elle fait pousser des haricots verts. — She grows green beans.
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Why la ville and la région are feminine, but le village is masculine — no clean rule offered:** a student pushed directly on this ("how did village become masculine and city/region became feminine?") and the instructor's honest answer was that grammatical gender mostly has to be memorized, though word endings can hint at it (e.g. words ending in -age tend to be masculine) — the exceptions still have to be learned by heart.
+- **ami vs amie — the single-letter gender marker:** ami (no e) = male friend, amie (with e) = female friend. A student asked whether this "add an E for feminine" pattern generalizes to other words — the instructor was careful to say no, this specific pattern is true for this word, not a blanket rule for all French nouns.
+- **Telling male vs female "friend" apart in speech:** since ami/amie sound identical when spoken, the only way to know which is meant is context — e.g. if you already know the friend being discussed by name and know that person's gender.
+- **le/la before a vowel always becomes l':** worked through explicitly with homme (l'homme) and ami (l'ami) — when le or la would sit directly before a word starting with a vowel or silent h, the yowel drops and an apostrophe takes its place, purely to avoid two vowel sounds colliding.
+- **Partitive articles — the logic, not just the table:** the instructor stressed the partitive (du/de la/de l'/des) exists specifically for when you don't know or care about an exact quantity — "I want some bread" vs "I want the bread." A student connected the dots themselves mid-class, correctly guessing that pain and chocolat are both masculine (hence du), which the instructor confirmed.
+- **Word order surprise — adjectives after the noun:** a student asked why "des haricots verts" (green beans) puts the color after the noun instead of before, as in English. The instructor confirmed French generally places descriptive adjectives after the noun, unlike English, and flagged this as its own grammar topic to cover properly later rather than explaining it fully here.
+

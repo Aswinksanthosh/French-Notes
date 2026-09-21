@@ -1,0 +1,79 @@
+ Tuesday, July 21, 2026
+
+*Numbers 70–1,000,000,000, frequency words (jamais/souvent/toujours) and negation with ne...pas, plus ER verb quiz and DELF A1 exam format overview.*
+
+### Numbers: 70–99 (the tricky ones)
+
+- French builds 70–99 out of 60 and 80 (there's no separate word for seventy, eighty, ninety).
+- 70 = 60 + 10 → soixante-dix
+- 80 = 4 × 20 → quatre-vingt
+- 90 = (4 × 20) + 10 → quatre-vingt-dix
+- Rule: "-et-un" (and-one) is only used up to 71 (soixante et onze). From 80 onwards, no "et" — quatre-vingt-un, quatre-vingt-onze, etc.
+
+| Number | French |
+|---|---|
+| 70 | soixante-dix |
+| 71 | soixante et onze |
+| 72 | soixante-douze |
+| 73 | soixante-treize |
+| 79 | soixante-dix-neuf |
+| 80 | quatre-vingt |
+| 81 | quatre-vingt-un |
+| 82 | quatre-vingt-deux |
+| 89 | quatre-vingt-neuf |
+| 90 | quatre-vingt-dix |
+| 91 | quatre-vingt-onze |
+| 92 | quatre-vingt-douze |
+| 99 | quatre-vingt-dix-neuf |
+
+### Numbers: 100 and beyond
+
+| Number | French |
+|---|---|
+| 100 | cent |
+| 101 | cent un |
+| 102 | cent deux |
+| 121 | cent vingt et un |
+| 200 | deux cents |
+| 201 | deux cent un |
+| 900 | neuf cents |
+| 1,000 | mille |
+| 1,001 | mille un |
+| 2,000 | deux mille |
+| 10,000 | dix mille |
+| 100,000 | cent mille |
+| 1,000,000 | un million |
+
+- Pattern: once you know 0–100, you repeat the same pattern for each new "hundred" (200 = deux-cent + the 0–99 pattern, etc.). "Mille" (thousand) never takes an "s."
+
+### Grammar: Frequency words (la fréquence)
+
+| French | English | Frequency level |
+|---|---|---|
+| jamais | never | zero |
+| souvent | often | medium-high |
+| toujours | always | high |
+
+- Je vais souvent au musée. — I often go to the museum.
+- Je vais toujours au musée. — I always go to the museum.
+
+### Grammar: jamais + negation (ne...pas / ne...jamais)
+
+- Standard negation in French is formed with ne...pas (verb sandwiched between them).
+- Je veux ce stylo. → Je ne veux pas ce stylo. (I want this pen → I don't want this pen.)
+- Jamais is only used in the negative form — it replaces "pas" in the same sandwich structure (ne...jamais).
+- Je ne veux jamais ce stylo. — I never want this pen.
+- Je ne vais jamais au théâtre. — I never go to the theater.
+
+### Homework / Action Items
+
+- Master the ER verb list front to back (weekly ongoing drill — instructor quizzes students each class)
+- Revise counting 0–69 to make 70–100 easier to remember
+- Practice numbers 100–1,000,000,000
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Note:** only the professor's typed summary notes were available for this class (no raw video transcript was provided), so there's no classroom back-and-forth to add here beyond what's already in the main notes above.
+

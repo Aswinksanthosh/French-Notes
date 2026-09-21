@@ -1,0 +1,69 @@
+ Tuesday, July 7, 2026
+
+*Hobbies (loisirs), numbers 32–69, prepositions before city/country names, and asking nationality.*
+
+### Vocabulary: Hobbies (les loisirs)
+
+- Quels sont vos loisirs ? — What are your hobbies?
+- Mes loisirs sont le football et le basket. — My hobbies are football and basketball.
+- Mes loisirs sont de jouer au football et au basket. — My hobbies are playing football and basketball.
+- Mon but est de gagner. — My goal is to win.
+- Mon loisir est le badminton. — My hobby is badminton.
+
+| French | English |
+|---|---|
+| l'art (m.) | art |
+| le cinéma | cinema / movies |
+| les langues (f.) | languages |
+| la musique | music |
+| le sport | sport |
+
+### Grammar: Numbers 32–69
+
+| Number | French |
+|---|---|
+| 32 | trente-deux |
+| 33 | trente-trois |
+| 34 | trente-quatre |
+| 35 | trente-cinq |
+| 36 | trente-six |
+| 37 | trente-sept |
+| 38 | trente-huit |
+| 39 | trente-neuf |
+| 40 | quarante |
+| 41 | quarante et un |
+| 42 | quarante-deux |
+| 50 | cinquante |
+| 51 | cinquante et un |
+| 60 | soixante |
+| 61 | soixante et un |
+| 69 | soixante-neuf |
+
+### Grammar: Prepositions before city and country names
+
+- à + city — à Toronto
+- au + masculine country — au Canada
+- en + feminine country, or a country starting with a vowel — en Roumanie, en Angola
+- aux + plural country — aux Pays-Bas
+- Rule of thumb: not every vowel-starting country is feminine, but "en" is always used for feminine countries and for countries starting with a vowel — those two cases overlap a lot but aren't identical, so learn country genders individually where you can.
+
+### Grammar: Asking & answering nationality
+
+- Quelle est votre/ta nationalité ? — What is your nationality? (formal/informal)
+
+- Je suis indien(ne). — I'm Indian.
+- Ma nationalité est indienne. — My nationality is Indian. (nationality is always feminine as a noun, so the adjective agrees as feminine regardless of the speaker's own gender)
+- Je viens de l'Inde. — I'm from India.
+- Je viens de la Côte d'Ivoire. — I'm from Ivory Coast.
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Nationality with groups of mixed people — worked live:** a student asked directly what happens when a group is a mix of men and women. Confirmed: if there's even one male, the whole group uses the masculine plural (nous sommes français), the same rule already established for il/ils vs elle/elles back in Class 2.
+- **Les Français — why the S is silent:** a student asked to confirm that "les Français" drops the S sound entirely. Confirmed — French rarely pronounces a final S, and this is one more example of that general pattern (also seen with vous, nous).
+- **Working the 3 nationality-adjective rules as a decision tree, live, word by word:** rather than just stating the rules, the instructor had students apply them one at a time to real examples — Allemand (German) checked against rule 2 (no IEN/EEN ending) then rule 3 (no E ending) and landed on rule 1 (add E) → Allemande; Italien matched rule 2 directly (ends in IEN) → Italienne; Coréen matched rule 2 (ends in EEN) → Coréenne; Tchèque already ends in E, so rule 3 applied (no change); Japonais didn't match rule 2 or 3, so rule 1 applied (add E) → Japonaise. A student noticed the pattern themselves: check rule 2 and rule 3 first, and only fall back to rule 1 if neither matches — the instructor confirmed this shortcut.
+- **de ("de jouer") ≠ "of" — a real translation trap flagged by a student:** a student asked why de shows up in "mes loisirs sont de jouer au football" when de normally translates as "of" (as in "the pen of Jennifer"). The instructor's answer: de here is functioning more like "to" before an infinitive verb (de jouer = to play), and this is context-dependent, not a fixed one-to-one translation — the same French word can map to different English prepositions depending on what follows it.
+- **"Mon but est de gagner" — same de pattern, different example:** used to reinforce the point above — "my goal is to win" uses de + infinitive (de gagner) the same way de jouer did, confirming this isn't a one-off exception but a recurring pattern before an infinitive.
+- **Why some students found 32–69 easier than expected:** the instructor pointed out that once you know 30 and 31, continuing to 39 is just adding digits on top of a pattern already learned — the jump only feels hard the first time.
+

@@ -1,0 +1,118 @@
+ Sunday, August 2, 2026
+
+*Vendre & mettre (3rd group verbs), prepositions of place, commenting on price, second-group (IR) verbs, and the present-participle rule.*
+
+### Grammar: Vendre (3rd group) — "to sell" — present tense
+
+| Pronoun | Conjugation |
+|---|---|
+| je | vends |
+| tu | vends |
+| il / elle | vend |
+| nous | vendons |
+| vous | vendez |
+| ils / elles | vendent |
+
+- Je vends mon stylo à mon ami. — I sell my pen to my friend.
+- Je vends des légumes à mes parents. — I sell some vegetables to my parents.
+
+### Grammar: Mettre (3rd group) — "to put / put on" — present tense
+
+| Pronoun | Conjugation |
+|---|---|
+| je | mets |
+| tu | mets |
+| il / elle | met |
+| nous | mettons |
+| vous | mettez |
+| ils / elles | mettent |
+
+- Je mets mon stylo sur la table. — I put my pen on the table.
+
+### Vocabulary: Prepositions of place
+
+| French | English |
+|---|---|
+| sur | on |
+| sous | under |
+| entre | between |
+| au-dessus | above |
+| en dessous | below |
+| dedans | into |
+| à l'intérieur | inside |
+| à l'extérieur | outside |
+| à côté de | beside |
+
+- J'habite à côté de la maison de mon ami. — I live beside my friend's house.
+
+### Vocabulary: Commenting on price
+
+| French | English |
+|---|---|
+| commenter le prix | to comment on the price |
+| c'est cher | it's expensive |
+| ce n'est pas cher | it's not expensive |
+| c'est bon marché | it's a good price / a good deal |
+
+- J'aime vendre la voiture en dessous de 5000 euros. — I like to sell the car under 5000 euros.
+- Nous mettons la voiture en vente à 5000 euros sur le marché. — We're putting the car up for sale at 5000 euros on the market.
+- en vente — for sale
+
+| French | English |
+|---|---|
+| la saison | the season |
+| le vêtement | the clothing item |
+
+### Grammar: Second Group (IR) verbs — the two conditions
+
+- Condition 1: the verb's infinitive ends in -IR.
+- Condition 2: its present participle ends in -ISSANT.
+- finir (to finish) → finissant (finishing)
+- choisir (to choose) → choisissant (choosing)
+
+| finir (to finish) | choisir (to choose) |
+|---|---|
+| je finis | je choisis |
+| tu finis | tu choisis |
+| il/elle finit | il/elle choisit |
+| nous finissons | nous choisissons |
+| vous finissez | vous choisissez |
+| ils/elles finissent | ils/elles choisissent |
+
+### Grammar: The present participle rule (-ANT vs -ISSANT)
+
+- The present participle of almost every French verb ends in -ANT (1st group and 3rd group alike).
+- The only exception is second-group (-IR / -ISSANT) verbs — their present participle ends in -ISSANT instead. This is actually how you can double-check a verb is second group.
+
+| Verb | Group | Present participle |
+|---|---|---|
+| aller — to go | irregular (3rd) | en allant |
+| manger — to eat | 1st | en mangeant |
+| parler — to speak | 1st | en parlant |
+| marcher — to walk | 1st | en marchant |
+| partir — to leave | 3rd | partant |
+| finir — to finish | 2nd | finissant |
+| choisir — to choose | 2nd | choisissant |
+
+### Grammar: Expressing an ongoing action
+
+- French has no direct "-ing" present continuous tense. Two ways to express it:
+- 1) être en train de + infinitive — emphasizes the action is happening right now.
+- 2) Simply use the present tense — often just as natural.
+
+- I'm going to school — je suis en train d'aller à l'école, or simply je vais à l'école.
+- She is finishing her homework — elle est en train de finir son devoir, or simply elle finit son devoir.
+
+---
+
+### Classroom Discussion & Q&A
+
+- **Why reading matters even for speaking — a direct answer to "does reading actually help?":** the instructor's case: reading correctly out loud is functionally close to speaking (same pronunciation muscles, same confidence-building), and reading also trains recognizing words fast — both feed into listening and speaking ability rather than being a separate isolated skill.
+- **vendre — why it's third group, drilled with a direct why-question:** a student was asked to identify the group and explain why; the class walked through it together: ends in -DRE, which is a third-group ending (not first -ER or second -IR), so it follows irregular third-group conjugation (je vends, tu vends, il vend — note no -e/-es/-e pattern at all, and vend takes a "d" not a silent letter).
+- **mon ami vs mon amie — the same vowel-exception drilled again, but now inside a full sentence:** "je vends mon stylo à mon ami/amie" was used to re-confirm that even mid-sentence, feminine nouns starting with a vowel still take mon (not ma) — reinforcing this rule now shows up constantly, not just in isolated vocabulary drills.
+- **légumes — indefinite plural again, applied to a fresh example:** "je vends des légumes" was built step by step to show indefinite plural (des) applies the same way it did for definite articles earlier — quantity unknown + plural noun = des, regardless of the noun's gender.
+- **mettre — a second irregular third-group verb, immediately contrasted with vendre to show they don't share a pattern:** je mets, tu mets, il met — different irregular shape from vendre despite both being third group, reinforcing that "third group" is really a catch-all for verbs that don't follow first/second group rules, not a single shared pattern.
+- **sous vs moins — a subtle contrast a student pushed hard to understand:** the class worked through why "j'aime vendre la voiture sous 5000 euros" is wrong — sous means physically "under" (spatially beneath something, like under a bridge), whereas expressing a price ceiling ("for under 5000 euros") needs à moins de ("for less than"). A student explicitly asked for a physical vs. price-context comparison, which the instructor gave directly (la voiture est sous le pont vs. à moins de 5000 euros) to make the contrast concrete.
+- **en vente vs à vendre — two equally valid ways to say "for sale," confirmed as interchangeable:** a student asked whether both were correct; instructor confirmed yes, no meaningful difference in this context.
+- **Second vs third group verbs ending in -IR — the same core distinction from Class 9 revisited, but the class realized they hadn't fully covered it yet:** this class started introducing venir ("to come") as the second-group test case, but the instructor and students both realized mid-discussion that the deeper second-vs-third-group distinction (the -issant present participle test) hadn't actually been taught yet in a prior class as assumed — flagged honestly as a gap to properly cover next time rather than glossed over.
+

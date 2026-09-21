@@ -1,0 +1,77 @@
+ Thursday, July 23, 2026
+
+*How to read and tell time in French — asking the time, time-of-day vocabulary, and worked examples.*
+
+### Grammar: Asking the time
+
+| French | English |
+|---|---|
+| Quelle heure est-il ? | What time is it? |
+| Quelle heure fait-il ? | What time is it? (alternate form) |
+
+### Vocabulary: Times of day
+
+| French | English |
+|---|---|
+| du matin | in the morning / AM |
+| l'après-midi | in the afternoon / PM |
+| midi | noon |
+| minuit | midnight |
+| la nuit | the night |
+| le soir / la soirée | the evening |
+| bonne soirée | have a good evening |
+
+### Vocabulary: Key time words
+
+| French | English |
+|---|---|
+| moins | minus |
+| demi | half |
+| pile | o'clock / sharp |
+| une heure / l'heure / des heures | hour(s) |
+| une minute / la minute / des minutes | minute(s) |
+| une seconde / la seconde / des secondes | second(s) |
+
+### Telling time — worked examples
+
+| Time | English | French |
+|---|---|---|
+| 6:10 | 6 hours 10 minutes | il est six heures dix minutes |
+| 6:15:02 | 6h 15m 2s | il est six heures quinze minutes deux secondes |
+| 6:15 | quarter past 6 | il est six heures et quart |
+| 6:30 | half past 6 | il est six heures et demi(e) |
+| 6:45 AM | 6:45 in the morning | il est six heures quarante-cinq du matin |
+| 6:45 | quarter to 7 | il est sept heures moins le quart |
+| 7:50 | ten to 8 | il est huit heures moins dix |
+| 6:00 | 6 o'clock sharp | il est six heures pile |
+| 12:00 AM | midnight | il est minuit |
+| 12:00 PM | noon | il est midi |
+
+### Note: gender agreement inside numbers
+
+- "Un/une" inside a compound number agrees with the gender of the noun being counted — this is why 41 can be "quarante et un" or "quarante et une" depending on what follows.
+- 41 (on its own, or with a masculine noun) — quarante et un
+- 41 minutes (minute is feminine) — quarante et une minutes
+- 41 voitures (voiture is feminine) — quarante et une voitures
+
+### Duration example
+
+- C'est deux heures et demie de route. — It's two and a half hours of driving.
+- C'est deux heures et trente minutes de route. — Same meaning, said differently.
+- une demi-heure — half an hour
+
+---
+
+### Classroom Discussion & Q&A
+
+- **du matin vs le soir/la soirée — a student pushed on why there are two forms for evening:** the instructor clarified le soir and la soirée both translate to "evening" and are used almost interchangeably, but la soirée leans slightly toward the farewell/well-wishing use (bonne soirée = "have a good evening," said when leaving), while le soir is more neutral (je suis arrivé le soir = "I arrived in the evening"). Confirmed there's no strict masculine/feminine-based usage rule — it's more about which phrase the sentence conventionally uses.
+- **Time nouns (heure, minute, seconde) — all feminine, and a student's reaction to it:** confirmed as a pattern rather than a coincidence — a student joked that "you can't even form one sentence in French without knowing gender," and the instructor agreed gender genuinely underlies almost everything, promising the exam prep and vocabulary work ahead would build this up gradually rather than needing it memorized instantly.
+- **dix minutes vs dix enfants vs dix pères — liaison depends on the very next sound, demonstrated with numbers specifically:** the instructor built three back-to-back examples to isolate the rule: dis minute (no liaison needed, minute already starts with a consonant-like sound in this context), dis enfant (liaison — links into a "z" sound because enfant starts with a vowel), and dis pères (no liaison — starts with a consonant). Used to reinforce that the liaison rule is about the sound immediately following the number, not the number itself.
+- **Three ways to say the same time, and which one to actually prioritize:** for 6:15, the instructor showed all three valid options — il est six heures quinze (literal digits), il est six heures et quart (quarter past) — and explicitly told students to prioritize the plain digit-based way for their own speaking, while still learning to recognize the other forms since a listening exercise or another speaker might use them.
+- **Quarter to vs quarter past — students explicitly asked to confirm the flip in structure:** for times past the half hour (e.g. 6:45), French counts backward from the next hour using moins (minus) — il est sept heures moins le quart ("it is seven o'clock minus a quarter") — rather than continuing to count forward from six. A student asked to confirm this backward-counting behavior only kicks in after 30 minutes, which the instructor confirmed.
+- **"Sharp" / on-the-dot time — pile, and when NOT to add seconds:** a student asked whether seconds must always be stated when giving precise times. Clarified: pile (used for a whole number of minutes/hours, meaning "exactly/sharp") already implies zero seconds, so adding "seconds" alongside pile would be redundant — seconds are only mentioned when they're a nonzero, meaningful part of the time being given.
+- **Duration phrases ("a two-and-a-half-hour drive") vs literal clock time — a student noticed these use different grammar and asked why:** the instructor distinguished stating a clock time (il est six heures et demie) from describing a span/duration (c'est deux heures trente minutes de route — "it's a 2.5-hour drive") — both use demi(e) for "half," but the surrounding sentence structure differs because one names a specific moment and the other names a length of time.
+- **c'est vs il est — briefly revisited from Class 12, in the context of describing a duration:** a student noticed the instructor used c'est to describe a travel duration and asked whether that was the same c'est covered previously (paired with an article+noun) or something different. Confirmed it's the same demonstrative expression, just applied to a duration phrase rather than a person or object.
+- **Typing French accents for the actual exam — a long, practical tangent students clearly cared about:** multiple students asked how to type accented characters (é, è, â, etc.) during the real exam, whether a virtual/AZERTY keyboard would be provided, and whether Google Docs' language autocorrect would be available. The instructor didn't have a firm answer and openly said so, promising to research it and follow up rather than guessing — flagged as a genuinely open logistics question at the time of this class, not a settled French-language rule.
+- **Speaking exam format, explained in response to a direct student question:** structured in three parts — (1) a simple Q&A like name/introduction, (2) a monologue where the student presents a topic (e.g., introducing their family), and (3) a role-play dialogue with the examiner based on a chosen scenario (e.g., calling a hotel or restaurant for information). Given as a preview, not something students needed to prepare in depth yet.
+
