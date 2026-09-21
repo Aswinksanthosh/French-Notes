@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 French: Adjectives & Adverbs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            border-bottom: 3px solid #667eea;
+            background: #f8f9fa;
+        }
+
+        .nav-tabs button {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -3px;
+        }
+
+        .nav-tabs button:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .nav-tabs button.active {
+            color: white;
+            background: #667eea;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .lesson-section {
+            display: none;
+        }
+
+        .lesson-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        h4 {
+            color: #555;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .example {
+            background: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background: #f5f5f5;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .key-point {
+            background: #f0f7ff;
+            border: 2px solid #667eea;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .key-point strong {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .pronunciation {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .french-text {
+            font-style: italic;
+            color: #764ba2;
+        }
+
+        .exercise {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+
+        .exercise h4 {
+            color: #667eea;
+        }
+
+        .exercise-item {
+            background: white;
+            padding: 12px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+            border-radius: 3px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+
+        .rule-box {
+            background: #fff9e6;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .rule-box strong {
+            color: #e67e22;
+        }
+
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tabs button {
+                text-align: left;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇫🇷 A2 FRENCH LESSONS</h1>
+            <p>Adjectives & Adverbs - Master These Essential Grammar Elements</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="nav-btn active" onclick="showLesson('class1')">CLASS 1: Adjectives (Les Adjectifs)</button>
+            <button class="nav-btn" onclick="showLesson('class2')">CLASS 2: Adverbs (Les Adverbes)</button>
+        </div>
+
+        <div class="content">
+
+            <!-- CLASS 1: ADJECTIVES -->
+            <div id="class1" class="lesson-section active">
+                <h2>📚 CLASS 1: LES ADJECTIFS EN FRANÇAIS (French Adjectives)</h2>
+
+                <h3>Introduction</h3>
+                <p>An adjective is a word that describes, qualifies, or provides information about a noun. It can express quality, color, size, form, or opinion. Adjectives are one of the most important parts of speech in French because they help us describe people, things, and situations precisely.</p>
+
+                <div class="key-point">
+                    <strong>🔑 KEY POINT:</strong>
+                    Adjectives MUST AGREE with the noun they describe in both GENDER and NUMBER. This means if the noun is masculine singular, the adjective must be masculine singular. If the noun is feminine plural, the adjective must be feminine plural.
+                </div>
+
+                <!-- PART 1 -->
+                <h2>PART 1: ADJECTIVE AGREEMENT</h2>
+
+                <h3>Rule 1: Basic Gender Agreement</h3>
+                <p><strong>Add an -E to the masculine form to make it feminine:</strong></p>
+                <ul>
+                    <li><span class="french-text">grand</span> → <span class="french-text">grande</span> (big/tall)</li>
+                    <li><span class="french-text">petit</span> → <span class="french-text">petite</span> (small)</li>
+                    <li><span class="french-text">intelligent</span> → <span class="french-text">intelligente</span> (intelligent)</li>
+                    <li><span class="french-text">lent</span> → <span class="french-text">lente</span> (slow)</li>
+                    <li><span class="french-text">vert</span> → <span class="french-text">verte</span> (green)</li>
+                </ul>
+
+                <h3>Rule 2: Adjectives Already Ending in -E</h3>
+                <p>If the masculine form already ends in -e, the feminine form stays the same:</p>
+                <ul>
+                    <li><span class="french-text">calme</span> → <span class="french-text">calme</span> (calm)</li>
+                    <li><span class="french-text">facile</span> → <span class="french-text">facile</span> (easy)</li>
+                    <li><span class="french-text">difficile</span> → <span class="french-text">difficile</span> (difficult)</li>
+                </ul>
+
+                <h3>Rule 3: Special Feminine Formations</h3>
+
+                <h4>-F changes to -VE:</h4>
+                <ul>
+                    <li><span class="french-text">actif</span> → <span class="french-text">active</span> (active)</li>
+                    <li><span class="french-text">sportif</span> → <span class="french-text">sportive</span> (sporty)</li>
+                    <li><span class="french-text">créatif</span> → <span class="french-text">créative</span> (creative)</li>
+                    <li><span class="french-text">attentif</span> → <span class="french-text">attentive</span> (attentive)</li>
+                </ul>
+
+                <h4>-X changes to -SE:</h4>
+                <ul>
+                    <li><span class="french-text">heureux</span> → <span class="french-text">heureuse</span> (happy)</li>
+                    <li><span class="french-text">dangereux</span> → <span class="french-text">dangereuse</span> (dangerous)</li>
+                    <li><span class="french-text">curieux</span> → <span class="french-text">curieuse</span> (curious)</li>
+                    <li><span class="french-text">courageux</span> → <span class="french-text">courageuse</span> (courageous)</li>
+                    <li><span class="french-text">sérieux</span> → <span class="french-text">sérieuse</span> (serious)</li>
+                </ul>
+
+                <h4>-ER changes to -ÈRE:</h4>
+                <ul>
+                    <li><span class="french-text">cher</span> → <span class="french-text">chère</span> (dear/expensive)</li>
+                    <li><span class="french-text">premier</span> → <span class="french-text">première</span> (first)</li>
+                    <li><span class="french-text">léger</span> → <span class="french-text">légère</span> (light)</li>
+                </ul>
+
+                <h4>-IEN changes to -IENNE:</h4>
+                <ul>
+                    <li><span class="french-text">ancien</span> → <span class="french-text">ancienne</span> (old/former)</li>
+                    <li><span class="french-text">européen</span> → <span class="french-text">européenne</span> (European)</li>
+                    <li><span class="french-text">musicien</span> → <span class="french-text">musicienne</span> (musical)</li>
+                </ul>
+
+                <h4>-ON changes to -ONNE:</h4>
+                <ul>
+                    <li><span class="french-text">bon</span> → <span class="french-text">bonne</span> (good)</li>
+                    <li><span class="french-text">mignon</span> → <span class="french-text">mignonne</span> (cute)</li>
+                </ul>
+
+                <h3>Rule 4: Irregular Adjectives (Learn These!)</h3>
+                <p>These don't follow regular patterns:</p>
+                <ul>
+                    <li><span class="french-text">beau</span> → <span class="french-text">belle</span> (beautiful)</li>
+                    <li><span class="french-text">nouveau</span> → <span class="french-text">nouvelle</span> (new)</li>
+                    <li><span class="french-text">vieux</span> → <span class="french-text">vieille</span> (old)</li>
+                    <li><span class="french-text">blanc</span> → <span class="french-text">blanche</span> (white)</li>
+                    <li><span class="french-text">frais</span> → <span class="french-text">fraîche</span> (fresh)</li>
+                    <li><span class="french-text">doux</span> → <span class="french-text">douce</span> (sweet/soft)</li>
+                </ul>
+
+                <h3>Rule 5: Plural Formation</h3>
+                <p><strong>General rule:</strong> Add -S to singular adjectives:</p>
+                <ul>
+                    <li><span class="french-text">grand</span> → <span class="french-text">grands</span></li>
+                    <li><span class="french-text">grande</span> → <span class="french-text">grandes</span></li>
+                    <li><span class="french-text">petit</span> → <span class="french-text">petits</span></li>
+                    <li><span class="french-text">petite</span> → <span class="french-text">petites</span></li>
+                </ul>
+
+                <p><strong>Adjectives ending in -s or -x remain unchanged:</strong></p>
+                <ul>
+                    <li><span class="french-text">heureux</span> (singular masculine) = <span class="french-text">heureux</span> (plural masculine)</li>
+                    <li><span class="french-text">heureux</span> (singular feminine) = <span class="french-text">heureuses</span> (plural feminine)</li>
+                </ul>
+
+                <p><strong>Adjectives ending in -AL change to -AUX:</strong></p>
+                <ul>
+                    <li><span class="french-text">national</span> → <span class="french-text">nationaux</span></li>
+                    <li><span class="french-text">original</span> → <span class="french-text">originaux</span></li>
+                    <li><span class="french-text">général</span> → <span class="french-text">généraux</span></li>
+                </ul>
+
+                <!-- PART 2 -->
+                <h2>PART 2: ADJECTIVE PLACEMENT</h2>
+
+                <h3>Rule 1: Most Adjectives Come AFTER the Noun</h3>
+                <p>Colors, nationalities, shapes, materials, and descriptive adjectives generally follow the noun:</p>
+                <div class="example">
+                    <p><span class="french-text">une voiture rouge</span> (a red car)<br>
+                    <span class="french-text">un étudiant français</span> (a French student)<br>
+                    <span class="french-text">une table ronde</span> (a round table)<br>
+                    <span class="french-text">une chemise blanche</span> (a white shirt)<br>
+                    <span class="french-text">un problème difficile</span> (a difficult problem)</p>
+                </div>
+
+                <h3>Rule 2: Some Common Adjectives Come BEFORE the Noun</h3>
+                <p>Adjectives relating to beauty, age, goodness, and size often come before the noun:</p>
+                <div class="example">
+                    <p><span class="french-text">un petit garçon</span> (a small boy)<br>
+                    <span class="french-text">une grande maison</span> (a big house)<br>
+                    <span class="french-text">un beau film</span> (a beautiful movie)<br>
+                    <span class="french-text">une jeune femme</span> (a young woman)<br>
+                    <span class="french-text">un bon ami</span> (a good friend)<br>
+                    <span class="french-text">un mauvais jour</span> (a bad day)</p>
+                </div>
+
+                <div class="rule-box">
+                    <strong>Remember:</strong> This is a guideline, not an absolute rule. There are exceptions.
+                </div>
+
+                <h3>Rule 3: Position Can Change Meaning!</h3>
+                <p>Some adjectives have different meanings depending on their placement:</p>
+                <ul>
+                    <li><span class="french-text">un ancien professeur</span> = a former teacher (professeur who is no longer teaching)</li>
+                    <li><span class="french-text">un professeur ancien</span> = an old teacher (professeur who is elderly)</li>
+                    <li><span class="french-text">un grand homme</span> = a great man (homme with important qualities)</li>
+                    <li><span class="french-text">un homme grand</span> = a tall man (homme who has height)</li>
+                    <li><span class="french-text">un pauvre homme</span> = an unfortunate man (homme to be pitied)</li>
+                    <li><span class="french-text">un homme pauvre</span> = a poor man (homme lacking money)</li>
+                </ul>
+
+                <!-- PART 3 -->
+                <h2>PART 3: SPECIAL FORMS FOR MASCULINE BEFORE VOWELS</h2>
+                <p>Three adjectives have special masculine singular forms used before masculine nouns beginning with a vowel or silent H:</p>
+
+                <div class="highlight">
+                    <p><strong><span class="french-text">beau</span> → <span class="french-text">bel</span></strong> (before vowel/silent H)<br>
+                    <span class="french-text">un bel homme</span> (a handsome man)<br>
+                    <span class="french-text">un bel oiseau</span> (a beautiful bird)</p>
+
+                    <p><strong><span class="french-text">nouveau</span> → <span class="french-text">nouvel</span></strong> (before vowel/silent H)<br>
+                    <span class="french-text">un nouvel abonnement</span> (a new subscription)</p>
+
+                    <p><strong><span class="french-text">vieux</span> → <span class="french-text">vieil</span></strong> (before vowel/silent H)<br>
+                    <span class="french-text">un vieil homme</span> (an old man)</p>
+                </div>
+
+                <div class="rule-box">
+                    <strong>⚠️ These are the ONLY three adjectives with this special form. Remember them!</strong>
+                </div>
+
+                <!-- PART 4 -->
+                <h2>PART 4: EPITHÈTE VS ATTRIBUT (Two Types of Adjectives)</h2>
+
+                <h3>Adjective Épithète (Epithet Adjective)</h3>
+                <p>Directly accompanies the noun. Can be before or after the noun. No verb separating the adjective from the noun.</p>
+                <div class="example">
+                    <p><span class="french-text">une voiture rapide</span> (a fast car)<br>
+                    <span class="french-text">un garçon intelligent</span> (an intelligent boy)<br>
+                    <span class="french-text">un petit chat</span> (a small cat)<br>
+                    <span class="french-text">le joli jardin</span> (the pretty garden)<br>
+                    <span class="french-text">un vélo blanc</span> (a white bicycle)</p>
+                </div>
+
+                <h3>Adjective Attribut (Attributive Adjective)</h3>
+                <p>Separated from the noun by a linking verb. Still agrees with the subject. Common linking verbs: être (to be), sembler (to seem), paraître (to appear), devenir (to become).</p>
+                <div class="example">
+                    <p><span class="french-text">La voiture est rapide</span> (The car is fast)<br>
+                    <span class="french-text">Le garçon est intelligent</span> (The boy is intelligent)<br>
+                    <span class="french-text">Le chat est petit</span> (The cat is small)<br>
+                    <span class="french-text">Le jardin est joli</span> (The garden is pretty)<br>
+                    <span class="french-text">Le vélo est blanc</span> (The bicycle is white)</p>
+                </div>
+
+                <div class="key-point">
+                    <strong>Important:</strong> Both convey the same information but are used in different sentence structures. Epithet: "The intelligent boy" (adjective directly with noun). Attribut: "The boy is intelligent" (adjective after verb).
+                </div>
+
+                <!-- PART 5 -->
+                <h2>PART 5: ADJECTIVES USED AS NOUNS</h2>
+                <p>Sometimes adjectives can be used as nouns with an article:</p>
+                <div class="example">
+                    <p><span class="french-text">les riches</span> = the rich (people)<br>
+                    <span class="french-text">les pauvres</span> = the poor (people)<br>
+                    <span class="french-text">un jeune</span> = a young person<br>
+                    <span class="french-text">une jeune</span> = a young woman</p>
+                </div>
+
+                <!-- PART 6 -->
+                <h2>PART 6: COLOR ADJECTIVES</h2>
+
+                <h3>Agreement Rule</h3>
+                <p>Color adjectives agree with the noun in gender and number:</p>
+                <div class="example">
+                    <p><span class="french-text">un sac vert</span> = a green bag<br>
+                    <span class="french-text">une voiture verte</span> = a green car<br>
+                    <span class="french-text">des sacs verts</span> = green bags<br>
+                    <span class="french-text">des voitures vertes</span> = green cars</p>
+                </div>
+
+                <h3>Exception: Colors from Nouns</h3>
+                <p>Colors derived from nouns (orange, marron) are INVARIABLE (don't change):</p>
+                <div class="example">
+                    <p><span class="french-text">des robes orange</span> = orange dresses<br>
+                    <span class="french-text">un pantalon marron</span> = brown pants<br>
+                    <span class="french-text">des pantalons marrons</span> = brown pants</p>
+                </div>
+
+                <!-- EXERCISES -->
+                <h2>✏️ PRACTICE EXERCISES</h2>
+
+                <div class="exercise">
+                    <h4>Exercise 1: Make These Sentences Correct by Adding the Right Adjective Form</h4>
+                    <div class="exercise-item">
+                        1. Une _____ maison (grand) avec une _____ porte (rouge)
+                    </div>
+                    <div class="exercise-item">
+                        2. Un _____ jour avec un _____ ciel (beau, bleu)
+                    </div>
+                    <div class="exercise-item">
+                        3. Des _____ enfants _____ (petit, intelligent)
+                    </div>
+                    <div class="exercise-item">
+                        4. Une _____ femme très _____ (jeune, heureux)
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Exercise 2: Identify if the adjective is Épithète or Attribut</h4>
+                    <div class="exercise-item">
+                        1. Un chat noir dormait sur le tapis
+                    </div>
+                    <div class="exercise-item">
+                        2. Le gâteau est délicieux
+                    </div>
+                    <div class="exercise-item">
+                        3. Une histoire intéressante captiva l'audience
+                    </div>
+                    <div class="exercise-item">
+                        4. Ses cheveux sont blonds
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Exercise 3: Form the Feminine</h4>
+                    <div class="exercise-item">
+                        1. heureux → _______
+                    </div>
+                    <div class="exercise-item">
+                        2. créatif → _______
+                    </div>
+                    <div class="exercise-item">
+                        3. européen → _______
+                    </div>
+                    <div class="exercise-item">
+                        4. bon → _______
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CLASS 2: ADVERBS -->
+            <div id="class2" class="lesson-section">
+                <h2>📚 CLASS 2: LES ADVERBES EN FRANÇAIS (French Adverbs)</h2>
+
+                <h3>Introduction</h3>
+                <p>An adverb is an invariable word (it never changes) that serves to modify or clarify:</p>
+                <ul>
+                    <li>a verb (showing HOW an action is done)</li>
+                    <li>an adjective (showing the degree or intensity)</li>
+                    <li>another adverb (modifying another adverb)</li>
+                    <li>sometimes an entire sentence (expressing opinion about the whole sentence)</li>
+                </ul>
+                <p>Unlike adjectives, adverbs do NOT agree with nouns in gender or number.</p>
+
+                <div class="key-point">
+                    <strong>🔑 KEY DIFFERENCE:</strong><br>
+                    <strong>Adjective:</strong> Describes or qualifies a NOUN<br>
+                    <strong>Adverb:</strong> Modifies a VERB, ADJECTIVE, ADVERB, or SENTENCE
+                </div>
+
+                <h3>Quick Test</h3>
+                <p>After a verb, ask yourself: "Does this word modify the noun or the action?" If it modifies the action/verb, it's an adverb.</p>
+
+                <!-- PART 1 -->
+                <h2>PART 1: FUNCTIONS OF ADVERBS</h2>
+
+                <h3>Function 1: Modifying a Verb</h3>
+                <p>Adverbs of manner show HOW an action is performed:</p>
+                <div class="example">
+                    <p><span class="french-text">Elle chante magnifiquement</span> = She sings beautifully<br>
+                    <span class="french-text">Il parle lentement</span> = He speaks slowly<br>
+                    <span class="french-text">Ils travaillent sérieusement</span> = They work seriously</p>
+                </div>
+                <p><strong>Ask:</strong> How does she sing? → Beautifully (adverb)</p>
+
+                <h3>Function 2: Modifying an Adjective</h3>
+                <p>Adverbs show the intensity or degree of an adjective:</p>
+                <div class="example">
+                    <p><span class="french-text">Il est très intelligent</span> = He is very intelligent<br>
+                    <span class="french-text">La maison est assez grande</span> = The house is quite large</p>
+                </div>
+                <p><strong>Purpose:</strong> The adverb (very, quite) emphasizes the adjective's meaning.</p>
+
+                <h3>Function 3: Modifying Another Adverb</h3>
+                <p>Adverbs can modify other adverbs:</p>
+                <div class="example">
+                    <p><span class="french-text">Elle parle assez rapidement</span> = She speaks quite quickly<br>
+                    <span class="french-text">Ils travaillent très sérieusement</span> = They work very seriously</p>
+                </div>
+
+                <h3>Function 4: Modifying an Entire Sentence</h3>
+                <p>Some adverbs express an opinion about the whole sentence:</p>
+                <div class="example">
+                    <p><span class="french-text">Malheureusement, il est absent</span> = Unfortunately, he is absent<br>
+                    <span class="french-text">Heureusement, tout va bien</span> = Fortunately, everything is fine</p>
+                </div>
+
+                <!-- PART 2 -->
+                <h2>PART 2: TYPES OF ADVERBS</h2>
+
+                <h3>Type 1: ADVERBS OF MANNER (How?)</h3>
+                <p>These answer the question "How?" or "In what manner?"</p>
+
+                <h4>Common Adverbs of Manner:</h4>
+                <ul>
+                    <li><span class="french-text">bien</span> (well)</li>
+                    <li><span class="french-text">mal</span> (badly)</li>
+                    <li><span class="french-text">doucement</span> (gently, softly)</li>
+                    <li><span class="french-text">rapidement</span> (quickly)</li>
+                    <li><span class="french-text">facilement</span> (easily)</li>
+                    <li><span class="french-text">difficilement</span> (with difficulty)</li>
+                    <li><span class="french-text">sérieusement</span> (seriously)</li>
+                    <li><span class="french-text">poliment</span> (politely)</li>
+                    <li><span class="french-text">prudemment</span> (carefully)</li>
+                    <li><span class="french-text">paresseusement</span> (lazily)</li>
+                </ul>
+
+                <h4>Examples:</h4>
+                <div class="example">
+                    <p><span class="french-text">Il travaille sérieusement</span> = He works seriously (How does he work?)<br>
+                    <span class="french-text">Elle répond poliment</span> = She answers politely (How does she answer?)<br>
+                    <span class="french-text">Ils ont terminé le travail rapidement</span> = They finished the work quickly (How did they finish?)<br>
+                    <span class="french-text">Parlez doucement, s'il vous plaît</span> = Speak softly, please<br>
+                    <span class="french-text">Il conduit prudemment</span> = He drives carefully</p>
+                </div>
+
+                <div class="rule-box">
+                    <strong>KEY RULE:</strong> Adverbs of manner typically follow the verb in French.
+                </div>
+
+                <h3>Type 2: ADVERBS OF TIME (When?)</h3>
+                <p>These answer the question "When?" or "At what time?"</p>
+
+                <h4>Common Adverbs of Time:</h4>
+                <ul>
+                    <li><span class="french-text">aujourd'hui</span> (today)</li>
+                    <li><span class="french-text">hier</span> (yesterday)</li>
+                    <li><span class="french-text">demain</span> (tomorrow)</li>
+                    <li><span class="french-text">avant-hier</span> (the day before yesterday)</li>
+                    <li><span class="french-text">après-demain</span> (the day after tomorrow)</li>
+                    <li><span class="french-text">maintenant</span> (now)</li>
+                    <li><span class="french-text">bientôt</span> (soon)</li>
+                    <li><span class="french-text">déjà</span> (already)</li>
+                    <li><span class="french-text">tard</span> (late - no specific scheduled time)</li>
+                    <li><span class="french-text">en retard</span> (late - after a scheduled time)</li>
+                    <li><span class="french-text">toujours</span> (always)</li>
+                    <li><span class="french-text">jamais</span> (never)</li>
+                    <li><span class="french-text">autrefois</span> (formerly)</li>
+                    <li><span class="french-text">récemment</span> (recently)</li>
+                    <li><span class="french-text">prochainement</span> (next/soon)</li>
+                    <li><span class="french-text">actuellement</span> (currently)</li>
+                    <li><span class="french-text">immédiatement</span> (immediately)</li>
+                    <li><span class="french-text">ensuite</span> (then, next)</li>
+                    <li><span class="french-text">enfin</span> (finally)</li>
+                </ul>
+
+                <h4>Examples:</h4>
+                <div class="example">
+                    <p><span class="french-text">Je travaille aujourd'hui</span> = I'm working today (When?)<br>
+                    <span class="french-text">Il vient demain</span> = He's coming tomorrow (When?)<br>
+                    <span class="french-text">Nous sommes arrivés hier</span> = We arrived yesterday (When?)<br>
+                    <span class="french-text">Elle danse toujours à cette heure</span> = She's always dancing at this time<br>
+                    <span class="french-text">Ils ont enfin trouvé une solution</span> = They finally found a solution<br>
+                    <span class="french-text">Il pleut maintenant</span> = It's raining now</p>
+                </div>
+
+                <h4>Important Distinction:</h4>
+                <div class="rule-box">
+                    <p><strong><span class="french-text">tard</span></strong> = late (no reference to a specific time)<br>
+                    <span class="french-text">Il est rentré tard dans la nuit</span> = He came home late at night<br>
+                    (No specific expected time)</p>
+
+                    <p><strong><span class="french-text">en retard</span></strong> = late (after an expected/scheduled time)<br>
+                    <span class="french-text">Je suis toujours en retard</span> = I'm always late<br>
+                    (For example, when work starts at 8:00 and you arrive at 8:10)</p>
+                </div>
+
+                <div class="rule-box">
+                    <strong>KEY RULE:</strong> In past tense, adverbs of time often come between the auxiliary verb and the past participle:<br>
+                    <span class="french-text">Il a déjà mangé</span> = He has already eaten (not "Il a mangé déjà")
+                </div>
+
+                <h3>Type 3: ADVERBS OF PLACE (Where?)</h3>
+                <p>These answer the question "Where?" or "In what location?"</p>
+
+                <h4>Common Adverbs of Place:</h4>
+                <ul>
+                    <li><span class="french-text">ici</span> (here)</li>
+                    <li><span class="french-text">là</span> (there)</li>
+                    <li><span class="french-text">là-bas</span> (over there)</li>
+                    <li><span class="french-text">ailleurs</span> (elsewhere)</li>
+                    <li><span class="french-text">partout</span> (everywhere)</li>
+                    <li><span class="french-text">nulle part</span> (nowhere)</li>
+                    <li><span class="french-text">quelque part</span> (somewhere)</li>
+                    <li><span class="french-text">dehors</span> (outside)</li>
+                    <li><span class="french-text">dedans</span> (inside)</li>
+                    <li><span class="french-text">devant</span> (in front)</li>
+                    <li><span class="french-text">derrière</span> (behind)</li>
+                    <li><span class="french-text">près</span> (near)</li>
+                    <li><span class="french-text">loin</span> (far)</li>
+                    <li><span class="french-text">autour</span> (around)</li>
+                    <li><span class="french-text">dessus</span> (above/on top)</li>
+                    <li><span class="french-text">dessous</span> (below/underneath)</li>
+                </ul>
+
+                <h4>With Prepositions (modify meaning):</h4>
+                <ul>
+                    <li><span class="french-text">auprès de</span> (close to)</li>
+                    <li><span class="french-text">au-dessus de</span> (above)</li>
+                    <li><span class="french-text">au-dessous de</span> (below)</li>
+                    <li><span class="french-text">à côté de</span> (beside, next to)</li>
+                    <li><span class="french-text">près de</span> (near to)</li>
+                </ul>
+
+                <h4>Examples:</h4>
+                <div class="example">
+                    <p><span class="french-text">Elle habite ailleurs</span> = She lives elsewhere (Where?)<br>
+                    <span class="french-text">Les enfants jouent dehors</span> = The children play outside (Where?)<br>
+                    <span class="french-text">L'école est située près du centre-ville</span> = The school is located near downtown (Where?)<br>
+                    <span class="french-text">Mes enfants jouent ici</span> = My children are playing here (Where?)<br>
+                    <span class="french-text">La boulangerie est à côté de la maison</span> = The bakery is beside the house (Where?)<br>
+                    <span class="french-text">Je cherche mon livre ici, mais il doit être ailleurs</span> = I'm looking for my book here, but it must be somewhere else<br>
+                    <span class="french-text">Elle habite loin</span> = She lives far away</p>
+                </div>
+
+                <div class="rule-box">
+                    <strong>KEY RULE:</strong> Adverbs of place typically come after the verb.
+                </div>
+
+                <!-- PART 3 -->
+                <h2>PART 3: FORMATION OF ADVERBS OF MANNER</h2>
+
+                <h3>The Basic Formula: Feminine Adjective + -ment</h3>
+                <p>Most adverbs of manner are formed by:</p>
+                <ol>
+                    <li>Taking the <strong>feminine form</strong> of the adjective</li>
+                    <li>Adding <strong>-ment</strong></li>
+                </ol>
+
+                <table>
+                    <tr>
+                        <th>Masculine</th>
+                        <th>Feminine</th>
+                        <th>Adverb</th>
+                        <th>Meaning</th>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">lent</span></td>
+                        <td><span class="french-text">lente</span></td>
+                        <td><span class="french-text">lentement</span></td>
+                        <td>slowly</td>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">rapide</span></td>
+                        <td><span class="french-text">rapide</span></td>
+                        <td><span class="french-text">rapidement</span></td>
+                        <td>quickly</td>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">heureux</span></td>
+                        <td><span class="french-text">heureuse</span></td>
+                        <td><span class="french-text">heureusement</span></td>
+                        <td>happily</td>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">sérieux</span></td>
+                        <td><span class="french-text">sérieuse</span></td>
+                        <td><span class="french-text">sérieusement</span></td>
+                        <td>seriously</td>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">facile</span></td>
+                        <td><span class="french-text">facile</span></td>
+                        <td><span class="french-text">facilement</span></td>
+                        <td>easily</td>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">difficile</span></td>
+                        <td><span class="french-text">difficile</span></td>
+                        <td><span class="french-text">difficilement</span></td>
+                        <td>with difficulty</td>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">général</span></td>
+                        <td><span class="french-text">générale</span></td>
+                        <td><span class="french-text">généralement</span></td>
+                        <td>generally</td>
+                    </tr>
+                    <tr>
+                        <td><span class="french-text">naturel</span></td>
+                        <td><span class="french-text">naturelle</span></td>
+                        <td><span class="french-text">naturellement</span></td>
+                        <td>naturally</td>
+                    </tr>
+                </table>
+
+                <h3>Shortcut: Adjectives Ending in -E</h3>
+                <p>If the adjective already ends in -e, simply add -ment:</p>
+                <div class="example">
+                    <p><span class="french-text">simple</span> → <span class="french-text">simplement</span> (simply)<br>
+                    <span class="french-text">vrai</span> → <span class="french-text">vraiment</span> (truly)<br>
+                    <span class="french-text">probable</span> → <span class="french-text">probablement</span> (probably)</p>
+                </div>
+
+                <h3>Special Cases (Exceptions exist!)</h3>
+                <p>Some adverbs have irregular formations or unique forms:</p>
+                <div class="example">
+                    <p><span class="french-text">bon</span> (good) → <span class="french-text">bien</span> (well) - <strong>NOT "bonnement"</strong><br>
+                    <span class="french-text">mauvais</span> (bad) → <span class="french-text">mal</span> (badly) - <strong>NOT "mauvaisement"</strong><br>
+                    <span class="french-text">meilleur</span> (better) → <span class="french-text">mieux</span> (better) - <strong>NOT "meilleurement"</strong></p>
+                </div>
+
+                <!-- PART 4 -->
+                <h2>PART 4: PLACEMENT OF ADVERBS</h2>
+
+                <h3>General Rules</h3>
+
+                <h4>Adverbs of Manner:</h4>
+                <p>Usually come AFTER the verb:</p>
+                <div class="example">
+                    <p><span class="french-text">Il parle lentement</span> = He speaks slowly<br>
+                    <span class="french-text">Elle marche rapidement</span> = She walks quickly</p>
+                </div>
+
+                <h4>Adverbs of Time & Place:</h4>
+                <p>Can come at the beginning or end of a sentence:</p>
+                <div class="example">
+                    <p><span class="french-text">Aujourd'hui, je travaille</span> = Today, I work<br>
+                    <span class="french-text">Je travaille aujourd'hui</span> = I work today<br>
+                    <span class="french-text">Hier, nous sommes allés au restaurant</span> = Yesterday, we went to a restaurant</p>
+                </div>
+
+                <h4>In Past Tense:</h4>
+                <p>Adverbs of time often come between auxiliary and past participle:</p>
+                <div class="example">
+                    <p><span class="french-text">Il a déjà mangé</span> = He has already eaten (Better than "Il a mangé déjà")<br>
+                    <span class="french-text">Nous avons enfin trouvé une solution</span> = We finally found a solution</p>
+                </div>
+
+                <!-- EXERCISES -->
+                <h2>✏️ PRACTICE EXERCISES</h2>
+
+                <div class="exercise">
+                    <h4>Exercise 1: Identify the Type of Adverb (Manner, Time, Place)</h4>
+                    <div class="exercise-item">
+                        1. Il conduit prudemment = _________ (How does he drive?)
+                    </div>
+                    <div class="exercise-item">
+                        2. Je travaille aujourd'hui = _________ (When do I work?)
+                    </div>
+                    <div class="exercise-item">
+                        3. Les enfants jouent dehors = _________ (Where are they playing?)
+                    </div>
+                    <div class="exercise-item">
+                        4. Elle danse gracieusement = _________ (How does she dance?)
+                    </div>
+                    <div class="exercise-item">
+                        5. Bientôt, nous partirons = _________ (When will we leave?)
+                    </div>
+                    <div class="exercise-item">
+                        6. La maison est à côté du parc = _________ (Where is the house?)
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Exercise 2: Adjective or Adverb? Choose the Correct Form</h4>
+                    <div class="exercise-item">
+                        1. Le français est (facile / facilement) → Answer: _________
+                    </div>
+                    <div class="exercise-item">
+                        2. Il parle français (facile / facilement) → Answer: _________
+                    </div>
+                    <div class="exercise-item">
+                        3. Elle est (sérieux / sérieusement) dans ses études → Answer: _________
+                    </div>
+                    <div class="exercise-item">
+                        4. Il travaille (sérieux / sérieusement) → Answer: _________
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Exercise 3: Form Adverbs from These Adjectives</h4>
+                    <div class="exercise-item">
+                        1. heureux → _____________
+                    </div>
+                    <div class="exercise-item">
+                        2. lent → _____________
+                    </div>
+                    <div class="exercise-item">
+                        3. rapide → _____________
+                    </div>
+                    <div class="exercise-item">
+                        4. difficile → _____________
+                    </div>
+                    <div class="exercise-item">
+                        5. général → _____________
+                    </div>
+                    <div class="exercise-item">
+                        6. créatif → _____________
+                    </div>
+                </div>
+
+                <div class="exercise">
+                    <h4>Exercise 4: Complete Sentences with Appropriate Adverbs</h4>
+                    <div class="exercise-item">
+                        1. Je suis _____________ en retard au travail (always / toujours)
+                    </div>
+                    <div class="exercise-item">
+                        2. Elle arrivera _____________ (tomorrow / demain)
+                    </div>
+                    <div class="exercise-item">
+                        3. Ils jouent _____________ (outside / dehors)
+                    </div>
+                    <div class="exercise-item">
+                        4. Vous travaillez _____________ (seriously / sérieusement)
+                    </div>
+                    <div class="exercise-item">
+                        5. L'école est _____________ du centre-ville (near / près)
+                    </div>
+                </div>
+
+                <!-- SUMMARY -->
+                <h2>📋 IMPORTANT SUMMARY</h2>
+
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>ADJECTIVE</th>
+                        <th>ADVERB</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Function</strong></td>
+                        <td>Describes NOUNS</td>
+                        <td>Modifies VERBS, ADJECTIVES, ADVERBS, SENTENCES</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agreement</strong></td>
+                        <td>Agrees in gender & number</td>
+                        <td>Invariable (never changes)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usage</strong></td>
+                        <td>Always for nouns only</td>
+                        <td>Never directly modifies nouns</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Examples</strong></td>
+                        <td>grand, rouge, intelligent</td>
+                        <td>rapidement, hier, ici</td>
+                    </tr>
+                </table>
+
+                <div class="key-point">
+                    <strong>🏆 The Golden Rule:</strong> When you see a word after a verb, ask "What question does it answer?"<br>
+                    HOW? → Adverb of manner<br>
+                    WHEN? → Adverb of time<br>
+                    WHERE? → Adverb of place<br>
+                    WHAT QUALITY? → Adjective (but this would need the verb "to be")
+                </div>
+
+                <div class="highlight">
+                    <h3>🎯 MASTER THE BASICS, AND YOU'LL SUCCEED!</h3>
+                    <p>Both adjectives and adverbs are essential to clear French communication. Practice using them in real sentences, pay attention to agreement patterns for adjectives, and remember that adverbs bring precision to verbs and adjectives. With these lessons as your foundation, you're well-equipped for A2-level French!</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>📚 A2 French Lessons | Adjectives & Adverbs | Created for French Language Learners</p>
+            <p>Practice regularly and don't hesitate to review these concepts as you progress!</p>
+        </div>
+
+    </div>
+
+    <script>
+        function showLesson(lessonId) {
+            // Hide all sections
+            document.querySelectorAll('.lesson-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(lessonId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
