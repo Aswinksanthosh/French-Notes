@@ -30,22 +30,21 @@ When I say "feature update", check these 5 core features are present:
    - Checklist items track completion with checkboxes
    - Reference: A2 Class 1, lines 3873-3880
 
-5. **💡 Gemini prompt templates + 📋 Copy class content**
-   - Each lesson has TWO copy buttons:
-     - **💡 Copy Gemini Prompt:** Pre-written structured prompt for AI learning
-     - **📋 Copy Class Content:** Copies all lesson HTML for Gemini to see exactly what student is viewing
-   - Buttons placed immediately after `<div class="lesson-header">` closing tag
-   - Function signatures:
-     - `copyPromptText(buttonElement, promptText)` — copies text prompt to clipboard
-     - `copyClassHTML(buttonElement)` — copies entire lesson HTML (minus buttons) to clipboard
-   - Prompt format: "Teach me [topic]..." with "TEACH ME SLOWLY:" breakdown
-   - HTML format: Full lesson content stripped of onclick handlers for clean copy
-   - CSS styling: `.copy-btn` with hover effects, `.copied` state shows checkmark
-   - Reference: All 23 classes have both buttons (line 361+ for each class)
+5. **📋 Copy for Gemini button — merges prompt + class content**
+   - Each lesson has ONE merged button: **📋 Copy for Gemini**
+   - When clicked, copies BOTH:
+     1. **Structured learning prompt** (with "TEACH ME SLOWLY:" breakdown)
+     2. **Full lesson HTML** (all content, examples, tables, explanations)
+   - Separated by `---` line divider in clipboard
+   - Button placed immediately after `<div class="lesson-header">` closing tag
+   - Function: `mergeClassAndPrompt(buttonElement, promptText)` — combines both and copies to clipboard
+   - Clean copy: onclick handlers stripped for safe pasting to Gemini
+   - CSS styling: Green `.copy-btn` with hover effects, `.copied` state shows checkmark
+   - Reference: All 23 classes have the merged button (line 361+ for each class)
 
 ---
 
-## 📄 HTML IMPLEMENTATION GUIDE: Gemini Copy Button
+## 📄 HTML IMPLEMENTATION GUIDE: Merged Copy Button
 
 ### Placement & Structure
 
@@ -57,7 +56,8 @@ The `<button class="copy-btn">` must appear **immediately after the `<div class=
     <h2>Class Name <span class="date">— Date</span></h2>
   </div>
   <!-- PLACE BUTTON HERE, right after lesson-header -->
-  <button class="copy-btn" onclick="copyPromptText(this, 'PROMPT_TEXT_HERE')">💡 Copy Gemini Prompt</button>
+  <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;" 
+    onclick="mergeClassAndPrompt(this, 'PROMPT_TEXT_HERE')">📋 Copy for Gemini</button>
   
   <!-- Rest of lesson content -->
   <div class="section">...</div>
@@ -66,11 +66,16 @@ The `<button class="copy-btn">` must appear **immediately after the `<div class=
 
 ### Function Implementation
 
-The `copyPromptText(buttonElement, promptText)` JavaScript function:
-1. Copies `promptText` to clipboard using `navigator.clipboard.writeText()`
-2. Changes button text to "✓ Copied!" temporarily
-3. Adds `.copied` CSS class for visual feedback
-4. Restores original text after 2 seconds
+The `mergeClassAndPrompt(buttonElement, promptText)` JavaScript function:
+1. Gets the entire lesson card HTML
+2. Clones it to avoid modifying the original
+3. Removes all copy buttons from the clone
+4. Strips onclick handlers for security
+5. Combines `promptText + "\n\n---\n\n" + classHTML`
+6. Copies merged content to clipboard using `navigator.clipboard.writeText()`
+7. Changes button text to "✓ Copied!" temporarily
+8. Adds `.copied` CSS class for visual feedback
+9. Restores original text after 2 seconds
 
 ### Prompt Text Format
 
