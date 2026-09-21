@@ -31,9 +31,104 @@ When I say "feature update", check these 5 core features are present:
    - Reference: A2 Class 1, lines 3873-3880
 
 5. **💡 Gemini prompt templates for AI-assisted studying**
-   - Each lesson needs: `<button class="copy-btn" onclick="copyPromptText(...)">💡 Copy Gemini Prompt</button>`
-   - Prompt contains structured learning objectives + "TEACH ME SLOWLY" breakdown
-   - Reference: A2 Class 1, lines 3621
+   - Each lesson needs: `<button class="copy-btn" onclick="copyPromptText(this, '...')">💡 Copy Gemini Prompt</button>`
+   - HTML structure: Button placed immediately after `<div class="lesson-header">` closing tag
+   - Function signature: `copyPromptText(buttonElement, promptText)` — copies prompt to clipboard and shows "Copied!" feedback
+   - Prompt format: Plain text with "TEACH ME SLOWLY:" section listing 5-7 numbered subtopics for structured learning
+   - Example: `<button class="copy-btn" onclick="copyPromptText(this, 'Teach me [topic]...\n\nTEACH ME SLOWLY:\n1. [Subtopic] - I\'ll check off when...\n2. [Subtopic]...')">💡 Copy Gemini Prompt</button>`
+   - CSS styling: `.copy-btn` with hover effects, `.copied` state shows checkmark
+   - Reference: All A1 Classes (lines 361-4050), A2 Classes (lines 4240-4511)
+
+---
+
+## 📄 HTML IMPLEMENTATION GUIDE: Gemini Copy Button
+
+### Placement & Structure
+
+The `<button class="copy-btn">` must appear **immediately after the `<div class="lesson-header">` closing tag**, inside the `<div class="lesson-card">`:
+
+```html
+<div class="lesson-card">
+  <div class="lesson-header">
+    <h2>Class Name <span class="date">— Date</span></h2>
+  </div>
+  <!-- PLACE BUTTON HERE, right after lesson-header -->
+  <button class="copy-btn" onclick="copyPromptText(this, 'PROMPT_TEXT_HERE')">💡 Copy Gemini Prompt</button>
+  
+  <!-- Rest of lesson content -->
+  <div class="section">...</div>
+</div>
+```
+
+### Function Implementation
+
+The `copyPromptText(buttonElement, promptText)` JavaScript function:
+1. Copies `promptText` to clipboard using `navigator.clipboard.writeText()`
+2. Changes button text to "✓ Copied!" temporarily
+3. Adds `.copied` CSS class for visual feedback
+4. Restores original text after 2 seconds
+
+### Prompt Text Format
+
+Each prompt should follow this structure:
+
+```
+Teach me about [TOPIC] using this content:
+
+[KEY CONCEPTS & VOCABULARY]
+
+[GRAMMAR RULES & EXAMPLES]
+
+EXAM REQUIREMENTS (to pass):
+- SPEAKING: [requirements]
+- WRITING: [requirements]
+- READING: [requirements]
+- LISTENING: [requirements]
+
+TEACH ME SLOWLY:
+1. [Subtopic 1] - Description. I'll check off when [completion criteria].
+2. [Subtopic 2] - Description. I'll check off when [completion criteria].
+3. [Subtopic 3] - ...
+[Continue for 5-7 subtopics]
+
+For each topic, when I fully understand it AND can do a short speaking/writing/reading test, I'll check it off in my checklist. Ask me questions to verify understanding before I check each one.
+```
+
+### CSS Styling Reference
+
+```css
+.copy-btn {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 8px 16px;
+  border: 1px solid #1976d2;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #bbdefb;
+  transform: scale(1.05);
+}
+
+.copy-btn.copied {
+  background: #c8e6c9;
+  color: #2e7d32;
+  border-color: #2e7d32;
+}
+```
+
+### Verification Checklist
+
+✅ Button placed immediately after `</div>` of lesson-header  
+✅ `onclick="copyPromptText(this, '...')"` has correct function call  
+✅ Button text is "💡 Copy Gemini Prompt"  
+✅ Prompt text includes TEACH ME SLOWLY section  
+✅ Prompt has 5-7 numbered subtopics  
+✅ All 23 classes have the button (verified 2026-09-21)
 
 ---
 
