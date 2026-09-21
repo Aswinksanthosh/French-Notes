@@ -1,8 +1,8 @@
 # French-Notes Project: Development & Tracking Document
 
-**Last Updated:** September 21, 2026  
+**Last Updated:** September 21, 2026 (Session 2)
 **Session:** Claude Haiku 4.5  
-**Branch:** `claude/wonderful-darwin-idhgvx`
+**Branch:** `claude/merged-professors-a1`
 
 ---
 
@@ -21,78 +21,103 @@
 
 ---
 
-## ✅ COMPLETED WORK (This Session)
+## ✅ COMPLETED WORK
 
-### 1. **Git Conflict Resolution** ✓
-   - **Issue:** Branch `claude/wonderful-darwin-idhgvx` and `main` had divergent histories
-   - **Also found:** Branch `claude/french-notes-clone-92am9a` had 20+ commits ahead of `main`
-   - **Solution:**
-     - Merged `claude/french-notes-clone-92am9a` into `main` using `--allow-unrelated-histories`
-     - Fast-forwarded local `main` and merged into working branch
-     - Pushed all changes to remote
-   - **Status:** Both branches now in sync ✓
+### Session 1 (Previous)
+- Git conflict resolution between branches
+- A1 Class 4 (Old Professor) feature enhancement with audio, mistakes table, professor's notes
+- A1 Class 4 cheat sheet creation
 
-### 2. **A1 Class 4: Feature Enhancement** ✓
-   - **Previous State:** Basic vocabulary table + checklist
-   - **Added:**
-     - ✓ 🎧 4 expandable audio explanation sections
-     - ✓ ⚠️ Common mistakes table (5 mistakes + corrections)
-     - ✓ 📚 Real-world classroom examples (5 scenarios)
-     - ✓ 🎧 Tu vs Vous explanation section
-     - ✓ 🎧 Asking for repetition guide
-     - ✓ 🎧 How to ask translations guide
-     - ✓ 🎓 Professor's notes with classroom Q&A (9 discussion points)
-     - ✓ Enhanced vocabulary table with usage context
-     - ✓ Clickable French pronunciation throughout
-   - **Commit:** `445d5aa` — "A1 Class 4: Complete feature update with audio explanations, mistakes table, and real-world examples"
-   - **Status:** Complete ✓
+### Session 2 (Current - Token Efficient Approach)
+**Focus:** Complete ONE chapter thoroughly before expanding to others
 
-### 3. **A1 Class 4: Cheat Sheet** ✓
-   - **File:** `A1/4-Classroom-Survival-Phrases-CHEAT-SHEET.txt`
-   - **Contents:**
-     - 6 essential phrases (repetition, spelling, understanding, translation, apology, politeness)
-     - 5 common mistakes with explanations
-     - Tu vs Vous reference
-     - Pronunciation tips
-     - Practice checklist (8 items)
-     - Key grammar insight from professor's notes
-   - **Status:** Complete ✓
+#### 1. **Merged Repository Structure** ✓
+   - **Created:** New `index.html` with dual-professor support
+   - **Features:**
+     - Professor selector (Old / New / Compare modes)
+     - Side-by-side lesson viewing capability
+     - Dynamic navigation for 20 old professor lessons + 9 new professor lessons
+     - Full JavaScript infrastructure for professor switching, chapter navigation, and progress tracking
 
-### 4. **Project Documentation** ✓
-   - **File:** `prompt.md` (this file)
-   - **Purpose:** Master tracking document for development progress
-   - **Status:** Complete ✓
+#### 2. **NEW PROFESSOR CLASS 1: GENDER** ✓
+   - **File:** `index.html` (class1-new section) + `A1/New-Prof-1-Gender-CHEAT-SHEET.txt`
+   - **Implementation Status:** FULLY COMPLETE
+   
+   **Features Implemented:**
+   - ✅ 5 Audio Explanation Buttons (English language):
+     * "What is Noun Gender?" (overview)
+     * "Masculine Patterns: -ment, -age, -oir, -isme" (expandable details)
+     * "Feminine Patterns: -tion/-sion, -ure, -ade, -e" (expandable details)
+     * "English Loan Words = Usually Masculine"
+     * "Days, Months & Seasons = All Masculine"
+   
+   - ✅ Vocabulary Tables:
+     * Masculine patterns table (6 pattern types with examples)
+     * Feminine patterns table (5 pattern types with examples)
+   
+   - ✅ Common Mistakes Table:
+     * 4 typical errors with corrections and explanations
+   
+   - ✅ French Examples with Clickable Pronunciation:
+     * All French terms marked with `<span class="fr">` 
+     * Integrated with Web Speech API for pronunciation
+   
+   - ✅ Learning Checklist:
+     * 9 progressive learning items
+     * Progress bar with real-time percentage tracking
+     * localStorage persistence for user progress
+   
+   - ✅ Gemini Prompt Button:
+     * Comprehensive prompt with all grammar rules, patterns, exceptions
+     * Includes checklist for student self-evaluation
+     * JavaScript `copyPromptText()` function for one-click clipboard copying
+   
+   - ✅ Detailed Cheat Sheet:
+     * Quick reference patterns
+     * Active practice checklist
+     * Pronunciation practice words
+     * Study tips for retention
+   
+   **Commit:** `29029d1` — "New Professor Class 1 (Gender) - Complete with Cheat Sheet"
+   - **Status:** PRODUCTION READY ✓
 
 ---
 
-## 📋 PLANNED / IN PROGRESS
+## 📋 ROADMAP (Token-Efficient Priority Order)
 
-### Next Features for Class 4
-- [ ] Add listening comprehension exercises
-- [ ] Create verb conjugation practice for future tense references
-- [ ] Add video demonstrations for pronunciation
+### PHASE 1: Complete One Lesson at a Time (Current Approach)
+This avoids wasting tokens on partial implementations. Each lesson should be FULLY COMPLETE before moving to next.
 
-### A1 Classes 5-20 Enhancement
-- [ ] Apply same feature pattern to Classes 5-20 (vocabulary tables, mistakes, audio, professor's notes, cheat sheets)
-- [ ] Standard template: audio explanations → common mistakes → examples → professor's notes → checklist
+#### NEW PROFESSOR - 9 Lessons to Complete:
+1. ✅ **Class 1: Gender** (DONE - Commit 29029d1)
+2. [ ] **Class 2: Articles** (le, la, les, un, une, des)
+3. [ ] **Class 3: Demonstratives** (ce, cet, cette, ces)
+4. [ ] **Class 4: Possessives** (mon, ton, son, notre, votre, leur)
+5. [ ] **Class 5: Prepositions** (à, de, en, pour, avec, sans, etc.)
+6. [ ] **Class 6: Reflexive Verbs** (se lever, s'asseoir, etc.)
+7. [ ] **Class 7: Adjectives** (agreement, position, common adjectives)
+8. [ ] **Class 8: Adverbs** (formation, placement, common adverbs)
+9. [ ] **Class 9: Core Vocabulary** (300 essential words)
 
-### A2 Classes 21-22 (Already Enhanced)
-- Classes 21-22 (Adjectives & Adverbs) already have all advanced features
-- Serve as reference templates for new classes
+#### OLD PROFESSOR - 20 Lessons (Need to migrate to new HTML structure):
+- All 20 classes exist in `/A1/` directory as `.txt` files
+- Need to convert each to full-featured HTML in `index.html` with same feature set as Gender class
 
-### Cheat Sheets
-- [ ] Create cheat sheets for A1 Classes 5-20 (like Class 4's)
-- [ ] Create quick-reference guides for all A2 classes
+### PHASE 2: Cheat Sheet Coverage
+- ✅ **Class 1 (Gender)** - DONE
+- [ ] Classes 2-9 (New Professor) - create after each class completion
+- [ ] Classes 1-20 (Old Professor) - create based on existing `.txt` files
 
-### Interactive Features
+### PHASE 3: Old Professor Integration
+- [ ] Migrate all 20 old professor lessons to new HTML structure
+- [ ] Ensure feature parity with new professor lessons
+
+### PHASE 4: Advanced Features (Only after all lessons complete)
 - [ ] Add flashcard quiz mode
-- [ ] Add speech-to-text listening practice
-- [ ] Add Spaced Repetition System (SRS) for vocabulary retention
-
-### Export/Study Features
-- [ ] PDF export for each lesson
-- [ ] Anki deck generation for vocabulary review
-- [ ] Study guide compilation for exam prep
+- [ ] Add listening comprehension exercises
+- [ ] Speech-to-text practice
+- [ ] Spaced Repetition System (SRS)
+- [ ] PDF export functionality
 
 ---
 
@@ -114,91 +139,134 @@
 
 ---
 
-## 📊 STATISTICS
+## 📊 PROJECT STATISTICS
 
-| Metric | Count |
-|--------|-------|
-| A1 Lessons | 20 (all with basic structure) |
-| A1 Lessons Enhanced (Class 4) | 1 |
-| A2 Lessons | 2 (fully enhanced) |
-| Features per Lesson (Class 4) | 9 (audio × 4, mistakes, examples, checklist, Gemini prompt, professor's notes) |
-| Cheat Sheets Created | 1 (Class 4) |
-| Common Mistakes Documented | 5 (Class 4) |
-| Real-World Examples | 5 (Class 4) |
-| Professor's Q&A Points | 9 (Class 4) |
+### Lessons Status
+| Category | Count | Status |
+|----------|-------|--------|
+| Old Professor Classes | 20 | Available in .txt format, need HTML integration |
+| New Professor Classes | 9 | 1 complete, 8 in queue |
+| Classes with Full Features | 1 | New Prof Class 1 (Gender) |
+| Cheat Sheets Created | 1 | New Prof Class 1 |
 
----
-
-## 🎯 STUDY WORKFLOW RECOMMENDATIONS
-
-### Recommended Study Path:
-
-1. **On Laptop:**
-   - Open French-Notes `index.html`
-   - Click through lesson sections
-   - Read professor's notes for deep understanding
-   - Review cheat sheet for key concepts
-   - Copy Gemini prompt button when ready to study with AI
-
-2. **On Phone + Laptop:**
-   - Copy HTML lesson content via Inspector
-   - Paste into Gemini on phone
-   - Use Gemini's structured prompt for interactive study
-   - Reference notes on laptop while practicing on phone
-
-3. **Study Checklist:**
-   - Check off items as you learn (stored locally)
-   - Use progress bar to track completion
-   - Review unchecked items before moving to next lesson
+### New Prof Class 1 (Gender) - Feature Breakdown
+| Feature | Count | Status |
+|---------|-------|--------|
+| Audio Explanation Buttons | 5 | ✅ Complete |
+| Vocabulary Tables | 2 | ✅ Complete |
+| Common Mistakes Table | 4 examples | ✅ Complete |
+| Learning Checklist Items | 9 | ✅ Complete |
+| French Pronunciation Examples | 20+ | ✅ Complete |
+| Gemini Prompt Coverage | 100% | ✅ Complete |
+| Cheat Sheet Sections | 8 | ✅ Complete |
 
 ---
 
-## 📝 DEVELOPMENT NOTES
+## 🎯 HOW TO USE THE MERGED REPOSITORY
 
-### Architecture Decisions:
+### For Students: Typical Study Session
 
-1. **HTML-first approach:** All content embedded in single HTML file
-   - Pro: Single file to deploy, fast loading
-   - Con: Large file size, harder to maintain at scale
+1. **Open the Merged Index:**
+   - Open `/index.html` in browser
+   - Use the "Professor Selection" panel at top to choose:
+     * **Old Professor:** View lessons from previous batch (20 classes)
+     * **New Professor:** View lessons from current batch (9 classes, grammar-focused)
+     * **Compare:** View both side-by-side
 
-2. **LocalStorage for state:** Checklists use browser localStorage
-   - Pro: No server needed, instant persistence
-   - Con: Lost if browser data cleared, not synced across devices
+2. **Study New Professor Classes (Current Focus):**
+   - Select "New Professor" tab
+   - Choose a lesson (e.g., "Class 1: Gender")
+   - Read audio explanations (click buttons to hear in English)
+   - Study vocabulary tables
+   - Review common mistakes
+   - Complete the checklist (tracked in browser)
+   - **Copy Gemini Prompt** → paste into Gemini for AI-assisted study
 
-3. **Text files for content:** Lesson content stored in `.txt` files
-   - Pro: Easy to edit, version control friendly
-   - Con: Duplication with HTML content
+3. **Reference the Cheat Sheet:**
+   - Each class has a `.txt` cheat sheet in `/A1/` folder
+   - Print or keep open for quick reference
+   - Contains patterns, exceptions, practice checklist, pronunciation guide
 
-4. **Inline CSS + JS:** No external dependencies except CDN fonts
-   - Pro: Self-contained, works offline
-   - Con: HTML file gets large with complex styles/scripts
+4. **Progress Tracking:**
+   - Browser stores your checklist progress locally (localStorage)
+   - Progress bar shows completion % in real-time
+   - Review unchecked items before moving to next class
 
-### Future Refactoring Opportunities:
+---
 
-- [ ] Extract content to JSON format, generate HTML dynamically
-- [ ] Build backend API for user progress tracking
-- [ ] Add database for user accounts and cloud sync
-- [ ] Implement responsive component library
-- [ ] Add automated tests for functionality
+## 📝 ARCHITECTURE & TECHNICAL DECISIONS
+
+### Current HTML Structure (Merged Repository):
+
+**File:** `/index.html` (single page with dual-professor support)
+
+1. **Professor Selector UI**
+   - Buttons: "Old Professor" | "New Professor" | "Compare"
+   - CSS classes: `.professor-tab`, `.professor-selector`, `.professor-tabs`
+   - JavaScript: `switchProfessor(prof)` function
+   - Color coding: Blue (Old) vs Green (New)
+
+2. **Lesson Card System**
+   - Each lesson: `<div class="lesson-card" id="class[N]-[prof]">`
+   - Conditional display with `.active` class
+   - Lesson header with topic badge and metadata
+   - CSS: `.lesson-card`, `.lesson-header`, animations
+
+3. **Expandable Audio Sections**
+   - Structure: `<button class="expand-btn">` + `<div class="expandable-content">`
+   - Data attribute: `data-audio="[English explanation]"` for Web Speech API
+   - Function: `toggleExpandable(button)` for expand/collapse
+   - JavaScript: Reads data-audio and speaks via browser's speech synthesis
+
+4. **Progress Tracking (localStorage)**
+   - Checkboxes stored with lesson-specific IDs: `data-lesson="classN-prof"`
+   - Storage key: Checkbox ID (e.g., `c1new-1`, `c1old-2`)
+   - Function: `updateProgress()` calculates % completion in real-time
+   - Persistence: Survives page reload until browser cache cleared
+
+5. **Gemini Prompt Copying**
+   - Button: `<button class="copy-btn" onclick="copyPromptText(this, '[PROMPT TEXT]')">`
+   - JavaScript function: `copyPromptText(button, text)`
+   - Uses `navigator.clipboard.writeText()` API
+   - Visual feedback: Button changes to "✅ Copied!" for 2 seconds
+
+### Content Organization:
+- **Cheat Sheets:** Separate `.txt` files for quick reference
+  * File naming: `A1/New-Prof-N-[Topic]-CHEAT-SHEET.txt`
+  * Content: Patterns, exceptions, study tips, practice checklist
+  * Format: Plain text for easy copying/printing
+
+### Design Philosophy:
+1. **All-in-one index.html** - Fast loading, self-contained
+2. **localStorage for UX** - No backend needed, instant feedback
+3. **Text files for supplementary content** - Easy to edit, version control friendly
+4. **Inline CSS + JS** - No dependencies, works offline
+5. **Color-coded professors** - Visual distinction between content sources
 
 ---
 
 ## 🔄 GIT WORKFLOW
 
-### Branch Structure:
-- **`main`:** Production-ready, stable content
-- **`claude/wonderful-darwin-idhgvx`:** Current development branch
-- **`claude/french-notes-clone-92am9a`:** (merged) Previously held newer content
+### Current Branch Structure:
+- **`main`:** Stable, production-ready version
+- **`claude/merged-professors-a1`:** Active development branch for merged repository
+  * Contains dual-professor support
+  * New HTML structure with professor selector
+  * All new professor classes + old professor materials
 
-### Commit Pattern:
-- One commit per feature/lesson enhancement
-- Clear message format: `[Type] [Level] [Class/Feature]: Description`
-- Example: `A1 Class 4: Complete feature update with audio explanations, mistakes table, and real-world examples`
+### Commit Pattern (One Lesson Per Commit):
+- Format: `New Professor Class N: [Topic] - Complete with Cheat Sheet`
+- Example: `New Professor Class 1: Gender - Complete with Cheat Sheet`
+- Each commit includes:
+  * Updated `index.html` with new class content
+  * New cheat sheet file (`A1/New-Prof-N-[Topic]-CHEAT-SHEET.txt`)
+  * All required features (audio, vocabulary, mistakes, checklist, Gemini prompt)
 
 ### Push Strategy:
-- Push after each feature completion
-- Use `-u origin <branch>` for first push
-- Always verify `git status` before pushing
+- After each complete lesson, commit and push
+- Use: `git push -u origin claude/merged-professors-a1`
+- Verify before push: `git status` and `git diff`
+- Keep commit history clean (one lesson = one commit)
 
 ---
 
@@ -226,14 +294,48 @@ All lessons reflect the instructor's approach from class notes:
 
 ## 🚀 NEXT SESSION CHECKLIST
 
-When resuming this project, check:
+When resuming work on this project:
 
-- [ ] Verify current branch is `claude/wonderful-darwin-idhgvx`
-- [ ] Pull latest from remote: `git pull origin main`
-- [ ] Check which classes still need enhancement (Classes 5-20)
-- [ ] Decide: Enhance all A1 classes, or focus on A2?
-- [ ] Create template for cheat sheets to speed up creation
-- [ ] Test interactive features on multiple browsers
+### Quick Start:
+- [ ] Verify branch: `git branch -a | grep claude/merged`
+- [ ] Check current status: `git status` (should be clean)
+- [ ] Pull latest: `git fetch origin && git pull origin claude/merged-professors-a1`
+
+### Before Starting Next Lesson:
+- [ ] Decide: Which of the 8 remaining NEW Professor classes to build next?
+  * Suggested order: Class 2 (Articles) → Class 3 (Demonstratives) → Class 4 (Possessives) → Class 5 (Prepositions)
+  * Each lesson should be COMPLETE before moving to next (avoid token waste)
+
+### For Each New Lesson:
+1. **HTML Implementation:**
+   - Add new `<div class="lesson-card new-prof" id="class[N]-new">` to index.html
+   - Implement 4-5 audio buttons (English explanations)
+   - Create 2-3 vocabulary/reference tables
+   - Add common mistakes table (4-5 examples)
+   - Build 9-item learning checklist
+   - Write comprehensive Gemini prompt with all material
+
+2. **Supporting Files:**
+   - Create `A1/New-Prof-[N]-[Topic]-CHEAT-SHEET.txt`
+   - Format: Follow the Gender cheat sheet template
+   - Include: Patterns, exceptions, study tips, practice checklist
+
+3. **Quality Checks:**
+   - Test clickable pronunciation (French words with `<span class="fr">`)
+   - Test Gemini prompt copy button (should copy full prompt)
+   - Test audio buttons (should play English explanation via text-to-speech)
+   - Test checklist progress tracking (should persist across reloads)
+   - Verify all links and formatting look correct
+
+4. **Git Workflow:**
+   - Commit with message: `New Professor Class [N]: [Topic] - Complete with Cheat Sheet`
+   - Push: `git push -u origin claude/merged-professors-a1`
+   - Update this prompt.md file with new progress
+
+### Testing Browsers:
+- [ ] Chrome (full feature support)
+- [ ] Firefox (test Web Speech API)
+- [ ] Safari (check CSS grid/flexbox compatibility)
 
 ---
 
