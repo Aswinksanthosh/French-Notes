@@ -152,17 +152,44 @@
     .lesson-header h2 { font-size: 18px; }
     .lesson-header .date { display: block; font-size: 12px; margin-top: 2px; }
     h3 { font-size: 15px; margin-top: 24px; }
-    nav { margin-bottom: 20px; }
-    .nav-toggle { padding: 10px 12px; font-size: 13px; }
-    nav strong { font-size: 13px; }
-    nav .nav-scroll {
-      display: flex;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      gap: 6px;
-      padding: 12px;
+    nav {
+      margin-bottom: 20px;
+      max-height: 80vh !important;
     }
-    nav a { flex: 0 0 auto; margin: 0; font-size: 13px; padding: 6px 10px; }
+    nav.collapsed {
+      max-height: 50px !important;
+    }
+    .nav-toggle {
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    nav strong {
+      font-size: 15px;
+      margin-bottom: 12px;
+      margin-top: 8px;
+    }
+    nav .nav-scroll {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 16px;
+      overflow-y: auto;
+      max-height: calc(80vh - 60px);
+    }
+    nav a {
+      flex: none;
+      margin: 0;
+      font-size: 15px;
+      padding: 12px 14px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 600;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     table { font-size: 13px; min-width: 420px; }
     th, td { padding: 6px 8px; }
     .checklist li { padding: 6px 4px; }
