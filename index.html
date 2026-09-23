@@ -174,55 +174,31 @@
       margin-top: 8px;
     }
     nav .nav-scroll {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 8px;
       padding: 16px;
       overflow-y: auto;
-      max-height: calc(4 * 60px + 80px);
+      max-height: calc(80vh - 60px);
     }
-    nav a {
-      flex: none;
+    nav a.nav-ch {
       margin: 0;
-      font-size: 16px;
-      padding: 14px 16px;
-      text-align: left;
-      border-radius: 8px;
+      font-size: 14px;
+      padding: 10px 8px;
+      text-align: center;
+      border-radius: 6px;
       font-weight: 600;
-      min-height: 50px;
+      min-height: 40px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
+      border: 2px solid #ccc;
     }
     nav strong {
-      padding: 12px 16px;
-      margin: 0;
-      font-size: 14px;
-    }
-    .level-btn {
-      width: 100%;
-      padding: 14px 16px;
-      font-size: 16px;
-      font-weight: 700;
-      border: 2px solid;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-bottom: 8px;
-      transition: all 0.3s ease;
-    }
-    .level-btn:active {
-      transform: scale(0.98);
-    }
-    .level-content {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 8px;
-    }
-    .level-content a {
-      padding: 12px 16px;
-      font-size: 14px;
-      min-height: 44px;
+      grid-column: 1 / -1;
+      padding: 8px 8px;
+      margin: 4px 0 0 0;
+      font-size: 13px;
     }
     table { font-size: 13px; min-width: 420px; }
     th, td { padding: 6px 8px; }
@@ -380,44 +356,38 @@
 
 <nav id="toc" class="collapsed">
   <button class="nav-toggle" onclick="toggleNav()">
-    <span>📚 Jump to a class</span>
+    <span>📚 Chapters</span>
     <span id="toggleIcon">▼</span>
   </button>
   <div class="nav-scroll">
-    <!-- A1 Button -->
-    <button class="level-btn" onclick="toggleLevel(this, 'a1')" style="background: var(--lightblue); color: var(--blue); border: 2px solid var(--blue);">A1</button>
-    <div class="level-content a1" style="display: none;">
-      <a href="#" onclick="goToClass(1)">Alphabet</a>
-      <a href="#" onclick="goToClass(2)">Greetings</a>
-      <a href="#" onclick="goToClass(3)">Calendar</a>
-      <a href="#" onclick="goToClass(4)">Classroom</a>
-      <a href="#" onclick="goToClass(5)">Endings</a>
-      <a href="#" onclick="goToClass(6)">Articles</a>
-      <a href="#" onclick="goToClass(7)">Gender</a>
-      <a href="#" onclick="goToClass(8)">Hobbies</a>
-      <a href="#" onclick="goToClass(9)">Family</a>
-      <a href="#" onclick="goToClass(10)">Professions</a>
-      <a href="#" onclick="goToClass(11)">Reflexive</a>
-      <a href="#" onclick="goToClass(12)">Future</a>
-      <a href="#" onclick="goToClass(13)">Demonstratives</a>
-      <a href="#" onclick="goToClass(14)">Negation</a>
-      <a href="#" onclick="goToClass(15)">Telling</a>
-      <a href="#" onclick="goToClass(16)">Colors</a>
-      <a href="#" onclick="goToClass(17)">Meals</a>
-      <a href="#" onclick="goToClass(18)">Listening</a>
-      <a href="#" onclick="goToClass(19)">Irregular</a>
-      <a href="#" onclick="goToClass(20)">Conditional</a>
-      <a href="#" onclick="goToClass(21)">Description</a>
-    </div>
+    <strong style="color: var(--blue); margin-bottom: 8px; display: block;">A1</strong>
+    <a href="#" onclick="goToClass(1)" class="nav-ch">1</a>
+    <a href="#" onclick="goToClass(2)" class="nav-ch">2</a>
+    <a href="#" onclick="goToClass(3)" class="nav-ch">3</a>
+    <a href="#" onclick="goToClass(4)" class="nav-ch">4</a>
+    <a href="#" onclick="goToClass(5)" class="nav-ch">5</a>
+    <a href="#" onclick="goToClass(6)" class="nav-ch">6</a>
+    <a href="#" onclick="goToClass(7)" class="nav-ch">7</a>
+    <a href="#" onclick="goToClass(8)" class="nav-ch">8</a>
+    <a href="#" onclick="goToClass(9)" class="nav-ch">9</a>
+    <a href="#" onclick="goToClass(10)" class="nav-ch">10</a>
+    <a href="#" onclick="goToClass(11)" class="nav-ch">11</a>
+    <a href="#" onclick="goToClass(12)" class="nav-ch">12</a>
+    <a href="#" onclick="goToClass(13)" class="nav-ch">13</a>
+    <a href="#" onclick="goToClass(14)" class="nav-ch">14</a>
+    <a href="#" onclick="goToClass(15)" class="nav-ch">15</a>
+    <a href="#" onclick="goToClass(16)" class="nav-ch">16</a>
+    <a href="#" onclick="goToClass(17)" class="nav-ch">17</a>
+    <a href="#" onclick="goToClass(18)" class="nav-ch">18</a>
+    <a href="#" onclick="goToClass(19)" class="nav-ch">19</a>
+    <a href="#" onclick="goToClass(20)" class="nav-ch">20</a>
+    <a href="#" onclick="goToClass(21)" class="nav-ch">21</a>
 
-    <!-- A2 Button -->
-    <button class="level-btn" onclick="toggleLevel(this, 'a2')" style="background: #e8f5e9; color: #2e7d32; border: 2px solid #2e7d32;">A2</button>
-    <div class="level-content a2" style="display: none;">
-      <a href="#" onclick="goToClass(22)">A2: Adjectives</a>
-      <a href="#" onclick="goToClass(23)">A2: Adverbs</a>
-      <a href="#" onclick="goToClass(25)">A2: Prepositions</a>
-      <a href="#" onclick="goToClass(26)">A2: Prepositions + Future</a>
-    </div>
+    <strong style="color: #2e7d32; margin-top: 16px; margin-bottom: 8px; display: block;">A2</strong>
+    <a href="#" onclick="goToClass(22)" class="nav-ch">22</a>
+    <a href="#" onclick="goToClass(23)" class="nav-ch">23</a>
+    <a href="#" onclick="goToClass(25)" class="nav-ch">25</a>
+    <a href="#" onclick="goToClass(26)" class="nav-ch">26</a>
   </div>
 </nav>
 
@@ -6308,13 +6278,6 @@ function toggleNav() {
   const icon = document.getElementById('toggleIcon');
   nav.classList.toggle('collapsed');
   icon.textContent = nav.classList.contains('collapsed') ? '▼' : '▲';
-}
-
-function toggleLevel(btn, level) {
-  const content = document.querySelector(`.level-content.${level}`);
-  const isVisible = content.style.display !== 'none';
-  content.style.display = isVisible ? 'none' : 'flex';
-  btn.style.opacity = isVisible ? '1' : '0.8';
 }
 
 // INITIALIZE ON PAGE LOAD
