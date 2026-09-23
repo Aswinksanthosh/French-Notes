@@ -105,6 +105,10 @@
     font-weight: 600;
   }
   nav a:hover { background: var(--blue); color: white; }
+  /* Completion colors */
+  nav a.completed { background: #ffffff; color: #333; border: 2px solid #ccc; }
+  nav a.partial { background: #c8e6c9; color: #2e7d32; }
+  nav a.not-touched { background: #81c784; color: white; font-weight: bold; }
 
   /* Checklist */
   .checklist { list-style: none; padding: 0; margin: 10px 0 18px; }
@@ -340,7 +344,7 @@
 
 <div class="chapter-nav">
   <button class="chapter-btn" id="prevBtn" onclick="previousChapter()">← Previous</button>
-  <span id="chapterIndicator" style="padding: 8px 16px; align-self: center; color: var(--blue); font-weight: 600;">Class 1 of 22</span>
+  <span id="chapterIndicator" style="padding: 8px 16px; align-self: center; color: var(--blue); font-weight: 600;">Class 1 of 25</span>
   <button class="chapter-btn" id="nextBtn" onclick="nextChapter()">Next →</button>
 </div>
 
@@ -5962,6 +5966,7 @@
     const total = boxes.length;
     document.querySelector('.progress-count[data-lesson="' + lesson + '"]').textContent = done + ' / ' + total + ' done';
     document.querySelector('.progress-bar[data-lesson="' + lesson + '"]').style.width = (done / total * 100) + '%';
+    updateChapterColors();
   }
 
   // Expandable sections toggle
@@ -5986,6 +5991,33 @@
 let currentClass = 1;
 const totalClasses = 25;
 
+// Update chapter colors based on completion
+function updateChapterColors() {
+  for (let i = 1; i <= totalClasses; i++) {
+    const classNum = (i === 4.5) ? 4.5 : i;
+    const checklist = document.querySelector(`.checklist[data-lesson="class${classNum}"]`);
+    const navLink = document.querySelector(`a[onclick="goToClass(${classNum})"]`);
+
+    if (checklist && navLink) {
+      const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+      const checked = checklist.querySelectorAll('input[type="checkbox"]:checked').length;
+      const total = checkboxes.length;
+
+      navLink.classList.remove('completed', 'partial', 'not-touched');
+
+      if (total === 0) {
+        navLink.classList.add('not-touched');
+      } else if (checked === total) {
+        navLink.classList.add('completed');
+      } else if (checked > 0) {
+        navLink.classList.add('partial');
+      } else {
+        navLink.classList.add('not-touched');
+      }
+    }
+  }
+}
+
 function showClass(classNum) {
   // Hide all chapters
   document.querySelectorAll('.lesson-card').forEach(card => {
@@ -6003,6 +6035,7 @@ function showClass(classNum) {
 
     // Update indicator
     document.getElementById('chapterIndicator').textContent = `Class ${classNum} of ${totalClasses}`;
+    updateChapterColors();
 
     // Update nav buttons
     document.getElementById('prevBtn').disabled = classNum === 1;
@@ -6230,6 +6263,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   // Update global progress on load
   updateGlobalProgress();
+  updateChapterColors();
 });
 </script>
 
