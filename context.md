@@ -114,7 +114,16 @@ scope-minimalism.
    Site Features & How To Use Them" write-up before the lesson content —
    green/A1 variant (mentions green checkboxes, the 🎓 A1 badge) for
    classes 1–21, blue/A2 variant for 22/23/25/26.
-6. Verify after every class, before moving to the next one:
+6. Any standalone French word/letter/phrase shown to the learner (not just
+   the worked examples) should be clickable-to-pronounce: wrap it in
+   `<span class="fr">...</span>` and it just works — there's already a
+   global `document` click listener that calls `speakFrench()` for any
+   `.fr` element, no per-word `onclick` needed. (Class 1's A–Z alphabet
+   line was missed originally — only the example words below it were
+   clickable — fixed 2026-09-24. Check other classes for the same gap:
+   vocab lists, standalone letters/numbers, anything presented as plain
+   text that a learner would want to hear.)
+7. Verify after every class, before moving to the next one:
    - checkbox `id` vs label `for` match 1:1 (no mismatches)
    - unique checkbox id count equals the number of checklist items for
      that class
@@ -170,6 +179,16 @@ originally established on the A2 reference classes) is complete. All 25
 "Copy for Gemini" buttons verified working end-to-end (headless-browser
 click test, clipboard content checked) after fixing the two quoting bugs
 in History below.
+
+**In progress (started 2026-09-24):** a content-quality pass through the
+classes one by one, per the user's usual workflow (see "How the user
+works" above) — going class by class checking/improving actual lesson
+content, not structure. Class 1 (Alphabet) done: made the A–Z line
+clickable-to-pronounce (see pattern #6 above). Not yet touched: classes
+2–26. If resuming this after a compaction, ask the user which class they
+were on rather than assuming — this file won't always be updated mid-pass
+for every single small content tweak, only for anything structural/bug-like
+or a full class being marked done.
 
 ---
 
