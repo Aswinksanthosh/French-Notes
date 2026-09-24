@@ -401,6 +401,28 @@ blocks (via `content.count(exact_substring)` in Python) before editing
 classes one at a time — if it's shared, one replace does the whole site
 and is far less error-prone than 25 manual edits.
 
+## Color fix 2026-09-24: blue means "tap to hear it", nothing else
+
+`.expandable-text strong { color: var(--blue); }` made every bold phrase
+inside a "🎧 ... Explained" audio panel the same blue as `.fr` clickable
+French text (same variable, same bold weight) — user sent a screenshot
+of Class 2's Subject Pronouns panel where the entire explanation was
+blue, making it impossible to tell what's actually tappable-for-audio
+vs. just emphasized. Removed the rule (deleted, not recolored — `<strong>`
+needs no CSS to render bold). `.fr` has its own separate color rule so
+was unaffected.
+
+**Rule going forward: `var(--blue)` inline within body/prose text means
+"clickable to hear pronunciation" and ONLY that.** It's fine for UI
+chrome (h1, h3 topic headers, nav links, buttons, the chapter indicator)
+since those aren't inline prose competing with `.fr` spans for
+attention — checked those during this fix and left them as-is. But
+never give plain emphasis/bold text inside note/expandable-text/example
+content the blue color, even via a different rule than the one just
+removed — that reintroduces the exact same confusion. If new content
+sections are added with bold/emphasized text (tables, notes, etc.),
+check they aren't blue before considering them done.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
