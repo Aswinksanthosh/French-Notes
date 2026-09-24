@@ -130,6 +130,17 @@
   }
   .checklist label { cursor: pointer; }
   .checklist input:checked + label { text-decoration: line-through; color: #999; }
+
+  /* A2 Class 22 - Blue checklist text */
+  .checklist[data-lesson="class22"] label {
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .checklist[data-lesson="class22"] input:checked + label {
+    color: #999;
+    text-decoration: line-through;
+  }
+
   .progress-bar-wrap {
     background: var(--lightblue);
     border-radius: 20px;
@@ -486,19 +497,6 @@
   R — the guttural French R; compared in class to the "r" sound in "Air India".
   </div>
 
-  <h3>✅ Learning & Exam Checklist</h3>
-  <div class="progress-label"><span class="progress-count" data-lesson="class1">0 / 7 done</span></div>
-  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class1"></div></div>
-  <ul class="checklist" data-lesson="class1">
-    <li><input type="checkbox" id="c1-1"><label for="c1-1">French alphabet (A-Z) — learned & can recite</label></li>
-    <li><input type="checkbox" id="c1-2"><label for="c1-2">Accent marks overview — understand all 4 types (aigu, grave, cédille, tréma)</label></li>
-    <li><input type="checkbox" id="c1-3"><label for="c1-3">Accent aigu (é) — learned & passed exam</label></li>
-    <li><input type="checkbox" id="c1-4"><label for="c1-4">Accent grave (è) — learned & passed exam</label></li>
-    <li><input type="checkbox" id="c1-5"><label for="c1-5">Cédille (ç) — learned & passed exam</label></li>
-    <li><input type="checkbox" id="c1-6"><label for="c1-6">Tréma (ï) — learned & passed exam</label></li>
-    <li><input type="checkbox" id="c1-7"><label for="c1-7">Pronunciation practice letters (D, E, G, J, Q, R, U, V, W, Y) — mastered</label></li>
-  </ul>
-</div>
 
 <!-- ===================== CLASS 2 ===================== -->
 <div class="lesson-card" id="class2">
@@ -4288,14 +4286,28 @@
     <h2>A2: CLASS 1 — French Adjectives <span class="date">— Tuesday, September 21, 2026</span></h2>
   </div>
 
-  <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;" onclick="mergeClassAndPrompt(this, 'If you don\'t have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.\n\nTeach me comprehensive French adjectives using this structure:\n\nADJECTIVE AGREEMENT (Gender & Number):\nMasculine patterns that must AGREE with noun:\n- Basic + -e: grand→grande, petit→petite\n- Already -e: calme→calme (no change)\n- -f → -ve: actif→active, neuf→neuve\n- -x → -se: heureux→heureuse, dangereux→dangereuse\n- -ien → -ienne: ancien→ancienne, indien→indienne\n- -on → -onne: bon→bonne, breton→bretonne\n- Irregular: beau→belle, nouveau→nouvelle, vieux→vieille\n\nADJECTIVE PLACEMENT:\n- MOST come AFTER noun: une voiture rouge, un étudiant français, une table ronde\n- SOME come BEFORE: beauty, age, goodness, size (un petit garçon, une grande maison, un beau film)\n- Position changes meaning: ancien professeur (former) vs professeur ancien (old/elderly); grand homme (great man) vs homme grand (tall man)\n\nSPECIAL FORMS:\n- beau → bel before vowel/silent H (un bel homme)\n- nouveau → nouvel (un nouvel abonnement)\n- vieux → vieil (un vieil homme)\n\nEPITHÈTE vs ATTRIBUT:\n- Épithète: Adjective directly with noun (un chat noir)\n- Attribut: After linking verb être (Le chat est noir)\n\nSTUDY OBJECTIVES:\n- Master adjective agreement patterns (gender & number)\n- Understand adjective placement rules (before/after noun)\n- Learn meaning changes based on placement\n- Distinguish epithète vs attribut\n- Use adjectives correctly in sentences\n\nEXAM REQUIREMENTS (to pass):\n- SPEAKING: Describe objects/people using correct adjectives with proper agreement\n- WRITING: Write sentences with adjectives in correct gender/number/position\n- READING: Identify adjective-noun agreement in French text\n- LISTENING: Hear adjectives and identify what noun they modify\n\nTEACH ME SLOWLY:\n1. Adjective agreement patterns (gender/number) — I\'ll check off when I can apply all 7 patterns\n2. Adjective placement rules (before/after noun) — I\'ll check off when I understand BAGS rule\n3. Meaning shifts (ancien, grand, pauvre, etc.) — I\'ll check off when I can explain 4+ examples\n4. Special forms before vowels (bel, nouvel, vieil) — I\'ll check off when I can use them correctly\n5. Epithète vs attribut distinction — I\'ll check off when I can identify both types\n6. Can use adjectives correctly in complete sentences — Speaking & writing test passed\n\nFor each topic, when I fully understand it AND can do a short speaking/writing/reading test, I\'ll check it off in my checklist. Ask me questions to verify understanding before I check each one.\n\nAlso, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.')">📋 Copy for Gemini</button>
+  <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES & HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays "X / Y done"\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0)\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes (22-26) are 100% complete\n\n📖 LEARNING CONTENT:\n• 📚 Learning Objectives boxes\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ STUDY-FIRST LAYOUT: Checklists BEFORE content\n• 📌 ONE CHECKLIST PER TOPIC: Focused chunks\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n\n═════════════════════════════════════════\n\nIf you don\'t have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.\n\nTeach me comprehensive French adjectives using this structure:\n\nADJECTIVE AGREEMENT (Gender & Number):\nMasculine patterns that must AGREE with noun:\n- Basic + -e: grand→grande, petit→petite\n- Already -e: calme→calme (no change)\n- -f → -ve: actif→active, neuf→neuve\n- -x → -se: heureux→heureuse, dangereux→dangereuse\n- -ien → -ienne: ancien→ancienne, indien→indienne\n- -on → -onne: bon→bonne, breton→bretonne\n- Irregular: beau→belle, nouveau→nouvelle, vieux→vieille\n\nADJECTIVE PLACEMENT:\n- MOST come AFTER noun: une voiture rouge, un étudiant français, une table ronde\n- SOME come BEFORE: beauty, age, goodness, size (un petit garçon, une grande maison, un beau film)\n- Position changes meaning: ancien professeur (former) vs professeur ancien (old/elderly); grand homme (great man) vs homme grand (tall man)\n\nSPECIAL FORMS:\n- beau → bel before vowel/silent H (un bel homme)\n- nouveau → nouvel (un nouvel abonnement)\n- vieux → vieil (un vieil homme)\n\nEPITHÈTE vs ATTRIBUT:\n- Épithète: Adjective directly with noun (un chat noir)\n- Attribut: After linking verb être (Le chat est noir)\n\nSTUDY OBJECTIVES:\n- Master adjective agreement patterns (gender & number)\n- Understand adjective placement rules (before/after noun)\n- Learn meaning changes based on placement\n- Distinguish epithète vs attribut\n- Use adjectives correctly in sentences\n\nEXAM REQUIREMENTS (to pass):\n- SPEAKING: Describe objects/people using correct adjectives with proper agreement\n- WRITING: Write sentences with adjectives in correct gender/number/position\n- READING: Identify adjective-noun agreement in French text\n- LISTENING: Hear adjectives and identify what noun they modify\n\nTEACH ME SLOWLY:\n1. Adjective agreement patterns (gender/number) — I\'ll check off when I can apply all 7 patterns\n2. Adjective placement rules (before/after noun) — I\'ll check off when I understand BAGS rule\n3. Meaning shifts (ancien, grand, pauvre, etc.) — I\'ll check off when I can explain 4+ examples\n4. Special forms before vowels (bel, nouvel, vieil) — I\'ll check off when I can use them correctly\n5. Epithète vs attribut distinction — I\'ll check off when I can identify both types\n6. Can use adjectives correctly in complete sentences — Speaking & writing test passed\n\nFor each topic, when I fully understand it AND can do a short speaking/writing/reading test, I\'ll check it off in my checklist. Ask me questions to verify understanding before I check each one.\n\nAlso, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.')">📋 Copy for Gemini</button>
 
   <p class="topic">Topic: Adjective agreement, placement, formation patterns, epithète vs attribut, and adjective practice.</p>
 
   <h3>📚 Learning Objectives</h3>
   <div class="note">
   Understand and apply adjective agreement (gender & number), learn placement rules, master formation patterns (feminine -e, -f/-ve, -x/-se, -ien/-ienne, -on/-onne), distinguish between epithète and attribut adjectives, and practice using adjectives in context.
-  </div>
+  
+  <h3>✅ Learning & Exam Checklist</h3>
+  <div class="progress-label"><span class="progress-count" data-lesson="class1">0 / 7 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class1"></div></div>
+  <ul class="checklist" data-lesson="class1">
+    <li><input type="checkbox" id="c1-1"><label for="c1-1">French alphabet (A-Z) — learned & can recite</label></li>
+    <li><input type="checkbox" id="c1-2"><label for="c1-2">Accent marks overview — understand all 4 types (aigu, grave, cédille, tréma)</label></li>
+    <li><input type="checkbox" id="c1-3"><label for="c1-3">Accent aigu (é) — learned & passed exam</label></li>
+    <li><input type="checkbox" id="c1-4"><label for="c1-4">Accent grave (è) — learned & passed exam</label></li>
+    <li><input type="checkbox" id="c1-5"><label for="c1-5">Cédille (ç) — learned & passed exam</label></li>
+    <li><input type="checkbox" id="c1-6"><label for="c1-6">Tréma (ï) — learned & passed exam</label></li>
+    <li><input type="checkbox" id="c1-7"><label for="c1-7">Pronunciation practice letters (D, E, G, J, Q, R, U, V, W, Y) — mastered</label></li>
+  </ul>
+</div>
+</div>
 
   <h3>Grammar: Adjective Agreement</h3>
   <div class="expandable-section">
