@@ -188,12 +188,14 @@ clickable-to-pronounce (see pattern #6 above), fixed the shared
 expandable-audio double-play bug found while testing it on this class's
 Accent Marks section (see History — that fix applies site-wide, not just
 Class 1), then piloted a NEW feature on this class only: a purple
-"🔎 What's in this section?" button after every `<h3>`, a short 1-sentence
-spoken preview of that topic (separate from the green "🎧 ... Explained"
-deep-dive buttons — `toggleSectionSummary()`, shares the same play/pause
-engine as `toggleExpandable()` via `deactivateOtherAudioButton()`/
-`setExpandButtonIcon()`). **This preview-button feature is NOT yet rolled
-out past Class 1** — ask the user if/when they want it on the other 24
+"🔎 What's in this chapter?" button after every `<h3>` (renamed from
+"...section?" per user request 2026-09-24 — pure label change), a short
+1-sentence spoken preview of that topic (separate from the green
+"🎧 ... Explained" deep-dive buttons — `toggleSectionSummary()`, shares
+the same play/pause engine as `toggleExpandable()` via
+`deactivateOtherAudioButton()`/`setExpandButtonIcon()`). **This
+preview-button feature is NOT yet rolled out past Class 1** — ask the
+user if/when they want it on the other 24
 classes before adding it there; don't assume. Not yet touched: classes
 2–26. If resuming this after a compaction, ask the user which
 class they're on rather than assuming — this file won't always be updated
@@ -357,6 +359,34 @@ metadata present, intro open/closed state actually persists across a
 reload, scroll position is actually restored on return to a class (not
 just "looked right in the HTML"), and swipe events actually call the nav
 functions in both directions.
+
+## Gemini prompt fix 2026-09-24: tell Gemini to enable voice mode first
+
+User reported Gemini asked them to pronounce words without first asking
+them to switch on voice/speaking mode in the Gemini app, so there was
+nothing to actually listen to when practicing pronunciation. Fixed by
+adding one bullet to the "🚀 LEARNING STRATEGY" block that every single
+class's Gemini prompt text already carries near its top:
+
+> • 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your
+> voice/speaking mode first (tap the mic/voice icon in Gemini), so you
+> can actually hear me say the words out loud
+
+Found via the shared trailing substring `"🎯 CHECK ONLY WHEN YOU
+UNDERSTAND\n💾 AUTO-SAVE with localStorage\n\n═..."`, which is byte-identical
+across all 25 classes (A1 and A2 variants converge to this exact text
+even though A2 has one extra bullet above it) — one Python string
+`.replace()` on that substring updated every class's prompt in a single
+pass, same technique as the earlier site-wide quoting-bug fixes. Verified
+in a headless browser that the new line is actually present in the
+copied clipboard content for A1 and A2 sample classes (1, 9, 22, 26), not
+just in the source HTML.
+
+**Pattern for future prompt-wording changes that should apply to every
+class:** look for text shared verbatim across all/most classes' prompt
+blocks (via `content.count(exact_substring)` in Python) before editing
+classes one at a time — if it's shared, one replace does the whole site
+and is far less error-prone than 25 manual edits.
 
 ## Open suggestions / things to keep an eye on
 
