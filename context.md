@@ -290,16 +290,34 @@ incident transcript.
   playing queued a second, overlapping/sequential playback. Fixed by
   giving each button a tracked audio state (idle/playing/paused): a tap
   only calls `speak()` from a truly idle state; while audio is live, taps
-  pause/resume instead (`speechSynthesis.pause()`/`.resume()`), and the
-  button's leading icon swaps between 🎧 (idle) / ⏸ (playing) / ▶ (paused)
-  to show which. Starting a new section's audio cancels/resets whichever
-  button was previously active, so only one section narrates at a time.
+  pause/resume instead, and the button's leading icon swaps between
+  🎧 (idle) / ⏸ (playing) / ▶ (paused) to show which. Starting a new
+  section's audio cancels/resets whichever button was previously active,
+  so only one section narrates at a time.
   **Lesson: any UI control wired to the Web Speech API needs to check
   `speechSynthesis.speaking`/its own tracked state before calling
   `.speak()` again — `.speak()` silently queues instead of
   interrupting, so a bug like this produces no error, just audio that
   sounds "wrong" in a way that's easy to dismiss as a one-off glitch
   rather than the systemic bug it was.**
+  **Follow-up, same day: the first fix used `speechSynthesis.pause()`/
+  `.resume()` for the pause/resume step. User reported resume didn't
+  work. Root cause: `pause()`/`.resume()` are unreliable across real
+  browsers — a long-standing Chromium bug (notably on Android) where
+  `resume()` silently does nothing after `pause()`, leaving the button
+  stuck showing "playing" with dead silence, no error thrown. This
+  environment can't verify that failure directly either (headless
+  Chromium here has no real TTS engine behind `speechSynthesis` — audio
+  API *calls* can be tested, actual sound output can't). Fix: stopped
+  using `pause()`/`.resume()` entirely. "Pause" now calls `cancel()`
+  outright (state → paused, icon → ▶); the next tap fully restarts the
+  narration via `speak()` from the beginning rather than trying to
+  resume mid-sentence — a non-issue since these clips are only 1-2
+  sentences. **Lesson: `speechSynthesis.pause()`/`.resume()` should be
+  treated as unreliable on this project — prefer `cancel()` + restart
+  for anything short enough that restarting is unnoticeable. Don't
+  reintroduce `pause()`/`.resume()` without a real-device test, which
+  this sandboxed environment cannot perform.**
 
 ## Features added 2026-09-24 (in response to "what am I missing")
 
