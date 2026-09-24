@@ -188,15 +188,21 @@ clickable-to-pronounce (see pattern #6 above), fixed the shared
 expandable-audio double-play bug found while testing it on this class's
 Accent Marks section (see History — that fix applies site-wide, not just
 Class 1), then piloted a NEW feature on this class only: a purple
-"🔎 What's in this chapter?" button after every `<h3>` (renamed from
-"...section?" per user request 2026-09-24 — pure label change), a short
-1-sentence spoken preview of that topic (separate from the green
-"🎧 ... Explained" deep-dive buttons — `toggleSectionSummary()`, shares
-the same play/pause engine as `toggleExpandable()` via
-`deactivateOtherAudioButton()`/`setExpandButtonIcon()`). **This
-preview-button feature is NOT yet rolled out past Class 1** — ask the
-user if/when they want it on the other 24
-classes before adding it there; don't assume. Not yet touched: classes
+"🔎 What's in this chapter?" button (renamed from "...section?" per user
+request). **Went through two shapes before landing:** first built as one
+button per `<h3>` topic (3 buttons in Class 1, each a preview of just
+that topic) — user then said only ONE such button per class/chapter,
+covering the whole chapter, not one per topic. Now: exactly one button,
+placed near the top right after the progress bar, whose spoken text
+summarizes everything the chapter covers in one short preview.
+`toggleSectionSummary()` shares the same play/pause engine as
+`toggleExpandable()` via `deactivateOtherAudioButton()`/
+`setExpandButtonIcon()`. **When rolling this out to other classes,
+build it as ONE button per class near the top — do not default back to
+one-per-topic, that shape was explicitly rejected.** This preview-button
+feature is NOT yet rolled out past Class 1 — ask the user if/when they
+want it on the other 24 classes before adding it there; don't assume.
+Not yet touched: classes
 2–26. If resuming this after a compaction, ask the user which
 class they're on rather than assuming — this file won't always be updated
 mid-pass
