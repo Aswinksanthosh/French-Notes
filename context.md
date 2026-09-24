@@ -199,12 +199,19 @@ summarizes everything the chapter covers in one short preview.
 `toggleExpandable()` via `deactivateOtherAudioButton()`/
 `setExpandButtonIcon()`. **When rolling this out to other classes,
 build it as ONE button per class near the top — do not default back to
-one-per-topic, that shape was explicitly rejected.** This preview-button
-feature is NOT yet rolled out past Class 1 — ask the user if/when they
-want it on the other 24 classes before adding it there; don't assume.
-Not yet touched: classes
-2–26. If resuming this after a compaction, ask the user which
-class they're on rather than assuming — this file won't always be updated
+one-per-topic, that shape was explicitly rejected.** Rolled out to
+Classes 2–6 (Greetings, Calendar, Classroom, Endings, Articles) on
+2026-09-24, same placement/shape as Class 1. **Not yet on Classes 7–26**
+— continue the same one-button-per-chapter pattern when asked to do
+more, in whatever batch size the user asks for (they've been doing this
+5 at a time); don't assume they want all remaining classes done at once
+unless they say so.
+
+Separately, the content-quality pass (Class 1's alphabet-clickable fix,
+the audio double-play/resume fixes) has only actually touched Class 1
+so far — classes 2–26 have NOT had that pass, only the button rollout
+above. If resuming this after a compaction, ask the user which
+class/task they're on rather than assuming — this file won't always be updated
 mid-pass
 for every single small content tweak, only for anything structural/bug-like
 or a full class being marked done.
