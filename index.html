@@ -6512,20 +6512,76 @@
   // Removed 2026-09-24 to stop it being mistaken for the live implementation.
   // Lesson: grep for a function name before editing it - duplicates are silent.
 
-  // Expandable sections toggle
+  // Expandable sections toggle, with play/pause audio control.
+  //
+  // Old behavior: every tap on an open section called speechSynthesis.speak()
+  // again without cancelling the previous utterance, so speak() just queued
+  // it - two taps while narration was still running meant it played twice in
+  // a row. Now: while narration is live, taps pause/resume it instead of
+  // starting a new one; a tap only (re)starts speech from a truly idle state,
+  // and the icon (🎧 idle / ⏸ playing / ▶ paused) reflects which.
+  let activeAudioButton = null; // whichever button currently owns speechSynthesis
+
+  function setExpandButtonIcon(button, icon) {
+    // Label is captured once so repeatedly swapping the leading icon never
+    // eats into the actual text after it.
+    if (button.dataset.label === undefined) {
+      button.dataset.label = button.textContent.replace(/^\s*\S+\s*/, '').trim();
+    }
+    button.textContent = icon + ' ' + button.dataset.label;
+  }
+
   function toggleExpandable(button) {
     const section = button.closest('.expandable-section');
     const content = section.querySelector('.expandable-content');
     const audio = button.getAttribute('data-audio');
     const lang = button.getAttribute('data-lang');
+    const isOpen = content.classList.contains('open');
 
-    content.classList.toggle('open');
+    if (!audio) {
+      content.classList.toggle('open');
+      return;
+    }
 
-    if (content.classList.contains('open') && audio) {
+    if (!isOpen) {
+      // Closed -> open: start narration fresh. Cancel anything else
+      // speaking first so only one section ever narrates at a time.
+      content.classList.add('open');
+      speechSynthesis.cancel();
+      if (activeAudioButton && activeAudioButton !== button) {
+        setExpandButtonIcon(activeAudioButton, '🎧');
+        activeAudioButton.dataset.audioState = 'idle';
+      }
+
       const utterance = new SpeechSynthesisUtterance(audio);
       utterance.lang = lang || 'en-US';
       utterance.rate = 0.9;
+      utterance.onend = () => {
+        if (button.dataset.audioState !== 'paused') {
+          button.dataset.audioState = 'idle';
+          setExpandButtonIcon(button, '🎧');
+        }
+      };
+
+      activeAudioButton = button;
+      button.dataset.audioState = 'playing';
+      setExpandButtonIcon(button, '⏸');
       speechSynthesis.speak(utterance);
+      return;
+    }
+
+    // Already open: this tap controls playback, not collapsing.
+    if (button.dataset.audioState === 'playing') {
+      speechSynthesis.pause();
+      button.dataset.audioState = 'paused';
+      setExpandButtonIcon(button, '▶');
+    } else if (button.dataset.audioState === 'paused') {
+      speechSynthesis.resume();
+      button.dataset.audioState = 'playing';
+      setExpandButtonIcon(button, '⏸');
+    } else {
+      // Open but idle (narration already finished) - tap collapses it.
+      content.classList.remove('open');
     }
   }
 
