@@ -183,10 +183,14 @@ in History below.
 **In progress (started 2026-09-24):** a content-quality pass through the
 classes one by one, per the user's usual workflow (see "How the user
 works" above) — going class by class checking/improving actual lesson
-content, not structure. Class 1 (Alphabet) done: made the A–Z line
-clickable-to-pronounce (see pattern #6 above). Not yet touched: classes
-2–26. If resuming this after a compaction, ask the user which class they
-were on rather than assuming — this file won't always be updated mid-pass
+content, not structure. Class 1 (Alphabet) in progress: made the A–Z line
+clickable-to-pronounce (see pattern #6 above), then fixed the shared
+expandable-audio double-play bug found while testing it on this class's
+Accent Marks section (see History — that fix applies site-wide, not just
+Class 1). Not yet touched: classes 2–26, and Class 1 itself may have more
+requests coming. If resuming this after a compaction, ask the user which
+class they're on rather than assuming — this file won't always be updated
+mid-pass
 for every single small content tweak, only for anything structural/bug-like
 or a full class being marked done.
 
@@ -269,6 +273,26 @@ incident transcript.
   `new Function('event', thatText)` for every class — a real syntax check
   against what the browser will actually try to run. Worth doing this
   after any change that touches prompt text, not just eyeballing quotes.**
+- **Expandable-section audio played twice on a second tap (found/fixed
+  2026-09-24, user-reported on Class 1's "Accent Marks Explained"
+  button, but the shared function affects all 94 "🎧 ... Explained"
+  buttons site-wide).** `toggleExpandable()` called
+  `speechSynthesis.speak()` on every tap that left the section open,
+  without ever cancelling the still-running utterance - Web Speech API's
+  `speak()` queues rather than replaces, so two taps while narration was
+  playing queued a second, overlapping/sequential playback. Fixed by
+  giving each button a tracked audio state (idle/playing/paused): a tap
+  only calls `speak()` from a truly idle state; while audio is live, taps
+  pause/resume instead (`speechSynthesis.pause()`/`.resume()`), and the
+  button's leading icon swaps between 🎧 (idle) / ⏸ (playing) / ▶ (paused)
+  to show which. Starting a new section's audio cancels/resets whichever
+  button was previously active, so only one section narrates at a time.
+  **Lesson: any UI control wired to the Web Speech API needs to check
+  `speechSynthesis.speaking`/its own tracked state before calling
+  `.speak()` again — `.speak()` silently queues instead of
+  interrupting, so a bug like this produces no error, just audio that
+  sounds "wrong" in a way that's easy to dismiss as a one-off glitch
+  rather than the systemic bug it was.**
 
 ## Features added 2026-09-24 (in response to "what am I missing")
 
