@@ -6549,6 +6549,50 @@
     }
   }
 
+  // Starts (or restarts) narration for a button from the beginning.
+  //
+  // NOTE: "resume" from a paused state is deliberately implemented as a
+  // full restart, not speechSynthesis.resume(). resume()/pause() are
+  // unreliable across real browsers - notably a long-standing Chromium bug
+  // where resume() silently does nothing after pause() (audio stays dead,
+  // no error), especially on Android. This can't be caught by any test in
+  // this sandboxed environment either (headless Chromium here has no real
+  // TTS engine behind speechSynthesis to verify against), so instead of
+  // trying to detect and patch that failure, the pause/resume pair here
+  // only ever uses speak()/cancel() - both of which are used elsewhere in
+  // this file (speakFrench) and work reliably everywhere. These narrations
+  // are 1-2 sentences (a few seconds), so restarting from the top on
+  // "resume" is a barely-noticeable tradeoff for it actually always working.
+  function startAudioButton(button, text, lang, idleIcon) {
+    speechSynthesis.cancel();
+    deactivateOtherAudioButton(button);
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang || 'en-US';
+    utterance.rate = 0.9;
+    utterance.onend = () => {
+      if (button.dataset.audioState !== 'paused') {
+        button.dataset.audioState = 'idle';
+        setExpandButtonIcon(button, idleIcon);
+      }
+    };
+
+    activeAudioButton = button;
+    button.dataset.idleIcon = idleIcon;
+    button.dataset.audioState = 'playing';
+    setExpandButtonIcon(button, '⏸');
+    speechSynthesis.speak(utterance);
+  }
+
+  // "Pausing" stops audio outright (cancel(), not pause()) - see the note
+  // on startAudioButton() above for why. The button just shows ▶, ready to
+  // restart on the next tap.
+  function pauseAudioButton(button) {
+    speechSynthesis.cancel();
+    button.dataset.audioState = 'paused';
+    setExpandButtonIcon(button, '▶');
+  }
+
   function toggleExpandable(button) {
     const section = button.closest('.expandable-section');
     const content = section.querySelector('.expandable-content');
@@ -6562,38 +6606,16 @@
     }
 
     if (!isOpen) {
-      // Closed -> open: start narration fresh.
       content.classList.add('open');
-      speechSynthesis.cancel();
-      deactivateOtherAudioButton(button);
-
-      const utterance = new SpeechSynthesisUtterance(audio);
-      utterance.lang = lang || 'en-US';
-      utterance.rate = 0.9;
-      utterance.onend = () => {
-        if (button.dataset.audioState !== 'paused') {
-          button.dataset.audioState = 'idle';
-          setExpandButtonIcon(button, '🎧');
-        }
-      };
-
-      activeAudioButton = button;
-      button.dataset.idleIcon = '🎧';
-      button.dataset.audioState = 'playing';
-      setExpandButtonIcon(button, '⏸');
-      speechSynthesis.speak(utterance);
+      startAudioButton(button, audio, lang, '🎧');
       return;
     }
 
     // Already open: this tap controls playback, not collapsing.
     if (button.dataset.audioState === 'playing') {
-      speechSynthesis.pause();
-      button.dataset.audioState = 'paused';
-      setExpandButtonIcon(button, '▶');
+      pauseAudioButton(button);
     } else if (button.dataset.audioState === 'paused') {
-      speechSynthesis.resume();
-      button.dataset.audioState = 'playing';
-      setExpandButtonIcon(button, '⏸');
+      startAudioButton(button, audio, lang, '🎧');
     } else {
       // Open but idle (narration already finished) - tap collapses it.
       content.classList.remove('open');
@@ -6603,44 +6625,17 @@
   // "What's in this section?" button: a short spoken preview of a topic,
   // placed right after its <h3> heading - separate from toggleExpandable's
   // deep-dive "🎧 ... Explained" sections (no content to expand/collapse
-  // here, just play/pause of one short summary). Shares the same play/
-  // pause/icon engine and the same "only one thing narrates at a time" rule.
+  // here, just play/pause of one short summary). Shares the same engine.
   function toggleSectionSummary(button) {
     const text = button.getAttribute('data-audio');
     const lang = button.getAttribute('data-lang');
 
     if (button.dataset.audioState === 'playing') {
-      speechSynthesis.pause();
-      button.dataset.audioState = 'paused';
-      setExpandButtonIcon(button, '▶');
+      pauseAudioButton(button);
       return;
     }
-    if (button.dataset.audioState === 'paused') {
-      speechSynthesis.resume();
-      button.dataset.audioState = 'playing';
-      setExpandButtonIcon(button, '⏸');
-      return;
-    }
-
-    // Idle -> start fresh.
-    speechSynthesis.cancel();
-    deactivateOtherAudioButton(button);
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang || 'en-US';
-    utterance.rate = 0.9;
-    utterance.onend = () => {
-      if (button.dataset.audioState !== 'paused') {
-        button.dataset.audioState = 'idle';
-        setExpandButtonIcon(button, '🔎');
-      }
-    };
-
-    activeAudioButton = button;
-    button.dataset.idleIcon = '🔎';
-    button.dataset.audioState = 'playing';
-    setExpandButtonIcon(button, '⏸');
-    speechSynthesis.speak(utterance);
+    // paused or idle -> (re)start from the top.
+    startAudioButton(button, text, lang, '🔎');
   }
 
   // ONE CHAPTER AT A TIME FEATURE
