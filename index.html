@@ -4297,6 +4297,9 @@
   Understand and apply adjective agreement (gender & number), learn placement rules, master formation patterns (feminine -e, -f/-ve, -x/-se, -ien/-ienne, -on/-onne), distinguish between epithète and attribut adjectives, and practice using adjectives in context.
   </div>
 
+  <div class="progress-label"><span class="progress-count" data-lesson="class22">0 / 9 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class22"></div></div>
+
   <h3>Grammar: Adjective Agreement</h3>
   <div class="expandable-section">
     <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Adjective agreement means that adjectives must change their form to match the noun they describe. If the noun is feminine, the adjective must be feminine. If the noun is plural, the adjective must be plural. This happens in French because adjectives are grammatically linked to the nouns they modify. For example, the adjective grand meaning big is masculine singular. When it describes a feminine noun like maison, it becomes grande. When describing a plural noun, it becomes grands for masculine plural or grandes for feminine plural. Understanding agreement patterns is essential for correct French writing and speech." data-lang="en-US">
@@ -4356,6 +4359,13 @@
       <p style="margin-top: 4px; font-size: 14px; color: #666;">Translation: It's a beautiful, calm day. (Both "beau" and "calme" are masculine singular to match "jour")</p>
     </div>
   </div>
+
+  <ul class="checklist" data-lesson="class22" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca22-1"><label for="ca22-1">Understand adjective agreement (gender & number)</label></li>
+    <li><input type="checkbox" id="ca22-2"><label for="ca22-2">Master feminine formation patterns (basic -e, -f/-ve, -x/-se, etc.)</label></li>
+    <li><input type="checkbox" id="ca22-3"><label for="ca22-3">Learn irregular adjectives (beau, nouveau, vieux, blanc, etc.)</label></li>
+    <li><input type="checkbox" id="ca22-8"><label for="ca22-8">Understand color adjective agreement</label></li>
+  </ul>
 
   <h3>Grammar: Adjective Placement</h3>
 
@@ -4424,6 +4434,11 @@
     </div>
   </div>
 
+  <ul class="checklist" data-lesson="class22" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca22-4"><label for="ca22-4">Understand adjective placement (before/after noun)</label></li>
+    <li><input type="checkbox" id="ca22-5"><label for="ca22-5">Know meaning shifts based on placement (ancien, grand, pauvre, etc.)</label></li>
+  </ul>
+
   <h3>Special: Adjectives Before Vowels</h3>
 
   <div class="expandable-section">
@@ -4477,6 +4492,10 @@
       <p style="font-size: 13px; color: #555;">Oiseau starts with "o" (a vowel), so use "bel" not "beau."</p>
     </div>
   </div>
+
+  <ul class="checklist" data-lesson="class22" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca22-6"><label for="ca22-6">Learn special forms before vowels (bel, nouvel, vieil)</label></li>
+  </ul>
 
   <h3>Grammar: Epithète vs Attribut</h3>
 
@@ -4537,19 +4556,13 @@
     </div>
   </div>
 
-  <h3>✅ Learning & Exam Checklist</h3>
-  <div class="progress-label"><span class="progress-count" data-lesson="class22">0 / 9 done</span></div>
-  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class22"></div></div>
+  <ul class="checklist" data-lesson="class22" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca22-7"><label for="ca22-7">Distinguish epithète vs attribut adjectives</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
   <ul class="checklist" data-lesson="class22">
-    <li><input type="checkbox" id="ca22-1"><label for="ca21-1">Understand adjective agreement (gender & number)</label></li>
-    <li><input type="checkbox" id="ca22-2"><label for="ca21-2">Master feminine formation patterns (basic -e, -f/-ve, -x/-se, etc.)</label></li>
-    <li><input type="checkbox" id="ca22-3"><label for="ca21-3">Learn irregular adjectives (beau, nouveau, vieux, blanc, etc.)</label></li>
-    <li><input type="checkbox" id="ca22-4"><label for="ca21-4">Understand adjective placement (before/after noun)</label></li>
-    <li><input type="checkbox" id="ca22-5"><label for="ca21-5">Know meaning shifts based on placement (ancien, grand, pauvre, etc.)</label></li>
-    <li><input type="checkbox" id="ca22-6"><label for="ca21-6">Learn special forms before vowels (bel, nouvel, vieil)</label></li>
-    <li><input type="checkbox" id="ca22-7"><label for="ca21-7">Distinguish epithète vs attribut adjectives</label></li>
-    <li><input type="checkbox" id="ca22-8"><label for="ca21-8">Understand color adjective agreement</label></li>
-    <li><input type="checkbox" id="ca22-9"><label for="ca21-9">Can use adjectives correctly in sentences — speaking & writing test passed</label></li>
+    <li><input type="checkbox" id="ca22-9"><label for="ca22-9">Can use adjectives correctly in sentences — speaking & writing test passed</label></li>
   </ul>
 </div>
 
@@ -6136,47 +6149,59 @@ function previousChapter() {
 }
 
 // CHECKLIST PROGRESS TRACKING WITH PERSISTENT STORAGE
+// Note: a lesson's checklist items may be split across multiple <ul class="checklist">
+// blocks (e.g. one per topic section) that all share the same data-lesson value, so
+// these functions aggregate across ALL matching blocks rather than just the first one.
 function updateProgress(lesson) {
-  const checklist = document.querySelector(`.checklist[data-lesson="${lesson}"]`);
-  if (!checklist) return;
-  const total = checklist.querySelectorAll('input[type="checkbox"]').length;
-  const checked = checklist.querySelectorAll('input[type="checkbox"]:checked').length;
+  const lists = document.querySelectorAll(`.checklist[data-lesson="${lesson}"]`);
+  if (!lists.length) return;
+
+  let total = 0;
+  let checked = 0;
+  lists.forEach(list => {
+    total += list.querySelectorAll('input[type="checkbox"]').length;
+    checked += list.querySelectorAll('input[type="checkbox"]:checked').length;
+  });
 
   const progressBar = document.querySelector(`.progress-bar[data-lesson="${lesson}"]`);
   const progressCount = document.querySelector(`.progress-count[data-lesson="${lesson}"]`);
 
   if (progressBar && progressCount) {
-    const percentage = (checked / total) * 100;
+    const percentage = total > 0 ? (checked / total) * 100 : 0;
     progressBar.style.width = percentage + '%';
     progressCount.textContent = `${checked} / ${total} done`;
   }
 
   // Save to localStorage
-  saveChecklistState(lesson, checklist);
+  saveChecklistState(lesson);
 
   // Update global progress
   updateGlobalProgress();
 }
 
-function saveChecklistState(lesson, checklist) {
-  const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+function saveChecklistState(lesson) {
+  const lists = document.querySelectorAll(`.checklist[data-lesson="${lesson}"]`);
   const states = {};
-  checkboxes.forEach((checkbox, index) => {
-    states[index] = checkbox.checked;
+  lists.forEach(list => {
+    list.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      states[checkbox.id] = checkbox.checked;
+    });
   });
   localStorage.setItem(`checklist_${lesson}`, JSON.stringify(states));
 }
 
-function loadChecklistState(lesson, checklist) {
+function loadChecklistState(lesson) {
   const saved = localStorage.getItem(`checklist_${lesson}`);
   if (!saved) return;
 
   const states = JSON.parse(saved);
-  const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach((checkbox, index) => {
-    if (states[index] !== undefined) {
-      checkbox.checked = states[index];
-    }
+  const lists = document.querySelectorAll(`.checklist[data-lesson="${lesson}"]`);
+  lists.forEach(list => {
+    list.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      if (states[checkbox.id] !== undefined) {
+        checkbox.checked = states[checkbox.id];
+      }
+    });
   });
 }
 
@@ -6195,10 +6220,14 @@ function updateGlobalProgress() {
   document.getElementById('globalProgressText').textContent = `${completedItems} / ${totalItems} items completed`;
 }
 
-document.querySelectorAll('.checklist').forEach(list => {
-  loadChecklistState(list.dataset.lesson, list);
-  updateProgress(list.dataset.lesson);
-});
+(function() {
+  const lessons = new Set();
+  document.querySelectorAll('.checklist').forEach(list => lessons.add(list.dataset.lesson));
+  lessons.forEach(lesson => {
+    loadChecklistState(lesson);
+    updateProgress(lesson);
+  });
+})();
 
 // RESTORE LAST VIEWED CHAPTER ON PAGE LOAD
 function restoreLastViewedChapter() {
@@ -6315,14 +6344,16 @@ window.addEventListener('DOMContentLoaded', function() {
   restoreLastViewedChapter();
 
   // Setup checklist progress tracking with persistent storage
-  document.querySelectorAll('.checklist').forEach(list => {
-    const lesson = list.getAttribute('data-lesson');
+  // (a lesson's items may be split across several .checklist blocks sharing one data-lesson)
+  const domLessons = new Set();
+  document.querySelectorAll('.checklist').forEach(list => domLessons.add(list.getAttribute('data-lesson')));
 
+  domLessons.forEach(lesson => {
     // Load saved state
-    loadChecklistState(lesson, list);
+    loadChecklistState(lesson);
 
     // Attach change listeners
-    list.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    document.querySelectorAll(`.checklist[data-lesson="${lesson}"] input[type="checkbox"]`).forEach(checkbox => {
       checkbox.addEventListener('change', function() {
         updateProgress(lesson);
       });
