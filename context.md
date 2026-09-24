@@ -184,11 +184,18 @@ in History below.
 classes one by one, per the user's usual workflow (see "How the user
 works" above) — going class by class checking/improving actual lesson
 content, not structure. Class 1 (Alphabet) in progress: made the A–Z line
-clickable-to-pronounce (see pattern #6 above), then fixed the shared
+clickable-to-pronounce (see pattern #6 above), fixed the shared
 expandable-audio double-play bug found while testing it on this class's
 Accent Marks section (see History — that fix applies site-wide, not just
-Class 1). Not yet touched: classes 2–26, and Class 1 itself may have more
-requests coming. If resuming this after a compaction, ask the user which
+Class 1), then piloted a NEW feature on this class only: a purple
+"🔎 What's in this section?" button after every `<h3>`, a short 1-sentence
+spoken preview of that topic (separate from the green "🎧 ... Explained"
+deep-dive buttons — `toggleSectionSummary()`, shares the same play/pause
+engine as `toggleExpandable()` via `deactivateOtherAudioButton()`/
+`setExpandButtonIcon()`). **This preview-button feature is NOT yet rolled
+out past Class 1** — ask the user if/when they want it on the other 24
+classes before adding it there; don't assume. Not yet touched: classes
+2–26. If resuming this after a compaction, ask the user which
 class they're on rather than assuming — this file won't always be updated
 mid-pass
 for every single small content tweak, only for anything structural/bug-like
