@@ -405,6 +405,11 @@
     background: #229954;
   }
 
+  /* "What's in this section?" preview button - visually distinct from the
+     green deep-dive .expand-btn buttons so the two aren't confused. */
+  .section-summary-btn { background: #8e44ad; margin: 4px 0 14px; }
+  .section-summary-btn:hover { background: #7d3c98; }
+
   .expandable-section {
     margin: 16px 0;
     padding: 12px 0;
@@ -533,6 +538,7 @@
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class1"></div></div>
 
   <h3>The Alphabet</h3>
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This section covers all twenty six letters of the French alphabet. Tap any letter below to hear exactly how it's pronounced in French." data-lang="en-US">🔎 What's in this section?</button>
   <p><span class="fr">A</span> — <span class="fr">B</span> — <span class="fr">C</span> — <span class="fr">D</span> — <span class="fr">E</span> — <span class="fr">F</span> — <span class="fr">G</span> — <span class="fr">H</span> — <span class="fr">I</span> — <span class="fr">J</span> — <span class="fr">K</span> — <span class="fr">L</span> — <span class="fr">M</span> — <span class="fr">N</span> — <span class="fr">O</span> — <span class="fr">P</span> — <span class="fr">Q</span> — <span class="fr">R</span> — <span class="fr">S</span> — <span class="fr">T</span> — <span class="fr">U</span> — <span class="fr">V</span> — <span class="fr">W</span> — <span class="fr">X</span> — <span class="fr">Y</span> — <span class="fr">Z</span></p>
 
   <ul class="checklist" data-lesson="class1" style="margin: 12px 0 20px;">
@@ -540,6 +546,7 @@
   </ul>
 
   <h3>Grammar: Accents</h3>
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This section explains the four French accent marks: accent aigu, accent grave, cedille, and trema, and how each one changes the way a word is pronounced." data-lang="en-US">🔎 What's in this section?</button>
   <div class="expandable-section">
     <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="French accent marks change how you pronounce words. There are four main accent marks. Accent aigu (é) makes an acute accent above the e, sounding like 'ay'. Accent grave (è) makes a grave accent, sounding like 'eh' with a more open sound. Cédille (ç) adds a comma below the c to make a soft 's' sound before the letters a, o, or u. Without the cédille, c would sound like a hard 'k'. Tréma (ï) shows two vowels next to each other are pronounced separately, not blended together. These accents are essential for correct French pronunciation and spelling." data-lang="en-US">
       🎧 Accent Marks Explained
@@ -611,6 +618,7 @@
   </ul>
 
   <h3>Pronunciation practice: flagged letters</h3>
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This section focuses on ten letters that are especially tricky to pronounce in French: D, E, G, J, Q, R, U, V, W, and Y, with extra practice tips for the trickiest ones." data-lang="en-US">🔎 What's in this section?</button>
   <div class="note">
   Letters flagged in class for extra pronunciation practice: D, E, G, J, Q, R, U, V, W, Y.<br>
   E — a drawn-out "euh" sound.<br>
@@ -6531,6 +6539,16 @@
     button.textContent = icon + ' ' + button.dataset.label;
   }
 
+  // If some OTHER button currently owns speechSynthesis, put it back to its
+  // idle icon and state before a new button takes over - only one thing
+  // narrates at a time across the whole page.
+  function deactivateOtherAudioButton(newButton) {
+    if (activeAudioButton && activeAudioButton !== newButton) {
+      setExpandButtonIcon(activeAudioButton, activeAudioButton.dataset.idleIcon || '🎧');
+      activeAudioButton.dataset.audioState = 'idle';
+    }
+  }
+
   function toggleExpandable(button) {
     const section = button.closest('.expandable-section');
     const content = section.querySelector('.expandable-content');
@@ -6544,14 +6562,10 @@
     }
 
     if (!isOpen) {
-      // Closed -> open: start narration fresh. Cancel anything else
-      // speaking first so only one section ever narrates at a time.
+      // Closed -> open: start narration fresh.
       content.classList.add('open');
       speechSynthesis.cancel();
-      if (activeAudioButton && activeAudioButton !== button) {
-        setExpandButtonIcon(activeAudioButton, '🎧');
-        activeAudioButton.dataset.audioState = 'idle';
-      }
+      deactivateOtherAudioButton(button);
 
       const utterance = new SpeechSynthesisUtterance(audio);
       utterance.lang = lang || 'en-US';
@@ -6564,6 +6578,7 @@
       };
 
       activeAudioButton = button;
+      button.dataset.idleIcon = '🎧';
       button.dataset.audioState = 'playing';
       setExpandButtonIcon(button, '⏸');
       speechSynthesis.speak(utterance);
@@ -6583,6 +6598,49 @@
       // Open but idle (narration already finished) - tap collapses it.
       content.classList.remove('open');
     }
+  }
+
+  // "What's in this section?" button: a short spoken preview of a topic,
+  // placed right after its <h3> heading - separate from toggleExpandable's
+  // deep-dive "🎧 ... Explained" sections (no content to expand/collapse
+  // here, just play/pause of one short summary). Shares the same play/
+  // pause/icon engine and the same "only one thing narrates at a time" rule.
+  function toggleSectionSummary(button) {
+    const text = button.getAttribute('data-audio');
+    const lang = button.getAttribute('data-lang');
+
+    if (button.dataset.audioState === 'playing') {
+      speechSynthesis.pause();
+      button.dataset.audioState = 'paused';
+      setExpandButtonIcon(button, '▶');
+      return;
+    }
+    if (button.dataset.audioState === 'paused') {
+      speechSynthesis.resume();
+      button.dataset.audioState = 'playing';
+      setExpandButtonIcon(button, '⏸');
+      return;
+    }
+
+    // Idle -> start fresh.
+    speechSynthesis.cancel();
+    deactivateOtherAudioButton(button);
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang || 'en-US';
+    utterance.rate = 0.9;
+    utterance.onend = () => {
+      if (button.dataset.audioState !== 'paused') {
+        button.dataset.audioState = 'idle';
+        setExpandButtonIcon(button, '🔎');
+      }
+    };
+
+    activeAudioButton = button;
+    button.dataset.idleIcon = '🔎';
+    button.dataset.audioState = 'playing';
+    setExpandButtonIcon(button, '⏸');
+    speechSynthesis.speak(utterance);
   }
 
   // ONE CHAPTER AT A TIME FEATURE
