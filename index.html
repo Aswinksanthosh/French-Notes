@@ -1,5 +1,55 @@
 <!DOCTYPE html>
-<!-- Updated: 2026-09-21 15:30 UTC - Cache bust -->
+<!--
+  READ THIS FIRST, ESPECIALLY IN A FRESH/COMPACTED SESSION.
+  Full history, workflow, and past-mistakes log: see context.md in this repo root.
+  If asked to "read the code and comments and context.md to find the report of
+  the user", that file + this comment + the inline notes near the JS functions
+  near the bottom of this file (search "CHECKLIST PROGRESS TRACKING",
+  "classOrder", "saveChecklistState") ARE that report.
+
+  WHAT THIS SITE IS: a single-file French curriculum (index.html only, no
+  build step). 25 lesson cards: A1 = classes 1-21, A2 = classes 22,23,25,26
+  (class 24 was renumbered away and no longer exists - see classOrder array).
+  Built and used ENTIRELY ON A PHONE. Always keep changes mobile-first;
+  don't assume a wide viewport when styling or testing.
+
+  THE PER-CLASS PATTERN (established and expected on every class):
+  1. <p class="topic"> line, then a progress bar/counter right after it
+     (data-lesson="classN" on both .progress-count and .progress-bar).
+  2. Content is organized under <h3> topic headers. A <ul class="checklist"
+     data-lesson="classN"> sits immediately after the specific topic it
+     checks off - NOT bunched together at the bottom. Read a topic, check
+     its item(s), move to the next topic.
+  3. If (and only if) one checklist item is genuinely general/comprehensive
+     rather than topic-specific, it goes under a final <h3>✅ Overall
+     Mastery</h3> at the very bottom. If every item already maps to a
+     topic, skip that section entirely - don't invent one.
+  4. Every checkbox id must be globally unique across the whole file (state
+     is saved keyed by id, not position - see saveChecklistState()).
+  5. The "📋 Copy for Gemini" button's prompt text starts with a "Complete
+     Site Features & How To Use Them" write-up (green/A1 vs blue/A2
+     variant) before the lesson content.
+
+  THE RECURRING FAILURE MODE (read this if something looks half-broken):
+  the user typically edits and fully debugs ONE class first to save tokens,
+  then asks for the same change across the rest. That second step has
+  repeatedly introduced bugs because the shared JS (updateProgress,
+  updateChapterColors, save/loadChecklistState, the nav functions) was
+  written assuming the OLD structure and silently went stale when the
+  per-class structure changed (e.g. one checklist block -> many blocks per
+  class). Before batch-applying a pattern to other classes: (a) re-read the
+  actual current JS near the bottom of the file rather than assuming how it
+  used to work, (b) after each class edit, verify checkbox/label id
+  matching, unique id count, div balance, and `node --check` on the
+  extracted script-tag contents, (c) fix obvious/mechanical bugs you notice
+  without waiting to be asked - duplicate function names, mismatched
+  for=/id pairs, stray tags. See context.md for the specific bugs found
+  this way (duplicate updateProgress(), Class 25 duplicate checklist,
+  Class 26 malformed HTML, nav breaking around the missing class 24).
+
+  WORKFLOW: one commit per class/change, pushed to both
+  claude/wonderful-darwin-idhgvx and main, with a descriptive message.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6413,15 +6463,13 @@
     });
   });
 
-  function updateProgress(lesson) {
-    const list = document.querySelector('.checklist[data-lesson="' + lesson + '"]');
-    const boxes = list.querySelectorAll('input[type="checkbox"]');
-    const done = [...boxes].filter(b => b.checked).length;
-    const total = boxes.length;
-    document.querySelector('.progress-count[data-lesson="' + lesson + '"]').textContent = done + ' / ' + total + ' done';
-    document.querySelector('.progress-bar[data-lesson="' + lesson + '"]').style.width = (done / total * 100) + '%';
-    updateChapterColors();
-  }
+  // NOTE: updateProgress() used to be defined here too (single-block version
+  // using querySelector, pre-dating the multi-block-per-class checklist
+  // layout). It was dead code shadowed by the real definition further down
+  // (search "CHECKLIST PROGRESS TRACKING WITH PERSISTENT STORAGE") because
+  // JS keeps only the last function declaration of a given name in a scope.
+  // Removed 2026-09-24 to stop it being mistaken for the live implementation.
+  // Lesson: grep for a function name before editing it - duplicates are silent.
 
   // Expandable sections toggle
   function toggleExpandable(button) {
@@ -6440,7 +6488,6 @@
     }
   }
 
-  // Init progress bars on load
   // ONE CHAPTER AT A TIME FEATURE
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
@@ -6568,6 +6615,11 @@ function updateProgress(lesson) {
   updateGlobalProgress();
 }
 
+// State is keyed by checkbox id, NOT by position within its <ul>. Position-based
+// keying broke once checklists were split into multiple <ul> blocks per class
+// (each with its own 0..N indices) - two different checkboxes in two different
+// blocks could land on the same index and clobber each other's saved state.
+// Every checkbox id must stay globally unique across the whole file for this to work.
 function saveChecklistState(lesson) {
   const lists = document.querySelectorAll(`.checklist[data-lesson="${lesson}"]`);
   const states = {};

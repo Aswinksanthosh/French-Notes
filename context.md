@@ -1,0 +1,197 @@
+# context.md — Read This First
+
+This file is project memory for Claude Code sessions on this repo. It exists
+because Claude Code sessions get compacted/reset, and re-explaining the
+project from scratch every time was costing the user tokens and patience.
+
+**If a new session is told "read the code and comments and context.md to
+find the report of the user"** — this file, the big comment block at the
+very top of `index.html`, and the inline comments near the JS functions
+(`classOrder`, `updateChapterColors`, `updateProgress`,
+`saveChecklistState`/`loadChecklistState`) together ARE that report. Read
+all of them before making changes, especially before "apply this to the
+rest of the classes"-type requests (see **The Recurring Failure Mode**
+below — that's the single most important section in this file).
+
+This file replaces the old `prompt.md` (renamed 2026-09-24). Older,
+resolved incident details from `prompt.md` are compressed into **History**
+below; nothing load-bearing was dropped, just shortened.
+
+---
+
+## What this site is
+
+A single-file, no-build French learning curriculum: `index.html` only
+(plus static data files like `CLASS-NAMES.md`, `french_notes_data.md` that
+feed content, not code). 25 lesson cards ("classes"):
+
+- **A1: classes 1–21** (beginner)
+- **A2: classes 22, 23, 25, 26** (intermediate — note there is no class 24,
+  it was renumbered away; navigation code walks a `classOrder` array
+  instead of assuming a contiguous range, see the comment above that array
+  in `index.html`)
+
+Live site: GitHub Pages, deployed automatically from `main`.
+Repo: https://github.com/Aswinksanthosh/French-Notes
+
+**The user uses this site almost exclusively on a phone.** Every change —
+CSS, layout, new sections, checklist styling — has to work at phone width.
+Don't design or verify against a desktop-width assumption. When in doubt
+about a layout change, say explicitly that you couldn't test it on a real
+phone rather than asserting it works.
+
+## How the user works, and the failure loop to avoid
+
+The user is careful with tokens. Their normal pattern is:
+
+1. Pick **one** class, iterate on it directly with Claude until it's fully
+   correct and debugged (a new feature, a restructuring, a bugfix).
+2. Then ask Claude to **apply the same change to the rest of the classes**.
+
+**Step 2 is where almost every bug in this project's history has come
+from.** The shared JS (`updateProgress`, `updateChapterColors`,
+`saveChecklistState`/`loadChecklistState`, the `showClass`/`goToClass`/
+`nextChapter`/`previousChapter` nav functions) was written assuming
+whatever the per-class HTML structure was *at the time*. When the
+structure changes during step 1 (e.g., one checklist block per class →
+multiple checklist blocks split by topic), the shared JS goes stale
+silently — it doesn't error, it just quietly undercounts progress, mismatches
+state, or breaks navigation around edge cases (like the missing class 24).
+Then step 2 propagates both the intended change AND the now-wrong
+assumptions across 20 more classes at once, which is expensive to debug.
+
+**Rule for any future session doing a batch/replicate task across
+classes:** before touching class 2, re-read the ACTUAL current shared JS
+near the bottom of `index.html` (don't rely on memory of how it used to
+work), confirm which functions are dead vs. live (grep for duplicate
+function names — see History, "duplicate updateProgress" — duplicates are
+silently shadowed, not errors), and run the verification checklist below
+after *every single class*, not just at the end of the batch.
+
+## Fix obvious bugs without being asked
+
+If you notice something clearly, mechanically wrong while working in this
+file — a mismatched `for=`/`id` pair, a duplicate function declaration, a
+stray unclosed tag, an obviously dead code path — fix it as part of your
+current edit rather than leaving it and waiting to be told. Note what you
+fixed and why in the commit message and, if it's the kind of thing that
+could recur, as a short comment at the spot. This project's biggest
+recurring cost has been silent, structural bugs that nobody noticed for a
+while — proactively closing them is worth more here than strict
+scope-minimalism.
+
+## The established per-class pattern (apply this to every class)
+
+1. `<p class="topic">...</p>` line, then a progress bar + counter right
+   after it: `<div class="progress-label"><span class="progress-count"
+   data-lesson="classN">0 / X done</span></div>` +
+   `<div class="progress-bar-wrap"><div class="progress-bar"
+   data-lesson="classN"></div></div>`.
+2. Content under `<h3>` topic headers. A `<ul class="checklist"
+   data-lesson="classN">` sits immediately after the specific topic it
+   checks off — not bunched at the bottom. Workflow being encouraged:
+   read a topic, check its item(s), move to the next topic.
+3. If — and only if — one checklist item is genuinely general/comprehensive
+   rather than tied to a single topic, it goes under a final `<h3>✅
+   Overall Mastery</h3>` at the very bottom. If every item already maps
+   cleanly to a topic, don't add that section (many A1 classes don't have
+   one — that's correct, not incomplete).
+4. Every checkbox `id` must be **globally unique across the whole file**.
+   State is saved keyed by checkbox id (not list position) — see
+   `saveChecklistState()`. A reused id will silently share/clobber saved
+   progress with whatever else uses that id.
+5. The "📋 Copy for Gemini" button's prompt text starts with a "Complete
+   Site Features & How To Use Them" write-up before the lesson content —
+   green/A1 variant (mentions green checkboxes, the 🎓 A1 badge) for
+   classes 1–21, blue/A2 variant for 22/23/25/26.
+6. Verify after every class, before moving to the next one:
+   - checkbox `id` vs label `for` match 1:1 (no mismatches)
+   - unique checkbox id count equals the number of checklist items for
+     that class
+   - `<div>`/`</div>` balance within that class's line range
+   - `node --check` on the extracted `<script>` contents (whole file) still
+     passes
+   - grep for duplicate function names in the shared `<script>` before
+     editing any shared function
+
+## Push workflow
+
+One commit per class/change (not batched), descriptive commit message,
+pushed to both `claude/wonderful-darwin-idhgvx` and `main`:
+```
+git add index.html
+git commit -m "..."
+git push -u origin claude/wonderful-darwin-idhgvx
+git push origin claude/wonderful-darwin-idhgvx:main
+```
+
+## Status (as of 2026-09-24)
+
+All 25 classes (A1: 1–21, A2: 22,23,25,26) follow the per-class pattern
+above. The full A1 rollout (bringing classes 1–21 up to the structure
+originally established on the A2 reference classes) is complete.
+
+---
+
+## History — bugs found, and why they happened
+
+Kept short on purpose: enough to recognize the pattern again, not a full
+incident transcript.
+
+- **Content loss via rebuild-and-force-push (Sept 21, 2026).** A branch
+  meant to *add* new professor content was actually a from-scratch rebuild
+  that only included 9 of 20 classes. It was force-pushed to `main` without
+  comparing line/class counts, silently deleting 12 complete lessons. User
+  caught it by noticing missing notes. Recovered from the last good commit.
+  **Lesson: before pushing to main, confirm class count and rough line
+  count aren't shrinking. A large unexplained reduction is a hard stop,
+  not a detail to mention after the fact. Never force-push to main without
+  it being an explicit, discussed decision.**
+- **Nav silently failing around the class-24 gap.** Class numbering skips
+  24, but nav functions did plain arithmetic (`currentClass + 1`) assuming
+  a contiguous range, and `totalClasses` was hardcoded. Fixed by
+  introducing the `classOrder` array and rewriting all nav functions
+  (`showClass`, `goToClass`, `nextChapter`, `previousChapter`,
+  `restoreLastViewedChapter`, `updateChapterColors`) to walk it. Also fixed
+  nav-link highlighting, which matched by DOM position (broken after the
+  gap) — now matches by the link's actual `onclick="goToClass(N)"` target.
+- **`updateProgress`/`updateChapterColors` undercounting.** Originally used
+  `document.querySelector` (singular), which only found the *first*
+  `<ul class="checklist">` for a lesson. Once checklists were split into
+  multiple per-topic blocks (see pattern above), this silently undercounted
+  progress. Fixed by switching to `querySelectorAll` and summing across all
+  blocks sharing the same `data-lesson`, and by keying saved state by
+  checkbox `id` instead of list position (position collides once there are
+  multiple `<ul>`s).
+- **Class 25 duplicate checklist.** 11 items existed twice — once inline
+  per-topic, once again in a leftover bottom block, with the bottom copies
+  using the wrong `for="ca24-X"` ids (copy-paste from another class).
+  Removed the duplicate block and fixed the id typo.
+- **Class 26 malformed HTML.** A stray `</tr>` inside an `<li>` with no
+  matching `<tr>`, and a duplicated `<label>` open tag with no second close
+  tag. Found via the div-balance check, fixed while restructuring.
+- **Duplicate `updateProgress()` function (found/fixed 2026-09-24).** Two
+  `function updateProgress(lesson)` declarations existed in the same
+  `<script>` — an old single-block version (using `querySelector`, dead
+  since the multi-block restructuring) and the correct multi-block
+  aggregating version further down. JS silently keeps only the last
+  declaration of a duplicated function name, so the old one was inert but
+  looked live to anyone reading top-to-bottom — exactly the kind of bug
+  that's obvious once you notice it and invisible otherwise. Removed the
+  dead one, left a comment explaining why, and added this line to the
+  verification checklist: **grep for a function's name before editing it —
+  duplicates don't error, they just silently shadow.**
+
+## Open suggestions / things to keep an eye on
+
+Not done, just flagged so a future session doesn't have to rediscover them:
+
+- No automated check currently blocks a content-shrinking push to `main`.
+  If another rebuild-style change happens, manually compare class count /
+  line count before pushing (see History, first entry).
+- `french_notes_data.md` and `CLASS-NAMES.md` are separate reference/data
+  files — check whether they're still authoritative sources when adding
+  new class content, or just historical scratch.
+- If checklist ids ever need renumbering across many classes, double-check
+  global uniqueness afterward (grep `id="c` across the whole file for
+  collisions) — nothing currently enforces this automatically.
