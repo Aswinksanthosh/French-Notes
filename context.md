@@ -146,6 +146,22 @@ git push -u origin claude/wonderful-darwin-idhgvx
 git push origin claude/wonderful-darwin-idhgvx:main
 ```
 
+### Backups/checkpoints
+
+Use a **branch**, not a git tag: pushing `refs/tags/*` to this repo gets a
+consistent 403 from this environment's proxy (confirmed 2026-09-24, retried
+4x with backoff - not a transient network error, branch pushes to the same
+remote work fine in the same session, so it's a policy/permission scoping
+thing specific to tag refs). A branch gives the same "known-good point to
+recover from" without needing tag-push rights:
+```
+git branch backup-vX.Y
+git push -u origin backup-vX.Y
+```
+`backup-v1.1` exists on GitHub as of 2026-09-24, pointing at the commit
+that finished the full A1 rollout + Gemini button fix + phone-use features
+(home-screen install, scroll memory, swipe nav, intro guide).
+
 ## Status (as of 2026-09-24)
 
 All 25 classes (A1: 1–21, A2: 22,23,25,26) follow the per-class pattern
