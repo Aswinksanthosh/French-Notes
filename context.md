@@ -235,10 +235,54 @@ incident transcript.
   against what the browser will actually try to run. Worth doing this
   after any change that touches prompt text, not just eyeballing quotes.**
 
+## Features added 2026-09-24 (in response to "what am I missing")
+
+User picked these from a proactive feature review; not bugs, new additions:
+
+- **Home-screen install.** `manifest.webmanifest` + `icon-192.png`/
+  `icon-512.png`/`icon-180.png` (generated via a Playwright screenshot of a
+  plain HTML div — no image tooling installed in this environment, that's
+  the trick if icons are needed again) + `<link rel="manifest">` and
+  apple-touch-icon/theme-color meta tags in `<head>`, plus
+  `service-worker.js` (registered near the bottom `<script>`). The service
+  worker does NOT cache anything or add offline support — it exists purely
+  because Chrome/Android requires a fetch-handling service worker before
+  it will offer the install prompt. Real offline caching would be a
+  separate, deliberate follow-up if ever wanted.
+- **Resume scroll position per class + swipe nav.** `showClass()` now
+  saves `window.scrollY` to `localStorage` keyed by
+  `scrollpos_class<N>` before switching away, and restores it (via
+  `requestAnimationFrame`) when a class is reopened, instead of always
+  jumping to the top. A debounced `scroll` listener keeps it fresh even if
+  you close the tab mid-class instead of navigating away through the app.
+  `touchstart`/`touchend` listeners on `document` detect a mostly-
+  horizontal swipe (>70px, >2x the vertical delta) and call
+  `nextChapter()`/`previousChapter()` — additive to the existing
+  Prev/Next buttons, doesn't replace them.
+- **Collapsible "How to use this site" intro.** Sits right below the page
+  title, above the progress bar. State (`introOpen` in `localStorage`)
+  defaults to open on a first-ever visit, collapses to a single toggle
+  line (not a big empty box) once dismissed, and stays that way on future
+  visits until manually reopened. Uses `localStorage` rather than cookies
+  for consistency with every other piece of state on this site (checklist
+  progress, last-viewed class, etc. are all `localStorage` already) — same
+  effect, no server/cookie machinery needed for a static single-file site.
+
+All four verified in a real headless browser (Playwright): install
+metadata present, intro open/closed state actually persists across a
+reload, scroll position is actually restored on return to a class (not
+just "looked right in the HTML"), and swipe events actually call the nav
+functions in both directions.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
 
+- Features proposed 2026-09-24 but NOT picked (don't build unasked):
+  progress backup/export (everything is localStorage-only right now -
+  clearing browser data or switching phones still loses all progress with
+  no way back), dark mode, and a cross-class vocab search. Ask before
+  building any of these; they were declined this round, not forgotten.
 - No automated check currently blocks a content-shrinking push to `main`.
   If another rebuild-style change happens, manually compare class count /
   line count before pushing (see History, first entry).

@@ -55,6 +55,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>French Class Notes</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1a4d8f">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="French Notes">
 <style>
   :root {
     --blue: #1a4d8f;
@@ -284,6 +290,25 @@
   .speaking { background: #d7e6c8 !important; }
   .speak-hint { font-size: 13px; color: #666; margin: -8px 0 20px; }
 
+  /* Collapsible "how to use this site" intro */
+  .intro-wrap { margin-bottom: 20px; }
+  .intro-toggle {
+    width: 100%; text-align: left; background: var(--lightblue); color: var(--blue);
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px;
+    font-size: 14px; font-weight: 700; cursor: pointer;
+  }
+  .intro-content {
+    display: none; background: var(--lightblue); border: 1px solid var(--border);
+    border-top: none; border-radius: 0 0 8px 8px; padding: 4px 16px 14px;
+  }
+  .intro-content.open { display: block; }
+  .intro-content ul { margin: 10px 0; padding-left: 20px; }
+  .intro-content li { margin-bottom: 8px; font-size: 14px; line-height: 1.5; }
+  .intro-close {
+    background: var(--blue); color: white; border: none; border-radius: 6px;
+    padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+
   /* One chapter at a time feature */
   .lesson-card { display: none; }
   .lesson-card.active { display: block; animation: fadeIn 0.3s ease; }
@@ -421,6 +446,22 @@
 
 <h1>French Class Notes</h1>
 <p class="speak-hint">🔊 Tap any French word or example sentence to hear it spoken aloud.</p>
+
+<div class="intro-wrap">
+  <button class="intro-toggle" id="introToggle" onclick="toggleIntro()">📖 How to use this site <span id="introArrow">▾</span></button>
+  <div class="intro-content" id="introContent">
+    <ul>
+      <li><strong>📊 Progress bars:</strong> the green one at the top tracks everything; each class has its own right under its topic line.</li>
+      <li><strong>✅ Checklists:</strong> read a topic, then check its box(es) right below it — only check it once you actually understand it, not just to see it turn gray.</li>
+      <li><strong>📋 Copy for Gemini:</strong> tap this on any class to copy the full lesson plus a ready-made study prompt, then paste it straight into Gemini for a personal walkthrough of that class.</li>
+      <li><strong>🔊 Pronunciation:</strong> tap any blue French word or example sentence to hear it spoken aloud.</li>
+      <li><strong>🧭 Moving between classes:</strong> use the "Chapters" dropdown to jump anywhere, the Prev/Next buttons, or just swipe left/right.</li>
+      <li><strong>🎓 Badges:</strong> the A1/A2 buttons get a 🎓 once every class in that level is 100% checked off.</li>
+      <li><strong>💾 Saving:</strong> your progress and place in each class save automatically on this device/browser. To open this like an app, use your browser's "Add to Home Screen" option.</li>
+    </ul>
+    <button class="intro-close" onclick="toggleIntro(false)">Got it, hide this</button>
+  </div>
+</div>
 
 <div id="globalProgress" style="background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%); border-radius: 8px; padding: 16px; margin-bottom: 24px; text-align: center;">
   <div style="font-weight: 700; color: #2e7d32; font-size: 14px; margin-bottom: 8px;">📊 Overall Progress</div>
@@ -6527,6 +6568,14 @@ function updateChapterColors() {
 }
 
 function showClass(classNum) {
+  // Remember exactly where we were scrolled to within the class we're
+  // leaving, keyed by class number, so coming back later (via nav, or a
+  // fresh page load landing back on this class) resumes at the same spot
+  // instead of dumping you back at the top of a long class.
+  if (currentClass) {
+    localStorage.setItem('scrollpos_class' + currentClass, window.scrollY);
+  }
+
   // Hide all chapters
   document.querySelectorAll('.lesson-card').forEach(card => {
     card.classList.remove('active');
@@ -6558,10 +6607,41 @@ function showClass(classNum) {
     const activeLink = document.querySelector(`nav a[onclick="goToClass(${classNum})"]`);
     if (activeLink) activeLink.classList.add('active');
 
-    // Scroll to top
-    window.scrollTo(0, 0);
+    // Restore scroll position saved for this class (defaults to top for a
+    // class you've never opened). requestAnimationFrame so it runs after
+    // the browser has laid out the newly-visible .active card.
+    const savedScroll = parseInt(localStorage.getItem('scrollpos_class' + classNum) || '0', 10);
+    requestAnimationFrame(() => window.scrollTo(0, savedScroll));
   }
 }
+
+// Keep the saved scroll position for the current class fresh while
+// scrolling (not just at the moment of switching classes), so closing the
+// tab or reloading mid-class doesn't lose your place.
+let scrollSaveTimer = null;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollSaveTimer);
+  scrollSaveTimer = setTimeout(() => {
+    if (currentClass) localStorage.setItem('scrollpos_class' + currentClass, window.scrollY);
+  }, 200);
+}, { passive: true });
+
+// Swipe left/right to go to next/previous chapter (phone-first navigation,
+// alongside the Prev/Next buttons). Mostly-horizontal swipes only, so
+// normal vertical scrolling is never intercepted.
+let touchStartX = 0;
+let touchStartY = 0;
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+document.addEventListener('touchend', (e) => {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  const dy = e.changedTouches[0].screenY - touchStartY;
+  if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 2) {
+    if (dx < 0) nextChapter(); else previousChapter();
+  }
+}, { passive: true });
 
 function goToClass(classNum) {
   event.preventDefault();
@@ -6684,6 +6764,21 @@ function restoreLastViewedChapter() {
   showClass(1);
 }
 
+// HOW-TO-USE INTRO: collapsible, state remembered per device via localStorage
+// (same mechanism as everything else here - no cookies needed). Defaults to
+// OPEN the first time (nothing saved yet) so a new visitor actually sees it,
+// then stays collapsed to a single toggle line on every later visit once
+// dismissed - it never leaves a big empty box behind.
+function toggleIntro(forceOpen) {
+  const content = document.getElementById('introContent');
+  const arrow = document.getElementById('introArrow');
+  const open = typeof forceOpen === 'boolean' ? forceOpen : !content.classList.contains('open');
+  content.classList.toggle('open', open);
+  arrow.textContent = open ? '▾' : '▸';
+  localStorage.setItem('introOpen', open ? 'true' : 'false');
+}
+toggleIntro(localStorage.getItem('introOpen') !== 'false');
+
 // TEXT-TO-SPEECH FOR FRENCH WORDS
 function speakFrench(text, el) {
   if (!('speechSynthesis' in window) || !text) return;
@@ -6699,6 +6794,15 @@ function speakFrench(text, el) {
     el.classList.add('speaking');
     setTimeout(() => el.classList.remove('speaking'), 400);
   }
+}
+
+// Register the service worker so the browser will offer "Add to Home
+// Screen" / install (Chrome/Android requires one; see service-worker.js -
+// it doesn't cache anything, purely there for installability).
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').catch(() => {});
+  });
 }
 
 // Preload voice list (some browsers load it asynchronously)
