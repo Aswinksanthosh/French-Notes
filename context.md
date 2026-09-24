@@ -17,6 +17,16 @@ This file replaces the old `prompt.md` (renamed 2026-09-24). Older,
 resolved incident details from `prompt.md` are compressed into **History**
 below; nothing load-bearing was dropped, just shortened.
 
+## Standing instruction: report to context.md every chat
+
+**At the end of every session/turn that changes `index.html` (or this
+file), update this file before finishing:** add a short entry to
+**History** for any bug found+fixed, and update **Status** if the overall
+state of the site changed. Do this even if the user doesn't explicitly ask
+for it that turn — it's the whole point of this file, and it's cheap to do
+right after the work while the details are fresh. Skipping it is what
+caused the need for this file in the first place.
+
 ---
 
 ## What this site is
@@ -113,6 +123,17 @@ scope-minimalism.
      passes
    - grep for duplicate function names in the shared `<script>` before
      editing any shared function
+   - if you touched any `onclick="..."` attribute text (prompt text,
+     speakFrench text, anything with quotes/apostrophes in it): run a
+     headless-browser check, not just a text/regex check. `node --check`
+     on extracted `<script>` contents does NOT see attribute text and will
+     miss a broken `onclick`. Load the page with Playwright
+     (`/opt/pw-browsers/chromium`, already installed — don't reinstall),
+     read each button's parsed `onclick` attribute via
+     `el.getAttribute('onclick')`, and confirm
+     `new Function('event', thatText)` doesn't throw, for every class. A
+     raw `'` or a `\"` (backslash+doublequote — wrong, breaks the HTML
+     attribute; use `&quot;` instead) anywhere in prompt text is a bug.
 
 ## Push workflow
 
@@ -129,7 +150,10 @@ git push origin claude/wonderful-darwin-idhgvx:main
 
 All 25 classes (A1: 1–21, A2: 22,23,25,26) follow the per-class pattern
 above. The full A1 rollout (bringing classes 1–21 up to the structure
-originally established on the A2 reference classes) is complete.
+originally established on the A2 reference classes) is complete. All 25
+"Copy for Gemini" buttons verified working end-to-end (headless-browser
+click test, clipboard content checked) after fixing the two quoting bugs
+in History below.
 
 ---
 
@@ -181,6 +205,35 @@ incident transcript.
   dead one, left a comment explaining why, and added this line to the
   verification checklist: **grep for a function's name before editing it —
   duplicates don't error, they just silently shadow.**
+- **All 25 "Copy for Gemini" buttons broken (found/fixed 2026-09-24, user-
+  reported).** Two independent bugs, both inside the `onclick="..."`
+  double-quoted HTML attribute of every `mergeClassAndPrompt(...)` /
+  `speakFrench(...)` call:
+  1. Prompt text authored with literal `\"` (backslash + double-quote) to
+     "escape" a quote — that's a JS-string escaping habit, but it does
+     nothing at the HTML level: an HTML double-quoted attribute ends at
+     the next raw `"` character no matter what precedes it. Every prompt
+     with `\"` in it (146 occurrences, all 25 classes, pre-existing content
+     plus this session's own FEATURES write-up) had its `onclick` silently
+     truncated by the browser. Fixed by replacing all `\"` with `&quot;`
+     (the correct way to put a literal quote inside an HTML attribute; it
+     decodes to a plain `"` before the JS ever runs, which is valid
+     unescaped inside a single-quoted JS string).
+  2. The FEATURES write-up text added earlier this session had an
+     **unescaped apostrophe**: `read a topic's content` inside a
+     single-quoted JS string, present in all 25 classes (both the A1/green
+     and A2/blue variants share this line). That ended the JS string
+     early and broke the rest of the call (`missing ) after argument
+     list`). Fixed by escaping it to `topic\'s`.
+  **Lesson: a `\"` or a raw `'` inside prompt text that lands inside an
+  `onclick="..."` HTML attribute is a landmine — it can't be caught by
+  `node --check` on extracted script contents (that check never sees
+  attribute text) or by the div-balance/checkbox-id checks. Verified this
+  time with a headless-browser check instead: load the page, read each
+  button's actual parsed `onclick` attribute, and try
+  `new Function('event', thatText)` for every class — a real syntax check
+  against what the browser will actually try to run. Worth doing this
+  after any change that touches prompt text, not just eyeballing quotes.**
 
 ## Open suggestions / things to keep an eye on
 
