@@ -128,8 +128,24 @@
     cursor: pointer;
     flex-shrink: 0;
   }
-  .checklist label { cursor: pointer; }
+  .checklist label { cursor: pointer; transition: color 0.3s ease; }
   .checklist input:checked + label { text-decoration: line-through; color: #999; }
+
+  /* A2 checklists (Classes 22, 23, 25, 26) - blue text until checked */
+  .checklist[data-lesson="class22"] label,
+  .checklist[data-lesson="class23"] label,
+  .checklist[data-lesson="class25"] label,
+  .checklist[data-lesson="class26"] label {
+    color: #1565c0;
+    font-weight: 600;
+  }
+  .checklist[data-lesson="class22"] input:checked + label,
+  .checklist[data-lesson="class23"] input:checked + label,
+  .checklist[data-lesson="class25"] input:checked + label,
+  .checklist[data-lesson="class26"] input:checked + label {
+    color: #999;
+    font-weight: 400;
+  }
   .progress-bar-wrap {
     background: var(--lightblue);
     border-radius: 20px;
@@ -4317,7 +4333,7 @@
     <h2>A2: CLASS 1 — French Adjectives <span class="date">— Tuesday, September 21, 2026</span></h2>
   </div>
 
-  <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;" onclick="mergeClassAndPrompt(this, 'If you don\'t have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.\n\nTeach me comprehensive French adjectives using this structure:\n\nADJECTIVE AGREEMENT (Gender & Number):\nMasculine patterns that must AGREE with noun:\n- Basic + -e: grand→grande, petit→petite\n- Already -e: calme→calme (no change)\n- -f → -ve: actif→active, neuf→neuve\n- -x → -se: heureux→heureuse, dangereux→dangereuse\n- -ien → -ienne: ancien→ancienne, indien→indienne\n- -on → -onne: bon→bonne, breton→bretonne\n- Irregular: beau→belle, nouveau→nouvelle, vieux→vieille\n\nADJECTIVE PLACEMENT:\n- MOST come AFTER noun: une voiture rouge, un étudiant français, une table ronde\n- SOME come BEFORE: beauty, age, goodness, size (un petit garçon, une grande maison, un beau film)\n- Position changes meaning: ancien professeur (former) vs professeur ancien (old/elderly); grand homme (great man) vs homme grand (tall man)\n\nSPECIAL FORMS:\n- beau → bel before vowel/silent H (un bel homme)\n- nouveau → nouvel (un nouvel abonnement)\n- vieux → vieil (un vieil homme)\n\nEPITHÈTE vs ATTRIBUT:\n- Épithète: Adjective directly with noun (un chat noir)\n- Attribut: After linking verb être (Le chat est noir)\n\nSTUDY OBJECTIVES:\n- Master adjective agreement patterns (gender & number)\n- Understand adjective placement rules (before/after noun)\n- Learn meaning changes based on placement\n- Distinguish epithète vs attribut\n- Use adjectives correctly in sentences\n\nEXAM REQUIREMENTS (to pass):\n- SPEAKING: Describe objects/people using correct adjectives with proper agreement\n- WRITING: Write sentences with adjectives in correct gender/number/position\n- READING: Identify adjective-noun agreement in French text\n- LISTENING: Hear adjectives and identify what noun they modify\n\nTEACH ME SLOWLY:\n1. Adjective agreement patterns (gender/number) — I\'ll check off when I can apply all 7 patterns\n2. Adjective placement rules (before/after noun) — I\'ll check off when I understand BAGS rule\n3. Meaning shifts (ancien, grand, pauvre, etc.) — I\'ll check off when I can explain 4+ examples\n4. Special forms before vowels (bel, nouvel, vieil) — I\'ll check off when I can use them correctly\n5. Epithète vs attribut distinction — I\'ll check off when I can identify both types\n6. Can use adjectives correctly in complete sentences — Speaking & writing test passed\n\nFor each topic, when I fully understand it AND can do a short speaking/writing/reading test, I\'ll check it off in my checklist. Ask me questions to verify understanding before I check each one.\n\nAlso, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.')">📋 Copy for Gemini</button>
+  <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES & HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays \"X / Y done\"\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes (22-26) are 100% complete\n\n📖 LEARNING CONTENT:\n• 📚 Learning Objectives boxes\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic's content, check its item(s), then move to the next topic\n• 📌 One general \"Overall Mastery\" item stays at the very bottom (it covers the whole class, not one topic)\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n\n═════════════════════════════════════════\n\nIf you don\'t have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.\n\nTeach me comprehensive French adjectives using this structure:\n\nADJECTIVE AGREEMENT (Gender & Number):\nMasculine patterns that must AGREE with noun:\n- Basic + -e: grand→grande, petit→petite\n- Already -e: calme→calme (no change)\n- -f → -ve: actif→active, neuf→neuve\n- -x → -se: heureux→heureuse, dangereux→dangereuse\n- -ien → -ienne: ancien→ancienne, indien→indienne\n- -on → -onne: bon→bonne, breton→bretonne\n- Irregular: beau→belle, nouveau→nouvelle, vieux→vieille\n\nADJECTIVE PLACEMENT:\n- MOST come AFTER noun: une voiture rouge, un étudiant français, une table ronde\n- SOME come BEFORE: beauty, age, goodness, size (un petit garçon, une grande maison, un beau film)\n- Position changes meaning: ancien professeur (former) vs professeur ancien (old/elderly); grand homme (great man) vs homme grand (tall man)\n\nSPECIAL FORMS:\n- beau → bel before vowel/silent H (un bel homme)\n- nouveau → nouvel (un nouvel abonnement)\n- vieux → vieil (un vieil homme)\n\nEPITHÈTE vs ATTRIBUT:\n- Épithète: Adjective directly with noun (un chat noir)\n- Attribut: After linking verb être (Le chat est noir)\n\nSTUDY OBJECTIVES:\n- Master adjective agreement patterns (gender & number)\n- Understand adjective placement rules (before/after noun)\n- Learn meaning changes based on placement\n- Distinguish epithète vs attribut\n- Use adjectives correctly in sentences\n\nEXAM REQUIREMENTS (to pass):\n- SPEAKING: Describe objects/people using correct adjectives with proper agreement\n- WRITING: Write sentences with adjectives in correct gender/number/position\n- READING: Identify adjective-noun agreement in French text\n- LISTENING: Hear adjectives and identify what noun they modify\n\nTEACH ME SLOWLY:\n1. Adjective agreement patterns (gender/number) — I\'ll check off when I can apply all 7 patterns\n2. Adjective placement rules (before/after noun) — I\'ll check off when I understand BAGS rule\n3. Meaning shifts (ancien, grand, pauvre, etc.) — I\'ll check off when I can explain 4+ examples\n4. Special forms before vowels (bel, nouvel, vieil) — I\'ll check off when I can use them correctly\n5. Epithète vs attribut distinction — I\'ll check off when I can identify both types\n6. Can use adjectives correctly in complete sentences — Speaking & writing test passed\n\nFor each topic, when I fully understand it AND can do a short speaking/writing/reading test, I\'ll check it off in my checklist. Ask me questions to verify understanding before I check each one.\n\nAlso, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.')">📋 Copy for Gemini</button>
   <span class="copy-hint">Copy to Gemini for practicing</span>
 
   <p class="topic">Topic: Adjective agreement, placement, formation patterns, epithète vs attribut, and adjective practice.</p>
@@ -4602,7 +4618,7 @@
     <h2>A2: CLASS 2 — French Adverbs (Comprehensive) <span class="date">— Thursday, September 23, 2026</span></h2>
   </div>
 
-  <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;" onclick="mergeClassAndPrompt(this, 'If you don\'t have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.\n\nTeach me French adverbs using this content:\n\nADVERB TYPES (7 categories):\n1. MANNER (bien, mal, lentement, rapidement, facilement, sérieusement, poliment, prudemment)\n2. TIME (aujourd\'hui, hier, demain, maintenant, bientôt, déjà, récemment, enfin)\n3. PLACE (ici, là, dehors, dedans, devant, derrière, près, loin, partout, nulle part)\n4. FREQUENCY (toujours, souvent, généralement, habituellement, parfois, rarement, jamais)\n5. QUANTITY/INTENSITY (très, trop, assez, beaucoup, plus, moins, presque, vraiment, complètement)\n6. INTERROGATIVE (où, quand, comment, pourquoi, combien)\n7. CONNECTORS (pourtant, cependant, ainsi, ensuite, enfin, malheureusement, heureusement)\n\nKEY FORMATION RULES:\n- Adverbs are INVARIABLE (never change gender or number)\n- Formation: Feminine adjective + -ment suffix (lent→lente→lentement; heureux→heureuse→heureusement)\n- Placement in simple tenses: adverb AFTER verb (Il parle lentement)\n- Placement in passé composé: SHORT adverbs between auxiliary & participle (J\'ai déjà mangé); LONG adverbs after participle (Il a répondu rapidement)\n- INTENSITY adverbs ALWAYS come BEFORE adjectives (très beau, NOT beau très)\n- CRITICAL RULE: Never use adverbs to modify nouns! Use adjectives instead.\n\nNUANCED DISTINCTIONS TO MASTER:\n- aussi vs également (aussi = casual; également = formal/written)\n- rater vs manquer (rater = you fail/miss something; manquer = something is missing/absent from you)\n- tard vs en retard (tard = vague notion of late; en retard = late after scheduled time)\n- personne usage (alone with ne = nobody; une personne = somebody/a person)\n\nSTUDY OBJECTIVES:\n- Master all 7 adverb types and their functions\n- Understand and apply the -ment formation rule\n- Know placement rules in all tenses\n- Distinguish adjectives from adverbs\n- Master nuanced distinctions\n\nEXAM REQUIREMENTS (to pass):\n- SPEAKING: Say adverbs correctly; use them naturally in sentences about actions\n- WRITING: Write sentences with correct adverb placement; form new adverbs from adjectives\n- READING: Identify adverbs in text; understand what they modify\n- LISTENING: Hear adverbs in sentences; understand the nuanced meanings\n\nTEACH ME SLOWLY:\n1. Adverb definition and how they differ from adjectives — I\'ll check off when I can explain what an adverb modifies\n2. The 7 adverb types (manner, time, place, frequency, quantity/intensity, interrogative, connectors) — I\'ll check off when I can give examples of each\n3. The -ment formation rule (feminine adjective + -ment) — I\'ll check off when I can form 5 new adverbs from adjectives\n4. Placement rules in simple tenses and passé composé — I\'ll check off when I can place adverbs correctly in sentences\n5. Intensity adverbs before adjectives (très beau, not beau très) — I\'ll check off when this feels natural\n6. Nuanced distinctions (aussi/également, rater/manquer, tard/en retard, personne) — I\'ll check off when I can use each correctly in context\n7. Complete adverb mastery in speech and writing — I\'ll check off when I can write 5 sentences and speak naturally about actions using adverbs\n\nFor each topic, when I fully understand it AND can do a short speaking/writing/reading test, I\'ll check it off. Ask me questions to verify understanding before I check each one.\n\nAlso, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.')">📋 Copy for Gemini</button>
+  <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES & HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays \"X / Y done\"\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes (22-26) are 100% complete\n\n📖 LEARNING CONTENT:\n• 📚 Learning Objectives boxes\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic's content, check its item(s), then move to the next topic\n• 📌 One general \"Overall Mastery\" item stays at the very bottom (it covers the whole class, not one topic)\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n\n═════════════════════════════════════════\n\nIf you don\'t have my learning notes for this topic, please ask me to upload them so you can tailor your teaching to my specific class content.\n\nTeach me French adverbs using this content:\n\nADVERB TYPES (7 categories):\n1. MANNER (bien, mal, lentement, rapidement, facilement, sérieusement, poliment, prudemment)\n2. TIME (aujourd\'hui, hier, demain, maintenant, bientôt, déjà, récemment, enfin)\n3. PLACE (ici, là, dehors, dedans, devant, derrière, près, loin, partout, nulle part)\n4. FREQUENCY (toujours, souvent, généralement, habituellement, parfois, rarement, jamais)\n5. QUANTITY/INTENSITY (très, trop, assez, beaucoup, plus, moins, presque, vraiment, complètement)\n6. INTERROGATIVE (où, quand, comment, pourquoi, combien)\n7. CONNECTORS (pourtant, cependant, ainsi, ensuite, enfin, malheureusement, heureusement)\n\nKEY FORMATION RULES:\n- Adverbs are INVARIABLE (never change gender or number)\n- Formation: Feminine adjective + -ment suffix (lent→lente→lentement; heureux→heureuse→heureusement)\n- Placement in simple tenses: adverb AFTER verb (Il parle lentement)\n- Placement in passé composé: SHORT adverbs between auxiliary & participle (J\'ai déjà mangé); LONG adverbs after participle (Il a répondu rapidement)\n- INTENSITY adverbs ALWAYS come BEFORE adjectives (très beau, NOT beau très)\n- CRITICAL RULE: Never use adverbs to modify nouns! Use adjectives instead.\n\nNUANCED DISTINCTIONS TO MASTER:\n- aussi vs également (aussi = casual; également = formal/written)\n- rater vs manquer (rater = you fail/miss something; manquer = something is missing/absent from you)\n- tard vs en retard (tard = vague notion of late; en retard = late after scheduled time)\n- personne usage (alone with ne = nobody; une personne = somebody/a person)\n\nSTUDY OBJECTIVES:\n- Master all 7 adverb types and their functions\n- Understand and apply the -ment formation rule\n- Know placement rules in all tenses\n- Distinguish adjectives from adverbs\n- Master nuanced distinctions\n\nEXAM REQUIREMENTS (to pass):\n- SPEAKING: Say adverbs correctly; use them naturally in sentences about actions\n- WRITING: Write sentences with correct adverb placement; form new adverbs from adjectives\n- READING: Identify adverbs in text; understand what they modify\n- LISTENING: Hear adverbs in sentences; understand the nuanced meanings\n\nTEACH ME SLOWLY:\n1. Adverb definition and how they differ from adjectives — I\'ll check off when I can explain what an adverb modifies\n2. The 7 adverb types (manner, time, place, frequency, quantity/intensity, interrogative, connectors) — I\'ll check off when I can give examples of each\n3. The -ment formation rule (feminine adjective + -ment) — I\'ll check off when I can form 5 new adverbs from adjectives\n4. Placement rules in simple tenses and passé composé — I\'ll check off when I can place adverbs correctly in sentences\n5. Intensity adverbs before adjectives (très beau, not beau très) — I\'ll check off when this feels natural\n6. Nuanced distinctions (aussi/également, rater/manquer, tard/en retard, personne) — I\'ll check off when I can use each correctly in context\n7. Complete adverb mastery in speech and writing — I\'ll check off when I can write 5 sentences and speak naturally about actions using adverbs\n\nFor each topic, when I fully understand it AND can do a short speaking/writing/reading test, I\'ll check it off. Ask me questions to verify understanding before I check each one.\n\nAlso, if any of these topics feels overwhelming, let me know and I can break it down even MORE. And if I need speaking practice, feel free to ask me to open speaking mode in Gemini so I can practice pronunciation with you.')">📋 Copy for Gemini</button>
   <span class="copy-hint">Copy to Gemini for practicing</span>
 
   <p class="topic">Topic: Complete adverb mastery — all types, formation patterns, placement rules in all tenses, nuanced distinctions, and practical usage.</p>
@@ -4628,6 +4644,9 @@
   <div class="note">
   Master ALL 7 adverb types and their functions. Understand formation rules (feminine adjective + -ment). Master placement in simple present, passé composé, before adjectives, before other adverbs. Learn nuanced distinctions (rater/manquer, aussi/également, tard/en retard, personne usage). Practice using adverbs in complete sentences. Memorize by asking what question each adverb answers.
   </div>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class23">0 / 20 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class23"></div></div>
 
   <h3>Grammar: What is an Adverb? (Complete Definition)</h3>
 
@@ -4683,6 +4702,10 @@
       <p style="font-size: 13px; color: #555;">Malheureusement expresses an opinion about the entire sentence — it tells us the speaker's attitude.</p>
     </div>
   </div>
+
+  <ul class="checklist" data-lesson="class23" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca23-1"><label for="ca23-1"><strong>CORE:</strong> Understand adverb definition (invariable word modifying verbs, adjectives, adverbs, or sentences)</label></li>
+  </ul>
 
   <h3>🎯 CRITICAL DISTINCTION: Adjective vs Adverb</h3>
 
@@ -4752,6 +4775,10 @@
   ✓ <span class="fr">Un homme heureux</span> — CORRECT (a happy man) — adjective<br/>
   ✓ <span class="fr">Il est heureux</span> — CORRECT (He is happy) — adjective after linking verb<br/>
   ✓ <span class="fr">Il sourit heureusement</span> — CORRECT (He smiles happily) — adverb</p>
+
+  <ul class="checklist" data-lesson="class23" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca23-2"><label for="ca23-2"><strong>CORE:</strong> Know the CRITICAL difference between adjectives (modify nouns) and adverbs (modify verbs/adjectives/adverbs) — can NOT use adverbs to describe nouns!</label></li>
+  </ul>
 
   <h3>Grammar: Complete Types of Adverbs (7 Categories)</h3>
 
@@ -4876,6 +4903,12 @@
       <p style="font-size: 13px; color: #555;">Partout indicates all places/everywhere — a comprehensive place adverb.</p>
     </div>
   </div>
+
+  <ul class="checklist" data-lesson="class23" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca23-3"><label for="ca23-3"><strong>TYPE 1:</strong> Master adverbs of MANNER (bien, mal, lentement, rapidement, facilement, sérieusement, poliment, prudemment, paresseusement)</label></li>
+    <li><input type="checkbox" id="ca23-4"><label for="ca23-4"><strong>TYPE 2:</strong> Master adverbs of TIME (aujourd'hui, hier, demain, maintenant, bientôt, déjà, récemment, enfin) + understand tard vs en retard distinction</label></li>
+    <li><input type="checkbox" id="ca23-5"><label for="ca23-5"><strong>TYPE 3:</strong> Master adverbs of PLACE (ici, là, là-bas, ailleurs, partout, nulle part, dehors, dedans, devant, derrière, près, loin)</label></li>
+  </ul>
 
   <h3>📖 Grammar: Formation of Adverbs of Manner (THE RULE)</h3>
 
@@ -5025,6 +5058,15 @@
 
 <p><strong>💡 Teaching insight from class:</strong> Connectors are used to link 2 phrases, sentences, ideas, or paragraphs together. They organize your thoughts logically and make your speech flow naturally. Students who use these consistently sound much more fluent!</p>
 
+  <ul class="checklist" data-lesson="class23" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca23-10"><label for="ca23-10"><strong>FORMATION:</strong> Master the formation rule: Feminine Adjective + -ment = Adverb (lent→lente→lentement, heureux→heureuse→heureusement, etc.)</label></li>
+    <li><input type="checkbox" id="ca23-6"><label for="ca23-6"><strong>TYPE 4:</strong> Master adverbs of QUANTITY & INTENSITY (très, trop, assez, beaucoup, plus, moins, presque, tellement, vraiment, complètement) + know these come BEFORE adjectives</label></li>
+    <li><input type="checkbox" id="ca23-7"><label for="ca23-7"><strong>TYPE 5:</strong> Master adverbs of FREQUENCY (toujours, souvent, généralement, habituellement, normalement, parfois, rarement, jamais, presque jamais) using frequency scale</label></li>
+    <li><input type="checkbox" id="ca23-11"><label for="ca23-11"><strong>SPECIAL:</strong> Understand "jamais" as negation adverb using ne...jamais structure (Il ne fume jamais = He never smokes)</label></li>
+    <li><input type="checkbox" id="ca23-8"><label for="ca23-8"><strong>TYPE 6:</strong> Learn INTERROGATIVE ADVERBS (où, quand, comment, pourquoi, combien) and what question each asks</label></li>
+    <li><input type="checkbox" id="ca23-9"><label for="ca23-9"><strong>TYPE 7:</strong> Learn LINKING ADVERBS/CONNECTORS (pourtant, cependant, ainsi, ensuite, enfin, également, malheureusement, heureusement) and their functions</label></li>
+  </ul>
+
   <h3>🎯 CRITICAL: Placement of Adverbs (THE MOST IMPORTANT SECTION)</h3>
 
   <div class="expandable-section">
@@ -5138,6 +5180,13 @@
     </div>
   </div>
 
+  <ul class="checklist" data-lesson="class23" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca23-12"><label for="ca23-12"><strong>PLACEMENT:</strong> Master placement in SIMPLE TENSES (adverb AFTER verb: Il parle lentement)</label></li>
+    <li><input type="checkbox" id="ca23-13"><label for="ca23-13"><strong>PLACEMENT:</strong> Master placement in PASSÉ COMPOSÉ: SHORT adverbs between aux & participle (J'ai déjà mangé); LONG adverbs after participle (Il a répondu rapidement)</label></li>
+    <li><input type="checkbox" id="ca23-14"><label for="ca23-14"><strong>PLACEMENT:</strong> Know that INTENSITY adverbs come BEFORE adjectives (Il est très beau) — NEVER after (✗ très is after beau)</label></li>
+    <li><input type="checkbox" id="ca23-15"><label for="ca23-15"><strong>PLACEMENT:</strong> Understand the "short vs long" rule for adverbs modifying other adverbs (très lentement = short before long)</label></li>
+  </ul>
+
   <h3>⚠️ NUANCED DISTINCTIONS & CONFUSING PAIRS</h3>
 
   <div class="expandable-section">
@@ -5197,6 +5246,12 @@
   <p class="example"><span class="fr">Je suis en retard au travail</span> (I'm late for work — after my usual arrival time)<br/>
   <span class="fr">Le bus est en retard</span> (The bus is late — after its scheduled time)</p>
 
+  <ul class="checklist" data-lesson="class23" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca23-16"><label for="ca23-16"><strong>NUANCES:</strong> Distinguish aussi vs également (both = "also" but également more formal/emphatic)</label></li>
+    <li><input type="checkbox" id="ca23-17"><label for="ca23-17"><strong>NUANCES:</strong> Master rater vs manquer distinction (rater = YOU fail/miss; manquer = something is ABSENT/missing from you)</label></li>
+    <li><input type="checkbox" id="ca23-18"><label for="ca23-18"><strong>NUANCES:</strong> Understand personne usage (personne alone = nobody; une personne = somebody/a person)</label></li>
+  </ul>
+
   <h3>💡 MEMORY TECHNIQUE FOR MASTERING ADVERBS (From Teacher's Method)</h3>
   <p><strong>🔑 The Secret to Remembering Adverbs: ASK WHAT QUESTION THEY ANSWER!</strong></p>
   <p>Each adverb type answers a specific question. By remembering the question, you'll remember the adverb type and usage:</p>
@@ -5211,6 +5266,10 @@
   <tr><td><strong>À quel degré ?</strong> (To what degree?)</td><td>QUANTITY/INTENSITY</td><td>très, trop, assez, beaucoup, plus, moins, presque, vraiment</td></tr>
 </table>
 </div>
+
+  <ul class="checklist" data-lesson="class23" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca23-19"><label for="ca23-19"><strong>MEMORY:</strong> Use the question-answer technique (Quand? Où? Comment? Combien de fois? À quel degré?) to identify adverb type</label></li>
+  </ul>
 
   <h3>📋 PRACTICE TIPS (From Classroom Teaching)</h3>
   <p><strong>✅ DO THIS:</strong></p>
@@ -5372,29 +5431,9 @@
     </div>
   </div>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class23">0 / 20 done</span></div>
-  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class23"></div></div>
+  <h3>✅ Overall Mastery</h3>
   <ul class="checklist" data-lesson="class23">
-    <li><input type="checkbox" id="ca23-1"><label for="ca22-1"><strong>CORE:</strong> Understand adverb definition (invariable word modifying verbs, adjectives, adverbs, or sentences)</label></li>
-    <li><input type="checkbox" id="ca23-2"><label for="ca22-2"><strong>CORE:</strong> Know the CRITICAL difference between adjectives (modify nouns) and adverbs (modify verbs/adjectives/adverbs) — can NOT use adverbs to describe nouns!</label></li>
-    <li><input type="checkbox" id="ca23-3"><label for="ca22-3"><strong>TYPE 1:</strong> Master adverbs of MANNER (bien, mal, lentement, rapidement, facilement, sérieusement, poliment, prudemment, paresseusement)</label></li>
-    <li><input type="checkbox" id="ca23-4"><label for="ca22-4"><strong>TYPE 2:</strong> Master adverbs of TIME (aujourd'hui, hier, demain, maintenant, bientôt, déjà, récemment, enfin) + understand tard vs en retard distinction</label></li>
-    <li><input type="checkbox" id="ca23-5"><label for="ca22-5"><strong>TYPE 3:</strong> Master adverbs of PLACE (ici, là, là-bas, ailleurs, partout, nulle part, dehors, dedans, devant, derrière, près, loin)</label></li>
-    <li><input type="checkbox" id="ca23-6"><label for="ca22-6"><strong>TYPE 4:</strong> Master adverbs of QUANTITY & INTENSITY (très, trop, assez, beaucoup, plus, moins, presque, tellement, vraiment, complètement) + know these come BEFORE adjectives</label></li>
-    <li><input type="checkbox" id="ca23-7"><label for="ca22-7"><strong>TYPE 5:</strong> Master adverbs of FREQUENCY (toujours, souvent, généralement, habituellement, normalement, parfois, rarement, jamais, presque jamais) using frequency scale</label></li>
-    <li><input type="checkbox" id="ca23-8"><label for="ca22-8"><strong>TYPE 6:</strong> Learn INTERROGATIVE ADVERBS (où, quand, comment, pourquoi, combien) and what question each asks</label></li>
-    <li><input type="checkbox" id="ca23-9"><label for="ca22-9"><strong>TYPE 7:</strong> Learn LINKING ADVERBS/CONNECTORS (pourtant, cependant, ainsi, ensuite, enfin, également, malheureusement, heureusement) and their functions</label></li>
-    <li><input type="checkbox" id="ca23-10"><label for="ca22-10"><strong>FORMATION:</strong> Master the formation rule: Feminine Adjective + -ment = Adverb (lent→lente→lentement, heureux→heureuse→heureusement, etc.)</label></li>
-    <li><input type="checkbox" id="ca23-11"><label for="ca22-11"><strong>SPECIAL:</strong> Understand "jamais" as negation adverb using ne...jamais structure (Il ne fume jamais = He never smokes)</label></li>
-    <li><input type="checkbox" id="ca23-12"><label for="ca22-12"><strong>PLACEMENT:</strong> Master placement in SIMPLE TENSES (adverb AFTER verb: Il parle lentement)</label></li>
-    <li><input type="checkbox" id="ca23-13"><label for="ca22-13"><strong>PLACEMENT:</strong> Master placement in PASSÉ COMPOSÉ: SHORT adverbs between aux & participle (J'ai déjà mangé); LONG adverbs after participle (Il a répondu rapidement)</label></li>
-    <li><input type="checkbox" id="ca23-14"><label for="ca22-14"><strong>PLACEMENT:</strong> Know that INTENSITY adverbs come BEFORE adjectives (Il est très beau) — NEVER after (✗ très is after beau)</label></li>
-    <li><input type="checkbox" id="ca23-15"><label for="ca22-15"><strong>PLACEMENT:</strong> Understand the "short vs long" rule for adverbs modifying other adverbs (très lentement = short before long)</label></li>
-    <li><input type="checkbox" id="ca23-16"><label for="ca22-16"><strong>NUANCES:</strong> Distinguish aussi vs également (both = "also" but également more formal/emphatic)</label></li>
-    <li><input type="checkbox" id="ca23-17"><label for="ca22-17"><strong>NUANCES:</strong> Master rater vs manquer distinction (rater = YOU fail/miss; manquer = something is ABSENT/missing from you)</label></li>
-    <li><input type="checkbox" id="ca23-18"><label for="ca22-18"><strong>NUANCES:</strong> Understand personne usage (personne alone = nobody; une personne = somebody/a person)</label></li>
-    <li><input type="checkbox" id="ca23-19"><label for="ca22-19"><strong>MEMORY:</strong> Use the question-answer technique (Quand? Où? Comment? Combien de fois? À quel degré?) to identify adverb type</label></li>
-    <li><input type="checkbox" id="ca23-20"><label for="ca22-20"><strong>MASTERY:</strong> Can use all adverb types correctly in complete sentences with proper placement; speaking & writing test passed; use connectors naturally in speech</label></li>
+    <li><input type="checkbox" id="ca23-20"><label for="ca23-20"><strong>MASTERY:</strong> Can use all adverb types correctly in complete sentences with proper placement; speaking & writing test passed; use connectors naturally in speech</label></li>
   </ul>
 </div>
 
