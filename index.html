@@ -220,18 +220,20 @@
   .checklist label { cursor: pointer; transition: color 0.3s ease; }
   .checklist input:checked + label { text-decoration: line-through; color: #999; }
 
-  /* A2 checklists (Classes 22, 23, 25, 26) - blue text until checked */
+  /* A2 checklists (Classes 22, 23, 25, 26, 27) - blue text until checked */
   .checklist[data-lesson="class22"] label,
   .checklist[data-lesson="class23"] label,
   .checklist[data-lesson="class25"] label,
-  .checklist[data-lesson="class26"] label {
+  .checklist[data-lesson="class26"] label,
+  .checklist[data-lesson="class27"] label {
     color: #1565c0;
     font-weight: 600;
   }
   .checklist[data-lesson="class22"] input:checked + label,
   .checklist[data-lesson="class23"] input:checked + label,
   .checklist[data-lesson="class25"] input:checked + label,
-  .checklist[data-lesson="class26"] input:checked + label {
+  .checklist[data-lesson="class26"] input:checked + label,
+  .checklist[data-lesson="class27"] input:checked + label {
     color: #999;
     font-weight: 400;
   }
@@ -617,6 +619,7 @@
       <a href="#" onclick="goToClass(23)">Adverbs</a>
       <a href="#" onclick="goToClass(25)">Prepositions</a>
       <a href="#" onclick="goToClass(26)">Prepositions + Future</a>
+      <a href="#" onclick="goToClass(27)">Expressions</a>
     </div>
   </div>
 </nav>
@@ -6697,6 +6700,209 @@
   </ul>
 </div>
 
+<!-- ===================== CLASS 27: PREPOSITIONS - EXPRESSIONS ===================== -->
+<div class="lesson-card" id="class27">
+  <div class="lesson-header">
+    <h2>A2: Prepositions — Cause, Purpose &amp; Fixed Expressions <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class is a follow-up to an earlier Prepositions class - it goes deeper into a few areas: telling apart the different ways to express CAUSE (à cause de vs parce que vs grâce à vs en raison de vs faute de), expressing PURPOSE (pour, afin de, dans le but de), and the fixed expressions where a specific preposition is simply required after certain verbs and adjectives (penser à, avoir besoin de, être fier de, etc. - these can\'t be translated word-for-word from English, they have to be memorized).\n\nTeach me using this class content:\n\nCAUSE - telling the differences apart:\n- à cause de = because of (usually a NEGATIVE cause): &quot;Le match est annulé à cause de la pluie&quot; (the match is cancelled because of the rain)\n- parce que = because (a neutral EXPLANATION, not blaming anything): &quot;Je suis en retard parce que je me suis réveillé tard&quot; (I\'m late because I woke up late)\n- grâce à = thanks to (a POSITIVE cause): &quot;Grâce à son aide, j\'ai réussi&quot; (thanks to his help, I succeeded)\n- en raison de = due to (neutral/formal, close to à cause de): &quot;Le vol est retardé en raison du mauvais temps&quot; (the flight is delayed due to bad weather)\n- faute de = for lack of: &quot;Faute de temps, nous allons nous arrêter ici&quot; (for lack of time, we\'re going to stop here)\n\nPURPOSE (but):\n- pour + infinitif: &quot;Je travaille pour gagner de l\'argent&quot; (I work to earn money)\n- pour + nom: &quot;C\'est un cadeau pour ma mère&quot; (it\'s a gift for my mother)\n- afin de + infinitif: &quot;Il étudie afin de réussir l\'examen&quot; (he studies in order to pass the exam)\n- dans le but de + infinitif: &quot;Nous agissons dans le but de résoudre le problème&quot; (we act in order to solve the problem)\n\nVERBS that always take a specific preposition (memorize these, don\'t translate word-for-word):\npenser à (to think about), parler de (to talk about), rêver de (to dream of), s\'intéresser à (to be interested in), avoir besoin de (to need), dépendre de (to depend on), essayer de (to try to), commencer à (to start to), arrêter de (to stop doing)\n\nADJECTIVES that always take a specific preposition:\nêtre fier de (proud of), être capable de (capable of), être prêt à (ready to), être intéressé par (interested in - note: PAR, not à), être responsable de (responsible for), être satisfait de (satisfied with)\n\nCommon mistakes to avoid:\n- &quot;Je pense de mon avenir&quot; is WRONG, it\'s &quot;Je pense à mon avenir&quot;\n- &quot;J\'ai besoin à ton aide&quot; is WRONG, it\'s &quot;J\'ai besoin de ton aide&quot;\n- &quot;Il commence de travailler&quot; is WRONG, it\'s &quot;Il commence à travailler&quot;\n- &quot;Elle est intéressée à ce poste&quot; is WRONG, it\'s &quot;Elle est intéressée par ce poste&quot;\n\nFor each topic, teach me with examples, then have me build my own sentences. When I understand and can use it correctly, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: A follow-up preposition class — telling apart the ways to express cause (à cause de / parce que / grâce à / en raison de / faute de), expressing purpose, and the fixed verb/adjective + preposition expressions that have to be memorized.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers telling apart the five ways to express cause in French, expressing purpose with pour and afin de, verbs and adjectives that always take a specific preposition, a quick review of contracted articles, and common mistakes to avoid." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class27">0 / 8 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class27"></div></div>
+
+  <h3>1️⃣ MOYEN — Means (par, avec, en)</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Par can indicate a means or a channel, like sending something by email. Avec is used for the instrument you use to do an action, like cutting bread with a knife. For transportation, en is preferred - I go to work by bus is je vais au travail en bus."
+      data-lang="en-US">
+      🎧 Par, Avec, En
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>par</strong> = by / through (a channel): <span class="fr">Je lui ai envoyé par e-mail</span> (I sent it to them by email)<br/>
+        <strong>avec</strong> = with (the instrument used): <span class="fr">Je coupe le pain avec un couteau</span> (I cut the bread with a knife)<br/>
+        <strong>en</strong> = by (transport, preferred over par): <span class="fr">Je vais au travail en bus</span> (I go to work by bus)
+      </div>
+    </div>
+  </div>
+
+  <p>All three can mean "by", but they're not interchangeable:</p>
+  <ul>
+    <li><span class="fr">Tu lui as parlé par téléphone ?</span> (Did you talk to them by phone?)</li>
+    <li><span class="fr">J'écris avec un stylo</span> (I write with a pen)</li>
+    <li><span class="fr">Je vais en train</span> / <span class="fr">Je vais en voiture</span> (I go by train / by car — <em>en</em>, not <em>avec</em>, for transport)</li>
+  </ul>
+
+  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca27-1"><label for="ca27-1"><strong>MOYEN:</strong> I can use par, avec, and en correctly for means/instrument/transport</label></li>
+  </ul>
+
+  <h3>2️⃣ CAUSE — Telling the Five Apart</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="There are five ways to express cause in French and they are not interchangeable. À cause de is usually for a negative cause, something that got cancelled or ruined. Parce que is a neutral explanation, just giving a reason without blaming anything. Grâce à is for a positive cause, thanks to someone or something. En raison de is neutral and formal, close to à cause de. Faute de means for lack of something."
+      data-lang="en-US">
+      🎧 À cause de vs parce que vs grâce à
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>à cause de</strong> = because of (usually <em>negative</em>): <span class="fr">Le match est annulé à cause de la pluie</span> (the match is cancelled because of the rain)<br/>
+        <strong>parce que</strong> = because (neutral <em>explanation</em>, not blame): <span class="fr">Je suis en retard parce que je me suis réveillé tard</span> (I'm late because I woke up late)<br/>
+        <strong>grâce à</strong> = thanks to (<em>positive</em> cause): <span class="fr">Grâce à son aide, j'ai réussi</span> (thanks to his help, I succeeded)<br/>
+        <strong>en raison de</strong> = due to (neutral/formal): <span class="fr">Le vol est retardé en raison du mauvais temps</span> (the flight is delayed due to bad weather)<br/>
+        <strong>faute de</strong> = for lack of: <span class="fr">Faute de temps, nous allons nous arrêter ici</span> (for lack of time, we're going to stop here)
+      </div>
+    </div>
+  </div>
+
+  <p>The key distinction the class kept coming back to: <strong>à cause de</strong> blames something for a negative result, while <strong>parce que</strong> is just explaining why, with no blame attached. Compare:</p>
+  <ul>
+    <li><span class="fr">Je suis en retard à cause de l'embouteillage</span> (I'm late because of the traffic — blaming the traffic)</li>
+    <li><span class="fr">Je suis en retard parce que je me suis réveillé tard</span> (I'm late because I woke up late — just the reason)</li>
+    <li><span class="fr">Mon cours est annulé à cause du réseau</span> (my class is cancelled because of the network)</li>
+    <li><span class="fr">Nous avons abandonné le projet faute d'argent</span> (we gave up the project for lack of money)</li>
+  </ul>
+
+  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca27-2"><label for="ca27-2"><strong>CAUSE:</strong> I can tell à cause de, parce que, grâce à, en raison de, and faute de apart and use each correctly</label></li>
+  </ul>
+
+  <h3>3️⃣ BUT — Purpose</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="To express a goal or purpose, use pour plus an infinitive verb, or pour plus a noun. I work to earn money is je travaille pour gagner de l'argent. It's a gift for my mother is c'est un cadeau pour ma mère. Afin de and dans le but de mean the same thing as pour but sound more formal."
+      data-lang="en-US">
+      🎧 Pour, Afin de, Dans le but de
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>pour</strong> + infinitif: <span class="fr">Je travaille pour gagner de l'argent</span> (I work to earn money)<br/>
+        <strong>pour</strong> + nom: <span class="fr">C'est un cadeau pour ma mère</span> (it's a gift for my mother)<br/>
+        <strong>afin de</strong> + infinitif (more formal): <span class="fr">Il étudie afin de réussir l'examen</span> (he studies in order to pass the exam)<br/>
+        <strong>dans le but de</strong> + infinitif (more formal): <span class="fr">Nous agissons dans le but de résoudre le problème</span> (we act in order to solve the problem)
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li><span class="fr">Je voyage pour aller au Canada</span> (I travel to go to Canada)</li>
+    <li><span class="fr">Je prends un couteau pour couper la viande</span> (I take a knife to cut the meat)</li>
+    <li><span class="fr">Je marche pour être en bonne santé</span> (I walk to be healthy)</li>
+  </ul>
+
+  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca27-3"><label for="ca27-3"><strong>BUT:</strong> I can express purpose with pour + infinitive, pour + noun, afin de, and dans le but de</label></li>
+  </ul>
+
+  <h3>4️⃣ Verbs That Always Take a Specific Preposition</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Some French verbs always pair with a specific preposition, and you can't guess it from the English translation - you just have to memorize it. Penser à means to think about. Parler de means to talk about. Avoir besoin de means to need, and it's conjugated with avoir - il a besoin de, nous avons besoin de. These pairings don't always match English, so memorize them as a unit."
+      data-lang="en-US">
+      🎧 Penser à, Parler de, Avoir besoin de...
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>penser à</strong> = to think about: <span class="fr">Je pense à mon avenir</span><br/>
+        <strong>parler de</strong> = to talk about: <span class="fr">Nous parlons de notre projet</span><br/>
+        <strong>rêver de</strong> = to dream of: <span class="fr">Elle rêve de voyager</span><br/>
+        <strong>s'intéresser à</strong> = to be interested in: <span class="fr">Il s'intéresse à la politique</span><br/>
+        <strong>avoir besoin de</strong> = to need: <span class="fr">J'ai besoin de ton aide</span><br/>
+        <strong>dépendre de</strong> = to depend on: <span class="fr">Tout dépend de la situation</span><br/>
+        <strong>essayer de</strong> = to try to: <span class="fr">J'essaie de comprendre</span><br/>
+        <strong>commencer à</strong> = to start to: <span class="fr">Il commence à travailler</span><br/>
+        <strong>arrêter de</strong> = to stop doing: <span class="fr">Elle a arrêté de fumer</span>
+      </div>
+    </div>
+  </div>
+
+  <p><strong>avoir besoin de</strong> came up a lot in class — it's conjugated with <span class="fr">avoir</span>, so the person changes but the expression stays the same shape:</p>
+  <ul>
+    <li><span class="fr">Il a besoin d'une voiture</span> (he needs a car)</li>
+    <li><span class="fr">Nous avons besoin d'une maison</span> (we need a house)</li>
+    <li><span class="fr">J'ai besoin d'apprendre le français</span> (I need to learn French)</li>
+    <li><span class="fr">Appelez-moi si vous avez besoin de moi</span> (call me if you need me)</li>
+  </ul>
+
+  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca27-4"><label for="ca27-4"><strong>VERB + PREPOSITION:</strong> I know penser à, parler de, rêver de, s'intéresser à, avoir besoin de, dépendre de, essayer de, commencer à, and arrêter de by heart</label></li>
+  </ul>
+
+  <h3>5️⃣ Adjectives That Always Take a Specific Preposition</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Some adjectives also always pair with a specific preposition. Être fier de means to be proud of. Être intéressé par uses par, not à - that's an easy one to get wrong. This list isn't exhaustive - other adjectives like être content de, être heureux de, and être fatigué de work the same way."
+      data-lang="en-US">
+      🎧 Être fier de, capable de, intéressé par...
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>être fier de</strong> = proud of: <span class="fr">Je suis fier de mon travail</span><br/>
+        <strong>être capable de</strong> = capable of: <span class="fr">Elle est capable de le faire</span><br/>
+        <strong>être prêt à</strong> = ready to: <span class="fr">Nous sommes prêts à partir</span><br/>
+        <strong>être intéressé par</strong> = interested in (note: <em>par</em>, not à): <span class="fr">Il est intéressé par ce poste</span><br/>
+        <strong>être responsable de</strong> = responsible for: <span class="fr">Elle est responsable du projet</span><br/>
+        <strong>être satisfait de</strong> = satisfied with: <span class="fr">Je suis satisfait du résultat</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Not an exhaustive list — the same pattern applies to <span class="fr">être content de</span>, <span class="fr">être heureux de</span>, and <span class="fr">être fatigué de</span>, among others.</p>
+
+  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca27-5"><label for="ca27-5"><strong>ADJECTIVE + PREPOSITION:</strong> I know être fier de, capable de, prêt à, intéressé par, responsable de, and satisfait de — and that this pattern extends to other adjectives too</label></li>
+  </ul>
+
+  <h3>6️⃣ Quick Review: Contracted Articles</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Preposition + Article</th><th>Contracts to</th><th>Example</th></tr>
+    <tr><td>à + le</td><td><span class="fr">au</span></td><td><span class="fr">Je vais au marché</span></td></tr>
+    <tr><td>à + les</td><td><span class="fr">aux</span></td><td><span class="fr">Je parle aux étudiants</span></td></tr>
+    <tr><td>de + le</td><td><span class="fr">du</span></td><td><span class="fr">Je reviens du bureau</span></td></tr>
+    <tr><td>de + les</td><td><span class="fr">des</span></td><td><span class="fr">Je parle des problèmes</span></td></tr>
+    <tr><td>à/de + la, à/de + l'</td><td>unchanged</td><td><span class="fr">Je vais à la banque</span>, <span class="fr">Je reviens de l'université</span></td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca27-6"><label for="ca27-6"><strong>CONTRACTED ARTICLES:</strong> I can apply au, aux, du, and des without hesitating</label></li>
+  </ul>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">Je pense de mon avenir</span></td><td><span class="fr">Je pense à mon avenir</span></td><td>penser takes à, not de</td></tr>
+    <tr><td><span class="fr">J'ai besoin à ton aide</span></td><td><span class="fr">J'ai besoin de ton aide</span></td><td>avoir besoin takes de, not à</td></tr>
+    <tr><td><span class="fr">Il commence de travailler</span></td><td><span class="fr">Il commence à travailler</span></td><td>commencer takes à, not de</td></tr>
+    <tr><td><span class="fr">Elle est intéressée à ce poste</span></td><td><span class="fr">Elle est intéressée par ce poste</span></td><td>intéressé takes par, not à</td></tr>
+    <tr><td><span class="fr">Je suis depuis 2 ans ici</span></td><td><span class="fr">Je suis ici depuis 2 ans</span></td><td>depuis + duration goes after the location, not before</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca27-7"><label for="ca27-7"><strong>MISTAKES:</strong> I can spot and avoid these five common errors</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class27">
+    <li><input type="checkbox" id="ca27-8"><label for="ca27-8"><strong>MASTERY:</strong> I can tell the five cause-expressions apart, express purpose correctly, and use the memorized verb/adjective + preposition pairs without translating word-for-word from English</label></li>
+  </ul>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -6851,7 +7057,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26];
+const classOrder = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion

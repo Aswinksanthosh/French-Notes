@@ -206,6 +206,60 @@ rather than assuming a contiguous 1..N range, so the gap itself doesn't
 break anything on its own. The risk is future edits skipping one of the
 6 steps above, not the current state.
 
+**First real test of this checklist: Class 27 added 2026-09-25** (see
+"Class 27 added" below). Went through all 6 steps plus the label-sync
+check; the headless verification (nav order matches `classOrder`, every
+class has both a card and a nav link, every link activates the right
+card, Next traversal never leaves `classOrder`, nav label text matches
+each `<h2>`) all passed on the first attempt — the checklist held up.
+
+## Class 27 added 2026-09-25: "Prepositions — Cause, Purpose & Fixed
+Expressions" (A2, follow-up to Class 25)
+
+User uploaded a PDF ("LES PRÉPOSITIONS EN FRANÇAIS") plus a raw
+transcript of that day's live class, both about prepositions, and asked
+to add "today's class." **Before building anything**, checked whether
+this duplicated existing content: Class 25 ("A2: Prepositions") already
+covers nearly every topic in the PDF, almost section-for-section (place,
+time, cities/countries, means, cause, direction, verb+preposition,
+adjective+preposition, compound prepositions, contracted forms, common
+mistakes, B1-B2 sentences) — the PDF looks like it may have been the
+original source Class 25 was built from in an earlier session. Asked the
+user directly rather than guessing whether to (a) enrich Class 25 instead
+of duplicating it, (b) build a new class anyway since this was a separate
+live session, or (c) do nothing. **User chose (b): a new class anyway.**
+
+Rather than re-covering ground Class 25 already owns, built Class 27
+around what the live-class transcript actually emphasized that Class 25
+doesn't have as its own topic: the distinction between the five ways to
+express CAUSE (à cause de = negative cause, parce que = neutral
+explanation with no blame, grâce à = positive cause, en raison de =
+neutral/formal, faute de = for lack of — Class 25's cheat sheet only
+lists 3 of these with no "parce que" comparison), a dedicated PURPOSE/BUT
+section (pour, afin de, dans le but de — not a topic in Class 25 at all),
+verb+preposition and adjective+preposition expressions (overlaps Class 25
+but re-taught since it came up heavily in this specific live session), a
+short contracted-articles review, and a common-mistakes table specific to
+this session's errors.
+
+Followed the full "adding a chapter" checklist above: `classOrder` →
+appended `27`; nav dropdown → added under `.level-content.a2`, positioned
+last to match `classOrder`'s order; A2 checklist-label CSS (the
+`data-lesson="class22"`-style selector list) → added `class27` to both
+the label-color and checked-label selectors; lesson card itself → 8
+checklist items across 7 topics + Overall Mastery, `data-lesson="class27"`
+throughout, checkbox ids `ca27-1` through `ca27-8` (confirmed globally
+unique against all 208 checkboxes site-wide, not just A2's); both new
+tables wrapped in `.table-wrap` from the start (see the table-overflow
+bug above — never ship a bare `<table>` again); added the
+"🔎 What's in this chapter?" button per the established rollout pattern.
+Verified: JS syntax, div balance (comments-stripped), checkbox id
+uniqueness, checkbox id/label matching, nav-label-vs-h2 sync (all 26,
+zero mismatches), all 26 "Copy for Gemini" buttons parse, class27 reaches
+`0 / 8 done`, chapter indicator shows "Class 26 of 26", and no viewport
+overflow on class27 at 390px phone width. Also updated `README.md`'s
+curriculum list to include it.
+
 ## Push workflow
 
 One commit per class/change (not batched), descriptive commit message,
@@ -392,7 +446,7 @@ Open Suggestions below, already flagged pre-restructuring).
 
 ## Status (as of 2026-09-25)
 
-All 25 classes (A1: 1–21, A2: 22,23,25,26) follow the per-class pattern
+All 26 classes (A1: 1–21, A2: 22,23,25,26,27) follow the per-class pattern
 above. **Class numbers 2–15 changed on 2026-09-25 — see the restructuring
 section above before assuming any class number below is still correct.**
 The full A1 rollout (bringing the structure originally established on the

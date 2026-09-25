@@ -54,6 +54,7 @@ tap, and self-test progress with per-topic checklists.
 23. Adverbs
 24. Prepositions
 25. Prepositions + Future
+26. Expressions (Prepositions II — cause, purpose, fixed expressions)
 
 *Remaining A2 classes will be updated weekly.*
 
