@@ -335,8 +335,10 @@
     border-top: none; border-radius: 0 0 8px 8px; padding: 4px 16px 14px;
   }
   .intro-content.open { display: block; }
-  .intro-content ul { margin: 10px 0; padding-left: 20px; }
+  .intro-content ul, .intro-content ol { margin: 10px 0; padding-left: 20px; }
   .intro-content li { margin-bottom: 8px; font-size: 14px; line-height: 1.5; }
+  .howto-lead { margin: 14px 0 4px; font-size: 13px; font-weight: 700; color: var(--blue); }
+  .howto-lead:first-child { margin-top: 8px; }
   .intro-close {
     background: var(--blue); color: white; border: none; border-radius: 6px;
     padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
@@ -484,14 +486,20 @@
 <div class="intro-wrap">
   <button class="intro-toggle" id="introToggle" onclick="toggleIntro()">📖 How to use this site <span id="introArrow">▾</span></button>
   <div class="intro-content" id="introContent">
+    <p class="howto-lead">Work through each chapter in order:</p>
+    <ol class="howto-steps">
+      <li><strong>📖 Read the notes.</strong> Any word or sentence in blue is French — tap it to hear it spoken aloud.</li>
+      <li><strong>✅ Check off the checklist</strong> right under each topic, but only once you actually understand it — not just to watch it turn gray.</li>
+      <li><strong>📋 Once you've read the whole chapter,</strong> tap "Copy for Gemini," paste it into the Gemini app, and test yourself on it there. Only turn on Gemini's speaking mode if a topic actually calls for speaking or listening practice.</li>
+      <li><strong>🏁 Tick off the last checklist item</strong> once Gemini confirms you've got it.</li>
+      <li><strong>⚪ That's it —</strong> the chapter turns white in the "Chapters" dropdown, your sign that it's fully mastered.</li>
+    </ol>
+    <p class="howto-lead">Also good to know:</p>
     <ul>
-      <li><strong>📊 Progress bars:</strong> the green one at the top tracks everything; each class has its own right under its topic line.</li>
-      <li><strong>✅ Checklists:</strong> read a topic, then check its box(es) right below it — only check it once you actually understand it, not just to see it turn gray.</li>
-      <li><strong>📋 Copy for Gemini:</strong> tap this on any class to copy the full lesson plus a ready-made study prompt, then paste it straight into Gemini for a personal walkthrough of that class.</li>
-      <li><strong>🔊 Pronunciation:</strong> tap any blue French word or example sentence to hear it spoken aloud.</li>
-      <li><strong>🧭 Moving between classes:</strong> use the "Chapters" dropdown to jump anywhere, the Prev/Next buttons, or just swipe left/right.</li>
-      <li><strong>🎓 Badges:</strong> the A1/A2 buttons get a 🎓 once every class in that level is 100% checked off.</li>
-      <li><strong>💾 Saving:</strong> your progress and place in each class save automatically on this device/browser. To open this like an app, use your browser's "Add to Home Screen" option.</li>
+      <li><strong>📊 Progress bars:</strong> the green one at the top tracks everything; each chapter has its own right under its topic line.</li>
+      <li><strong>🧭 Moving around:</strong> use the "Chapters" dropdown to jump anywhere, the Prev/Next buttons, or just swipe left/right.</li>
+      <li><strong>🎓 Badges:</strong> the A1/A2 buttons get a 🎓 once every chapter in that level is 100% checked off.</li>
+      <li><strong>💾 Saving:</strong> your progress and place in each chapter save automatically on this device/browser. To open this like an app, use your browser's "Add to Home Screen" option.</li>
     </ul>
     <button class="intro-close" onclick="toggleIntro(false)">Got it, hide this</button>
   </div>
