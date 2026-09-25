@@ -144,6 +144,58 @@ scope-minimalism.
      raw `'` or a `\"` (backslash+doublequote — wrong, breaks the HTML
      attribute; use `&quot;` instead) anywhere in prompt text is a bug.
 
+## Standing rule: adding or removing a chapter/class — full sync checklist
+
+Added 2026-09-25 after the user asked to "fix the navigation menu every
+time we add or remove chapters" — this exact gap between steps is what
+caused the earlier nav-breaking-around-missing-class-24 bug (see History
+below). The full top-of-file HTML comment in `index.html` now carries
+this same checklist too (search "ADDING OR REMOVING A CHAPTER"), so it
+survives even if this file isn't read. Go through ALL of these, every
+time, not just the obviously-affected one:
+
+1. **`classOrder` array** (search `const classOrder =` near the bottom
+   `<script>`). Single source of truth for chapter count, Prev/Next
+   traversal order, and which class numbers are valid. Add/remove the
+   number here.
+2. **The nav dropdown** (search `<nav id="toc">`): add/remove the
+   `<a href="#" onclick="goToClass(N)">Name</a>` line under the correct
+   `.level-content.a1` or `.level-content.a2` div. **Its position in this
+   list must match its position in `classOrder`** — Prev/Next follows
+   `classOrder`'s order, not DOM order, so if the two disagree, Prev/Next
+   silently jumps somewhere different from what's shown above/below the
+   current chapter in the dropdown.
+3. **A2-specific CSS** (search `data-lesson="class22"` — there's a block
+   styling A2 checklist labels with a different color scheme than A1's,
+   listing every A2 class number explicitly). A new A2 class left out of
+   this list silently renders with A1's default styling instead.
+4. **The lesson card itself**: `<div class="lesson-card" id="classN">`,
+   its `.progress-count`/`.progress-bar` pair (both need
+   `data-lesson="classN"`), and every `<ul class="checklist"
+   data-lesson="classN">` block. Confirm checkbox ids stay globally
+   unique after the edit.
+5. `totalClasses` and the "Class X of Y" indicator are **derived** from
+   `classOrder.length` — never hand-edit a count anywhere.
+6. **Verify with a headless test after editing**, not just by eye: load
+   the page in Playwright and confirm (a) the nav dropdown's
+   `goToClass(N)` numbers, in order, exactly equal `classOrder`; (b) every
+   `classOrder` entry has both a real `#classN` element and a nav link;
+   (c) clicking each nav link actually activates the matching card; (d)
+   walking `nextChapter()` from the first class the full length of
+   `classOrder` never lands outside it. This is a ~30-line script, cheap
+   to re-run, and it's exactly the class of bug that a visual check alone
+   misses (a bare div-balance/JS-syntax check doesn't catch nav/order
+   drift at all — verified 2026-09-25 that this exact 4-part check catches
+   it and passed on the then-current 25-class dropdown).
+
+Verified 2026-09-25 (proactive audit, not a live bug report): nav dropdown,
+`classOrder`, and all 25 lesson cards were fully in sync at that time —
+gap at class 24 is intentional (documented at the top of `index.html`)
+and every consumer of class numbers already goes through `classOrder`
+rather than assuming a contiguous 1..N range, so the gap itself doesn't
+break anything on its own. The risk is future edits skipping one of the
+6 steps above, not the current state.
+
 ## Push workflow
 
 One commit per class/change (not batched), descriptive commit message,

@@ -49,6 +49,39 @@
 
   WORKFLOW: one commit per class/change, pushed to both
   claude/wonderful-darwin-idhgvx and main, with a descriptive message.
+
+  ADDING OR REMOVING A CHAPTER/CLASS - checklist (this exact gap between
+  steps is what caused the nav-breaking-around-missing-class-24 bug
+  mentioned above; go through ALL of these, not just the obvious one):
+  1. The `classOrder` array (search "const classOrder =", near the bottom
+     JS). This is the single source of truth for chapter count, Prev/Next
+     order, and which class numbers are valid. Add/remove the number here.
+  2. The nav dropdown itself (search `<nav id="toc">`): add/remove the
+     `<a href="#" onclick="goToClass(N)">Name</a>` line under the correct
+     `.level-content.a1` or `.level-content.a2` div. Its position in this
+     list must match its position in `classOrder` - Prev/Next follows
+     `classOrder`'s order, so if these two orders disagree, Prev/Next will
+     silently jump somewhere different from what the dropdown shows above/
+     below the current chapter.
+  3. If the new/removed class is A2: check the CSS block with selectors
+     like `.checklist[data-lesson="class22"] label` (search
+     `data-lesson="class22"`) - A2 has its own checklist label color
+     scheme (blue-ish) listed explicitly by class number, separate from
+     A1's. A new A2 class left out of this list will silently render with
+     A1's default styling instead.
+  4. The lesson card content itself: `<div class="lesson-card" id="classN">`,
+     its `<p class="topic">`, the progress-count/progress-bar pair (both
+     need `data-lesson="classN"`), and every `<ul class="checklist"
+     data-lesson="classN">` block. Every checkbox id must still be
+     globally unique across the whole file after the edit.
+  5. `totalClasses` and the "Class X of Y" indicator are both DERIVED from
+     `classOrder.length` automatically - don't hand-edit a count anywhere.
+  6. After editing: re-run the standard verification pass (JS syntax via
+     `node --check` on the extracted script content, div balance, checkbox
+     id/label matching, all "Copy for Gemini" buttons parse) AND
+     specifically click through the nav dropdown in a headless test to
+     confirm every remaining chapter still opens and Prev/Next never lands
+     on a removed/nonexistent class number.
 -->
 <html lang="en">
 <head>
