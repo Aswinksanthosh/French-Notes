@@ -6971,7 +6971,19 @@ function speakFrench(text, el) {
   // multi-word compounds don't get run together into one token.
   text = text.replace(/[-‐-―]/g, ' ').replace(/\s+/g, ' ').trim();
   if (!text) return;
-  window.speechSynthesis.cancel();
+  // Only cancel if something is actually in progress. Calling cancel()
+  // unconditionally - even as a no-op when nothing is speaking, which is
+  // what every single first tap does - is a known source of a spurious
+  // audible click/blip on iOS Safari's speechSynthesis implementation.
+  // That's a strong suspect for a dash-like sound reported on iOS (not
+  // reproducible in this environment - no real iOS Safari available here)
+  // that persisted after two earlier fixes aimed at the spoken text itself
+  // (dash-stripping, then aria-hidden on decorative separators) did
+  // nothing, including on a single isolated tap - consistent with an
+  // artifact of the cancel() call itself rather than of any text content.
+  if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+    window.speechSynthesis.cancel();
+  }
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = 'fr-FR';
   utter.rate = 0.85;
