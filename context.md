@@ -582,6 +582,38 @@ incident transcript.
   the live HTML, not the stale `CLASS-NAMES.md`, which predates this
   restructuring entirely and should not be trusted as a source of truth
   for current class numbers/names).
+- **13 of 132 tables not wrapped in `.table-wrap` (found/fixed 2026-09-25,
+  user-reported with a screenshot — "sometimes the contents zoom a little
+  bit and move around").** Most tables across the site are wrapped in
+  `<div class="table-wrap">` (`overflow-x: auto`), so a wide table scrolls
+  within its own box on a narrow phone. 13 "Common Mistakes to Avoid"
+  -style tables (3 columns: WRONG/CORRECT/Explanation) were bare `<table>`
+  elements with no wrapper, so on a phone-width viewport they forced the
+  whole page wider than the screen — which is what triggers a mobile
+  browser's zoom/shift behavior (e.g. double-tap-to-fit-column) that the
+  user was seeing. Wrapped all 13 to match the rest; verified with a
+  headless check across all 25 classes at 390px width that nothing
+  overflows the viewport anymore. **Lesson: when adding a new `<table>`
+  anywhere on this site, always wrap it in `<div class="table-wrap">` —
+  a bare table is a real, user-visible mobile bug, not just untidy
+  markup.**
+- **Accidental chapter changes while scrolling (fixed 2026-09-25, user-
+  reported — "sometimes I accidentally scroll" while trying to read).**
+  The swipe-to-navigate handler already required a mostly-horizontal
+  gesture (`dx > 70` and `dx > dy*2`), but a single stray swipe (e.g. a
+  slightly diagonal scroll) could still fire it immediately. Per the
+  user's explicit choice (asked directly rather than guessed — see
+  general note on asking before implementing ambiguous UI requests),
+  changed it to require **two swipes in the same direction**: the first
+  only shows a "swipe again" hint pill (armed for 1.2s via
+  `pendingSwipeDir`/`pendingSwipeTimer`), and only a second matching swipe
+  within that window actually calls `nextChapter()`/`previousChapter()`.
+  Also added a slide-in animation (`.slide-next`/`.slide-prev`, driven by
+  a new optional `direction` param on `showClass()`) so the transition
+  reads as an intentional page change rather than an abrupt jump. Applies
+  to both the confirmed swipe and the Prev/Next buttons (they share the
+  same functions); a dropdown jump (`goToClass`) stays instant since
+  there's no "direction" to animate toward.
 
 ## Features added 2026-09-24 (in response to "what am I missing")
 
