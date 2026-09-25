@@ -55,6 +55,8 @@ tap, and self-test progress with per-topic checklists.
 24. Prepositions
 25. Prepositions + Future
 
+*Remaining A2 classes will be updated weekly.*
+
 ## Structure
 
 ```
