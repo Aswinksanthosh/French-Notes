@@ -487,9 +487,9 @@
   <button class="intro-toggle" id="introToggle" onclick="toggleIntro()">📖 How to use this site <span id="introArrow">▾</span></button>
   <div class="intro-content" id="introContent">
     <ol class="howto-steps">
-      <li><strong>📖 Read</strong> all notes and click blue words to hear them (e.g. tap "bonjour" to hear it said aloud).</li>
-      <li><strong>📋 Copy for Gemini</strong> to test your skill (paste it into the Gemini app and answer its questions).</li>
-      <li><strong>✅ Check off</strong> all the items when you finish (e.g. tick "I can count 0–100" once you're confident).</li>
+      <li><strong>📖 Read</strong> all notes and click blue words to hear them — like <span class="fr">bonjour</span>.</li>
+      <li><strong>📋 Copy for Gemini</strong> to test your skill — <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; vertical-align: middle;">📋 Copy for Gemini</button></li>
+      <li><strong>✅ Check off</strong> all the items when you finish — <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; vertical-align: middle;"><input type="checkbox" style="width: 17px; height: 17px; accent-color: var(--blue); cursor: pointer;" onchange="this.nextElementSibling.style.textDecoration = this.checked ? 'line-through' : 'none'; this.nextElementSibling.style.color = this.checked ? '#999' : '';"><span>I understand this topic</span></label></li>
       <li><strong>⚪ Done —</strong> the chapter turns white in the dropdown (e.g. "Alphabet" turns white once fully checked).</li>
     </ol>
     <p class="howto-lead">Also:</p>
