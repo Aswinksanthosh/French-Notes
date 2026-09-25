@@ -589,7 +589,7 @@ removed — that reintroduces the exact same confusion. If new content
 sections are added with bold/emphasized text (tables, notes, etc.),
 check they aren't blue before considering them done.
 
-## iOS-only bug 2026-09-25: TTS spoke a literal dash character (3 rounds, status: unconfirmed)
+## iOS-only bug 2026-09-25: TTS spoke a literal dash character (4 rounds, status: ABANDONED — user gave up, do not re-attempt without new info)
 
 User reported: tapping alphabet letters in Class 1 works correctly on
 Android but on iOS also audibly speaks a "-" symbol — annoying, and not
@@ -657,29 +657,63 @@ still speaking calls `cancel()` then `speak()` as before (interrupt
 behavior preserved); all 26 letters produce dash-free text at the
 `speak()` call site; all 25 Copy-for-Gemini buttons still parse.
 **This cannot be tested for real audio output in this sandbox — there is
-no iOS Safari here.** Status: pushed to `main` and the feature branch,
-awaiting the user testing on their actual device.
+no iOS Safari here.** Pushed to `main` and the feature branch. **User
+confirmed this did NOT fix it either.** The guard is still correct
+behavior to keep (cancel() should only run when something is actually
+speaking, regardless of this bug), but it was not the cause.
 
-**If Round 3 also turns out not to fix it:** the three most-investigated
-theories (text content, OS accessibility reader, cancel() artifact) will
-all be exhausted. Next avenues, not yet tried: (a) ask the user to
-describe the sound more precisely — a click/pop vs. an actual spoken
-"dash"/"tiret" word vs. a truncated first-phoneme of the next letter's
-name, since these point to different root causes; (b) check whether it's
-specific to certain iOS voices (rate 0.85 + a single capital letter is an
-unusual, short input some voice engines may mishandle); (c) consider that
-it may not be fixable from web JS at all if it's a genuine iOS TTS-engine
-rendering quirk for single-character utterances, in which case the
-realistic fix is changing what gets spoken (e.g. speak the French letter
-*name* — "a", "bé", "cé"... — instead of the bare character) rather than
-chasing the cancel()/text/accessibility angle further.
+**Round 4 (conclusive negative result — the dash character is NOT the
+cause, full stop):** with three theories disproven, user asked whether
+we'd tried deleting the dash and using a space instead. Round 1 had
+already done this for the *spoken* text; this round went further and
+removed the " — " separator from the **visible HTML** entirely, replacing
+`<span aria-hidden="true"> — </span>` between all 26 letters with a plain
+space character — so there was no dash/hyphen character anywhere in that
+line at all, in markup or on screen (`index.html` line 539). This was a
+clean, deliberate diagnostic: if the sound disappeared, something really
+was reading that literal character; if not, the dash was never the
+cause of anything. **User confirmed the sound is still there with the
+dash character completely gone from the page.** This is conclusive: the
+audible artifact has nothing to do with the dash/hyphen character
+itself, in any form, spoken or visual. Every theory involving the dash
+character — text content, accessibility-tree reading, or literal
+on-screen presence — is now fully exhausted and ruled out.
+
+**Status: user said "leave it, I gave up."** Stop working on this bug
+unless the user brings it back up with new information. Do NOT re-attempt
+any of the four theories above (dash-stripping, aria-hidden separators,
+cancel()-guarding, removing the dash from display) — all confirmed not to
+work. The visible dash separator (" — ") was NOT restored to the alphabet
+line after Round 4 — it currently reads as "A B C D... Z" with plain
+spaces instead of "A — B — C — D... — Z". If the user later asks for the
+dashes back for visual/readability reasons (independent of the audio
+bug), that's a one-line revert of the Round 4 change, not a new
+investigation.
+
+**If this bug resurfaces and the user wants to try again someday**, the
+remaining un-tried avenues from the reasoning above are still valid: (a)
+ask the user to describe the sound more precisely — click/pop vs. an
+actual spoken word vs. a truncated first-phoneme of the next letter's
+name; (b) check whether it's specific to certain iOS voices, since a
+single bare capital letter at rate 0.85 is an unusual short input some
+voice engines mishandle; (c) most promising given everything ruled out
+so far — the sound may not be caused by *any* character in our text at
+all, but be an artifact of how iOS's voice engine synthesizes a bare
+single letter in isolation (some engines render an isolated capital
+letter with a leading/trailing glottal stop or click that a user could
+easily describe as "hearing a dash"). If revisited, the next real
+experiment is speaking the French letter *name* instead of the bare
+character (e.g. "a", "bé", "cé", "dé"...) to see if a full syllable
+avoids whatever artifact a bare single letter triggers — a different
+mechanism than anything tried in rounds 1-4, so it isn't ruled out by
+this investigation.
 
 **If a similar report comes in for any other dash-separated row of
 clickable `.fr` words elsewhere on the site** (this exact
 letter-A-dash-letter-B pattern likely exists nowhere else, but a similar
 "list of clickable words joined by a decorative separator" shape might),
-the `aria-hidden` wrapping approach did NOT fix the actual reported bug
-here — don't assume it will work elsewhere either. Start instead from
+none of the four approaches tried here fixed the actual bug — don't
+assume any of them will work elsewhere either. Start instead from
 whichever of the theories above is still standing once Round 3's outcome
 is known.
 
