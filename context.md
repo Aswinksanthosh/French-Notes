@@ -360,17 +360,16 @@ as `toggleExpandable()` via `deactivateOtherAudioButton()`/
 number, so it survived the 2026-09-25 renumbering with no changes needed.
 **When rolling this out to other classes, build it as ONE button per
 class near the top — do not default back to one-per-topic, that shape
-was explicitly rejected.** Currently present on Classes 1, 3, 4, 5, 6, 7
-(the old Class 1 + old Classes 2–6, i.e. Greetings, Calendar, Classroom,
-Endings, Articles, now shifted up by one) — **NOT yet on the new Class 2**
-(Numbers/Calendar/Time) **or on Class 8 onward.** This rollout (then
-"Classes 1–6") was done on 2026-09-24, BEFORE the 2026-09-25
-restructuring; the button itself needed no changes when classes shifted,
-but the new Class 2 is a gap in the rollout that didn't exist before.
-**Not yet on the new Class 2, or on Classes 8–26** — continue the same
-one-button-per-chapter pattern when asked to do more, in whatever batch
-size the user asks for (they've been doing this 5 at a time); don't
-assume they want all remaining classes done at once unless they say so.
+was explicitly rejected.** Currently present on Classes 1–12 (Class 2
+had one by default since it was included when that chapter's content
+was written on 2026-09-25). **Not yet on Classes 13–26** — continue the
+same one-button-per-chapter pattern when asked to do more, in whatever
+batch size the user asks for (they've been doing this 5 at a time);
+don't assume they want all remaining classes done at once unless they
+say so. **Before trusting any "currently present on / not yet on"
+claim in this file, `grep` and check directly** — an earlier version of
+this note wrongly said Class 2 didn't have the button yet, simply
+because it hadn't been checked.
 
 Separately, the content-quality pass (Class 1's alphabet-clickable fix,
 the audio double-play/resume fixes) has only actually touched Class 1
