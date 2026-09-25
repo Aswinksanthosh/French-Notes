@@ -360,9 +360,11 @@ as `toggleExpandable()` via `deactivateOtherAudioButton()`/
 number, so it survived the 2026-09-25 renumbering with no changes needed.
 **When rolling this out to other classes, build it as ONE button per
 class near the top — do not default back to one-per-topic, that shape
-was explicitly rejected.** Currently present on Classes 1–17 (Class 2
+was explicitly rejected.** Currently present on Classes 1–22 (Class 2
 had one by default since it was included when that chapter's content
-was written on 2026-09-25). **Not yet on Classes 18–26** — continue the
+was written on 2026-09-25). **All of A1 (1-21) is now done; Class 22 is
+the first A2 class to get it — same button, same pattern, A1/A2 doesn't
+change anything about how it's built.** Not yet on Classes 23–26 — continue the
 same one-button-per-chapter pattern when asked to do more, in whatever
 batch size the user asks for (they've been doing this 5 at a time);
 don't assume they want all remaining classes done at once unless they
