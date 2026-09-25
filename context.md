@@ -187,6 +187,16 @@ time, not just the obviously-affected one:
    misses (a bare div-balance/JS-syntax check doesn't catch nav/order
    drift at all — verified 2026-09-25 that this exact 4-part check catches
    it and passed on the then-current 25-class dropdown).
+7. **Also verify the nav LABEL TEXT itself against each class's real
+   `<h2>` title, not just the numbers.** The check in step 6 only proves
+   the numbers/links/order are structurally consistent - it says nothing
+   about whether "Numbers" actually says "Numbers" and not some other
+   class's old name. This is not hypothetical: it happened for real (see
+   History below, "nav labels for classes 2-15 were off by one"), and the
+   step-6 audit earlier the same day passed cleanly while this exact bug
+   was live, because it never compared label text to content. A one-line
+   script: regex out each `goToClass(N)` link's text, regex out class N's
+   `<h2>` text, confirm one contains the other (case-insensitive).
 
 Verified 2026-09-25 (proactive audit, not a live bug report): nav dropdown,
 `classOrder`, and all 25 lesson cards were fully in sync at that time —
@@ -551,6 +561,27 @@ incident transcript.
   for anything short enough that restarting is unnoticeable. Don't
   reintroduce `pause()`/`.resume()` without a real-device test, which
   this sandboxed environment cannot perform.**
+- **Nav labels for classes 2–15 off by one (found/fixed 2026-09-25,
+  user-reported — "cannot find number chapter button from navbar").**
+  When the new Chapter 2 ("Numbers, Calendar & Time") was inserted and the
+  old classes 2–14 renumbered to 3–15 (see the MAJOR RESTRUCTURING section
+  above), the `classOrder` array and the lesson cards themselves were
+  updated correctly, but the nav dropdown's `<a>` label *text* was never
+  touched — it still showed each old label attached to its old number
+  (class 2 said "Greetings", class 3 said "Calendar", etc.), and there was
+  no "Numbers" entry anywhere. **This is the exact failure this session
+  had just written a prevention checklist for a couple hours earlier** (see
+  "Standing rule: adding or removing a chapter" above) — and that
+  checklist's own step 6 (headless Playwright check of nav numbers/order/
+  clickability) had been run and passed *while this bug was live*, because
+  it only checked that numbers and links were structurally consistent, not
+  that label text matched real content. Added step 7 to that checklist
+  specifically because of this: always diff nav label text against each
+  class's actual `<h2>` too, not just the numbers. Fixed by relabeling
+  classes 2–15 to match their real current `<h2>` titles (verified against
+  the live HTML, not the stale `CLASS-NAMES.md`, which predates this
+  restructuring entirely and should not be trusted as a source of truth
+  for current class numbers/names).
 
 ## Features added 2026-09-24 (in response to "what am I missing")
 
