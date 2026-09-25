@@ -476,6 +476,40 @@
   .open {
     display: block !important;
   }
+
+  /* Swipe-to-navigate hint: shown after the first (unconfirmed) swipe,
+     telling the user to swipe again to actually change chapter. */
+  .swipe-hint {
+    position: fixed;
+    top: 50%;
+    background: rgba(26, 77, 143, 0.92);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 500;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease;
+  }
+  .swipe-hint.next { right: 14px; }
+  .swipe-hint.prev { left: 14px; }
+  .swipe-hint.show { opacity: 1; }
+
+  /* Slide-in animation when a chapter changes via Prev/Next or a confirmed
+     swipe (a dropdown jump stays instant - there's no "direction" to it). */
+  @keyframes slideInFromRight {
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slideInFromLeft {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  .lesson-card.slide-next { animation: slideInFromRight 0.3s ease; }
+  .lesson-card.slide-prev { animation: slideInFromLeft 0.3s ease; }
 </style>
 </head>
 <body>
@@ -515,6 +549,7 @@
   <span id="chapterIndicator" style="padding: 8px 16px; align-self: center; color: var(--blue); font-weight: 600;">Class 1 of 25</span>
   <button class="chapter-btn" id="nextBtn" onclick="nextChapter()">Next →</button>
 </div>
+<div id="swipeHint" class="swipe-hint"></div>
 
 <nav id="toc" class="collapsed">
   <button class="nav-toggle" onclick="toggleNav()">
@@ -609,6 +644,7 @@
   </div>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">francais</span></td><td><span class="fr">français</span></td><td>Missing cédille changes pronunciation from "franss-ay" to "frank-ay"</td></tr>
@@ -616,6 +652,7 @@
     <tr><td><span class="fr">cafe</span></td><td><span class="fr">café</span></td><td>Missing accent aigu. "Cafe" sounds flat; "café" has the proper "ay" sound</td></tr>
     <tr><td><span class="fr">mere</span></td><td><span class="fr">mère</span></td><td>Missing accent grave. Affects pronunciation of the vowel</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button class="expand-btn" style="width: 100%; text-align: left; padding: 12px; margin: 10px 0; background: #f0f7ff; border: 2px solid #1a4d8f; border-radius: 6px; cursor: pointer; font-weight: 600; color: #1a4d8f;" onclick="this.nextElementSibling.classList.toggle('open')">
@@ -1440,6 +1477,7 @@
 </div>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Tu es mon ami</span> (to a stranger)</td><td><span class="fr">Vous êtes mon ami</span></td><td>Use TU only with friends/family. Use VOUS with strangers or authority figures</td></tr>
@@ -1448,6 +1486,7 @@
     <tr><td><span class="fr">Il ont 20 ans</span></td><td><span class="fr">Il a 20 ans</span></td><td>Conjugate avoir correctly: "il a" (not "ont"). Use "ils ont" for plural</td></tr>
     <tr><td><span class="fr">Bonjour matin</span></td><td><span class="fr">Bonjour (le matin)</span></td><td>"Bonjour" works for any time of day. Use "Bonsoir" only in evening (after dark)</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button class="expand-btn" style="width: 100%; text-align: left; padding: 12px; margin: 10px 0; background: #f0f7ff; border: 2px solid #1a4d8f; border-radius: 6px; cursor: pointer; font-weight: 600; color: #1a4d8f;" onclick="this.nextElementSibling.classList.toggle('open')">
@@ -3025,6 +3064,7 @@
   </div>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Je laver me</span></td><td><span class="fr">Je me lave</span></td><td>Reflexive pronoun comes BEFORE the verb, not after</td></tr>
@@ -3032,6 +3072,7 @@
     <tr><td><span class="fr">Tu se laves</span></td><td><span class="fr">Tu te laves</span></td><td>Reflexive pronoun must agree with subject: "tu" uses "te", not "se"</td></tr>
     <tr><td><span class="fr">Je douche</span></td><td><span class="fr">Je me douche</span></td><td>Shower is reflexive (you shower yourself). Must use reflexive pronoun</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button class="expand-btn" style="width: 100%; text-align: left; padding: 12px; margin: 10px 0; background: #f0f7ff; border: 2px solid #1a4d8f; border-radius: 6px; cursor: pointer; font-weight: 600; color: #1a4d8f;" onclick="this.nextElementSibling.classList.toggle('open')">
@@ -4958,6 +4999,7 @@
   <span class="fr">un homme grand</span> — a tall man</p>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">un bleu voiture</span></td><td><span class="fr">une voiture bleue</span></td><td>Colors ALWAYS come after the noun</td></tr>
@@ -4965,6 +5007,7 @@
     <tr><td><span class="fr">une française belle femme</span></td><td><span class="fr">une belle femme française</span></td><td>Beauty adjectives come before; nationality after</td></tr>
     <tr><td><span class="fr">le interessant film</span></td><td><span class="fr">le film intéressant</span></td><td>Most descriptive adjectives come after</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button onclick="this.nextElementSibling.classList.toggle('open')" style="background: #f0f7ff; border: 1px solid #1a4d8f; padding: 8px 12px; cursor: pointer; width: 100%; text-align: left; border-radius: 4px; color: #1a4d8f; font-weight: bold;">
@@ -5021,6 +5064,7 @@
   </div>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">un beau homme</span></td><td><span class="fr">un bel homme</span></td><td>Use bel before vowels in masculine form</td></tr>
@@ -5028,6 +5072,7 @@
     <tr><td><span class="fr">un vieux arbre</span></td><td><span class="fr">un vieil arbre</span></td><td>Use vieil before vowels in masculine form</td></tr>
     <tr><td><span class="fr">un bel voiture</span></td><td><span class="fr">une belle voiture</span></td><td>Use special forms only with masculine singular; voiture is feminine</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button onclick="this.nextElementSibling.classList.toggle('open')" style="background: #f0f7ff; border: 1px solid #1a4d8f; padding: 8px 12px; cursor: pointer; width: 100%; text-align: left; border-radius: 4px; color: #1a4d8f; font-weight: bold;">
@@ -5080,6 +5125,7 @@
 </div>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Un aimable homme parle</span></td><td><span class="fr">Un homme aimable parle</span></td><td>"Aimable" can only be used as attribut with être; use as epithet with more common adjectives</td></tr>
@@ -5087,6 +5133,7 @@
     <tr><td><span class="fr">une femme est blonde</span></td><td><span class="fr">une femme blonde</span> OR <span class="fr">La femme est blonde</span></td><td>Use epithète for description with indefinite article; attribut with definite article after être</td></tr>
     <tr><td><span class="fr">le chat noir le garçon</span></td><td><span class="fr">le chat noir</span></td><td>Epithète modifies ONE noun only; don't use adjective alone</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button onclick="this.nextElementSibling.classList.toggle('open')" style="background: #f0f7ff; border: 1px solid #1a4d8f; padding: 8px 12px; cursor: pointer; width: 100%; text-align: left; border-radius: 4px; color: #1a4d8f; font-weight: bold;">
@@ -5185,6 +5232,7 @@
   </ul>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">une femme rapide</span></td><td><span class="fr">Elle court rapidement</span></td><td>Use adjectives for nouns, adverbs for verbs/adjectives</td></tr>
@@ -5192,6 +5240,7 @@
     <tr><td><span class="fr">Elle est très heureux</span></td><td><span class="fr">Elle est très heureuse</span></td><td>The adjective after être must agree in gender/number, not the adverb</td></tr>
     <tr><td><span class="fr">Il marche lentement bien</span></td><td><span class="fr">Il marche bien lentement</span></td><td>Adverb of manner (bien, lentement) comes directly after the verb</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button onclick="this.nextElementSibling.classList.toggle('open')" style="background: #f0f7ff; border: 1px solid #1a4d8f; padding: 8px 12px; cursor: pointer; width: 100%; text-align: left; border-radius: 4px; color: #1a4d8f; font-weight: bold;">
@@ -5248,6 +5297,7 @@
 </div>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Un homme heureusement</span></td><td><span class="fr">Un homme heureux</span></td><td>Can't say "a happily man" — use adjective for nouns</td></tr>
@@ -5255,6 +5305,7 @@
     <tr><td><span class="fr">Un enfant lentement joue</span></td><td><span class="fr">Un enfant lent joue lentement</span></td><td>Use adjective (lent) for noun; adverb (lentement) for verb</td></tr>
     <tr><td><span class="fr">Il est très heureusement</span></td><td><span class="fr">Il est très heureux</span></td><td>After être, the adjective agrees; adverbs don't modify adjectives after être</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button onclick="this.nextElementSibling.classList.toggle('open')" style="background: #f0f7ff; border: 1px solid #1a4d8f; padding: 8px 12px; cursor: pointer; width: 100%; text-align: left; border-radius: 4px; color: #1a4d8f; font-weight: bold;">
@@ -5461,6 +5512,7 @@
 <p><strong>💡 NOTE:</strong> Some adverbs don't follow this pattern. <span class="fr">Bien</span> (well) and <span class="fr">mal</span> (badly) are exceptions — they don't come from adjectives but are standalone adverbs.</p>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Elle parle rapidement rapide</span></td><td><span class="fr">Elle parle rapidement</span></td><td>The adverb is the only form needed; don't use both adjective and adverb</td></tr>
@@ -5468,6 +5520,7 @@
     <tr><td><span class="fr">heurusement</span></td><td><span class="fr">heureusement</span></td><td>Watch spelling: heureux (masc) → heureuse (fem) → heureusement (adverb)</td></tr>
     <tr><td><span class="fr">généralment</span></td><td><span class="fr">généralement</span></td><td>Double the -l- before -ment: général → générale → généralement</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button onclick="this.nextElementSibling.classList.toggle('open')" style="background: #f0f7ff; border: 1px solid #1a4d8f; padding: 8px 12px; cursor: pointer; width: 100%; text-align: left; border-radius: 4px; color: #1a4d8f; font-weight: bold;">
@@ -5654,6 +5707,7 @@
 </ul>
 
   <h4>❌ Common Placement Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Il parle bien rapidement</span></td><td><span class="fr">Il parle très rapidement</span></td><td>Use short adverbs (bien, mal) between aux & participle in passé composé, not in simple tenses</td></tr>
@@ -5661,6 +5715,7 @@
     <tr><td><span class="fr">Il a rapidement mangé</span></td><td><span class="fr">Il a mangé rapidement</span></td><td>Long manner adverbs go AFTER past participle, not before</td></tr>
     <tr><td><span class="fr">Il a bien rapidement mangé</span></td><td><span class="fr">Il a bien mangé rapidement</span></td><td>Short adverb between aux & participle; long adverb after participle (if needed)</td></tr>
   </table>
+  </div>
 
   <h4>📚 Real-World French Examples</h4>
   <button onclick="this.nextElementSibling.classList.toggle('open')" style="background: #f0f7ff; border: 1px solid #1a4d8f; padding: 8px 12px; cursor: pointer; width: 100%; text-align: left; border-radius: 4px; color: #1a4d8f; font-weight: bold;">
@@ -6009,6 +6064,7 @@
   </ul>
 
   <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Je suis en l'école</span></td><td><span class="fr">Je suis à l'école</span></td><td>Schools use "à", not "en"</td></tr>
@@ -6016,6 +6072,7 @@
     <tr><td><span class="fr">Je travaille pendant trois ans</span></td><td><span class="fr">Je travaille depuis trois ans</span></td><td>"depuis" for ongoing action; "pendant" for completed duration</td></tr>
     <tr><td><span class="fr">Devant = before</span></td><td><span class="fr">Devant = in front of; Avant = before (time)</span></td><td>Devant is position; avant is time</td></tr>
   </table>
+  </div>
 
   <ul class="checklist" data-lesson="class25" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="ca25-1"><label for="ca25-1"><strong>FOUNDATION:</strong> I can define what a preposition is</label></li>
@@ -6367,6 +6424,7 @@
 </div>
 
   <h3>❌ COMMON MISTAKES TO AVOID</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Je vais en Paris</span></td><td><span class="fr">Je vais à Paris</span></td><td>Cities ALWAYS use "à", never "en"</td></tr>
@@ -6377,6 +6435,7 @@
     <tr><td><span class="fr">Il commence de travailler</span></td><td><span class="fr">Il commence à travailler</span></td><td>Commencer requires "à"</td></tr>
     <tr><td><span class="fr">Elle est intéressée à ce poste</span></td><td><span class="fr">Elle est intéressée par ce poste</span></td><td>Intéressé par = interested in a position/job</td></tr>
   </table>
+  </div>
 
   <h3>📝 B1-B2 ADVANCED PRACTICE SENTENCES</h3>
 
@@ -6592,6 +6651,7 @@
   </ul>
 
   <h3>❌ COMMON MISTAKES</h3>
+  <div class="table-wrap">
   <table>
     <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
     <tr><td><span class="fr">Je vais à Paris en 3 jours</span></td><td><span class="fr">Je vais à Paris dans 3 jours</span></td><td>"Dans" for future duration from now, not "en"</td></tr>
@@ -6600,6 +6660,7 @@
     <tr><td><span class="fr">Nous mangerons pendant 18h demain</span></td><td><span class="fr">Nous mangerons à 18h demain</span></td><td>Use "à" for specific times, not "pendant"</td></tr>
     <tr><td><span class="fr">Je travaille depuis demain</span></td><td><span class="fr">Je vais travailler à partir de demain</span></td><td>"Depuis" is for past/ongoing; use "à partir de" for future start point</td></tr>
   </table>
+  </div>
 
   <h3>✅ Overall Mastery</h3>
   <ul class="checklist" data-lesson="class26">
@@ -6784,7 +6845,7 @@ function updateChapterColors() {
   });
 }
 
-function showClass(classNum) {
+function showClass(classNum, direction) {
   // Remember exactly where we were scrolled to within the class we're
   // leaving, keyed by class number, so coming back later (via nav, or a
   // fresh page load landing back on this class) resumes at the same spot
@@ -6803,6 +6864,16 @@ function showClass(classNum) {
   if (selectedClass) {
     selectedClass.classList.add('active');
     currentClass = classNum;
+
+    // Slide-in animation, only when moving sequentially (Prev/Next buttons
+    // or a confirmed swipe) - a dropdown/direct jump stays instant since
+    // there's no "direction" to animate toward.
+    if (direction) {
+      selectedClass.classList.remove('slide-next', 'slide-prev');
+      void selectedClass.offsetWidth; // force reflow so the animation replays
+      selectedClass.classList.add(direction === 'next' ? 'slide-next' : 'slide-prev');
+      setTimeout(() => selectedClass.classList.remove('slide-next', 'slide-prev'), 300);
+    }
 
     // Save to localStorage
     localStorage.setItem('lastViewedClass', classNum);
@@ -6846,8 +6917,28 @@ window.addEventListener('scroll', () => {
 // Swipe left/right to go to next/previous chapter (phone-first navigation,
 // alongside the Prev/Next buttons). Mostly-horizontal swipes only, so
 // normal vertical scrolling is never intercepted.
+//
+// Requires TWO swipes in the same direction to actually change chapter: the
+// first one just shows an arrow hint (armed for 1.2s), and only a second
+// swipe in that window confirms it. This was a deliberate trade-off after a
+// user report of accidentally changing chapters mid-read - a single stray
+// swipe (e.g. while scrolling with a slightly diagonal drag) now does
+// nothing but show a hint, never navigates by itself.
 let touchStartX = 0;
 let touchStartY = 0;
+let pendingSwipeDir = null;
+let pendingSwipeTimer = null;
+
+function showSwipeHint(dir) {
+  const hint = document.getElementById('swipeHint');
+  hint.textContent = dir === 'next' ? 'Swipe again for next →' : '← Swipe again for previous';
+  hint.className = 'swipe-hint show ' + dir;
+}
+function hideSwipeHint() {
+  const hint = document.getElementById('swipeHint');
+  hint.classList.remove('show');
+}
+
 document.addEventListener('touchstart', (e) => {
   touchStartX = e.changedTouches[0].screenX;
   touchStartY = e.changedTouches[0].screenY;
@@ -6856,7 +6947,23 @@ document.addEventListener('touchend', (e) => {
   const dx = e.changedTouches[0].screenX - touchStartX;
   const dy = e.changedTouches[0].screenY - touchStartY;
   if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 2) {
-    if (dx < 0) nextChapter(); else previousChapter();
+    const dir = dx < 0 ? 'next' : 'prev';
+    if (pendingSwipeDir === dir) {
+      // Second matching swipe - confirmed, actually navigate.
+      clearTimeout(pendingSwipeTimer);
+      pendingSwipeDir = null;
+      hideSwipeHint();
+      if (dir === 'next') nextChapter(); else previousChapter();
+    } else {
+      // First swipe in this direction - just arm it and show the hint.
+      pendingSwipeDir = dir;
+      showSwipeHint(dir);
+      clearTimeout(pendingSwipeTimer);
+      pendingSwipeTimer = setTimeout(() => {
+        pendingSwipeDir = null;
+        hideSwipeHint();
+      }, 1200);
+    }
   }
 }, { passive: true });
 
@@ -6870,14 +6977,14 @@ function goToClass(classNum) {
 function nextChapter() {
   const idx = classOrder.indexOf(currentClass);
   if (idx !== -1 && idx < classOrder.length - 1) {
-    showClass(classOrder[idx + 1]);
+    showClass(classOrder[idx + 1], 'next');
   }
 }
 
 function previousChapter() {
   const idx = classOrder.indexOf(currentClass);
   if (idx > 0) {
-    showClass(classOrder[idx - 1]);
+    showClass(classOrder[idx - 1], 'prev');
   }
 }
 
