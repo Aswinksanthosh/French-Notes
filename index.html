@@ -6941,6 +6941,16 @@ toggleIntro(localStorage.getItem('introOpen') !== 'false');
 // TEXT-TO-SPEECH FOR FRENCH WORDS
 function speakFrench(text, el) {
   if (!('speechSynthesis' in window) || !text) return;
+  // Strip dash/hyphen characters before speaking. A hyphen in French
+  // (quatre-vingt-dix, porte-clés, peut-être...) is purely orthographic -
+  // it's silent, never its own sound - so removing it never changes how
+  // the word should sound. This matters because some iOS/WebKit voices
+  // audibly speak the dash character itself (reported: tapping alphabet
+  // letters read "A" then a spoken dash on iOS; Android's engine never
+  // did this). Replaced with a space rather than deleted outright, so
+  // multi-word compounds don't get run together into one token.
+  text = text.replace(/[-‐-―]/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!text) return;
   window.speechSynthesis.cancel();
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = 'fr-FR';
