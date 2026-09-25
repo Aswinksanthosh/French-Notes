@@ -589,29 +589,66 @@ removed — that reintroduces the exact same confusion. If new content
 sections are added with bold/emphasized text (tables, notes, etc.),
 check they aren't blue before considering them done.
 
-## iOS-only bug 2026-09-25: TTS spoke a literal dash character
+## iOS-only bug 2026-09-25: TTS spoke a literal dash character (2 rounds)
 
 User reported: tapping alphabet letters in Class 1 works correctly on
-Android but on iOS also audibly speaks a "-" symbol — annoying, and
-specific to iOS/WebKit (not reproducible in this environment, which has
-no real iOS Safari — headless Chromium's speechSynthesis doesn't even
-produce real audio here, only the JS call sequence could be verified).
-Since a dash in French orthography is always silent (quatre-vingt-dix,
-porte-clés, peut-être — hyphens carry no sound of their own), the
-correct fix doesn't require reproducing the exact WebKit quirk: strip
-dash characters from whatever text reaches `speakFrench()` before
-constructing the utterance, replacing with a space (not deleting
-outright) so multi-word compounds stay space-separated rather than
-running together. Applied inside `speakFrench()` itself, so it covers
-every clickable `.fr` word/example on the whole site, not just Class 1's
-alphabet. Verified: plain letters unaffected, hyphenated words still
-speak as their natural space-separated words, and any dash reaching the
-function is now removed before the browser's TTS ever sees it.
+Android but on iOS also audibly speaks a "-" symbol — annoying, and not
+reproducible in this environment (no real iOS Safari here — headless
+Chromium's speechSynthesis doesn't produce real audio, only the JS call
+sequence could ever be verified from this sandbox).
+
+**Round 1 (insufficient, but not wasted):** guessed the dash was
+reaching `speakFrench()`'s input text, and stripped dash characters
+inside that function before constructing the utterance (replacing with
+a space so hyphenated compounds like `quatre-vingt-dix` stay
+space-separated rather than running together). This is a real, correct,
+harmless improvement — kept in place — but user confirmed afterward it
+did NOT fix the report, and that it reproduces on a single isolated tap
+(rules out a rapid-tap WebKit interruption glitch too).
+
+**Round 2 (the actual fix):** re-examined the structure and confirmed
+each alphabet letter's `<span class="fr">` genuinely never contains a
+dash — it's a separate sibling text node between spans — so Round 1's
+fix was structurally incapable of touching this specific case regardless
+of correctness. Since it reproduces on a single tap and the tapped
+element's own text is dash-free, the remaining explanation is a **native
+OS-level accessibility reading feature** (iOS's Speak Screen / Speak
+Selection / VoiceOver) that reads the page's rendered/accessible text
+directly — including the visible " — " separators — completely
+bypassing this app's own `speechSynthesis` calls. No JS-side text
+sanitization can fix that, because that feature never goes through our
+JS at all.
+
+**Fix:** wrapped each " — " separator between the 26 alphabet letters in
+its own `<span aria-hidden="true">`, so any accessibility-tree-based
+reader skips over them, while the visual rendering and the site's own
+tap-to-hear click handler (`e.target.closest('.fr')`, which only ever
+looks at the clicked element, never `aria-hidden` siblings) are both
+completely unaffected. Verified: 26 letters still individually
+clickable and still each speak only their own letter, page renders
+pixel-identical, and a simulated accessibility-tree walk (skipping
+`aria-hidden` nodes) now produces "ABCDEFGHIJKLMNOPQRSTUVWXYZ" with zero
+dash characters.
+
+**If a similar report comes in for any other dash-separated row of
+clickable `.fr` words elsewhere on the site** (this exact
+letter-A-dash-letter-B pattern likely exists nowhere else, but a similar
+"list of clickable words joined by a decorative separator" shape might),
+apply the same `<span aria-hidden="true">separator</span>` wrapping
+there too — don't reach for the `speakFrench()` text-stripping approach
+first, that only helps when the separator is inside the tapped element's
+own text, which is the less likely case.
+
 **Lesson: when a platform-specific bug can't be reproduced in this
-sandboxed environment (no real iOS/Android device here), look for a fix
-that's correct regardless of the exact mechanism — here, "dashes are
-silent in French so stripping them can't break pronunciation" made the
-fix safe to ship without needing to reproduce the bug first.**
+sandboxed environment, the first plausible-sounding fix can still be
+wrong — verify the actual DOM/text structure supports the theory before
+shipping it, and treat user confirmation that a fix didn't work as a
+real signal to re-derive the cause, not just retry a variant of the same
+fix.** Also: **a bug that reproduces in this app's own UI isn't
+necessarily caused by this app's own code** — OS-level accessibility
+features read the rendered page independently of any JS on it, and
+`aria-hidden` is the correct tool for telling them to skip purely
+decorative content.
 
 ## Open suggestions / things to keep an eye on
 
