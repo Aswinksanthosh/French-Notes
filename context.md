@@ -589,13 +589,15 @@ removed — that reintroduces the exact same confusion. If new content
 sections are added with bold/emphasized text (tables, notes, etc.),
 check they aren't blue before considering them done.
 
-## iOS-only bug 2026-09-25: TTS spoke a literal dash character (2 rounds)
+## iOS-only bug 2026-09-25: TTS spoke a literal dash character (3 rounds, status: unconfirmed)
 
 User reported: tapping alphabet letters in Class 1 works correctly on
 Android but on iOS also audibly speaks a "-" symbol — annoying, and not
 reproducible in this environment (no real iOS Safari here — headless
 Chromium's speechSynthesis doesn't produce real audio, only the JS call
-sequence could ever be verified from this sandbox).
+sequence could ever be verified from this sandbox). User was explicit:
+"I don't mind seeing it, but don't read it aloud" — the dash should stay
+visible, just not spoken.
 
 **Round 1 (insufficient, but not wasted):** guessed the dash was
 reaching `speakFrench()`'s input text, and stripped dash characters
@@ -606,38 +608,80 @@ harmless improvement — kept in place — but user confirmed afterward it
 did NOT fix the report, and that it reproduces on a single isolated tap
 (rules out a rapid-tap WebKit interruption glitch too).
 
-**Round 2 (the actual fix):** re-examined the structure and confirmed
-each alphabet letter's `<span class="fr">` genuinely never contains a
-dash — it's a separate sibling text node between spans — so Round 1's
-fix was structurally incapable of touching this specific case regardless
-of correctness. Since it reproduces on a single tap and the tapped
-element's own text is dash-free, the remaining explanation is a **native
-OS-level accessibility reading feature** (iOS's Speak Screen / Speak
-Selection / VoiceOver) that reads the page's rendered/accessible text
-directly — including the visible " — " separators — completely
-bypassing this app's own `speechSynthesis` calls. No JS-side text
-sanitization can fix that, because that feature never goes through our
-JS at all.
+**Round 2 (disproven — do not repeat this theory):** re-examined the
+structure and confirmed each alphabet letter's `<span class="fr">`
+genuinely never contains a dash — it's a separate sibling text node
+between spans — so Round 1's fix was structurally incapable of touching
+this specific case regardless of correctness. Hypothesized a native
+OS-level accessibility reading feature (iOS's Speak Screen / Speak
+Selection / VoiceOver) was reading the page's rendered/accessible text
+directly, bypassing this app's `speechSynthesis` calls entirely. Wrapped
+each " — " separator between the 26 alphabet letters in its own
+`<span aria-hidden="true">` so any accessibility-tree-based reader skips
+them. Verified in headless testing (26 letters still individually
+clickable, simulated a11y-tree walk produced a dash-free alphabet) —
+**but the user confirmed after a hard refresh (ruling out caching) that
+the dash is still audible, and separately confirmed none of Speak
+Screen/Speak Selection/VoiceOver are enabled on their device.** The
+native-accessibility-reader theory is conclusively ruled out. The
+`aria-hidden` wrapping is harmless and was left in place, but it is not
+the fix.
 
-**Fix:** wrapped each " — " separator between the 26 alphabet letters in
-its own `<span aria-hidden="true">`, so any accessibility-tree-based
-reader skips over them, while the visual rendering and the site's own
-tap-to-hear click handler (`e.target.closest('.fr')`, which only ever
-looks at the clicked element, never `aria-hidden` siblings) are both
-completely unaffected. Verified: 26 letters still individually
-clickable and still each speak only their own letter, page renders
-pixel-identical, and a simulated accessibility-tree walk (skipping
-`aria-hidden` nodes) now produces "ABCDEFGHIJKLMNOPQRSTUVWXYZ" with zero
-dash characters.
+**Round 3 (current attempt, NOT yet confirmed by user):** with both text-
+content and OS-accessibility theories disproven, and the bug confirmed to
+reproduce on a single isolated tap (so it's not a rapid tap-then-tap
+interruption race either), the remaining lead is `speakFrench()` calling
+`window.speechSynthesis.cancel()` unconditionally on every tap — including
+the very first tap of a session, when nothing was ever speaking, where
+`cancel()` is a pure no-op. Calling `cancel()` on an empty iOS Safari
+speechSynthesis queue is a documented source of a spurious audible
+click/artifact on WebKit's implementation specifically (not on
+Android/Chrome's), which would explain: happens on a single tap, doesn't
+depend on the tapped text, doesn't depend on OS accessibility settings,
+and is iOS-only. Changed the guard so `cancel()` only runs when
+`speechSynthesis.speaking || speechSynthesis.pending` is true:
+
+```js
+if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+  window.speechSynthesis.cancel();
+}
+```
+
+Verified in headless Playwright (patching the real `speechSynthesis`
+object's methods rather than replacing it outright, since it's a
+non-configurable global — a plain `window.speechSynthesis = {...}`
+reassignment silently no-ops in real Chromium and was a dead end the
+first time through): first tap on a letter with nothing speaking now
+calls `speak()` only, no `cancel()`; tapping a second letter while one is
+still speaking calls `cancel()` then `speak()` as before (interrupt
+behavior preserved); all 26 letters produce dash-free text at the
+`speak()` call site; all 25 Copy-for-Gemini buttons still parse.
+**This cannot be tested for real audio output in this sandbox — there is
+no iOS Safari here.** Status: pushed to `main` and the feature branch,
+awaiting the user testing on their actual device.
+
+**If Round 3 also turns out not to fix it:** the three most-investigated
+theories (text content, OS accessibility reader, cancel() artifact) will
+all be exhausted. Next avenues, not yet tried: (a) ask the user to
+describe the sound more precisely — a click/pop vs. an actual spoken
+"dash"/"tiret" word vs. a truncated first-phoneme of the next letter's
+name, since these point to different root causes; (b) check whether it's
+specific to certain iOS voices (rate 0.85 + a single capital letter is an
+unusual, short input some voice engines may mishandle); (c) consider that
+it may not be fixable from web JS at all if it's a genuine iOS TTS-engine
+rendering quirk for single-character utterances, in which case the
+realistic fix is changing what gets spoken (e.g. speak the French letter
+*name* — "a", "bé", "cé"... — instead of the bare character) rather than
+chasing the cancel()/text/accessibility angle further.
 
 **If a similar report comes in for any other dash-separated row of
 clickable `.fr` words elsewhere on the site** (this exact
 letter-A-dash-letter-B pattern likely exists nowhere else, but a similar
 "list of clickable words joined by a decorative separator" shape might),
-apply the same `<span aria-hidden="true">separator</span>` wrapping
-there too — don't reach for the `speakFrench()` text-stripping approach
-first, that only helps when the separator is inside the tapped element's
-own text, which is the less likely case.
+the `aria-hidden` wrapping approach did NOT fix the actual reported bug
+here — don't assume it will work elsewhere either. Start instead from
+whichever of the theories above is still standing once Round 3's outcome
+is known.
 
 **Lesson: when a platform-specific bug can't be reproduced in this
 sandboxed environment, the first plausible-sounding fix can still be
