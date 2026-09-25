@@ -498,18 +498,33 @@
   .swipe-hint.prev { left: 14px; }
   .swipe-hint.show { opacity: 1; }
 
-  /* Slide-in animation when a chapter changes via Prev/Next or a confirmed
-     swipe (a dropdown jump stays instant - there's no "direction" to it). */
-  @keyframes slideInFromRight {
-    from { transform: translateX(30px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+  /* Small bouncing arrow shown briefly when a chapter changes via
+     Prev/Next or a confirmed swipe (a dropdown jump stays instant -
+     there's no "direction" to it). Replaces an earlier full-card
+     slide-in animation, which was more than was wanted. */
+  .chapter-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--blue);
+    z-index: 500;
+    pointer-events: none;
+    opacity: 0;
   }
-  @keyframes slideInFromLeft {
-    from { transform: translateX(-30px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+  .chapter-arrow.next { right: 16px; }
+  .chapter-arrow.prev { left: 16px; }
+  .chapter-arrow.show.next { opacity: 1; animation: bounceRight 0.6s ease; }
+  .chapter-arrow.show.prev { opacity: 1; animation: bounceLeft 0.6s ease; }
+  @keyframes bounceRight {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(8px); }
   }
-  .lesson-card.slide-next { animation: slideInFromRight 0.3s ease; }
-  .lesson-card.slide-prev { animation: slideInFromLeft 0.3s ease; }
+  @keyframes bounceLeft {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(-8px); }
+  }
 </style>
 </head>
 <body>
@@ -550,6 +565,7 @@
   <button class="chapter-btn" id="nextBtn" onclick="nextChapter()">Next →</button>
 </div>
 <div id="swipeHint" class="swipe-hint"></div>
+<div id="chapterArrow" class="chapter-arrow"></div>
 
 <nav id="toc" class="collapsed">
   <button class="nav-toggle" onclick="toggleNav()">
@@ -6865,15 +6881,10 @@ function showClass(classNum, direction) {
     selectedClass.classList.add('active');
     currentClass = classNum;
 
-    // Slide-in animation, only when moving sequentially (Prev/Next buttons
-    // or a confirmed swipe) - a dropdown/direct jump stays instant since
-    // there's no "direction" to animate toward.
-    if (direction) {
-      selectedClass.classList.remove('slide-next', 'slide-prev');
-      void selectedClass.offsetWidth; // force reflow so the animation replays
-      selectedClass.classList.add(direction === 'next' ? 'slide-next' : 'slide-prev');
-      setTimeout(() => selectedClass.classList.remove('slide-next', 'slide-prev'), 300);
-    }
+    // Small bouncing arrow, only when moving sequentially (Prev/Next
+    // buttons or a confirmed swipe) - a dropdown/direct jump stays instant
+    // since there's no "direction" to point the arrow toward.
+    if (direction) showChapterArrow(direction);
 
     // Save to localStorage
     localStorage.setItem('lastViewedClass', classNum);
@@ -6937,6 +6948,21 @@ function showSwipeHint(dir) {
 function hideSwipeHint() {
   const hint = document.getElementById('swipeHint');
   hint.classList.remove('show');
+}
+
+// Small bouncing arrow shown briefly when the chapter actually changes
+// (Prev/Next buttons, or a confirmed swipe). Restart the CSS animation on
+// every call (remove the class, force reflow, re-add it) so it replays in
+// full even if you move to another chapter again before it's finished.
+let chapterArrowTimer = null;
+function showChapterArrow(dir) {
+  const arrow = document.getElementById('chapterArrow');
+  arrow.textContent = dir === 'next' ? '→' : '←';
+  arrow.className = 'chapter-arrow ' + dir;
+  void arrow.offsetWidth;
+  arrow.classList.add('show');
+  clearTimeout(chapterArrowTimer);
+  chapterArrowTimer = setTimeout(() => arrow.classList.remove('show'), 600);
 }
 
 document.addEventListener('touchstart', (e) => {
