@@ -360,9 +360,9 @@ as `toggleExpandable()` via `deactivateOtherAudioButton()`/
 number, so it survived the 2026-09-25 renumbering with no changes needed.
 **When rolling this out to other classes, build it as ONE button per
 class near the top — do not default back to one-per-topic, that shape
-was explicitly rejected.** Currently present on Classes 1–12 (Class 2
+was explicitly rejected.** Currently present on Classes 1–17 (Class 2
 had one by default since it was included when that chapter's content
-was written on 2026-09-25). **Not yet on Classes 13–26** — continue the
+was written on 2026-09-25). **Not yet on Classes 18–26** — continue the
 same one-button-per-chapter pattern when asked to do more, in whatever
 batch size the user asks for (they've been doing this 5 at a time);
 don't assume they want all remaining classes done at once unless they
@@ -586,6 +586,30 @@ content the blue color, even via a different rule than the one just
 removed — that reintroduces the exact same confusion. If new content
 sections are added with bold/emphasized text (tables, notes, etc.),
 check they aren't blue before considering them done.
+
+## iOS-only bug 2026-09-25: TTS spoke a literal dash character
+
+User reported: tapping alphabet letters in Class 1 works correctly on
+Android but on iOS also audibly speaks a "-" symbol — annoying, and
+specific to iOS/WebKit (not reproducible in this environment, which has
+no real iOS Safari — headless Chromium's speechSynthesis doesn't even
+produce real audio here, only the JS call sequence could be verified).
+Since a dash in French orthography is always silent (quatre-vingt-dix,
+porte-clés, peut-être — hyphens carry no sound of their own), the
+correct fix doesn't require reproducing the exact WebKit quirk: strip
+dash characters from whatever text reaches `speakFrench()` before
+constructing the utterance, replacing with a space (not deleting
+outright) so multi-word compounds stay space-separated rather than
+running together. Applied inside `speakFrench()` itself, so it covers
+every clickable `.fr` word/example on the whole site, not just Class 1's
+alphabet. Verified: plain letters unaffected, hyphenated words still
+speak as their natural space-separated words, and any dash reaching the
+function is now removed before the browser's TTS ever sees it.
+**Lesson: when a platform-specific bug can't be reproduced in this
+sandboxed environment (no real iOS/Android device here), look for a fix
+that's correct regardless of the exact mechanism — here, "dashes are
+silent in French so stripping them can't break pronunciation" made the
+fix safe to ship without needing to reproduce the bug first.**
 
 ## Open suggestions / things to keep an eye on
 
