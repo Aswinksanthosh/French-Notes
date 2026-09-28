@@ -321,6 +321,54 @@ that the top-of-file HTML comment in `index.html` still said "25 lesson
 cards ... A2 = classes 22,23,25,26", stale since Class 27's addition.
 Fixed both while writing this entry.
 
+## Class 28 added 2026-09-28: "Le Passé Récent & Le Passé Composé" (A2)
+
+User uploaded an image (a 3-panel cheat sheet covering passé récent,
+passé composé, AND l'imparfait) plus a transcript of that day's live
+class, and said "next class." **Checked scope before building**: the
+transcript's own clean summary explicitly says l'imparfait is deferred
+to the *next* session ("la suite du cours est annoncée pour
+après-demain") — only passé récent and passé composé were actually
+taught this session, even though the image already has ready material
+for all three tenses. Asked the user directly rather than guessing
+whether to build just the two actually-taught tenses or all three from
+the image; **user chose the two actually-taught tenses**. L'imparfait
+will get its own class later, when that session happens — the image's
+third panel is sitting there ready for it.
+
+Built from the transcript's clean top-of-file summary (more reliable
+than the raw call transcript underneath it, which is messy speech-to-
+text) plus the image's polished conjugation tables: passé récent
+(venir + de + infinitif, elision before a vowel, the "tu viens d'où"
+trap), what passé composé actually is (auxiliary + past participle,
+never used alone), forming the past participle (regular -er/-ir/-re
+rules plus the venir/tenir/devenir and ouvrir-family irregular
+shortcuts), passé composé with avoir (no agreement, the "vous avez un
+billet" vs "vous avez acheté un billet" confusion), and passé composé
+with être (the 16 "Dr & Mrs Vandertramp" verbs, pronominal verbs, past
+participle DOES agree here) — 6 topics + common mistakes + mastery = 8
+checklist items, matching the Class 27 build's scope.
+
+Followed the full chapter-add checklist again: `classOrder` → appended
+`28`; nav dropdown → added under `.level-content.a2`, last position to
+match `classOrder`; A2 checklist-label CSS selector list → added
+`class28`; lesson card → `data-lesson="class28"` throughout, checkbox
+ids `c28-1` through `c28-7` plus `gemini-skill-class28`, both new tables
+wrapped in `.table-wrap` from the start; chapter summary button;
+Back to Top button. **New this time**: the nav-label-vs-h2 sync check
+(step 7, added after the Class 2-15 nav bug) actually caught something —
+the first nav label picked ("Past Tenses") wasn't a literal substring of
+the h2 ("A2: Le Passé Récent & Le Passé Composé"), even though it was an
+accurate description, not a stale/wrong one. Renamed to "Passé Composé"
+(which does appear in the h2) rather than loosen the check — a nav label
+that's independently worded from its own chapter's title is exactly the
+kind of drift that check exists to catch early, even when the specific
+instance turns out harmless. Verified: 242 total checkboxes site-wide, 0
+duplicates, all id/label pairs match, all 27 nav labels now pass the
+h2-substring check, all 27 "Copy for Gemini" buttons parse, class28
+reaches `0 / 8 done`, chapter indicator shows "Class 27 of 27", and no
+phone-width overflow. Updated `README.md`'s curriculum list too.
+
 ## Push workflow
 
 One commit per class/change (not batched), descriptive commit message,

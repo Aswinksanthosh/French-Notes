@@ -220,12 +220,13 @@
   .checklist label { cursor: pointer; transition: color 0.3s ease; }
   .checklist input:checked + label { text-decoration: line-through; color: #999; }
 
-  /* A2 checklists (Classes 22, 23, 25, 26, 27) - blue text until checked */
+  /* A2 checklists (Classes 22, 23, 25, 26, 27, 28) - blue text until checked */
   .checklist[data-lesson="class22"] label,
   .checklist[data-lesson="class23"] label,
   .checklist[data-lesson="class25"] label,
   .checklist[data-lesson="class26"] label,
-  .checklist[data-lesson="class27"] label {
+  .checklist[data-lesson="class27"] label,
+  .checklist[data-lesson="class28"] label {
     color: #1565c0;
     font-weight: 600;
   }
@@ -233,7 +234,8 @@
   .checklist[data-lesson="class23"] input:checked + label,
   .checklist[data-lesson="class25"] input:checked + label,
   .checklist[data-lesson="class26"] input:checked + label,
-  .checklist[data-lesson="class27"] input:checked + label {
+  .checklist[data-lesson="class27"] input:checked + label,
+  .checklist[data-lesson="class28"] input:checked + label {
     color: #999;
     font-weight: 400;
   }
@@ -634,6 +636,7 @@
       <a href="#" onclick="goToClass(25)">Prepositions</a>
       <a href="#" onclick="goToClass(26)">Prepositions + Future</a>
       <a href="#" onclick="goToClass(27)">Expressions</a>
+      <a href="#" onclick="goToClass(28)">Passé Composé</a>
     </div>
   </div>
 </nav>
@@ -7021,6 +7024,184 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 28: PASSÉ RÉCENT & PASSÉ COMPOSÉ ===================== -->
+<div class="lesson-card" id="class28">
+  <div class="lesson-header">
+    <h2>A2: Le Passé Récent &amp; Le Passé Composé <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🏁 AT THE END OF THE EXAM: say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class covers two past tenses: LE PASSÉ RÉCENT (something that JUST happened - venir de + infinitive) and LE PASSÉ COMPOSÉ (a completed past action - auxiliary verb + past participle). L\'imparfait (a third past tense, for habitual/ongoing past actions) is NOT covered in this class - it\'s the next class.\n\nTeach me using this class content:\n\nLE PASSÉ RÉCENT (the recent past) - expresses an action that JUST finished and is still linked to the present (something you did seconds or minutes ago):\nStructure: Sujet + venir (conjugated in present) + de + infinitif\nConjugation of venir: je viens, tu viens, il/elle/on vient, nous venons, vous venez, ils/elles viennent\nThe main verb after &quot;venir de&quot; always stays in the INFINITIVE - it is never conjugated, because venir is already conjugated.\nElision rule: before a verb starting with a vowel, &quot;de&quot; becomes &quot;d\'&quot; - &quot;elle vient d\'entrer&quot;, &quot;je viens d\'écrire&quot;.\nExamples from class: &quot;Je viens de boire l\'eau chaude&quot; (I just drank the hot water), &quot;Il vient d\'arriver&quot; (he just arrived), &quot;Je viens d\'écrire&quot; (I just wrote), &quot;Nous venons de voir sa femme&quot; (we just saw his wife), &quot;Je viens de finir d\'étudier&quot; (I just finished studying), &quot;Je viens de me lever&quot; (I just got up), &quot;Vous venez de finir de manger&quot; (you just finished eating).\nWarning: &quot;tu viens d\'où ?&quot; is NOT passé récent - that &quot;de&quot; is the preposition &quot;from&quot; (where do you come from), not the passé récent structure. Passé récent always needs venir + de + an INFINITIVE verb after it.\n\nLE PASSÉ COMPOSÉ (the compound past) - the tense actually used in everyday spoken French for a completed past action (le passé simple exists but is only used in books/writing, not spoken French):\nCore rule: passé composé = auxiliary verb (avoir OR être) + past participle (participe passé). A past participle is NEVER used alone - it always needs an auxiliary verb with it.\n\nFORMING THE PAST PARTICIPLE (participe passé):\n- Regular -ER verbs: remove -ER, add -é → manger → mangé, parler → parlé\n- Regular -IR verbs: remove -IR, add -i → finir → fini\n- Regular -RE verbs: remove -RE, add -u → vendre → vendu, prendre → pris (irregular)\n- Irregular verb shortcuts: venir, tenir, devenir → end in -u (venu, tenu, devenu). ouvrir, offrir, découvrir, recouvrir, souffrir → end in -ert (ouvert, offert). Some -oir verbs are unpredictable: voir → vu, croire → cru.\n- Irregular verbs must be learned as you go using a conjugation app - there is no single rule for all of them.\n\nCHOOSING THE AUXILIARY - AVOIR OR ÊTRE:\nRule 1 - AVOIR: the vast majority of verbs (parler, manger, visiter, acheter, regarder, faire, etc.) use avoir. With avoir, the past participle does NOT agree in gender/number with the subject.\nAvoir conjugated in present: j\'ai, tu as, il/elle/on a, nous avons, vous avez, ils/elles ont.\nExamples: &quot;J\'ai visité Paris&quot;, &quot;Nous avons donné un cadeau à mon ami&quot;, &quot;Ils ont joué le badminton&quot;, &quot;Elle a eu une idée&quot;, &quot;Vous avez acheté un billet&quot;, &quot;Tu as attendu le bus&quot;, &quot;J\'ai terminé ma réunion&quot;, &quot;Nous avons fait du sport&quot;.\nCommon confusion: &quot;vous avez un billet&quot; (you HAVE a ticket - present tense) is NOT the same as &quot;vous avez acheté un billet&quot; (you BOUGHT a ticket - passé composé, has both the auxiliary AND a past participle).\n\nRule 2 - ÊTRE: a specific list of 16 verbs, remembered with the acronym &quot;Doctor and Mrs. Vandertrump&quot; (DR & MRS VANDERTRAMP): Devenir, Revenir, Monter, Rentrer, Sortir, Venir, Arriver, Naître, Descendre, Entrer, Retourner, Tomber, Rester, Aller, Mourir, Partir. Also ALL pronominal/reflexive verbs use être (e.g. &quot;je me lève&quot; → &quot;je me suis levé&quot;). With être, the past participle DOES agree in gender and number with the subject.\nÊtre conjugated in present: je suis, tu es, il/elle/on est, nous sommes, vous êtes, ils/elles sont.\n\nFor each topic, teach me with examples, then have me build my own sentences. When I understand and can use it correctly, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Two past tenses — le passé récent (something that just happened, venir de + infinitive) and le passé composé (a completed past action, auxiliary verb + past participle, with avoir or être). L'imparfait is a separate, later class.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers two past tenses. First, the recent past, for something that just happened, using venir de plus an infinitive. Second, the compound past, the everyday spoken past tense in French, formed from an auxiliary verb plus a past participle, including how to form the past participle and how to choose between avoir and être as the auxiliary." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class28">0 / 8 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class28"></div></div>
+
+  <h3>1️⃣ LE PASSÉ RÉCENT — Something That Just Happened</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="The recent past expresses an action that just finished and is still linked to the present - something you did seconds or minutes ago. The structure is subject plus venir conjugated in the present, plus de, plus the main verb in the infinitive. The main verb never gets conjugated, because venir is already doing that job."
+      data-lang="en-US">
+      🎧 Venir de + Infinitif
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>Structure:</strong> Sujet + venir (présent) + de + infinitif<br/>
+        <strong>venir:</strong> je viens, tu viens, il/elle/on vient, nous venons, vous venez, ils/elles viennent<br/>
+        <strong>Example:</strong> <span class="fr">Je viens de finir mon travail</span> (I just finished my work)
+      </div>
+    </div>
+  </div>
+
+  <p>Before a verb starting with a vowel, <span class="fr">de</span> elides to <span class="fr">d'</span>:</p>
+  <ul>
+    <li><span class="fr">Je viens de boire l'eau chaude</span> (I just drank the hot water)</li>
+    <li><span class="fr">Il vient d'arriver</span> (he just arrived)</li>
+    <li><span class="fr">Nous venons de voir sa femme</span> (we just saw his wife)</li>
+    <li><span class="fr">Je viens de me lever</span> (I just got up)</li>
+    <li><span class="fr">Vous venez de finir de manger</span> (you just finished eating)</li>
+  </ul>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    <strong>Watch out:</strong> <span class="fr">Tu viens d'où ?</span> is NOT passé récent — that "de" is the preposition "from" (where do you come from), not this structure. Passé récent always needs an <em>infinitive</em> after "venir de".
+  </div>
+
+  <ul class="checklist" data-lesson="class28" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c28-1"><label for="c28-1"><strong>PASSÉ RÉCENT:</strong> I can form "venir de + infinitive" correctly, including the elision, and tell it apart from "venir d'où"</label></li>
+  </ul>
+
+  <h3>2️⃣ LE PASSÉ COMPOSÉ — What It Is</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="The passé composé is the tense actually used in everyday spoken French for a completed past action. The passé simple exists too, but it's only used in books and writing, never in speech. The core rule of passé composé is: auxiliary verb, either avoir or être, plus a past participle. A past participle is never used alone - it always needs that auxiliary verb with it."
+      data-lang="en-US">
+      🎧 Auxiliaire + Participe Passé
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>passé composé</strong> = auxiliaire (<span class="fr">avoir</span> or <span class="fr">être</span>) + participe passé.<br/>
+        A past participle is <em>never</em> used alone in this construction — it always needs the auxiliary verb.<br/>
+        <span class="fr">passé simple</span> (a different past tense) exists but is only used in books/writing, never in speech.
+      </div>
+    </div>
+  </div>
+
+  <ul class="checklist" data-lesson="class28" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c28-2"><label for="c28-2"><strong>PASSÉ COMPOSÉ CORE RULE:</strong> I understand it's built from auxiliary + past participle, and that a past participle is never used alone</label></li>
+  </ul>
+
+  <h3>3️⃣ Forming the Past Participle</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Verb type</th><th>Rule</th><th>Example</th></tr>
+    <tr><td>Regular -ER</td><td>remove -ER, add -é</td><td><span class="fr">manger</span> → <span class="fr">mangé</span></td></tr>
+    <tr><td>Regular -IR</td><td>remove -IR, add -i</td><td><span class="fr">finir</span> → <span class="fr">fini</span></td></tr>
+    <tr><td>Regular -RE</td><td>remove -RE, add -u</td><td><span class="fr">vendre</span> → <span class="fr">vendu</span></td></tr>
+    <tr><td>venir, tenir, devenir</td><td>irregular: end in -u</td><td><span class="fr">venir</span> → <span class="fr">venu</span></td></tr>
+    <tr><td>ouvrir, offrir, découvrir, recouvrir, souffrir</td><td>irregular: end in -ert</td><td><span class="fr">ouvrir</span> → <span class="fr">ouvert</span></td></tr>
+    <tr><td>Some -oir verbs</td><td>unpredictable, learn individually</td><td><span class="fr">voir</span> → <span class="fr">vu</span>, <span class="fr">croire</span> → <span class="fr">cru</span></td></tr>
+  </table>
+  </div>
+
+  <div class="note">
+  Beyond these patterns, irregular verbs have to be learned one at a time using a conjugation app — there's no single rule that covers all of them. Pick 2-3 irregular verbs a day and look up their past participle.
+  </div>
+
+  <ul class="checklist" data-lesson="class28" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c28-3"><label for="c28-3"><strong>PAST PARTICIPLE:</strong> I can form the past participle for regular -er/-ir/-re verbs and know the venir/tenir/devenir and ouvrir-family shortcuts</label></li>
+  </ul>
+
+  <h3>4️⃣ Passé Composé with AVOIR</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="The vast majority of French verbs use avoir as their auxiliary. With avoir, the past participle does not change - it stays the same regardless of the subject's gender or number."
+      data-lang="en-US">
+      🎧 Avoir + Participe Passé
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>avoir</strong> (présent): j'ai, tu as, il/elle/on a, nous avons, vous avez, ils/elles ont<br/>
+        With <span class="fr">avoir</span>, the past participle does <strong>not</strong> agree in gender/number with the subject.
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <li><span class="fr">J'ai visité Paris</span> (I visited Paris)</li>
+    <li><span class="fr">Nous avons donné un cadeau à mon ami</span> (we gave a gift to my friend)</li>
+    <li><span class="fr">Elle a eu une idée</span> (she had an idea)</li>
+    <li><span class="fr">Vous avez acheté un billet</span> (you bought a ticket)</li>
+    <li><span class="fr">J'ai terminé ma réunion</span> (I finished my meeting)</li>
+  </ul>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    <strong>Common mix-up:</strong> <span class="fr">Vous avez un billet</span> (you HAVE a ticket — present tense) is not the same as <span class="fr">Vous avez acheté un billet</span> (you BOUGHT a ticket — passé composé, auxiliary + past participle).
+  </div>
+
+  <ul class="checklist" data-lesson="class28" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c28-4"><label for="c28-4"><strong>AVOIR:</strong> I can conjugate avoir and build passé composé sentences with it, and I don't confuse "avoir + noun" (present) with "avoir + past participle" (passé composé)</label></li>
+  </ul>
+
+  <h3>5️⃣ Passé Composé with ÊTRE</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="A specific list of 16 verbs use être instead of avoir, remembered with the acronym Doctor and Mrs Vandertramp: devenir, revenir, monter, rentrer, sortir, venir, arriver, naître, descendre, entrer, retourner, tomber, rester, aller, mourir, partir. All pronominal or reflexive verbs also use être. With être, the past participle does agree in gender and number with the subject."
+      data-lang="en-US">
+      🎧 Être + Participe Passé
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>être</strong> (présent): je suis, tu es, il/elle/on est, nous sommes, vous êtes, ils/elles sont<br/>
+        With <span class="fr">être</span>, the past participle <strong>does</strong> agree in gender/number with the subject.
+      </div>
+    </div>
+  </div>
+
+  <p><strong>The 16 "Doctor and Mrs. Vandertrump" verbs</strong> (DR &amp; MRS VANDERTRAMP):</p>
+  <ul>
+    <li><span class="fr">Devenir, Revenir, Monter, Rentrer, Sortir, Venir, Arriver, Naître, Descendre, Entrer, Retourner, Tomber, Rester, Aller, Mourir, Partir</span></li>
+  </ul>
+  <p>Plus <strong>all pronominal/reflexive verbs</strong>: <span class="fr">Je me lève</span> → <span class="fr">Je me suis levé</span> (I got up).</p>
+
+  <ul class="checklist" data-lesson="class28" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c28-5"><label for="c28-5"><strong>ÊTRE:</strong> I can conjugate être, recite the 16 Dr &amp; Mrs Vandertramp verbs, and remember pronominal verbs also take être</label></li>
+  </ul>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">Mangé</span> (alone, as a full sentence)</td><td><span class="fr">J'ai mangé</span></td><td>A past participle is never used without its auxiliary verb</td></tr>
+    <tr><td><span class="fr">Vous avez un billet</span> (meaning "you bought a ticket")</td><td><span class="fr">Vous avez acheté un billet</span></td><td>"Avez un billet" alone is present tense (you have); passé composé needs the past participle too</td></tr>
+    <tr><td>Je suis mangé</td><td>J'ai mangé</td><td>Manger uses avoir, not être — it's not on the Dr &amp; Mrs Vandertramp list and isn't pronominal</td></tr>
+    <tr><td>Tu viens d'où (treated as passé récent)</td><td>—</td><td>This "de" is the preposition "from"; passé récent needs venir + de + infinitive</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class28" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c28-6"><label for="c28-6"><strong>MISTAKES:</strong> I can spot and avoid these common errors</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <div class="note">
+  <strong>Homework from class:</strong> write 10 sentences in passé composé with avoir, using only irregular verbs from the shared list.
+  </div>
+  <ul class="checklist" data-lesson="class28">
+    <li><input type="checkbox" id="c28-7"><label for="c28-7"><strong>MASTERY:</strong> I can choose avoir vs être correctly, form the past participle, and build passé récent and passé composé sentences without hesitating</label></li>
+    <li><input type="checkbox" id="gemini-skill-class28"><label for="gemini-skill-class28"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -7175,7 +7356,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27];
+const classOrder = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion

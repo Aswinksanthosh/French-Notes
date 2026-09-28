@@ -55,6 +55,7 @@ tap, and self-test progress with per-topic checklists.
 24. Prepositions
 25. Prepositions + Future
 26. Expressions (Prepositions II — cause, purpose, fixed expressions)
+27. Passé Composé (Le Passé Récent & Le Passé Composé)
 
 *Remaining A2 classes will be updated weekly.*
 
