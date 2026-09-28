@@ -260,6 +260,67 @@ zero mismatches), all 26 "Copy for Gemini" buttons parse, class27 reaches
 overflow on class27 at 390px phone width. Also updated `README.md`'s
 curriculum list to include it.
 
+## Three more site-wide features added 2026-09-25 (after Class 27)
+
+All three are global, mechanical edits applied identically across every
+class via a script rather than by hand per class — same reasoning as the
+earlier `\"` → `&quot;` fix in History: 26 classes is too many to edit by
+hand reliably, and a script plus a full verification pass afterward is
+both faster and safer.
+
+**1. Exam-completion line in the Gemini prompt.** User asked: at the end
+of the exam, Gemini should say "excellent ✅ you are done here go back to
+next lesson." Added as a new bullet in the shared LEARNING STRATEGY list
+that's baked into every class's "📋 Copy for Gemini" `onclick` prompt text
+(right after the existing "🎤 BEFORE ANY SPEAKING..." bullet, before the
+`═══` separator line), via a single `str.replace()` matched against the
+exact shared bullet text — found and replaced in all 26 occurrences in
+one pass. Verified all 26 "Copy for Gemini" buttons still parse
+(`new Function('event', onclick)` doesn't throw) and all 26 now contain
+the new line.
+
+**2. "Complete Gemini skill test" checklist item.** User then asked for a
+matching checklist item at the end of every chapter, not just an
+instruction inside the Gemini prompt text. Script-inserted one `<li>`
+(checkbox id `gemini-skill-classN`, globally unique) as the LAST item in
+each class's LAST `<ul class="checklist" data-lesson="classN">` block —
+found by taking each class's HTML region (from its own `id="classN"` div
+to the next class's, or to the footer for the last class) and locating
+that region's final `</ul>`. This correctly lands as the true end of the
+chapter's checklist regardless of whether that final block is titled
+"Overall Mastery" or not (many A1 classes don't have that heading at all
+— see pattern rule #3). Also recalculated and updated every class's
+`progress-count` "X / Y done" total to include the new item (JS
+recalculates this on load anyway, but keeping the static HTML accurate
+matters for anyone reading the source, and matches established practice
+from the Class 27 build). Verified: 234 total checkboxes site-wide
+(208 + 26 new), zero duplicate ids, every checkbox id has a matching
+`label for=`, every class's displayed total matches its actual checkbox
+count, and checking the new box actually moves the counter (tested on
+class1: 0/8 → 1/8).
+
+**3. "Back to Top" button at the end of every chapter.** Script-inserted
+a `<button class="back-to-top-btn" onclick="window.scrollTo({top:0,
+behavior:'smooth'})">` right after each class's now-final checklist
+`</ul>` and immediately before that class's own closing `</div>` — found
+by searching, within each class's region, for the first `</div>` that
+occurs after the region's last `</ul>` (verified against the file's
+consistent `</ul>\n</div>\n\n<!-- next class comment -->` pattern before
+writing the script, not assumed). New CSS class `.back-to-top-btn`,
+styled to match `.chapter-btn`'s look (light-blue pill, blue border).
+Verified: present in all 26 classes, clicking it actually reaches
+`scrollY === 0` (checked after the smooth-scroll animation finishes, not
+just that it started moving), and the usual JS-syntax/div-balance/copy-
+button regression checks all still pass.
+
+**Housekeeping while reading back through the project 2026-09-28:**
+noticed these three entries were missing from this file (a real gap
+against the standing "update context.md after significant work" rule —
+they'd been committed to `index.html` but never written up here) and
+that the top-of-file HTML comment in `index.html` still said "25 lesson
+cards ... A2 = classes 22,23,25,26", stale since Class 27's addition.
+Fixed both while writing this entry.
+
 ## Push workflow
 
 One commit per class/change (not batched), descriptive commit message,
