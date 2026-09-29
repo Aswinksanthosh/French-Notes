@@ -56,6 +56,7 @@ tap, and self-test progress with per-topic checklists.
 25. Prepositions + Future
 26. Expressions (Prepositions II — cause, purpose, fixed expressions)
 27. Passé Composé (Le Passé Récent & Le Passé Composé)
+28. Group 3 (55 irregular verbs, grouped by family)
 
 *Remaining A2 classes will be updated weekly.*
 

@@ -369,6 +369,54 @@ h2-substring check, all 27 "Copy for Gemini" buttons parse, class28
 reaches `0 / 8 done`, chapter indicator shows "Class 27 of 27", and no
 phone-width overflow. Updated `README.md`'s curriculum list too.
 
+## Class 29 added 2026-09-29: "Group 3 Irregular Verbs" (A2, vocabulary
+reference, not a grammar class)
+
+User pasted a raw list of 55 Group 3 (irregular) French verbs, grouped
+into 5 categories, with no instruction attached — just the list. Asked
+what to do with it rather than guessing (build a new class? fold into an
+existing one? just notes, no site change?) — **user chose: build a new
+class.**
+
+Important difference from Classes 27/28: this source had **no example
+sentences, no live-class transcript, no grammar explanation** — just
+French↔English verb pairs, pre-grouped by the user into 5 categories
+(core irregulars, more common irregulars, -oir verbs, irregular -re
+verbs, irregular -ir verbs). Built the class honestly around what was
+actually given: a vocabulary reference (5 tables matching the user's own
+grouping exactly, each verb wrapped in `.fr` for pronunciation) rather
+than inventing example sentences or conjugation drills that weren't in
+the source material. Added a few genuinely useful notes that don't
+require inventing content: `falloir`/`pleuvoir` are impersonal (only
+`il faut`/`il pleut` exist, no other conjugated forms), the `-uire`
+family (conduire/construire/traduire/produire/détruire/cuire) shares one
+conjugation pattern, and `ouvrir/offrir/couvrir/découvrir/souffrir`
+conjugate like -ER verbs in the present tense despite ending in -ir (a
+real trap). **Lesson for future sessions: when source material is a bare
+list with no examples, don't pad the class with invented example
+sentences to make it "feel" like the other classes — build what the
+actual source supports, and say so in the Gemini prompt text too (told
+Gemini explicitly not to invent example sentences either).**
+
+Followed the chapter-add checklist: `classOrder` → appended `29`; nav
+dropdown → added under `.level-content.a2`, last position; label picked
+as "Group 3" specifically because the site already has a class labeled
+"Irregular" (Class 19, A1) — needed something that passes the h2-
+substring check *and* doesn't collide in meaning with an existing label;
+A2 checklist-label CSS → added `class29`; lesson card → `data-lesson=
+"class29"` throughout, checkbox ids `c29-1` through `c29-6` plus
+`gemini-skill-class29`, all 5 new tables wrapped in `.table-wrap` from
+the start; chapter summary + Back to Top buttons. **Caught my own
+mistake before shipping**: first wrote the progress-count as `0 / 6
+done` by miscounting (5 topic items + mastery = 6, forgot the
+gemini-skill item makes it 7) — caught it by re-reading the checklist
+items rather than trusting my own arithmetic, fixed to `0 / 7 done`
+before running verification. Verified: 249 total checkboxes site-wide, 0
+duplicates, all id/label pairs match, all 28 nav labels pass the
+h2-substring check, all 28 "Copy for Gemini" buttons parse, class29
+reaches `0 / 7 done` correctly, chapter indicator shows "Class 28 of
+28", no phone-width overflow. Updated `README.md` too.
+
 ## Push workflow
 
 One commit per class/change (not batched), descriptive commit message,
