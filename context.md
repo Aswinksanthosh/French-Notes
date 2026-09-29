@@ -471,6 +471,58 @@ copy buttons still parse, nav order intact.
 same insertion approach (find `.back-to-top-btn` per class), just write
 dialogues matching each A2 chapter's actual content first.
 
+**Immediate correction (same day):** user said the new section "felt
+duplicated" and the dialogue itself felt fake/quiz-like ("Le tourisme ou
+la tourisme?" is a grammar drill wearing a dialogue costume, not two
+people talking). Root cause of the duplication complaint: every A1
+chapter already had a pre-existing "📚 Real-World ... Examples" section
+(a `.note` full of disconnected example sentences) right next to where
+the new "💬 Conversation Example" section landed - two different-content
+but same-*shape* blocks back to back reads as one redundant block to a
+user skimming, even though the actual sentences differed.
+
+**Fix**: removed the new section entirely (script-reversed the same
+insertion, by matching the exact `<h3>💬 Conversation Example</h3>...`
+block per class) and instead rewrote the *existing* examples block's
+content in place - same location, same heading level, renamed to "💬
+Natural Conversation" - as a casual conversation between two named
+people about ordinary things (weekend plans, shopping, family, a
+voicemail invite) where the chapter's grammar/vocabulary shows up
+naturally rather than being the explicit topic being quizzed. Three
+chapters (1, 3, 12) use an older toggle/flashcard format for single-word
+examples that's structurally distinct enough not to read as duplicated -
+left those alone and added the new conversation right after them instead
+of replacing anything.
+
+**Lesson for future content requests like this**: when writing an
+"example" or "conversation" for a language-learning grammar point, the
+instinct is to make the dialogue explicitly ABOUT the grammar point
+("is le or la correct here?") because that's the most direct way to
+demonstrate it - but that's exactly what makes it feel like a quiz
+instead of natural speech. A native conversation uses the grammar
+without commenting on it. Write the dialogue as two people actually
+talking about something (plans, shopping, family, weather), and let the
+target grammar surface on its own within that - never make the grammar
+point itself the topic of the sentence.
+
+## Gemini prompt: always require a concrete example (2026-09-29)
+
+Separate complaint, same session: Gemini was teaching/testing grammar in
+the abstract - e.g. asking "is this word feminine or masculine?" with no
+sentence attached, which the user said is useless because "I cannot use
+that grammar in real life" without seeing it in context. Added one more
+line to the shared prompt header (site-wide, all 28 classes, same
+find-count-replace pattern as the other shared-instruction edits): "💡
+ALWAYS GIVE A CONCRETE EXAMPLE" - every explanation and every question
+must come with a real French sentence, not a bare abstract question.
+Placed right before the existing "🎯 CHECK ONLY WHEN YOU UNDERSTAND"
+bullet. Verified all 28 copy buttons still parse afterward (this class
+of edit has broken buttons twice before this session, both times from
+an unescaped apostrophe/newline inside the single-quoted JS prompt
+string - built this one in a standalone Python script file rather than
+an inline `-c` string specifically to avoid shell-escaping compounding
+the risk, and it came out clean on the first attempt).
+
 ## Push workflow
 
 One commit per class/change (not batched), descriptive commit message,
