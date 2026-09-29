@@ -417,6 +417,60 @@ h2-substring check, all 28 "Copy for Gemini" buttons parse, class29
 reaches `0 / 7 done` correctly, chapter indicator shows "Class 28 of
 28", no phone-width overflow. Updated `README.md` too.
 
+## Dialogue examples added to all 21 A1 chapters (2026-09-29)
+
+User feedback: existing "example" content was just 2-3 word phrases -
+wanted a real back-and-forth conversation between two people per
+chapter, tailored to that chapter's own grammar/vocabulary, with audio,
+at the end of every A1 class.
+
+This followed directly after two rounds of "fix the blue sentences" bug
+reports that turned out to be about different chapters than first
+assumed (see the two entries above this one) - worth remembering that
+when a user names a chapter by feel rather than its exact site label,
+double-check which chapter they actually mean before doing a lot of
+work, since "Gender" and "Endings" are topically adjacent and easy to
+conflate. The Gender-chapter cheat sheet from the misfire two rounds ago
+was reverted once the correct target (Endings) was confirmed.
+
+**Format chosen**: `<h3>💬 Conversation Example</h3>` + a `.note` div
+containing one context sentence and 4-5 lines of `<strong>Name:</strong>
+<span class="fr">French line</span> <em>(English translation)</em><br>`.
+Deliberately did NOT use the existing `.example` class (which speaks an
+entire multi-line block as one unit via em-dash splitting) - instead
+each line is its own `.fr` span, individually tappable exactly like
+every other clickable phrase on the site. This sidesteps a real problem
+with speaker labels: if "Léo:" were inside the parsed/spoken text it
+would get read aloud awkwardly ("L é o colon..."); keeping the label
+outside the `.fr` span means only the actual French sentence is ever
+passed to `speakFrench()`.
+
+**Placement**: right before each chapter's `.back-to-top-btn`, found
+programmatically per class (same start/end-boundary approach as the
+gemini-skill-checklist and back-to-top insertions) rather than assuming
+a fixed offset - reliable because every class was already confirmed to
+have exactly one `.back-to-top-btn`.
+
+**Content**: each of the 21 dialogues is unique and drawn from that
+specific chapter's actual topic (checked via the `<p class="topic">`
+line before writing any of them) - e.g. spelling a name for Alphabet,
+noun-gender guessing for Endings, an airport announcement for Listening,
+price + prepositions of place for Irregular. Not template-filled generic
+sentences.
+
+Verified: JS syntax and div balance hold (808/808), exactly 21
+"Conversation Example" headings (a 22nd match was a pre-existing
+unrelated "Real-World Family Conversation Examples" heading in Family,
+not a duplicate), every dialogue sits immediately before its chapter's
+Back to Top button, spot-checked a 5-line dialogue (Class 15) end to end
+confirming every single line's `.fr` span calls `speakFrench` with
+exactly the right text, no phone-width overflow on any class, all 28
+copy buttons still parse, nav order intact.
+
+**If asked to do the same for A2 (Classes 22-29) later**: same pattern,
+same insertion approach (find `.back-to-top-btn` per class), just write
+dialogues matching each A2 chapter's actual content first.
+
 ## Push workflow
 
 One commit per class/change (not batched), descriptive commit message,
