@@ -1160,6 +1160,57 @@ features read the rendered page independently of any JS on it, and
 `aria-hidden` is the correct tool for telling them to skip purely
 decorative content.
 
+## Classes 30 & 31 added 2026-09-30: être-agreement deep dive + practice
+bank (A2)
+
+Source: a new transcript (uploaded 2026-09-28,
+`44db6904-French_Past_Tense_Grammar_Lesson__Avoir_and__tre_Verbs.txt`)
+covering an entire live class spent drilling passé composé être-agreement
+(the four forms, mixed-group rule, the mort/morte pronunciation exception)
+through many corrected student examples. User asked to "teach passé
+composé in detail" and split it into "2 or 3 classes" with "somany
+examples" — confirmed via AskUserQuestion that scope was passé composé
+only (two separate homework docs pasted in the same message — Prépositions
+A2 and Adjectifs vs Adverbes A2 — were context, not a request; not
+touched).
+
+Built as two new classes rather than editing Class 28, since Class 28
+already covers the avoir/être *choice* and lists the 16 Dr & Mrs
+Vandertramp verbs, but never went into the agreement mechanics — this
+transcript is entirely new content on top of that.
+
+- **Class 30** ("A2: Passé Composé avec Être — L'Accord en Détail"): the
+  4-way agreement table (masc sing/fem sing/masc plur/fem plur), the
+  mixed-group-is-always-masculine-plural rule, the mort/morte pronunciation
+  exception, a full agreement table for all 16 Dr & Mrs Vandertramp verbs
+  (all 4 forms each — added `rentrer`, which class28's original list has
+  but wasn't in my first agreement-table draft), worked examples quoted
+  from the actual live-class corrections, and a mistakes table.
+- **Class 31** ("A2: Passé Composé — Pratique Intensive"): pure practice
+  bank, no new grammar — ~60 example sentences split into an avoir-only
+  table (~20), an être-only table (~24, all 16 Dr & Mrs Vandertramp verbs
+  represented), and a mixed-review table (~16) for drilling auxiliary
+  choice. Kept the Gemini-prompt copy of this content short (a handful of
+  model examples + instructions to quiz using the visible tables) rather
+  than duplicating all 60 sentences into the onclick string — unlike
+  Class 29's vocab list, these are invented practice sentences, not a
+  fixed list that needs to survive verbatim into the prompt.
+
+Mechanics: `classOrder` extended to `[...,29,30,31]`, nav dropdown got two
+new `<a>` entries after "Group 3". **First attempt at the nav labels
+("Être Agreement", "Passé Composé Practice") failed the standing
+nav-label-substring-of-h2 check** (step 7 of the add/remove-chapter
+checklist) since neither was a literal substring of its h2 heading text —
+renamed to "L'Accord" and "Pratique Intensive", which are. A reminder that
+this check is easy to skip when a class is being added fresh rather than
+renumbered — it caught a real mismatch here, not a renumbering artifact.
+Full verification suite re-run clean: JS syntax, div balance (comments
+stripped), 201 checkbox ids all unique, 147/147 tables `.table-wrap`d, all
+31 copy buttons parse, nav order matches `classOrder`, no horizontal
+overflow at 390px, screenshots of both new chapters visually confirmed.
+
+README.md curriculum list updated (29. L'Accord, 30. Pratique Intensive).
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
