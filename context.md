@@ -1211,6 +1211,46 @@ overflow at 390px, screenshots of both new chapters visually confirmed.
 
 README.md curriculum list updated (29. L'Accord, 30. Pratique Intensive).
 
+## Class 30 follow-up 2026-10-02: added person-by-person agreement table
+
+User asked (after reviewing Class 30) whether the être-agreement rule was
+broken down by grammatical person (je/tu/il/nous/vous/ils) anywhere, not
+just by gender+number category. Checked every chapter first: Class 3
+(Greetings) has a full 6-person table, but for the *present-tense*
+être/avoir conjugation ("je suis" = I am), not past-participle agreement;
+Class 28/31 only use je/tu/nous/vous inside scattered example sentences,
+no structured table. Confirmed the person-by-person breakdown genuinely
+didn't exist anywhere, then built it into Class 30 (not a new class) since
+that's where the agreement rule itself already lives.
+
+Inserted a new section 2️⃣ "Person-by-Person: Je / Tu / Il / Nous / Vous /
+Ils" right after the existing "Four Agreement Forms" section, using
+`aller` as the model verb: a masc/fem table for all 6 persons plus a
+callout that **vous has four possible forms** (singular-formal vs plural,
+masculine vs feminine) since that's the one genuinely confusing case, plus
+12 example sentences (one masc + one fem per person where both exist).
+This pushed the old sections 2-5 down to 3-6 (renumbered the h3 emoji
+headers) and all their checkbox ids up by one (c30-2..c30-6 → c30-3..c30-7);
+progress count updated 0/6 → 0/7.
+
+**Bug caught during the renumbering script itself:** the id-bump regex
+(`c30-N → c30-(N+1)` for N in 2..6) was run over the *whole* class30 block
+*after* the new section (with its own hardcoded `id="c30-2"`) had already
+been spliced in — so the regex matched and bumped that brand-new id too,
+producing a `c30-3` duplicate instead of leaving it at `c30-2`. Caught
+immediately by the standard checkbox-uniqueness check (part of the regular
+verification suite), fixed by hand, re-verified clean. **Lesson: when a
+script inserts new content and then does a renumbering pass over the same
+region, the newly-inserted content isn't exempt from the renumbering
+regex just because it "looks" already correct — scope the regex to the
+pre-existing content only, or do the renumbering before insertion, not
+after.**
+
+Full verification re-run clean after the fix: JS syntax, div balance (814
+open/close), 202 checkbox ids all unique, 148/148 tables `.table-wrap`d,
+all 31 copy buttons parse, nav order matches `classOrder`, no horizontal
+overflow at 390px, screenshot of Class 30 visually confirmed.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
