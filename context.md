@@ -1306,6 +1306,44 @@ byte-for-byte equivalent in content to the old Class 31, just renumbered.
 README.md curriculum list updated (29. La Règle, 30. Cas Particuliers,
 31. Exemples &amp; Erreurs, 32. Pratique Intensive).
 
+## Class 34 added 2026-10-02: "L'Imparfait" (A2, from a practice worksheet)
+
+Source: a pasted worksheet ("EXERCICES AVEC L'IMPARFAIT") with the
+formation reminder (nous-stem + -ais/-ais/-ait/-ions/-iez/-aient) and 10
+fill-in-the-blank sentences. User said fuller l'imparfait class notes/a
+transcript are coming later the same day — confirmed via AskUserQuestion
+to build this worksheet into its own chapter now rather than wait, since
+"something today" isn't a committed timeline and this worksheet alone was
+already enough for a first-pass chapter.
+
+Built as: 1️⃣ formation rule (nous-stem minus -ons + endings, modeled on
+manger, including the mangeons→mangions e-drop spelling quirk), 2️⃣ the
+one irregular stem (être → ét-, explicitly contrasted with other
+present-irregular verbs like faire/avoir/prendre/vouloir/aller which
+still follow the normal nous-minus-ons rule for imparfait), 3️⃣ all 10
+worksheet sentences solved as worked examples, categorized into the three
+use-cases (habitual, description/state, ongoing-background). Sentences 7
+and 8 mix imparfait + passé composé in the same sentence (ongoing action
+interrupted by a single action) — flagged with a callout note rather than
+taught in full, since a dedicated imparfait-vs-passé-composé contrast
+class was explicitly described as coming later; this chapter only
+previews it so the worksheet's own answers make sense.
+
+**When the fuller imparfait transcript arrives, expect it to either**
+(a) extend this chapter with more formation/usage detail, or (b) become
+a separate Class 35 for the full imparfait-vs-passé-composé contrast —
+decide based on how much new material it actually contains, same as the
+Class 30 split precedent (don't just assume one new class by default).
+
+`classOrder` → `[...,33,34]`. Nav: "Pratique Intensive" → "L'Imparfait".
+CSS checklist-label selector list extended to class34. Full verification
+clean: JS syntax, div balance (839 open/close), 212 checkbox ids unique,
+150/150 tables `.table-wrap`d, all 34 copy buttons parse, nav order
+matches `classOrder`, no substring mismatches, no overflow at 390px,
+screenshot visually confirmed.
+
+README.md curriculum list updated (33. L'Imparfait).
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:

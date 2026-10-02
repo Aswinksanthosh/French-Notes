@@ -61,6 +61,7 @@ tap, and self-test progress with per-topic checklists.
 30. Cas Particuliers (Passé composé avec être — mixed groups, pronunciation exception, full 16-verb reference)
 31. Exemples & Erreurs (Passé composé avec être — worked examples and common mistakes)
 32. Pratique Intensive (Passé composé — large avoir/être practice bank)
+33. L'Imparfait (formation, the être exception, and worked worksheet examples)
 
 *Remaining A2 classes will be updated weekly.*
 
