@@ -57,8 +57,10 @@ tap, and self-test progress with per-topic checklists.
 26. Expressions (Prepositions II — cause, purpose, fixed expressions)
 27. Passé Composé (Le Passé Récent & Le Passé Composé)
 28. Group 3 (55 irregular verbs, grouped by family)
-29. L'Accord (Passé composé — être-verb agreement, in full detail)
-30. Pratique Intensive (Passé composé — large avoir/être practice bank)
+29. La Règle (Passé composé avec être — the core agreement rule)
+30. Cas Particuliers (Passé composé avec être — mixed groups, pronunciation exception, full 16-verb reference)
+31. Exemples & Erreurs (Passé composé avec être — worked examples and common mistakes)
+32. Pratique Intensive (Passé composé — large avoir/être practice bank)
 
 *Remaining A2 classes will be updated weekly.*
 
