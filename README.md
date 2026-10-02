@@ -28,40 +28,46 @@ tap, and self-test progress with per-topic checklists.
 
 1. Alphabet
 2. Numbers
-3. Greetings
-4. Calendar
-5. Classroom
-6. Endings
-7. Articles
-8. Gender
-9. Hobbies
-10. Family
-11. Professions
-12. Reflexive
-13. Future
-14. Demonstratives
-15. Negation
-16. Colors
-17. Meals
-18. Listening
-19. Irregular
-20. Conditional
-21. Description
+3. Les Groupes de Verbes (how to identify which of the 3 verb groups a verb belongs to)
+4. Verbes Essentiels (être, avoir, aller)
+5. Verbes -ER (regular 1st-group verbs, present tense)
+6. Verbes -IR (regular 2nd-group verbs, present tense)
+7. Verbes -RE (regular 3rd-group verbs, present tense)
+8. Verbes Pronominaux (reflexive verb mechanism)
+9. Greetings
+10. Calendar
+11. Classroom
+12. Endings
+13. Articles
+14. Gender
+15. Hobbies
+16. Family
+17. Professions
+18. Reflexive
+19. Future
+20. Demonstratives
+21. Negation
+22. Colors
+23. Meals
+24. Listening
+25. Irregular
+26. Conditional
+27. Description
 
 **A2**
 
-22. Adjectives
-23. Adverbs
-24. Prepositions
-25. Prepositions + Future
-26. Expressions (Prepositions II — cause, purpose, fixed expressions)
-27. Passé Composé (Le Passé Récent & Le Passé Composé)
-28. Group 3 (55 irregular verbs, grouped by family)
-29. La Règle (Passé composé avec être — the core agreement rule)
-30. Cas Particuliers (Passé composé avec être — mixed groups, pronunciation exception, full 16-verb reference)
-31. Exemples & Erreurs (Passé composé avec être — worked examples and common mistakes)
-32. Pratique Intensive (Passé composé — large avoir/être practice bank)
-33. L'Imparfait (formation, the être exception, and worked worksheet examples)
+28. Adjectives
+29. Adverbs
+30. Prepositions
+31. Prepositions + Future
+32. Expressions (Prepositions II — cause, purpose, fixed expressions)
+33. Passé Composé (Le Passé Récent & Le Passé Composé)
+34. Group 3 (55 irregular verbs, grouped by family)
+35. La Règle (Passé composé avec être — the core agreement rule)
+36. Cas Particuliers (Passé composé avec être — mixed groups, pronunciation exception, full 16-verb reference)
+37. Exemples & Erreurs (Passé composé avec être — worked examples and common mistakes)
+38. Pratique Intensive (Passé composé — large avoir/être practice bank)
+39. L'Imparfait (formation, the être exception, and worked worksheet examples)
 
 *Remaining A2 classes will be updated weekly.*
 

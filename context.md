@@ -1344,6 +1344,99 @@ screenshot visually confirmed.
 
 README.md curriculum list updated (33. L'Imparfait).
 
+## Major restructuring 2026-10-02: dedicated verb-conjugation arc added,
+scattered/wrong verb content cleaned up
+
+User feedback (after a live-chat teaching attempt on regular -ER verbs):
+"Don't teach me here. Update the site... bad arrangement and lack of
+knowledge will hurt my studies" — they study entirely from the site
+notes, for the TCF exam. Confirmed via AskUserQuestion: full reorg, not
+just a new reference chapter.
+
+**Audit first** (delegated to an Explore agent, read-only): verb
+conjugation teaching was scattered across class3 (être/avoir), class4
+(aller, s'appeler), class11 (-ER rule, one section among many unrelated
+topics), class12 (-GER spelling quirk + a genuinely good, complete
+reflexive-verbs lesson), class16 (a verb-group table that was flatly
+WRONG — claimed all -ir verbs are 2nd group, which is false: partir,
+venir, ouvrir etc. are irregular 3rd group), class18 (devoir), class19
+(-IR group-2 rule + vendre/mettre). Real gaps: -RE verbs never got a
+generalized rule (only vendre as a single example), and no chapter
+anywhere taught the correct way to classify an unfamiliar verb.
+
+**Judgment call before touching anything:** read every target chapter in
+full first. Several (class12 especially) turned out to be well-built,
+complete lessons in their own right (daily-routine vocab, natural
+conversation, mistakes table) — not just "scattered junk." Decided
+against gutting/deleting any existing chapter wholesale, since that would
+destroy checklist progress the user may have already completed and throw
+away genuinely good content. Instead: build a new, correctly-sequenced,
+authoritative verb arc, and do narrow, surgical removals in old chapters
+— only the specific sections that were pure duplicates or factually
+wrong — replaced with a one-line pointer to the new chapter. Chapters
+that only reference verbs in passing (class3, class4, class14's vocab
+list, class18's devoir) were left untouched entirely.
+
+**6 new chapters added, ids 35-40**, positioned EARLY in `classOrder`
+(right after class2, before class3 Greetings) so a learner hits verb
+foundations before any content that assumes them — but given new
+(non-contiguous) ids, so no existing chapter's id/checkbox ids changed:
+- **35 Les Groupes de Verbes** — the corrected 3-group classification,
+  centered on the "-issant test" for telling true 2nd-group -ir verbs
+  from irregular 3rd-group ones (partir/venir/ouvrir), plus the aller
+  exception.
+- **36 Être, Avoir, Aller** — the 3 essential irregular verbs, with
+  avoir's full idiom list (age, hunger, fear, luck...) flagged as the
+  #1 English-to-French translation trap.
+- **37 Verbes -ER** — the rule, the silent-endings trick (je/tu/il/ils
+  sound identical), and all three spelling quirks (-GER, -CER,
+  -ELER/-ETER doubling) in one place for the first time.
+- **38 Verbes -IR** — finir/choisir + more practice verbs.
+- **39 Verbes -RE** — NEW generalized rule (closes the real gap),
+  vendre + 4 more regular verbs, explicit warning that mettre/prendre
+  are irregular despite the -re ending.
+- **40 Verbes Pronominaux — Le Mécanisme** — just the reflexive-pronoun
+  mechanism (s'appeler, laver vs se laver), explicitly deferring to
+  class12 for the fuller daily-routine vocabulary.
+
+**Surgical edits to 4 existing chapters** (not deleted, not renumbered):
+class11 (removed the -ER rule section + 2 checklist items, now redundant
+with class37), class12 (removed the -GER spelling section + 1 checklist
+item, kept everything else), class16 (replaced the WRONG verb-group table
+with a corrected summary + pointer to class35), class19 (removed the -IR
+group-2 section + 2 checklist items, kept vendre/mettre and the
+present-participle rule). Each chapter's progress-count, topic line, and
+Gemini-prompt text were trimmed to match — including renumbering the
+prompt's own "TEACH ME SLOWLY" / "STUDY OBJECTIVES" lists where removing
+an item left a numbering gap (e.g. 1,2,3,6,7 → 1,2,3,4,5).
+
+**2 new escaping-trap bugs caught and fixed** (same family as every prior
+incident this project): body37 and body39 (new chapters) each had one
+plain English contraction ("it's", "don't") typed directly into the
+prompt-building Python script instead of through the established `AP`
+token, breaking those two chapters' Copy-for-Gemini buttons. Caught by
+the standard headless button-parsing check, fixed by locating the exact
+raw-apostrophe offsets programmatically (not by eye) and patching them
+directly in the live file. Also caught a nav-label substring violation
+(classes 37/38/39 initially labeled "Verbes -ER" etc., which isn't a
+literal substring of "verbes du 1er groupe (-er)") — fixed to "Groupe
+(-ER)" etc.
+
+Full verification suite clean at the end: JS syntax, div balance (903
+open/close), 236 checkbox ids all unique, 163/163 tables `.table-wrap`d,
+all 40 copy buttons parse, nav order matches `classOrder`, no substring
+mismatches, no horizontal overflow at 390px, screenshots of all 6 new
+chapters plus all 4 edited chapters visually confirmed.
+
+README.md curriculum list fully renumbered to reflect the new A1 verb
+arc (display items 3-8) and the resulting A2 shift (+6 to every A2 item).
+
+**Deliberately deferred, not done this round:** future-tense content
+(futur proche/simple/conditionnel) is ALSO scattered across class4,
+class13, class20, and class26 — flagged by the same audit but out of
+scope here, since the user's stated pain point was specifically present-
+tense regular/irregular verbs, not future tense. Revisit if asked.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
