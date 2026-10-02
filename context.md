@@ -1251,6 +1251,61 @@ open/close), 202 checkbox ids all unique, 148/148 tables `.table-wrap`d,
 all 31 copy buttons parse, nav order matches `classOrder`, no horizontal
 overflow at 390px, screenshot of Class 30 visually confirmed.
 
+## Class 30 split into three 2026-10-02: too dense after the person-by-
+person addition
+
+User feedback: "Its hard to learn. Lets split them up into 3 chapters."
+Confirmed via AskUserQuestion that scope was Class 30 alone (which had
+grown to 7 checklist items across 6 sections after the person-by-person
+table was added) — Class 31 (Pratique Intensive, the practice bank) was
+explicitly left untouched content-wise.
+
+Split by teaching function, each assuming the previous one:
+- **Class 30** "La Règle de Base": the four agreement forms + the
+  person-by-person table. Just the rule, two ways of looking at it.
+- **Class 31** "Cas Particuliers &amp; Référence": mixed groups/named
+  subjects, the mort/morte pronunciation exception, and the full 16-verb
+  agreement table — the edge cases and the reference material built on
+  the rule from Class 30.
+- **Class 32** "Exemples &amp; Erreurs": the live-class worked examples
+  (given their own checklist item this time, since previously they had
+  none of their own) and the common-mistakes table — pure application.
+
+Since Class 31 (Pratique Intensive) had to move to make room, it was
+renumbered to **Class 33**, content unchanged. This time the renumbering
+was done differently from the person-by-person incident: the old
+class31-content block was extracted and renumbered (`id`, `data-lesson`,
+`c31-N` → `c33-N`, `gemini-skill-class31` → `gemini-skill-class33`) in
+total isolation *before* any new class30/31/32 content existed in the
+same string — avoiding the exact double-bump collision bug from the
+previous session. Verified zero leftover `c31-`/`class31` references in
+the isolated block before splicing it back in.
+
+Also discovered while re-deriving the checkbox-count semantics for the
+split (not a bug, just a thing to remember): the hardcoded "X / Y done"
+text and 0%-width progress bar baked into each chapter's initial HTML
+**do not need to be exactly right** — an IIFE near the bottom of the
+`<script>` block runs `loadChecklistState` + `updateProgress` for every
+lesson on every page load, which recomputes `total`/`checked` live from
+the DOM and overwrites whatever was hardcoded. Confirmed empirically
+(checked a box, reloaded, count stayed correct). This means a classic
+off-by-one in the authored "0 / N done" text is cosmetic only, not a
+functional bug — useful to know before spending effort getting it exactly
+right during a future split/merge.
+
+`classOrder` is now `[...,29,30,31,32,33]`. Nav dropdown: "Group 3" →
+"La Règle" → "Cas Particuliers" → "Exemples &amp; Erreurs" → "Pratique
+Intensive". CSS checklist-label selector list extended to class32/33.
+Full verification suite clean: JS syntax, div balance (826 open/close),
+207 checkbox ids all unique, 148/148 tables `.table-wrap`d, all 33 copy
+buttons parse, nav order matches `classOrder`, no substring mismatches,
+no horizontal overflow at 390px, all four chapters (30/31/32/33)
+screenshotted and visually confirmed — Class 33 in particular checked
+byte-for-byte equivalent in content to the old Class 31, just renumbered.
+
+README.md curriculum list updated (29. La Règle, 30. Cas Particuliers,
+31. Exemples &amp; Erreurs, 32. Pratique Intensive).
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
