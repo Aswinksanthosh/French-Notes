@@ -1437,6 +1437,78 @@ class13, class20, and class26 — flagged by the same audit but out of
 scope here, since the user's stated pain point was specifically present-
 tense regular/irregular verbs, not future tense. Revisit if asked.
 
+## Speaking-pass pronunciation echo added 2026-10-06 (site-wide)
+
+User: during the spoken-answer (2nd) pass of the exam, if Gemini just
+says "Correct!" the user can't tell whether their pronunciation was
+actually right or Gemini's speech-to-text silently "corrected" what it
+heard into what it expected. Asked for Gemini to always say back what it
+heard before confirming, so mispronunciations surface even on an answer
+that's otherwise correct.
+
+Added a new bullet (`🎤 DURING THE SPOKEN-ANSWER PASS`) right after the
+existing `🏁 RUN THE EXAM TWICE` bullet in the shared Gemini-prompt
+header, site-wide (39 occurrences, same scripted find-replace pattern as
+the exam-rule strengthening). Instructs Gemini to say "Correct! You
+said: ___" (echoing exactly what it heard) before confirming on every
+correct spoken answer, and to flag a mismatch as a pronunciation note
+separate from the grammar/content verdict. Verified clean: JS syntax,
+div balance (903), 236 checkbox ids unique, nav/substring checks, all 40
+copy buttons parse.
+
+## Full-site quality/order audit 2026-10-02/06 — findings not yet acted on
+
+Ran a second Explore-agent audit (beyond the verb-conjugation one)
+covering every remaining A1/A2 chapter's content quality, ordering, and
+overall French-grammar coverage vs. TCF needs. Reported to the user in
+chat; NOT yet implemented — flagging here so a future session doesn't
+have to re-derive it. User was asked "want me to build any of this?" and
+has not yet answered.
+
+**Quality/order issues found, not fixed:**
+- class6 ("Endings") is actually the noun-gender-by-ending rules chapter
+  — confusingly titled; class8 ("Gender") teaches something different
+  (gender vocab, nationality adjectives, liaison). Not adjacent either.
+- Future tense fully re-taught 3x with no cross-references: class13
+  ("Future", -ER only), class20 ("Conditional", all groups + irregular
+  stems), class26 (A2, re-teaches futur proche AND simple from scratch).
+  This is the exact present-tense-arc problem already fixed by classes
+  35-40 — same remedy pattern would apply if tackled.
+- class15 (Negation): topic line promises an "ER verb quiz and DELF A1
+  exam format overview" that doesn't exist in the chapter body — stale
+  leftover. Also has an orphaned homework block telling the student to
+  revise numbers that were moved to Chapter 2 in an earlier session.
+- A2 chapters 27 onward (Passé Composé through L'Imparfait) have zero
+  natural-dialogue/real-world-example content — just vocab/rule tables,
+  unlike every A1 chapter and early A2 chapters (22/23/25/26).
+- class18: "Passé Composé (intro)" and "Question formation (inversion)"
+  are each just one unexplained example sentence, no table/audio/
+  mistakes-table, and no checklist item of their own — breaks the site's
+  own "every topic gets its own checklist item" pattern. This is also
+  the ONLY place inversion questions are covered anywhere on the site.
+- Minor: one heading-style inconsistency in class26 (h3 ALL-CAPS instead
+  of the standard h4 "❌ Common Mistakes to Avoid"); a few harmless
+  "revise ER verbs" homework leftovers now superseded by class37;
+  `CLASS-NAMES.md` (repo doc, not learner-facing) is stale.
+
+**Grammar topics confirmed entirely MISSING from the whole site** (none
+found anywhere, verified by full-file search): direct/indirect object
+pronouns (le/la/les, lui/leur), y and en, relative pronouns (qui/que/
+dont/où), comparatives/superlatives, the imperative mood, the
+subjunctive mood, si-clauses (si + imparfait + conditional), passive
+voice, plus-que-parfait, double-pronoun sentences. Question formation
+via inversion exists but is extremely thin (see class18 above); via
+intonation doesn't exist as a taught topic (though used implicitly
+everywhere); est-ce que is used constantly in examples but never taught
+as its own method.
+
+**Recommended priority if/when this gets built** (per the audit, given
+TCF relevance and what's already well covered): (1) object pronouns,
+(2) relative pronouns, (3) imperative, (4) si-clauses (natural next step
+since the conditional tense itself is already built in class20), (5)
+subjunctive. Comparatives/superlatives and y/en next; passive voice and
+plus-que-parfait lowest priority (more B2-leaning).
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
