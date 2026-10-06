@@ -233,7 +233,9 @@
   .checklist[data-lesson="class31"] label,
   .checklist[data-lesson="class32"] label,
   .checklist[data-lesson="class33"] label,
-  .checklist[data-lesson="class34"] label {
+  .checklist[data-lesson="class34"] label,
+  .checklist[data-lesson="class41"] label,
+  .checklist[data-lesson="class42"] label {
     color: #1565c0;
     font-weight: 600;
   }
@@ -248,7 +250,9 @@
   .checklist[data-lesson="class31"] input:checked + label,
   .checklist[data-lesson="class32"] input:checked + label,
   .checklist[data-lesson="class33"] input:checked + label,
-  .checklist[data-lesson="class34"] input:checked + label {
+  .checklist[data-lesson="class34"] input:checked + label,
+  .checklist[data-lesson="class41"] input:checked + label,
+  .checklist[data-lesson="class42"] input:checked + label {
     color: #999;
     font-weight: 400;
   }
@@ -663,6 +667,8 @@
       <a href="#" onclick="goToClass(32)">Exemples &amp; Erreurs</a>
       <a href="#" onclick="goToClass(33)">Pratique Intensive</a>
       <a href="#" onclick="goToClass(34)">L'Imparfait</a>
+      <a href="#" onclick="goToClass(41)">Narrer au Passé</a>
+      <a href="#" onclick="goToClass(42)">Le COD</a>
     </div>
   </div>
 </nav>
@@ -8266,6 +8272,201 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 41: NARRER AU PASSÉ ===================== -->
+<div class="lesson-card" id="class41">
+  <div class="lesson-header">
+    <h2>Narrer au Passé : Passé Composé et Imparfait Ensemble <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class is about NARRATING a story in the past - combining passé composé and imparfait together in the same account, which is how French speakers actually tell stories. This builds directly on the separate passé composé classes and the l\'imparfait class - this one is about using both together fluently, plus nine new verbs/expressions that came up constantly while narrating.\n\nTHE CORE PATTERN: passé composé moves the story forward (the events that happened, one after another). Imparfait paints the background (descriptions, ongoing states, what someone was in the middle of doing, emotions). A story is almost always a mix of both - the imparfait sets the scene, the passé composé says what happened in it.\n\nA SPECIFIC PATTERN THAT CAME UP CONSTANTLY: reporting what someone said or was doing, using &quot;a dit que + imparfait&quot; or similar reporting verbs (a demandé que, a expliqué pourquoi, etc.) plus imparfait for the ongoing action being reported. Example from class: &quot;La mère a dit qu\'elle faisait un gâteau à l\'ananas pour Alex&quot; (the mother said she was making a pineapple cake for Alex) - &quot;a dit&quot; is passé composé (the single act of saying), &quot;faisait&quot; is imparfait (the ongoing action being described). Compare to a simple completed action, which stays in passé composé alone: &quot;Elle a entendu un bruit&quot; (she heard a noise) - no imparfait needed, it\'s just one thing that happened.\n\nNEW VOCABULARY FOR NARRATION: entendre (to hear) - j\'entends, passé composé j\'ai entendu. être inquiet/inquiète (to be worried) - il est inquiet, elle est inquiète, imparfait il était inquiet. tomber (to fall) - il tombe, passé composé il est tombé (être-verb). dire (to say/tell) - il dit, passé composé il a dit. chercher (to look for) - il cherche, imparfait il cherchait. vouloir (to want) - il veut, imparfait il voulait. se souvenir (to remember) - il se souvient, passé composé il s\'est souvenu. avoir confiance en quelqu\'un (to trust someone) - j\'ai confiance en toi. laisser (to leave something/let) - il laisse, passé composé il a laissé.\n\nWORKED EXAMPLES FROM THE CLASS VIDEO STORY (a grandmother making a pineapple cake for her grandson Alex, who is caught taking €20 from her bag) - walk through each sentence identifying which verb is passé composé (an event) and which is imparfait (background/state), and why: &quot;La mère a dit qu\'elle faisait un gâteau à l\'ananas pour Alex, elle a entendu un bruit&quot;. &quot;Le bruit était très fort&quot; (description, imparfait). &quot;Il est tombé par terre&quot; (event, passé composé, être-verb). &quot;Mamie était toujours inquiète&quot; (ongoing emotional state, imparfait). &quot;Le fils a dit à mamie de ne pas s\'inquiéter&quot; (event). &quot;Il a dit que c\'était juste un cahier qui est tombé&quot; (reported description + event together). &quot;Mamie a demandé ce qu\'Alex cherchait&quot; (asked + was looking for - the reporting pattern again). &quot;Alex a expliqué pourquoi il fouillait le sac de mamie&quot; (explained + was rummaging - same pattern). &quot;Alex voulait acheter quelque chose&quot; (ongoing desire, imparfait). &quot;Sa grand-mère voulait qu\'il remette les vingt euros sur la table&quot; (wanted him to put the money back - note this uses the subjunctive &quot;remette&quot; after vouloir que, which is its own grammar point for a future class - just notice the pattern for now). &quot;Il s\'est souvenu que sa mamie avait confiance en lui&quot; (remembered + an ongoing trust, imparfait). &quot;Il a laissé le sac&quot; (event). &quot;Elle est allée dans sa chambre pour prendre ses lunettes&quot; (event, être-verb). &quot;Il pensait à prendre l\'argent, mais...&quot; (an ongoing internal consideration, imparfait, cut off by what happens next).\n\nA TCF SPEAKING TIP mentioned in class (to be developed further in a future class): when narrating out loud, use logical connectors and avoid repeating words/ideas you\'ve already said - it keeps your story moving and is specifically something TCF/TEF speaking tasks reward.\n\nTeach me the core pattern first with the video story as the model, then give me a new short story of your own and have me narrate it myself, choosing passé composé or imparfait for each verb and explaining why each time. Quiz me on the 9 new vocabulary items too. When I can narrate a story mixing both tenses correctly and explain my choices, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Narrating a story by combining passé composé (events) and imparfait (background/description) together — the reported-speech "a dit que + imparfait" pattern, 9 new narration verbs, and a worked story from class.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter is about narrating a story by combining passé composé and imparfait together, the way French speakers actually tell stories. Passé composé moves the story forward with events. Imparfait paints the background: descriptions, ongoing states, emotions. It also covers nine new verbs that came up while narrating, and walks through a full worked story from class." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class41">0 / 4 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class41"></div></div>
+
+  <div class="note">
+  This builds on the earlier passé composé classes and <span class="fr">L'Imparfait</span> — it assumes you already know how to form both tenses. This class is about using them <strong>together</strong>, the way a real story is actually told.
+  </div>
+
+  <h3>1️⃣ The Core Pattern: Events vs Background</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Passé composé moves the story forward - the events that happened, one after another. Imparfait paints the background - descriptions, ongoing states, what someone was in the middle of doing, emotions. A story is almost always a mix of both: the imparfait sets the scene, the passé composé says what happened in it."
+      data-lang="en-US">
+      🎧 Passé Composé = Events, Imparfait = Background
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>Passé composé</strong> moves the story forward. <strong>Imparfait</strong> paints the background. Real narration mixes both.
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    <strong>A pattern that comes up constantly:</strong> reporting what someone said or was doing — <span class="fr">a dit que</span> / <span class="fr">a demandé que</span> / <span class="fr">a expliqué pourquoi</span> + <strong>imparfait</strong> for the ongoing action being reported.
+  </div>
+  <ul>
+    <li><span class="fr">La mère a dit qu'elle faisait un gâteau à l'ananas pour Alex.</span> (The mother said she was making a pineapple cake for Alex — "a dit" = the single act of saying, passé composé; "faisait" = the ongoing action being described, imparfait)</li>
+    <li><span class="fr">Elle a entendu un bruit.</span> (She heard a noise — just one thing that happened, passé composé alone, no imparfait needed)</li>
+  </ul>
+
+  <ul class="checklist" data-lesson="class41" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c41-1"><label for="c41-1"><strong>CORE PATTERN:</strong> I can tell events (passé composé) apart from background/description (imparfait), including the "a dit que + imparfait" reporting pattern</label></li>
+  </ul>
+
+  <h3>2️⃣ New Vocabulary for Narration</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>French</th><th>English</th><th>Passé composé / imparfait example</th></tr>
+    <tr><td><span class="fr">entendre</span></td><td>to hear</td><td><span class="fr">j'ai entendu</span></td></tr>
+    <tr><td><span class="fr">être inquiet / inquiète</span></td><td>to be worried</td><td><span class="fr">il était inquiet</span></td></tr>
+    <tr><td><span class="fr">tomber</span></td><td>to fall</td><td><span class="fr">il est tombé</span> (être-verb)</td></tr>
+    <tr><td><span class="fr">dire</span></td><td>to say / tell</td><td><span class="fr">il a dit</span></td></tr>
+    <tr><td><span class="fr">chercher</span></td><td>to look for</td><td><span class="fr">il cherchait</span></td></tr>
+    <tr><td><span class="fr">vouloir</span></td><td>to want</td><td><span class="fr">il voulait</span></td></tr>
+    <tr><td><span class="fr">se souvenir</span></td><td>to remember</td><td><span class="fr">il s'est souvenu</span></td></tr>
+    <tr><td><span class="fr">avoir confiance en quelqu'un</span></td><td>to trust someone</td><td><span class="fr">j'ai confiance en toi</span></td></tr>
+    <tr><td><span class="fr">laisser</span></td><td>to leave (something) / let</td><td><span class="fr">il a laissé</span></td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class41" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c41-2"><label for="c41-2"><strong>VOCABULARY:</strong> I know all 9 new narration verbs/expressions and their tense forms</label></li>
+  </ul>
+
+  <h3>3️⃣ 💬 Worked Story From Class</h3>
+  <p>A grandmother is making a pineapple cake for her grandson Alex, who gets caught taking €20 from her bag. Each sentence below is tagged with why it's passé composé or imparfait:</p>
+  <ul>
+    <li><span class="fr">Le bruit était très fort.</span> <em>(description — imparfait)</em></li>
+    <li><span class="fr">Il est tombé par terre.</span> <em>(event — passé composé, être-verb)</em></li>
+    <li><span class="fr">Mamie était toujours inquiète.</span> <em>(ongoing emotional state — imparfait)</em></li>
+    <li><span class="fr">Le fils a dit à mamie de ne pas s'inquiéter.</span> <em>(event — passé composé)</em></li>
+    <li><span class="fr">Il a dit que c'était juste un cahier qui est tombé.</span> <em>(reported description + event, together)</em></li>
+    <li><span class="fr">Mamie a demandé ce qu'Alex cherchait.</span> <em>(asked + was looking for — the reporting pattern)</em></li>
+    <li><span class="fr">Alex a expliqué pourquoi il fouillait le sac de mamie.</span> <em>(explained + was rummaging — same pattern)</em></li>
+    <li><span class="fr">Alex voulait acheter quelque chose.</span> <em>(ongoing desire — imparfait)</em></li>
+    <li><span class="fr">Il s'est souvenu que sa mamie avait confiance en lui.</span> <em>(remembered + an ongoing trust — imparfait)</em></li>
+    <li><span class="fr">Il a laissé le sac.</span> <em>(event — passé composé)</em></li>
+    <li><span class="fr">Elle est allée dans sa chambre pour prendre ses lunettes.</span> <em>(event — passé composé, être-verb)</em></li>
+    <li><span class="fr">Il pensait à prendre l'argent, mais...</span> <em>(ongoing internal consideration, cut off by what happens next — imparfait)</em></li>
+  </ul>
+
+  <ul class="checklist" data-lesson="class41" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c41-3"><label for="c41-3"><strong>WORKED STORY:</strong> I can explain the tense choice behind every sentence in this story</label></li>
+  </ul>
+
+  <h3>4️⃣ TCF Speaking Tip: Avoid Repetition</h3>
+  <div class="note">
+  Mentioned in class, to be developed further later: when narrating out loud, use logical connectors and avoid repeating words/ideas you've already said — it keeps your story moving and is specifically something TCF/TEF speaking tasks reward.
+  </div>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class41">
+    <li><input type="checkbox" id="c41-4"><label for="c41-4"><strong>MASTERY:</strong> I can narrate my own short story mixing passé composé and imparfait correctly, without hesitating</label></li>
+    <li><input type="checkbox" id="gemini-skill-class41"><label for="gemini-skill-class41"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 42: LE COD — COMPLÉMENT D'OBJET DIRECT ===================== -->
+<div class="lesson-card" id="class42">
+  <div class="lesson-header">
+    <h2>Le COD : Complément d'Objet Direct <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class introduces the COD - complément d\'objet direct (direct object complement) - a sentence-structure concept, not a tense. It\'s the first step toward eventually using object pronouns like le/la/les (which replace a COD) - that\'s a future class; this one is just about correctly IDENTIFYING the COD in a sentence. COI (complément d\'objet indirect) is introduced only briefly as a contrast and will get its own full class later.\n\nWHAT A COD IS: in a sentence with the basic shape subject + verb + object, the COD is the object - the part that directly receives the action of the verb. Example: she reads a book - &quot;a book&quot; is what\'s being read, it receives the action directly.\n\nHOW TO IDENTIFY A COD - three rules: (1) it answers the question &quot;qui ?&quot; (who?) or &quot;quoi ?&quot; (what?) asked right after the verb. (2) it has NO preposition in front of it. (3) it generally comes directly after the verb. If you can ask &quot;verb + qui ?&quot; or &quot;verb + quoi ?&quot; and get a sensible answer with no preposition, that answer is the COD.\n\nWORKED EXAMPLES (COD identified): &quot;Elle lit un livre&quot; - elle lit quoi ? un livre -> COD is un livre (she reads A BOOK). &quot;Nous parlons français&quot; - nous parlons quoi ? français -> COD is français (we speak FRENCH). &quot;Il regarde son frère&quot; - il regarde qui ? son frère -> COD is son frère (he looks at HIS BROTHER). &quot;Tu bois du jus&quot; - tu bois quoi ? du jus -> COD is du jus (you drink SOME JUICE). &quot;Elle regarde le miroir&quot; - elle regarde quoi ? le miroir -> COD is le miroir (she looks at THE MIRROR).\n\nNOT A COD - the COI (complément d\'objet indirect) and other non-COD complements: if the complement is introduced by a PREPOSITION, it is never a COD, no matter how closely related it looks. The giveaway questions for COI are: à qui ?, de qui ?, à quoi ?, de quoi ?, avec qui ?, pour qui ? (all have a preposition baked into the question itself). Examples: &quot;Il parle avec son ami&quot; - il parle avec qui ? -> COI (avec = preposition), NOT a COD. &quot;Nous parlons de son père&quot; - nous parlons de qui ? -> COI (de = preposition), NOT a COD. &quot;Ils sont dans la classe&quot; - this has NO COD at all - &quot;dans la classe&quot; is a place/preposition phrase, not an object being acted on.\n\nTeach me the three identification rules first, then walk through the worked examples having me ask the qui/quoi question myself before I see the answer. Then give me new sentences (some with a real COD, some with a COI instead, some with no COD at all like the classroom example) and have me say which is which and why, using the qui/quoi/preposition test every time. When I can correctly spot a COD and tell it apart from a COI or no-object sentence, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Identifying the complément d'objet direct (COD) — the part of a sentence that directly receives the verb's action — and telling it apart from the COI (indirect object, introduced by a preposition).</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter introduces the COD, the direct object complement - the part of a sentence that directly receives the verb's action. It answers the question who or what, asked right after the verb, with no preposition. It also contrasts this with the COI, the indirect object, which always has a preposition like à qui, de qui, or avec qui." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class42">0 / 3 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class42"></div></div>
+
+  <div class="note">
+  This is a sentence-structure concept, not a tense. It's the first step toward eventually using object pronouns like <span class="fr">le/la/les</span> (which replace a COD) — that's a future class. This one is just about correctly <strong>identifying</strong> the COD. COI gets its own full class later.
+  </div>
+
+  <h3>1️⃣ What a COD Is</h3>
+  <p>In a sentence with the basic shape <strong>subject + verb + object</strong>, the COD is the object — the part that directly receives the action of the verb.</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>French</th><th>Literal receiver of the action</th></tr>
+    <tr><td><span class="fr">Elle lit un livre.</span></td><td>un livre — the book is what's being read</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class42" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c42-1"><label for="c42-1"><strong>WHAT A COD IS:</strong> I understand the COD is the part of the sentence that directly receives the verb's action</label></li>
+  </ul>
+
+  <h3>2️⃣ How to Identify a COD — 3 Rules</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Three rules for identifying a COD. First, it answers the question qui, who, or quoi, what, asked right after the verb. Second, it has no preposition in front of it. Third, it generally comes directly after the verb. If you can ask verb plus qui, or verb plus quoi, and get a sensible answer with no preposition, that answer is the COD."
+      data-lang="en-US">
+      🎧 The 3 Identification Rules
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <ol style="margin: 8px 0;">
+          <li>Answers <span class="fr">qui ?</span> (who?) or <span class="fr">quoi ?</span> (what?) right after the verb</li>
+          <li>Has NO preposition in front of it</li>
+          <li>Generally comes directly after the verb</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <p><strong>Worked examples</strong> — ask "verb + qui/quoi?" and the answer is the COD:</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Sentence</th><th>Question</th><th>COD</th></tr>
+    <tr><td><span class="fr">Elle lit un livre.</span></td><td>Elle lit quoi ?</td><td><span class="fr">un livre</span></td></tr>
+    <tr><td><span class="fr">Nous parlons français.</span></td><td>Nous parlons quoi ?</td><td><span class="fr">français</span></td></tr>
+    <tr><td><span class="fr">Il regarde son frère.</span></td><td>Il regarde qui ?</td><td><span class="fr">son frère</span></td></tr>
+    <tr><td><span class="fr">Tu bois du jus.</span></td><td>Tu bois quoi ?</td><td><span class="fr">du jus</span></td></tr>
+    <tr><td><span class="fr">Elle regarde le miroir.</span></td><td>Elle regarde quoi ?</td><td><span class="fr">le miroir</span></td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class42" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c42-2"><label for="c42-2"><strong>3 RULES:</strong> I can apply the qui/quoi + no-preposition test to find the COD in a sentence</label></li>
+  </ul>
+
+  <h3>3️⃣ NOT a COD — Spotting the COI (and Non-Objects)</h3>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    If the complement is introduced by a <strong>preposition</strong>, it is never a COD — no matter how closely related it looks. Giveaway questions: <span class="fr">à qui ?, de qui ?, à quoi ?, de quoi ?, avec qui ?, pour qui ?</span> — all have a preposition baked in, which means COI, not COD.
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Sentence</th><th>Question</th><th>Verdict</th></tr>
+    <tr><td><span class="fr">Il parle avec son ami.</span></td><td>Il parle avec qui ?</td><td>COI (avec = preposition), NOT a COD</td></tr>
+    <tr><td><span class="fr">Nous parlons de son père.</span></td><td>Nous parlons de qui ?</td><td>COI (de = preposition), NOT a COD</td></tr>
+    <tr><td><span class="fr">Ils sont dans la classe.</span></td><td>—</td><td>NO COD at all — "dans la classe" is a place phrase, not an object</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class42" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c42-3"><label for="c42-3"><strong>COI / NO OBJECT:</strong> I can tell a true COD apart from a COI (has a preposition) or a sentence with no object at all</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class42">
+    <li><input type="checkbox" id="gemini-skill-class42"><label for="gemini-skill-class42"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -8420,7 +8621,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34];
+const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion
