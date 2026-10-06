@@ -8,11 +8,29 @@
   "classOrder", "saveChecklistState") ARE that report.
 
   WHAT THIS SITE IS: a single-file French curriculum (index.html only, no
-  build step). 29 lesson cards: A1 = classes 1-21, A2 = classes
-  22,23,25,26,27,28,29 (class 24 was renumbered away and no longer exists -
-  see classOrder array).
+  build step). Class count and ranges change often - don't trust a number
+  stated in prose anywhere (including this comment); check the actual
+  `classOrder` array (search "const classOrder =") and `<nav id="toc">`
+  for ground truth. As of 2026-10-06: 41 lesson cards. A1 = classes
+  1,2,35-40,3-21 (35-40 is the dedicated verb-conjugation arc, positioned
+  early in classOrder/nav despite high ids, so verb foundations come
+  before anything that needs them). A2 = classes 22,23,25-34,41,42 (class
+  24 was renumbered away and no longer exists).
   Built and used ENTIRELY ON A PHONE. Always keep changes mobile-first;
   don't assume a wide viewport when styling or testing.
+
+  CONTENT SUFFICIENCY & ORGANIZATION (standing instruction - full version
+  in context.md under the same heading): when building/updating a chapter
+  from a transcript or pasted notes, don't just transcribe what was given
+  if it falls short. If there's a real content gap that would leave the
+  user unable to use the grammar point, generate the missing explanation
+  yourself (sound French-teaching judgment, matching the site's existing
+  quality/tone - concrete examples, tables, audio explainer, checklist
+  per topic). If the source's own ordering is confusing or just follows a
+  live class's chronological order, reorganize it into the site's
+  established numbered-h3-topic-sections pattern instead of preserving
+  transcript order. This is a standing default for future chapter work,
+  not a one-time retroactive task.
 
   THE PER-CLASS PATTERN (established and expected on every class):
   1. <p class="topic"> line, then a progress bar/counter right after it

@@ -27,19 +27,74 @@ for it that turn — it's the whole point of this file, and it's cheap to do
 right after the work while the details are fresh. Skipping it is what
 caused the need for this file in the first place.
 
+## Standing instruction: generate extra content, and reorganize, when the
+source material isn't enough on its own (added 2026-10-06)
+
+**The user studies from this site exclusively — if a chapter is thin,
+confusing, or poorly ordered, that directly hurts their studying, not
+just the site's polish.** When building or updating ANY chapter from a
+transcript, worksheet, or pasted notes the user provides, don't just
+transcribe what was given if it falls short. Specifically:
+
+- **If the source material has a real content gap** that would leave the
+  user unable to actually use the grammar point — a rule stated but
+  never generalized, a pattern shown for one verb but not stated as a
+  rule, an example given with no explanation of why it works — generate
+  the missing explanatory content yourself, using sound French-teaching
+  judgment. This is exactly what happened with classes 35-40 (the -RE
+  verb rule didn't exist anywhere until it was written from scratch,
+  and the "-issant test" for verb-group classification was invented to
+  fix a genuinely wrong existing rule) and classes 41/42 (the tense-
+  choice reasoning behind each sentence of the worked story was added,
+  not just the sentences themselves). Keep doing this by default, not
+  only when explicitly asked.
+- **If the source material's own ordering is confusing, scattered, or
+  just follows the chronological/conversational order of a live class**
+  (which is rarely the best teaching order), reorganize it into the
+  site's established per-class pattern — numbered `<h3>` topic sections
+  that build logically on each other — rather than preserving the
+  transcript's original order. A transcript is a source to teach FROM,
+  not a script to transcribe.
+- **Generated content must match the rest of the site in quality and
+  tone**: concrete examples (never an abstract grammar question with no
+  example sentence — this is an explicit, longstanding rule already
+  baked into every chapter's Gemini-prompt header), tables where a
+  table is clearer than prose, an audio-narrated expandable explainer
+  for the core concept, and a checklist item per topic. The goal is
+  that no chapter is good only because of what happened to come up that
+  particular day in class — every chapter should stand on its own as a
+  complete, well-organized lesson.
+- This is a standing default for all **future** chapter work, not a
+  one-time retroactive task — don't go rewrite all existing chapters
+  because of this entry alone. (Separately, the 2026-10-02/06
+  quality/order audit already identified specific existing chapters
+  with real gaps — see that entry below — act on those if/when the user
+  greenlights it, same as always.)
+
 ---
 
 ## What this site is
 
 A single-file, no-build French learning curriculum: `index.html` only
 (plus static data files like `CLASS-NAMES.md`, `french_notes_data.md` that
-feed content, not code). 25 lesson cards ("classes"):
+feed content, not code — `CLASS-NAMES.md` is known-stale, see Open
+suggestions below). 41 lesson cards ("classes") as of 2026-10-06:
 
-- **A1: classes 1–21** (beginner)
-- **A2: classes 22, 23, 25, 26** (intermediate — note there is no class 24,
-  it was renumbered away; navigation code walks a `classOrder` array
-  instead of assuming a contiguous range, see the comment above that array
-  in `index.html`)
+- **A1: classes 1, 2, 35-40, 3-21** (beginner — classes 35-40, the
+  dedicated verb-conjugation arc added 2026-10-02, are positioned early
+  in `classOrder`/the nav even though their ids are high, so a learner
+  hits verb foundations before anything that needs them)
+- **A2: classes 22, 23, 25-34, 41, 42** (intermediate — note there is no
+  class 24, it was renumbered away; navigation code walks a `classOrder`
+  array instead of assuming a contiguous range, see the comment above
+  that array in `index.html`)
+
+Always check the actual current `classOrder` array and nav dropdown
+before trusting any class count/range stated in prose anywhere
+(including this file) — this project has grown continuously across many
+sessions and a stale summary is a recurring risk. `grep -n 'id="class'
+index.html` and `grep -n 'const classOrder' index.html` are the ground
+truth.
 
 Live site: GitHub Pages, deployed automatically from `main`.
 Repo: https://github.com/Aswinksanthosh/French-Notes
