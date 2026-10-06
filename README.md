@@ -68,6 +68,8 @@ tap, and self-test progress with per-topic checklists.
 37. Exemples & Erreurs (Passé composé avec être — worked examples and common mistakes)
 38. Pratique Intensive (Passé composé — large avoir/être practice bank)
 39. L'Imparfait (formation, the être exception, and worked worksheet examples)
+40. Narrer au Passé (combining passé composé and imparfait to narrate a story)
+41. Le COD (complément d'objet direct — identifying the direct object)
 
 *Remaining A2 classes will be updated weekly.*
 

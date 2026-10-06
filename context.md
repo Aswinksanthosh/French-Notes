@@ -1509,6 +1509,57 @@ since the conditional tense itself is already built in class20), (5)
 subjunctive. Comparatives/superlatives and y/en next; passive voice and
 plus-que-parfait lowest priority (more B2-leaning).
 
+## Classes 41 & 42 added 2026-10-06: narration (passé composé +
+imparfait together) and the COD, from a live-class transcript
+
+Source: "Expression_Orale/COD" transcript (narration speaking practice
++ a video story about a grandmother, grandson Alex, a pineapple cake,
+and €20, followed by a COD introduction). User said simply "Next class"
+— built straight from the transcript per established convention, no
+scope-clarifying question needed (single clear transcript, pattern well
+established by now).
+
+Two topics in one transcript, genuinely different in kind (tense usage
+vs. a brand-new sentence-structure concept), so built as two chapters
+rather than one, continuing the sequence after L'Imparfait:
+
+- **Class 41 "Narrer au Passé"**: not new tense formation (that's
+  already covered) — this is about USING passé composé and imparfait
+  *together* to narrate, the way real storytelling works. Flags a
+  specific recurring pattern from class — reporting verbs (a dit que /
+  a demandé que / a expliqué pourquoi) + imparfait for the ongoing
+  action being reported — plus 9 new narration verbs (entendre, être
+  inquiet, tomber, dire, chercher, vouloir, se souvenir, avoir confiance
+  en qqn, laisser) and a fully worked story (the video transcript's own
+  grandmother/Alex/€20 narrative), each sentence tagged with why it's
+  one tense or the other. One sentence in the source ("sa grand-mère
+  voulait qu'il remette...") uses the subjunctive after vouloir que —
+  kept as-is with a one-line "you'll learn this properly in a future
+  class" note rather than explained, since subjunctive isn't taught
+  anywhere on the site yet (flagged as missing in the 2026-10-02/06
+  audit below) and explaining it here would be scope creep.
+- **Class 42 "Le COD"**: brand new grammar topic, not previously on the
+  site at all — direct object identification (answers qui?/quoi?, no
+  preposition, follows the verb) contrasted with COI (prepositions à
+  qui/de qui/avec qui/pour qui signal COI, not COD). Deliberately scoped
+  to identification only, not pronoun replacement (le/la/les) — the
+  transcript's own instructor explicitly deferred that to a future
+  class, and this chapter is a natural first step toward the "object
+  pronouns" gap flagged in the quality/grammar audit above.
+
+`classOrder` → `[...,34,41,42]` (appended at the end, matching the
+established pattern for new transcript-based content — unlike the
+verb-arc reorg, this wasn't a restructuring, just normal sequential
+growth). Nav: "L'Imparfait" → "Narrer au Passé" → "Le COD". CSS
+checklist-label selector list extended to class41/42. Full verification
+clean on the first pass this time (no escaping-trap bugs): JS syntax,
+div balance (928), 245 checkbox ids unique, 167/167 tables
+`.table-wrap`d, all 42 copy buttons parse, nav matches `classOrder`, no
+substring mismatches, no overflow at 390px, both chapters screenshotted
+and visually confirmed.
+
+README.md curriculum list updated (40. Narrer au Passé, 41. Le COD).
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
