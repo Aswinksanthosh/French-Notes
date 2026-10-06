@@ -1615,6 +1615,60 @@ and visually confirmed.
 
 README.md curriculum list updated (40. Narrer au Passé, 41. Le COD).
 
+## Content-sufficiency audit 2026-10-06 — new standing-instruction lens,
+findings not yet acted on
+
+User asked to read context.md and check gaps/quality "for all classes."
+Ran a THIRD audit, distinct from the 2026-10-02/06 structural/order one:
+this one applies the new 2026-10-06 standing instruction's actual test
+("is there a stated rule + enough examples + a why, not just a shown
+pattern") to every chapter, including classes 35-42 which had never been
+checked under any lens before (35-40 postdate the first audit; 41-42
+were built after it). Full chapter bodies read, not just headings.
+
+**Classes 35-40 (verb arc) and class42 (Le COD): all sufficient**, hold
+up to their own standard — stated rule, 4-5+ examples, explicit why
+(the -issant test, the mettre/prendre exception warning, the laver vs
+se laver contrast) in every one. No gaps.
+
+**Real sufficiency gaps found, not yet fixed:**
+- **class41 (Narrer au Passé), section 4** "TCF Speaking Tip" is one
+  unexplained line with zero example sentences, no connector list
+  (d'abord/ensuite/puis/enfin etc.), no checklist item — thin compared
+  to the rest of that chapter, which is otherwise strong.
+- **class10 (Family)** asks the learner to produce possessive sentences
+  (mon frère, ma sœur...) via its own checklist item, but the
+  generalizable possessive-adjective rule isn't taught until class11,
+  the NEXT chapter in `classOrder` — a real forward-dependency gap, not
+  just thinness.
+- **class21 (Description)**: 6 of its vocab sections (Clothes,
+  Accessories, Materials, Weather, Technology, Everyday Objects, ~50
+  words) are bare French→English tables with zero example sentences,
+  unlike comparable vocab chapters elsewhere (class9/10/17) which embed
+  at least one usage sentence per set. Also a separately-noted possible
+  structural issue: a misplaced closing div / back-to-top button around
+  the Natural Conversation block — worth a direct look, not confirmed.
+- **class29 (Group 3 Irregular Verbs)**: 55 verbs, zero example
+  sentences for any of them, BY DESIGN at authoring time (the
+  chapter's own Gemini prompt says "no example sentences... stick to
+  testing recall"). This was a deliberate scope choice before the
+  sufficiency standard existed, not an oversight — now conflicts with
+  the standing instruction's vocab criterion. Flagging for a decision
+  rather than auto-fixing, since adding examples to a 55-verb pure
+  reference list is a real design call (and a sizable chunk of new
+  content), not a quick patch.
+
+Everything else spot-checked (class1, 9, 17, 22, 23, 25, 30, 33, 34)
+confirmed sufficient — stated rules, multiple examples, mistakes
+tables, why/when explanations present throughout.
+
+Reported to the user in chat; not yet actioned, same pattern as the
+prior audit. If this gets greenlit, class41's gap is the smallest/
+safest fix (self-contained addition to one chapter); class10/class11
+and class21 need a bit more care (an ordering dependency and a
+vocab-chapter backfill respectively); class29 needs a user decision on
+whether 55 examples is worth adding before anyone touches it.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
