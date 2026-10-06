@@ -1669,6 +1669,56 @@ and class21 need a bit more care (an ordering dependency and a
 vocab-chapter backfill respectively); class29 needs a user decision on
 whether 55 examples is worth adding before anyone touches it.
 
+## Sufficiency-audit gaps 1-3 fixed 2026-10-06 (gap 4, class29, explicitly
+declined by user)
+
+User said "1-3 is enough" in response to the content-sufficiency audit
+above — fixed the three real gaps, left class29 (55 irregular verbs, no
+examples) as a deliberate pure-reference chapter, untouched.
+
+- **class41 section 4** expanded from one unexplained line into a real
+  topic: a sequencing-connector table (d'abord/ensuite/puis/après/
+  enfin), a before/after example contrasting flat repetitive narration
+  with connector-linked narration, and its own checklist item (`c41-5`,
+  pushing the chapter to 0/5). Gemini prompt updated to match, including
+  an instruction to have the student retell a story using at least 3
+  connectors.
+- **class10 (Family)**: added a compact possessive-adjective table (mon/
+  ma, ton/ta, son/sa, notre/votre/leur) with 3 example sentences,
+  inserted directly before the `c10-5` checklist item that needs it
+  (which already existed and was unchanged) — explicitly scoped as "the
+  short version for family words," with a forward note to class11
+  (Professions) for the full rule including the vowel exception. No new
+  checkbox added, so class10 stays at 0/7.
+- **class21 (Description)**: added one `<p class="example">` (2
+  sentences each) after all 6 previously-bare vocab tables (Clothes,
+  Accessories, Materials, Weather, Technology, Everyday Objects), and
+  separately fixed the structural bug the audit flagged but hadn't
+  confirmed: the back-to-top button was nested inside the Common
+  Mistakes table's `.table-wrap` div, landing it BEFORE the Natural
+  Conversation section instead of after — moved to its correct position
+  as the true last element before the chapter's closing div. Gemini
+  prompt updated with the same 6 example pairs.
+
+**3 escaping-trap bugs this round** (class10 ×1, class21 ×4) — all raw
+apostrophes in ENGLISH contractions this time ("member's", "I'm",
+"She's", "it's" ×2, "It's") typed directly into prompt-building Python
+strings instead of through the `AP` token — notably NOT in the French
+text, which is usually where this bug hides; a reminder that English
+translation text inside the prompt string needs the same care. Caught
+by the standard headless button-parsing check (flagged class10 and
+class21 specifically, not class41 — confirms the check isolates the
+exact broken chapter reliably), fixed by locating exact raw-quote
+offsets programmatically, same method as every prior incident.
+
+Full verification clean after fixes: JS syntax, div balance (931),
+246 checkbox ids unique, 169/169 tables `.table-wrap`d, all 42 copy
+buttons parse, nav/substring checks clean, no overflow at 390px, all
+three edited chapters screenshotted and visually confirmed (class10's
+new rule sits directly before the checklist item needing it; class21's
+mistakes table → Natural Conversation → Back to Top now in the correct
+order; class41's new section renders with its table and example intact).
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
