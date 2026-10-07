@@ -599,6 +599,18 @@ git push -u origin claude/wonderful-darwin-idhgvx
 git push origin claude/wonderful-darwin-idhgvx:main
 ```
 
+**Standing instruction: always push to `main` too, every time, without
+asking first (added 2026-10-07).** `main` is what GitHub Pages actually
+deploys and what the user's phone loads — a change that only reaches the
+feature branch isn't live, and the user has explicitly said not to wait
+for a separate go-ahead on this. Before pushing, confirm it's a clean
+fast-forward (`git fetch origin main && git merge-base --is-ancestor
+origin/main claude/wonderful-darwin-idhgvx`) — if it's not (main has
+commits the feature branch doesn't), stop and ask, don't force-push. This
+is the one exception to the general "confirm before pushing" caution
+elsewhere in these instructions, scoped specifically to this repo and
+this branch→main sync.
+
 ### Backups/checkpoints
 
 Use a **branch**, not a git tag: pushing `refs/tags/*` to this repo gets a
