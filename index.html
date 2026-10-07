@@ -11,10 +11,10 @@
   build step). Class count and ranges change often - don't trust a number
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
-  for ground truth. As of 2026-10-07: 44 lesson cards. A1 = classes
+  for ground truth. As of 2026-10-07: 45 lesson cards. A1 = classes
   1,2,35-40,3-21 (35-40 is the dedicated verb-conjugation arc, positioned
   early in classOrder/nav despite high ids, so verb foundations come
-  before anything that needs them). A2 = classes 22,23,25-34,41-45 (class
+  before anything that needs them). A2 = classes 22,23,25-34,41-46 (class
   24 was renumbered away and no longer exists).
   Built and used ENTIRELY ON A PHONE. Always keep changes mobile-first;
   don't assume a wide viewport when styling or testing.
@@ -257,7 +257,8 @@
   .checklist[data-lesson="class42"] label,
   .checklist[data-lesson="class43"] label,
   .checklist[data-lesson="class44"] label,
-  .checklist[data-lesson="class45"] label {
+  .checklist[data-lesson="class45"] label,
+  .checklist[data-lesson="class46"] label {
     color: #1565c0;
     font-weight: 600;
   }
@@ -277,7 +278,8 @@
   .checklist[data-lesson="class42"] input:checked + label,
   .checklist[data-lesson="class43"] input:checked + label,
   .checklist[data-lesson="class44"] input:checked + label,
-  .checklist[data-lesson="class45"] input:checked + label {
+  .checklist[data-lesson="class45"] input:checked + label,
+  .checklist[data-lesson="class46"] input:checked + label {
     color: #999;
     font-weight: 400;
   }
@@ -697,6 +699,7 @@
       <a href="#" onclick="goToClass(43)">Pronoms Relatifs <span class="study-time">· 30 min</span></a>
       <a href="#" onclick="goToClass(44)">Pronoms Y et EN <span class="study-time">· 30 min</span></a>
       <a href="#" onclick="goToClass(45)">Pronoms Compléments <span class="study-time">· 35 min</span></a>
+      <a href="#" onclick="goToClass(46)">Adjectifs par Catégorie <span class="study-time">· 90 min</span></a>
     </div>
   </div>
 </nav>
@@ -8911,6 +8914,491 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 46: ADJECTIFS PAR CATÉGORIE ===================== -->
+<div class="lesson-card" id="class46">
+  <div class="lesson-header">
+    <h2>A2: Adjectifs par Catégorie <span class="date">— Vocabulary Reference</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class is a VOCABULARY REFERENCE for French adjectives, organized into 18 themed categories (personality, feelings, physical appearance, colours, size, quantity, time, objects, food, house, work, school, money, transport, weather, intelligence, relationships, evaluation) plus a 19th category pairing adjectives with their opposites - 27 words total across the first category alone, 274 words overall. This is a memorization list, not a new grammar lesson - the agreement rule itself (masculine/feminine, singular/plural) was already taught in an earlier class, &quot;Adjectives&quot;, and applies the same way to every word here.\n\nIMPORTANT: every single word below already has a real example sentence given on the site (visible in the tables) - DO NOT invent new example sentences that contradict or replace those; when quizzing me, you can build NEW example sentences using the SAME words (that\'s fine and expected, per the site\'s always-use-an-example rule), just don\'t invent new vocabulary outside this list.\n\nHOW TO TEACH THIS: go category by category. For each category, read a few words with their English meaning, then quiz me in both directions (French to English and English to French), and have me produce the word in BOTH masculine and feminine forms when they differ (most do - e.g. heureux/heureuse) - this is the single most important skill this class builds, since the whole point of organizing 274 words by theme is to drill gender-pair recall at volume. Once I can recall a whole category confidently in both directions and both genders, I\'ll check it off (checkboxes are grouped: People = categories 1-3, The Physical World = categories 4-5-8, Daily Life = categories 6-7-9-10, Professional & Academic = categories 11-12-13-14, Abstract Qualities = categories 15-16-17-18, and Opposites = category 19 on its own).\n\nTHE FULL WORD LIST BY CATEGORY:\nPERSONALITY & CHARACTER: gentil / gentille (kind / nice), méchant / méchante (mean / nasty), sympathique (friendly), agréable (pleasant), désagréable (unpleasant), généreux / généreuse (generous), égoïste (selfish), honnête (honest), malhonnête (dishonest), courageux / courageuse (brave), timide (shy), sociable (sociable), calme (calm), nerveux / nerveuse (nervous), patient / patiente (patient), impatient / impatiente (impatient), sérieux / sérieuse (serious), drôle (funny), intelligent / intelligente (intelligent), stupide (stupid), créatif / créative (creative), curieux / curieuse (curious), responsable (responsible), irresponsable (irresponsible), ambitieux / ambitieuse (ambitious), paresseux / paresseuse (lazy), travailleur / travailleuse (hardworking)\nFEELINGS & EMOTIONS: heureux / heureuse (happy), triste (sad), content / contente (pleased / happy), déçu / déçue (disappointed), amoureux / amoureuse (in love), jaloux / jalouse (jealous), inquiet / inquiète (worried), stressé / stressée (stressed), fatigué / fatiguée (tired), surpris / surprise (surprised), étonné / étonnée (amazed / surprised), énervé / énervée (annoyed), fâché / fâchée (angry), fier / fière (proud), honteux / honteuse (ashamed), confus / confuse (confused), motivé / motivée (motivated)\nPHYSICAL APPEARANCE: grand / grande (tall / big), petit / petite (short / small), gros / grosse (fat / big), mince (slim), maigre (thin), beau / belle (beautiful / handsome), joli / jolie (pretty), laid / laide (ugly), jeune (young), vieux / vieille (old), blond / blonde (blond), brun / brune (brown-haired), roux / rousse (red-haired), chauve (bald), musclé / musclée (muscular), élégant / élégante (elegant)\nCOLOURS: rouge (red), bleu / bleue (blue), vert / verte (green), jaune (yellow), noir / noire (black), blanc / blanche (white), gris / grise (grey), marron (brown), orange (orange), rose (pink), violet / violette (purple), beige (beige)\nSIZE & DIMENSIONS: grand / grande (big / large), petit / petite (small), énorme (enormous), immense (huge), minuscule (tiny), long / longue (long), court / courte (short), large (wide), étroit / étroite (narrow), haut / haute (high / tall), bas / basse (low), épais / épaisse (thick), fin / fine (thin / fine)\nQUANTITY: nombreux / nombreuses (numerous / many), plusieurs (several), quelques (a few / some), rare (rare), unique (unique), complet / complète (complete / full), vide (empty), plein / pleine (full)\nTIME & FREQUENCY: ancien / ancienne (old / former), moderne (modern), récent / récente (recent), actuel / actuelle (current), prochain / prochaine (next), dernier / dernière (last), quotidien / quotidienne (daily), annuel / annuelle (annual), mensuel / mensuelle (monthly), hebdomadaire (weekly), permanent / permanente (permanent), temporaire (temporary)\nOBJECTS & THINGS: nouveau / nouvelle (new), vieux / vieille (old), neuf / neuve (brand-new), cassé / cassée (broken), solide (solid / strong), fragile (fragile), lourd / lourde (heavy), léger / légère (light), propre (clean), sale (dirty), ouvert / ouverte (open), fermé / fermée (closed), pratique (practical), utile (useful), inutile (useless), confortable (comfortable)\nFOOD & TASTE: bon / bonne (good / tasty), mauvais / mauvaise (bad), délicieux / délicieuse (delicious), sucré / sucrée (sweet), salé / salée (salty), épicé / épicée (spicy), amer / amère (bitter), acide (sour / acidic), frais / fraîche (fresh), chaud / chaude (hot / warm), froid / froide (cold), mûr / mûre (ripe), cru / crue (raw), cuit / cuite (cooked)\nHOUSE & PLACES: propre (clean), sale (dirty), calme (quiet), bruyant / bruyante (noisy), moderne (modern), ancien / ancienne (old / ancient), confortable (comfortable), lumineux / lumineuse (bright), sombre (dark), spacieux / spacieuse (spacious), étroit / étroite (narrow), sécurisé / sécurisée (safe / secure), dangereux / dangereuse (dangerous), magnifique (magnificent), touristique (touristy)\nWORK & PROFESSIONAL LIFE: professionnel / professionnelle (professional), compétent / compétente (competent), expérimenté / expérimentée (experienced), qualifié / qualifiée (qualified), efficace (efficient), sérieux / sérieuse (serious), ponctuel / ponctuelle (punctual), organisé / organisée (organized), disponible (available), occupé / occupée (busy), responsable (responsible), indépendant / indépendante (independent), motivé / motivée (motivated), dynamique (dynamic), créatif / créative (creative)\nSCHOOL & LEARNING: facile (easy), difficile (difficult), simple (simple), compliqué / compliquée (complicated), intéressant / intéressante (interesting), ennuyeux / ennuyeuse (boring), important / importante (important), utile (useful), nécessaire (necessary), correct / correcte (correct), faux / fausse (wrong / false), vrai / vraie (true)\nMONEY & PRICES: cher / chère (expensive), bon marché (cheap / inexpensive), coûteux / coûteuse (costly), gratuit / gratuite (free), payant / payante (paid), économique (economical), rentable (profitable), abordable (affordable), riche (rich), pauvre (poor)\nTRANSPORT: rapide (fast), lent / lente (slow), confortable (comfortable), dangereux / dangereuse (dangerous), sûr / sûre (safe), pratique (convenient), public / publique (public), privé / privée (private), direct / directe (direct), local / locale (local)\nWEATHER & CLIMATE: chaud / chaude (hot / warm), froid / froide (cold), humide (humid), sec / sèche (dry), ensoleillé / ensoleillée (sunny), nuageux / nuageuse (cloudy), pluvieux / pluvieuse (rainy), venteux / venteuse (windy), agréable (pleasant), mauvais / mauvaise (bad)\nINTELLIGENCE & ABILITIES: intelligent / intelligente (intelligent), brillant / brillante (brilliant), doué / douée (gifted / talented), capable (capable), incapable (incapable), compétent / compétente (competent), talentueux / talentueuse (talented), créatif / créative (creative), logique (logical), attentif / attentive (attentive), concentré / concentrée (focused)\nRELATIONSHIPS: amoureux / amoureuse (in love), marié / mariée (married), célibataire (single), fidèle (faithful / loyal), infidèle (unfaithful), affectueux / affectueuse (affectionate), attentionné / attentionnée (caring / thoughtful), romantique (romantic), jaloux / jalouse (jealous), protecteur / protectrice (protective), respectueux / respectueuse (respectful)\nEVALUATION & OPINION: excellent / excellente (excellent), parfait / parfaite (perfect), formidable (wonderful), fantastique (fantastic), magnifique (magnificent), merveilleux / merveilleuse (wonderful), intéressant / intéressante (interesting), important / importante (important), utile (useful), agréable (pleasant), mauvais / mauvaise (bad), terrible (terrible), horrible (horrible), décevant / décevante (disappointing), ennuyeux / ennuyeuse (boring)\nOPPOSITE ADJECTIVES (pairs): grand / grande (big / tall) <-> petit / petite (small / short), beau / belle (beautiful) <-> laid / laide (ugly), jeune (young) <-> vieux / vieille (old), bon / bonne (good) <-> mauvais / mauvaise (bad), gentil / gentille (kind) <-> méchant / méchante (mean), heureux / heureuse (happy) <-> triste (sad), facile (easy) <-> difficile (difficult), rapide (fast) <-> lent / lente (slow), chaud / chaude (hot) <-> froid / froide (cold), propre (clean) <-> sale (dirty), ouvert / ouverte (open) <-> fermé / fermée (closed), plein / pleine (full) <-> vide (empty), lourd / lourde (heavy) <-> léger / légère (light), long / longue (long) <-> court / courte (short), large (wide) <-> étroit / étroite (narrow), fort / forte (strong) <-> faible (weak), riche (rich) <-> pauvre (poor), intelligent / intelligente (intelligent) <-> stupide (stupid), courageux / courageuse (brave) <-> lâche (cowardly), patient / patiente (patient) <-> impatient / impatiente (impatient), calme (calm) <-> nerveux / nerveuse (nervous), généreux / généreuse (generous) <-> égoïste (selfish), honnête (honest) <-> malhonnête (dishonest), intéressant / intéressante (interesting) <-> ennuyeux / ennuyeuse (boring), moderne (modern) <-> ancien / ancienne (old-fashioned), nouveau / nouvelle (new) <-> vieux / vieille (old), vrai / vraie (true) <-> faux / fausse (false), utile (useful) <-> inutile (useless), agréable (pleasant) <-> désagréable (unpleasant), sûr / sûre (safe) <-> dangereux / dangereuse (dangerous)\n\nFor the opposites category, quiz me by giving one word and having me produce its opposite, in both directions.\n\nFor each category, also ask me to build 1-2 of my own original sentences using a word from that category with the correct gender agreement - don\'t just test isolated word recall, make sure I can actually USE these adjectives in a sentence I construct myself, same as every other class on this site. When I can do that confidently for a category, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: 274 French adjectives organized into 18 themed categories (personality, feelings, appearance, colours, size, quantity, time, objects, food, house, work, school, money, transport, weather, intelligence, relationships, evaluation) plus an opposites-pairing reference, in both masculine and feminine forms. Vocabulary reference, not a new grammar lesson — see the earlier <span class="fr">Adjectives</span> class for the agreement rule itself.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter is a large vocabulary reference of two hundred seventy four French adjectives, organized into eighteen themed categories, plus a nineteenth category pairing adjectives with their opposites. Each word is given in masculine and feminine form with a real example sentence. It's for building vocabulary at volume, not for learning new grammar - the adjective agreement rule itself was already covered in an earlier chapter." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class46">0 / 8 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class46"></div></div>
+
+  <div class="note">
+  This is a <strong>vocabulary reference</strong>, not a new grammar lesson — it assumes you already know the adjective agreement rule (masculine/feminine, singular/plural) from the earlier <span class="fr">Adjectives</span> class. 274 words, organized by theme, each with a real example sentence.
+  </div>
+
+  <h3>1️⃣ 👤 Personality & Character</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>kind / nice</td><td><span class="fr">gentil</span></td><td><span class="fr">gentille</span></td><td><span class="fr">Il est gentil.</span> (He is kind.)</td></tr>
+  <tr><td>mean / nasty</td><td><span class="fr">méchant</span></td><td><span class="fr">méchante</span></td><td><span class="fr">Cet homme est méchant.</span> (This man is mean.)</td></tr>
+  <tr><td>friendly</td><td><span class="fr">sympathique</span></td><td><span class="fr">sympathique</span></td><td><span class="fr">Elle est sympathique.</span> (She is friendly.)</td></tr>
+  <tr><td>pleasant</td><td><span class="fr">agréable</span></td><td><span class="fr">agréable</span></td><td><span class="fr">C'est une personne agréable.</span> (She is a pleasant person.)</td></tr>
+  <tr><td>unpleasant</td><td><span class="fr">désagréable</span></td><td><span class="fr">désagréable</span></td><td><span class="fr">Il est désagréable.</span> (He is unpleasant.)</td></tr>
+  <tr><td>generous</td><td><span class="fr">généreux</span></td><td><span class="fr">généreuse</span></td><td><span class="fr">Elle est généreuse.</span> (She is generous.)</td></tr>
+  <tr><td>selfish</td><td><span class="fr">égoïste</span></td><td><span class="fr">égoïste</span></td><td><span class="fr">Il est égoïste.</span> (He is selfish.)</td></tr>
+  <tr><td>honest</td><td><span class="fr">honnête</span></td><td><span class="fr">honnête</span></td><td><span class="fr">Elle est honnête.</span> (She is honest.)</td></tr>
+  <tr><td>dishonest</td><td><span class="fr">malhonnête</span></td><td><span class="fr">malhonnête</span></td><td><span class="fr">Cet homme est malhonnête.</span> (This man is dishonest.)</td></tr>
+  <tr><td>brave</td><td><span class="fr">courageux</span></td><td><span class="fr">courageuse</span></td><td><span class="fr">Il est courageux.</span> (He is brave.)</td></tr>
+  <tr><td>shy</td><td><span class="fr">timide</span></td><td><span class="fr">timide</span></td><td><span class="fr">Elle est timide.</span> (She is shy.)</td></tr>
+  <tr><td>sociable</td><td><span class="fr">sociable</span></td><td><span class="fr">sociable</span></td><td><span class="fr">Paul est très sociable.</span> (Paul is very sociable.)</td></tr>
+  <tr><td>calm</td><td><span class="fr">calme</span></td><td><span class="fr">calme</span></td><td><span class="fr">Elle est calme.</span> (She is calm.)</td></tr>
+  <tr><td>nervous</td><td><span class="fr">nerveux</span></td><td><span class="fr">nerveuse</span></td><td><span class="fr">Il est nerveux.</span> (He is nervous.)</td></tr>
+  <tr><td>patient</td><td><span class="fr">patient</span></td><td><span class="fr">patiente</span></td><td><span class="fr">Elle est patiente.</span> (She is patient.)</td></tr>
+  <tr><td>impatient</td><td><span class="fr">impatient</span></td><td><span class="fr">impatiente</span></td><td><span class="fr">Il est impatient.</span> (He is impatient.)</td></tr>
+  <tr><td>serious</td><td><span class="fr">sérieux</span></td><td><span class="fr">sérieuse</span></td><td><span class="fr">C'est un étudiant sérieux.</span> (He is a serious student.)</td></tr>
+  <tr><td>funny</td><td><span class="fr">drôle</span></td><td><span class="fr">drôle</span></td><td><span class="fr">Mon frère est drôle.</span> (My brother is funny.)</td></tr>
+  <tr><td>intelligent</td><td><span class="fr">intelligent</span></td><td><span class="fr">intelligente</span></td><td><span class="fr">Elle est intelligente.</span> (She is intelligent.)</td></tr>
+  <tr><td>stupid</td><td><span class="fr">stupide</span></td><td><span class="fr">stupide</span></td><td><span class="fr">Ce garçon est stupide.</span> (This boy is stupid.)</td></tr>
+  <tr><td>creative</td><td><span class="fr">créatif</span></td><td><span class="fr">créative</span></td><td><span class="fr">Elle est créative.</span> (She is creative.)</td></tr>
+  <tr><td>curious</td><td><span class="fr">curieux</span></td><td><span class="fr">curieuse</span></td><td><span class="fr">Il est curieux.</span> (He is curious.)</td></tr>
+  <tr><td>responsible</td><td><span class="fr">responsable</span></td><td><span class="fr">responsable</span></td><td><span class="fr">Elle est responsable.</span> (She is responsible.)</td></tr>
+  <tr><td>irresponsible</td><td><span class="fr">irresponsable</span></td><td><span class="fr">irresponsable</span></td><td><span class="fr">Il est irresponsable.</span> (He is irresponsible.)</td></tr>
+  <tr><td>ambitious</td><td><span class="fr">ambitieux</span></td><td><span class="fr">ambitieuse</span></td><td><span class="fr">Elle est ambitieuse.</span> (She is ambitious.)</td></tr>
+  <tr><td>lazy</td><td><span class="fr">paresseux</span></td><td><span class="fr">paresseuse</span></td><td><span class="fr">Il est paresseux.</span> (He is lazy.)</td></tr>
+  <tr><td>hardworking</td><td><span class="fr">travailleur</span></td><td><span class="fr">travailleuse</span></td><td><span class="fr">Elle est travailleuse.</span> (She is hardworking.)</td></tr>
+</table>
+  </div>
+
+  <h3>2️⃣ 😊 Feelings & Emotions</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>happy</td><td><span class="fr">heureux</span></td><td><span class="fr">heureuse</span></td><td><span class="fr">Je suis heureux.</span> (I am happy.)</td></tr>
+  <tr><td>sad</td><td><span class="fr">triste</span></td><td><span class="fr">triste</span></td><td><span class="fr">Elle est triste.</span> (She is sad.)</td></tr>
+  <tr><td>pleased / happy</td><td><span class="fr">content</span></td><td><span class="fr">contente</span></td><td><span class="fr">Nous sommes contents.</span> (We are happy.)</td></tr>
+  <tr><td>disappointed</td><td><span class="fr">déçu</span></td><td><span class="fr">déçue</span></td><td><span class="fr">Il est déçu.</span> (He is disappointed.)</td></tr>
+  <tr><td>in love</td><td><span class="fr">amoureux</span></td><td><span class="fr">amoureuse</span></td><td><span class="fr">Elle est amoureuse.</span> (She is in love.)</td></tr>
+  <tr><td>jealous</td><td><span class="fr">jaloux</span></td><td><span class="fr">jalouse</span></td><td><span class="fr">Elle est jalouse.</span> (She is jealous.)</td></tr>
+  <tr><td>worried</td><td><span class="fr">inquiet</span></td><td><span class="fr">inquiète</span></td><td><span class="fr">Je suis inquiet.</span> (I am worried.)</td></tr>
+  <tr><td>stressed</td><td><span class="fr">stressé</span></td><td><span class="fr">stressée</span></td><td><span class="fr">Il est stressé.</span> (He is stressed.)</td></tr>
+  <tr><td>tired</td><td><span class="fr">fatigué</span></td><td><span class="fr">fatiguée</span></td><td><span class="fr">Je suis fatigué.</span> (I am tired.)</td></tr>
+  <tr><td>surprised</td><td><span class="fr">surpris</span></td><td><span class="fr">surprise</span></td><td><span class="fr">Elle est surprise.</span> (She is surprised.)</td></tr>
+  <tr><td>amazed / surprised</td><td><span class="fr">étonné</span></td><td><span class="fr">étonnée</span></td><td><span class="fr">Il est étonné.</span> (He is surprised.)</td></tr>
+  <tr><td>annoyed</td><td><span class="fr">énervé</span></td><td><span class="fr">énervée</span></td><td><span class="fr">Elle est énervée.</span> (She is annoyed.)</td></tr>
+  <tr><td>angry</td><td><span class="fr">fâché</span></td><td><span class="fr">fâchée</span></td><td><span class="fr">Il est fâché.</span> (He is angry.)</td></tr>
+  <tr><td>proud</td><td><span class="fr">fier</span></td><td><span class="fr">fière</span></td><td><span class="fr">Elle est fière.</span> (She is proud.)</td></tr>
+  <tr><td>ashamed</td><td><span class="fr">honteux</span></td><td><span class="fr">honteuse</span></td><td><span class="fr">Il est honteux.</span> (He is ashamed.)</td></tr>
+  <tr><td>confused</td><td><span class="fr">confus</span></td><td><span class="fr">confuse</span></td><td><span class="fr">Je suis confus.</span> (I am confused.)</td></tr>
+  <tr><td>motivated</td><td><span class="fr">motivé</span></td><td><span class="fr">motivée</span></td><td><span class="fr">Elle est motivée.</span> (She is motivated.)</td></tr>
+</table>
+  </div>
+
+  <h3>3️⃣ 👁️ Physical Appearance</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>tall / big</td><td><span class="fr">grand</span></td><td><span class="fr">grande</span></td><td><span class="fr">Il est grand.</span> (He is tall.)</td></tr>
+  <tr><td>short / small</td><td><span class="fr">petit</span></td><td><span class="fr">petite</span></td><td><span class="fr">Elle est petite.</span> (She is short.)</td></tr>
+  <tr><td>fat / big</td><td><span class="fr">gros</span></td><td><span class="fr">grosse</span></td><td><span class="fr">Il est gros.</span> (He is big.)</td></tr>
+  <tr><td>slim</td><td><span class="fr">mince</span></td><td><span class="fr">mince</span></td><td><span class="fr">Elle est mince.</span> (She is slim.)</td></tr>
+  <tr><td>thin</td><td><span class="fr">maigre</span></td><td><span class="fr">maigre</span></td><td><span class="fr">Il est maigre.</span> (He is thin.)</td></tr>
+  <tr><td>beautiful / handsome</td><td><span class="fr">beau</span></td><td><span class="fr">belle</span></td><td><span class="fr">Elle est belle.</span> (She is beautiful.)</td></tr>
+  <tr><td>pretty</td><td><span class="fr">joli</span></td><td><span class="fr">jolie</span></td><td><span class="fr">Elle est jolie.</span> (She is pretty.)</td></tr>
+  <tr><td>ugly</td><td><span class="fr">laid</span></td><td><span class="fr">laide</span></td><td><span class="fr">Il est laid.</span> (He is ugly.)</td></tr>
+  <tr><td>young</td><td><span class="fr">jeune</span></td><td><span class="fr">jeune</span></td><td><span class="fr">Elle est jeune.</span> (She is young.)</td></tr>
+  <tr><td>old</td><td><span class="fr">vieux</span></td><td><span class="fr">vieille</span></td><td><span class="fr">Mon père est vieux.</span> (My father is old.)</td></tr>
+  <tr><td>blond</td><td><span class="fr">blond</span></td><td><span class="fr">blonde</span></td><td><span class="fr">Elle est blonde.</span> (She is blond.)</td></tr>
+  <tr><td>brown-haired</td><td><span class="fr">brun</span></td><td><span class="fr">brune</span></td><td><span class="fr">Il est brun.</span> (He has brown hair.)</td></tr>
+  <tr><td>red-haired</td><td><span class="fr">roux</span></td><td><span class="fr">rousse</span></td><td><span class="fr">Elle est rousse.</span> (She has red hair.)</td></tr>
+  <tr><td>bald</td><td><span class="fr">chauve</span></td><td><span class="fr">chauve</span></td><td><span class="fr">Il est chauve.</span> (He is bald.)</td></tr>
+  <tr><td>muscular</td><td><span class="fr">musclé</span></td><td><span class="fr">musclée</span></td><td><span class="fr">Il est musclé.</span> (He is muscular.)</td></tr>
+  <tr><td>elegant</td><td><span class="fr">élégant</span></td><td><span class="fr">élégante</span></td><td><span class="fr">Elle est élégante.</span> (She is elegant.)</td></tr>
+</table>
+  </div>
+
+  <ul class="checklist" data-lesson="class46" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca46-1"><label for="ca46-1"><strong>PEOPLE:</strong> I know the adjectives from Personality &amp; Character, Feelings &amp; Emotions, and Physical Appearance</label></li>
+  </ul>
+
+  <h3>4️⃣ 🎨 Colours</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>red</td><td><span class="fr">rouge</span></td><td><span class="fr">rouge</span></td><td><span class="fr">Une voiture rouge.</span> (A red car.)</td></tr>
+  <tr><td>blue</td><td><span class="fr">bleu</span></td><td><span class="fr">bleue</span></td><td><span class="fr">Une chemise bleue.</span> (A blue shirt.)</td></tr>
+  <tr><td>green</td><td><span class="fr">vert</span></td><td><span class="fr">verte</span></td><td><span class="fr">Une robe verte.</span> (A green dress.)</td></tr>
+  <tr><td>yellow</td><td><span class="fr">jaune</span></td><td><span class="fr">jaune</span></td><td><span class="fr">Un pantalon jaune.</span> (Yellow trousers.)</td></tr>
+  <tr><td>black</td><td><span class="fr">noir</span></td><td><span class="fr">noire</span></td><td><span class="fr">Une voiture noire.</span> (A black car.)</td></tr>
+  <tr><td>white</td><td><span class="fr">blanc</span></td><td><span class="fr">blanche</span></td><td><span class="fr">Une chemise blanche.</span> (A white shirt.)</td></tr>
+  <tr><td>grey</td><td><span class="fr">gris</span></td><td><span class="fr">grise</span></td><td><span class="fr">Un pantalon gris.</span> (Grey trousers.)</td></tr>
+  <tr><td>brown</td><td><span class="fr">marron</span></td><td><span class="fr">marron</span></td><td><span class="fr">Des chaussures marron.</span> (Brown shoes.)</td></tr>
+  <tr><td>orange</td><td><span class="fr">orange</span></td><td><span class="fr">orange</span></td><td><span class="fr">Une robe orange.</span> (An orange dress.)</td></tr>
+  <tr><td>pink</td><td><span class="fr">rose</span></td><td><span class="fr">rose</span></td><td><span class="fr">Une chemise rose.</span> (A pink shirt.)</td></tr>
+  <tr><td>purple</td><td><span class="fr">violet</span></td><td><span class="fr">violette</span></td><td><span class="fr">Une jupe violette.</span> (A purple skirt.)</td></tr>
+  <tr><td>beige</td><td><span class="fr">beige</span></td><td><span class="fr">beige</span></td><td><span class="fr">Un pantalon beige.</span> (Beige trousers.)</td></tr>
+</table>
+  </div>
+
+  <h3>5️⃣ 📏 Size & Dimensions</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>big / large</td><td><span class="fr">grand</span></td><td><span class="fr">grande</span></td><td><span class="fr">Une grande maison.</span> (A big house.)</td></tr>
+  <tr><td>small</td><td><span class="fr">petit</span></td><td><span class="fr">petite</span></td><td><span class="fr">Une petite maison.</span> (A small house.)</td></tr>
+  <tr><td>enormous</td><td><span class="fr">énorme</span></td><td><span class="fr">énorme</span></td><td><span class="fr">Un énorme bâtiment.</span> (An enormous building.)</td></tr>
+  <tr><td>huge</td><td><span class="fr">immense</span></td><td><span class="fr">immense</span></td><td><span class="fr">Une immense ville.</span> (A huge city.)</td></tr>
+  <tr><td>tiny</td><td><span class="fr">minuscule</span></td><td><span class="fr">minuscule</span></td><td><span class="fr">Une minuscule chambre.</span> (A tiny room.)</td></tr>
+  <tr><td>long</td><td><span class="fr">long</span></td><td><span class="fr">longue</span></td><td><span class="fr">Une longue route.</span> (A long road.)</td></tr>
+  <tr><td>short</td><td><span class="fr">court</span></td><td><span class="fr">courte</span></td><td><span class="fr">Une courte histoire.</span> (A short story.)</td></tr>
+  <tr><td>wide</td><td><span class="fr">large</span></td><td><span class="fr">large</span></td><td><span class="fr">Une rue large.</span> (A wide street.)</td></tr>
+  <tr><td>narrow</td><td><span class="fr">étroit</span></td><td><span class="fr">étroite</span></td><td><span class="fr">Une rue étroite.</span> (A narrow street.)</td></tr>
+  <tr><td>high / tall</td><td><span class="fr">haut</span></td><td><span class="fr">haute</span></td><td><span class="fr">Un immeuble haut.</span> (A tall building.)</td></tr>
+  <tr><td>low</td><td><span class="fr">bas</span></td><td><span class="fr">basse</span></td><td><span class="fr">Une table basse.</span> (A low table.)</td></tr>
+  <tr><td>thick</td><td><span class="fr">épais</span></td><td><span class="fr">épaisse</span></td><td><span class="fr">Un livre épais.</span> (A thick book.)</td></tr>
+  <tr><td>thin / fine</td><td><span class="fr">fin</span></td><td><span class="fr">fine</span></td><td><span class="fr">Une feuille fine.</span> (A thin sheet.)</td></tr>
+</table>
+  </div>
+
+  <h3>6️⃣ ⚖️ Quantity</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>numerous / many</td><td><span class="fr">nombreux</span></td><td><span class="fr">nombreuses</span></td><td><span class="fr">De nombreux étudiants.</span> (Many students.)</td></tr>
+  <tr><td>several</td><td><span class="fr">plusieurs</span></td><td><span class="fr">plusieurs</span></td><td><span class="fr">Plusieurs étudiants.</span> (Several students.)</td></tr>
+  <tr><td>a few / some</td><td><span class="fr">quelques</span></td><td><span class="fr">quelques</span></td><td><span class="fr">Quelques questions.</span> (A few questions.)</td></tr>
+  <tr><td>rare</td><td><span class="fr">rare</span></td><td><span class="fr">rare</span></td><td><span class="fr">Une occasion rare.</span> (A rare opportunity.)</td></tr>
+  <tr><td>unique</td><td><span class="fr">unique</span></td><td><span class="fr">unique</span></td><td><span class="fr">Une occasion unique.</span> (A unique opportunity.)</td></tr>
+  <tr><td>complete / full</td><td><span class="fr">complet</span></td><td><span class="fr">complète</span></td><td><span class="fr">Un repas complet.</span> (A complete meal.)</td></tr>
+  <tr><td>empty</td><td><span class="fr">vide</span></td><td><span class="fr">vide</span></td><td><span class="fr">Une bouteille vide.</span> (An empty bottle.)</td></tr>
+  <tr><td>full</td><td><span class="fr">plein</span></td><td><span class="fr">pleine</span></td><td><span class="fr">Une bouteille pleine.</span> (A full bottle.)</td></tr>
+</table>
+  </div>
+
+  <h3>7️⃣ 🕐 Time & Frequency</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>old / former</td><td><span class="fr">ancien</span></td><td><span class="fr">ancienne</span></td><td><span class="fr">Une ancienne maison.</span> (An old house.)</td></tr>
+  <tr><td>modern</td><td><span class="fr">moderne</span></td><td><span class="fr">moderne</span></td><td><span class="fr">Une ville moderne.</span> (A modern city.)</td></tr>
+  <tr><td>recent</td><td><span class="fr">récent</span></td><td><span class="fr">récente</span></td><td><span class="fr">Une information récente.</span> (Recent information.)</td></tr>
+  <tr><td>current</td><td><span class="fr">actuel</span></td><td><span class="fr">actuelle</span></td><td><span class="fr">La situation actuelle.</span> (The current situation.)</td></tr>
+  <tr><td>next</td><td><span class="fr">prochain</span></td><td><span class="fr">prochaine</span></td><td><span class="fr">La semaine prochaine.</span> (Next week.)</td></tr>
+  <tr><td>last</td><td><span class="fr">dernier</span></td><td><span class="fr">dernière</span></td><td><span class="fr">Le mois dernier.</span> (Last month.)</td></tr>
+  <tr><td>daily</td><td><span class="fr">quotidien</span></td><td><span class="fr">quotidienne</span></td><td><span class="fr">La vie quotidienne.</span> (Daily life.)</td></tr>
+  <tr><td>annual</td><td><span class="fr">annuel</span></td><td><span class="fr">annuelle</span></td><td><span class="fr">Une réunion annuelle.</span> (An annual meeting.)</td></tr>
+  <tr><td>monthly</td><td><span class="fr">mensuel</span></td><td><span class="fr">mensuelle</span></td><td><span class="fr">Un paiement mensuel.</span> (A monthly payment.)</td></tr>
+  <tr><td>weekly</td><td><span class="fr">hebdomadaire</span></td><td><span class="fr">hebdomadaire</span></td><td><span class="fr">Une réunion hebdomadaire.</span> (A weekly meeting.)</td></tr>
+  <tr><td>permanent</td><td><span class="fr">permanent</span></td><td><span class="fr">permanente</span></td><td><span class="fr">Un emploi permanent.</span> (A permanent job.)</td></tr>
+  <tr><td>temporary</td><td><span class="fr">temporaire</span></td><td><span class="fr">temporaire</span></td><td><span class="fr">Un emploi temporaire.</span> (A temporary job.)</td></tr>
+</table>
+  </div>
+
+  <h3>8️⃣ 🏠 Objects & Things</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>new</td><td><span class="fr">nouveau</span></td><td><span class="fr">nouvelle</span></td><td><span class="fr">Une nouvelle voiture.</span> (A new car.)</td></tr>
+  <tr><td>old</td><td><span class="fr">vieux</span></td><td><span class="fr">vieille</span></td><td><span class="fr">Une vieille voiture.</span> (An old car.)</td></tr>
+  <tr><td>brand-new</td><td><span class="fr">neuf</span></td><td><span class="fr">neuve</span></td><td><span class="fr">Une voiture neuve.</span> (A brand-new car.)</td></tr>
+  <tr><td>broken</td><td><span class="fr">cassé</span></td><td><span class="fr">cassée</span></td><td><span class="fr">Une chaise cassée.</span> (A broken chair.)</td></tr>
+  <tr><td>solid / strong</td><td><span class="fr">solide</span></td><td><span class="fr">solide</span></td><td><span class="fr">Une table solide.</span> (A strong table.)</td></tr>
+  <tr><td>fragile</td><td><span class="fr">fragile</span></td><td><span class="fr">fragile</span></td><td><span class="fr">Un verre fragile.</span> (A fragile glass.)</td></tr>
+  <tr><td>heavy</td><td><span class="fr">lourd</span></td><td><span class="fr">lourde</span></td><td><span class="fr">Une valise lourde.</span> (A heavy suitcase.)</td></tr>
+  <tr><td>light</td><td><span class="fr">léger</span></td><td><span class="fr">légère</span></td><td><span class="fr">Un sac léger.</span> (A light bag.)</td></tr>
+  <tr><td>clean</td><td><span class="fr">propre</span></td><td><span class="fr">propre</span></td><td><span class="fr">Une chambre propre.</span> (A clean room.)</td></tr>
+  <tr><td>dirty</td><td><span class="fr">sale</span></td><td><span class="fr">sale</span></td><td><span class="fr">Une chambre sale.</span> (A dirty room.)</td></tr>
+  <tr><td>open</td><td><span class="fr">ouvert</span></td><td><span class="fr">ouverte</span></td><td><span class="fr">Une porte ouverte.</span> (An open door.)</td></tr>
+  <tr><td>closed</td><td><span class="fr">fermé</span></td><td><span class="fr">fermée</span></td><td><span class="fr">Une porte fermée.</span> (A closed door.)</td></tr>
+  <tr><td>practical</td><td><span class="fr">pratique</span></td><td><span class="fr">pratique</span></td><td><span class="fr">Un téléphone pratique.</span> (A practical phone.)</td></tr>
+  <tr><td>useful</td><td><span class="fr">utile</span></td><td><span class="fr">utile</span></td><td><span class="fr">Un outil utile.</span> (A useful tool.)</td></tr>
+  <tr><td>useless</td><td><span class="fr">inutile</span></td><td><span class="fr">inutile</span></td><td><span class="fr">Un objet inutile.</span> (A useless object.)</td></tr>
+  <tr><td>comfortable</td><td><span class="fr">confortable</span></td><td><span class="fr">confortable</span></td><td><span class="fr">Un fauteuil confortable.</span> (A comfortable armchair.)</td></tr>
+</table>
+  </div>
+
+  <ul class="checklist" data-lesson="class46" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca46-2"><label for="ca46-2"><strong>THE PHYSICAL WORLD:</strong> I know the adjectives from Colours, Size &amp; Dimensions, and Objects &amp; Things</label></li>
+  </ul>
+
+  <h3>9️⃣ 🍎 Food & Taste</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>good / tasty</td><td><span class="fr">bon</span></td><td><span class="fr">bonne</span></td><td><span class="fr">Ce repas est bon.</span> (This meal is good.)</td></tr>
+  <tr><td>bad</td><td><span class="fr">mauvais</span></td><td><span class="fr">mauvaise</span></td><td><span class="fr">Ce plat est mauvais.</span> (This dish is bad.)</td></tr>
+  <tr><td>delicious</td><td><span class="fr">délicieux</span></td><td><span class="fr">délicieuse</span></td><td><span class="fr">Le gâteau est délicieux.</span> (The cake is delicious.)</td></tr>
+  <tr><td>sweet</td><td><span class="fr">sucré</span></td><td><span class="fr">sucrée</span></td><td><span class="fr">Ce gâteau est sucré.</span> (This cake is sweet.)</td></tr>
+  <tr><td>salty</td><td><span class="fr">salé</span></td><td><span class="fr">salée</span></td><td><span class="fr">La soupe est salée.</span> (The soup is salty.)</td></tr>
+  <tr><td>spicy</td><td><span class="fr">épicé</span></td><td><span class="fr">épicée</span></td><td><span class="fr">Le poulet est épicé.</span> (The chicken is spicy.)</td></tr>
+  <tr><td>bitter</td><td><span class="fr">amer</span></td><td><span class="fr">amère</span></td><td><span class="fr">Le café est amer.</span> (The coffee is bitter.)</td></tr>
+  <tr><td>sour / acidic</td><td><span class="fr">acide</span></td><td><span class="fr">acide</span></td><td><span class="fr">Le citron est acide.</span> (The lemon is sour.)</td></tr>
+  <tr><td>fresh</td><td><span class="fr">frais</span></td><td><span class="fr">fraîche</span></td><td><span class="fr">Le poisson est frais.</span> (The fish is fresh.)</td></tr>
+  <tr><td>hot / warm</td><td><span class="fr">chaud</span></td><td><span class="fr">chaude</span></td><td><span class="fr">La soupe est chaude.</span> (The soup is hot.)</td></tr>
+  <tr><td>cold</td><td><span class="fr">froid</span></td><td><span class="fr">froide</span></td><td><span class="fr">L'eau est froide.</span> (The water is cold.)</td></tr>
+  <tr><td>ripe</td><td><span class="fr">mûr</span></td><td><span class="fr">mûre</span></td><td><span class="fr">La mangue est mûre.</span> (The mango is ripe.)</td></tr>
+  <tr><td>raw</td><td><span class="fr">cru</span></td><td><span class="fr">crue</span></td><td><span class="fr">Le poisson est cru.</span> (The fish is raw.)</td></tr>
+  <tr><td>cooked</td><td><span class="fr">cuit</span></td><td><span class="fr">cuite</span></td><td><span class="fr">La viande est cuite.</span> (The meat is cooked.)</td></tr>
+</table>
+  </div>
+
+  <h3>10️⃣ 🏡 House & Places</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>clean</td><td><span class="fr">propre</span></td><td><span class="fr">propre</span></td><td><span class="fr">La maison est propre.</span> (The house is clean.)</td></tr>
+  <tr><td>dirty</td><td><span class="fr">sale</span></td><td><span class="fr">sale</span></td><td><span class="fr">La cuisine est sale.</span> (The kitchen is dirty.)</td></tr>
+  <tr><td>quiet</td><td><span class="fr">calme</span></td><td><span class="fr">calme</span></td><td><span class="fr">Le quartier est calme.</span> (The neighborhood is quiet.)</td></tr>
+  <tr><td>noisy</td><td><span class="fr">bruyant</span></td><td><span class="fr">bruyante</span></td><td><span class="fr">La rue est bruyante.</span> (The street is noisy.)</td></tr>
+  <tr><td>modern</td><td><span class="fr">moderne</span></td><td><span class="fr">moderne</span></td><td><span class="fr">L'appartement est moderne.</span> (The apartment is modern.)</td></tr>
+  <tr><td>old / ancient</td><td><span class="fr">ancien</span></td><td><span class="fr">ancienne</span></td><td><span class="fr">Un ancien bâtiment.</span> (An old building.)</td></tr>
+  <tr><td>comfortable</td><td><span class="fr">confortable</span></td><td><span class="fr">confortable</span></td><td><span class="fr">La maison est confortable.</span> (The house is comfortable.)</td></tr>
+  <tr><td>bright</td><td><span class="fr">lumineux</span></td><td><span class="fr">lumineuse</span></td><td><span class="fr">La chambre est lumineuse.</span> (The room is bright.)</td></tr>
+  <tr><td>dark</td><td><span class="fr">sombre</span></td><td><span class="fr">sombre</span></td><td><span class="fr">La pièce est sombre.</span> (The room is dark.)</td></tr>
+  <tr><td>spacious</td><td><span class="fr">spacieux</span></td><td><span class="fr">spacieuse</span></td><td><span class="fr">Le salon est spacieux.</span> (The living room is spacious.)</td></tr>
+  <tr><td>narrow</td><td><span class="fr">étroit</span></td><td><span class="fr">étroite</span></td><td><span class="fr">Le couloir est étroit.</span> (The corridor is narrow.)</td></tr>
+  <tr><td>safe / secure</td><td><span class="fr">sécurisé</span></td><td><span class="fr">sécurisée</span></td><td><span class="fr">Le quartier est sécurisé.</span> (The neighborhood is safe.)</td></tr>
+  <tr><td>dangerous</td><td><span class="fr">dangereux</span></td><td><span class="fr">dangereuse</span></td><td><span class="fr">Cette rue est dangereuse.</span> (This street is dangerous.)</td></tr>
+  <tr><td>magnificent</td><td><span class="fr">magnifique</span></td><td><span class="fr">magnifique</span></td><td><span class="fr">La ville est magnifique.</span> (The city is magnificent.)</td></tr>
+  <tr><td>touristy</td><td><span class="fr">touristique</span></td><td><span class="fr">touristique</span></td><td><span class="fr">C'est une ville touristique.</span> (It is a touristy city.)</td></tr>
+</table>
+  </div>
+
+  <ul class="checklist" data-lesson="class46" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca46-3"><label for="ca46-3"><strong>DAILY LIFE:</strong> I know the adjectives from Quantity, Time &amp; Frequency, Food &amp; Taste, and House &amp; Places</label></li>
+  </ul>
+
+  <h3>11️⃣ 💼 Work & Professional Life</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>professional</td><td><span class="fr">professionnel</span></td><td><span class="fr">professionnelle</span></td><td><span class="fr">Il est très professionnel.</span> (He is very professional.)</td></tr>
+  <tr><td>competent</td><td><span class="fr">compétent</span></td><td><span class="fr">compétente</span></td><td><span class="fr">Elle est compétente.</span> (She is competent.)</td></tr>
+  <tr><td>experienced</td><td><span class="fr">expérimenté</span></td><td><span class="fr">expérimentée</span></td><td><span class="fr">Il est expérimenté.</span> (He is experienced.)</td></tr>
+  <tr><td>qualified</td><td><span class="fr">qualifié</span></td><td><span class="fr">qualifiée</span></td><td><span class="fr">Elle est qualifiée.</span> (She is qualified.)</td></tr>
+  <tr><td>efficient</td><td><span class="fr">efficace</span></td><td><span class="fr">efficace</span></td><td><span class="fr">Il est efficace.</span> (He is efficient.)</td></tr>
+  <tr><td>serious</td><td><span class="fr">sérieux</span></td><td><span class="fr">sérieuse</span></td><td><span class="fr">C'est un employé sérieux.</span> (He is a serious employee.)</td></tr>
+  <tr><td>punctual</td><td><span class="fr">ponctuel</span></td><td><span class="fr">ponctuelle</span></td><td><span class="fr">Elle est ponctuelle.</span> (She is punctual.)</td></tr>
+  <tr><td>organized</td><td><span class="fr">organisé</span></td><td><span class="fr">organisée</span></td><td><span class="fr">Il est organisé.</span> (He is organized.)</td></tr>
+  <tr><td>available</td><td><span class="fr">disponible</span></td><td><span class="fr">disponible</span></td><td><span class="fr">Je suis disponible.</span> (I am available.)</td></tr>
+  <tr><td>busy</td><td><span class="fr">occupé</span></td><td><span class="fr">occupée</span></td><td><span class="fr">Je suis occupé.</span> (I am busy.)</td></tr>
+  <tr><td>responsible</td><td><span class="fr">responsable</span></td><td><span class="fr">responsable</span></td><td><span class="fr">Elle est responsable.</span> (She is responsible.)</td></tr>
+  <tr><td>independent</td><td><span class="fr">indépendant</span></td><td><span class="fr">indépendante</span></td><td><span class="fr">Il est indépendant.</span> (He is independent.)</td></tr>
+  <tr><td>motivated</td><td><span class="fr">motivé</span></td><td><span class="fr">motivée</span></td><td><span class="fr">Elle est motivée.</span> (She is motivated.)</td></tr>
+  <tr><td>dynamic</td><td><span class="fr">dynamique</span></td><td><span class="fr">dynamique</span></td><td><span class="fr">C'est une équipe dynamique.</span> (It is a dynamic team.)</td></tr>
+  <tr><td>creative</td><td><span class="fr">créatif</span></td><td><span class="fr">créative</span></td><td><span class="fr">Elle est créative.</span> (She is creative.)</td></tr>
+</table>
+  </div>
+
+  <h3>12️⃣ 🎓 School & Learning</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>easy</td><td><span class="fr">facile</span></td><td><span class="fr">facile</span></td><td><span class="fr">L'exercice est facile.</span> (The exercise is easy.)</td></tr>
+  <tr><td>difficult</td><td><span class="fr">difficile</span></td><td><span class="fr">difficile</span></td><td><span class="fr">Le test est difficile.</span> (The test is difficult.)</td></tr>
+  <tr><td>simple</td><td><span class="fr">simple</span></td><td><span class="fr">simple</span></td><td><span class="fr">La question est simple.</span> (The question is simple.)</td></tr>
+  <tr><td>complicated</td><td><span class="fr">compliqué</span></td><td><span class="fr">compliquée</span></td><td><span class="fr">La leçon est compliquée.</span> (The lesson is complicated.)</td></tr>
+  <tr><td>interesting</td><td><span class="fr">intéressant</span></td><td><span class="fr">intéressante</span></td><td><span class="fr">Le cours est intéressant.</span> (The class is interesting.)</td></tr>
+  <tr><td>boring</td><td><span class="fr">ennuyeux</span></td><td><span class="fr">ennuyeuse</span></td><td><span class="fr">Le cours est ennuyeux.</span> (The class is boring.)</td></tr>
+  <tr><td>important</td><td><span class="fr">important</span></td><td><span class="fr">importante</span></td><td><span class="fr">Cette leçon est importante.</span> (This lesson is important.)</td></tr>
+  <tr><td>useful</td><td><span class="fr">utile</span></td><td><span class="fr">utile</span></td><td><span class="fr">Cette activité est utile.</span> (This activity is useful.)</td></tr>
+  <tr><td>necessary</td><td><span class="fr">nécessaire</span></td><td><span class="fr">nécessaire</span></td><td><span class="fr">Cette information est nécessaire.</span> (This information is necessary.)</td></tr>
+  <tr><td>correct</td><td><span class="fr">correct</span></td><td><span class="fr">correcte</span></td><td><span class="fr">Ta réponse est correcte.</span> (Your answer is correct.)</td></tr>
+  <tr><td>wrong / false</td><td><span class="fr">faux</span></td><td><span class="fr">fausse</span></td><td><span class="fr">Cette réponse est fausse.</span> (This answer is wrong.)</td></tr>
+  <tr><td>true</td><td><span class="fr">vrai</span></td><td><span class="fr">vraie</span></td><td><span class="fr">C'est une information vraie.</span> (This is true information.)</td></tr>
+</table>
+  </div>
+
+  <h3>13️⃣ 💰 Money & Prices</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>expensive</td><td><span class="fr">cher</span></td><td><span class="fr">chère</span></td><td><span class="fr">Cette voiture est chère.</span> (This car is expensive.)</td></tr>
+  <tr><td>cheap / inexpensive</td><td><span class="fr">bon marché</span></td><td><span class="fr">bon marché</span></td><td><span class="fr">Ce restaurant est bon marché.</span> (This restaurant is inexpensive.)</td></tr>
+  <tr><td>costly</td><td><span class="fr">coûteux</span></td><td><span class="fr">coûteuse</span></td><td><span class="fr">C'est un projet coûteux.</span> (It is a costly project.)</td></tr>
+  <tr><td>free</td><td><span class="fr">gratuit</span></td><td><span class="fr">gratuite</span></td><td><span class="fr">L'entrée est gratuite.</span> (Entry is free.)</td></tr>
+  <tr><td>paid</td><td><span class="fr">payant</span></td><td><span class="fr">payante</span></td><td><span class="fr">Le service est payant.</span> (The service is paid.)</td></tr>
+  <tr><td>economical</td><td><span class="fr">économique</span></td><td><span class="fr">économique</span></td><td><span class="fr">Cette voiture est économique.</span> (This car is economical.)</td></tr>
+  <tr><td>profitable</td><td><span class="fr">rentable</span></td><td><span class="fr">rentable</span></td><td><span class="fr">Le projet est rentable.</span> (The project is profitable.)</td></tr>
+  <tr><td>affordable</td><td><span class="fr">abordable</span></td><td><span class="fr">abordable</span></td><td><span class="fr">Le prix est abordable.</span> (The price is affordable.)</td></tr>
+  <tr><td>rich</td><td><span class="fr">riche</span></td><td><span class="fr">riche</span></td><td><span class="fr">Il est riche.</span> (He is rich.)</td></tr>
+  <tr><td>poor</td><td><span class="fr">pauvre</span></td><td><span class="fr">pauvre</span></td><td><span class="fr">Elle est pauvre.</span> (She is poor.)</td></tr>
+</table>
+  </div>
+
+  <h3>14️⃣ 🚗 Transport</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>fast</td><td><span class="fr">rapide</span></td><td><span class="fr">rapide</span></td><td><span class="fr">Le train est rapide.</span> (The train is fast.)</td></tr>
+  <tr><td>slow</td><td><span class="fr">lent</span></td><td><span class="fr">lente</span></td><td><span class="fr">Le bus est lent.</span> (The bus is slow.)</td></tr>
+  <tr><td>comfortable</td><td><span class="fr">confortable</span></td><td><span class="fr">confortable</span></td><td><span class="fr">Le taxi est confortable.</span> (The taxi is comfortable.)</td></tr>
+  <tr><td>dangerous</td><td><span class="fr">dangereux</span></td><td><span class="fr">dangereuse</span></td><td><span class="fr">Cette route est dangereuse.</span> (This road is dangerous.)</td></tr>
+  <tr><td>safe</td><td><span class="fr">sûr</span></td><td><span class="fr">sûre</span></td><td><span class="fr">Ce moyen de transport est sûr.</span> (This means of transport is safe.)</td></tr>
+  <tr><td>convenient</td><td><span class="fr">pratique</span></td><td><span class="fr">pratique</span></td><td><span class="fr">Le métro est pratique.</span> (The metro is convenient.)</td></tr>
+  <tr><td>public</td><td><span class="fr">public</span></td><td><span class="fr">publique</span></td><td><span class="fr">Les transports publics.</span> (Public transportation.)</td></tr>
+  <tr><td>private</td><td><span class="fr">privé</span></td><td><span class="fr">privée</span></td><td><span class="fr">Une voiture privée.</span> (A private car.)</td></tr>
+  <tr><td>direct</td><td><span class="fr">direct</span></td><td><span class="fr">directe</span></td><td><span class="fr">Un vol direct.</span> (A direct flight.)</td></tr>
+  <tr><td>local</td><td><span class="fr">local</span></td><td><span class="fr">locale</span></td><td><span class="fr">Le transport local.</span> (Local transportation.)</td></tr>
+</table>
+  </div>
+
+  <ul class="checklist" data-lesson="class46" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca46-4"><label for="ca46-4"><strong>PROFESSIONAL &amp; ACADEMIC:</strong> I know the adjectives from Work &amp; Professional Life, School &amp; Learning, Money &amp; Prices, and Transport</label></li>
+  </ul>
+
+  <h3>15️⃣ 🌦️ Weather & Climate</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>hot / warm</td><td><span class="fr">chaud</span></td><td><span class="fr">chaude</span></td><td><span class="fr">Il fait chaud.</span> (It is hot.)</td></tr>
+  <tr><td>cold</td><td><span class="fr">froid</span></td><td><span class="fr">froide</span></td><td><span class="fr">Il fait froid.</span> (It is cold.)</td></tr>
+  <tr><td>humid</td><td><span class="fr">humide</span></td><td><span class="fr">humide</span></td><td><span class="fr">Le climat est humide.</span> (The climate is humid.)</td></tr>
+  <tr><td>dry</td><td><span class="fr">sec</span></td><td><span class="fr">sèche</span></td><td><span class="fr">Le climat est sec.</span> (The climate is dry.)</td></tr>
+  <tr><td>sunny</td><td><span class="fr">ensoleillé</span></td><td><span class="fr">ensoleillée</span></td><td><span class="fr">La journée est ensoleillée.</span> (The day is sunny.)</td></tr>
+  <tr><td>cloudy</td><td><span class="fr">nuageux</span></td><td><span class="fr">nuageuse</span></td><td><span class="fr">Le ciel est nuageux.</span> (The sky is cloudy.)</td></tr>
+  <tr><td>rainy</td><td><span class="fr">pluvieux</span></td><td><span class="fr">pluvieuse</span></td><td><span class="fr">La saison est pluvieuse.</span> (The season is rainy.)</td></tr>
+  <tr><td>windy</td><td><span class="fr">venteux</span></td><td><span class="fr">venteuse</span></td><td><span class="fr">La journée est venteuse.</span> (The day is windy.)</td></tr>
+  <tr><td>pleasant</td><td><span class="fr">agréable</span></td><td><span class="fr">agréable</span></td><td><span class="fr">Le temps est agréable.</span> (The weather is pleasant.)</td></tr>
+  <tr><td>bad</td><td><span class="fr">mauvais</span></td><td><span class="fr">mauvaise</span></td><td><span class="fr">Le temps est mauvais.</span> (The weather is bad.)</td></tr>
+</table>
+  </div>
+
+  <h3>16️⃣ 🧠 Intelligence & Abilities</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>intelligent</td><td><span class="fr">intelligent</span></td><td><span class="fr">intelligente</span></td><td><span class="fr">Elle est intelligente.</span> (She is intelligent.)</td></tr>
+  <tr><td>brilliant</td><td><span class="fr">brillant</span></td><td><span class="fr">brillante</span></td><td><span class="fr">C'est un étudiant brillant.</span> (He is a brilliant student.)</td></tr>
+  <tr><td>gifted / talented</td><td><span class="fr">doué</span></td><td><span class="fr">douée</span></td><td><span class="fr">Il est doué en maths.</span> (He is gifted at maths.)</td></tr>
+  <tr><td>capable</td><td><span class="fr">capable</span></td><td><span class="fr">capable</span></td><td><span class="fr">Elle est capable de réussir.</span> (She is capable of succeeding.)</td></tr>
+  <tr><td>incapable</td><td><span class="fr">incapable</span></td><td><span class="fr">incapable</span></td><td><span class="fr">Il est incapable de répondre.</span> (He is unable to answer.)</td></tr>
+  <tr><td>competent</td><td><span class="fr">compétent</span></td><td><span class="fr">compétente</span></td><td><span class="fr">Elle est compétente.</span> (She is competent.)</td></tr>
+  <tr><td>talented</td><td><span class="fr">talentueux</span></td><td><span class="fr">talentueuse</span></td><td><span class="fr">Il est talentueux.</span> (He is talented.)</td></tr>
+  <tr><td>creative</td><td><span class="fr">créatif</span></td><td><span class="fr">créative</span></td><td><span class="fr">Elle est créative.</span> (She is creative.)</td></tr>
+  <tr><td>logical</td><td><span class="fr">logique</span></td><td><span class="fr">logique</span></td><td><span class="fr">Son raisonnement est logique.</span> (His reasoning is logical.)</td></tr>
+  <tr><td>attentive</td><td><span class="fr">attentif</span></td><td><span class="fr">attentive</span></td><td><span class="fr">L'étudiant est attentif.</span> (The student is attentive.)</td></tr>
+  <tr><td>focused</td><td><span class="fr">concentré</span></td><td><span class="fr">concentrée</span></td><td><span class="fr">Elle est concentrée.</span> (She is focused.)</td></tr>
+</table>
+  </div>
+
+  <h3>17️⃣ ❤️ Relationships</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>in love</td><td><span class="fr">amoureux</span></td><td><span class="fr">amoureuse</span></td><td><span class="fr">Ils sont amoureux.</span> (They are in love.)</td></tr>
+  <tr><td>married</td><td><span class="fr">marié</span></td><td><span class="fr">mariée</span></td><td><span class="fr">Elle est mariée.</span> (She is married.)</td></tr>
+  <tr><td>single</td><td><span class="fr">célibataire</span></td><td><span class="fr">célibataire</span></td><td><span class="fr">Il est célibataire.</span> (He is single.)</td></tr>
+  <tr><td>faithful / loyal</td><td><span class="fr">fidèle</span></td><td><span class="fr">fidèle</span></td><td><span class="fr">Il est fidèle.</span> (He is faithful.)</td></tr>
+  <tr><td>unfaithful</td><td><span class="fr">infidèle</span></td><td><span class="fr">infidèle</span></td><td><span class="fr">Il est infidèle.</span> (He is unfaithful.)</td></tr>
+  <tr><td>affectionate</td><td><span class="fr">affectueux</span></td><td><span class="fr">affectueuse</span></td><td><span class="fr">Elle est affectueuse.</span> (She is affectionate.)</td></tr>
+  <tr><td>caring / thoughtful</td><td><span class="fr">attentionné</span></td><td><span class="fr">attentionnée</span></td><td><span class="fr">Il est attentionné.</span> (He is caring.)</td></tr>
+  <tr><td>romantic</td><td><span class="fr">romantique</span></td><td><span class="fr">romantique</span></td><td><span class="fr">Il est romantique.</span> (He is romantic.)</td></tr>
+  <tr><td>jealous</td><td><span class="fr">jaloux</span></td><td><span class="fr">jalouse</span></td><td><span class="fr">Elle est jalouse.</span> (She is jealous.)</td></tr>
+  <tr><td>protective</td><td><span class="fr">protecteur</span></td><td><span class="fr">protectrice</span></td><td><span class="fr">Il est protecteur.</span> (He is protective.)</td></tr>
+  <tr><td>respectful</td><td><span class="fr">respectueux</span></td><td><span class="fr">respectueuse</span></td><td><span class="fr">Elle est respectueuse.</span> (She is respectful.)</td></tr>
+</table>
+  </div>
+
+  <h3>18️⃣ ⭐ Evaluation & Opinion</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th><th>Example</th></tr>
+  <tr><td>excellent</td><td><span class="fr">excellent</span></td><td><span class="fr">excellente</span></td><td><span class="fr">C'est une excellente idée.</span> (It is an excellent idea.)</td></tr>
+  <tr><td>perfect</td><td><span class="fr">parfait</span></td><td><span class="fr">parfaite</span></td><td><span class="fr">C'est parfait.</span> (It is perfect.)</td></tr>
+  <tr><td>wonderful</td><td><span class="fr">formidable</span></td><td><span class="fr">formidable</span></td><td><span class="fr">C'est formidable !</span> (It's wonderful!)</td></tr>
+  <tr><td>fantastic</td><td><span class="fr">fantastique</span></td><td><span class="fr">fantastique</span></td><td><span class="fr">Le film est fantastique.</span> (The film is fantastic.)</td></tr>
+  <tr><td>magnificent</td><td><span class="fr">magnifique</span></td><td><span class="fr">magnifique</span></td><td><span class="fr">La vue est magnifique.</span> (The view is magnificent.)</td></tr>
+  <tr><td>wonderful</td><td><span class="fr">merveilleux</span></td><td><span class="fr">merveilleuse</span></td><td><span class="fr">C'est une merveilleuse expérience.</span> (It is a wonderful experience.)</td></tr>
+  <tr><td>interesting</td><td><span class="fr">intéressant</span></td><td><span class="fr">intéressante</span></td><td><span class="fr">Le sujet est intéressant.</span> (The subject is interesting.)</td></tr>
+  <tr><td>important</td><td><span class="fr">important</span></td><td><span class="fr">importante</span></td><td><span class="fr">C'est important.</span> (It is important.)</td></tr>
+  <tr><td>useful</td><td><span class="fr">utile</span></td><td><span class="fr">utile</span></td><td><span class="fr">C'est très utile.</span> (It is very useful.)</td></tr>
+  <tr><td>pleasant</td><td><span class="fr">agréable</span></td><td><span class="fr">agréable</span></td><td><span class="fr">C'est une expérience agréable.</span> (It is a pleasant experience.)</td></tr>
+  <tr><td>bad</td><td><span class="fr">mauvais</span></td><td><span class="fr">mauvaise</span></td><td><span class="fr">C'est une mauvaise idée.</span> (It is a bad idea.)</td></tr>
+  <tr><td>terrible</td><td><span class="fr">terrible</span></td><td><span class="fr">terrible</span></td><td><span class="fr">C'est terrible.</span> (It's terrible.)</td></tr>
+  <tr><td>horrible</td><td><span class="fr">horrible</span></td><td><span class="fr">horrible</span></td><td><span class="fr">Le film est horrible.</span> (The film is horrible.)</td></tr>
+  <tr><td>disappointing</td><td><span class="fr">décevant</span></td><td><span class="fr">décevante</span></td><td><span class="fr">Le résultat est décevant.</span> (The result is disappointing.)</td></tr>
+  <tr><td>boring</td><td><span class="fr">ennuyeux</span></td><td><span class="fr">ennuyeuse</span></td><td><span class="fr">Le film est ennuyeux.</span> (The film is boring.)</td></tr>
+</table>
+  </div>
+
+  <ul class="checklist" data-lesson="class46" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca46-5"><label for="ca46-5"><strong>ABSTRACT QUALITIES:</strong> I know the adjectives from Weather &amp; Climate, Intelligence &amp; Abilities, Relationships, and Evaluation &amp; Opinion</label></li>
+  </ul>
+
+  <h3>19️⃣ 🔄 Opposite Adjectives</h3>
+  <p>A quick-reference pairing of adjectives covered above with their opposites — useful for building contrast sentences (e.g. "ce n'est pas grand, c'est petit").</p>
+  <div class="table-wrap">
+<table>
+  <tr><th>French</th><th>English</th><th>Opposite (French)</th><th>Opposite (English)</th></tr>
+  <tr><td><span class="fr">grand / grande</span></td><td>big / tall</td><td><span class="fr">petit / petite</span></td><td>small / short</td></tr>
+  <tr><td><span class="fr">beau / belle</span></td><td>beautiful</td><td><span class="fr">laid / laide</span></td><td>ugly</td></tr>
+  <tr><td><span class="fr">jeune</span></td><td>young</td><td><span class="fr">vieux / vieille</span></td><td>old</td></tr>
+  <tr><td><span class="fr">bon / bonne</span></td><td>good</td><td><span class="fr">mauvais / mauvaise</span></td><td>bad</td></tr>
+  <tr><td><span class="fr">gentil / gentille</span></td><td>kind</td><td><span class="fr">méchant / méchante</span></td><td>mean</td></tr>
+  <tr><td><span class="fr">heureux / heureuse</span></td><td>happy</td><td><span class="fr">triste</span></td><td>sad</td></tr>
+  <tr><td><span class="fr">facile</span></td><td>easy</td><td><span class="fr">difficile</span></td><td>difficult</td></tr>
+  <tr><td><span class="fr">rapide</span></td><td>fast</td><td><span class="fr">lent / lente</span></td><td>slow</td></tr>
+  <tr><td><span class="fr">chaud / chaude</span></td><td>hot</td><td><span class="fr">froid / froide</span></td><td>cold</td></tr>
+  <tr><td><span class="fr">propre</span></td><td>clean</td><td><span class="fr">sale</span></td><td>dirty</td></tr>
+  <tr><td><span class="fr">ouvert / ouverte</span></td><td>open</td><td><span class="fr">fermé / fermée</span></td><td>closed</td></tr>
+  <tr><td><span class="fr">plein / pleine</span></td><td>full</td><td><span class="fr">vide</span></td><td>empty</td></tr>
+  <tr><td><span class="fr">lourd / lourde</span></td><td>heavy</td><td><span class="fr">léger / légère</span></td><td>light</td></tr>
+  <tr><td><span class="fr">long / longue</span></td><td>long</td><td><span class="fr">court / courte</span></td><td>short</td></tr>
+  <tr><td><span class="fr">large</span></td><td>wide</td><td><span class="fr">étroit / étroite</span></td><td>narrow</td></tr>
+  <tr><td><span class="fr">fort / forte</span></td><td>strong</td><td><span class="fr">faible</span></td><td>weak</td></tr>
+  <tr><td><span class="fr">riche</span></td><td>rich</td><td><span class="fr">pauvre</span></td><td>poor</td></tr>
+  <tr><td><span class="fr">intelligent / intelligente</span></td><td>intelligent</td><td><span class="fr">stupide</span></td><td>stupid</td></tr>
+  <tr><td><span class="fr">courageux / courageuse</span></td><td>brave</td><td><span class="fr">lâche</span></td><td>cowardly</td></tr>
+  <tr><td><span class="fr">patient / patiente</span></td><td>patient</td><td><span class="fr">impatient / impatiente</span></td><td>impatient</td></tr>
+  <tr><td><span class="fr">calme</span></td><td>calm</td><td><span class="fr">nerveux / nerveuse</span></td><td>nervous</td></tr>
+  <tr><td><span class="fr">généreux / généreuse</span></td><td>generous</td><td><span class="fr">égoïste</span></td><td>selfish</td></tr>
+  <tr><td><span class="fr">honnête</span></td><td>honest</td><td><span class="fr">malhonnête</span></td><td>dishonest</td></tr>
+  <tr><td><span class="fr">intéressant / intéressante</span></td><td>interesting</td><td><span class="fr">ennuyeux / ennuyeuse</span></td><td>boring</td></tr>
+  <tr><td><span class="fr">moderne</span></td><td>modern</td><td><span class="fr">ancien / ancienne</span></td><td>old-fashioned</td></tr>
+  <tr><td><span class="fr">nouveau / nouvelle</span></td><td>new</td><td><span class="fr">vieux / vieille</span></td><td>old</td></tr>
+  <tr><td><span class="fr">vrai / vraie</span></td><td>true</td><td><span class="fr">faux / fausse</span></td><td>false</td></tr>
+  <tr><td><span class="fr">utile</span></td><td>useful</td><td><span class="fr">inutile</span></td><td>useless</td></tr>
+  <tr><td><span class="fr">agréable</span></td><td>pleasant</td><td><span class="fr">désagréable</span></td><td>unpleasant</td></tr>
+  <tr><td><span class="fr">sûr / sûre</span></td><td>safe</td><td><span class="fr">dangereux / dangereuse</span></td><td>dangerous</td></tr>
+</table>
+  </div>
+
+  <ul class="checklist" data-lesson="class46" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca46-6"><label for="ca46-6"><strong>OPPOSITES:</strong> I can pair each adjective above with its opposite</label></li>
+  </ul>
+
+  <h3>📌 Grammar Reminder: Adjective Agreement</h3>
+  <div class="note">
+  This is the same rule from <span class="fr">Adjectives</span> — applied now across all 274 words above. French adjectives agree with the noun in gender and number.<br/><br/>
+  <strong>Masculine → Feminine (add -e, or an irregular change):</strong> <span class="fr">petit → petite</span>, <span class="fr">intelligent → intelligente</span>, <span class="fr">heureux → heureuse</span>, <span class="fr">sérieux → sérieuse</span>, <span class="fr">beau → belle</span>, <span class="fr">nouveau → nouvelle</span>, <span class="fr">vieux → vieille</span>, <span class="fr">blanc → blanche</span>.<br/><br/>
+  <strong>Singular → Plural (usually add -s):</strong> <span class="fr">un étudiant intelligent</span> → <span class="fr">des étudiants intelligents</span>; <span class="fr">une voiture rouge</span> → <span class="fr">des voitures rouges</span>.<br/><br/>
+  <strong>Useful sentence pattern</strong> — subject + être + adjective: <span class="fr">Je suis fatigué.</span> / <span class="fr">Elle est fatiguée.</span> / <span class="fr">Nous sommes fatigués.</span><br/>
+  <strong>For objects</strong> — article + noun + adjective: <span class="fr">une voiture rouge</span>, <span class="fr">un pantalon noir</span>, <span class="fr">une maison moderne</span>.
+  </div>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>🎯 TEF/DELF Tip:</strong> practice each adjective in masculine, feminine, and plural forms whenever possible — this builds vocabulary, gender agreement, plural agreement, and speaking fluency together, all at once.
+  </div>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">une femme fatigué</span></td><td><span class="fr">une femme fatiguée</span></td><td>"Femme" is feminine, so the adjective needs the feminine form — add -e</td></tr>
+    <tr><td><span class="fr">un homme heureuse</span></td><td><span class="fr">un homme heureux</span></td><td>"Homme" is masculine — don't use the feminine form on a masculine noun</td></tr>
+    <tr><td><span class="fr">des voitures rouge</span></td><td><span class="fr">des voitures rouges</span></td><td>Plural nouns need the plural adjective form too — add -s</td></tr>
+    <tr><td><span class="fr">Il est un gentil homme</span> (as a description)</td><td><span class="fr">Il est gentil.</span> / <span class="fr">C'est un homme gentil.</span></td><td>"Il est" takes the adjective directly, no article — "c'est" needs the article + noun</td></tr>
+  </table>
+  </div>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class46">
+    <li><input type="checkbox" id="ca46-7"><label for="ca46-7"><strong>MASTERY:</strong> I can recall adjectives from any category in both directions (French↔English) and both genders, and use them correctly in my own sentences</label></li>
+    <li><input type="checkbox" id="gemini-skill-class46"><label for="gemini-skill-class46"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -9065,7 +9553,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44,45];
+const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44,45,46];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion
