@@ -70,6 +70,8 @@ tap, and self-test progress with per-topic checklists.
 39. L'Imparfait (formation, the être exception, and worked worksheet examples)
 40. Narrer au Passé (combining passé composé and imparfait to narrate a story)
 41. Le COD (complément d'objet direct — identifying the direct object)
+42. Les Pronoms Relatifs (qui/que/où — joining two sentences into one)
+43. Les Pronoms Y et EN (replacing à/de + thing with y or en, and correct word order)
 
 *Remaining A2 classes will be updated weekly.*
 

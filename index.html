@@ -11,10 +11,10 @@
   build step). Class count and ranges change often - don't trust a number
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
-  for ground truth. As of 2026-10-06: 41 lesson cards. A1 = classes
+  for ground truth. As of 2026-10-07: 43 lesson cards. A1 = classes
   1,2,35-40,3-21 (35-40 is the dedicated verb-conjugation arc, positioned
   early in classOrder/nav despite high ids, so verb foundations come
-  before anything that needs them). A2 = classes 22,23,25-34,41,42 (class
+  before anything that needs them). A2 = classes 22,23,25-34,41-44 (class
   24 was renumbered away and no longer exists).
   Built and used ENTIRELY ON A PHONE. Always keep changes mobile-first;
   don't assume a wide viewport when styling or testing.
@@ -253,7 +253,9 @@
   .checklist[data-lesson="class33"] label,
   .checklist[data-lesson="class34"] label,
   .checklist[data-lesson="class41"] label,
-  .checklist[data-lesson="class42"] label {
+  .checklist[data-lesson="class42"] label,
+  .checklist[data-lesson="class43"] label,
+  .checklist[data-lesson="class44"] label {
     color: #1565c0;
     font-weight: 600;
   }
@@ -270,7 +272,9 @@
   .checklist[data-lesson="class33"] input:checked + label,
   .checklist[data-lesson="class34"] input:checked + label,
   .checklist[data-lesson="class41"] input:checked + label,
-  .checklist[data-lesson="class42"] input:checked + label {
+  .checklist[data-lesson="class42"] input:checked + label,
+  .checklist[data-lesson="class43"] input:checked + label,
+  .checklist[data-lesson="class44"] input:checked + label {
     color: #999;
     font-weight: 400;
   }
@@ -687,6 +691,8 @@
       <a href="#" onclick="goToClass(34)">L'Imparfait</a>
       <a href="#" onclick="goToClass(41)">Narrer au Passé</a>
       <a href="#" onclick="goToClass(42)">Le COD</a>
+      <a href="#" onclick="goToClass(43)">Pronoms Relatifs</a>
+      <a href="#" onclick="goToClass(44)">Pronoms Y et EN</a>
     </div>
   </div>
 </nav>
@@ -8540,6 +8546,239 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 43: LES PRONOMS RELATIFS (QUI/QUE/OÙ) ===================== -->
+<div class="lesson-card" id="class43">
+  <div class="lesson-header">
+    <h2>Les Pronoms Relatifs : Qui, Que, Où <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class introduces RELATIVE PRONOUNS - qui, que, and où - words that join two sentences into one by replacing a repeated noun, instead of saying that noun twice. Example without a relative pronoun: &quot;J\'ai un ami. Mon ami habite à Paris.&quot; With a relative pronoun: &quot;J\'ai un ami qui habite à Paris.&quot; (I have a friend who lives in Paris) - &quot;qui&quot; replaced &quot;mon ami&quot; as the subject of the second clause and fused the two sentences together.\n\nTHE THREE RELATIVE PRONOUNS AND WHAT EACH ONE REPLACES:\nQUI replaces the SUBJECT of the clause that follows it - the word right after &quot;qui&quot; is always a conjugated VERB, never another subject. Example: &quot;J\'ai un ami qui habite à Paris.&quot; (&quot;qui&quot; = mon ami, the subject of &quot;habite&quot;).\nQUE (or QU\' before a vowel) replaces the DIRECT OBJECT of the clause that follows it - the word right after &quot;que&quot; is always a new SUBJECT, followed by its own verb. Example: &quot;Le livre que je lis est intéressant.&quot; (the book that I am reading is interesting - &quot;que&quot; = le livre, the object of &quot;lis&quot;; &quot;je&quot; is a new subject right after &quot;que&quot;).\nOÙ replaces a PLACE or a TIME - the word right after &quot;où&quot; is a new subject + verb, same as &quot;que&quot;, but &quot;où&quot; is only used when what\'s being replaced is a place or a moment in time. Example (place): &quot;C\'est la ville où j\'habite.&quot; (it\'s the city where I live). Example (time): &quot;Le jour où je l\'ai rencontré, il pleuvait.&quot; (the day when I met him, it was raining) - also &quot;l\'année où...&quot; (the year when...).\n\nTWO PRACTICAL TRICKS FOR CHOOSING BETWEEN THEM:\nTRICK 1 - put the relative pronoun back in its original place in the second sentence, and ask whether a preposition (dans, à, sur, en...) is needed before the noun. If YES, a preposition is needed -> use où. If NO preposition is needed -> use que. Example: &quot;Le livre que je lis&quot; -> original sentence would be &quot;je lis LE LIVRE&quot; - no preposition needed -> que. &quot;La ville où j\'habite&quot; -> original sentence would be &quot;j\'habite DANS la ville&quot; - needs the preposition &quot;dans&quot; -> où.\nTRICK 2 - the &quot;there&quot; test: can you naturally add the word &quot;y&quot; or &quot;là&quot; (there) to the sentence? If yes -> où. If no -> que. Example: &quot;la ville où j\'habite&quot; -> &quot;j\'habite là&quot; makes sense -> où. &quot;le livre que je lis&quot; -> &quot;je lis là&quot; makes no sense -> que.\n\nWORKED EXAMPLES - identify qui/que/où and explain why using the tricks above: &quot;J\'ai un ami qui habite à Paris.&quot; (qui - subject of habite). &quot;Le livre que je lis est intéressant.&quot; (que - object of lis, no preposition needed). &quot;C\'est la ville où j\'habite.&quot; (où - place, \'j\'habite dans la ville\'). &quot;Le jour où je l\'ai rencontré, il pleuvait.&quot; (où - time). &quot;La fille qui parle est ma soeur.&quot; (qui - subject of parle). &quot;Le film que nous avons vu était drôle.&quot; (que - object of avons vu).\n\nTeach me qui first (it\'s the easiest - always the subject), then que, then où, each with the tricks above. After each one, have me build my own sentences joining two short sentences into one using the correct relative pronoun. Then mix all three together and quiz me with new sentence pairs, having me choose qui/que/où and explain which trick told them which one to pick. When I can choose correctly and explain why every time, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Relative pronouns qui (replaces the subject), que (replaces the direct object), and où (replaces a place or time) — joining two sentences into one, plus two practical tricks for choosing between them.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers the three main relative pronouns: qui, que, and où. They join two sentences into one by replacing a repeated noun instead of saying it twice. Qui replaces the subject of the next clause. Que replaces the direct object. Où replaces a place or a time. It also covers two practical tricks for choosing the right one." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class43">0 / 5 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class43"></div></div>
+
+  <div class="note">
+  A relative pronoun joins two sentences into one, by replacing a noun that would otherwise be repeated. Without it: <span class="fr">J'ai un ami. Mon ami habite à Paris.</span> With it: <span class="fr">J'ai un ami qui habite à Paris.</span> (I have a friend who lives in Paris)
+  </div>
+
+  <h3>1️⃣ QUI — Replaces the Subject</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Qui replaces the subject of the clause that follows it. The word right after qui is always a conjugated verb, never another subject, because qui is already acting as the subject."
+      data-lang="en-US">
+      🎧 Qui Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>Qui</strong> replaces the <strong>subject</strong> of the next clause. The word right after <span class="fr">qui</span> is always a <strong>verb</strong>, never another subject.
+      </div>
+    </div>
+  </div>
+
+  <p class="example"><span class="fr">J'ai un ami qui habite à Paris.</span> (I have a friend who lives in Paris — "qui" = "mon ami", the subject of "habite")<br/>
+  <span class="fr">La fille qui parle est ma soeur.</span> (The girl who is talking is my sister — "qui" = "la fille", the subject of "parle")</p>
+
+  <ul class="checklist" data-lesson="class43" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c43-1"><label for="c43-1"><strong>QUI:</strong> I can use "qui" to replace a subject and join two sentences into one</label></li>
+  </ul>
+
+  <h3>2️⃣ QUE — Replaces the Direct Object</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Que, or qu' before a vowel, replaces the direct object of the clause that follows it. The word right after que is always a new subject, followed by its own verb - that's the opposite pattern from qui."
+      data-lang="en-US">
+      🎧 Que Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>Que</strong> (or <span class="fr">qu'</span> before a vowel) replaces the <strong>direct object</strong> of the next clause. The word right after <span class="fr">que</span> is always a <strong>new subject</strong>, then its own verb.
+      </div>
+    </div>
+  </div>
+
+  <p class="example"><span class="fr">Le livre que je lis est intéressant.</span> (The book that I'm reading is interesting — "que" = "le livre", the object of "lis"; "je" is a new subject right after "que")<br/>
+  <span class="fr">Le film que nous avons vu était drôle.</span> (The movie that we watched was funny — "que" = "le film", the object of "avons vu")</p>
+
+  <ul class="checklist" data-lesson="class43" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c43-2"><label for="c43-2"><strong>QUE:</strong> I can use "que" to replace a direct object, and tell it apart from "qui" by checking what comes right after it</label></li>
+  </ul>
+
+  <h3>3️⃣ OÙ — Replaces a Place or a Time</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Où replaces a place or a time. The word right after où is a new subject plus verb, same shape as que, but où is only used when what's being replaced is a place or a moment in time."
+      data-lang="en-US">
+      🎧 Où Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>Où</strong> replaces a <strong>place</strong> or a <strong>time</strong>. Same shape as "que" (new subject + verb after it), but only for places/times.
+      </div>
+    </div>
+  </div>
+
+  <p class="example"><span class="fr">C'est la ville où j'habite.</span> (It's the city where I live — place)<br/>
+  <span class="fr">Le jour où je l'ai rencontré, il pleuvait.</span> (The day I met him, it was raining — time, also "l'année où..." = "the year when...")</p>
+
+  <ul class="checklist" data-lesson="class43" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c43-3"><label for="c43-3"><strong>OÙ:</strong> I can use "où" for places and times</label></li>
+  </ul>
+
+  <h3>4️⃣ Two Tricks for Choosing Between Que and Où</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Trick</th><th>How it works</th><th>Example</th></tr>
+    <tr><td><strong>1. Preposition test</strong></td><td>Put the noun back in its original spot. Does it need a preposition (dans/à/sur/en) before it? Yes → où. No → que.</td><td><span class="fr">je lis LE LIVRE</span> (no preposition) → que. <span class="fr">j'habite DANS la ville</span> (needs "dans") → où.</td></tr>
+    <tr><td><strong>2. "There" test</strong></td><td>Can you naturally add "y" or "là" (there)? Yes → où. No → que.</td><td><span class="fr">j'habite là</span> ✓ makes sense → où. <span class="fr">je lis là</span> ✗ doesn't make sense → que.</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class43" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c43-4"><label for="c43-4"><strong>TRICKS:</strong> I can use the preposition test or the "there" test to choose between "que" and "où"</label></li>
+  </ul>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">J'ai un ami qui il habite à Paris.</span></td><td><span class="fr">J'ai un ami qui habite à Paris.</span></td><td>"Qui" already IS the subject — never add another subject pronoun after it</td></tr>
+    <tr><td><span class="fr">Le livre qui je lis est intéressant.</span></td><td><span class="fr">Le livre que je lis est intéressant.</span></td><td>The book is the object of "lis", not the subject — needs "que", not "qui"</td></tr>
+    <tr><td><span class="fr">La ville que j'habite.</span></td><td><span class="fr">La ville où j'habite.</span></td><td>"J'habite DANS la ville" needs a preposition → use "où", not "que"</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class43" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c43-5"><label for="c43-5"><strong>MISTAKES:</strong> I can spot and avoid these common errors</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class43">
+    <li><input type="checkbox" id="gemini-skill-class43"><label for="gemini-skill-class43"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 44: LES PRONOMS Y ET EN ===================== -->
+<div class="lesson-card" id="class44">
+  <div class="lesson-header">
+    <h2>Les Pronoms Y et EN <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class introduces two small but very frequent pronouns, Y and EN, that replace a whole prepositional phrase so you don\'t have to repeat it. Both go in the SAME position in the sentence as object pronouns like le/la/les - right before the conjugated verb (or right before the infinitive, if there is one).\n\nY replaces a phrase starting with À (or a place introduced by dans/sur/chez/etc.) - it almost always means &quot;there&quot; or stands in for &quot;à + thing/place&quot;. Examples: &quot;Vas-tu à la cafétéria ?&quot; -> &quot;Non, je n\'y vais pas.&quot; (no, I\'m not going there). &quot;Penses-tu à ton examen ?&quot; -> &quot;Non, je n\'y pense pas.&quot; (no, I\'m not thinking about it - &quot;penser à&quot; is a fixed à-verb). &quot;As-tu réfléchi à ma proposition ?&quot; -> &quot;Oui, j\'y ai réfléchi.&quot; (yes, I\'ve thought about it).\n\nEN replaces a phrase starting with DE, OR any noun introduced by du/de la/des/un/une (a quantity, something not counted as &quot;one specific item&quot;). Examples: &quot;As-tu apporté des enveloppes ?&quot; -> &quot;Oui, j\'en ai apporté.&quot; (yes, I brought some - &quot;des enveloppes&quot; -> &quot;en&quot;). &quot;As-tu pris un café ?&quot; -> &quot;Oui, j\'en ai pris un.&quot; (yes, I had one - notice &quot;un&quot; stays at the end when you\'re counting ONE of something). &quot;Avez-vous réfléchi à ma proposition ?&quot; is Y (réfléchi À), but &quot;Vous souvenez-vous DE votre enfance ?&quot; -> &quot;Oui, je m\'en souviens.&quot; is EN (se souvenir DE).\n\nTHE QUICK TEST: find the preposition attached to the verb (many common French verbs have a fixed preposition - penser à, aller à, réfléchir à, s\'intéresser à = À-verbs -> Y; parler de, se souvenir de, avoir besoin de, revenir de = DE-verbs -> EN). If there\'s no fixed preposition and the noun just has du/de la/des/un/une in front of it as a quantity word, that\'s also EN. If the noun is a specific place after à/dans/sur/chez, that\'s Y.\n\nWORD ORDER: both Y and EN go directly before the conjugated verb in simple tenses (&quot;j\'y vais&quot;, &quot;j\'en ai&quot;), and directly before the auxiliary in passé composé (&quot;j\'y ai réfléchi&quot;, &quot;j\'en ai apporté&quot;). In the negative, ne...pas wraps around the whole pronoun+verb group: &quot;je n\'y vais pas&quot;, &quot;je n\'en ai pas apporté&quot;.\n\nWORKED EXAMPLES mixing both: &quot;Veux-tu des cacahouètes ?&quot; -> &quot;Oui, j\'en veux.&quot; (EN - des = quantity). &quot;Vas-tu à la campagne ?&quot; -> &quot;Oui, j\'y vais.&quot; (Y - à la campagne = place). &quot;Les bijoux sont-ils dans la boîte ?&quot; -> &quot;Non, ils n\'y sont pas.&quot; (Y - dans la boîte = place). &quot;Avez-vous besoin de lait ?&quot; -> &quot;Non, nous n\'en avons pas besoin.&quot; (EN - besoin DE).\n\nTeach me Y first with the à-verb list and place examples, then EN with the de-verb list and quantity examples, each time having me answer real questions myself before showing the answer. Then mix both together (using the question pairs above as a model) and quiz me with new questions, having me pick Y or EN and explain which fixed preposition or quantity pattern told them which one to use, plus the correct word order including in the negative. When I can choose and place Y/EN correctly every time, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: The pronouns Y (replaces à + place/thing) and EN (replaces de + thing, or a quantity with du/de la/des/un/une) — which fixed prepositions trigger each one, and correct word order including in the negative.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers Y and EN, two small but very frequent pronouns that replace a whole prepositional phrase. Y replaces à plus a place or thing. EN replaces de plus a thing, or a quantity word like du, de la, des, un, or une. Both go right before the conjugated verb, same position as le, la, les." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class44">0 / 5 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class44"></div></div>
+
+  <div class="note">
+  Y and EN replace a whole prepositional phrase so you don't have to repeat it. Both sit in the SAME position as object pronouns like <span class="fr">le/la/les</span> — right before the conjugated verb (or before the infinitive, if there is one).
+  </div>
+
+  <h3>1️⃣ Y — Replaces À + Place or Thing</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Y replaces a phrase starting with à, or a place introduced by dans, sur, chez and similar. It almost always means there, or stands in for à plus a thing or place."
+      data-lang="en-US">
+      🎧 Y Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>Y</strong> replaces <span class="fr">à + place/thing</span> (or a place with dans/sur/chez). It means "there" or stands in for "about it".
+      </div>
+    </div>
+  </div>
+
+  <p class="example"><span class="fr">Vas-tu à la cafétéria ? — Non, je n'y vais pas.</span> (Are you going to the cafeteria? — No, I'm not going there)<br/>
+  <span class="fr">As-tu réfléchi à ma proposition ? — Oui, j'y ai réfléchi.</span> (Did you think about my proposal? — Yes, I thought about it)</p>
+
+  <ul class="checklist" data-lesson="class44" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c44-1"><label for="c44-1"><strong>Y:</strong> I can use "y" to replace à + a place or thing, in the right word order</label></li>
+  </ul>
+
+  <h3>2️⃣ EN — Replaces DE + Thing, or a Quantity</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="En replaces a phrase starting with de, or any noun introduced by du, de la, des, un, or une when it's a quantity — something not counted as one specific item."
+      data-lang="en-US">
+      🎧 En Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>En</strong> replaces <span class="fr">de + thing</span>, or a noun with <span class="fr">du/de la/des/un/une</span> as a quantity.
+      </div>
+    </div>
+  </div>
+
+  <p class="example"><span class="fr">As-tu apporté des enveloppes ? — Oui, j'en ai apporté.</span> (Did you bring envelopes? — Yes, I brought some)<br/>
+  <span class="fr">As-tu pris un café ? — Oui, j'en ai pris un.</span> (Did you have a coffee? — Yes, I had one — "un" stays at the end when counting ONE of something)<br/>
+  <span class="fr">Vous souvenez-vous de votre enfance ? — Oui, je m'en souviens.</span> (Do you remember your childhood? — Yes, I remember it — "se souvenir DE")</p>
+
+  <ul class="checklist" data-lesson="class44" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c44-2"><label for="c44-2"><strong>EN:</strong> I can use "en" to replace de + a thing, or a quantity with du/de la/des/un/une</label></li>
+  </ul>
+
+  <h3>3️⃣ The Quick Test: Find the Fixed Preposition</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Verb pattern</th><th>Examples</th><th>Pronoun</th></tr>
+    <tr><td>Fixed À-verbs</td><td><span class="fr">penser à, aller à, réfléchir à, s'intéresser à</span></td><td>Y</td></tr>
+    <tr><td>Fixed DE-verbs</td><td><span class="fr">parler de, se souvenir de, avoir besoin de, revenir de</span></td><td>EN</td></tr>
+    <tr><td>Quantity word (du/de la/des/un/une)</td><td><span class="fr">des enveloppes, un café</span></td><td>EN</td></tr>
+    <tr><td>Specific place after à/dans/sur/chez</td><td><span class="fr">à la cafétéria, dans la boîte</span></td><td>Y</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class44" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c44-3"><label for="c44-3"><strong>QUICK TEST:</strong> I can find the fixed preposition (à or de) or quantity word to decide between Y and EN</label></li>
+  </ul>
+
+  <h3>4️⃣ Word Order (Including the Negative)</h3>
+  <p>Both Y and EN go directly before the conjugated verb in simple tenses, and directly before the auxiliary in passé composé. In the negative, <span class="fr">ne...pas</span> wraps around the whole pronoun+verb group.</p>
+  <p class="example"><span class="fr">J'y vais.</span> / <span class="fr">Je n'y vais pas.</span><br/>
+  <span class="fr">J'en ai apporté.</span> / <span class="fr">Je n'en ai pas apporté.</span><br/>
+  <span class="fr">Les bijoux sont-ils dans la boîte ? — Non, ils n'y sont pas.</span></p>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">Je vais y.</span></td><td><span class="fr">J'y vais.</span></td><td>Y/EN go BEFORE the verb, not after — same rule as le/la/les</td></tr>
+    <tr><td><span class="fr">Je ne vais pas y.</span></td><td><span class="fr">Je n'y vais pas.</span></td><td>"Ne...pas" wraps around the pronoun+verb group, not just the verb</td></tr>
+    <tr><td><span class="fr">As-tu pris un café ? — Oui, j'en ai pris.</span> (missing "un")</td><td><span class="fr">Oui, j'en ai pris un.</span></td><td>When counting exactly ONE item, "un"/"une" stays at the end of the sentence</td></tr>
+    <tr><td><span class="fr">Avez-vous besoin de lait ? — Non, nous n'y avons pas besoin.</span></td><td><span class="fr">Non, nous n'en avons pas besoin.</span></td><td>"Avoir besoin DE" is a DE-verb, so it takes EN, not Y</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class44" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c44-4"><label for="c44-4"><strong>WORD ORDER:</strong> I can place Y/EN correctly before the verb, including in the negative and when counting "un/une"</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class44">
+    <li><input type="checkbox" id="c44-5"><label for="c44-5"><strong>MASTERY:</strong> I can choose Y vs EN correctly and place them in the right word order, without hesitating</label></li>
+    <li><input type="checkbox" id="gemini-skill-class44"><label for="gemini-skill-class44"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -8694,7 +8933,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42];
+const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion

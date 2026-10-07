@@ -27,6 +27,16 @@ for it that turn — it's the whole point of this file, and it's cheap to do
 right after the work while the details are fresh. Skipping it is what
 caused the need for this file in the first place.
 
+## Standing instruction: read this file at the start of every session (added 2026-10-07)
+
+**Read this entire file at the start of every session — and again any
+time the environment resets or the conversation is compacted/summarized**,
+before touching `index.html`. A compaction summary is not a substitute:
+it can drop or distort the project-specific conventions below (checkbox
+id scheme, escaping traps, A1/A2 header variants, the standing-instruction
+policies themselves). Re-reading this file directly is cheap; re-deriving
+its contents from a lossy summary is how mistakes creep back in.
+
 ## Standing instruction: generate extra content, and reorganize, when the
 source material isn't enough on its own (added 2026-10-06)
 
@@ -1718,6 +1728,68 @@ three edited chapters screenshotted and visually confirmed (class10's
 new rule sits directly before the checklist item needing it; class21's
 mistakes table → Natural Conversation → Back to Top now in the correct
 order; class41's new section renders with its table and example intact).
+
+## Classes 43 & 44 added 2026-10-07 — relative pronouns and y/en
+
+User uploaded 5 files from "another batch, same syllabus" and asked for a
+usefulness assessment before building anything (established pattern: ask
+first, build on explicit go-ahead). Read all 5 (3 PDFs read directly; the
+2 .docx files failed via the Read tool — binary file error — extracted
+instead with a small Python script unzipping `word/document.xml` and
+stripping tags). Verdict given to the user:
+
+- **Relatif_pronom_cheat_sheet.pdf** (qui/que/où) — genuinely new, fills a
+  confirmed gap (class42's COD chapter explicitly notes relative pronouns
+  as a "future class"). Built as new Class 43.
+- **Pronoms_Y_et_EN.docx** — topic (y/en) is a confirmed gap, but the file
+  itself is only blank drill exercises with no grammar explanation or
+  answer key. Per the standing "generate extra content when source isn't
+  enough" instruction, wrote the grammar rule from scratch (à-verbs → y,
+  de-verbs/quantity → en, the two-step "quick test", word order including
+  the negative) and used the drill topics as inspiration for the
+  worked-example set, not as copied content. Built as new Class 44.
+- **French_Adjectives.pdf** (BAGS rule, agreement, placement, meaning-shift
+  grammar guide) — skipped, confirmed duplicate: existing Class 22
+  (Adjectives) already covers all of it in equal or greater depth.
+- **Passe_Compose_Imparfait.docx** — skipped, confirmed duplicate: blank
+  drill worksheets only, no new grammar; site already has this covered in
+  depth (classes 28, 30-34, 41) plus a dedicated practice-bank chapter
+  (class33).
+- **French_Adjectives_by_Category.pdf** (~250 adjectives, 19 themed
+  categories) — flagged as "maybe", not built: it's vocabulary, not
+  grammar, and the site has no vocab-bank-style chapter format yet. Left
+  for the user to request explicitly if wanted.
+
+Both new chapters follow the standard pattern exactly (numbered `<h3>`
+topics with per-topic checklist right after, `❌ Common Mistakes to Avoid`
+table, `✅ Overall Mastery` section, `⬆️ Back to Top` as the true last
+element). Both are A2-topic chapters (relative pronouns and object
+pronouns are post-A1 grammar), so both got the blue-checkbox CSS treatment
+alongside classes 22-34/41/42, not the default A1 green. `classOrder` and
+the nav dropdown extended to `...,42,43,44`.
+
+**1 escaping-trap bug this round** (class44 only): "I'm not going there"
+and "I've thought about it" — raw apostrophes in ENGLISH contractions
+typed directly into the Python prompt-building string instead of through
+the `AP` token, same recurring pattern as the class10/21 incident. Caught
+by the standard headless copy-button-parsing check (correctly isolated
+button index 43 = class44, class43 passed clean), fixed by locating the
+exact raw-apostrophe offset and swapping in `AP`, same method as every
+prior incident. Lesson still holds: English translation text inside the
+prompt string needs the same escaping care as the French text.
+
+Full verification clean after the fix: JS syntax, div balance (962/962),
+317 checkbox ids all unique, label↔id 1:1 match, table-wrap coverage 4/4
+on the two new chapters, all 44 copy buttons parse, nav order matches
+`classOrder`, all nav labels substring-match their chapter's `<h2>`, no
+console errors, no horizontal overflow at 390px, both chapters
+screenshotted and visually confirmed.
+
+Also added a new standing instruction to this file (see near the top):
+read this entire file at the start of every session and after any
+environment reset / context compaction, not just when told to — a
+compaction summary can drop or distort the project-specific conventions
+here, and re-reading the file directly is cheap insurance against that.
 
 ## Open suggestions / things to keep an eye on
 
