@@ -11,11 +11,13 @@
   build step). Class count and ranges change often - don't trust a number
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
-  for ground truth. As of 2026-10-07: 45 lesson cards. A1 = classes
-  1,2,35-40,3-21 (35-40 is the dedicated verb-conjugation arc, positioned
-  early in classOrder/nav despite high ids, so verb foundations come
-  before anything that needs them). A2 = classes 22,23,25-34,41-46 (class
-  24 was renumbered away and no longer exists).
+  for ground truth. As of 2026-10-07: 46 lesson cards. A1 = classes
+  1,2,35-40,47,3-21 (35-40 is the dedicated verb-conjugation arc,
+  positioned early in classOrder/nav despite high ids, so verb
+  foundations come before anything that needs them; 47 is a verb-
+  conjugation cheat-sheet reference card, positioned right after the
+  verb arc it summarizes). A2 = classes 22,23,25-34,41-46 (class 24 was
+  renumbered away and no longer exists).
   Built and used ENTIRELY ON A PHONE. Always keep changes mobile-first;
   don't assume a wide viewport when styling or testing.
 
@@ -659,6 +661,7 @@
       <a href="#" onclick="goToClass(38)">Groupe (-IR) <span class="study-time">· 20 min</span></a>
       <a href="#" onclick="goToClass(39)">Groupe (-RE) <span class="study-time">· 25 min</span></a>
       <a href="#" onclick="goToClass(40)">Verbes Pronominaux <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(47)">Cheat Sheet <span class="study-time">· 15 min</span></a>
       <a href="#" onclick="goToClass(3)">Greetings <span class="study-time">· 55 min</span></a>
       <a href="#" onclick="goToClass(4)">Calendar <span class="study-time">· 30 min</span></a>
       <a href="#" onclick="goToClass(5)">Classroom <span class="study-time">· 20 min</span></a>
@@ -9399,6 +9402,57 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 47: CHEAT SHEET — VERB CONJUGATION REFERENCE ===================== -->
+<div class="lesson-card" id="class47">
+  <div class="lesson-header">
+    <h2>Cheat Sheet: Verb Conjugation Reference <span class="date">— Quick Reference</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES & HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💚 GREEN TEXT: A1 checklists in green (#2e7d32), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A1 button when all A1 classes (1-21) are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nThis class is a CHEAT SHEET - a single quick-reference table, not new content. It consolidates the four verb-conjugation patterns already taught across earlier classes (&quot;Les Groupes de Verbes&quot;, &quot;Verbes Essentiels&quot;, and the three Groupe(-ER)/Groupe(-IR)/Groupe(-RE) classes) into one side-by-side comparison, using one model verb per pattern: manger (1st group, -ER), finir (2nd group, -IR, the -issant type), attendre (3rd group, -RE), and partir (3rd group, an irregular -IR verb that does NOT follow the finir/-issant pattern - this is the exact contrast the -issant test from &quot;Les Groupes de Verbes&quot; exists to catch).\n\nTHE CHEAT SHEET TABLE:\n1st Group (-ER) - manger: je mange, tu manges, il mange, nous mangeons, vous mangez, ils mangent\n2nd Group (-IR) - finir: je finis, tu finis, il finit, nous finissons, vous finissez, ils finissent\n3rd Group (-RE) - attendre: j\'attends, tu attends, il attend, nous attendons, vous attendez, ils attendent\n3rd Group (-IR irregular) - partir: je pars, tu pars, il part, nous partons, vous partez, ils partent\n\nWHAT TO NOTICE, side by side: nous/vous endings are the most consistent across all four (-ons/-ez, except finir/partir add -iss- or stay simple) - these are the easiest forms to get right on sight. The je/tu/il forms are where the patterns actually diverge and where mistakes happen, especially confusing attendre\'s bare il attend (no ending at all) with the other groups, and confusing partir (irregular, short stem, no -iss-) with finir (regular 2nd group, -iss- in nous/vous/ils) just because both end in -ir.\n\nQuiz me across all four patterns, mixed together, not one at a time - give me a pronoun and a verb from one of the four groups (you can use manger/finir/attendre/partir, or substitute any other verb I\'ve already learned from the same group in an earlier class) and have me conjugate it correctly, including explaining which group it\'s from and why. Mix up the order so I can\'t just pattern-match by position. When I can do this fluently across all four groups without hesitating, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: A single side-by-side cheat-sheet table comparing present-tense conjugation across all four verb patterns — 1st group (-ER, manger), 2nd group (-IR, finir), 3rd group (-RE, attendre), and 3rd group irregular -IR (partir). Reference only — no new grammar, see the earlier verb-group classes for the full rules.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter is a quick-reference cheat sheet comparing present-tense conjugation across all four verb patterns side by side: manger for the first group, finir for the second group, attendre for the third group, and partir for an irregular third-group verb ending in ir. It's for reviewing and drilling conjugation recall, not for learning new rules." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class47">0 / 2 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class47"></div></div>
+
+  <div class="note">
+  This is a <strong>reference cheat sheet</strong>, not a new lesson — it assumes you already know all four patterns from <span class="fr">Les Groupes de Verbes</span>, <span class="fr">Groupe (-ER)</span>, <span class="fr">Groupe (-IR)</span>, and <span class="fr">Groupe (-RE)</span>. Use this table as a quick side-by-side lookup.
+  </div>
+
+  <h3>The Four Patterns, Side by Side</h3>
+
+  <div class="table-wrap">
+<table>
+  <tr><th>Group</th><th>1st Group (-ER)</th><th>2nd Group (-IR)</th><th>3rd Group (-RE)</th><th>3rd Group (-IR irregular)</th></tr>
+  <tr><td><strong>Infinitive</strong></td><td><span class="fr">manger</span></td><td><span class="fr">finir</span></td><td><span class="fr">attendre</span></td><td><span class="fr">partir</span></td></tr>
+  <tr><td><strong>Je</strong></td><td><span class="fr">je mange</span></td><td><span class="fr">je finis</span></td><td><span class="fr">j'attends</span></td><td><span class="fr">je pars</span></td></tr>
+  <tr><td><strong>Tu</strong></td><td><span class="fr">tu manges</span></td><td><span class="fr">tu finis</span></td><td><span class="fr">tu attends</span></td><td><span class="fr">tu pars</span></td></tr>
+  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il mange</span></td><td><span class="fr">il finit</span></td><td><span class="fr">il attend</span></td><td><span class="fr">il part</span></td></tr>
+  <tr><td><strong>Nous</strong></td><td><span class="fr">nous mangeons</span></td><td><span class="fr">nous finissons</span></td><td><span class="fr">nous attendons</span></td><td><span class="fr">nous partons</span></td></tr>
+  <tr><td><strong>Vous</strong></td><td><span class="fr">vous mangez</span></td><td><span class="fr">vous finissez</span></td><td><span class="fr">vous attendez</span></td><td><span class="fr">vous partez</span></td></tr>
+  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils mangent</span></td><td><span class="fr">ils finissent</span></td><td><span class="fr">ils attendent</span></td><td><span class="fr">ils partent</span></td></tr>
+</table>
+  </div>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Watch out:</strong> <span class="fr">partir</span> ends in <span class="fr">-ir</span> just like <span class="fr">finir</span>, but it does NOT take the <span class="fr">-iss-</span> endings (<span class="fr">nous partons</span>, not "nous partissons"). Run the <span class="fr">-issant</span> test from <span class="fr">Les Groupes de Verbes</span> if you're ever unsure: "en partissant" isn't a real word, so <span class="fr">partir</span> is 3rd group (irregular), not 2nd group.
+  </div>
+
+  <ul class="checklist" data-lesson="class47" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c47-1"><label for="c47-1"><strong>CHEAT SHEET:</strong> I can use this table to conjugate any verb from these four patterns correctly, on sight</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class47">
+    <li><input type="checkbox" id="gemini-skill-class47"><label for="gemini-skill-class47"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -9553,7 +9607,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44,45,46];
+const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44,45,46];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion
