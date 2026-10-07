@@ -34,7 +34,7 @@ tap, and self-test progress with per-topic checklists.
 6. Verbes -IR (regular 2nd-group verbs, present tense)
 7. Verbes -RE (regular 3rd-group verbs, present tense)
 8. Verbes Pronominaux (reflexive verb mechanism)
-9. Cheat Sheet (quick-reference table comparing all 4 verb patterns side by side — manger/finir/attendre/partir)
+9. Cheat Sheet (quick-reference conjugation tables — 4 example verbs for each of the 4 verb patterns, plus avoir/être)
 10. Greetings
 11. Calendar
 12. Classroom
