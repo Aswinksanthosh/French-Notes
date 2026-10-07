@@ -2106,6 +2106,58 @@ as intended — confirmed this is the existing wide-table behavior, not a
 new issue). Also renumbered the rest of `README.md`'s A1/A2 curriculum
 lists since this was a genuine mid-list insertion, not an append.
 
+## Class 47 revised same day: 4 verbs per pattern + avoir/être added
+
+Immediately after the initial build, user asked for two changes: add
+avoir/être, and "give 4 examples instead of 1" (the original table had
+exactly one model verb per pattern — manger/finir/attendre/partir).
+Read this as: 4 example verbs per pattern, to prove the ending pattern
+generalizes across different verbs rather than being specific to one —
+not "4 example sentences," since a cheat sheet's whole point is bare
+conjugation tables, not worked sentences (those already exist in the
+classes this chapter summarizes).
+
+Rebuilt from scratch rather than patching: removed the old class47
+block entirely (single clean `text.index()` slice between its comment
+marker and `<footer>`, confirmed exactly one `lesson-card` div in the
+removed region before deleting) and reinserted a new one at the same
+`id`, keeping `classOrder`/nav untouched since the chapter's identity
+and position didn't change, only its content.
+
+**New structure**: 4 verbs per table for each of the 4 regular/irregular
+patterns (1st -ER: manger/parler/habiter/aimer; 2nd -IR regular: finir/
+choisir/réussir/grandir; 3rd -RE: attendre/vendre/perdre/répondre; 3rd
+-IR irregular, the "partir family": partir/sortir/dormir/sentir — all
+four share partir's stem-dropping behavior, a genuine addition beyond
+what any earlier class had fully conjugated), each as a Person × 4-verb
+table (not one bloated 20-column table — kept each pattern's table to a
+sane width for phone scrolling). **Avoir/être deliberately NOT forced
+into the same "4 examples" shape** — they're each uniquely irregular,
+there's no second verb that conjugates like avoir or like être, so
+giving them "4 examples" would mean inventing fake parallel verbs that
+don't exist. Instead: one combined 2-column (avoir + être) table, with a
+note explicitly explaining why these two don't get the 4-verb treatment
+the other patterns got. This was a judgment call, not something the
+user specified — flagging it here in case the user actually wanted
+avoir/être padded out with unrelated irregular verbs for symmetry
+instead; revisit if they push back.
+
+Checklist grew from 2 to 3 items (the four-pattern table, avoir/être,
+plus the Gemini-test item) — still deliberately lean for a reference
+chapter, now proportional to covering 5 conceptual groups instead of 4.
+Gemini prompt rewritten to explicitly test with NEW verbs from the same
+families, not just the 4 listed per pattern — reinforcing that the
+point is pattern recognition, not memorizing these specific 16 examples
+plus avoir/être.
+
+Verified: JS syntax, div balance (1018/1018), 334 checkbox ids all
+unique, label↔id 1:1 match, table-wrap coverage 218/218, exactly one
+`id="class47"` in the file (confirms the remove-then-reinsert left no
+duplicate), all copy buttons parse, nav/substring checks clean, no
+console errors, no overflow at 390px, full chapter screenshotted and
+visually confirmed — all 5 tables render correctly including the
+narrower 3-column avoir/être table at the end.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
