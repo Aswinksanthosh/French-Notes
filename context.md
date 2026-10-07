@@ -2052,6 +2052,60 @@ sections screenshotted and visually confirmed — which is specifically
 how bug #2 above was caught, underscoring why that step isn't optional
 for data-driven chapters.
 
+## Class 47 added 2026-10-07: "Cheat Sheet: Verb Conjugation Reference" (A1)
+
+User gave a literal 5-column markdown table (4 verb patterns side by
+side — manger/finir/attendre/partir — plus a row label column) and asked
+for it to become a chapter called "Cheat Sheet." Built as a lean
+reference card, not a full taught lesson: one topic section containing
+the table, a single checklist item ("I can use this cheat sheet to
+conjugate any verb from these four patterns correctly, on sight") plus
+the standard Gemini-test item — 2 checkboxes total, the smallest chapter
+on the site by a wide margin, which is correct for what a cheat sheet is
+(nothing new to teach, nothing to break into topics).
+
+**Placement decision (not specified by the user, used judgment):**
+positioned logically right after <span class="fr">Verbes Pronominaux</span>
+(class40) in `classOrder`/nav, since this table is a direct side-by-side
+consolidation of exactly the four verb-conjugation classes that precede
+it (`Les Groupes de Verbes` through `Verbes Pronominaux`) — it only makes
+sense once those four patterns have actually been taught. Physically,
+the HTML itself was still appended at the end of the file before
+`<footer>`, same as every other recent build — confirmed this is safe
+because nothing in the JS (nav, `showClass`, Prev/Next, progress
+counting) depends on DOM order, only on `classOrder`'s array order and
+matching `id`/`data-lesson` attributes. This is the first time a new
+chapter's logical nav position and physical file position have
+deliberately diverged — worth knowing for future chapter placement: it's
+fine to insert anywhere logically needed without having to carefully
+splice HTML into the middle of a 9000+ line file.
+
+**Content note**: the user's partir column is a genuine extra value-add
+beyond the original verb-arc classes — `Les Groupes de Verbes` only used
+`partir` as an abstract example when explaining the -issant test (why
+it's 3rd group, not 2nd), it was never given a full conjugation table of
+its own anywhere on the site before this chapter. Added a callout box
+explicitly cross-referencing that test for anyone who forgets why
+`partir` behaves differently from `finir` despite both ending in `-ir`.
+
+Since this chapter is A1-level (uses `header_a1.txt`, not the A2 blue
+variant) but was built well after the A2-focused chapters 41-46, it's a
+reminder that **level is determined by content/position in the
+curriculum, not by build order** — always check which header variant
+and which checklist-color CSS block (or lack thereof — A1 needs no
+`data-lesson="classN"` entry in the A2-specific blue-label CSS list,
+unlike every other recent build) actually applies before reusing the
+most recent build script as a template.
+
+Verified: JS syntax, div balance (1014/1014), 333 checkbox ids all
+unique, label↔id 1:1 match, table-wrap coverage 214/214, all 47 copy
+buttons parse, nav order matches `classOrder`, all nav labels pass the
+h2-substring check, no console errors, no horizontal overflow at 390px
+(the 5-column table scrolls horizontally within its own `.table-wrap`,
+as intended — confirmed this is the existing wide-table behavior, not a
+new issue). Also renumbered the rest of `README.md`'s A1/A2 curriculum
+lists since this was a genuine mid-list insertion, not an append.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:

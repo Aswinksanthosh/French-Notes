@@ -34,46 +34,47 @@ tap, and self-test progress with per-topic checklists.
 6. Verbes -IR (regular 2nd-group verbs, present tense)
 7. Verbes -RE (regular 3rd-group verbs, present tense)
 8. Verbes Pronominaux (reflexive verb mechanism)
-9. Greetings
-10. Calendar
-11. Classroom
-12. Endings
-13. Articles
-14. Gender
-15. Hobbies
-16. Family
-17. Professions
-18. Reflexive
-19. Future
-20. Demonstratives
-21. Negation
-22. Colors
-23. Meals
-24. Listening
-25. Irregular
-26. Conditional
-27. Description
+9. Cheat Sheet (quick-reference table comparing all 4 verb patterns side by side — manger/finir/attendre/partir)
+10. Greetings
+11. Calendar
+12. Classroom
+13. Endings
+14. Articles
+15. Gender
+16. Hobbies
+17. Family
+18. Professions
+19. Reflexive
+20. Future
+21. Demonstratives
+22. Negation
+23. Colors
+24. Meals
+25. Listening
+26. Irregular
+27. Conditional
+28. Description
 
 **A2**
 
-28. Adjectives
-29. Adverbs
-30. Prepositions
-31. Prepositions + Future
-32. Expressions (Prepositions II — cause, purpose, fixed expressions)
-33. Passé Composé (Le Passé Récent & Le Passé Composé)
-34. Group 3 (55 irregular verbs, grouped by family)
-35. La Règle (Passé composé avec être — the core agreement rule)
-36. Cas Particuliers (Passé composé avec être — mixed groups, pronunciation exception, full 16-verb reference)
-37. Exemples & Erreurs (Passé composé avec être — worked examples and common mistakes)
-38. Pratique Intensive (Passé composé — large avoir/être practice bank)
-39. L'Imparfait (formation, the être exception, and worked worksheet examples)
-40. Narrer au Passé (combining passé composé and imparfait to narrate a story)
-41. Le COD (complément d'objet direct — identifying the direct object)
-42. Les Pronoms Relatifs (qui/que/où — joining two sentences into one)
-43. Les Pronoms Y et EN (replacing à/de + thing with y or en, and correct word order)
-44. Les Pronoms Compléments : COD et COI (le/la/les and lui/leur — the pronouns that replace a COD or COI)
-45. Adjectifs par Catégorie (274 adjectives across 18 themed categories plus an opposites reference — vocabulary, not grammar)
+29. Adjectives
+30. Adverbs
+31. Prepositions
+32. Prepositions + Future
+33. Expressions (Prepositions II — cause, purpose, fixed expressions)
+34. Passé Composé (Le Passé Récent & Le Passé Composé)
+35. Group 3 (55 irregular verbs, grouped by family)
+36. La Règle (Passé composé avec être — the core agreement rule)
+37. Cas Particuliers (Passé composé avec être — mixed groups, pronunciation exception, full 16-verb reference)
+38. Exemples & Erreurs (Passé composé avec être — worked examples and common mistakes)
+39. Pratique Intensive (Passé composé — large avoir/être practice bank)
+40. L'Imparfait (formation, the être exception, and worked worksheet examples)
+41. Narrer au Passé (combining passé composé and imparfait to narrate a story)
+42. Le COD (complément d'objet direct — identifying the direct object)
+43. Les Pronoms Relatifs (qui/que/où — joining two sentences into one)
+44. Les Pronoms Y et EN (replacing à/de + thing with y or en, and correct word order)
+45. Les Pronoms Compléments : COD et COI (le/la/les and lui/leur — the pronouns that replace a COD or COI)
+46. Adjectifs par Catégorie (274 adjectives across 18 themed categories plus an opposites reference — vocabulary, not grammar)
 
 *Remaining A2 classes will be updated weekly.*
 
