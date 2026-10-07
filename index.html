@@ -11,10 +11,10 @@
   build step). Class count and ranges change often - don't trust a number
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
-  for ground truth. As of 2026-10-07: 43 lesson cards. A1 = classes
+  for ground truth. As of 2026-10-07: 44 lesson cards. A1 = classes
   1,2,35-40,3-21 (35-40 is the dedicated verb-conjugation arc, positioned
   early in classOrder/nav despite high ids, so verb foundations come
-  before anything that needs them). A2 = classes 22,23,25-34,41-44 (class
+  before anything that needs them). A2 = classes 22,23,25-34,41-45 (class
   24 was renumbered away and no longer exists).
   Built and used ENTIRELY ON A PHONE. Always keep changes mobile-first;
   don't assume a wide viewport when styling or testing.
@@ -256,7 +256,8 @@
   .checklist[data-lesson="class41"] label,
   .checklist[data-lesson="class42"] label,
   .checklist[data-lesson="class43"] label,
-  .checklist[data-lesson="class44"] label {
+  .checklist[data-lesson="class44"] label,
+  .checklist[data-lesson="class45"] label {
     color: #1565c0;
     font-weight: 600;
   }
@@ -275,7 +276,8 @@
   .checklist[data-lesson="class41"] input:checked + label,
   .checklist[data-lesson="class42"] input:checked + label,
   .checklist[data-lesson="class43"] input:checked + label,
-  .checklist[data-lesson="class44"] input:checked + label {
+  .checklist[data-lesson="class44"] input:checked + label,
+  .checklist[data-lesson="class45"] input:checked + label {
     color: #999;
     font-weight: 400;
   }
@@ -694,6 +696,7 @@
       <a href="#" onclick="goToClass(42)">Le COD <span class="study-time">· 20 min</span></a>
       <a href="#" onclick="goToClass(43)">Pronoms Relatifs <span class="study-time">· 30 min</span></a>
       <a href="#" onclick="goToClass(44)">Pronoms Y et EN <span class="study-time">· 30 min</span></a>
+      <a href="#" onclick="goToClass(45)">Pronoms Compléments <span class="study-time">· 35 min</span></a>
     </div>
   </div>
 </nav>
@@ -8471,7 +8474,7 @@
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class42"></div></div>
 
   <div class="note">
-  This is a sentence-structure concept, not a tense. It's the first step toward eventually using object pronouns like <span class="fr">le/la/les</span> (which replace a COD) — that's a future class. This one is just about correctly <strong>identifying</strong> the COD. COI gets its own full class later.
+  This is a sentence-structure concept, not a tense. It's the first step toward eventually using object pronouns like <span class="fr">le/la/les</span> (which replace a COD) — covered in detail, along with COI and its own pronouns, in the next chapter, <span class="fr">Les Pronoms Compléments : COD et COI</span>. This one is just about correctly <strong>identifying</strong> the COD.
   </div>
 
   <h3>1️⃣ What a COD Is</h3>
@@ -8560,7 +8563,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers the three main relative pronouns: qui, que, and où. They join two sentences into one by replacing a repeated noun instead of saying it twice. Qui replaces the subject of the next clause. Que replaces the direct object. Où replaces a place or a time. It also covers two practical tricks for choosing the right one." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class43">0 / 5 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class43">0 / 6 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class43"></div></div>
 
   <div class="note">
@@ -8682,7 +8685,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers Y and EN, two small but very frequent pronouns that replace a whole prepositional phrase. Y replaces à plus a place or thing. EN replaces de plus a thing, or a quantity word like du, de la, des, un, or une. Both go right before the conjugated verb, same position as le, la, les." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class44">0 / 5 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class44">0 / 6 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class44"></div></div>
 
   <div class="note">
@@ -8775,6 +8778,134 @@
   <ul class="checklist" data-lesson="class44">
     <li><input type="checkbox" id="c44-5"><label for="c44-5"><strong>MASTERY:</strong> I can choose Y vs EN correctly and place them in the right word order, without hesitating</label></li>
     <li><input type="checkbox" id="gemini-skill-class44"><label for="gemini-skill-class44"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 45: LES PRONOMS COMPLÉMENTS — COD ET COI ===================== -->
+<div class="lesson-card" id="class45">
+  <div class="lesson-header">
+    <h2>Les Pronoms Compléments : COD et COI <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class teaches the COD and COI PRONOUNS - the words (le/la/les and lui/leur) that REPLACE a COD or COI noun so you don\'t have to repeat it. This builds directly on two earlier classes: Le COD (identifying the COD) and the COI concept introduced there as a contrast - now COI gets its full explanation, and both finally get their pronouns.\n\nQUICK RECAP - COD vs COI: COD (complément d\'objet direct) receives the action of the verb directly, answers &quot;qui ?&quot; or &quot;quoi ?&quot;, and has NO preposition in front of it. Examples: &quot;Je vois un film.&quot; (un film = COD). &quot;Elle mange une pomme.&quot; (une pomme = COD). COI (complément d\'objet indirect) does NOT receive the action directly - it\'s connected to the action through a preposition (à, de, pour, avec, en, chez, sur...). It answers &quot;à qui ?&quot;, &quot;à quoi ?&quot;, &quot;de qui ?&quot;, or &quot;de quoi ?&quot;. Examples: &quot;Je parle à mon ami.&quot; (à mon ami = COI). &quot;Elle pense à son avenir.&quot; (à son avenir = COI). &quot;Il s\'occupe de ses enfants.&quot; (de ses enfants = COI).\n\nTHE PRONOUN SETS - the key insight the class material didn\'t state clearly (and actually had a typo in it, listing &quot;les&quot; and &quot;leur&quot; twice and a stray &quot;elle&quot; - corrected here): me, te, nous, and vous are EXACTLY THE SAME whether you\'re replacing a COD or a COI - person 1 and 2 (me/te/nous/vous) never change. The only place COD and COI pronouns actually differ is the 3rd person: COD uses le (masculine singular), la (feminine singular), les (any gender, plural). COI uses lui (singular, EITHER gender - unlike COD, lui does not change for masculine/feminine) and leur (any gender, plural). So really there are only 3 new words to learn here: le, la, les for COD and lui, leur for COI - the rest (me/te/nous/vous) you already know.\n\nWORKED EXAMPLES - COD pronouns: &quot;Je vois Marie.&quot; -> &quot;Je la vois.&quot; (la = Marie, feminine singular). &quot;Il invite ses amis.&quot; -> &quot;Il les invite.&quot; (les = ses amis, plural). &quot;Nous aidons les enfants.&quot; -> &quot;Nous les aidons.&quot;. &quot;Vous cherchez votre clé.&quot; -> &quot;Vous la cherchez.&quot; (clé is feminine). &quot;Il donne une pomme.&quot; -> &quot;Il la donne.&quot;. &quot;Nous mangeons les gâteaux.&quot; -> &quot;Nous les mangeons.&quot;. &quot;Nous invitons Paul et Léa.&quot; -> &quot;Nous les invitons.&quot; (a mixed group of named people is still just plural -> les).\n\nWORKED EXAMPLES - COI pronouns: &quot;Elle téléphone à sa mère.&quot; -> &quot;Elle lui téléphone.&quot; (lui = à sa mère, even though \'mère\' is feminine - lui doesn\'t change for gender, only for singular/plural). &quot;Je parle à mon professeur.&quot; -> &quot;Je lui parle.&quot;. &quot;Nous parlons à nos amis.&quot; -> &quot;Nous leur parlons.&quot; (plural -> leur).\n\nWORD ORDER AND ELISION: the pronoun ALWAYS comes directly before the conjugated verb (same position as the y/en pronouns from the last class) - never after, the way English sometimes puts the pronoun after (&quot;I see her&quot; puts \'her\' after \'see\', but French puts \'la\' before). Elision: le and la shorten to l\' before a verb starting with a vowel sound - les, lui, and leur do NOT elide (they don\'t end in a vowel themselves, so there\'s no clash to avoid). Example: &quot;Paul achète la voiture.&quot; -> &quot;Paul l\'achète.&quot; (la + achète, which starts with a vowel, elides to l\'achète).\n\nCHOOSING LE/LA/LES vs LUI/LEUR - use the exact same COD/COI test from the earlier class, just applied to decide which PRONOUN to use instead of just identifying the noun. A great pair that shows this clearly, same verb &quot;parler&quot;, two different objects: &quot;Je parle français.&quot; - français is a thing with no preposition in front, so it\'s a COD -> &quot;Je le parle.&quot; But &quot;Je parle à mon ami.&quot; - à mon ami has the preposition à, so it\'s a COI -> &quot;Je lui parle.&quot; Same verb, different pronoun, because the TYPE of object is different, not the verb.\n\nGOING FURTHER (optional, flagged by the instructor as secondary for now - the priority is mastering COD and COI pronouns separately first): a sentence can have BOTH a COD and a COI at once, and you can replace both with pronouns together. When you do, the COD pronoun always comes before the COI pronoun. Examples: &quot;Je lis le livre à mon enfant.&quot; -> &quot;Je le lui lis.&quot; (le = le livre, COD; lui = à mon enfant, COI; COD first). &quot;Manoj donne la pomme à Sonia.&quot; -> &quot;Manoj la lui donne.&quot; (la = la pomme, COD; lui = à Sonia, COI). This is advanced and not required for this class\'s mastery check - just notice the pattern is there for later.\n\nWHAT\'S NEXT (do not cover this yet): the instructor explicitly said the very next class covers how passé composé with avoir normally has NO agreement on the past participle, EXCEPT when a COD pronoun (le/la/les) comes BEFORE the verb - in that specific case the past participle DOES agree with it. That rule needs its own full class and should not be taught here - for now, just know it\'s coming.\n\nTeach me the COD vs COI recap first (quick review, this should already feel familiar), then the pronoun sets - make sure I notice that me/te/nous/vous never change and only the 3rd person differs. Then word order and elision, then have me practice the preposition test to choose le/la/les vs lui/leur using new sentences, including at least one &quot;same verb, different object type&quot; pair like the parler example. Mention the double-pronoun pattern briefly as a bonus, but don\'t quiz me hard on it - that\'s for later. Do NOT teach passé composé agreement in this session. When I can correctly choose and place the right pronoun (le/la/les or lui/leur) in a new sentence, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: The pronouns that replace a COD (le/la/les) or a COI (lui/leur) so you don't have to repeat the noun — the full COI explanation promised in the earlier COD class, which pronoun set to use, word order, elision, and a brief look at using both together.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter teaches the pronouns that replace a COD or a COI so you don't have to repeat the noun. Le, la and les replace a COD. Lui and leur replace a COI. It covers which set to use, where the pronoun goes in the sentence, elision before a vowel, and a brief look at using both at once." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class45">0 / 6 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class45"></div></div>
+
+  <div class="note">
+  This builds directly on <span class="fr">Le COD</span>, an earlier class — it assumes you can already tell a COD apart from a COI. This class is about the <strong>pronouns</strong> that replace them.
+  </div>
+
+  <h3>1️⃣ Quick Recap: COD vs COI</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th></th><th>COD</th><th>COI</th></tr>
+    <tr><td>Receives the action</td><td>Directly</td><td>Indirectly — through a preposition</td></tr>
+    <tr><td>Answers the question</td><td>qui ? / quoi ?</td><td>à qui ? / à quoi ? / de qui ? / de quoi ?</td></tr>
+    <tr><td>Preposition in front?</td><td>No</td><td>Yes (à, de, pour, avec, en, chez, sur...)</td></tr>
+    <tr><td>Example</td><td><span class="fr">Je vois un film.</span></td><td><span class="fr">Je parle à mon ami.</span></td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class45" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c45-1"><label for="c45-1"><strong>RECAP:</strong> I can tell a COD apart from a COI using the question test and the preposition check</label></li>
+  </ul>
+
+  <h3>2️⃣ The Pronoun Sets</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="Me, te, nous, and vous are exactly the same whether you're replacing a COD or a COI - those never change. The only place COD and COI pronouns actually differ is the third person. COD uses le for masculine singular, la for feminine singular, and les for any plural. COI uses lui for singular, either gender, and leur for any plural."
+      data-lang="en-US">
+      🎧 The Only Real Difference Is 3rd Person
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <strong>me, te, nous, vous</strong> are identical for COD and COI — they never change. Only the <strong>3rd person</strong> differs: COD → <span class="fr">le / la / les</span>. COI → <span class="fr">lui / leur</span> (lui covers BOTH genders singular).
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Person</th><th>COD</th><th>COI</th></tr>
+    <tr><td>me / te / nous / vous</td><td colspan="2">same for both — <span class="fr">me, te, nous, vous</span></td></tr>
+    <tr><td>3rd singular, masculine</td><td><span class="fr">le</span></td><td rowspan="2"><span class="fr">lui</span> (same word for both genders)</td></tr>
+    <tr><td>3rd singular, feminine</td><td><span class="fr">la</span></td></tr>
+    <tr><td>3rd plural, any gender</td><td><span class="fr">les</span></td><td><span class="fr">leur</span></td></tr>
+  </table>
+  </div>
+
+  <p class="example"><span class="fr">Je vois Marie. → Je la vois.</span> (la = Marie)<br/>
+  <span class="fr">Il invite ses amis. → Il les invite.</span> (les = ses amis, plural)<br/>
+  <span class="fr">Elle téléphone à sa mère. → Elle lui téléphone.</span> (lui = à sa mère — lui doesn't change for gender)<br/>
+  <span class="fr">Nous parlons à nos amis. → Nous leur parlons.</span> (leur = à nos amis, plural)</p>
+
+  <ul class="checklist" data-lesson="class45" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c45-2"><label for="c45-2"><strong>PRONOUN SETS:</strong> I know le/la/les (COD) and lui/leur (COI), and that me/te/nous/vous never change between the two</label></li>
+  </ul>
+
+  <h3>3️⃣ Word Order & Elision</h3>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    The pronoun always goes <strong>directly before the conjugated verb</strong> — same position as <span class="fr">y</span> and <span class="fr">en</span> from the last class. Never after the verb, the way English sometimes does ("I see her" puts "her" after "see").
+  </div>
+
+  <p><span class="fr">le</span> and <span class="fr">la</span> shorten to <span class="fr">l'</span> before a verb starting with a vowel sound. <span class="fr">les</span>, <span class="fr">lui</span>, and <span class="fr">leur</span> never elide.</p>
+  <p class="example"><span class="fr">Paul achète la voiture. → Paul l'achète.</span> (la + achète → l'achète)<br/>
+  <span class="fr">Vous cherchez votre clé. → Vous la cherchez.</span> (no vowel clash — no elision needed)</p>
+
+  <ul class="checklist" data-lesson="class45" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c45-3"><label for="c45-3"><strong>WORD ORDER:</strong> I place the pronoun before the verb every time, and apply le/la → l' elision correctly before a vowel</label></li>
+  </ul>
+
+  <h3>4️⃣ Choosing the Right Pronoun — the Preposition Test</h3>
+  <p>Use the same COD/COI test, just to pick the pronoun instead of just naming the noun. The clearest example: the exact same verb, two different object types.</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Sentence</th><th>Object type</th><th>Pronoun version</th></tr>
+    <tr><td><span class="fr">Je parle français.</span></td><td>no preposition → COD</td><td><span class="fr">Je le parle.</span></td></tr>
+    <tr><td><span class="fr">Je parle à mon ami.</span></td><td>preposition "à" → COI</td><td><span class="fr">Je lui parle.</span></td></tr>
+  </table>
+  </div>
+  <p>Same verb — <em>parler</em> — but a different pronoun each time, because the object's TYPE changed, not the verb.</p>
+
+  <ul class="checklist" data-lesson="class45" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c45-4"><label for="c45-4"><strong>CHOOSING THE PRONOUN:</strong> I can apply the preposition test to pick le/la/les vs lui/leur, even when the same verb can take either</label></li>
+  </ul>
+
+  <h3>🎁 Going Further (optional — not required to check off this class)</h3>
+  <div class="note">
+  A sentence can have BOTH a COD and a COI, replaced together. The COD pronoun always comes first: <span class="fr">Je lis le livre à mon enfant. → Je le lui lis.</span> (le = le livre, lui = à mon enfant). <span class="fr">Manoj donne la pomme à Sonia. → Manoj la lui donne.</span> The instructor flagged this as advanced and secondary — the priority for now is choosing COD and COI pronouns correctly on their own.
+  </div>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">Je vois la.</span></td><td><span class="fr">Je la vois.</span></td><td>The pronoun goes BEFORE the verb, not after</td></tr>
+    <tr><td><span class="fr">Elle téléphone à sa mère. → Elle la téléphone.</span></td><td><span class="fr">Elle lui téléphone.</span></td><td>"Téléphoner à" takes a preposition, so it's COI → lui, not COD → la</td></tr>
+    <tr><td><span class="fr">Paul la achète.</span></td><td><span class="fr">Paul l'achète.</span></td><td>"La" must elide to "l'" before a vowel-starting verb</td></tr>
+    <tr><td><span class="fr">Nous parlons à nos amis. → Nous les parlons.</span></td><td><span class="fr">Nous leur parlons.</span></td><td>"Parler à" is COI (preposition "à"), so it needs leur, not les</td></tr>
+  </table>
+  </div>
+
+  <div class="note" style="background: #e3f2fd; border-left: 4px solid #1565c0;">
+  <strong>Coming in a future class:</strong> in passé composé with avoir, the past participle normally does NOT agree with anything — except when a COD pronoun (le/la/les) comes before the verb, in which case it DOES agree. That rule gets its own full class — not covered here yet.
+  </div>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class45">
+    <li><input type="checkbox" id="c45-5"><label for="c45-5"><strong>MASTERY:</strong> I can choose and correctly place le/la/les or lui/leur in a new sentence, without hesitating</label></li>
+    <li><input type="checkbox" id="gemini-skill-class45"><label for="gemini-skill-class45"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
   </ul>
 
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
@@ -8934,7 +9065,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44];
+const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44,45];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion

@@ -72,6 +72,7 @@ tap, and self-test progress with per-topic checklists.
 41. Le COD (complément d'objet direct — identifying the direct object)
 42. Les Pronoms Relatifs (qui/que/où — joining two sentences into one)
 43. Les Pronoms Y et EN (replacing à/de + thing with y or en, and correct word order)
+44. Les Pronoms Compléments : COD et COI (le/la/les and lui/leur — the pronouns that replace a COD or COI)
 
 *Remaining A2 classes will be updated weekly.*
 
