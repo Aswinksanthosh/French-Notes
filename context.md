@@ -1803,6 +1803,61 @@ environment reset / context compaction, not just when told to — a
 compaction summary can drop or distort the project-specific conventions
 here, and re-reading the file directly is cheap insurance against that.
 
+## Study-time estimates added to nav menu only 2026-10-07
+
+User asked: "Read all notes and estimate studying time for each. Example
+gender 40 min. Hobbies: 60 min. Write that inside navigation menu only."
+— explicit scope: nav dropdown labels only, nowhere else on the site.
+
+**Method:** read every one of the 43 chapters' full content (not just
+stats) before estimating, because the two calibration examples the user
+gave prove a surface-stat formula (checklist-item count, word count)
+would get this wrong: Hobbies has only 6 checklist items yet the user
+rated it ABOVE Gender (7 items) at 60 vs 40 minutes — because Hobbies
+hides a large, dense "Comprehensive Prepositions Guide" (place/time/
+cause/purpose/after-verb prepositions, ~30 items) inside what looks like
+a short vocab chapter. This confirmed that genuine content density
+(vocab volume + number/difficulty of distinct grammar rules + worked-
+example load), not any structural proxy, is what the user is actually
+asking for. Used the two given numbers as calibration anchors and judged
+every other chapter the same way after reading it in full. Heaviest
+chapters by this method: Adverbs (class23, 100 min — by far the largest
+chapter on the site, 21 checklist items, 7 categories, nuanced
+distinctions, placement across multiple tenses), Prepositions (class25,
+80 min), Numbers/Conditional (class2 and class20, 70 min each — both
+cram a huge amount of conjugation/numeral memorization into one class).
+Lightest: short single-concept chapters like Classroom (class5),
+Negation (class15), La Règle/Exemples & Erreurs/Le COD (classes 30/32/42,
+20 min each).
+
+**Implementation:** appended `<span class="study-time">· NN min</span>`
+inside each nav `<a>` link's existing text, in both `.level-content.a1`
+and `.level-content.a2` — e.g. `Gender <span class="study-time">· 40
+min</span>`. New CSS rule `nav a .study-time` (muted opacity 0.65,
+smaller 12px, regular weight) keeps it a clearly secondary annotation,
+not competing with the chapter name. Deliberately did NOT touch anything
+on the lesson-card pages themselves (no `<p class="topic">` edit, no new
+checklist item, no Gemini-prompt change) — scope was nav-only, as asked.
+
+**Note for future sessions:** this changes nav link `textContent` (now
+"Label · NN min" instead of just "Label"), which breaks the OLD
+nav-label-vs-h2 substring verification method described earlier in this
+file (step 7 of the chapter-add checklist) if run unmodified — that
+check was only ever a manual verification script, not live site logic,
+so nothing on the actual site depends on nav link text being a bare
+label. Confirmed via grep that no production JS reads nav link
+`textContent` for anything. If re-running that specific verification
+script in the future, strip everything from `·` onward first, or check
+`a.firstChild.textContent` instead of the full link text.
+
+Verified: JS syntax, div balance (962/962 — unchanged, only text content
+added), all 43 `.study-time` spans present and correctly paired to their
+chapter, no console errors, no horizontal overflow at 390px on either
+A1 or A2 open nav state, clicking a relabeled link still navigates to
+the correct chapter (spot-checked class8/Gender). Screenshotted the open
+A1 nav and confirmed the time annotations render as a clearly secondary
+line under each chapter name, not crowding the tap target.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:

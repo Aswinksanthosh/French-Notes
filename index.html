@@ -213,6 +213,7 @@
     font-weight: 600;
   }
   nav a:hover { background: var(--blue); color: white; }
+  nav a .study-time { opacity: 0.65; font-weight: 400; font-size: 12px; margin-left: 4px; }
   /* Completion colors */
   nav a.completed { background: #ffffff; color: #333; border: 2px solid #ccc; }
   nav a.partial { background: #c8e6c9; color: #2e7d32; }
@@ -646,53 +647,53 @@
   <div class="nav-scroll">
     <button class="level-btn" onclick="toggleLevel(this, 'a1')" style="background: var(--lightblue); color: var(--blue); border: 2px solid var(--blue);">A1</button>
     <div class="level-content a1" style="display: none;">
-      <a href="#" onclick="goToClass(1)">Alphabet</a>
-      <a href="#" onclick="goToClass(2)">Numbers</a>
-      <a href="#" onclick="goToClass(35)">Groupes de Verbes</a>
-      <a href="#" onclick="goToClass(36)">Verbes Essentiels</a>
-      <a href="#" onclick="goToClass(37)">Groupe (-ER)</a>
-      <a href="#" onclick="goToClass(38)">Groupe (-IR)</a>
-      <a href="#" onclick="goToClass(39)">Groupe (-RE)</a>
-      <a href="#" onclick="goToClass(40)">Verbes Pronominaux</a>
-      <a href="#" onclick="goToClass(3)">Greetings</a>
-      <a href="#" onclick="goToClass(4)">Calendar</a>
-      <a href="#" onclick="goToClass(5)">Classroom</a>
-      <a href="#" onclick="goToClass(6)">Endings</a>
-      <a href="#" onclick="goToClass(7)">Articles</a>
-      <a href="#" onclick="goToClass(8)">Gender</a>
-      <a href="#" onclick="goToClass(9)">Hobbies</a>
-      <a href="#" onclick="goToClass(10)">Family</a>
-      <a href="#" onclick="goToClass(11)">Professions</a>
-      <a href="#" onclick="goToClass(12)">Reflexive</a>
-      <a href="#" onclick="goToClass(13)">Future</a>
-      <a href="#" onclick="goToClass(14)">Demonstratives</a>
-      <a href="#" onclick="goToClass(15)">Negation</a>
-      <a href="#" onclick="goToClass(16)">Colors</a>
-      <a href="#" onclick="goToClass(17)">Meals</a>
-      <a href="#" onclick="goToClass(18)">Listening</a>
-      <a href="#" onclick="goToClass(19)">Irregular</a>
-      <a href="#" onclick="goToClass(20)">Conditional</a>
-      <a href="#" onclick="goToClass(21)">Description</a>
+      <a href="#" onclick="goToClass(1)">Alphabet <span class="study-time">· 25 min</span></a>
+      <a href="#" onclick="goToClass(2)">Numbers <span class="study-time">· 70 min</span></a>
+      <a href="#" onclick="goToClass(35)">Groupes de Verbes <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(36)">Verbes Essentiels <span class="study-time">· 35 min</span></a>
+      <a href="#" onclick="goToClass(37)">Groupe (-ER) <span class="study-time">· 35 min</span></a>
+      <a href="#" onclick="goToClass(38)">Groupe (-IR) <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(39)">Groupe (-RE) <span class="study-time">· 25 min</span></a>
+      <a href="#" onclick="goToClass(40)">Verbes Pronominaux <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(3)">Greetings <span class="study-time">· 55 min</span></a>
+      <a href="#" onclick="goToClass(4)">Calendar <span class="study-time">· 30 min</span></a>
+      <a href="#" onclick="goToClass(5)">Classroom <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(6)">Endings <span class="study-time">· 40 min</span></a>
+      <a href="#" onclick="goToClass(7)">Articles <span class="study-time">· 35 min</span></a>
+      <a href="#" onclick="goToClass(8)">Gender <span class="study-time">· 40 min</span></a>
+      <a href="#" onclick="goToClass(9)">Hobbies <span class="study-time">· 60 min</span></a>
+      <a href="#" onclick="goToClass(10)">Family <span class="study-time">· 40 min</span></a>
+      <a href="#" onclick="goToClass(11)">Professions <span class="study-time">· 55 min</span></a>
+      <a href="#" onclick="goToClass(12)">Reflexive <span class="study-time">· 40 min</span></a>
+      <a href="#" onclick="goToClass(13)">Future <span class="study-time">· 50 min</span></a>
+      <a href="#" onclick="goToClass(14)">Demonstratives <span class="study-time">· 40 min</span></a>
+      <a href="#" onclick="goToClass(15)">Negation <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(16)">Colors <span class="study-time">· 45 min</span></a>
+      <a href="#" onclick="goToClass(17)">Meals <span class="study-time">· 45 min</span></a>
+      <a href="#" onclick="goToClass(18)">Listening <span class="study-time">· 50 min</span></a>
+      <a href="#" onclick="goToClass(19)">Irregular <span class="study-time">· 35 min</span></a>
+      <a href="#" onclick="goToClass(20)">Conditional <span class="study-time">· 70 min</span></a>
+      <a href="#" onclick="goToClass(21)">Description <span class="study-time">· 55 min</span></a>
     </div>
 
     <button class="level-btn" onclick="toggleLevel(this, 'a2')" style="background: #e8f5e9; color: #2e7d32; border: 2px solid #2e7d32;">A2</button>
     <div class="level-content a2" style="display: none;">
-      <a href="#" onclick="goToClass(22)">Adjectives</a>
-      <a href="#" onclick="goToClass(23)">Adverbs</a>
-      <a href="#" onclick="goToClass(25)">Prepositions</a>
-      <a href="#" onclick="goToClass(26)">Prepositions + Future</a>
-      <a href="#" onclick="goToClass(27)">Expressions</a>
-      <a href="#" onclick="goToClass(28)">Passé Composé</a>
-      <a href="#" onclick="goToClass(29)">Group 3</a>
-      <a href="#" onclick="goToClass(30)">La Règle</a>
-      <a href="#" onclick="goToClass(31)">Cas Particuliers</a>
-      <a href="#" onclick="goToClass(32)">Exemples &amp; Erreurs</a>
-      <a href="#" onclick="goToClass(33)">Pratique Intensive</a>
-      <a href="#" onclick="goToClass(34)">L'Imparfait</a>
-      <a href="#" onclick="goToClass(41)">Narrer au Passé</a>
-      <a href="#" onclick="goToClass(42)">Le COD</a>
-      <a href="#" onclick="goToClass(43)">Pronoms Relatifs</a>
-      <a href="#" onclick="goToClass(44)">Pronoms Y et EN</a>
+      <a href="#" onclick="goToClass(22)">Adjectives <span class="study-time">· 45 min</span></a>
+      <a href="#" onclick="goToClass(23)">Adverbs <span class="study-time">· 100 min</span></a>
+      <a href="#" onclick="goToClass(25)">Prepositions <span class="study-time">· 80 min</span></a>
+      <a href="#" onclick="goToClass(26)">Prepositions + Future <span class="study-time">· 55 min</span></a>
+      <a href="#" onclick="goToClass(27)">Expressions <span class="study-time">· 55 min</span></a>
+      <a href="#" onclick="goToClass(28)">Passé Composé <span class="study-time">· 50 min</span></a>
+      <a href="#" onclick="goToClass(29)">Group 3 <span class="study-time">· 40 min</span></a>
+      <a href="#" onclick="goToClass(30)">La Règle <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(31)">Cas Particuliers <span class="study-time">· 25 min</span></a>
+      <a href="#" onclick="goToClass(32)">Exemples &amp; Erreurs <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(33)">Pratique Intensive <span class="study-time">· 35 min</span></a>
+      <a href="#" onclick="goToClass(34)">L'Imparfait <span class="study-time">· 30 min</span></a>
+      <a href="#" onclick="goToClass(41)">Narrer au Passé <span class="study-time">· 35 min</span></a>
+      <a href="#" onclick="goToClass(42)">Le COD <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(43)">Pronoms Relatifs <span class="study-time">· 30 min</span></a>
+      <a href="#" onclick="goToClass(44)">Pronoms Y et EN <span class="study-time">· 30 min</span></a>
     </div>
   </div>
 </nav>
