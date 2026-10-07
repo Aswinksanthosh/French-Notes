@@ -73,6 +73,7 @@ tap, and self-test progress with per-topic checklists.
 42. Les Pronoms Relatifs (qui/que/où — joining two sentences into one)
 43. Les Pronoms Y et EN (replacing à/de + thing with y or en, and correct word order)
 44. Les Pronoms Compléments : COD et COI (le/la/les and lui/leur — the pronouns that replace a COD or COI)
+45. Adjectifs par Catégorie (274 adjectives across 18 themed categories plus an opposites reference — vocabulary, not grammar)
 
 *Remaining A2 classes will be updated weekly.*
 

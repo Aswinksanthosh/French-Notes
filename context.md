@@ -1937,6 +1937,121 @@ labels pass the h2-substring check (after the one relabel), no console
 errors, no horizontal overflow at 390px, chapter screenshotted and
 visually confirmed including the merged-cell pronoun table.
 
+## Class 46 added 2026-10-07: "Adjectifs par Catégorie" (A2, vocabulary reference)
+
+User confirmed building the one file from the earlier 5-file usefulness
+assessment that had been explicitly held back ("hold on that for a
+minute" — see that entry above): `French_Adjectives_by_Category.pdf`, a
+19-category, ~274-word adjective vocabulary reference. Re-read the PDF in
+full this time (page-by-page text extraction; image rendering failed —
+no `pdftoppm`/poppler-utils in this environment — but text extraction
+alone was complete and reliable) rather than relying on the earlier
+session's summary, to get exact word lists, genders, and example
+sentences rather than reconstructing them from memory.
+
+**Scale**: 18 themed categories (Personality, Feelings, Appearance,
+Colours, Size, Quantity, Time, Objects, Food, House, Work, School, Money,
+Transport, Weather, Intelligence, Relationships, Evaluation) + a 19th
+"Opposite Adjectives" category reshaped from the PDF's own
+redundant format (it listed many pairs twice, once in each direction —
+built a clean deduplicated 30-pair table instead, one direction only).
+Every category table restructured from the PDF's "English | French |
+Example" shape (which crammed masculine/feminine into one slash-separated
+cell, e.g. "gentil / gentille") into "English | Masculine | Feminine |
+Example" — matching the site's established pattern (see Class 16/Colors)
+and giving each gender form its own clickable `.fr` span instead of one
+span that would have spoken "gentil slash gentille" aloud as one
+utterance.
+
+Checklist items grouped 5 categories-worth of checkboxes per topic-cluster
+(People = 1-3, The Physical World = 4-5-8, Daily Life = 6-7-9-10,
+Professional & Academic = 11-12-13-14, Abstract Qualities = 15-16-17-18)
+rather than one checkbox per category (which would have meant 18+
+checkboxes just for this one chapter) — plus Opposites on its own, plus
+the Grammar Reminder/TEF-DELF tip boxes reused directly from the PDF
+(both legitimately useful, tie back to the existing `Adjectives` class's
+agreement rule, not padding), plus mastery + Gemini test = 8 checkboxes
+total.
+
+**Built via a data-driven Python script, not hand-typed HTML** — all 244
+category words + 30 opposite pairs defined as plain Python tuples with
+normal apostrophes, then an `esc()` helper programmatically replaced
+every `'` with the `AP` token when building the JS prompt string. This
+was a deliberate change from the usual manual-typing-with-AP-tokens
+approach used in every prior chapter build, specifically **to eliminate
+the single most recurring bug class in this project's history** (raw
+apostrophes missed in hand-typed prompt text, logged repeatedly in
+History below). It worked almost perfectly — only one bug surfaced, and
+it was in a short hand-typed instructional sentence I added *outside*
+the data-driven parts (see below), not anywhere in the 274 programmatically-generated entries. **This confirms the fix: generate from data
+with automatic escaping wherever the content volume makes hand-typing
+risky, don't hand-type-with-manual-AP-tokens for anything at this scale.**
+
+**Two real bugs found and fixed this build:**
+1. **Escaping bug, same recurring class as always, but now isolated to
+   non-data-driven text**: one sentence I typed directly into the prompt
+   ("...that's fine and expected...") used a raw apostrophe instead of
+   the `AP` token. Caught by the standard headless copy-button-parsing
+   check, fixed by locating the exact offset and swapping in `AP` — but
+   notably, this is the only escaping bug in the entire ~72KB chapter,
+   versus 1-4 bugs in past chapters of a fraction of the size, which
+   validates the data-driven approach above.
+2. **Python variable-scoping bug, new bug class for this project**: the
+   checklist-group-building code used `_` as a loop variable name in one
+   loop, then referenced `_` again in a *later, separate* loop expecting
+   it to still hold useful data — but Python has no block scoping, so by
+   the second loop `_` had been left holding whatever the *last* value
+   from the *first* loop happened to be. Result: all 5 category-group
+   checkboxes showed the same (wrong, last-group's) description text
+   instead of their own. A second, related bug in the same code: calling
+   `.upper()` on a group name string that already contained the
+   HTML-escaped entity `&amp;` corrupted it into `&AMP;` (entities are
+   case-sensitive). Neither bug was caught by any existing automated
+   check (JS syntax, div balance, checkbox-id uniqueness, table-wrap
+   coverage, copy-button parsing all passed clean) — found only by
+   actually reading a rendered screenshot and noticing the Daily Life
+   checkbox described Weather/Intelligence/Relationships/Evaluation
+   instead of Quantity/Time/Food/House. **Lesson: none of the standing
+   automated checks catch "right-shaped but wrong-content" bugs — a
+   visual screenshot read-through remains necessary specifically for
+   chapters with programmatically-generated repeated structures (tables,
+   grouped checkboxes), not just the usual "does it render without
+   overflow" check.** Fixed by naming each loop variable uniquely instead
+   of reusing `_`, and uppercasing display strings before HTML-escaping
+   them rather than after.
+
+Followed the full chapter-add checklist: `classOrder` → appended `46`;
+nav dropdown → added under `.level-content.a2`, last position, labeled
+"Adjectifs par Catégorie" (matches the h2 substring check); A2
+checklist-label CSS → added `class46`; lesson card → `data-lesson=
+"class46"` throughout, checkbox ids `ca46-1` through `ca46-7` plus
+`gemini-skill-class46`; all 19 new tables (18 category tables + 1
+opposites table) wrapped in `.table-wrap` from the start, generated
+programmatically so coverage was correct by construction. Study-time
+estimate added to the nav entry in the same pass (90 min — by far the
+largest single vocabulary load on the site, reflects the ~274-word
+scale honestly rather than underselling it).
+
+The Gemini prompt itself lists all 274 words in compact "French (English)"
+form grouped by category (not full sentences — those live in the visible
+HTML tables below the button, the prompt just needs scope, matching the
+Class 29/Group-3-verbs precedent for large vocab-reference chapters), with
+an explicit instruction not to invent new vocabulary outside the list but
+to freely build new example sentences from it, and to drill both
+directions (French↔English) and both genders for every word, since gender-pair
+recall at volume is the actual point of organizing 274 words by theme.
+
+Verified: JS syntax, div balance (1006/1006), 331 checkbox ids all
+unique, label↔id 1:1 match, table-wrap coverage 213/213, all 46 copy
+buttons parse (one pre-existing, unrelated static demo button in the
+site's own intro card accounts for the "46 copy buttons but 45 classes"
+count — confirmed harmless, not something this build touched), nav order
+matches `classOrder`, all nav labels pass the h2-substring check, no
+console errors, no horizontal overflow at 390px, multiple chapter
+sections screenshotted and visually confirmed — which is specifically
+how bug #2 above was caught, underscoring why that step isn't optional
+for data-driven chapters.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
