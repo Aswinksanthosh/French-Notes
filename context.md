@@ -1858,6 +1858,85 @@ the correct chapter (spot-checked class8/Gender). Screenshotted the open
 A1 nav and confirmed the time annotations render as a clearly secondary
 line under each chapter name, not crowding the tap target.
 
+## Class 45 added 2026-10-07: "Les Pronoms Compléments : COD et COI" (A2)
+
+User uploaded a structured transcript summary + raw call transcript (COD/
+COI pronoun lesson) plus two reference-sheet screenshots, and said "New
+class notes. Generate extra materials if needed for explanation." —
+matching the established "build it" pattern (no separate assessment step
+needed this time, unlike the 5-file usefulness-check earlier this
+session).
+
+This class directly fulfills a forward-reference class42 (Le COD) had
+been carrying since it was built: "It's the first step toward eventually
+using object pronouns like le/la/les... that's a future class... COI
+gets its own full class later." Updated that note in class42 to name
+this chapter specifically now that it exists (found via grep, confirmed
+unique, single `.replace()`).
+
+**Content gap found and fixed in the source material itself** (not just
+thin content — an actual error), per the standing "generate extra
+content" instruction: one of the two uploaded reference images lists the
+COD/COI pronoun sets with a typo — "les" appears twice in the COD box
+and "leur" appears twice (with a stray "elle") in the COI box. The
+correct, standard sets are COD: me/te/le/la/les/nous/vous, COI: me/te/
+lui/nous/vous/leur. Built the chapter around the corrected sets, and
+added a teaching insight the source material never stated explicitly but
+that's genuinely true and useful: me/te/nous/vous are IDENTICAL for COD
+and COI — the two pronoun sets only actually diverge in the 3rd person
+(le/la/les vs lui/leur). This reduces "6 new words to memorize" down to
+"3 new words, since you already know the other half."
+
+Structure: recap of COD vs COI (building on class42, finally giving COI
+its full treatment as promised), the pronoun sets with the shared-forms
+insight, word order (pronoun before the verb — same position as y/en
+from class44, called out as a connection) + le/la → l' elision, then
+choosing the right pronoun via the same preposition test from class42/43
+— using the transcript's own best example (same verb "parler", COD vs
+COI depending on the object: "je parle français" → "je le parle" vs "je
+parle à mon ami" → "je lui parle"). A "🎁 Going Further" NON-checklist
+box covers the double-pronoun pattern (COD before COI: "je le lui lis"),
+deliberately not given a mandatory checklist item because the live
+instructor explicitly called it "secondary, the priority is mastering
+COD and COI pronouns separately first" — matched that framing rather
+than over-teaching past what the source class itself prioritized.
+Also added an explicit "coming in a future class, not covered here"
+note for passé composé agreement with a preceding COD pronoun, since the
+transcript explicitly says that's next week's topic — avoids the
+all-too-common trap of a chapter quietly absorbing a future class's
+content just because it came up in passing in the source material.
+
+Followed the full chapter-add checklist: `classOrder` → appended `45`;
+nav dropdown → added under `.level-content.a2`, last position, labeled
+"Pronoms Compléments" (picked specifically because "COD et COI Pronoms"
+— the first, more descriptive label tried — failed the nav-label-vs-h2
+substring check; "Pronoms Compléments" does appear literally in the h2
+and passed); A2 checklist-label CSS → added `class45`; lesson card →
+`data-lesson="class45"` throughout, checkbox ids `c45-1` through `c45-5`
+plus `gemini-skill-class45` (6 total), one table using `rowspan`/
+`colspan` to show the shared-vs-divergent pronoun structure compactly
+(screenshotted and confirmed it renders correctly on a 390px phone
+width, no overflow). Study-time estimate added to its own nav entry in
+the same pass (35 min), matching the convention from the task right
+before this one.
+
+**Also fixed while in the file**: classes 43 and 44 (added last session)
+had a stale `progress-count` — both said "0 / 5 done" but actually have
+6 checkboxes each (5 topic items + the `gemini-skill-classN` item that
+gets added as the true last item). The JS recalculates this correctly
+at runtime regardless, but the static HTML was wrong for anyone reading
+source — fixed both to "0 / 6 done" per the standing "fix obvious bugs
+without being asked" rule.
+
+Verified: JS syntax, div balance (978/978), 323 checkbox ids all unique,
+label↔id 1:1 match, table-wrap coverage 193/193 (an earlier regex-based
+check falsely flagged a mismatch — `<table>` with no attributes vs
+`<table` matching any attributes; the broader match confirmed clean),
+all 45 copy buttons parse, nav order matches `classOrder`, all 45 nav
+labels pass the h2-substring check (after the one relabel), no console
+errors, no horizontal overflow at 390px, chapter screenshotted and
+visually confirmed including the merged-cell pronoun table.
+
 ## Open suggestions / things to keep an eye on
 
 Not done, just flagged so a future session doesn't have to rediscover them:
