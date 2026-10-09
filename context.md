@@ -2277,3 +2277,61 @@ globally unique, label↔id 1:1, nav order matches `classOrder`, nav-label
 substring check clean, no console errors, no horizontal overflow at
 390px, and each changed/new section screenshotted and visually
 confirmed (Class 48, 49, 6, 44, and the new part of 25 and 22).
+
+## Class recording (COD/COI revision, L'Imparfait, "y") compared, 2026-10-09
+
+User shared a new class's transcript + 5 workbook screenshots (révision
+of COD/COI, more l'imparfait practice, a first look at "y", plus two
+images of "les souvenirs" memory vocabulary tied to the weekend
+homework) and asked, after a round of clarifying questions, to check it
+against existing chapters and report before building anything — same
+pattern as the 8-PDF review.
+
+**Compared and found duplicate (no action):** COD/COI revision matched
+Class 42 and the place-vs-COD distinction (*je vais à la plage* = no
+COD) already there; "y" examples (*j'y vais*, *nous y habitons*)
+matched Class 44; the class explicitly deferred "en" for lack of time.
+
+**Enriched Class 34 (L'Imparfait) — 4 genuine gaps found and fixed:**
+1. The **-cer verb cédille rule** was missing entirely — Class 34 only
+   had the -ger "dropped e" rule (`nous mangions`). Added a parallel
+   note + a side-by-side -ger/-cer table (`je me déplaçais` keeps the
+   ç, `nous nous déplacions` drops it).
+2. Added a **structured reference table of habit/frequency markers**
+   (à cette époque, beaucoup/souvent, chaque jour/tous les jours,
+   toutes les semaines/chaque semaine, de temps en temps/parfois,
+   toujours/tout le temps) — these existed only loosely inside a couple
+   of worked-example sentences before, not as a lookup table. Also
+   added the explicit rule the class stated: these habit markers can
+   never pair with passé composé.
+3. Added the worksheet's **présent-then-imparfait practice table**
+   (aimer, aller, rendre, habiter, écrire, faire) and the **"transform
+   underlined verbs to imparfait"** exercise (the Gabriel-wants-to-be-
+   a-singer paragraph), as new drill content.
+4. In the process, found and fixed a **pre-existing, unrelated bug**:
+   Class 34's declared checklist count said "0 / 4 done" but the
+   chapter actually had 5 checkboxes even before today's changes (a
+   stale count from some earlier edit that was never caught). Recounted
+   and set it to the correct total (8, after adding 3 new checklist
+   items for the above).
+
+**Built new Class 50 (Les Souvenirs)** — vocabulary for describing
+memories, a confirmed gap with no existing home: 6 "un souvenir
+de/d'..." phrases, qualifying adjectives (agréable/désagréable,
+heureux/triste, inoubliable — note `un souvenir` is MASCULINE despite
+the -e ending), 3 remembering verbs (se souvenir de, se rappeler,
+replonger dans), and the senses vocabulary (le bruit, l'odeur, le
+goût...) tied directly to the weekend homework (describe a happy
+memory, 50+ words, in l'imparfait — the homework prompt itself is
+quoted in the chapter as a worked example). Positioned logically right
+after Class 34 in classOrder/nav (`...,34,50,41,...`) since it's
+homework vocab for that specific class, but physically appended at the
+end of the file before `<footer>` — same divergent-position pattern as
+class 47/48/49, confirmed safe again.
+
+Verified: div balance (1102/1102), table/table-wrap coverage (230/230),
+all 357 checkbox ids globally unique, label↔id 1:1, all 50 copy buttons
+parse, nav order matches `classOrder`, nav-label substring check clean,
+no console errors, no overflow at 390px, declared vs. actual checklist
+counts matched for both changed chapters (34: 8/8, 50: 5/5), and every
+new/changed section screenshotted and visually confirmed.

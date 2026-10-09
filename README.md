@@ -77,6 +77,7 @@ tap, and self-test progress with per-topic checklists.
 46. Adjectifs par Catégorie (274 adjectives across 18 themed categories plus an opposites reference — vocabulary, not grammar)
 47. Choisir le Bon "What" (quoi vs. que vs. quel vs. qu'est-ce que — choosing the right word for "what")
 48. Négation — Rien, Personne, Plus (ne...rien, ne...personne, ne...plus — continues the ne...pas/ne...jamais negation from Class 14)
+49. Les Souvenirs (vocabulary for describing memories — types of memory, qualifying adjectives, remembering verbs, the senses — built for the "describe a happy memory in l'imparfait" homework)
 
 *Remaining A2 classes will be updated weekly.*
 
