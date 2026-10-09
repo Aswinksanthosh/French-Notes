@@ -2176,3 +2176,14 @@ Not done, just flagged so a future session doesn't have to rediscover them:
 - If checklist ids ever need renumbering across many classes, double-check
   global uniqueness afterward (grep `id="c` across the whole file for
   collisions) — nothing currently enforces this automatically.
+
+## Intro-card wording tweak 2026-10-09
+
+User asked to reword step 2 of the "How to use this site" intro card
+(the static onboarding list near the top of the page, not any per-class
+content): "📋 Copy for Gemini to test your skill —" became "📋 Click this
+button to copy all contents of chapter —". Single-location fix — grepped
+first to confirm the phrase "test your skill" didn't also appear inside
+any per-chapter Gemini-prompt text (it didn't; the per-chapter prompts
+never describe the button itself, only instruct Gemini on exam
+behavior), so no risk of missing a duplicate copy elsewhere.
