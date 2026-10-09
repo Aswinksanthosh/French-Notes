@@ -2187,3 +2187,93 @@ first to confirm the phrase "test your skill" didn't also appear inside
 any per-chapter Gemini-prompt text (it didn't; the per-chapter prompts
 never describe the button itself, only instruct Gemini on exam
 behavior), so no risk of missing a duplicate copy elsewhere.
+
+## 8 PDFs from another batch compared against the site, 2026-10-09
+
+User uploaded 8 PDFs from a different class batch (same syllabus) and
+asked to use them in A2 "if better/more complete," generate for genuine
+gaps, and report back. Read all 8, compared each against the matching
+site chapter, then acted (did not just report — the user's instruction
+"use... generate... let me know what you think" was read as authorizing
+the build, with the comparison serving as the "let me know" part).
+
+**Skipped as duplicate (no action):**
+- `French_Adjectives_by_Category.pdf` — identical to the file already
+  built as Class 46 earlier this session.
+- `Relatif_pronom_cheat_sheet.pdf` — same qui/que/où content and the
+  same two tricks as the existing Class 43; nothing new.
+
+**Enriched in place (better/more complete source, but same topic as an
+existing chapter — added a new section/rows to the EXISTING chapter
+rather than forking a duplicate):**
+- **Class 22 (Adjectives):** added 2 missing spelling patterns, -if→-ive
+  and -al→-aux (plural), to the agreement table + a note on why -al is
+  unusual (fem. is regular +e, but masc. plural is irregular -aux, not
+  -als). Checklist 10→11 items. One gotcha hit: the new checkbox id
+  `ca22-9` I first used already existed further down in the same
+  chapter (an existing "can use adjectives in sentences" item) — caught
+  by the global checkbox-uniqueness check, renumbered to `ca22-10`.
+- **Class 6 (Endings):** the gender master-sheet PDF was genuinely more
+  complete than this chapter — added a new "More Endings & Épicène
+  Nouns" expandable section with 4 new masculine endings (-eau, -phone,
+  -scope, -eur for machines) and 4 new feminine endings (-té, -ette,
+  -ance/-ence, -esse), plus épicène nouns (artiste, architecte — same
+  spelling either gender, only the article changes), and extended the
+  quick-reference table to match. Checklist 9→11 items.
+- **Class 44 (Pronoms Y et EN):** the y/en cheat sheet had real depth my
+  chapter was missing — added section 5 covering: Y/EN position before
+  an INFINITIVE when there are two verbs (`je vais y manger`, not `j'y
+  vais manger`), position in an INVERTED QUESTION (`y vas-tu ?`), the
+  reflexive-verb negative pattern, and — the most substantive gap — that
+  `un/une` stays at the end in a POSITIVE answer but DISAPPEARS entirely
+  in a NEGATIVE one (my chapter only ever showed it staying). Also added
+  a position-by-sentence-type table and the tense-matching rule.
+  Checklist 6→7 items.
+- **Class 25 (Prepositions):** the prepositions guide covered one thing
+  this already-large chapter (13 checklist items) never had: STRESSED
+  /disjunctive pronouns after a preposition (moi/toi/lui/elle/nous/
+  vous/eux/elles — subject pronouns je/tu/il/... can never follow a
+  preposition). Added that as its own section, plus a second new
+  section on quantity+de ("400 grammes DE fromage", never "du fromage")
+  vs. the partitive du/de la/des. Checklist 13→15 items.
+
+**Built new (confirmed gaps — no existing chapter covers this topic at
+all), appended logically at the end of A2 (after Class 46), physically
+at end of file before `<footer>` — same divergent-position pattern as
+Class 47:**
+- **Class 48 — "Choisir le Bon 'What'"** (quoi vs. que vs. quel/quelle/
+  quels/quelles vs. qu'est-ce que). Genuinely missing anywhere on the
+  site; Class 23 (Adverbs) covers où/quand/comment/pourquoi/combien but
+  never touches the "what" word family. 5 checklist items.
+- **Class 49 — "Négation — Rien, Personne, Plus"**, a direct follow-up
+  to the existing Class 15 (Negation), which — confirmed by re-reading
+  it — only ever taught 2 of 5 basic negation patterns (ne...pas,
+  ne...jamais). Adds ne...rien, ne...personne, ne...plus, same sandwich
+  structure, with one flagged exception: in passé composé, `personne`
+  goes AFTER the past participle (`je n'ai vu personne`) instead of
+  wrapping the auxiliary like the other four. 4 checklist items.
+
+**Bug hit and fixed (new instance of a known class):** both new
+chapters' Gemini-prompt bodies were written as normal Python strings
+with literal embedded newlines (`"...\n\n..."`), and the `esc()` helper
+only replaced apostrophes/quotes, not those newlines — so a literal
+newline character landed inside the single-quoted JS string, breaking
+it (unterminated string literal). Caught immediately by the
+`new Function('event', onclick)` check (2 bad buttons, both in the new
+classes). Fixed by extending `esc()` to also replace `"\n"` → the
+literal 2-char `\n` escape sequence, matching the `build_class47.py`
+precedent of using a separate `NL = "\\n"` token — any future
+data-driven build must route ALL prompt-body text through one `esc()`
+call that handles quotes AND newlines together, not just quotes.
+
+Also hit the project's recurring nav-label-substring trap again: Class
+49's nav link text ("Négation: Rien, Personne, Plus", colon) didn't
+literally appear in its own `<h2>` ("Négation — Rien, Personne, Plus",
+em dash) — fixed by changing the nav label to use the same em dash.
+
+Verified: JS syntax (all 49 copy buttons parse), div balance (1073/
+1073), table/table-wrap coverage (225/225), all 349 checkbox ids
+globally unique, label↔id 1:1, nav order matches `classOrder`, nav-label
+substring check clean, no console errors, no horizontal overflow at
+390px, and each changed/new section screenshotted and visually
+confirmed (Class 48, 49, 6, 44, and the new part of 25 and 22).
