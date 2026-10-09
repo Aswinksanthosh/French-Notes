@@ -636,7 +636,7 @@
       <li><strong>⚠️</strong> Progress is stored like a cookie, in this browser only — switch browsers or phones and it resets to zero.</li>
       <li><strong>🎧</strong> Long or dense sections have a green audio button (e.g. "Explained") — tap it to hear it read aloud instead of reading the wall of text. Every chapter also has a purple <strong>🔎 What's in this chapter?</strong> button near the top for a quick spoken summary of the whole thing.</li>
     </ul>
-    <button class="intro-close" onclick="toggleIntro(false)">Got it, hide this</button>
+    <label class="intro-close" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;"><input type="checkbox" style="width: 17px; height: 17px; accent-color: var(--blue); cursor: pointer;" onchange="if (this.checked) toggleIntro(false);"><span>I understood everything above</span></label>
   </div>
 </div>
 
