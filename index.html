@@ -11,13 +11,16 @@
   build step). Class count and ranges change often - don't trust a number
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
-  for ground truth. As of 2026-10-07: 46 lesson cards. A1 = classes
+  for ground truth. As of 2026-10-09: 48 lesson cards. A1 = classes
   1,2,35-40,47,3-21 (35-40 is the dedicated verb-conjugation arc,
   positioned early in classOrder/nav despite high ids, so verb
   foundations come before anything that needs them; 47 is a verb-
   conjugation cheat-sheet reference card, positioned right after the
-  verb arc it summarizes). A2 = classes 22,23,25-34,41-46 (class 24 was
-  renumbered away and no longer exists).
+  verb arc it summarizes). A2 = classes 22,23,25-34,41-46,48,49 (class 24
+  was renumbered away and no longer exists). 48/49 were appended
+  logically at the end of A2 and physically at the end of the file
+  (before <footer>), same divergent-position pattern as class 47 - safe
+  because classOrder/nav never depend on DOM order.
   Built and used ENTIRELY ON A PHONE. Always keep changes mobile-first;
   don't assume a wide viewport when styling or testing.
 
@@ -260,6 +263,8 @@
   .checklist[data-lesson="class43"] label,
   .checklist[data-lesson="class44"] label,
   .checklist[data-lesson="class45"] label,
+  .checklist[data-lesson="class48"] label,
+  .checklist[data-lesson="class49"] label,
   .checklist[data-lesson="class46"] label {
     color: #1565c0;
     font-weight: 600;
@@ -281,6 +286,8 @@
   .checklist[data-lesson="class43"] input:checked + label,
   .checklist[data-lesson="class44"] input:checked + label,
   .checklist[data-lesson="class45"] input:checked + label,
+  .checklist[data-lesson="class48"] input:checked + label,
+  .checklist[data-lesson="class49"] input:checked + label,
   .checklist[data-lesson="class46"] input:checked + label {
     color: #999;
     font-weight: 400;
@@ -703,6 +710,8 @@
       <a href="#" onclick="goToClass(44)">Pronoms Y et EN <span class="study-time">· 30 min</span></a>
       <a href="#" onclick="goToClass(45)">Pronoms Compléments <span class="study-time">· 35 min</span></a>
       <a href="#" onclick="goToClass(46)">Adjectifs par Catégorie <span class="study-time">· 90 min</span></a>
+      <a href="#" onclick="goToClass(48)">Choisir le Bon "What" <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(49)">Négation — Rien, Personne, Plus <span class="study-time">· 20 min</span></a>
     </div>
   </div>
 </nav>
@@ -2478,7 +2487,7 @@
 
   <p class="topic">Topic: How to identify noun gender in French by word endings, special cases, and common exceptions.</p>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class6">0 / 9 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class6">0 / 11 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class6"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter explains how to tell whether a French noun is masculine or feminine just from how it ends, including special cases and common exceptions." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -2558,6 +2567,38 @@
     <li><input type="checkbox" id="c6-5"><label for="c6-5">Masculine -oir and -isme endings — can identify words</label></li>
   </ul>
 
+  <h3>More Endings & Épicène Nouns</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="A few more reliable ending patterns. Masculine: -eau as in bateau and chateau, -phone as in telephone, -scope as in telescope, and -eur for machines and tools like ordinateur, meaning computer. Feminine: -te as in liberte and beaute, -ette as in bicyclette, -ance or -ence as in difference, and -esse as in jeunesse, meaning youth. There are also epicene nouns - words that use the exact same spelling for both a man and a woman, only the article changes. Un artiste, une artiste. Un architecte, une architecte. Un journaliste, une journaliste." data-lang="en-US">
+      🎧 More Endings &amp; Épicène Nouns
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        <p><strong>More masculine endings:</strong></p>
+        <ul style="margin: 8px 0;">
+          <li><strong>-eau:</strong> <span class="fr">le bateau</span> (boat), <span class="fr">le château</span> (castle)</li>
+          <li><strong>-phone:</strong> <span class="fr">le téléphone</span>, <span class="fr">le microphone</span></li>
+          <li><strong>-scope:</strong> <span class="fr">le télescope</span>, <span class="fr">le microscope</span></li>
+          <li><strong>-eur (machines/tools):</strong> <span class="fr">l'ordinateur</span> (computer), <span class="fr">le moteur</span> (engine)</li>
+        </ul>
+        <p><strong>More feminine endings:</strong></p>
+        <ul style="margin: 8px 0;">
+          <li><strong>-té:</strong> <span class="fr">la liberté</span> (freedom), <span class="fr">la beauté</span> (beauty)</li>
+          <li><strong>-ette:</strong> <span class="fr">la bicyclette</span> (bicycle), <span class="fr">la fourchette</span> (fork)</li>
+          <li><strong>-ance / -ence:</strong> <span class="fr">la différence</span>, <span class="fr">la chance</span></li>
+          <li><strong>-esse:</strong> <span class="fr">la jeunesse</span> (youth), <span class="fr">la tristesse</span> (sadness)</li>
+        </ul>
+        <p><strong>Épicène nouns</strong> — same spelling for both genders, only the article changes:<br>
+        <span class="fr">un/une artiste</span>, <span class="fr">un/une architecte</span>, <span class="fr">un/une journaliste</span>, <span class="fr">un/une élève</span></p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="checklist" data-lesson="class6" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c6-9"><label for="c6-9">More endings (-eau/-phone/-scope/-eur, -té/-ette/-ance/-esse) — can identify words</label></li>
+    <li><input type="checkbox" id="c6-10"><label for="c6-10">Épicène nouns (same word, both genders) — understood</label></li>
+  </ul>
+
   <h3>Special Cases: Words Borrowed from English, Days, Months & Seasons</h3>
   <div class="expandable-section">
     <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="There are some special rules that don't follow the usual ending patterns. First, nouns borrowed from English into French are almost always masculine. For example, le week-end, le parking, le sport, le tennis, le football. Next, all days of the week in French are masculine. This includes le lundi (Monday), le mardi (Tuesday), le mercredi (Wednesday), le jeudi (Thursday), le vendredi (Friday), le samedi (Saturday), le dimanche (Sunday). All months of the year are also masculine in French. Examples include le janvier (January), le février (February), le mars (March), and so on through le décembre (December). Additionally, all four seasons are masculine: le printemps (spring), l'été (summer), l'hiver (winter), l'automne (autumn). These are important to memorize because you will use them frequently when talking about dates and time." data-lang="en-US">
@@ -2628,6 +2669,10 @@
   <tr><td><span class="fr">-ure</span></td><td><span class="fr">nature</span>, <span class="fr">voiture</span></td><td><span class="fr">-age</span></td><td><span class="fr">village</span>, <span class="fr">fromage</span></td></tr>
   <tr><td><span class="fr">-ade</span></td><td><span class="fr">promenade</span>, <span class="fr">salade</span></td><td><span class="fr">-oir</span></td><td><span class="fr">miroir</span>, <span class="fr">tiroir</span></td></tr>
   <tr><td><span class="fr">-e (most)</span></td><td><span class="fr">porte</span>, <span class="fr">maison</span></td><td><span class="fr">-isme</span></td><td><span class="fr">tourisme</span>, <span class="fr">journalisme</span></td></tr>
+  <tr><td><span class="fr">-té</span></td><td><span class="fr">liberté</span>, <span class="fr">beauté</span></td><td><span class="fr">-eau</span></td><td><span class="fr">bateau</span>, <span class="fr">château</span></td></tr>
+  <tr><td><span class="fr">-ette</span></td><td><span class="fr">bicyclette</span>, <span class="fr">fourchette</span></td><td><span class="fr">-phone / -scope</span></td><td><span class="fr">téléphone</span>, <span class="fr">télescope</span></td></tr>
+  <tr><td><span class="fr">-ance / -ence</span></td><td><span class="fr">différence</span>, <span class="fr">chance</span></td><td><span class="fr">-eur (machines)</span></td><td><span class="fr">ordinateur</span>, <span class="fr">moteur</span></td></tr>
+  <tr><td><span class="fr">-esse</span></td><td><span class="fr">jeunesse</span>, <span class="fr">tristesse</span></td><td colspan="2"><strong>Épicène (same word, either gender):</strong> <span class="fr">artiste</span>, <span class="fr">architecte</span>, <span class="fr">journaliste</span></td></tr>
   <tr><td colspan="2"><strong>Special: Days, Months, Seasons = MASCULINE</strong><br>Days: <span class="fr">lundi</span>, <span class="fr">mardi</span>... / Months: <span class="fr">janvier</span>, <span class="fr">février</span>... / Seasons: <span class="fr">printemps</span>, <span class="fr">été</span>, <span class="fr">automne</span>, <span class="fr">hiver</span></td><td colspan="2"><strong>Special: English words = MASCULINE</strong><br><span class="fr">week-end</span>, <span class="fr">parking</span>, <span class="fr">sport</span>, <span class="fr">tennis</span></td></tr>
 </table>
 </div>
@@ -5530,7 +5575,7 @@
   Understand and apply adjective agreement (gender & number), learn placement rules, master formation patterns (feminine -e, -f/-ve, -x/-se, -ien/-ienne, -on/-onne), distinguish between epithète and attribut adjectives, and practice using adjectives in context.
   </div>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class22">0 / 10 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class22">0 / 11 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class22"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers adjective agreement, adjective placement, special forms used before vowels, and the difference between epithete and attribut adjectives." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -5560,7 +5605,12 @@
   <tr><td>-ien → -ienne</td><td><span class="fr">ancien</span></td><td><span class="fr">ancienne</span></td><td>un ancien professeur, une ancienne maison</td></tr>
   <tr><td>-on → -onne</td><td><span class="fr">bon</span></td><td><span class="fr">bonne</span></td><td>un bon ami, une bonne idée</td></tr>
   <tr><td>Irregular</td><td><span class="fr">beau</span></td><td><span class="fr">belle</span></td><td>un beau jour, une belle maison</td></tr>
+  <tr><td>-if → -ive</td><td><span class="fr">sportif</span></td><td><span class="fr">sportive</span></td><td>un homme sportif, une femme sportive</td></tr>
+  <tr><td>-al → -aux (plural, masc.)</td><td><span class="fr">national</span></td><td><span class="fr">nationale</span></td><td>un jour national, des jours nationaux</td></tr>
 </table>
+</div>
+<div class="note">
+<strong>Note:</strong> <span class="fr">-al</span> adjectives are unusual — the FEMININE follows the normal +e pattern (<span class="fr">nationale</span>), but the MASCULINE PLURAL changes to <span class="fr">-aux</span> instead of just adding -s (<span class="fr">nationaux</span>, not "nationals").
 </div>
 
   <h4>❌ Common Mistakes to Avoid</h4>
@@ -5600,6 +5650,7 @@
     <li><input type="checkbox" id="ca22-2"><label for="ca22-2">Master feminine formation patterns (basic -e, -f/-ve, -x/-se, etc.)</label></li>
     <li><input type="checkbox" id="ca22-3"><label for="ca22-3">Learn irregular adjectives (beau, nouveau, vieux, blanc, etc.)</label></li>
     <li><input type="checkbox" id="ca22-8"><label for="ca22-8">Understand color adjective agreement</label></li>
+    <li><input type="checkbox" id="ca22-10"><label for="ca22-10">Master -if/-ive and -al/-aux spelling patterns</label></li>
   </ul>
 
   <h3>Grammar: Adjective Placement</h3>
@@ -6680,7 +6731,7 @@
   Master all 6 preposition categories and their functions. Understand regional rules (à/en/au/aux for cities & countries). Learn context-dependent meanings (à can be place OR time). Practice using prepositions in complete sentences. Build fluency through real classroom examples.
   </div>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class25">0 / 13 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class25">0 / 15 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class25"></div></div>
 
     <h3>🎯 DEFINING PREPOSITIONS</h3>
@@ -7105,6 +7156,72 @@
       <p><strong>Working in company:</strong> <span class="fr" style="color: #0066cc; cursor: pointer;" onclick="speakFrench('Elle travaille dans cette entreprise depuis qu\'elle a terminé ses études')">Elle travaille dans cette entreprise depuis qu'elle a terminé ses études</span> (She has worked in this company since she finished her studies)</p>
     </div>
   </div>
+
+  <h3>🗣️ Prepositions + Stressed Pronouns</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="After a preposition, you can't use je, tu, il, elle, nous, vous, ils, elles. You need a special set called stressed or disjunctive pronouns: moi, toi, lui, elle, nous, vous, eux, elles. For example, avec moi means with me, pour lui means for him, chez eux means at their place."
+      data-lang="en-US">
+      🎧 Stressed Pronouns After a Preposition
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        After ANY preposition (<span class="fr">avec, pour, chez, sans, devant...</span>), you cannot use <span class="fr">je/tu/il/elle/nous/vous/ils/elles</span>. You need the <strong>stressed pronoun</strong> set instead: <span class="fr">moi, toi, lui, elle, nous, vous, eux, elles</span>.
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Subject pronoun</th><th>Stressed pronoun</th><th>Example</th></tr>
+    <tr><td>je</td><td><span class="fr">moi</span></td><td><span class="fr">avec moi</span> (with me)</td></tr>
+    <tr><td>tu</td><td><span class="fr">toi</span></td><td><span class="fr">pour toi</span> (for you)</td></tr>
+    <tr><td>il</td><td><span class="fr">lui</span></td><td><span class="fr">chez lui</span> (at his place)</td></tr>
+    <tr><td>elle</td><td><span class="fr">elle</span></td><td><span class="fr">devant elle</span> (in front of her)</td></tr>
+    <tr><td>nous</td><td><span class="fr">nous</span></td><td><span class="fr">avec nous</span> (with us)</td></tr>
+    <tr><td>vous</td><td><span class="fr">vous</span></td><td><span class="fr">sans vous</span> (without you)</td></tr>
+    <tr><td>ils</td><td><span class="fr">eux</span></td><td><span class="fr">chez eux</span> (at their place)</td></tr>
+    <tr><td>elles</td><td><span class="fr">elles</span></td><td><span class="fr">pour elles</span> (for them)</td></tr>
+  </table>
+  </div>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">avec je</span></td><td><span class="fr">avec moi</span></td><td>Subject pronouns (je/tu/il...) can NEVER follow a preposition</td></tr>
+    <tr><td><span class="fr">chez il</span></td><td><span class="fr">chez lui</span></td><td>Use the stressed pronoun "lui" after a preposition, not "il"</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class25" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca25-13"><label for="ca25-13"><strong>STRESSED PRONOUNS:</strong> I can use moi/toi/lui/elle/nous/vous/eux/elles correctly after any preposition</label></li>
+  </ul>
+
+  <h3>⚖️ Quantity + DE vs. the Partitive</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="When you give a specific amount, like 400 grams or a kilo or a bottle, you always use de before the thing, no matter its gender, and you drop du, de la, or des completely. 400 grammes de fromage, not 400 grammes du fromage. This is different from the partitive du, de la, des which means some, with no specific amount."
+      data-lang="en-US">
+      🎧 Quantity + DE (Not Du/De La/Des)
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        After a specific QUANTITY (<span class="fr">un kilo, 400 grammes, une bouteille, beaucoup, un peu</span>), always use plain <span class="fr">de</span> — never <span class="fr">du/de la/des</span> — no matter the noun's gender.
+      </div>
+    </div>
+  </div>
+
+  <p class="example"><span class="fr">400 grammes de fromage</span> (400g of cheese — NOT "du fromage")<br/>
+  <span class="fr">un kilo de tomates</span> (a kilo of tomatoes)<br/>
+  <span class="fr">une bouteille d'eau</span> (a bottle of water)<br/>
+  <span class="fr">beaucoup de lait</span> (a lot of milk) vs. <span class="fr">je bois du lait</span> (I drink some milk — partitive, no specific amount)</p>
+
+  <ul class="checklist" data-lesson="class25" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="ca25-14"><label for="ca25-14"><strong>QUANTITY + DE:</strong> I can tell a specific quantity (always "de") apart from the partitive (du/de la/des)</label></li>
+  </ul>
 
   <h3>✅ Overall Mastery</h3>
   <ul class="checklist" data-lesson="class25">
@@ -8691,7 +8808,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers Y and EN, two small but very frequent pronouns that replace a whole prepositional phrase. Y replaces à plus a place or thing. EN replaces de plus a thing, or a quantity word like du, de la, des, un, or une. Both go right before the conjugated verb, same position as le, la, les." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class44">0 / 6 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class44">0 / 7 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class44"></div></div>
 
   <div class="note">
@@ -8778,6 +8895,54 @@
 
   <ul class="checklist" data-lesson="class44" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c44-4"><label for="c44-4"><strong>WORD ORDER:</strong> I can place Y/EN correctly before the verb, including in the negative and when counting "un/une"</label></li>
+  </ul>
+
+  <h3>5️⃣ Y/EN With a Second Verb, Questions, and the Negative Again</h3>
+
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="When there are two verbs, like aller plus infinitive, Y and EN go right before the infinitive, not the first verb. For example, je vais y manger, I'm going to eat there. In an inverted question, Y and EN stay stuck to the verb they came from. Y vas-tu, are you going there. En as-tu pris, did you take some. In the negative with un or une, the amount word disappears completely - it only stays in a positive answer."
+      data-lang="en-US">
+      🎧 Two Verbs, Questions, and Negative "Un/Une"
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        With TWO verbs (<span class="fr">aller/devoir/vouloir/pouvoir + infinitive</span>), Y/EN go right before the INFINITIVE, not the first verb. In an inverted question, Y/EN stay attached to the verb they belong to, before the hyphen.
+      </div>
+    </div>
+  </div>
+
+  <p class="example"><span class="fr">Je vais y manger.</span> (I'm going to eat there — not "j'y vais manger")<br/>
+  <span class="fr">Je dois y aller.</span> (I have to go there)<br/>
+  <span class="fr">Y vas-tu ?</span> (Are you going there?) / <span class="fr">En as-tu pris ?</span> (Did you take some?)<br/>
+  <span class="fr">Tu veux t'y habituer ?</span> (Do you want to get used to it? — reflexive + infinitive: "t'y" stays together)</p>
+
+  <div class="note">
+  <strong>Negative "un/une" rule:</strong> when counting exactly ONE item, <span class="fr">un/une</span> stays at the end in a POSITIVE answer (<span class="fr">j'en ai pris un</span>) but DISAPPEARS completely in a NEGATIVE answer.
+  </div>
+  <p class="example"><span class="fr">As-tu un stylo ? — Oui, j'en ai un.</span> (Yes, I have one)<br/>
+  <span class="fr">As-tu un stylo ? — Non, je n'en ai pas.</span> (No, I don't have one — NOT "je n'en ai pas un")</p>
+
+  <p><strong>Reflexive verb in the negative:</strong> <span class="fr">ne</span> goes before the reflexive pronoun, and the whole group (reflexive pronoun + y/en + verb) sits inside <span class="fr">ne...pas</span>.</p>
+  <p class="example"><span class="fr">Je m'y habitue.</span> / <span class="fr">Je ne m'y habitue pas.</span> (I'm not getting used to it)</p>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Sentence type</th><th>Where Y/EN goes</th><th>Example</th></tr>
+    <tr><td>Simple tense</td><td>Before the verb</td><td><span class="fr">j'y vais</span></td></tr>
+    <tr><td>Passé composé</td><td>Before the auxiliary</td><td><span class="fr">j'y ai réfléchi</span></td></tr>
+    <tr><td>Verb + infinitive</td><td>Before the infinitive</td><td><span class="fr">je vais y manger</span></td></tr>
+    <tr><td>Inverted question</td><td>Stays with its own verb</td><td><span class="fr">y vas-tu ?</span></td></tr>
+    <tr><td>Negative</td><td>ne...pas wraps the whole group; un/une disappears</td><td><span class="fr">je n'en ai pas</span></td></tr>
+  </table>
+  </div>
+
+  <div class="note">
+  <strong>Tense-matching rule:</strong> your answer keeps the SAME tense as the question. If someone asks <span class="fr">As-tu réfléchi à ma proposition ?</span> (passé composé), answer in passé composé too: <span class="fr">Oui, j'y ai réfléchi.</span>
+  </div>
+
+  <ul class="checklist" data-lesson="class44" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c44-6"><label for="c44-6"><strong>ADVANCED POSITION:</strong> I can place Y/EN with a second verb, in an inverted question, with a reflexive verb, and I know "un/une" disappears in a negative answer</label></li>
   </ul>
 
   <h3>✅ Overall Mastery</h3>
@@ -9508,6 +9673,209 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 48: CHOOSING THE RIGHT "WHAT" ===================== -->
+<div class="lesson-card" id="class48">
+  <div class="lesson-header">
+    <h2>A2: Choisir le Bon "WHAT" — Quoi / Que / Quel / Qu'est-ce que <span class="date">— Vocabulary Reference</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class teaches how to choose the right French word for &quot;what&quot; - a genuine A1/A2 trap, because English uses one word (&quot;what&quot;) but French has four different options depending on the sentence\'s grammar.\n\nTHE FOUR OPTIONS:\n1) QUOI - used at the END of a question, or after a preposition. Examples: &quot;Tu fais quoi ?&quot; (What are you doing? - casual spoken French), &quot;Avec quoi ?&quot; (With what?), &quot;Quoi de neuf ?&quot; (What\'s new?).\n2) QUE / QU\' - used right before the VERB, in more formal/written questions, always followed by inversion (verb-subject). Examples: &quot;Que fais-tu ?&quot; (What are you doing? - more formal than &quot;Tu fais quoi ?&quot;), &quot;Qu\'est-ce que c\'est ?&quot; is actually built from this same word.\n3) QUEL / QUELLE / QUELS / QUELLES - used directly BEFORE A NOUN, and must agree with that noun\'s gender and number, like an adjective. Examples: &quot;Quel livre ?&quot; (What book? - masc. singular), &quot;Quelle heure est-il ?&quot; (What time is it? - fem. singular), &quot;Quels films aimes-tu ?&quot; (What movies do you like? - masc. plural), &quot;Quelles couleurs préfères-tu ?&quot; (What colors do you prefer? - fem. plural).\n4) QU\'EST-CE QUE - the safest, most common everyday structure, used with NO inversion needed afterward (subject-verb stays in normal order). Example: &quot;Qu\'est-ce que tu fais ?&quot; (What are you doing? - same meaning as both &quot;tu fais quoi&quot; and &quot;que fais-tu&quot;, but easiest to build correctly under pressure).\n\nTHE DECISION TEST: ask yourself, is &quot;what&quot; directly in front of a noun (quel, must agree), or standing alone as a question word? If standing alone: is it at the end of the sentence or after a preposition (quoi), or at the start followed by inversion (que), or do you want the safe no-inversion option (qu\'est-ce que)?\n\nWORKED EXAMPLES, side by side, same meaning three ways: &quot;Tu veux quoi ?&quot; / &quot;Que veux-tu ?&quot; / &quot;Qu\'est-ce que tu veux ?&quot; - all mean &quot;What do you want?&quot;, different registers. And the QUEL contrast: &quot;Quel est ton nom ?&quot; (What is your name? - quel agrees with &quot;nom&quot;, masculine) vs &quot;Qu\'est-ce que c\'est ?&quot; (What is it? - generic, no specific noun in mind).\n\nTeach me QUOI first (end-of-question, casual), then QUE (formal, with inversion), then QUEL/QUELLE/QUELS/QUELLES (agreement with a noun, like an adjective), then QU\'EST-CE QUE (the safe default). Then mix all four together and have me pick the right one for a new sentence, explaining why (is there a noun right after &quot;what&quot;? is this casual or formal? do I want to avoid inversion?). When I can choose correctly and build the sentence, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: How to choose the right French word for "what" — quoi (end of question / after a preposition), que (formal, before the verb, with inversion), quel/quelle/quels/quelles (before a noun, agrees like an adjective), and qu'est-ce que (the safe no-inversion default).</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter teaches how to choose the right French word for what. Quoi goes at the end of a question or after a preposition. Que goes before the verb in a formal question with inversion. Quel, quelle, quels, or quelles goes directly before a noun and must agree with it like an adjective. Qu'est-ce que is the safe everyday option that needs no inversion." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class48">0 / 5 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class48"></div></div>
+
+  <div class="note">
+  English has one word for "what" — French has four, and which one you need depends on the sentence's grammar, not on meaning.
+  </div>
+
+  <h3>1️⃣ QUOI — End of the Question, or After a Preposition</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Quoi is used at the end of a casual spoken question, or right after a preposition." data-lang="en-US">
+      🎧 Quoi Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">Quoi</span> sits at the END of a casual, spoken question, or directly after a preposition like <span class="fr">avec/de/à</span>.</div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">Tu fais quoi ?</span> (What are you doing? — casual)<br/>
+  <span class="fr">Avec quoi ?</span> (With what?)<br/>
+  <span class="fr">Quoi de neuf ?</span> (What's new?)</p>
+  <ul class="checklist" data-lesson="class48" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c48-1"><label for="c48-1"><strong>QUOI:</strong> I can use quoi at the end of a question or after a preposition</label></li>
+  </ul>
+
+  <h3>2️⃣ QUE / QU' — Before the Verb, Formal, With Inversion</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Que or qu' before a vowel sits right before the verb, in a more formal or written question, and always needs inversion, meaning the verb comes before the subject." data-lang="en-US">
+      🎧 Que Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">Que/Qu'</span> goes right before the VERB, in a more formal register, and always triggers INVERSION (verb-subject).</div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">Que fais-tu ?</span> (What are you doing? — more formal than "tu fais quoi")<br/>
+  <span class="fr">Qu'aimez-vous ?</span> (What do you like?)</p>
+  <ul class="checklist" data-lesson="class48" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c48-2"><label for="c48-2"><strong>QUE:</strong> I can use que/qu' before the verb with correct inversion</label></li>
+  </ul>
+
+  <h3>3️⃣ QUEL / QUELLE / QUELS / QUELLES — Before a Noun, Agrees Like an Adjective</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Quel, quelle, quels, or quelles goes directly before a noun, and must agree with that noun's gender and number, exactly like an adjective." data-lang="en-US">
+      🎧 Quel Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">Quel(le/s/les)</span> sits directly BEFORE A NOUN and agrees with it in gender and number — it behaves like an adjective, not a pronoun.</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Form</th><th>Agreement</th><th>Example</th></tr>
+    <tr><td><span class="fr">quel</span></td><td>masc. singular</td><td><span class="fr">Quel livre ?</span> (What book?)</td></tr>
+    <tr><td><span class="fr">quelle</span></td><td>fem. singular</td><td><span class="fr">Quelle heure est-il ?</span> (What time is it?)</td></tr>
+    <tr><td><span class="fr">quels</span></td><td>masc. plural</td><td><span class="fr">Quels films aimes-tu ?</span> (What movies do you like?)</td></tr>
+    <tr><td><span class="fr">quelles</span></td><td>fem. plural</td><td><span class="fr">Quelles couleurs préfères-tu ?</span> (What colors do you prefer?)</td></tr>
+  </table>
+  </div>
+  <ul class="checklist" data-lesson="class48" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c48-3"><label for="c48-3"><strong>QUEL:</strong> I can pick quel/quelle/quels/quelles to agree with the noun that follows</label></li>
+  </ul>
+
+  <h3>4️⃣ QU'EST-CE QUE — The Safe Everyday Default</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Qu'est-ce que is the safest and most common everyday structure, because it needs no inversion afterward - the subject and verb stay in their normal order." data-lang="en-US">
+      🎧 Qu'est-ce que Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">Qu'est-ce que</span> is the SAFEST option — no inversion needed, subject-verb order stays normal.</div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">Qu'est-ce que tu fais ?</span> (What are you doing? — same meaning as "tu fais quoi" / "que fais-tu", easiest to build under pressure)<br/>
+  <span class="fr">Qu'est-ce que c'est ?</span> (What is it?)</p>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">Quoi fais-tu ?</span></td><td><span class="fr">Que fais-tu ?</span></td><td>Quoi never starts a formal inverted question — use que/qu' there</td></tr>
+    <tr><td><span class="fr">Quel est-ce que c'est ?</span></td><td><span class="fr">Qu'est-ce que c'est ?</span></td><td>Quel needs a noun right after it; with no specific noun in mind, use qu'est-ce que</td></tr>
+    <tr><td><span class="fr">Quel heure est-il ?</span></td><td><span class="fr">Quelle heure est-il ?</span></td><td>"Heure" is feminine, so quel must agree: quelle</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class48" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c48-4"><label for="c48-4"><strong>QU'EST-CE QUE:</strong> I can use qu'est-ce que as the safe no-inversion default</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class48">
+    <li><input type="checkbox" id="gemini-skill-class48"><label for="gemini-skill-class48"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 49: NÉGATION — RIEN, PERSONNE, PLUS ===================== -->
+<div class="lesson-card" id="class49">
+  <div class="lesson-header">
+    <h2>A2: Négation — Rien, Personne, Plus <span class="date">— Vocabulary Reference</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class continues French negation beyond ne...pas and ne...jamais (already taught in an earlier class) by adding three more everyday negation patterns: ne...rien, ne...personne, and ne...plus. All of them use the exact same sandwich structure as ne...pas - ne before the verb, the negative word after - you\'re just swapping out the second half.\n\nNE...RIEN (nothing): replaces &quot;pas quelque chose&quot; - used when nothing at all is the answer. Example: &quot;Je ne mange rien.&quot; (I\'m not eating anything / I eat nothing.) &quot;Il ne fait rien le dimanche.&quot; (He does nothing on Sundays.)\n\nNE...PERSONNE (nobody/no one): replaces a person. Example: &quot;Je ne vois personne.&quot; (I don\'t see anyone / I see no one.) &quot;Elle ne parle à personne.&quot; (She doesn\'t talk to anyone.)\n\nNE...PLUS (not anymore / no longer): shows a change from doing something to stopping. Example: &quot;Je ne fume plus.&quot; (I don\'t smoke anymore.) &quot;Il n\'habite plus ici.&quot; (He doesn\'t live here anymore.)\n\nCOMPARISON WITH NE...PAS and NE...JAMAIS (from the earlier class): ne...pas is the general negative (not), ne...jamais is about frequency (never), ne...rien is about things (nothing), ne...personne is about people (nobody), ne...plus is about a stopped action (not anymore). They all follow the identical pattern: subject - ne - verb - [pas/jamais/rien/personne/plus].\n\nONE IMPORTANT DIFFERENCE IN PASSE COMPOSE: rien and plus go in the USUAL spot, wrapping the auxiliary verb, just like pas and jamais (&quot;je n\'ai rien mangé&quot;, &quot;je n\'ai plus fumé&quot;). But personne goes AFTER the past participle, not wrapped around the auxiliary (&quot;je n\'ai vu personne&quot;, not &quot;je n\'ai personne vu&quot;) - this is the one pattern that behaves differently and is worth drilling on its own.\n\nWORKED EXAMPLES mixing all five negation types: &quot;Tu manges quelque chose ? - Non, je ne mange rien.&quot; &quot;Tu vois quelqu\'un ? - Non, je ne vois personne.&quot; &quot;Tu fumes encore ? - Non, je ne fume plus.&quot; &quot;Tu vas souvent au cinema ? - Non, je n\'y vais jamais.&quot; &quot;Tu as vu Paul ? - Non, je n\'ai vu personne.&quot;\n\nTeach me ne...rien first with several examples, then ne...personne (flagging the passe compose word-order difference clearly, since it\'s the one exception), then ne...plus. Then mix all five negation types (pas/jamais/rien/personne/plus) together and quiz me on picking the right one for a new sentence and building it correctly, including in passe compose. When I can do this without hesitating, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Three more negation patterns beyond ne...pas and ne...jamais (taught earlier) — ne...rien (nothing), ne...personne (nobody), and ne...plus (not anymore) — same sandwich structure, plus the one word-order exception for "personne" in passé composé.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter continues negation beyond ne pas and ne jamais with three more patterns: ne rien for nothing, ne personne for nobody, and ne plus for not anymore. They all use the same sandwich structure, except personne moves after the past participle in passé composé instead of wrapping the auxiliary." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class49">0 / 4 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class49"></div></div>
+
+  <div class="note">
+  This builds on <span class="fr">Negation</span> (ne...pas, ne...jamais) from an earlier class — same sandwich structure, just swapping the second half.
+  </div>
+
+  <h3>1️⃣ NE...RIEN — Nothing</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Ne rien means nothing, and replaces an answer where nothing at all is true." data-lang="en-US">
+      🎧 Ne...Rien Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">ne...rien</span> = nothing. Same sandwich: <span class="fr">ne</span> before the verb, <span class="fr">rien</span> after.</div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">Je ne mange rien.</span> (I'm not eating anything.)<br/>
+  <span class="fr">Il ne fait rien le dimanche.</span> (He does nothing on Sundays.)</p>
+  <ul class="checklist" data-lesson="class49" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c49-1"><label for="c49-1"><strong>NE...RIEN:</strong> I can build "nothing" sentences with ne...rien</label></li>
+  </ul>
+
+  <h3>2️⃣ NE...PERSONNE — Nobody</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Ne personne means nobody or no one. In passé composé, personne goes after the past participle instead of wrapping the auxiliary - this is the one pattern that behaves differently from the others." data-lang="en-US">
+      🎧 Ne...Personne Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">ne...personne</span> = nobody / no one. ⚠️ In passé composé, <span class="fr">personne</span> goes AFTER the past participle, not wrapped around the auxiliary like the others.</div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">Je ne vois personne.</span> (I don't see anyone.)<br/>
+  <span class="fr">Elle ne parle à personne.</span> (She doesn't talk to anyone.)<br/>
+  <span class="fr">Je n'ai vu personne.</span> (I didn't see anyone. — NOT "je n'ai personne vu")</p>
+  <ul class="checklist" data-lesson="class49" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c49-2"><label for="c49-2"><strong>NE...PERSONNE:</strong> I can build "nobody" sentences, including the passé composé word order</label></li>
+  </ul>
+
+  <h3>3️⃣ NE...PLUS — Not Anymore</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Ne plus means not anymore or no longer, and shows a change from doing something to having stopped." data-lang="en-US">
+      🎧 Ne...Plus Explained
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">ne...plus</span> = not anymore / no longer — shows a stopped action.</div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">Je ne fume plus.</span> (I don't smoke anymore.)<br/>
+  <span class="fr">Il n'habite plus ici.</span> (He doesn't live here anymore.)</p>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">Je ne mange pas rien.</span></td><td><span class="fr">Je ne mange rien.</span></td><td>Never combine ne...pas with another negative word — use one, not both</td></tr>
+    <tr><td><span class="fr">Je n'ai personne vu.</span></td><td><span class="fr">Je n'ai vu personne.</span></td><td>"Personne" goes AFTER the past participle in passé composé, unlike rien/pas/jamais</td></tr>
+    <tr><td><span class="fr">Je ne fume jamais plus.</span></td><td><span class="fr">Je ne fume plus.</span></td><td>Don't stack two negative words — pick the one that matches the meaning</td></tr>
+  </table>
+  </div>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Pattern</th><th>Meaning</th><th>Passé composé word order</th></tr>
+    <tr><td><span class="fr">ne...pas</span></td><td>not</td><td>wraps the auxiliary</td></tr>
+    <tr><td><span class="fr">ne...jamais</span></td><td>never</td><td>wraps the auxiliary</td></tr>
+    <tr><td><span class="fr">ne...rien</span></td><td>nothing</td><td>wraps the auxiliary</td></tr>
+    <tr><td><span class="fr">ne...plus</span></td><td>not anymore</td><td>wraps the auxiliary</td></tr>
+    <tr><td><span class="fr">ne...personne</span></td><td>nobody</td><td>AFTER the past participle (exception)</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class49" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c49-3"><label for="c49-3"><strong>NE...PLUS:</strong> I can build "not anymore" sentences with ne...plus</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class49">
+    <li><input type="checkbox" id="gemini-skill-class49"><label for="gemini-skill-class49"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -9662,7 +10030,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44,45,46];
+const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,41,42,43,44,45,46,48,49];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion
