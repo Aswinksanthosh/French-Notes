@@ -2335,3 +2335,79 @@ parse, nav order matches `classOrder`, nav-label substring check clean,
 no console errors, no overflow at 390px, declared vs. actual checklist
 counts matched for both changed chapters (34: 8/8, 50: 5/5), and every
 new/changed section screenshotted and visually confirmed.
+
+## Classes 51, 52, 53 added 2026-10-12 — fulfills a 2-class-old forward reference
+
+User shared a new class's transcript ("COD, futur proche et conjonctions")
+plus 4 images (a Google Slides "Scène 1: Soirée à la maison" image-
+description exercise, a full interjections reference sheet, and a
+conjunctions-de-coordination sheet) and said "new class today" — built
+directly per the established "clear transcript, no scope question needed"
+convention (same as Classes 41/42).
+
+**Checked against the site first:** most of this class was review (COD
+recap, futur proche — already covered in Class 26 per the 2026-10-02/06
+audit) or explicitly deferred by the instructor to a later class
+(conjonctions de subordination, "next class"). Three genuinely new,
+well-bounded pieces found:
+
+- **Class 51 "L'Accord du Participe Passé avec QUE"** — this is the exact
+  rule Class 42 (Le COD) and Class 45 (Pronoms Compléments) both
+  explicitly promised as "coming in a future class": in passé composé
+  with avoir, the past participle normally never agrees, EXCEPT when the
+  COD comes before the verb (most commonly via the relative pronoun
+  que), in which case it agrees in gender/number. Built from the 6
+  worked examples given in class (les fleurs données, les filles vues,
+  la photo prise, la voiture achetée, la chanson entendue, les lettres
+  écrites), explicitly flagging the "la chanson" trap the live class
+  itself caught — singular noun, so only -e, not -es, even though the
+  subject "nous" is plural. **Updated the forward-reference text in
+  Class 45** (both the visible `.note` and the Gemini-prompt string) to
+  point at this new chapter now that it exists, same pattern as when
+  Class 45 itself fulfilled Class 42's forward reference last session.
+- **Class 52 "Les Interjections"** — confirmed missing anywhere on the
+  site. Pure vocabulary reference, built directly from the class's own
+  clean 16-interjection table (meaning/use + example for each), grouped
+  into 4 loose categories (surprise, approval, discontent, other) rather
+  than one flat 16-row table, for readability.
+- **Class 53 "Les Conjonctions de Coordination"** — also confirmed
+  missing. The 7 coordinating conjunctions (mais/ou/et/donc/or/ni/car,
+  mnemonic "Mais où est donc Ornicar ?"), each with its worked example
+  from class, plus two notes the class itself gave: donc/alors are
+  near-interchangeable for consequence, and car (unlike parce que)
+  cannot open a sentence. Explicitly connected to the sequencing
+  connectors already taught in Class 41 (Narrer au Passé) — two
+  complementary tools for sounding fluent (event order vs. logical
+  relationship) — and explicitly noted conjonctions de subordination is
+  a separate, not-yet-covered topic, since the instructor deferred it.
+
+**Skipped as duplicate/out of scope:** COD recap (Class 42 already
+covers it, more cleanly), futur proche (Class 26), and the live
+image-description speaking exercise (a one-off classroom activity, not
+a generalizable grammar/vocab topic — its useful vocab, like "assis sur
+le canapé" and the s'asseoir-vs-assis distinction, was minor enough not
+to warrant its own chapter).
+
+Followed the full chapter-add checklist: `classOrder` → appended
+`51,52,53`; nav dropdown → added under `.level-content.a2`, last
+position; A2 checklist-label CSS → added all three; lesson cards →
+`data-lesson="classN"` throughout, checkbox ids `c51-1..3` + `c52-1..4`
++ `c53-1..3` plus their `gemini-skill-classN` items; all new tables
+`.table-wrap`d from the start. Physically appended at the end of the
+file before `<footer>`, same divergent-position pattern as classes
+47-50 (logical position in classOrder/nav, not physical file position,
+is what matters — confirmed safe again).
+
+Verified: div balance (1151/1151), table/table-wrap coverage (238/238),
+all 370 checkbox ids globally unique, label↔id 1:1, all 53 copy buttons
+parse, nav order matches `classOrder`, nav-label substring check clean,
+no console errors, no overflow at 390px, declared vs. actual checklist
+counts matched for all three new chapters (51: 4/4, 52: 5/5, 53: 4/4),
+and all three chapters screenshotted and visually confirmed.
+
+**Note for the ongoing backlog-planning conversation**: these 3 new
+chapters add ~70 min (25+20+25) to the user's study backlog, on top of
+the 22.4 hours already tracked toward their Nov 4 "backlog done 2 weeks
+before the Nov 18 exam" target — consistent with the "~3 new
+chapters/week, ~4-5 extra hours total" estimate given earlier in that
+conversation.

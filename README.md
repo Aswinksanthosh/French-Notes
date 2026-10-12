@@ -78,6 +78,9 @@ tap, and self-test progress with per-topic checklists.
 47. Choisir le Bon "What" (quoi vs. que vs. quel vs. qu'est-ce que — choosing the right word for "what")
 48. Négation — Rien, Personne, Plus (ne...rien, ne...personne, ne...plus — continues the ne...pas/ne...jamais negation from Class 14)
 49. Les Souvenirs (vocabulary for describing memories — types of memory, qualifying adjectives, remembering verbs, the senses — built for the "describe a happy memory in l'imparfait" homework)
+50. L'Accord du Participe Passé avec QUE (the past-participle agreement rule promised in Le COD and Les Pronoms Compléments — agreement is required when the COD comes before the verb, most often via the relative pronoun que)
+51. Les Interjections (Ah!, Oh!, Bravo!, Chut!, Mince!... — vocabulary reference)
+52. Les Conjonctions de Coordination (mais, ou, et, donc, or, ni, car — the 7 coordinating conjunctions, mnemonic "Mais où est donc Ornicar ?")
 
 *Remaining A2 classes will be updated weekly.*
 
