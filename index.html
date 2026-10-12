@@ -11,16 +11,16 @@
   build step). Class count and ranges change often - don't trust a number
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
-  for ground truth. As of 2026-10-09: 49 lesson cards. A1 = classes
+  for ground truth. As of 2026-10-12: 52 lesson cards. A1 = classes
   1,2,35-40,47,3-21 (35-40 is the dedicated verb-conjugation arc,
   positioned early in classOrder/nav despite high ids, so verb
   foundations come before anything that needs them; 47 is a verb-
   conjugation cheat-sheet reference card, positioned right after the
-  verb arc it summarizes). A2 = classes 22,23,25-34,50,41-46,48,49 (class
-  24 was renumbered away and no longer exists). 48/49 were appended
-  logically at the end of A2 and physically at the end of the file
-  (before <footer>), same divergent-position pattern as class 47. 50
-  (Les Souvenirs, vocab) is logically inserted right after 34
+  verb arc it summarizes). A2 = classes 22,23,25-34,50,41-46,48,49,51,52,53
+  (class 24 was renumbered away and no longer exists). 48/49/51/52/53
+  were appended logically at the end of A2 and physically at the end of
+  the file (before <footer>), same divergent-position pattern as class
+  47. 50 (Les Souvenirs, vocab) is logically inserted right after 34
   (L'Imparfait) in classOrder/nav since it's homework vocab tied
   directly to that class, but physically still appended at the end of
   the file before <footer> - safe because classOrder/nav never depend
@@ -269,6 +269,9 @@
   .checklist[data-lesson="class45"] label,
   .checklist[data-lesson="class48"] label,
   .checklist[data-lesson="class49"] label,
+  .checklist[data-lesson="class51"] label,
+  .checklist[data-lesson="class52"] label,
+  .checklist[data-lesson="class53"] label,
   .checklist[data-lesson="class50"] label,
   .checklist[data-lesson="class46"] label {
     color: #1565c0;
@@ -293,6 +296,9 @@
   .checklist[data-lesson="class45"] input:checked + label,
   .checklist[data-lesson="class48"] input:checked + label,
   .checklist[data-lesson="class49"] input:checked + label,
+  .checklist[data-lesson="class51"] input:checked + label,
+  .checklist[data-lesson="class52"] input:checked + label,
+  .checklist[data-lesson="class53"] input:checked + label,
   .checklist[data-lesson="class50"] input:checked + label,
   .checklist[data-lesson="class46"] input:checked + label {
     color: #999;
@@ -724,6 +730,9 @@
       <a href="#" onclick="goToClass(46)">Adjectifs par Catégorie <span class="study-time">· 90 min</span></a>
       <a href="#" onclick="goToClass(48)">Choisir le Bon "What" <span class="study-time">· 20 min</span></a>
       <a href="#" onclick="goToClass(49)">Négation — Rien, Personne, Plus <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(51)">L'Accord du Participe Passé avec QUE <span class="study-time">· 25 min</span></a>
+      <a href="#" onclick="goToClass(52)">Les Interjections <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(53)">Les Conjonctions de Coordination <span class="study-time">· 25 min</span></a>
     </div>
   </div>
 </nav>
@@ -9043,7 +9052,7 @@
     <h2>Les Pronoms Compléments : COD et COI <span class="date">— Live Class Review</span></h2>
   </div>
 
-  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class teaches the COD and COI PRONOUNS - the words (le/la/les and lui/leur) that REPLACE a COD or COI noun so you don\'t have to repeat it. This builds directly on two earlier classes: Le COD (identifying the COD) and the COI concept introduced there as a contrast - now COI gets its full explanation, and both finally get their pronouns.\n\nQUICK RECAP - COD vs COI: COD (complément d\'objet direct) receives the action of the verb directly, answers &quot;qui ?&quot; or &quot;quoi ?&quot;, and has NO preposition in front of it. Examples: &quot;Je vois un film.&quot; (un film = COD). &quot;Elle mange une pomme.&quot; (une pomme = COD). COI (complément d\'objet indirect) does NOT receive the action directly - it\'s connected to the action through a preposition (à, de, pour, avec, en, chez, sur...). It answers &quot;à qui ?&quot;, &quot;à quoi ?&quot;, &quot;de qui ?&quot;, or &quot;de quoi ?&quot;. Examples: &quot;Je parle à mon ami.&quot; (à mon ami = COI). &quot;Elle pense à son avenir.&quot; (à son avenir = COI). &quot;Il s\'occupe de ses enfants.&quot; (de ses enfants = COI).\n\nTHE PRONOUN SETS - the key insight the class material didn\'t state clearly (and actually had a typo in it, listing &quot;les&quot; and &quot;leur&quot; twice and a stray &quot;elle&quot; - corrected here): me, te, nous, and vous are EXACTLY THE SAME whether you\'re replacing a COD or a COI - person 1 and 2 (me/te/nous/vous) never change. The only place COD and COI pronouns actually differ is the 3rd person: COD uses le (masculine singular), la (feminine singular), les (any gender, plural). COI uses lui (singular, EITHER gender - unlike COD, lui does not change for masculine/feminine) and leur (any gender, plural). So really there are only 3 new words to learn here: le, la, les for COD and lui, leur for COI - the rest (me/te/nous/vous) you already know.\n\nWORKED EXAMPLES - COD pronouns: &quot;Je vois Marie.&quot; -> &quot;Je la vois.&quot; (la = Marie, feminine singular). &quot;Il invite ses amis.&quot; -> &quot;Il les invite.&quot; (les = ses amis, plural). &quot;Nous aidons les enfants.&quot; -> &quot;Nous les aidons.&quot;. &quot;Vous cherchez votre clé.&quot; -> &quot;Vous la cherchez.&quot; (clé is feminine). &quot;Il donne une pomme.&quot; -> &quot;Il la donne.&quot;. &quot;Nous mangeons les gâteaux.&quot; -> &quot;Nous les mangeons.&quot;. &quot;Nous invitons Paul et Léa.&quot; -> &quot;Nous les invitons.&quot; (a mixed group of named people is still just plural -> les).\n\nWORKED EXAMPLES - COI pronouns: &quot;Elle téléphone à sa mère.&quot; -> &quot;Elle lui téléphone.&quot; (lui = à sa mère, even though \'mère\' is feminine - lui doesn\'t change for gender, only for singular/plural). &quot;Je parle à mon professeur.&quot; -> &quot;Je lui parle.&quot;. &quot;Nous parlons à nos amis.&quot; -> &quot;Nous leur parlons.&quot; (plural -> leur).\n\nWORD ORDER AND ELISION: the pronoun ALWAYS comes directly before the conjugated verb (same position as the y/en pronouns from the last class) - never after, the way English sometimes puts the pronoun after (&quot;I see her&quot; puts \'her\' after \'see\', but French puts \'la\' before). Elision: le and la shorten to l\' before a verb starting with a vowel sound - les, lui, and leur do NOT elide (they don\'t end in a vowel themselves, so there\'s no clash to avoid). Example: &quot;Paul achète la voiture.&quot; -> &quot;Paul l\'achète.&quot; (la + achète, which starts with a vowel, elides to l\'achète).\n\nCHOOSING LE/LA/LES vs LUI/LEUR - use the exact same COD/COI test from the earlier class, just applied to decide which PRONOUN to use instead of just identifying the noun. A great pair that shows this clearly, same verb &quot;parler&quot;, two different objects: &quot;Je parle français.&quot; - français is a thing with no preposition in front, so it\'s a COD -> &quot;Je le parle.&quot; But &quot;Je parle à mon ami.&quot; - à mon ami has the preposition à, so it\'s a COI -> &quot;Je lui parle.&quot; Same verb, different pronoun, because the TYPE of object is different, not the verb.\n\nGOING FURTHER (optional, flagged by the instructor as secondary for now - the priority is mastering COD and COI pronouns separately first): a sentence can have BOTH a COD and a COI at once, and you can replace both with pronouns together. When you do, the COD pronoun always comes before the COI pronoun. Examples: &quot;Je lis le livre à mon enfant.&quot; -> &quot;Je le lui lis.&quot; (le = le livre, COD; lui = à mon enfant, COI; COD first). &quot;Manoj donne la pomme à Sonia.&quot; -> &quot;Manoj la lui donne.&quot; (la = la pomme, COD; lui = à Sonia, COI). This is advanced and not required for this class\'s mastery check - just notice the pattern is there for later.\n\nWHAT\'S NEXT (do not cover this yet): the instructor explicitly said the very next class covers how passé composé with avoir normally has NO agreement on the past participle, EXCEPT when a COD pronoun (le/la/les) comes BEFORE the verb - in that specific case the past participle DOES agree with it. That rule needs its own full class and should not be taught here - for now, just know it\'s coming.\n\nTeach me the COD vs COI recap first (quick review, this should already feel familiar), then the pronoun sets - make sure I notice that me/te/nous/vous never change and only the 3rd person differs. Then word order and elision, then have me practice the preposition test to choose le/la/les vs lui/leur using new sentences, including at least one &quot;same verb, different object type&quot; pair like the parler example. Mention the double-pronoun pattern briefly as a bonus, but don\'t quiz me hard on it - that\'s for later. Do NOT teach passé composé agreement in this session. When I can correctly choose and place the right pronoun (le/la/les or lui/leur) in a new sentence, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class teaches the COD and COI PRONOUNS - the words (le/la/les and lui/leur) that REPLACE a COD or COI noun so you don\'t have to repeat it. This builds directly on two earlier classes: Le COD (identifying the COD) and the COI concept introduced there as a contrast - now COI gets its full explanation, and both finally get their pronouns.\n\nQUICK RECAP - COD vs COI: COD (complément d\'objet direct) receives the action of the verb directly, answers &quot;qui ?&quot; or &quot;quoi ?&quot;, and has NO preposition in front of it. Examples: &quot;Je vois un film.&quot; (un film = COD). &quot;Elle mange une pomme.&quot; (une pomme = COD). COI (complément d\'objet indirect) does NOT receive the action directly - it\'s connected to the action through a preposition (à, de, pour, avec, en, chez, sur...). It answers &quot;à qui ?&quot;, &quot;à quoi ?&quot;, &quot;de qui ?&quot;, or &quot;de quoi ?&quot;. Examples: &quot;Je parle à mon ami.&quot; (à mon ami = COI). &quot;Elle pense à son avenir.&quot; (à son avenir = COI). &quot;Il s\'occupe de ses enfants.&quot; (de ses enfants = COI).\n\nTHE PRONOUN SETS - the key insight the class material didn\'t state clearly (and actually had a typo in it, listing &quot;les&quot; and &quot;leur&quot; twice and a stray &quot;elle&quot; - corrected here): me, te, nous, and vous are EXACTLY THE SAME whether you\'re replacing a COD or a COI - person 1 and 2 (me/te/nous/vous) never change. The only place COD and COI pronouns actually differ is the 3rd person: COD uses le (masculine singular), la (feminine singular), les (any gender, plural). COI uses lui (singular, EITHER gender - unlike COD, lui does not change for masculine/feminine) and leur (any gender, plural). So really there are only 3 new words to learn here: le, la, les for COD and lui, leur for COI - the rest (me/te/nous/vous) you already know.\n\nWORKED EXAMPLES - COD pronouns: &quot;Je vois Marie.&quot; -> &quot;Je la vois.&quot; (la = Marie, feminine singular). &quot;Il invite ses amis.&quot; -> &quot;Il les invite.&quot; (les = ses amis, plural). &quot;Nous aidons les enfants.&quot; -> &quot;Nous les aidons.&quot;. &quot;Vous cherchez votre clé.&quot; -> &quot;Vous la cherchez.&quot; (clé is feminine). &quot;Il donne une pomme.&quot; -> &quot;Il la donne.&quot;. &quot;Nous mangeons les gâteaux.&quot; -> &quot;Nous les mangeons.&quot;. &quot;Nous invitons Paul et Léa.&quot; -> &quot;Nous les invitons.&quot; (a mixed group of named people is still just plural -> les).\n\nWORKED EXAMPLES - COI pronouns: &quot;Elle téléphone à sa mère.&quot; -> &quot;Elle lui téléphone.&quot; (lui = à sa mère, even though \'mère\' is feminine - lui doesn\'t change for gender, only for singular/plural). &quot;Je parle à mon professeur.&quot; -> &quot;Je lui parle.&quot;. &quot;Nous parlons à nos amis.&quot; -> &quot;Nous leur parlons.&quot; (plural -> leur).\n\nWORD ORDER AND ELISION: the pronoun ALWAYS comes directly before the conjugated verb (same position as the y/en pronouns from the last class) - never after, the way English sometimes puts the pronoun after (&quot;I see her&quot; puts \'her\' after \'see\', but French puts \'la\' before). Elision: le and la shorten to l\' before a verb starting with a vowel sound - les, lui, and leur do NOT elide (they don\'t end in a vowel themselves, so there\'s no clash to avoid). Example: &quot;Paul achète la voiture.&quot; -> &quot;Paul l\'achète.&quot; (la + achète, which starts with a vowel, elides to l\'achète).\n\nCHOOSING LE/LA/LES vs LUI/LEUR - use the exact same COD/COI test from the earlier class, just applied to decide which PRONOUN to use instead of just identifying the noun. A great pair that shows this clearly, same verb &quot;parler&quot;, two different objects: &quot;Je parle français.&quot; - français is a thing with no preposition in front, so it\'s a COD -> &quot;Je le parle.&quot; But &quot;Je parle à mon ami.&quot; - à mon ami has the preposition à, so it\'s a COI -> &quot;Je lui parle.&quot; Same verb, different pronoun, because the TYPE of object is different, not the verb.\n\nGOING FURTHER (optional, flagged by the instructor as secondary for now - the priority is mastering COD and COI pronouns separately first): a sentence can have BOTH a COD and a COI at once, and you can replace both with pronouns together. When you do, the COD pronoun always comes before the COI pronoun. Examples: &quot;Je lis le livre à mon enfant.&quot; -> &quot;Je le lui lis.&quot; (le = le livre, COD; lui = à mon enfant, COI; COD first). &quot;Manoj donne la pomme à Sonia.&quot; -> &quot;Manoj la lui donne.&quot; (la = la pomme, COD; lui = à Sonia, COI). This is advanced and not required for this class\'s mastery check - just notice the pattern is there for later.\n\nWHAT\'S NEXT: the full past-participle agreement rule (passé composé with avoir normally has NO agreement, EXCEPT when a COD comes BEFORE the verb, in which case the past participle DOES agree with it) now has its own full class: L\'Accord du Participe Passé avec QUE.\n\nTeach me the COD vs COI recap first (quick review, this should already feel familiar), then the pronoun sets - make sure I notice that me/te/nous/vous never change and only the 3rd person differs. Then word order and elision, then have me practice the preposition test to choose le/la/les vs lui/leur using new sentences, including at least one &quot;same verb, different object type&quot; pair like the parler example. Mention the double-pronoun pattern briefly as a bonus, but don\'t quiz me hard on it - that\'s for later. Do NOT teach passé composé agreement in this session. When I can correctly choose and place the right pronoun (le/la/les or lui/leur) in a new sentence, I\'ll check it off. Ask me speaking/writing practice questions before I check each one.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
   <span class="copy-hint">Copy to Gemini for practicing</span>
 
   <p class="topic">Topic: The pronouns that replace a COD (le/la/les) or a COI (lui/leur) so you don't have to repeat the noun — the full COI explanation promised in the earlier COD class, which pronoun set to use, word order, elision, and a brief look at using both together.</p>
@@ -9153,7 +9162,7 @@
   </div>
 
   <div class="note" style="background: #e3f2fd; border-left: 4px solid #1565c0;">
-  <strong>Coming in a future class:</strong> in passé composé with avoir, the past participle normally does NOT agree with anything — except when a COD pronoun (le/la/les) comes before the verb, in which case it DOES agree. That rule gets its own full class — not covered here yet.
+  <strong>Now its own full class:</strong> in passé composé with avoir, the past participle normally does NOT agree with anything — except when a COD pronoun (le/la/les) comes before the verb, in which case it DOES agree. See <span class="fr">L'Accord du Participe Passé avec QUE</span> for the full rule and worked examples.
   </div>
 
   <h3>✅ Overall Mastery</h3>
@@ -10075,6 +10084,302 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 51: L'ACCORD DU PARTICIPE PASSÉ AVEC QUE ===================== -->
+<div class="lesson-card" id="class51">
+  <div class="lesson-header">
+    <h2>A2: L'Accord du Participe Passé avec QUE <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class is the promised follow-up from Le COD and Les Pronoms Complements: QUE (COD et COI) - the full rule for past-participle agreement in passe compose with avoir, when the COD comes BEFORE the verb instead of after it.\n\nTHE BASELINE RULE (already known): in passe compose with avoir, the past participle normally does NOT agree with anything. J\'ai mange les pommes - no agreement, because the COD (les pommes) comes AFTER the verb, in its normal position.\n\nTHE NEW RULE: when the COD comes BEFORE the verb instead, the past participle DOES agree with it in gender and number. The single most common way a COD ends up before the verb is through the relative pronoun que (which you already know from Pronoms Relatifs replaces a COD). Compare: J\'ai mange les pommes (COD after, no agreement) vs Les pommes que j\'ai mangees (COD - via que, standing in for les pommes - before the verb, agreement needed: mangees, feminine plural).\n\nWORKED EXAMPLES FROM CLASS, each showing the noun\'s gender/number and the resulting participle ending: Les fleurs que j\'ai donnees (fleurs = feminine plural -> donnees, add -es). Les filles que j\'ai vues (filles = feminine plural -> vues, add -es). La photo que tu as prise (photo = feminine singular -> prise, add -e). La voiture qu\'il a achetee (voiture = feminine singular -> achetee, add -e). La chanson que nous avons entendue (chanson = feminine singular -> entendue, add -e - only ONE song, so no -s, a trap the class specifically caught). Les lettres qu\'elle a ecrites (lettres = feminine plural -> ecrites, add -s - already ends in -e from the base participle ecrite, so plural just adds -s, not -es).\n\nTHE CONTRAST PAIR, worth memorizing as a pattern: with no COD before the verb, nothing changes (J\'ai mange les pommes). With que putting the COD before the verb, the participle changes to match it (Les pommes que j\'ai mangees). Same verb, same meaning, different word order, different participle form - word order is what triggers agreement, not the verb itself.\n\nQUICK TEST: find the past participle\'s verb, then ask - is there a COD standing before it (often signaled by que introducing the clause)? If yes, make the participle agree (add -e for feminine, -s for plural, -es for both) with that COD\'s gender and number. If the COD is absent or comes after the verb as usual, leave the participle in its base form.\n\nTeach me the baseline no-agreement rule first as a quick reminder, then the new rule (COD before the verb via que triggers agreement), then walk through all 6 worked examples having me identify the noun\'s gender/number and build the correct participle ending myself before I see the answer - include the chanson example specifically, since singular nouns needing only -e (not -es) is an easy mistake. Then give me new noun+verb pairs and have me build both the no-agreement version (COD after) and the que-agreement version (COD before) for each, so I see the contrast directly. When I can apply this correctly without hesitating, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: The past-participle agreement rule promised in Le COD and Les Pronoms Compléments — in passé composé with avoir, the participle normally never agrees, EXCEPT when the COD comes before the verb (most commonly via the relative pronoun que), in which case it agrees in gender and number.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers the past participle agreement rule that two earlier chapters promised was coming. In passé composé with avoir, the past participle normally never agrees with anything. But when the COD comes before the verb, most commonly through the relative pronoun que, the participle must agree in gender and number with that COD." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class51">0 / 4 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class51"></div></div>
+
+  <div class="note">
+  This builds on <span class="fr">Le COD</span>, <span class="fr">Les Pronoms Relatifs</span> (que replaces a COD), and <span class="fr">Les Pronoms Compléments</span> — both of those chapters explicitly said this rule was "coming in a future class." This is that class.
+  </div>
+
+  <h3>1️⃣ The Baseline: No Agreement (COD After the Verb)</h3>
+  <p>In passé composé with <span class="fr">avoir</span>, the past participle normally does <strong>NOT</strong> agree with anything.</p>
+  <p class="example"><span class="fr">J'ai mangé les pommes.</span> (I ate the apples — no agreement; "les pommes" comes AFTER the verb, its normal position.)</p>
+  <ul class="checklist" data-lesson="class51" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c51-1"><label for="c51-1"><strong>BASELINE:</strong> I remember avoir participles normally don't agree with anything</label></li>
+  </ul>
+
+  <h3>2️⃣ The New Rule: COD Before the Verb → Agreement</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="When the COD comes before the verb instead of after it, the past participle DOES agree with it in gender and number. The most common way a COD ends up before the verb is through the relative pronoun que, which you already know replaces a COD."
+      data-lang="en-US">
+      🎧 COD Before the Verb Changes Everything
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">When a COD comes <strong>BEFORE</strong> the verb — most often via the relative pronoun <span class="fr">que</span> — the past participle agrees with it in gender and number.</div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">J'ai mangé les pommes.</span> (COD after → no agreement)<br/>
+  <span class="fr">Les pommes que j'ai mangées.</span> (COD — via "que", standing for "les pommes" — before the verb → agreement: <strong>mangées</strong>, feminine plural)</p>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Same verb, same meaning, different word order, different participle.</strong> Word order is what triggers agreement — not the verb itself.
+  </div>
+  <ul class="checklist" data-lesson="class51" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c51-2"><label for="c51-2"><strong>THE RULE:</strong> I understand that a COD before the verb (usually via que) triggers past-participle agreement</label></li>
+  </ul>
+
+  <h3>3️⃣ Worked Examples From Class</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Sentence</th><th>Noun gender/number</th><th>Participle ending</th></tr>
+    <tr><td><span class="fr">Les fleurs que j'ai données.</span></td><td>fem. plural</td><td>+ -es</td></tr>
+    <tr><td><span class="fr">Les filles que j'ai vues.</span></td><td>fem. plural</td><td>+ -es</td></tr>
+    <tr><td><span class="fr">La photo que tu as prise.</span></td><td>fem. singular</td><td>+ -e</td></tr>
+    <tr><td><span class="fr">La voiture qu'il a achetée.</span></td><td>fem. singular</td><td>+ -e</td></tr>
+    <tr><td><span class="fr">La chanson que nous avons entendue.</span></td><td>fem. singular</td><td>+ -e (only ONE song — not "-es")</td></tr>
+    <tr><td><span class="fr">Les lettres qu'elle a écrites.</span></td><td>fem. plural</td><td>+ -s (base already ends in -e)</td></tr>
+  </table>
+  </div>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Watch out:</strong> <span class="fr">la chanson que nous avons entendue</span> is singular — just ONE song — so the participle only takes <strong>-e</strong>, never "-es". The class specifically caught this mistake: don't assume plural just because "nous" is plural; it's the COD's own number that matters, not the subject's.
+  </div>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">J'ai mangé les pommes que j'ai mangé.</span></td><td><span class="fr">Les pommes que j'ai mangées.</span></td><td>COD before the verb (via que) needs agreement — don't leave the participle bare</td></tr>
+    <tr><td><span class="fr">La chanson que nous avons entendues.</span></td><td><span class="fr">La chanson que nous avons entendue.</span></td><td>"Chanson" is singular — agree with the COD's number, not the subject "nous"</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class51" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c51-3"><label for="c51-3"><strong>WORKED EXAMPLES:</strong> I can build the correct participle ending for a COD before the verb, including the singular-chanson trap</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class51">
+    <li><input type="checkbox" id="gemini-skill-class51"><label for="gemini-skill-class51"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 52: LES INTERJECTIONS ===================== -->
+<div class="lesson-card" id="class52">
+  <div class="lesson-header">
+    <h2>A2: Les Interjections <span class="date">— Vocabulary Reference</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class is a vocabulary reference: interjections, words that express an emotion, a feeling, or a spontaneous reaction. They are invariable (never change form) and are not part of the sentence grammatically - they\'re almost always followed by an exclamation point and stand alone.\n\nTHE 16 MAIN INTERJECTIONS, each with its meaning/use and an example sentence: Ah! (astonishment, surprise, pain) - Ah ! Je ne m\'y attendais pas ! (Oh! I didn\'t expect that!). Oh! (surprise, admiration, disappointment) - Oh ! C\'est magnifique ! (Oh! It\'s beautiful!). He! (calling someone, getting attention) - He ! Viens ici ! (Hey! Come here!). Eh bien! (astonishment, indifference) - Eh bien ! C\'est une bonne nouvelle. (Well! That\'s good news.). Bravo! (congratulations) - Bravo ! Tu as reussi ! (Well done! You succeeded!). Super! (enthusiasm, satisfaction) - Super ! C\'est genial ! (Great! That\'s awesome!). D\'accord! (agreement, understanding) - D\'accord ! Je suis partant. (Okay! I\'m in.). Non! (refusal, disagreement) - Non ! Je ne veux pas. (No! I don\'t want to.). Ouf! (relief) - Ouf ! C\'est fini ! (Phew! It\'s over!). Aie! (pain, hurt) - Aie ! Ca fait mal ! (Ouch! It hurts!). Tss! (discontent, disapproval) - Tss ! Quelle idee ! (Tss! What an idea!). Pfff! (annoyance, indifference) - Pfff ! C\'est toujours pareil ! (Pfff! It\'s always the same!). Chut! (asking for silence) - Chut ! Il dort. (Shh! He\'s sleeping.). Youpi! (joy, enthusiasm) - Youpi ! On part en voyage ! (Yay! We\'re going on a trip!). Mince! (surprise, disappointment) - Mince ! J\'ai oublie mon portable. (Oh no! I forgot my phone.). Bof! (indifference, lack of enthusiasm) - Bof ! Ce n\'est pas tres interessant. (Meh! It\'s not very interesting.).\n\nKEY RULE: interjections are invariable and not part of the sentence grammatically - they express your emotion in the moment, separate from whatever sentence follows. They are almost always followed by an exclamation point and usually stand isolated in a sentence (at the start, or alone).\n\nTeach me these 16 interjections grouped loosely by feeling (surprise: ah/oh/mince; approval/success: bravo/super/d\'accord/youpi; refusal/discontent: non/tss/pfff/bof; other: he/eh bien/ouf/aie/chut), each with its example sentence. Then quiz me by giving a situation or emotion in English and having me pick the right interjection and build a short reaction sentence with it. When I can recognize and correctly use all 16 in context, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Interjections — words that express an emotion, feeling, or spontaneous reaction (Ah!, Oh!, Bravo!, Chut!, Mince!...). Invariable, not part of the sentence grammatically, almost always followed by an exclamation point.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers interjections, words that express an emotion, a feeling, or a spontaneous reaction, like ah, oh, bravo, chut, or mince. They're invariable, not part of the sentence grammatically, and almost always followed by an exclamation point." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class52">0 / 5 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class52"></div></div>
+
+  <div class="note">
+  Interjections express an emotion, a feeling, or a spontaneous reaction. They're <strong>invariable</strong> (never change form) and not part of the sentence grammatically — almost always followed by an exclamation point, usually standing alone.
+  </div>
+
+  <h3>1️⃣ Surprise & Astonishment</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Ah expresses astonishment, surprise, or pain. Oh expresses surprise, admiration, or disappointment. Mince expresses surprise or disappointment, closer to oh no." data-lang="en-US">
+      🎧 Ah, Oh, Mince
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">Ah!</span> astonishment/pain, <span class="fr">Oh!</span> surprise/admiration/disappointment, <span class="fr">Mince!</span> surprise/disappointment ("oh no!").</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Interjection</th><th>Meaning / Use</th><th>Example</th></tr>
+    <tr><td><span class="fr">Ah !</span></td><td>astonishment, surprise, pain</td><td><span class="fr">Ah ! Je ne m'y attendais pas !</span> (Oh! I didn't expect that!)</td></tr>
+    <tr><td><span class="fr">Oh !</span></td><td>surprise, admiration, deception</td><td><span class="fr">Oh ! C'est magnifique !</span> (Oh! It's beautiful!)</td></tr>
+    <tr><td><span class="fr">Mince !</span></td><td>surprise, disappointment</td><td><span class="fr">Mince ! J'ai oublié mon portable.</span> (Oh no! I forgot my phone.)</td></tr>
+  </table>
+  </div>
+  <ul class="checklist" data-lesson="class52" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c52-1"><label for="c52-1"><strong>SURPRISE:</strong> I can use ah/oh/mince correctly</label></li>
+  </ul>
+
+  <h3>2️⃣ Approval & Success</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Bravo means well done, for congratulations. Super expresses enthusiasm and satisfaction. D'accord shows agreement or understanding. Youpi expresses joy and enthusiasm, like yay." data-lang="en-US">
+      🎧 Bravo, Super, D'accord, Youpi
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">Bravo!</span> congratulations, <span class="fr">Super!</span> enthusiasm, <span class="fr">D'accord!</span> agreement, <span class="fr">Youpi!</span> joy ("yay!").</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Interjection</th><th>Meaning / Use</th><th>Example</th></tr>
+    <tr><td><span class="fr">Bravo !</span></td><td>congratulations</td><td><span class="fr">Bravo ! Tu as réussi !</span> (Well done! You succeeded!)</td></tr>
+    <tr><td><span class="fr">Super !</span></td><td>enthusiasm, satisfaction</td><td><span class="fr">Super ! C'est génial !</span> (Great! That's awesome!)</td></tr>
+    <tr><td><span class="fr">D'accord !</span></td><td>agreement, understanding</td><td><span class="fr">D'accord ! Je suis partant.</span> (Okay! I'm in.)</td></tr>
+    <tr><td><span class="fr">Youpi !</span></td><td>joy, enthusiasm</td><td><span class="fr">Youpi ! On part en voyage !</span> (Yay! We're going on a trip!)</td></tr>
+  </table>
+  </div>
+  <ul class="checklist" data-lesson="class52" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c52-2"><label for="c52-2"><strong>APPROVAL:</strong> I can use bravo/super/d'accord/youpi correctly</label></li>
+  </ul>
+
+  <h3>3️⃣ Refusal & Discontent</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Non is a plain refusal or disagreement. Tss shows discontent or disapproval. Pfff expresses annoyance or indifference. Bof expresses indifference or a lack of enthusiasm, like meh." data-lang="en-US">
+      🎧 Non, Tss, Pfff, Bof
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text"><span class="fr">Non!</span> refusal, <span class="fr">Tss!</span> disapproval, <span class="fr">Pfff!</span> annoyance/indifference, <span class="fr">Bof!</span> indifference ("meh").</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Interjection</th><th>Meaning / Use</th><th>Example</th></tr>
+    <tr><td><span class="fr">Non !</span></td><td>refusal, disagreement</td><td><span class="fr">Non ! Je ne veux pas.</span> (No! I don't want to.)</td></tr>
+    <tr><td><span class="fr">Tss !</span></td><td>discontent, disapproval</td><td><span class="fr">Tss ! Quelle idée !</span> (Tss! What an idea!)</td></tr>
+    <tr><td><span class="fr">Pfff !</span></td><td>annoyance, indifference</td><td><span class="fr">Pfff ! C'est toujours pareil !</span> (Pfff! It's always the same!)</td></tr>
+    <tr><td><span class="fr">Bof !</span></td><td>indifference, lack of enthusiasm</td><td><span class="fr">Bof ! Ce n'est pas très intéressant.</span> (Meh! It's not very interesting.)</td></tr>
+  </table>
+  </div>
+  <ul class="checklist" data-lesson="class52" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c52-3"><label for="c52-3"><strong>DISCONTENT:</strong> I can use non/tss/pfff/bof correctly</label></li>
+  </ul>
+
+  <h3>4️⃣ Other Common Interjections</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="He calls attention, like hey. Eh bien shows astonishment or indifference, like well. Ouf expresses relief, like phew. Aie expresses pain, like ouch. Chut asks for silence, like shh." data-lang="en-US">
+      🎧 He, Eh bien, Ouf, Aïe, Chut
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">Rounding out the set: <span class="fr">Hé!</span> attention, <span class="fr">Eh bien!</span> astonishment/indifference, <span class="fr">Ouf!</span> relief, <span class="fr">Aïe!</span> pain, <span class="fr">Chut!</span> asking for silence.</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Interjection</th><th>Meaning / Use</th><th>Example</th></tr>
+    <tr><td><span class="fr">Hé !</span></td><td>appeal, attention</td><td><span class="fr">Hé ! Viens ici !</span> (Hey! Come here!)</td></tr>
+    <tr><td><span class="fr">Eh bien !</span></td><td>astonishment, indifference</td><td><span class="fr">Eh bien ! C'est une bonne nouvelle.</span> (Well! That's good news.)</td></tr>
+    <tr><td><span class="fr">Ouf !</span></td><td>relief</td><td><span class="fr">Ouf ! C'est fini !</span> (Phew! It's over!)</td></tr>
+    <tr><td><span class="fr">Aïe !</span></td><td>pain, hurt</td><td><span class="fr">Aïe ! Ça fait mal !</span> (Ouch! It hurts!)</td></tr>
+    <tr><td><span class="fr">Chut !</span></td><td>asking for silence</td><td><span class="fr">Chut ! Il dort.</span> (Shh! He's sleeping.)</td></tr>
+  </table>
+  </div>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Remember:</strong> interjections are invariable (never change form) and aren't part of the sentence grammatically — they're almost always followed by an exclamation point and stand isolated.
+  </div>
+  <ul class="checklist" data-lesson="class52" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c52-4"><label for="c52-4"><strong>OTHERS:</strong> I can use hé/eh bien/ouf/aïe/chut correctly</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class52">
+    <li><input type="checkbox" id="gemini-skill-class52"><label for="gemini-skill-class52"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 53: LES CONJONCTIONS DE COORDINATION ===================== -->
+<div class="lesson-card" id="class53">
+  <div class="lesson-header">
+    <h2>A2: Les Conjonctions de Coordination <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class covers conjonctions de coordination - words used to link two words, phrases, or clauses of the same type together. There is a second category, conjonctions de subordination, which the instructor explicitly deferred to a future class - this chapter covers coordination only.\n\nTHE 7 COORDINATING CONJUNCTIONS, memorized with the mnemonic sentence Mais ou est donc Ornicar ? (literally nonsense, but each word is one conjunction: mais, ou, et, donc, or, ni, car): mais (opposition), ou (choice/alternative), et (addition), donc (consequence - alors is a close synonym for this), or (also alternative/transition, more formal/literary), ni (negation, used in pairs like ne...ni...ni), car (cause - a near-synonym of parce que, but car cannot start a sentence the way parce que can).\n\nWORKED EXAMPLES FROM CLASS, one per conjunction: Je veux y aller, mais il pleut. (I want to go there, but it\'s raining - opposition). Elle est fatiguee, mais elle travaille quand meme. (She\'s tired, but she\'s still working anyway - opposition, with quand meme reinforcing it). Tu peux rester ou tu peux partir. (You can stay or you can leave - choice). Il n\'est pas venu, donc nous avons commence sans lui. (He didn\'t come, so we started without him - consequence; alors can replace donc here: il n\'est pas venu, alors nous avons commence). Elle est gentille, or elle est timide. (She\'s kind, yet/but she\'s shy - alternative/contrast, a more literary register than mais). Je n\'ai ni argent, ni temps. (I have neither money nor time - negation, paired ni...ni, note this replaces du/de la/un/une entirely, similar to how de alone replaces them after a negative or a quantity). Il ne vient pas car il est malade. (He\'s not coming because he\'s sick - cause, same meaning as parce qu\'il est malade but car cannot start the sentence on its own the way parce que can).\n\nTEACHING NOTE: donc and alors are near-synonyms for consequence and are often interchangeable in casual speech - the class explicitly confirmed this when a student asked. Logical connectors like these matter specifically for oral exams like the TCF, since they let you link ideas instead of just listing disconnected sentences - this connects directly to the sequencing connectors (d\'abord/ensuite/puis/enfin) already covered in Narrer au Passe, which serve a similar purpose for narrating events in order, while these coordinating conjunctions link the logical relationship between ideas (why, but, or, and so on).\n\nNOT COVERED YET (deferred by the instructor to a future class): conjonctions de subordination (the second category of conjunctions) - do not teach or invent this content, just know it\'s coming.\n\nTeach me the 7 coordinating conjunctions using the Mais ou est donc Ornicar mnemonic, pairing each with its specific use (opposition/choice/addition/consequence/alternative/negation/cause) and its worked example. Point out that donc and alors are near-interchangeable, and that car cannot start a sentence the way parce que can. Then give me sentence pairs (two separate ideas) and have me pick the correct conjunction to link them, explaining why. When I can choose and use all 7 correctly, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: The 7 coordinating conjunctions (mais, ou, et, donc, or, ni, car) that link two words, phrases, or clauses of the same type — opposition, choice, addition, consequence, alternative, negation, and cause. Conjonctions de subordination are a separate category, covered in a future class, not here.</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers the 7 coordinating conjunctions: mais, ou, et, donc, or, ni, and car, remembered with the mnemonic mais où est donc ornicar. Each links two ideas in a specific way: opposition, choice, addition, consequence, alternative, negation, or cause." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class53">0 / 4 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class53"></div></div>
+
+  <div class="note">
+  Conjunctions link two words, phrases, or clauses of the same type. There are two categories — this chapter covers <strong>coordination</strong> only; <span class="fr">conjonctions de subordination</span> are a separate topic for a future class.
+  </div>
+
+  <h3>1️⃣ The 7 Coordinating Conjunctions: "Mais Où Est Donc Ornicar ?"</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="The 7 coordinating conjunctions are remembered with the mnemonic sentence mais où est donc ornicar, which is nonsense but each word is one conjunction: mais, ou, et, donc, or, ni, car. Mais is for opposition, ou is for choice, et is for addition, donc is for consequence, or is for alternative, ni is for negation, and car is for cause."
+      data-lang="en-US">
+      🎧 Mais Où Est Donc Ornicar ?
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+      The mnemonic <span class="fr">"Mais où est donc Ornicar ?"</span> hides all 7: <span class="fr">mais, ou, et, donc, or, ni, car</span>.
+      </div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Conjunction</th><th>Use</th><th>Example</th></tr>
+    <tr><td><span class="fr">mais</span></td><td>opposition</td><td><span class="fr">Je veux y aller, mais il pleut.</span> (I want to go, but it's raining.)</td></tr>
+    <tr><td><span class="fr">ou</span></td><td>choice</td><td><span class="fr">Tu peux rester ou tu peux partir.</span> (You can stay or leave.)</td></tr>
+    <tr><td><span class="fr">et</span></td><td>addition</td><td><span class="fr">Elle est fatiguée et elle travaille quand même.</span> (She's tired and still works.)</td></tr>
+    <tr><td><span class="fr">donc</span></td><td>consequence</td><td><span class="fr">Il n'est pas venu, donc nous avons commencé sans lui.</span> (He didn't come, so we started without him.)</td></tr>
+    <tr><td><span class="fr">or</span></td><td>alternative / contrast (literary)</td><td><span class="fr">Elle est gentille, or elle est timide.</span> (She's kind, yet shy.)</td></tr>
+    <tr><td><span class="fr">ni</span></td><td>negation (paired ne...ni...ni)</td><td><span class="fr">Je n'ai ni argent, ni temps.</span> (I have neither money nor time.)</td></tr>
+    <tr><td><span class="fr">car</span></td><td>cause</td><td><span class="fr">Il ne vient pas car il est malade.</span> (He's not coming because he's sick.)</td></tr>
+  </table>
+  </div>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Two things to know:</strong> <span class="fr">donc</span> and <span class="fr">alors</span> are near-interchangeable for consequence in casual speech (<span class="fr">il n'est pas venu, alors nous avons commencé</span> works just as well). And <span class="fr">car</span> cannot start a sentence on its own the way <span class="fr">parce que</span> can — <span class="fr">car</span> always joins two clauses already in progress.
+  </div>
+  <ul class="checklist" data-lesson="class53" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c53-1"><label for="c53-1"><strong>THE 7:</strong> I know all 7 coordinating conjunctions and which relationship each one expresses</label></li>
+  </ul>
+
+  <h3>2️⃣ Worked Examples, One Per Conjunction</h3>
+  <p class="example"><span class="fr">Je veux y aller, mais il pleut.</span> (opposition)<br/>
+  <span class="fr">Tu peux rester ou tu peux partir.</span> (choice)<br/>
+  <span class="fr">Elle est fatiguée et elle travaille quand même.</span> (addition)<br/>
+  <span class="fr">Il n'est pas venu, donc nous avons commencé sans lui.</span> (consequence)<br/>
+  <span class="fr">Elle est gentille, or elle est timide.</span> (alternative)<br/>
+  <span class="fr">Je n'ai ni argent, ni temps.</span> (negation)<br/>
+  <span class="fr">Il ne vient pas car il est malade.</span> (cause)</p>
+
+  <h4>❌ Common Mistakes to Avoid</h4>
+  <div class="table-wrap">
+  <table>
+    <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
+    <tr><td><span class="fr">Car il est malade, il ne vient pas.</span></td><td><span class="fr">Il ne vient pas car il est malade.</span></td><td>Car cannot open a sentence — parce que can, car can't</td></tr>
+    <tr><td><span class="fr">Je n'ai pas argent, pas temps.</span></td><td><span class="fr">Je n'ai ni argent, ni temps.</span></td><td>"Neither...nor" needs the paired ne...ni...ni, not pas repeated</td></tr>
+  </table>
+  </div>
+
+  <ul class="checklist" data-lesson="class53" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c53-2"><label for="c53-2"><strong>WORKED EXAMPLES:</strong> I can build a correct sentence for each of the 7 conjunctions</label></li>
+  </ul>
+
+  <h3>3️⃣ Why This Matters for Speaking Exams</h3>
+  <p>Logical connectors like these matter specifically for oral exams like the TCF, since they let you link ideas instead of just listing disconnected sentences — the same reason <span class="fr">Narrer au Passé</span> taught sequencing connectors (<span class="fr">d'abord, ensuite, puis, enfin</span>). Those connectors sequence EVENTS in order; these coordinating conjunctions link the LOGICAL relationship between ideas (why, but, or, and so on) — two different, complementary tools for sounding fluent.</p>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Not covered yet:</strong> <span class="fr">conjonctions de subordination</span> is a second category of conjunctions — explicitly deferred to a future class. This chapter only covers coordination.
+  </div>
+
+  <ul class="checklist" data-lesson="class53" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c53-3"><label for="c53-3"><strong>SPEAKING USE:</strong> I understand why coordinating conjunctions matter for oral exams, alongside sequencing connectors</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class53">
+    <li><input type="checkbox" id="gemini-skill-class53"><label for="gemini-skill-class53"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -10229,7 +10534,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,50,41,42,43,44,45,46,48,49];
+const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,50,41,42,43,44,45,46,48,49,51,52,53];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion
