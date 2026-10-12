@@ -10659,6 +10659,79 @@ function toggleLevel(btn, level) {
   content.style.display = isVisible ? 'none' : 'flex';
 }
 
+// Builds a plain-text per-chapter progress report for one level (a1/a2),
+// reading the same checklist totals updateChapterColors() uses, in the
+// order the chapters appear in that level's nav list.
+function buildLevelProgressReport(level) {
+  const links = document.querySelectorAll(`.level-content.${level} a`);
+  let totalAll = 0, checkedAll = 0;
+  const lines = [];
+  links.forEach(link => {
+    const m = (link.getAttribute('onclick') || '').match(/goToClass\((\d+)\)/);
+    if (!m) return;
+    const classNum = m[1];
+    const label = link.firstChild ? link.firstChild.textContent.trim() : link.textContent.trim();
+    const lists = document.querySelectorAll(`.checklist[data-lesson="class${classNum}"]`);
+    let total = 0, checked = 0;
+    lists.forEach(list => {
+      total += list.querySelectorAll('input[type="checkbox"]').length;
+      checked += list.querySelectorAll('input[type="checkbox"]:checked').length;
+    });
+    totalAll += total;
+    checkedAll += checked;
+    const status = total === 0 ? '—' : (checked === total ? '✅' : (checked > 0 ? '🟡' : '⬜'));
+    lines.push(`${status} ${label}: ${checked}/${total}`);
+  });
+  const pct = totalAll > 0 ? Math.round((checkedAll / totalAll) * 100) : 0;
+  const header = `${level.toUpperCase()} Progress — ${checkedAll}/${totalAll} (${pct}%)`;
+  return [header, ...lines].join('\n');
+}
+
+// Long-press (hold) an A1/A2 level button to silently copy that level's
+// full per-chapter progress to the clipboard - no visible button, just a
+// barely-noticeable flash on release so only the person doing it knows.
+// A normal tap still toggles the dropdown exactly as before.
+(function setupLevelLongPress() {
+  const LONG_PRESS_MS = 600;
+  document.querySelectorAll('.level-btn').forEach(btn => {
+    const m = (btn.getAttribute('onclick') || '').match(/toggleLevel\(this,\s*'(\w+)'\)/);
+    const level = m ? m[1] : null;
+    if (!level) return;
+    btn.removeAttribute('onclick');
+
+    let pressTimer = null;
+    let longPressed = false;
+    const cancelTimer = () => clearTimeout(pressTimer);
+    const startTimer = () => {
+      longPressed = false;
+      pressTimer = setTimeout(() => {
+        longPressed = true;
+        const text = buildLevelProgressReport(level);
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            btn.style.transition = 'opacity 0.15s ease';
+            btn.style.opacity = '0.4';
+            setTimeout(() => { btn.style.opacity = ''; }, 150);
+          }).catch(() => {});
+        }
+      }, LONG_PRESS_MS);
+    };
+
+    btn.addEventListener('touchstart', startTimer, { passive: true });
+    btn.addEventListener('touchend', cancelTimer);
+    btn.addEventListener('touchmove', cancelTimer);
+    btn.addEventListener('touchcancel', cancelTimer);
+    btn.addEventListener('mousedown', startTimer);
+    btn.addEventListener('mouseup', cancelTimer);
+    btn.addEventListener('mouseleave', cancelTimer);
+
+    btn.addEventListener('click', () => {
+      if (longPressed) { longPressed = false; return; }
+      toggleLevel(btn, level);
+    });
+  });
+})();
+
 // INITIALIZE ON PAGE LOAD
 window.addEventListener('DOMContentLoaded', function() {
   restoreLastViewedChapter();
