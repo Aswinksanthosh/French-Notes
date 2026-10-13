@@ -2476,3 +2476,35 @@ clearly new example instead of word-swapping an existing quoted one,
 especially under the standing "generate extra content when source
 material falls short" instruction — swap-one-word reuse of a quoted
 sentence reads as the same quote to anyone skimming the source later.
+
+## Gemini prompt fix 2026-10-13: grade carefully, don't skip ahead on a wrong answer
+
+User reported a real exam-quality bug (not a site bug): during a Gemini
+spoken exam, a wrong/incomplete answer ("Il y a Tom's chambre.") was
+followed by an empty "The translation is: —" response, then the NEXT
+fragment ("chambre...") was marked "Correct" and the exam moved on to a
+new question, never actually getting the right answer out of the
+student. Checked the shared Gemini-prompt header: there was no
+instruction telling Gemini to verify an answer carefully before saying
+"Correct", or to stop and require a corrected repeat-back instead of
+silently advancing — a real, previously-unnoticed gap.
+
+Added one new bullet, site-wide (53 occurrences, all classes except the
+intro-card's static demo button), right after the existing "📝 MAKE THE
+EXAM THOROUGH" bullet: "✅ GRADE CAREFULLY, DON'T JUST MOVE ON" — compare
+the answer word-for-word against the expected one (a fragment or partial
+answer is not correct just because it reuses a word or two); if the
+student says "I don't know", skips, or answers wrong, give the correct
+answer and then require them to repeat it back correctly before moving
+on, rather than silently advancing to the next question. Same scripted
+find-and-replace pattern as every other site-wide prompt-wording change
+(matched on the shared trailing substring "Give me example sentences
+alongside your questions so I have a model to work from, not just a
+bare question."). Also updated both header template files
+(`shared_header.txt`, `header_a1.txt`) in the scratchpad so future
+chapter builds inherit this rule automatically.
+
+Verified: div balance (1168/1168), all 54 copy buttons parse, the new
+bullet appears in all 53 expected occurrences, and spot-checked the
+actual clipboard output of a sample class (Class 54) to confirm the
+text reads correctly end-to-end, not just in the source HTML.
