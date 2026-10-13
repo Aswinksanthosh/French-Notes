@@ -2449,3 +2449,30 @@ all 376 checkbox ids globally unique, label↔id 1:1, all 54 copy buttons
 parse, nav order matches `classOrder`, nav-label substring check clean,
 no console errors, no overflow at 390px, declared count matched actual
 (6/6), chapter screenshotted and visually confirmed.
+
+## Class 53 bug fix 2026-10-13: wrong "et" example (user-caught)
+
+User asked directly whether Class 53's content actually came from the
+transcript. Checking confirmed most of it did (donc/alors note, car
+can't-open-a-sentence note, ni...ni pairing), but found a real mistake
+while verifying: the **"et" (addition) row's example was not from the
+transcript at all** — it was the transcript's own "mais" (opposition)
+sentence ("Elle est fatiguée, mais elle travaille quand même") with
+"mais" silently swapped for "et" during the build, both misattributing
+it as a class quote and mislabeling it as "addition" when the sentence
+reads as contrast, not addition. The Gemini-prompt text itself was
+unaffected (it only lists "et (addition)" as a category with no fake
+worked example) — the bug was isolated to the two visible-HTML spots
+(the table row + the worked-examples list). Fixed both to a genuine,
+clearly-additive example: "Elle travaille le matin et elle étudie le
+soir." Verified: div balance (1168/1168), all 54 copy buttons parse,
+no remaining instances of the wrong sentence.
+
+**Lesson**: when a data-driven build reuses one source sentence as a
+template for a "similar" row with no clean source example of its own
+(instead of generating a genuinely new one), there's real risk of
+silently misattributing invented content as a class quote. Generate a
+clearly new example instead of word-swapping an existing quoted one,
+especially under the standing "generate extra content when source
+material falls short" instruction — swap-one-word reuse of a quoted
+sentence reads as the same quote to anyone skimming the source later.
