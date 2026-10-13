@@ -81,6 +81,7 @@ tap, and self-test progress with per-topic checklists.
 50. L'Accord du Participe Passé avec QUE (the past-participle agreement rule promised in Le COD and Les Pronoms Compléments — agreement is required when the COD comes before the verb, most often via the relative pronoun que)
 51. Les Interjections (Ah!, Oh!, Bravo!, Chut!, Mince!... — vocabulary reference)
 52. Les Conjonctions de Coordination (mais, ou, et, donc, or, ni, car — the 7 coordinating conjunctions, mnemonic "Mais où est donc Ornicar ?")
+53. Le Comparatif (plus/moins/aussi(autant) + que, with the pattern changing by word type — adverb, adjective, verb, noun — plus the irregular bon→meilleur / bien→mieux)
 
 *Remaining A2 classes will be updated weekly.*
 
