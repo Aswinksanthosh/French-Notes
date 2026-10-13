@@ -2411,3 +2411,41 @@ the 22.4 hours already tracked toward their Nov 4 "backlog done 2 weeks
 before the Nov 18 exam" target — consistent with the "~3 new
 chapters/week, ~4-5 extra hours total" estimate given earlier in that
 conversation.
+
+## Class 54 added 2026-10-13: "Le Comparatif" (A2)
+
+User uploaded one PDF ("Le comparatif") from another batch, labeled
+"From other batch" — no further instruction. Checked the site first
+(`grep -ic "comparatif"` → 0 hits) and confirmed against the
+2026-10-02/06 grammar-gap audit, which had explicitly flagged
+comparatives/superlatives as entirely missing from the whole site.
+Confirmed gap, well-made source PDF (two clean pages, a "like I'm 5"
+analogy, a complete 4-row category table, a decision flowchart, worked
+examples, and the two irregular forms) — built directly, no
+clarifying-question round needed given how unambiguous and
+self-contained the material was.
+
+**Content**: the three comparison words (plus/moins/aussi-autant) +
+que, with the one real subtlety — the helper word for EQUALITY changes
+depending on word type: adverbs/adjectives use <span class="fr">aussi</span>,
+but verbs/nouns use <span class="fr">autant</span> instead (not
+interchangeable). Built as 6 sections: the 3 helper words + seesaw
+analogy, the 4-category "what are you comparing" table, adverbs &
+adjectives (with the adjective-agreement reminder), verbs & nouns (verb
+comes first; nouns always need de, eliding to d' before a vowel), the
+quick decision flowchart, and the two irregular forms (bon→meilleur for
+things, bien→mieux for actions — "plus bon"/"plus bien" are always
+wrong) with the memory trick from the source ("on dort mieux").
+
+Followed the chapter-add checklist: `classOrder` → appended `54`; nav
+dropdown → added under `.level-content.a2`, last position; A2
+checklist-label CSS → added `class54`; lesson card → `data-lesson=
+"class54"` throughout, checkbox ids `c54-1` through `c54-5` plus
+`gemini-skill-class54` (6 total); physically appended at end of file
+before `<footer>`, same divergent-position pattern as classes 47-53.
+
+Verified: div balance (1168/1168), table/table-wrap coverage (241/241),
+all 376 checkbox ids globally unique, label↔id 1:1, all 54 copy buttons
+parse, nav order matches `classOrder`, nav-label substring check clean,
+no console errors, no overflow at 390px, declared count matched actual
+(6/6), chapter screenshotted and visually confirmed.
