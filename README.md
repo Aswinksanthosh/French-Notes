@@ -82,6 +82,8 @@ tap, and self-test progress with per-topic checklists.
 51. Les Interjections (Ah!, Oh!, Bravo!, Chut!, Mince!... — vocabulary reference)
 52. Les Conjonctions de Coordination (mais, ou, et, donc, or, ni, car — the 7 coordinating conjunctions, mnemonic "Mais où est donc Ornicar ?")
 53. Le Comparatif (plus/moins/aussi(autant) + que, with the pattern changing by word type — adverb, adjective, verb, noun — plus the irregular bon→meilleur / bien→mieux)
+54. Les Conjonctions de Subordination (que, si, quand, lorsque, parce que, comme, bien que, après que, avant que, pour que, afin que, jusqu'à ce que, tant que — all 13, each with a worked example, plus a preview of the subjunctive mood)
+55. Description d'Images — Plage, Hôpital, Études (vocabulary for the TCF/TEF image-description speaking format, covering 3 themed scenes)
 
 *Remaining A2 classes will be updated weekly.*
 

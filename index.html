@@ -11,14 +11,14 @@
   build step). Class count and ranges change often - don't trust a number
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
-  for ground truth. As of 2026-10-13: 53 lesson cards. A1 = classes
+  for ground truth. As of 2026-10-14: 56 lesson cards. A1 = classes
   1,2,35-40,47,3-21 (35-40 is the dedicated verb-conjugation arc,
   positioned early in classOrder/nav despite high ids, so verb
   foundations come before anything that needs them; 47 is a verb-
   conjugation cheat-sheet reference card, positioned right after the
   verb arc it summarizes). A2 = classes 22,23,25-34,50,41-46,48,49,51,52,
-  53,54 (class 24 was renumbered away and no longer exists).
-  48/49/51/52/53/54 were appended logically at the end of A2 and
+  53,54,55,56 (class 24 was renumbered away and no longer exists).
+  48/49/51/52/53/54/55/56 were appended logically at the end of A2 and
   physically at the end of the file (before <footer>), same
   divergent-position pattern as class 47. 50 (Les Souvenirs, vocab) is
   logically inserted right after 34
@@ -270,6 +270,8 @@
   .checklist[data-lesson="class45"] label,
   .checklist[data-lesson="class48"] label,
   .checklist[data-lesson="class49"] label,
+  .checklist[data-lesson="class55"] label,
+  .checklist[data-lesson="class56"] label,
   .checklist[data-lesson="class54"] label,
   .checklist[data-lesson="class51"] label,
   .checklist[data-lesson="class52"] label,
@@ -298,6 +300,8 @@
   .checklist[data-lesson="class45"] input:checked + label,
   .checklist[data-lesson="class48"] input:checked + label,
   .checklist[data-lesson="class49"] input:checked + label,
+  .checklist[data-lesson="class55"] input:checked + label,
+  .checklist[data-lesson="class56"] input:checked + label,
   .checklist[data-lesson="class54"] input:checked + label,
   .checklist[data-lesson="class51"] input:checked + label,
   .checklist[data-lesson="class52"] input:checked + label,
@@ -737,6 +741,8 @@
       <a href="#" onclick="goToClass(52)">Les Interjections <span class="study-time">· 20 min</span></a>
       <a href="#" onclick="goToClass(53)">Les Conjonctions de Coordination <span class="study-time">· 25 min</span></a>
       <a href="#" onclick="goToClass(54)">Le Comparatif <span class="study-time">· 30 min</span></a>
+      <a href="#" onclick="goToClass(55)">Conjonctions de Subordination <span class="study-time">· 20 min</span></a>
+      <a href="#" onclick="goToClass(56)">Description d'Images <span class="study-time">· 30 min</span></a>
     </div>
   </div>
 </nav>
@@ -10506,6 +10512,228 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 55: LES CONJONCTIONS DE SUBORDINATION ===================== -->
+<div class="lesson-card" id="class55">
+  <div class="lesson-header">
+    <h2>A2: Les Conjonctions de Subordination <span class="date">— Live Class Review</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• ✅ GRADE CAREFULLY, DON\'T JUST MOVE ON: before saying &quot;Correct&quot;, compare what I said word-for-word against the actual expected answer - a fragment, a partial sentence, or something that only reuses one or two words from the question is NOT correct, even if it sounds close. If I say &quot;I don\'t know&quot;, skip the question, or give an incomplete/wrong answer, do NOT silently move to the next question - tell me the correct answer, then ask me to repeat it back correctly myself, and only move on once I\'ve actually said the right answer out loud or in writing.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class covers conjonctions de subordination (subordinating conjunctions) - the second category of conjunctions, after conjonctions de coordination which you already know. Unlike the brief classroom mention, the class slide actually gave a full worked example for every single one of the 13 conjunctions, so this chapter teaches all 13 properly, not just as a bare list.\n\nWHAT A SUBORDINATING CONJUNCTION DOES: it introduces a proposition subordonnee (a dependent/subordinate clause) that relies on a proposition principale (a main clause) to make sense - unlike coordinating conjunctions, which link two equal, independent ideas. They can introduce an idea of cause, time, condition, purpose, and more.\n\nTHE 13 CONJUNCTIONS, each with its worked example from the class slide: que (that) - Je pense que tu as raison. (I think you are right.) si (if) - Je ne viens pas si tu n\'es pas la. (I won\'t come if you aren\'t there.) quand (when) - Je t\'appelle quand j\'arrive. (I\'ll call you when I arrive.) lorsque (when, more formal) - Il est parti lorsque la reunion a commence. (He left when the meeting started.) parce que (because) - Je reste a la maison parce qu\'il pleut. (I stay home because it\'s raining.) comme (as/since) - Elle travaille comme elle aime. (She works as she likes.) bien que (although) - Bien qu\'il soit fatigue, il continue. (Although he is tired, he continues - notice soit, the SUBJUNCTIVE form of etre, not est - bien que is one of the conjunctions that triggers the subjunctive mood, previewed here even though the full subjunctive rules come later.) apres que (after) - Apres qu\'il a fini ses devoirs, il sort. (After he finishes his homework, he goes out.) avant que (before) - Avant que tu arrives, je serai parti. (Before you arrive, I will have left.) pour que (so that/in order that) - Il etudie pour reussir. (He studies in order to succeed - when the subject stays the same, French simplifies to pour + infinitive instead of pour que + a full clause.) afin que (so that, close synonym of pour que) - Je prends soin de moi afin d\'etre en bonne sante. (I take care of myself in order to be healthy - same same-subject simplification: afin de + infinitive.) jusqu\'a ce que (until) - Il a attendu jusqu\'a ce que le bus arrive. (He waited until the bus arrived.) tant que (as long as) - Tant qu\'il y a de la vie, il y a de l\'espoir. (As long as there is life, there is hope.)\n\nWHAT YOU ALREADY KNOW: que itself, as a subordinating conjunction, is something you\'ve already used constantly without naming it - every time you said je pense que, je crois que, je sais que, you were already using a subordinating conjunction. Parce que you also already know from earlier classes as a way to express cause (similar to car, but parce que CAN start a sentence on its own, unlike car).\n\nTHE SAME-SUBJECT SHORTCUT: pour que and afin que normally introduce a full clause with its own subject, but when the subject of both halves of the sentence is the SAME person, French simplifies to pour/afin de + infinitive instead - il etudie pour reussir (he studies so THAT HE succeeds, same subject, so no que needed), not il etudie pour qu\'il reussisse.\n\nA PREVIEW OF THE SUBJUNCTIVE: bien que triggers the subjunctive mood in the clause after it (soit instead of est in the worked example) - several of these conjunctions do this (bien que, pour que, avant que, jusqu\'a ce que among them). The full subjunctive mood itself is a separate topic for a future class - for now, just notice that bien que\'s example uses soit, not est, as a preview of that pattern.\n\nTeach me what a subordinating conjunction does using the je pense que example, then walk through all 13 conjunctions with their worked examples, pointing out which ones I already use without realizing it (que, parce que), flagging the same-subject pour/afin + infinitive shortcut, and noting that bien que\'s example previews the subjunctive (soit, not est) without expecting me to master the subjunctive yet. Then quiz me: give me two short ideas in English and have me pick the right subordinating conjunction to join them into one French sentence, building the full sentence. When I can recognize and use all 13 appropriately, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Conjonctions de subordination — words that link a dependent clause to a main clause (unlike the coordinating conjunctions already covered). All 13, each with a worked example from the class slide, plus a preview of how some of them trigger the subjunctive mood (fully covered in a future class).</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers conjonctions de subordination, words that link a dependent clause to a main clause, unlike coordinating conjunctions which link two equal ideas. It covers all 13 - que, si, quand, lorsque, parce que, comme, bien que, après que, avant que, pour que, afin que, jusqu'à ce que, and tant que - each with a worked example, plus a preview of the subjunctive mood that some of them trigger." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class55">0 / 5 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class55"></div></div>
+
+  <h3>1️⃣ What a Subordinating Conjunction Does</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)"
+      data-audio="A subordinating conjunction introduces a dependent clause that relies on a main clause to make sense - unlike coordinating conjunctions, which link two equal, independent ideas. For example, je pense que tu as raison: the conjunction que connects the main clause je pense to the dependent clause tu as raison, which can't stand alone the same way here - it depends on je pense to make sense as what's being thought."
+      data-lang="en-US">
+      🎧 Main Clause + Dependent Clause
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">
+        A subordinating conjunction links a <strong>dependent clause</strong> to a <strong>main clause</strong> — unlike coordinating conjunctions (<span class="fr">Les Conjonctions de Coordination</span>), which link two equal, independent ideas. They can introduce cause, time, condition, purpose, and more.
+      </div>
+    </div>
+  </div>
+  <p class="example"><span class="fr">Je pense que tu as raison.</span> (I think that you are right.) — <span class="fr">que</span> connects the main clause <span class="fr">je pense</span> to the dependent clause <span class="fr">tu as raison</span>.</p>
+  <ul class="checklist" data-lesson="class55" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c55-1"><label for="c55-1"><strong>THE IDEA:</strong> I understand a subordinating conjunction links a dependent clause to a main clause</label></li>
+  </ul>
+
+  <h3>2️⃣ All 13, With a Worked Example Each</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>French</th><th>English</th><th>Example</th></tr>
+    <tr><td><span class="fr">que</span></td><td>that</td><td><span class="fr">Je pense que tu as raison.</span></td></tr>
+    <tr><td><span class="fr">si</span></td><td>if</td><td><span class="fr">Je ne viens pas si tu n'es pas là.</span></td></tr>
+    <tr><td><span class="fr">quand</span></td><td>when</td><td><span class="fr">Je t'appelle quand j'arrive.</span></td></tr>
+    <tr><td><span class="fr">lorsque</span></td><td>when (more formal)</td><td><span class="fr">Il est parti lorsque la réunion a commencé.</span></td></tr>
+    <tr><td><span class="fr">parce que</span></td><td>because</td><td><span class="fr">Je reste à la maison parce qu'il pleut.</span></td></tr>
+    <tr><td><span class="fr">comme</span></td><td>as / since</td><td><span class="fr">Elle travaille comme elle aime.</span></td></tr>
+    <tr><td><span class="fr">bien que</span></td><td>although</td><td><span class="fr">Bien qu'il soit fatigué, il continue.</span></td></tr>
+    <tr><td><span class="fr">après que</span></td><td>after</td><td><span class="fr">Après qu'il a fini ses devoirs, il sort.</span></td></tr>
+    <tr><td><span class="fr">avant que</span></td><td>before</td><td><span class="fr">Avant que tu arrives, je serai parti.</span></td></tr>
+    <tr><td><span class="fr">pour que</span></td><td>so that / in order that</td><td><span class="fr">Il étudie pour réussir.</span> (same-subject shortcut, see below)</td></tr>
+    <tr><td><span class="fr">afin que</span></td><td>so that (close synonym of pour que)</td><td><span class="fr">Je prends soin de moi afin d'être en bonne santé.</span></td></tr>
+    <tr><td><span class="fr">jusqu'à ce que</span></td><td>until</td><td><span class="fr">Il a attendu jusqu'à ce que le bus arrive.</span></td></tr>
+    <tr><td><span class="fr">tant que</span></td><td>as long as</td><td><span class="fr">Tant qu'il y a de la vie, il y a de l'espoir.</span></td></tr>
+  </table>
+  </div>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>You already use two of these without realizing it:</strong> <span class="fr">que</span> itself — every time you've said <span class="fr">je pense que</span>, <span class="fr">je crois que</span>, <span class="fr">je sais que</span> — and <span class="fr">parce que</span>, already covered as a way to express cause (similar to <span class="fr">car</span>, but <span class="fr">parce que</span> CAN start a sentence on its own, unlike <span class="fr">car</span>).
+  </div>
+  <ul class="checklist" data-lesson="class55" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c55-2"><label for="c55-2"><strong>THE 13:</strong> I can recognize and use all 13 subordinating conjunctions with their examples</label></li>
+  </ul>
+
+  <h3>3️⃣ The Same-Subject Shortcut: Pour/Afin + Infinitive</h3>
+  <p><span class="fr">pour que</span> and <span class="fr">afin que</span> normally introduce a full clause with its OWN subject, but when both halves of the sentence share the SAME subject, French simplifies to <span class="fr">pour</span>/<span class="fr">afin de</span> + infinitive instead — no <span class="fr">que</span> needed.</p>
+  <p class="example"><span class="fr">Il étudie pour réussir.</span> (He studies so THAT HE succeeds — same subject, so no "que": not "il étudie pour qu'il réussisse")<br/>
+  <span class="fr">Je prends soin de moi afin d'être en bonne santé.</span> (I take care of myself in order to be healthy — same shortcut with afin de)</p>
+  <ul class="checklist" data-lesson="class55" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c55-3"><label for="c55-3"><strong>SHORTCUT:</strong> I know to drop "que" and use the infinitive when both clauses share the same subject</label></li>
+  </ul>
+
+  <h3>4️⃣ A Preview of the Subjunctive</h3>
+  <p><span class="fr">bien que</span> triggers the <strong>subjunctive mood</strong> in the clause that follows it — notice <span class="fr">soit</span> (not <span class="fr">est</span>) in <span class="fr">Bien qu'il soit fatigué, il continue.</span> Several of these conjunctions do this (<span class="fr">bien que</span>, <span class="fr">pour que</span>, <span class="fr">avant que</span>, <span class="fr">jusqu'à ce que</span> among them) — the full subjunctive mood itself is a separate topic for a future class. For now, just notice this pattern exists; you don't need to master building subjunctive forms yet.</p>
+  <ul class="checklist" data-lesson="class55" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c55-4"><label for="c55-4"><strong>SUBJUNCTIVE PREVIEW:</strong> I've noticed bien que uses "soit" not "est" — the subjunctive trigger — without needing to build it myself yet</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class55">
+    <li><input type="checkbox" id="gemini-skill-class55"><label for="gemini-skill-class55"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 56: DESCRIPTION D'IMAGES — PLAGE, HÔPITAL, ÉTUDES ===================== -->
+<div class="lesson-card" id="class56">
+  <div class="lesson-header">
+    <h2>A2: Description d'Images — Plage, Hôpital, Études <span class="date">— Vocabulary Reference</span></h2>
+  </div>
+
+  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES &amp; HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💙 BLUE TEXT: A2 checklists in blue (#1565c0), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A2 button when all A2 classes are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 📌 One general &quot;Overall Mastery&quot; item stays at the very bottom\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• ✅ GRADE CAREFULLY, DON\'T JUST MOVE ON: before saying &quot;Correct&quot;, compare what I said word-for-word against the actual expected answer - a fragment, a partial sentence, or something that only reuses one or two words from the question is NOT correct, even if it sounds close. If I say &quot;I don\'t know&quot;, skip the question, or give an incomplete/wrong answer, do NOT silently move to the next question - tell me the correct answer, then ask me to repeat it back correctly myself, and only move on once I\'ve actually said the right answer out loud or in writing.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nTEACH ME SLOWLY\n\nThis class is vocabulary for describing images out loud - a real TCF/TEF speaking-exam format where you\'re shown a picture and asked to describe what\'s happening. The class worked through three themed images: a beach scene, a hospital scene, and a student studying. This is vocabulary, not a new grammar point.\n\nAT THE BEACH (la plage): il fait beau (the weather is nice), il y a du soleil (it\'s sunny), ils sont assis (they are sitting), ils discutent et rient (they are chatting and laughing), ils ecoutent de la musique (they are listening to music), ils profitent de leurs vacances (they are enjoying their vacation), une glaciere (a cooler/icebox).\n\nAT THE HOSPITAL (l\'hopital): une patiente (a patient, feminine), elle recupere de sa maladie (she is recovering from her illness), elle est sous perfusion (she is on a drip/IV), elle est allongee dans un lit (she is lying down in a bed), une infirmiere (a nurse), une blouse bleue (a blue smock/gown), un appareil medical (a medical device), la patiente est souriante (the patient is smiling).\n\nSTUDYING (les etudes): un cahier (a notebook/exercise book), une lampe d\'etude (a study/desk lamp), une etagere (a shelf), une etagere a livres (a bookshelf, more precise than just etagere), il cherche des informations sur Internet (he is looking for information on the Internet), il est concentre (he is concentrated/focused), il va reussir ses etudes (he is going to succeed in his studies).\n\nCLARIFICATIONS FROM CLASS: Docteur can be used for both a male or a female doctor - there is no separate feminine form used in speech (not la docteure in casual use the way the class used it - docteur works for anyone). Sentir can mean to feel (reflexive: se sentir, e.g. elle se sent mieux) or to smell (NOT reflexive in this sense - il sent bon, it smells good) - same verb, two different meanings, only one of which is reflexive. Gouter means to taste (le gout = the taste, as a noun; gouter = to taste, as a verb). Concentre is used as an adjective in il est concentre (he is focused) - like other adjectives, it changes for gender: elle est concentree. Une etagere means a shelf in general; une etagere a livres specifies a bookshelf; etage (no accent needed on this one specifically) means a floor/level of a building - easy to confuse etagere with etage since they look similar but mean different things.\n\nTeach me the three vocabulary sets (plage, hopital, etudes) one at a time, each with the example phrases as a model for how they\'d actually be used describing a picture. Then the five clarifications (docteur for either gender, sentir\'s two meanings, gouter, concentre as an adjective that agrees, etagere vs etage). Then show me a new, different image conceptually (describe a simple scene to me in English) and have me describe it back in French using this chapter\'s vocabulary plus anything else I already know, correcting my word choice and any adjective agreement. This is exactly the TCF/TEF image-description speaking format, so practicing it this way is directly useful for the exam. When I can describe a beach, hospital, or study scene fluently using this vocabulary, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
+  <span class="copy-hint">Copy to Gemini for practicing</span>
+
+  <p class="topic">Topic: Vocabulary for describing images out loud — a real TCF/TEF speaking-exam format — covering three themed scenes (the beach, the hospital, studying) plus 5 clarifications (docteur for either gender, sentir's two meanings, goûter, concentré as an adjective, étagère vs. étage).</p>
+
+  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter is vocabulary for describing images out loud, a real TCF and TEF speaking exam format. It covers three themed scenes: the beach, the hospital, and studying, plus five clarifications on tricky words like sentir, which means both to feel and to smell, and the difference between étagère, a shelf, and étage, a floor of a building." data-lang="en-US">🔎 What's in this chapter?</button>
+
+  <div class="progress-label"><span class="progress-count" data-lesson="class56">0 / 6 done</span></div>
+  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class56"></div></div>
+
+  <div class="note">
+  This is vocabulary for the <strong>TCF/TEF image-description speaking format</strong> — you're shown a picture and describe what's happening. Practicing with this vocabulary is directly useful exam prep.
+  </div>
+
+  <h3>1️⃣ À la Plage (At the Beach)</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="At the beach: il fait beau, the weather is nice. Il y a du soleil, it's sunny. Ils sont assis, they are sitting. Ils discutent et rient, they are chatting and laughing. Ils écoutent de la musique, they are listening to music. Ils profitent de leurs vacances, they are enjoying their vacation. Une glacière, a cooler." data-lang="en-US">
+      🎧 Beach Vocabulary
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">Weather, activity, and mood words for describing a beach scene.</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>French</th><th>English</th></tr>
+    <tr><td><span class="fr">il fait beau</span></td><td>the weather is nice</td></tr>
+    <tr><td><span class="fr">il y a du soleil</span></td><td>it's sunny</td></tr>
+    <tr><td><span class="fr">ils sont assis</span></td><td>they are sitting</td></tr>
+    <tr><td><span class="fr">ils discutent et rient</span></td><td>they are chatting and laughing</td></tr>
+    <tr><td><span class="fr">ils écoutent de la musique</span></td><td>they are listening to music</td></tr>
+    <tr><td><span class="fr">ils profitent de leurs vacances</span></td><td>they are enjoying their vacation</td></tr>
+    <tr><td><span class="fr">une glacière</span></td><td>a cooler / icebox</td></tr>
+  </table>
+  </div>
+  <ul class="checklist" data-lesson="class56" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c56-1"><label for="c56-1"><strong>PLAGE:</strong> I can use beach-scene vocabulary to describe a picture</label></li>
+  </ul>
+
+  <h3>2️⃣ À l'Hôpital (At the Hospital)</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="At the hospital: une patiente, a patient. Elle récupère de sa maladie, she's recovering from her illness. Elle est sous perfusion, she's on a drip. Elle est allongée dans un lit, she's lying down in a bed. Une infirmière, a nurse. Une blouse bleue, a blue gown. Un appareil médical, a medical device. La patiente est souriante, the patient is smiling." data-lang="en-US">
+      🎧 Hospital Vocabulary
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">Describing a hospital scene — patient, condition, staff, equipment.</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>French</th><th>English</th></tr>
+    <tr><td><span class="fr">une patiente</span></td><td>a patient (feminine)</td></tr>
+    <tr><td><span class="fr">elle récupère de sa maladie</span></td><td>she is recovering from her illness</td></tr>
+    <tr><td><span class="fr">elle est sous perfusion</span></td><td>she is on a drip / IV</td></tr>
+    <tr><td><span class="fr">elle est allongée dans un lit</span></td><td>she is lying down in a bed</td></tr>
+    <tr><td><span class="fr">une infirmière</span></td><td>a nurse</td></tr>
+    <tr><td><span class="fr">une blouse bleue</span></td><td>a blue smock / gown</td></tr>
+    <tr><td><span class="fr">un appareil médical</span></td><td>a medical device</td></tr>
+    <tr><td><span class="fr">la patiente est souriante</span></td><td>the patient is smiling</td></tr>
+  </table>
+  </div>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Docteur</strong> is used for both a male and a female doctor — no separate feminine form in everyday speech.
+  </div>
+  <ul class="checklist" data-lesson="class56" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c56-2"><label for="c56-2"><strong>HÔPITAL:</strong> I can use hospital-scene vocabulary to describe a picture</label></li>
+  </ul>
+
+  <h3>3️⃣ Les Études (Studying)</h3>
+  <div class="expandable-section">
+    <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="Studying: un cahier, a notebook. Une lampe d'étude, a study lamp. Une étagère, a shelf. Une étagère à livres, a bookshelf, more precise. Il cherche des informations sur Internet, he's looking for information online. Il est concentré, he is focused. Il va réussir ses études, he is going to succeed in his studies." data-lang="en-US">
+      🎧 Studying Vocabulary
+    </button>
+    <div class="expandable-content">
+      <div class="expandable-text">Describing a student working — materials, activity, focus.</div>
+    </div>
+  </div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>French</th><th>English</th></tr>
+    <tr><td><span class="fr">un cahier</span></td><td>a notebook / exercise book</td></tr>
+    <tr><td><span class="fr">une lampe d'étude</span></td><td>a study lamp</td></tr>
+    <tr><td><span class="fr">une étagère</span></td><td>a shelf</td></tr>
+    <tr><td><span class="fr">une étagère à livres</span></td><td>a bookshelf (more precise)</td></tr>
+    <tr><td><span class="fr">il cherche des informations sur Internet</span></td><td>he is looking for information on the Internet</td></tr>
+    <tr><td><span class="fr">il est concentré</span></td><td>he is concentrated / focused</td></tr>
+    <tr><td><span class="fr">il va réussir ses études</span></td><td>he is going to succeed in his studies</td></tr>
+  </table>
+  </div>
+  <h4>💬 Full Scene, Sentence by Sentence</h4>
+  <p>The model answer from class, describing a student at his desk — a good pattern for any similar image:</p>
+  <p class="example">1. <span class="fr">Il fait ses devoirs.</span> (He is doing his homework.)<br/>
+  2. <span class="fr">Il est concentré.</span> (He is focused.)<br/>
+  3. <span class="fr">Il utilise un ordinateur.</span> (He is using a computer.)<br/>
+  4. <span class="fr">Il a des cahiers sur la table.</span> (He has notebooks on the table.)<br/>
+  5. <span class="fr">La lampe est allumée.</span> (The lamp is on.)<br/>
+  6. <span class="fr">Il porte un sweat.</span> (He is wearing a sweatshirt.)<br/>
+  7. <span class="fr">Il y a des livres sur l'étagère.</span> (There are books on the shelf.)<br/>
+  8. <span class="fr">Il prend des notes.</span> (He is taking notes.)<br/>
+  9. <span class="fr">Il est sérieux.</span> (He is serious/diligent.)<br/>
+  10. <span class="fr">Il veut réussir ses études.</span> (He wants to succeed in his studies.)</p>
+
+  <ul class="checklist" data-lesson="class56" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c56-3"><label for="c56-3"><strong>ÉTUDES:</strong> I can use studying-scene vocabulary to describe a picture, sentence by sentence like the model answer</label></li>
+  </ul>
+
+  <h3>4️⃣ Clarifications From Class</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Word</th><th>Clarification</th></tr>
+    <tr><td><span class="fr">sentir</span></td><td>two meanings: to feel (reflexive — <span class="fr">elle se sent mieux</span>, she feels better) OR to smell (NOT reflexive — <span class="fr">il sent bon</span>, it smells good)</td></tr>
+    <tr><td><span class="fr">goûter</span></td><td>to taste (verb); <span class="fr">le goût</span> = the taste (noun)</td></tr>
+    <tr><td><span class="fr">concentré</span></td><td>used as an adjective, agrees like any other: <span class="fr">il est concentré</span> / <span class="fr">elle est concentrée</span></td></tr>
+    <tr><td><span class="fr">étagère vs. étage</span></td><td><span class="fr">une étagère</span> = a shelf; <span class="fr">un étage</span> = a floor/level of a building — easy to confuse since they look similar</td></tr>
+  </table>
+  </div>
+  <ul class="checklist" data-lesson="class56" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c56-4"><label for="c56-4"><strong>CLARIFICATIONS:</strong> I know sentir's two meanings, goûter, concentré's agreement, and étagère vs. étage</label></li>
+  </ul>
+
+  <h3>5️⃣ Practice: Describe a New Scene</h3>
+  <p>The real exam skill: being handed a new, unfamiliar image and describing it fluently. Use this chapter's vocabulary as a model, but combine it with everything you already know (adjectives, prepositions of place, present tense) to describe scenes you haven't memorized a script for.</p>
+  <ul class="checklist" data-lesson="class56" style="margin: 12px 0 20px;">
+    <li><input type="checkbox" id="c56-5"><label for="c56-5"><strong>PRACTICE:</strong> I can describe a new image out loud, combining this vocabulary with what I already know</label></li>
+  </ul>
+
+  <h3>✅ Overall Mastery</h3>
+  <ul class="checklist" data-lesson="class56">
+    <li><input type="checkbox" id="gemini-skill-class56"><label for="gemini-skill-class56"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
+  </ul>
+
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -10660,7 +10888,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,50,41,42,43,44,45,46,48,49,51,52,53,54];
+const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,33,34,50,41,42,43,44,45,46,48,49,51,52,53,54,55,56];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion
