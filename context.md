@@ -2508,3 +2508,70 @@ Verified: div balance (1168/1168), all 54 copy buttons parse, the new
 bullet appears in all 53 expected occurrences, and spot-checked the
 actual clipboard output of a sample class (Class 54) to confirm the
 text reads correctly end-to-end, not just in the source HTML.
+
+## Classes 55, 56 added 2026-10-14 — fulfills Class 53's subordination deferral
+
+User uploaded a new class transcript ("COD, futur proche et conjonctions",
+mislabeled file but actually image-description + conjunctions content) and
+said "Lets generate today's class." While the build script was being
+written, the user interrupted mid-turn with 9 phone screenshots of the
+actual class slides and chat log — critical, since the raw transcript's
+audio-to-text garbled the subordinating-conjunctions list badly (it
+transcribed "presque" where the real word was "après que").
+
+**Caught before shipping**: the slide image gave the authoritative list —
+13 conjunctions (que, si, quand, lorsque, parce que, comme, bien que,
+après que, avant que, pour que, afin que, jusqu'à ce que, tant que), each
+with its own full worked example sentence — not the thin 12-item bare
+list with one example the garbled transcript implied. Rebuilt Class 55
+from the slide, not the transcript, once the screenshots arrived. This is
+the same "use the authoritative source over a garbled transcript" lesson
+as the French_Negation/French_Adjectives decisions earlier in the
+project, just caught mid-build instead of before starting.
+
+- **Class 55 "Les Conjonctions de Subordination"**: fulfills the explicit
+  deferral both Class 53 and this class's own instructor stated — full
+  treatment with all 13 conjunctions and their real examples (not an
+  "introduction only" stub as first drafted). Also surfaced two things
+  the bare list alone wouldn't have taught: the same-subject
+  pour/afin + infinitive shortcut (il étudie pour réussir, not "pour
+  qu'il réussisse", since subject is the same), and a flagged preview of
+  the subjunctive mood — bien qu'il **soit** fatigué uses the subjunctive
+  form, not est, previewed without expecting mastery since the full
+  subjunctive is still a separate future-class topic.
+- **Class 56 "Description d'Images — Plage, Hôpital, Études"**: vocabulary
+  for the TCF/TEF image-description speaking format (a real exam
+  component) from the class's 3 themed image-description exercises, plus
+  5 clarifications (docteur works for either gender, sentir's two
+  meanings — only the "to feel" sense is reflexive — goûter, concentré
+  agreeing like any adjective, étagère vs. étage). Also folded in the
+  "Scène 4" slide's 10-sentence model answer for the studying scene,
+  found in the mid-turn screenshots, as a sentence-by-sentence worked
+  example on top of the vocabulary table.
+
+**Skipped as duplicate**: COD/passé composé recap (Class 51), the
+conjonctions de coordination recap (Class 53 — new example sentences from
+this class's chat log weren't worth re-adding, same 7 words/uses already
+covered).
+
+Followed the chapter-add checklist: `classOrder` → appended `55,56`; nav
+dropdown → added under `.level-content.a2`, last position; A2
+checklist-label CSS → added both; lesson cards → `data-lesson="classN"`
+throughout, checkbox ids `c55-1..4` + `c56-1..5` plus their
+`gemini-skill-classN` items; all new tables `.table-wrap`d from the
+start; physically appended at end of file before `<footer>`, same
+divergent-position pattern as classes 47-54.
+
+Verified: div balance (1198/1198), table/table-wrap coverage (246/246),
+all 387 checkbox ids globally unique, label↔id 1:1, all 56 copy buttons
+parse, nav order matches `classOrder`, nav-label substring check clean,
+no console errors, no overflow at 390px, declared vs. actual checklist
+counts matched (55: 5/5, 56: 6/6), and both chapters screenshotted and
+visually confirmed, including the full 10-sentence Scène 4 block.
+
+**Lesson reinforced**: when a user interrupts mid-build with better
+source material (here, actual class-slide screenshots vs. a garbled
+audio transcript), stop and rebuild from the better source rather than
+finishing the original plan and patching after — the subordinating-
+conjunctions content was substantially richer and more accurate once
+built from the slide directly.
