@@ -84,6 +84,8 @@ tap, and self-test progress with per-topic checklists.
 53. Le Comparatif (plus/moins/aussi(autant) + que, with the pattern changing by word type — adverb, adjective, verb, noun — plus the irregular bon→meilleur / bien→mieux)
 54. Les Conjonctions de Subordination (que, si, quand, lorsque, parce que, comme, bien que, après que, avant que, pour que, afin que, jusqu'à ce que, tant que — all 13, each with a worked example, plus a preview of the subjunctive mood)
 55. Description d'Images — Plage, Hôpital, Études (vocabulary for the TCF/TEF image-description speaking format, covering 3 themed scenes)
+56. Le Plus-que-parfait (the "had done" past tense — formation with avoir/être in the imparfait + past participle, avoir/être choice, and the 3-way contrast with passé composé and imparfait)
+57. Le Subjonctif (the verb mood for wish, emotion, doubt, necessity and judgment — formation, 5 trigger categories, triggering conjunctions, indicatif vs subjonctif, subjonctif passé, and subjonctif after relative pronouns)
 
 *Remaining A2 classes will be updated weekly.*
 
