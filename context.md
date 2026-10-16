@@ -2575,3 +2575,46 @@ audio transcript), stop and rebuild from the better source rather than
 finishing the original plan and patching after — the subordinating-
 conjunctions content was substantially richer and more accurate once
 built from the slide directly.
+
+## 2026-10-16: Class 20 extended — Gérondif cause/reason + present participle formation
+
+A live class (subordinating conjunctions, futur simple, gérondif —
+transcribed via a new Buzz two-pass [French-forced + English-forced]
+pipeline, cross-checked against Notta's bilingual output) turned out to
+be almost entirely review of existing content: subordinating
+conjunctions already in Class 54, futur simple + gérondif basics already
+in Class 20 (more thoroughly, even — Class 20 already had devoir/
+vouloir/pouvoir/partir/sortir stems the live class didn't cover).
+
+Two genuine gaps found and added to **Class 20**:
+- **Present participle formation rule**: nous-form of the present tense,
+  drop `-ons`, add `-ant` (parlons→parlant, choisissons→choisissant),
+  with the 3 exceptions that skip the rule entirely: être→étant,
+  avoir→ayant, savoir→sachant. Class 20 previously only showed
+  pre-formed participles (en marchant, en choisissant) without ever
+  teaching how to build them.
+- **Gérondif's second use — cause/reason**: drop `en`, put the present
+  participle alone at the sentence start (Étant malade, je ne suis pas
+  venu / Ayant beaucoup d'argent, il a acheté une nouvelle voiture).
+  Also added the same-subject constraint for gérondif generally (both
+  actions need the same subject, or use `pendant que` instead).
+
+New checkboxes `c20-10`, `c20-11` (now 11 topic items + the existing
+`gemini-skill-class20` = 12 total, declared count updated 10→12). Gemini
+copy-prompt content block updated to match (new CONTENT section, new
+STUDY OBJECTIVES items 2-3 with 4-11 renumbered, new TEACH ME SLOWLY
+items 2-3 with 4-10 renumbered).
+
+Verified: div balance (1207/1207), all 389 checkbox ids unique,
+label↔id 1:1 clean, class20 declared 12 matches actual 12, all 55 copy
+buttons parse via `new Function`.
+
+**New transcription pipeline validated this session**: Zoom audio → VB-
+Cable → Windows Voice Recorder → Buzz File Transcription (Medium model,
+run twice: French-forced + English-forced, SRT export for real
+timestamps). Confirmed Buzz's "Detect Language" mode is useless for
+mixed-language classes (it locks onto one language for the whole file,
+identical output to forced-French in testing) — skip it. Confirmed this
+pipeline beats Notta: equal-or-better raw transcript accuracy, and
+Claude generates the summary/gap-analysis Notta's AI used to provide.
+User is moving off Notta as a result.
