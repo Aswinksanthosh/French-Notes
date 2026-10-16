@@ -2618,3 +2618,71 @@ identical output to forced-French in testing) — skip it. Confirmed this
 pipeline beats Notta: equal-or-better raw transcript accuracy, and
 Claude generates the summary/gap-analysis Notta's AI used to provide.
 User is moving off Notta as a result.
+
+## 2026-10-16: Classes 57 & 58 added + Class 20 extended (4 teacher PDFs)
+
+User uploaded 4 teacher-provided PDF study guides (LE_SUBJONCTIF, LE_CONDITIONNEL,
+LE_PLUS-QUE-PARFAIT, Le gérondif et le futur simple — Français/Anglais). Checked
+each against the site before building anything:
+
+- **Plus-que-parfait**: zero coverage anywhere on the site — genuinely new.
+- **Subjonctif**: zero coverage beyond a one-line preview in Class 54 — genuinely new.
+- **Futur simple**: already fully covered in Class 20 (more thoroughly than the
+  PDF — Class 20 already had partir/sortir/devoir/vouloir/pouvoir stems the PDF
+  didn't list). Skipped as duplicate.
+- **Gérondif**: basics + cause/reason already covered (cause/reason was added
+  earlier this session from a live-class transcript check). The PDF had 3 more
+  uses not yet on site: manner/means (by), condition (if/by), and the
+  gérondif-vs-participe-présent distinction (participe présent can modify a
+  noun, more written style).
+- **Conditionnel**: formation + devoir/pouvoir special cases already in Class 20,
+  but the PDF's 5 uses (politeness, wish, advice, hypothesis, uncertain/reported
+  info), the si+imparfait→conditionnel structure, and conditionnel passé
+  (depends on plus-que-parfait, which didn't exist until this session) were
+  missing.
+
+**Built**:
+- **Class 57 "Le Plus-que-parfait"** (A2, new chapter): formation (imparfait of
+  avoir/être + past participle), avoir/être choice (same rule as passé
+  composé), time markers + situation/consequence use, negation + participle
+  agreement, and the 3-way passé composé / imparfait / plus-que-parfait
+  contrast. 7 topic checkboxes + gemini-skill.
+- **Class 58 "Le Subjonctif"** (A2, new chapter): what it is (que alone isn't
+  enough), formation (ils/elles stem − ent + endings), 8 irregular verbs,
+  5 trigger categories (volonté/nécessité/émotions/doute/jugement), triggering
+  conjunctions, indicatif vs subjonctif (with the espérer que / après que
+  indicative exceptions), subjonctif passé, and subjonctif after relative
+  pronouns. 9 topic checkboxes + gemini-skill.
+- **Class 20 extended**: added Gérondif manner/means/condition uses (c20-16)
+  and gérondif-vs-participe-présent (c20-17); added Conditionnel's 5 uses
+  (c20-13), si+imparfait→conditionnel (c20-14), and conditionnel passé +
+  si+plus-que-parfait→conditionnel passé (c20-15). Class 20 grew from 10 to 17
+  total checkboxes across this session (today's two edits combined). Gemini
+  exam-prompt content, STUDY OBJECTIVES, and TEACH ME SLOWLY lists all
+  updated and renumbered to match.
+
+Followed the chapter-add checklist: `classOrder` → appended `57,58`; nav
+dropdown → added under `.level-content.a2`, last position, after class56;
+A2 checklist-label CSS → added both; new tables `.table-wrap`d from the
+start; physically appended at end of file before `<footer>`.
+
+**Pitfall hit and fixed**: when extending Class 20's Gérondif and
+Conditionnel sections in two separate edits, both reused checkbox ids
+`c20-10`/`c20-11` by accident (each edit assumed it was the only new
+addition). Caught by the verification script's duplicate-id check —
+renumbered the Conditionnel ones to `c20-13/14/15` (skipping `c20-12`
+is fine; checklist ids don't need to be contiguous, only unique).
+**Lesson**: when making multiple separate additions to the same existing
+chapter in one session, pick final checkbox numbers only after all edits
+are drafted, not incrementally per-edit — the duplicate-id check in the
+verification script exists specifically to catch this.
+
+Verified: div balance (1251/1251), all 412 checkbox ids unique, label↔id
+1:1 clean, class20/57/58 declared counts all matched actual (17, 8, 10 —
+class58 was initially declared 9 but actually had 10, caught and fixed by
+the same check), all 57 copy buttons parse via `new Function`, nav order
+matches `classOrder` exactly, nav-label substring check clean for both new
+chapters, no horizontal overflow at 390px, table/table-wrap mismatch
+(240/256) confirmed pre-existing and unchanged by this session's edits.
+Screenshotted all three touched/new chapters (20, 57, 58) and visually
+confirmed clean rendering.
