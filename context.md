@@ -2723,3 +2723,38 @@ nav order matches `classOrder` exactly (58 entries both), nav-label
 substring check clean for both touched/new chapters, all 58 copy buttons
 parse via `new Function`, no horizontal overflow at 390px. Screenshotted
 both Class 20 and Class 59 and visually confirmed clean rendering.
+
+## 2026-10-19: Class 20 moved from A1 to A2 nav section
+
+User noticed Class 20 ("Le Futur Simple & Le Conditionnel" — futur simple,
+conditionnel présent/passé, si-clauses) was sitting in the **A1** dropdown
+section despite being clearly A2-level material — a leftover from early
+curriculum design when it was a simple A1 "Future" chapter before growing
+into its current scope. Moved it.
+
+Confirmed first that A1/A2 membership is purely DOM-driven (which
+`.level-content.a1` / `.level-content.a2` div a chapter's nav `<a>` sits
+in) via `toggleLevel()` and `buildLevelProgressReport()` — not a hardcoded
+ID range — so the real fix is just moving the nav anchor. Moved it: out of
+`.level-content.a1` (between Irregular/19 and Description/21), appended to
+the end of `.level-content.a2` (after Le Gérondif/59). `classOrder` updated
+to match (20 moved from its old slot to the very end, after 59) since nav
+order and `classOrder` must stay identical per the verification suite.
+
+Also added `class20` to the two A2 blue-checklist-label CSS selector
+blocks (it was previously unstyled/default since its own ID falls in the
+1-21 range that doesn't need an override) so its checkboxes now render
+with the same blue A2 styling as the rest of the list it's now part of.
+
+**Cosmetic correctness fix**: the shared Gemini-prompt boilerplate line
+"Shows 🎓 on A1 button when all A1 classes (1-21) are 100% complete"
+appears identically in all 58 chapters' copy-prompts. Updated all 28
+affected instances (it only actually appears once per older-era chapter
+built before this text was finalized) to "(1-19, 21)" to reflect that 20
+is no longer A1. Informational text only, not functional code — the real
+completion check reads the DOM nav lists directly.
+
+Verified: div balance (1256/1256), all 413 checkbox ids unique, label↔id
+1:1 clean, nav order matches `classOrder` exactly, nav-label substring
+check clean, all 58 copy buttons parse, class20 confirmed present in
+`.level-content.a2` and absent from `.level-content.a1`.
