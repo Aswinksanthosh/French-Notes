@@ -2758,3 +2758,29 @@ Verified: div balance (1256/1256), all 413 checkbox ids unique, label↔id
 1:1 clean, nav order matches `classOrder` exactly, nav-label substring
 check clean, all 58 copy buttons parse, class20 confirmed present in
 `.level-content.a2` and absent from `.level-content.a1`.
+
+## 2026-10-19: Class 57 extended — pronominal verbs + questions in plus-que-parfait
+
+Live class transcript (French-forced Buzz SRT, "PastPerfectFr") reviewed
+against Class 57. Class recapped the already-covered formation/negation/
+agreement/3-way-contrast content (all matched what's on site), plus
+covered a prior topic (gérondif actions-simultanées recap) that's already
+in Class 59. Two genuinely new topics found and added to Class 57:
+
+- **Pronominal (reflexive) verbs in the plus-que-parfait**: always être
+  (same rule as passé composé), with the negation pattern specific to
+  reflexives — ne before the reflexive pronoun, pas after the auxiliary
+  (il ne s'était pas dépêché). Examples from the actual class: je m'étais
+  réveillé(e), elle s'était préparée, nous nous étions rencontrés.
+- **Asking questions in the plus-que-parfait**: est-ce que and inversion,
+  same two methods as passé composé (Avais-tu déjà mangé ? / Aviez-vous
+  terminé avant son arrivée ?).
+
+New checkboxes c57-8, c57-9 (now 9 topic items + gemini-skill = 10,
+declared count updated 8→10). Gemini copy-prompt content block updated
+to match (new PRONOMINAL and QUESTIONS sections, teaching-order paragraph
+revised to include both).
+
+Verified: div balance (1259/1259), all 415 checkbox ids unique, label↔id
+1:1 clean, class57 declared 10 matches actual 10, all 58 copy buttons
+parse via `new Function`.
