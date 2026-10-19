@@ -2686,3 +2686,40 @@ chapters, no horizontal overflow at 390px, table/table-wrap mismatch
 (240/256) confirmed pre-existing and unchanged by this session's edits.
 Screenshotted all three touched/new chapters (20, 57, 58) and visually
 confirmed clean rendering.
+
+## 2026-10-19: Gérondif split out of Class 20 into its own chapter (Class 59)
+
+User found Class 20 confusing to navigate — it bundled Gérondif, Futur Simple,
+and Conditionnel together under a misleading nav label ("Conditional"), making
+Gérondif hard to find. Asked for Gérondif split into its own chapter; confirmed
+move (not duplicate) — no content left behind in Class 20.
+
+**Extracted verbatim** all 5 Gérondif sections from Class 20 (basic while/by
+use, present participle formation, cause/reason, manner/means/condition,
+gérondif vs participe présent) into new **Class 59 "Le Gérondif"**, renumbering
+checkboxes `c20-1/10/11/16/17` → `c59-1..5`. Content itself wasn't changed,
+only relocated and renumbered, plus wrapped in its own header/Gemini-prompt/
+progress-bar/mastery-footer following the standard chapter template.
+
+**Class 20 renamed and renumbered**: now "Le Futur Simple & Le Conditionnel"
+(h2 and nav label both updated to keep the nav-label-substring-of-h2 check
+passing — nav text "Futur Simple & Le Conditionnel" is literally inside h2
+"Le Futur Simple & Le Conditionnel"). Topic line, progress count (17→12),
+section-summary audio, and the full Gemini exam prompt (content blocks, EXAM
+REQUIREMENTS, STUDY OBJECTIVES, TEACH ME SLOWLY) all had every gérondif
+reference removed and the remaining 11 topic checkboxes renumbered
+contiguously `c20-1..11` (was a scattered `c20-2,3,4,5,6,7,8,9,13,14,15`
+left over from two separate same-session extensions).
+
+Reference check: user shared a teacher infographic ("Le futur proche, le
+futur simple et le gérondif") mid-task — confirmed it matches what's already
+built (5 gérondif usages: simultanéité/manière/moyen/condition/cause, the
+3 exceptions, gérondif vs participe présent) — no new content needed, this
+was purely a structural reorganization.
+
+Verified: div balance (1256/1256), all 413 checkbox ids unique, label↔id
+1:1 clean, class20 declared 12 = actual 12, class59 declared 6 = actual 6,
+nav order matches `classOrder` exactly (58 entries both), nav-label
+substring check clean for both touched/new chapters, all 58 copy buttons
+parse via `new Function`, no horizontal overflow at 390px. Screenshotted
+both Class 20 and Class 59 and visually confirmed clean rendering.
