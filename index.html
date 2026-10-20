@@ -11643,6 +11643,40 @@ function updateGlobalProgress() {
   document.getElementById('globalProgressText').textContent = `${completedItems} / ${totalItems} items completed`;
 }
 
+// ONE-TIME PROGRESS RESTORE (URL-hash triggered, no console/bookmarklet needed -
+// works on any mobile browser including Chromium ones that strip javascript:
+// bookmarklets). Visit the site with #restore-a1-109 in the URL once, then
+// remove the hash/this block whenever it's no longer needed.
+(function() {
+  if (location.hash !== '#restore-a1-109') return;
+  const r = {
+    class1:  ["c1-1","c1-2","c1-3","c1-4","c1-5","c1-6","c1-7","gemini-skill-class1"],
+    class2:  ["c2-1","c2-2","c2-3","c2-4","c2-5","c2-6","c2-7","c2-8","c2-9","c2-10","c2-11","c2-12","c2-13","c2-14","gemini-skill-class2"],
+    class35: ["c35-1","c35-2","c35-3","c35-4","gemini-skill-class35"],
+    class36: ["c36-1","c36-2","c36-3","c36-4","gemini-skill-class36"],
+    class37: ["c37-1","c37-2","c37-3","c37-4","c37-5","gemini-skill-class37"],
+    class38: ["c38-1","c38-2","c38-3","gemini-skill-class38"],
+    class39: ["c39-1","c39-2","c39-3","c39-4","gemini-skill-class39"],
+    class40: ["c40-1","c40-2","c40-3","gemini-skill-class40"],
+    class47: ["c47-1","c47-2","gemini-skill-class47"],
+    class3:  ["c3-1","c3-2","c3-3","c3-4","c3-5","c3-6","c3-7","c3-8","gemini-skill-class3"],
+    class4:  ["c4-1","c4-2","c4-3","c4-4","c4-5","c4-6","gemini-skill-class4"],
+    class5:  ["c5-1","c5-2","c5-3","c5-4","c5-5","c5-6","gemini-skill-class5"],
+    class6:  ["c6-1","c6-2","c6-3","c6-4","c6-5","c6-6","c6-7","c6-8","c6-9","c6-10","gemini-skill-class6"],
+    class7:  ["c7-1","c7-2","c7-3","c7-4","c7-5","c7-6","gemini-skill-class7"],
+    class8:  ["c8-1","c8-2","c8-3","c8-4","c8-5","c8-6","gemini-skill-class8"],
+    class9:  ["c9-1","c9-2","c9-3","c9-4","c9-5","gemini-skill-class9"]
+  };
+  let count = 0;
+  for (const [lesson, ids] of Object.entries(r)) {
+    const states = {};
+    ids.forEach(id => { states[id] = true; count++; });
+    localStorage.setItem(`checklist_${lesson}`, JSON.stringify(states));
+  }
+  history.replaceState(null, '', location.pathname + location.search);
+  alert('Progress restored: ' + count + ' checkboxes across ' + Object.keys(r).length + ' chapters (Alphabet through Hobbies).');
+})();
+
 (function() {
   const lessons = new Set();
   document.querySelectorAll('.checklist').forEach(list => lessons.add(list.dataset.lesson));
