@@ -2784,3 +2784,7 @@ revised to include both).
 Verified: div balance (1259/1259), all 415 checkbox ids unique, label↔id
 1:1 clean, class57 declared 10 matches actual 10, all 58 copy buttons
 parse via `new Function`.
+
+## 2026-10-21 — Class 60 Le Conditionnel
+- New A2 chapter `class60` (c60-1..c60-10 + gemini-skill-class60, 0/11). Conditionnel moved OUT of Class 20 (same as Gérondif split); Class 20 is now "Futur Simple" (c20-1..6 + gemini, 0/7) with the Conditionnel sections, stale gérondif mistake row and Léa/Sam dialogue removed and its Gemini prompt trimmed.
+- classOrder ends ...,59,20,60. Lesson: checkbox ids chosen only after drafting all edits.
