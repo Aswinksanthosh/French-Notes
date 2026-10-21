@@ -87,6 +87,7 @@ tap, and self-test progress with per-topic checklists.
 56. Le Plus-que-parfait (the "had done" past tense — formation with avoir/être in the imparfait + past participle, avoir/être choice, and the 3-way contrast with passé composé and imparfait)
 57. Le Subjonctif (the verb mood for wish, emotion, doubt, necessity and judgment — formation, 5 trigger categories, triggering conjunctions, indicatif vs subjonctif, subjonctif passé, and subjonctif after relative pronouns)
 58. Le Gérondif (en + present participle, split out of the old combined Futur Simple/Conditionnel class — all 4 uses: while/by doing, cause/reason, manner/means/condition, and gérondif vs participe présent)
+59. Le Conditionnel (the "would" mood — formation from the future stem + imparfait endings, irregular stems, 5 uses, si + imparfait, and a conditionnel passé preview; split out of the old combined Futur Simple/Conditionnel class)
 
 *Remaining A2 classes will be updated weekly.*
 
