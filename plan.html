@@ -2,56 +2,29 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Study Plan</title>
 <style>
-:root{--bg:#f7f9fc;--card:#fff;--ink:#1b2a3a;--mut:#667;--blue:#1976d2;--green:#2e7d32;--red:#c62828;--line:#dde3ea}
-@media(prefers-color-scheme:dark){:root{--bg:#10151b;--card:#1a222b;--ink:#e8eef4;--mut:#9aa7b4;--blue:#64b5f6;--green:#81c784;--red:#ef9a9a;--line:#2b3744}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif;padding:16px;max-width:640px;margin:auto}
-h1{font-size:22px;margin:4px 0 12px}h2{font-size:16px;margin:20px 0 8px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
-.big{font-size:28px;font-weight:700}.mut{color:var(--mut);font-size:14px}
-.row{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}
-.ok{color:var(--green)}.bad{color:var(--red)}
-.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--green)}
-.grid{display:grid;grid-template-columns:1fr 84px;gap:6px 10px;align-items:center}
-input[type=number],input[type=date]{width:100%;font:inherit;padding:6px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
-a{color:var(--blue)}.chap{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--line);font-size:14px}.chap.done{color:var(--mut);text-decoration:line-through}
+:root{--bg:#f7f9fc;--card:#fff;--ink:#1b2a3a;--mut:#667;--green:#2e7d32;--line:#dde3ea;--blue:#1976d2}
+@media(prefers-color-scheme:dark){:root{--bg:#10151b;--card:#1a222b;--ink:#e8eef4;--mut:#9aa7b4;--green:#81c784;--line:#2b3744;--blue:#64b5f6}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif;padding:16px;max-width:560px;margin:auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;text-align:center}
+.big{font-size:34px;font-weight:700}.mut{color:var(--mut);font-size:14px}a{color:var(--blue)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--green)}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 </style></head><body>
 <a href="./">← Back to notes</a>
-<h1>📅 Study Plan</h1>
-<div id="summary" class="card"></div>
-<h2>Your hours (edit anytime — saved on this phone)</h2>
-<div class="card"><div class="grid" id="hrs"></div>
-<div class="grid" style="margin-top:10px"><label>Exam date</label><input type="date" id="exam">
-<label>Review days kept free before exam</label><input type="number" id="buf" min="0" max="14"></div></div>
-<h2>Chapters left</h2><div class="card" id="list"></div>
+<div class="card"><div class="mut">Days to exam (Nov 16)</div><div class="big" id="d"></div></div>
+<div class="g"><div class="card"><div class="mut">Hours left</div><div class="big" id="h"></div></div>
+<div class="card"><div class="mut">Hours per day</div><div class="big" id="p"></div></div></div>
+<div class="card"><div class="bar"><i id="b"></i></div><div class="mut" id="pc"></div></div>
+<div class="card"><div class="mut">Study next</div><div class="big" style="font-size:22px" id="n"></div><div class="mut" id="m"></div></div>
 <script>
 const CH=[{"n": 1, "l": "A1", "name": "Alphabet", "min": 25, "ids": 8}, {"n": 2, "l": "A1", "name": "Numbers", "min": 70, "ids": 15}, {"n": 35, "l": "A1", "name": "Groupes de Verbes", "min": 20, "ids": 5}, {"n": 36, "l": "A1", "name": "Verbes Essentiels", "min": 35, "ids": 5}, {"n": 37, "l": "A1", "name": "Groupe (-ER)", "min": 35, "ids": 6}, {"n": 38, "l": "A1", "name": "Groupe (-IR)", "min": 20, "ids": 4}, {"n": 39, "l": "A1", "name": "Groupe (-RE)", "min": 25, "ids": 5}, {"n": 40, "l": "A1", "name": "Verbes Pronominaux", "min": 20, "ids": 4}, {"n": 47, "l": "A1", "name": "Cheat Sheet", "min": 15, "ids": 3}, {"n": 3, "l": "A1", "name": "Greetings", "min": 55, "ids": 9}, {"n": 4, "l": "A1", "name": "Calendar", "min": 30, "ids": 7}, {"n": 5, "l": "A1", "name": "Classroom", "min": 20, "ids": 7}, {"n": 6, "l": "A1", "name": "Endings", "min": 40, "ids": 11}, {"n": 7, "l": "A1", "name": "Articles", "min": 35, "ids": 7}, {"n": 8, "l": "A1", "name": "Gender", "min": 40, "ids": 7}, {"n": 9, "l": "A1", "name": "Hobbies", "min": 60, "ids": 6}, {"n": 10, "l": "A1", "name": "Family", "min": 40, "ids": 7}, {"n": 11, "l": "A1", "name": "Professions", "min": 55, "ids": 7}, {"n": 12, "l": "A1", "name": "Reflexive", "min": 40, "ids": 6}, {"n": 13, "l": "A1", "name": "Future", "min": 50, "ids": 8}, {"n": 14, "l": "A1", "name": "Demonstratives", "min": 40, "ids": 7}, {"n": 15, "l": "A1", "name": "Negation", "min": 20, "ids": 4}, {"n": 16, "l": "A1", "name": "Colors", "min": 45, "ids": 8}, {"n": 17, "l": "A1", "name": "Meals", "min": 45, "ids": 8}, {"n": 18, "l": "A1", "name": "Listening", "min": 50, "ids": 9}, {"n": 19, "l": "A1", "name": "Irregular", "min": 35, "ids": 6}, {"n": 21, "l": "A1", "name": "Description", "min": 55, "ids": 10}, {"n": 22, "l": "A2", "name": "Adjectives", "min": 45, "ids": 11}, {"n": 23, "l": "A2", "name": "Adverbs", "min": 100, "ids": 21}, {"n": 25, "l": "A2", "name": "Prepositions", "min": 80, "ids": 15}, {"n": 26, "l": "A2", "name": "Prepositions + Future", "min": 55, "ids": 11}, {"n": 27, "l": "A2", "name": "Expressions", "min": 55, "ids": 9}, {"n": 28, "l": "A2", "name": "Passé Récent & Le Passé Composé", "min": 50, "ids": 8}, {"n": 29, "l": "A2", "name": "Group 3", "min": 40, "ids": 7}, {"n": 30, "l": "A2", "name": "La Règle", "min": 20, "ids": 4}, {"n": 31, "l": "A2", "name": "Cas Particuliers", "min": 25, "ids": 5}, {"n": 32, "l": "A2", "name": "Exemples & Erreurs", "min": 20, "ids": 4}, {"n": 33, "l": "A2", "name": "Pratique Intensive", "min": 35, "ids": 4}, {"n": 34, "l": "A2", "name": "L'Imparfait", "min": 30, "ids": 8}, {"n": 50, "l": "A2", "name": "Les Souvenirs", "min": 20, "ids": 5}, {"n": 41, "l": "A2", "name": "Narrer au Passé", "min": 35, "ids": 6}, {"n": 42, "l": "A2", "name": "Le COD", "min": 20, "ids": 4}, {"n": 43, "l": "A2", "name": "Pronoms Relatifs", "min": 30, "ids": 6}, {"n": 44, "l": "A2", "name": "Pronoms Y et EN", "min": 30, "ids": 7}, {"n": 45, "l": "A2", "name": "Pronoms Compléments", "min": 35, "ids": 6}, {"n": 46, "l": "A2", "name": "Adjectifs par Catégorie", "min": 90, "ids": 8}, {"n": 48, "l": "A2", "name": "Choisir le Bon \"What\"", "min": 20, "ids": 5}, {"n": 49, "l": "A2", "name": "Négation — Rien, Personne, Plus", "min": 20, "ids": 4}, {"n": 51, "l": "A2", "name": "L'Accord du Participe Passé avec QUE", "min": 25, "ids": 4}, {"n": 52, "l": "A2", "name": "Les Interjections", "min": 20, "ids": 5}, {"n": 53, "l": "A2", "name": "Les Conjonctions de Coordination", "min": 25, "ids": 4}, {"n": 54, "l": "A2", "name": "Le Comparatif", "min": 30, "ids": 6}, {"n": 55, "l": "A2", "name": "Conjonctions de Subordination", "min": 20, "ids": 5}, {"n": 56, "l": "A2", "name": "Description d'Images", "min": 30, "ids": 6}, {"n": 57, "l": "A2", "name": "Le Plus-que-parfait", "min": 30, "ids": 10}, {"n": 58, "l": "A2", "name": "Le Subjonctif", "min": 40, "ids": 10}, {"n": 59, "l": "A2", "name": "Le Gérondif", "min": 20, "ids": 6}, {"n": 20, "l": "A2", "name": "Futur Simple", "min": 30, "ids": 7}, {"n": 60, "l": "A2", "name": "Le Conditionnel", "min": 45, "ids": 13}];
-const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-const DEF={h:[2.5,1.5,1.5,1.5,1.5,1.5,2.5],exam:'2026-11-16',buf:3};
-function load(){try{return Object.assign({},DEF,JSON.parse(localStorage.getItem('studyplan')||'{}'))}catch(e){return DEF}}
-function save(s){try{localStorage.setItem('studyplan',JSON.stringify(s))}catch(e){}}
-function prog(n,total){try{const o=JSON.parse(localStorage.getItem('checklist_class'+n)||'{}');return Math.min(total,Object.values(o).filter(Boolean).length)}catch(e){return 0}}
-function render(){
- const s=load();let left=0,tot=0,done=0,remCh=[];
- CH.forEach(c=>{const p=prog(c.n,c.ids),f=c.ids?p/c.ids:0;tot+=c.min;done+=c.min*f;left+=c.min*(1-f);if(f<1)remCh.push({c,f})});
- const today=new Date();today.setHours(0,0,0,0);const ex=new Date(s.exam+'T00:00:00');
- let days=Math.round((ex-today)/864e5), avail=0;
- for(let i=0;i<days-s.buf;i++){const d=new Date(today.getTime()+i*864e5);avail+=s.h[d.getDay()]*60}
- const need=left, gap=avail-need, pct=Math.round(done/tot*100);
- const perDay=days-s.buf>0?need/(days-s.buf)/60:0;
- document.getElementById('summary').innerHTML=
- `<div class="mut">Days to exam</div><div class="big">${days}</div>
-  <div class="bar" style="margin:10px 0"><i style="width:${pct}%"></i></div><div class="mut">${pct}% done · ${remCh.length} of ${CH.length} chapters left</div>
-  <div class="row"><span>Study time left</span><b>${(left/60).toFixed(1)} h</b></div>
-  <div class="row"><span>Time you have (before review days)</span><b>${(avail/60).toFixed(1)} h</b></div>
-  <div class="row"><span>Needed per day</span><b>${perDay.toFixed(1)} h</b></div>
-  <div class="row"><span>Status</span><b class="${gap>=0?'ok':'bad'}">${gap>=0?'On track · '+(gap/60).toFixed(1)+' h spare':'Behind by '+(-gap/60).toFixed(1)+' h'}</b></div>`;
- document.getElementById('hrs').innerHTML=DAYS.map((d,i)=>`<label>${d} (hours)</label><input type="number" step="0.5" min="0" max="12" data-i="${i}" value="${s.h[i]}">`).join('');
- document.getElementById('exam').value=s.exam;document.getElementById('buf').value=s.buf;
- document.querySelectorAll('#hrs input').forEach(el=>el.oninput=()=>{const s=load();s.h[+el.dataset.i]=parseFloat(el.value)||0;save(s);summ()});
- document.getElementById('exam').onchange=e=>{const s=load();s.exam=e.target.value||DEF.exam;save(s);summ()};
- document.getElementById('buf').oninput=e=>{const s=load();s.buf=Math.max(0,parseInt(e.target.value)||0);save(s);summ()};
- document.getElementById('list').innerHTML=remCh.map(({c,f})=>`<div class="chap"><span>${c.l} · ${c.name}</span><span>${Math.round(c.min*(1-f))} min</span></div>`).join('')||'All done 🎉';
-}
-function summ(){const a=document.activeElement;const id=a&&a.id,i=a&&a.dataset&&a.dataset.i;const sel=a&&a.selectionStart;render();let el=id?document.getElementById(id):(i!=null?document.querySelector('#hrs input[data-i="'+i+'"]'):null);if(el){el.focus()}}
-render();
+function prog(n,t){try{return Math.min(t,Object.values(JSON.parse(localStorage.getItem('checklist_class'+n)||'{}')).filter(Boolean).length)}catch(e){return 0}}
+let tot=0,left=0,next=null;
+CH.forEach(c=>{const f=c.ids?prog(c.n,c.ids)/c.ids:0;tot+=c.min;left+=c.min*(1-f);if(f<1&&!next)next=c});
+const t=new Date();t.setHours(0,0,0,0);
+const days=Math.max(0,Math.round((new Date('2026-11-16T00:00:00')-t)/864e5));
+const usable=Math.max(1,days-3), pct=Math.round((1-left/tot)*100);
+d.textContent=days;h.textContent=(left/60).toFixed(1);p.textContent=(left/60/usable).toFixed(1);
+b.style.width=pct+'%';pc.textContent=pct+'% done (last 3 days kept for review)';
+n.textContent=next?next.name:'All done 🎉';m.textContent=next?next.l+' · '+next.min+' min':'';
 </script></body></html>
