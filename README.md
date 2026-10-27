@@ -90,6 +90,7 @@ tap, and self-test progress with per-topic checklists.
 59. Le Conditionnel (the "would" mood — formation from the future stem + imparfait endings, irregular stems, 5 uses, si + imparfait, and a conditionnel passé preview; split out of the old combined Futur Simple/Conditionnel class)
 60. Le Pluriel des Noms (plural rules for nouns — -s/-x/-z, -al → -aux, -eau → -x, -ou exceptions, compound nouns — plus gender-changes-meaning pairs and the feminine of people)
 61. Les Pronoms — Vue d'Ensemble (the pronoun map plus the gaps: tonic, possessive, demonstrative, lequel, ce qui/ce que, indefinite, interrogative, and the order of two pronouns)
+62. Les Pronoms Possessifs (possessive pronouns — forms, the 3-step method, answering questions with the point-of-view switch, completing sentences, spelling rules, à/de merging, common mistakes)
 
 *Remaining A2 classes will be updated weekly.*
 

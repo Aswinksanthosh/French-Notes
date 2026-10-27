@@ -2801,3 +2801,6 @@ parse via `new Function`.
 
 ## 2026-10-27 — Study Plan shared data
 - plan-data.js holds the weekly schedule (const W) and planEff(); loaded by plan.html and index.html. Update W there when planning a new week. index.html shows today's chapters under the 📅 button (done = every checkbox in the chapter ticked).
+
+## 2026-10-27 — Class 63 Les Pronoms Possessifs
+- New A2 chapter class63 from the teacher's possessive-pronouns cheat sheet (c63-1..8 + gemini, 0/9). Its Copy for Gemini button is written at the bottom directly (inside .gem-bottom); the runtime mover skips buttons already in .gem-bottom. Class 62 section 3 now just points to it. classOrder ends ...,60,61,62,63. plan.html CH data regenerated.
