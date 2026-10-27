@@ -22,8 +22,6 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,san
 html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}.dc .lk{display:flex;gap:4px;align-items:center;font-size:12px;padding:3px 0;word-break:break-all}.dc .addl{width:100%;margin-top:6px;font:inherit;font-size:12px;padding:4px;border:1px dashed var(--line);border-radius:6px;background:none;color:var(--mut)}.dc .go{user-select:none;-webkit-user-select:none;touch-action:manipulation}.dc .rw{margin-top:8px;padding:6px;border:1px dashed var(--line);border-radius:8px;font-size:12px;display:flex;gap:4px;align-items:center;justify-content:center;text-align:center}.dc .rw.earned{background:var(--green);color:#fff;border:1px solid var(--green);font-weight:600}.dc .rw.earned .go{color:#fff;border-color:#fff}.dc .addr{background:none;border:0;font:inherit;font-size:14px;color:var(--mut)}.dc a.cn{color:var(--ink);text-decoration:underline dotted;text-underline-offset:3px}.dc .done a.cn{color:var(--mut)}.dc .chap{display:flex;gap:6px;align-items:flex-start;padding:4px 0;line-height:1.25}.dc .chap.done a.cn{text-decoration:line-through}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.g3 .card{padding:12px 6px}.big2{font-size:28px;font-weight:700}</style></head><body>
 <a href="./">← Back to notes</a>
 <div class="card"><div class="mut">Days to exam (Nov 16)</div><div class="big" id="d"></div></div>
-<div class="g"><div class="card"><div class="mut">Hours left</div><div class="big" id="h"></div></div>
-<div class="card"><div class="mut">Hours per day</div><div class="big" id="p"></div></div></div>
 <div class="g3"><div class="card"><div class="mut">Chapters left</div><div class="big2" id="chL"></div></div>
 <div class="card"><div class="mut">Per day</div><div class="big2" id="chD"></div></div>
 <div class="card"><div class="mut">Per week</div><div class="big2" id="chW"></div></div></div>
@@ -44,8 +42,8 @@ let tot=0,left=0,next=null,leftCh=0;
 CH.forEach(c=>{const f=c.ids?prog(c.n,c.ids)/c.ids:0;tot+=c.min;left+=c.min*(1-f);if(f<1){leftCh++;if(!next)next=c}});
 const t=new Date();t.setHours(0,0,0,0);
 const days=Math.max(0,Math.round((new Date('2026-11-16T00:00:00')-t)/864e5));
-const usable=Math.max(1,days-3), pct=Math.round((1-left/tot)*100);
-d.textContent=days;h.textContent=(left/60).toFixed(1);p.textContent=(left/60/usable).toFixed(1);
+const usable=Math.max(1,days-3), pct=Math.round((1-leftCh/CH.length)*100);
+d.textContent=days;
 document.getElementById('chL').textContent=leftCh;document.getElementById('chD').textContent=(leftCh/usable).toFixed(1);document.getElementById('chW').textContent=Math.ceil(leftCh/usable*7);
 b.style.width=pct+'%';pc.textContent=pct+'% done (last 3 days kept for review)';
 n.textContent=next?next.name:'All done 🎉';m.textContent=next?next.l+' · '+next.min+' min':'';
