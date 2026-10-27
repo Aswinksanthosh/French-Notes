@@ -664,6 +664,10 @@
   #toolPanel { margin-top: 8px; }
   #planLink { text-align: center; padding: 10px; background: var(--lightblue); border: 1px solid var(--border); border-radius: 8px; }
   #planLink a { color: var(--blue); font-weight: 700; font-size: 14px; text-decoration: none; }
+  .chap-bar { display: flex; gap: 6px; align-items: flex-start; margin: 14px 0 34px; }
+  .chap-bar nav { flex: 1; min-width: 0; margin-bottom: 0 !important; }
+  .chap-bar .chapter-btn { flex: none; height: 48px; width: 46px; padding: 0; font-size: 20px; border-radius: 10px; }
+  .ch-ind { margin-left: 8px; font-weight: 600; font-size: 13px; color: #667; }
 </style>
 </head>
 <body>
@@ -715,17 +719,14 @@
   <div id="globalProgressText" style="color: #1b5e20; font-weight: 600; font-size: 15px;">0 / 0 items completed</div>
 </div>
 
-<div class="chapter-nav">
-  <button class="chapter-btn" id="prevBtn" onclick="previousChapter()">← Previous</button>
-  <span id="chapterIndicator" style="padding: 8px 16px; align-self: center; color: var(--blue); font-weight: 600;">Class 1 of 25</span>
-  <button class="chapter-btn" id="nextBtn" onclick="nextChapter()">Next →</button>
-</div>
 <div id="swipeHint" class="swipe-hint"></div>
 <div id="chapterArrow" class="chapter-arrow"></div>
 
+<div class="chap-bar">
+<button class="chapter-btn" id="prevBtn" onclick="previousChapter()" aria-label="Previous chapter">←</button>
 <nav id="toc" class="collapsed">
   <button class="nav-toggle" onclick="toggleNav()">
-    <span>📚 Chapters</span>
+    <span>📚 Chapters <span id="chapterIndicator" class="ch-ind">1 / 25</span></span>
     <span id="toggleIcon">▼</span>
   </button>
   <div class="nav-scroll">
@@ -799,6 +800,8 @@
     </div>
   </div>
 </nav>
+<button class="chapter-btn" id="nextBtn" onclick="nextChapter()" aria-label="Next chapter">→</button>
+</div>
 
 <!-- ===================== CLASS 1: ALPHABET ===================== -->
 <div class="lesson-card" id="class1">
@@ -11846,7 +11849,7 @@ function showClass(classNum, direction) {
     // Update indicator (position in the real class sequence, not the raw
     // class number, since numbering skips 24)
     const position = classOrder.indexOf(classNum) + 1;
-    document.getElementById('chapterIndicator').textContent = `Class ${position} of ${totalClasses}`;
+    document.getElementById('chapterIndicator').textContent = `${position} / ${totalClasses}`;
     updateChapterColors();
 
     // Update nav buttons
