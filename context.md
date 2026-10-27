@@ -2788,3 +2788,7 @@ parse via `new Function`.
 ## 2026-10-21 — Class 60 Le Conditionnel
 - New A2 chapter `class60` (c60-1..c60-10 + gemini-skill-class60, 0/11). Conditionnel moved OUT of Class 20 (same as Gérondif split); Class 20 is now "Futur Simple" (c20-1..6 + gemini, 0/7) with the Conditionnel sections, stale gérondif mistake row and Léa/Sam dialogue removed and its Gemini prompt trimmed.
 - classOrder ends ...,59,20,60. Lesson: checkbox ids chosen only after drafting all edits.
+
+## 2026-10-27 — Reference PDFs gap check
+- Gap-checked 5 teacher PDFs (nouns, adjectives, adverbs, prepositions, pronouns) against the site. New A2 chapters: class61 Le Pluriel des Noms (c61-1..6 + gemini, 0/7) and class62 Les Pronoms — Vue d'Ensemble (c62-1..8 + gemini, 0/9). Small notes added before Overall Mastery in class22 (position changes meaning, adjectives as nouns) and class25 (en dépit de, en dehors de, concernant/au sujet de, après avoir). Adverbs already covered. classOrder now ends ...,20,60,61,62.
+- Added plan.html (study-hours tracker) reading checklist_classN from localStorage; its CH data is generated from the nav, regenerate when chapters are added.
