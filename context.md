@@ -2795,3 +2795,6 @@ parse via `new Function`.
 
 ## 2026-10-27 — Gemini prompt language rule
 - Added "ALWAYS EXPLAIN IN ENGLISH" bullet to the shared header in all 61 Gemini prompts (Gemini was switching its explanations to French when the user answered in French). Insert point: just before the "DURING THE EXAM" bullet. New chapters built from shared_header must include it.
+
+## 2026-10-27 — Site search
+- Added a search box (id siteSearch) above the chapter nav in index.html: "Chapters" group = nav-label/h2 matches, "Other matches" = matches inside chapter text with a highlighted snippet. Accent- and case-insensitive; index built lazily from classOrder + lesson-card textContent. Script is the last <script> in index.html.
