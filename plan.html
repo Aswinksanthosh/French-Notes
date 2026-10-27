@@ -19,7 +19,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,san
 .dc.today .hd span{background:var(--green);color:#fff;border-radius:50%;display:inline-block;width:36px;height:36px;line-height:36px}
 .dc .nt{font-size:11px;text-align:center}.dc .blk{font-size:13px;padding:5px 0}.dc .blk b{font-size:11px}
 .dc label{display:flex;gap:6px;align-items:flex-start;padding:4px 0;line-height:1.25}.dc label input{width:16px;height:16px;margin:1px 0 0;flex:none}
-html,body{overflow-x:hidden}</style></head><body>
+html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}</style></head><body>
 <a href="./">← Back to notes</a>
 <div class="card"><div class="mut">Days to exam (Nov 16)</div><div class="big" id="d"></div></div>
 <div class="g"><div class="card"><div class="mut">Hours left</div><div class="big" id="h"></div></div>
@@ -52,18 +52,28 @@ const W=[
 function acts(){try{return JSON.parse(localStorage.getItem('plan_acts')||'{}')}catch(e){return{}}}
 function tog(k,on){const a=acts();if(on)a[k]=1;else delete a[k];try{localStorage.setItem('plan_acts',JSON.stringify(a))}catch(e){}}
 function lt(d){const x=new Date();return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')}
-(function(){const A=acts(),T=lt(),byN={};CH.forEach(c=>byN[c.n]=c);let h='<div class="wk">';
-W.forEach(d=>{const cls=d.d===T?' today':(d.d<T?' past':'');const parts=d.l.split(' ');
- h+='<div class="card day dc'+cls+'" id="d'+d.d+'"><div class="hd"><b>'+parts[0]+'</b><span>'+parts[2]+'</span></div><div class="nt">'+d.n+'</div>';
- d.b.forEach((b,i)=>{h+='<div class="blk"><b>'+b.t+'</b>';
-  (b.c||[]).forEach(n=>{const c=byN[n];if(!c)return;const f=c.ids?prog(c.n,c.ids)/c.ids:0;const k='c'+c.n,on=A[k]||f>=1;h+='<label class="'+(on?'done':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><span>📚 '+c.name+'</span></label>'});
-  (b.a||[]).forEach((a,j)=>{const k=d.d+'-'+i+'-'+j;h+='<label><input type="checkbox" data-k="'+k+'"'+(A[k]?' checked':'')+'><span>'+a+'</span></label>'});
+function mv(){try{return JSON.parse(localStorage.getItem('plan_moves')||'{}')}catch(e){return{}}}
+function setMv(o){try{localStorage.setItem('plan_moves',JSON.stringify(o))}catch(e){}}
+function renderWeek(){const A=acts(),M=mv(),T=lt(),byN={};CH.forEach(c=>byN[c.n]=c);
+ const days=W.map(d=>d.d),first=days[0],last=days[days.length-1];
+ const orig={};W.forEach(d=>d.b.forEach(b=>(b.c||[]).forEach(n=>orig[n]=d.d)));
+ const done=n=>{const c=byN[n];return A['c'+n]||(c&&c.ids&&prog(c.n,c.ids)/c.ids>=1)};
+ const eff={};Object.keys(orig).forEach(n=>{let d=M[n]||orig[n];if(d<T&&!done(n))d=T;if(d<first)d=first;if(d>last)d=last;if(!days.includes(d)){d=days.find(x=>x>=d)||last}eff[n]=d});
+ let h='<div class="wk">';
+ W.forEach(d=>{const cls=d.d===T?' today':(d.d<T?' past':'');const parts=d.l.split(' ');
+  const lab=(n,own)=>{const c=byN[n];if(!c)return'';const k='c'+c.n,on=done(n);const nxt=days[days.indexOf(d.d)+1];
+   return '<label class="'+(on?'done':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><span>📚 '+c.name+'</span>'+(!on&&nxt?'<button class="go" data-n="'+n+'" data-to="'+nxt+'" title="Move to next day">→</button>':'')+'</label>'};
+  const carried=Object.keys(eff).filter(n=>eff[n]===d.d&&orig[n]!==d.d);
+  h+='<div class="card day dc'+cls+'"><div class="hd"><b>'+parts[0]+'</b><span>'+parts[2]+'</span></div><div class="nt">'+d.n+'</div>';
+  if(carried.length)h+='<div class="blk"><b>Moved here</b>'+carried.map(n=>lab(+n)).join('')+'</div>';
+  d.b.forEach((b,i)=>{const own=(b.c||[]).filter(n=>eff[n]===d.d);if(!own.length&&!(b.a||[]).length)return;h+='<div class="blk"><b>'+b.t+'</b>'+own.map(n=>lab(n)).join('');
+   (b.a||[]).forEach((a,j)=>{const k=d.d+'-'+i+'-'+j;h+='<label><input type="checkbox" data-k="'+k+'"'+(A[k]?' checked':'')+'><span>'+a+'</span></label>'});h+='</div>'});
   h+='</div>'});
- h+='</div>'});
-h+='</div>';
-document.getElementById('week').innerHTML=h;
-document.querySelectorAll('#week input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);e.parentNode.classList.toggle('done',e.checked)});
-const t=document.querySelector&&document.querySelector('#week .today');if(t&&t.scrollIntoView)t.scrollIntoView({inline:'start',block:'nearest'})})();
+ h+='</div>';document.getElementById('week').innerHTML=h;
+ document.querySelectorAll('#week input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);renderWeek()});
+ document.querySelectorAll('#week .go').forEach(b=>b.onclick=ev=>{ev.preventDefault();const m=mv();m[b.dataset.n]=b.dataset.to;setMv(m);renderWeek()});
+ const t=document.querySelector&&document.querySelector('#week .today');if(t&&t.scrollIntoView)t.scrollIntoView({inline:'start',block:'nearest'})}
+renderWeek();
 function copyProg(){const A=acts(),L=[];W.forEach(d=>{const s=[];d.b.forEach((b,i)=>{(b.c||[]).forEach(n=>{if(A['c'+n])s.push(CH.find(c=>c.n===n).name)});(b.a||[]).forEach((a,j)=>{if(A[d.d+'-'+i+'-'+j])s.push(a)})});if(s.length)L.push(d.l+': '+s.join(', '))});
  const t=L.join('\n')||'Nothing ticked yet';try{navigator.clipboard.writeText(t);document.getElementById('cp').textContent='Copied ✓'}catch(e){prompt('Copy this:',t)}}
 </script></body></html>
