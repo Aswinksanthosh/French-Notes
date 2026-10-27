@@ -44,11 +44,11 @@ n.textContent=next?next.name:'All done 🎉';m.textContent=next?next.l+' · '+ne
 const W=[
 {d:'2026-10-26',l:'Mon Oct 26',n:'Work day',b:[{t:'Tonight',c:[10,11]}]},
 {d:'2026-10-27',l:'Tue Oct 27',n:'Work day',b:[{t:'Chapters',c:[12,13]},{t:'Activities',a:['Lingopie','Flashcards']}]},
-{d:'2026-10-28',l:'Wed Oct 28',n:'Work day',b:[{t:'Chapters',c:[15,14]},{t:'Activities',a:['Lingopie','Flashcards']}]},
-{d:'2026-10-29',l:'Thu Oct 29',n:'Work day',b:[{t:'Chapters',c:[16,17]},{t:'Activities',a:['Lingopie','Flashcards']}]},
-{d:'2026-10-30',l:'Fri Oct 30',n:'Day off — 4 + 4',b:[{t:'Morning',c:[18,19],a:['Lingopie','Flashcards']},{t:'Evening',c:[21,22],a:['Lingopie','Flashcards']}]},
-{d:'2026-10-31',l:'Sat Oct 31',n:'Work day',b:[{t:'Chapters',c:[23,25]},{t:'Activities',a:['Lingopie','Flashcards']}]},
-{d:'2026-11-01',l:'Sun Nov 1',n:'Work day',b:[{t:'Chapters',c:[26,27]},{t:'Activities',a:['Lingopie','Flashcards']}]}];
+{d:'2026-10-28',l:'Wed Oct 28',n:'Work day',b:[{t:'Chapters',c:[15,14]},{t:'Activities',a:['Gemini talk + Translate','Listening / reading / writing']}]},
+{d:'2026-10-29',l:'Thu Oct 29',n:'Work day',b:[{t:'Chapters',c:[16,17]},{t:'Activities',a:['Lingopie','Gemini talk + Translate']}]},
+{d:'2026-10-30',l:'Fri Oct 30',n:'Day off — 4 + 4',b:[{t:'Morning',c:[18,19],a:['Lingopie','Flashcards']},{t:'Evening',c:[21,22],a:['Gemini talk + Translate','Listening / reading / writing']}]},
+{d:'2026-10-31',l:'Sat Oct 31',n:'Work day',b:[{t:'Chapters',c:[23,25]},{t:'Activities',a:['Flashcards','Listening / reading / writing']}]},
+{d:'2026-11-01',l:'Sun Nov 1',n:'Work day',b:[{t:'Chapters',c:[26,27]},{t:'Activities',a:['Lingopie','Listening / reading / writing']}]}];
 function acts(){try{return JSON.parse(localStorage.getItem('plan_acts')||'{}')}catch(e){return{}}}
 function tog(k,on){const a=acts();if(on)a[k]=1;else delete a[k];try{localStorage.setItem('plan_acts',JSON.stringify(a))}catch(e){}}
 function lt(d){const x=new Date();return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')}
