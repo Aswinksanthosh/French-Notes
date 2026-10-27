@@ -19,7 +19,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,san
 .dc.today .hd span{background:var(--green);color:#fff;border-radius:50%;display:inline-block;width:36px;height:36px;line-height:36px}
 .dc .nt{font-size:11px;text-align:center}.dc .blk{font-size:13px;padding:5px 0}.dc .blk b{font-size:11px}
 .dc label{display:flex;gap:6px;align-items:flex-start;padding:4px 0;line-height:1.25}.dc label input{width:16px;height:16px;margin:1px 0 0;flex:none}
-html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}.dc .lk{display:flex;gap:4px;align-items:center;font-size:12px;padding:3px 0;word-break:break-all}.dc .addl{width:100%;margin-top:6px;font:inherit;font-size:12px;padding:4px;border:1px dashed var(--line);border-radius:6px;background:none;color:var(--mut)}.dc .go{user-select:none;-webkit-user-select:none;touch-action:manipulation}.dc .rw{margin-top:8px;padding:6px;border:1px dashed var(--line);border-radius:8px;font-size:12px;display:flex;gap:4px;align-items:center;justify-content:center;text-align:center}.dc .rw.earned{background:var(--green);color:#fff;border:1px solid var(--green);font-weight:600}.dc .rw.earned .go{color:#fff;border-color:#fff}.dc .addr{background:none;border:0;font:inherit;font-size:14px;color:var(--mut)}</style></head><body>
+html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}.dc .lk{display:flex;gap:4px;align-items:center;font-size:12px;padding:3px 0;word-break:break-all}.dc .addl{width:100%;margin-top:6px;font:inherit;font-size:12px;padding:4px;border:1px dashed var(--line);border-radius:6px;background:none;color:var(--mut)}.dc .go{user-select:none;-webkit-user-select:none;touch-action:manipulation}.dc .rw{margin-top:8px;padding:6px;border:1px dashed var(--line);border-radius:8px;font-size:12px;display:flex;gap:4px;align-items:center;justify-content:center;text-align:center}.dc .rw.earned{background:var(--green);color:#fff;border:1px solid var(--green);font-weight:600}.dc .rw.earned .go{color:#fff;border-color:#fff}.dc .addr{background:none;border:0;font:inherit;font-size:14px;color:var(--mut)}.dc a.cn{color:var(--ink);text-decoration:underline dotted;text-underline-offset:3px}.dc .done a.cn{color:var(--mut)}.dc .chap{display:flex;gap:6px;align-items:flex-start;padding:4px 0;line-height:1.25}.dc .chap.done a.cn{text-decoration:line-through}</style></head><body>
 <a href="./">← Back to notes</a>
 <div class="card"><div class="mut">Days to exam (Nov 16)</div><div class="big" id="d"></div></div>
 <div class="g"><div class="card"><div class="mut">Hours left</div><div class="big" id="h"></div></div>
@@ -67,12 +67,12 @@ function setMv(o){try{localStorage.setItem('plan_moves',JSON.stringify(o))}catch
 function renderWeek(){let earned=0;const A=acts(),M=mv(),T=lt(),byN={};CH.forEach(c=>byN[c.n]=c);
  const days=W.map(d=>d.d),first=days[0],last=days[days.length-1];
  const orig={};W.forEach(d=>d.b.forEach(b=>(b.c||[]).forEach(n=>orig[n]=d.d)));
- const done=n=>{const c=byN[n];return A['c'+n]||(c&&c.ids&&prog(c.n,c.ids)/c.ids>=1)};
+ const done=n=>{const c=byN[n];return !!(c&&c.ids&&prog(c.n,c.ids)/c.ids>=1)};
  const eff={};Object.keys(orig).forEach(n=>{let d=M[n]||orig[n];if(d<T&&!done(n))d=T;if(d<first)d=first;if(d>last)d=last;if(!days.includes(d)){d=days.find(x=>x>=d)||last}eff[n]=d});
  let h='<div class="wk">';
  W.forEach(d=>{const cls=d.d===T?' today':(d.d<T?' past':'');const parts=d.l.split(' ');
   const lab=(n,own)=>{const c=byN[n];if(!c)return'';const k='c'+c.n,on=done(n);const nxt=days[days.indexOf(d.d)+1],prv=days[days.indexOf(d.d)-1];
-   return '<label class="'+(on?'done':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><span>📚 '+c.name+'</span>'+(!on&&(nxt||prv)?'<button class="go" data-n="'+n+'" data-to="'+(nxt||'')+'" data-back="'+(prv||'')+'" title="Tap: next day. Hold: previous day">→</button>':'')+'</label>'};
+   return '<div class="chap'+(on?' done':'')+'"><a class="cn" href="index.html#class'+c.n+'">'+(on?'✓ ':'📚 ')+c.name+'</a>'+(!on&&(nxt||prv)?'<button class="go" data-n="'+n+'" data-to="'+(nxt||'')+'" data-back="'+(prv||'')+'" title="Tap: next day. Hold: previous day">→</button>':'')+'</div>'};
   const carried=Object.keys(eff).filter(n=>eff[n]===d.d&&orig[n]!==d.d);
   h+='<div class="card day dc'+cls+'"><div class="hd"><b>'+parts[0]+'</b><span>'+parts[2]+'</span></div><div class="nt">'+d.n+'</div>';
   if(carried.length)h+='<div class="blk"><b>Moved here</b>'+carried.map(n=>lab(+n)).join('')+'</div>';
@@ -110,6 +110,6 @@ const TEF=[
 ['RFI Journal en français facile (listening)','https://francaisfacile.rfi.fr/']];
 (function(){const A=acts();document.getElementById('tefList').innerHTML=TEF.map((s,i)=>{const k='tef'+i,on=A[k];return '<label class="'+(on?'done':'')+'" style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+' style="width:18px;height:18px;flex:none"><a href="'+s[1]+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+s[0]+'</a></label>'}).join('');
 document.querySelectorAll('#tefList input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);e.parentNode.classList.toggle('done',e.checked)})})();
-function copyProg(){const A=acts(),L=[];W.forEach(d=>{const s=[];d.b.forEach((b,i)=>{(b.c||[]).forEach(n=>{if(A['c'+n])s.push(CH.find(c=>c.n===n).name)});(b.a||[]).forEach((a,j)=>{if(A[d.d+'-'+i+'-'+j])s.push(a)})});if(s.length)L.push(d.l+': '+s.join(', '))});
+function copyProg(){const A=acts(),L=[];W.forEach(d=>{const s=[];d.b.forEach((b,i)=>{(b.c||[]).forEach(n=>{const c=CH.find(c=>c.n===n);if(c&&c.ids&&prog(c.n,c.ids)/c.ids>=1)s.push(c.name)});(b.a||[]).forEach((a,j)=>{if(A[d.d+'-'+i+'-'+j])s.push(a)})});if(s.length)L.push(d.l+': '+s.join(', '))});
  const t=L.join('\n')||'Nothing ticked yet';try{navigator.clipboard.writeText(t);document.getElementById('cp').textContent='Copied ✓'}catch(e){prompt('Copy this:',t)}}
 </script></body></html>
