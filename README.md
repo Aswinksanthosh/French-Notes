@@ -88,6 +88,8 @@ tap, and self-test progress with per-topic checklists.
 57. Le Subjonctif (the verb mood for wish, emotion, doubt, necessity and judgment — formation, 5 trigger categories, triggering conjunctions, indicatif vs subjonctif, subjonctif passé, and subjonctif after relative pronouns)
 58. Le Gérondif (en + present participle, split out of the old combined Futur Simple/Conditionnel class — all 4 uses: while/by doing, cause/reason, manner/means/condition, and gérondif vs participe présent)
 59. Le Conditionnel (the "would" mood — formation from the future stem + imparfait endings, irregular stems, 5 uses, si + imparfait, and a conditionnel passé preview; split out of the old combined Futur Simple/Conditionnel class)
+60. Le Pluriel des Noms (plural rules for nouns — -s/-x/-z, -al → -aux, -eau → -x, -ou exceptions, compound nouns — plus gender-changes-meaning pairs and the feminine of people)
+61. Les Pronoms — Vue d'Ensemble (the pronoun map plus the gaps: tonic, possessive, demonstrative, lequel, ce qui/ce que, indefinite, interrogative, and the order of two pronouns)
 
 *Remaining A2 classes will be updated weekly.*
 
