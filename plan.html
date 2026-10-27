@@ -19,7 +19,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,san
 .dc.today .hd span{background:var(--green);color:#fff;border-radius:50%;display:inline-block;width:36px;height:36px;line-height:36px}
 .dc .nt{font-size:11px;text-align:center}.dc .blk{font-size:13px;padding:5px 0}.dc .blk b{font-size:11px}
 .dc label{display:flex;gap:6px;align-items:flex-start;padding:4px 0;line-height:1.25}.dc label input{width:16px;height:16px;margin:1px 0 0;flex:none}
-html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}</style></head><body>
+html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}.dc .lk{display:flex;gap:4px;align-items:center;font-size:12px;padding:3px 0;word-break:break-all}.dc .addl{width:100%;margin-top:6px;font:inherit;font-size:12px;padding:4px;border:1px dashed var(--line);border-radius:6px;background:none;color:var(--mut)}</style></head><body>
 <a href="./">← Back to notes</a>
 <div class="card"><div class="mut">Days to exam (Nov 16)</div><div class="big" id="d"></div></div>
 <div class="g"><div class="card"><div class="mut">Hours left</div><div class="big" id="h"></div></div>
@@ -54,6 +54,9 @@ const W=[
 function acts(){try{return JSON.parse(localStorage.getItem('plan_acts')||'{}')}catch(e){return{}}}
 function tog(k,on){const a=acts();if(on)a[k]=1;else delete a[k];try{localStorage.setItem('plan_acts',JSON.stringify(a))}catch(e){}}
 function lt(d){const x=new Date();return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')}
+function lk(){try{return JSON.parse(localStorage.getItem('plan_links')||'{}')}catch(e){return{}}}
+function setLk(o){try{localStorage.setItem('plan_links',JSON.stringify(o))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function mv(){try{return JSON.parse(localStorage.getItem('plan_moves')||'{}')}catch(e){return{}}}
 function setMv(o){try{localStorage.setItem('plan_moves',JSON.stringify(o))}catch(e){}}
 function renderWeek(){const A=acts(),M=mv(),T=lt(),byN={};CH.forEach(c=>byN[c.n]=c);
@@ -70,8 +73,11 @@ function renderWeek(){const A=acts(),M=mv(),T=lt(),byN={};CH.forEach(c=>byN[c.n]
   if(carried.length)h+='<div class="blk"><b>Moved here</b>'+carried.map(n=>lab(+n)).join('')+'</div>';
   d.b.forEach((b,i)=>{const own=(b.c||[]).filter(n=>eff[n]===d.d);if(!own.length&&!(b.a||[]).length)return;h+='<div class="blk"><b>'+b.t+'</b>'+own.map(n=>lab(n)).join('');
    (b.a||[]).forEach((a,j)=>{const k=d.d+'-'+i+'-'+j;h+='<label><input type="checkbox" data-k="'+k+'"'+(A[k]?' checked':'')+'><span>'+a+(a.indexOf('Combo 2')===0?' <a href="#tef" onclick="event.stopPropagation()">→ sources</a>':'')+'</span></label>'});h+='</div>'});
+  const L=lk()[d.d]||[];h+=L.map((x,i)=>'<div class="lk"><a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.n)+'</a><button class="go" data-ld="'+d.d+'" data-i="'+i+'" title="Remove">×</button></div>').join('')+'<button class="addl" data-d="'+d.d+'">+ link</button>';
   h+='</div>'});
  h+='</div>';document.getElementById('week').innerHTML=h;
+ document.querySelectorAll('#week .addl').forEach(b=>b.onclick=()=>{let u=(prompt('Paste the link')||'').trim();if(!u)return;if(!/^https?:\/\//i.test(u))u='https://'+u;const n=(prompt('Name (optional)')||'').trim()||u.replace(/^https?:\/\/(www\.)?/,'').slice(0,28);const a=lk();(a[b.dataset.d]=a[b.dataset.d]||[]).push({n:n,u:u});setLk(a);renderWeek()});
+ document.querySelectorAll('#week [data-ld]').forEach(b=>b.onclick=()=>{const a=lk();a[b.dataset.ld].splice(+b.dataset.i,1);setLk(a);renderWeek()});
  document.querySelectorAll('#week input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);renderWeek()});
  document.querySelectorAll('#week .go').forEach(b=>b.onclick=ev=>{ev.preventDefault();const m=mv();m[b.dataset.n]=b.dataset.to;setMv(m);renderWeek()});
  const t=document.querySelector&&document.querySelector('#week .today');if(t&&t.scrollIntoView)t.scrollIntoView({inline:'start',block:'nearest'})}
