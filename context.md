@@ -2792,3 +2792,6 @@ parse via `new Function`.
 ## 2026-10-27 — Reference PDFs gap check
 - Gap-checked 5 teacher PDFs (nouns, adjectives, adverbs, prepositions, pronouns) against the site. New A2 chapters: class61 Le Pluriel des Noms (c61-1..6 + gemini, 0/7) and class62 Les Pronoms — Vue d'Ensemble (c62-1..8 + gemini, 0/9). Small notes added before Overall Mastery in class22 (position changes meaning, adjectives as nouns) and class25 (en dépit de, en dehors de, concernant/au sujet de, après avoir). Adverbs already covered. classOrder now ends ...,20,60,61,62.
 - Added plan.html (study-hours tracker) reading checklist_classN from localStorage; its CH data is generated from the nav, regenerate when chapters are added.
+
+## 2026-10-27 — Gemini prompt language rule
+- Added "ALWAYS EXPLAIN IN ENGLISH" bullet to the shared header in all 61 Gemini prompts (Gemini was switching its explanations to French when the user answered in French). Insert point: just before the "DURING THE EXAM" bullet. New chapters built from shared_header must include it.
