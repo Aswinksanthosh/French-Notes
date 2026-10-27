@@ -725,7 +725,7 @@
   <div style="flex: 1; background: white; border-radius: 20px; height: 8px; overflow: hidden;">
     <div id="globalProgressBar" style="background: #2e7d32; height: 100%; width: 0%; transition: width 0.3s ease;"></div>
   </div>
-  <span id="globalProgressText" style="color: #1b5e20; font-weight: 700; font-size: 13px; white-space: nowrap;">0 / 0</span>
+  <span id="globalProgressText" style="color: #1b5e20; font-weight: 700; font-size: 13px; white-space: nowrap;">0 / 0 chapters</span>
 </div>
 
 <div id="swipeHint" class="swipe-hint"></div>
@@ -12043,18 +12043,20 @@ function loadChecklistState(lesson) {
 }
 
 function updateGlobalProgress() {
-  let totalItems = 0;
-  let completedItems = 0;
+  // Counts whole chapters: a chapter is complete when every checkbox in it is ticked.
+  let totalChapters = 0;
+  let doneChapters = 0;
 
-  document.querySelectorAll('.checklist').forEach(checklist => {
-    const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
-    totalItems += checkboxes.length;
-    completedItems += checklist.querySelectorAll('input[type="checkbox"]:checked').length;
+  document.querySelectorAll('.lesson-card').forEach(card => {
+    const boxes = card.querySelectorAll('.checklist input[type="checkbox"]');
+    if (!boxes.length) return;
+    totalChapters++;
+    if (Array.from(boxes).every(b => b.checked)) doneChapters++;
   });
 
-  const percentage = totalItems > 0 ? (completedItems / totalItems) * 100 : 0;
+  const percentage = totalChapters > 0 ? (doneChapters / totalChapters) * 100 : 0;
   document.getElementById('globalProgressBar').style.width = percentage + '%';
-  document.getElementById('globalProgressText').textContent = `${completedItems} / ${totalItems}`;
+  document.getElementById('globalProgressText').textContent = `${doneChapters} / ${totalChapters} chapters`;
 }
 
 // ONE-TIME PROGRESS RESTORE (URL-hash triggered, no console/bookmarklet needed -
