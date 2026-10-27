@@ -19,7 +19,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,san
 .dc.today .hd span{background:var(--green);color:#fff;border-radius:50%;display:inline-block;width:36px;height:36px;line-height:36px}
 .dc .nt{font-size:11px;text-align:center}.dc .blk{font-size:13px;padding:5px 0}.dc .blk b{font-size:11px}
 .dc label{display:flex;gap:6px;align-items:flex-start;padding:4px 0;line-height:1.25}.dc label input{width:16px;height:16px;margin:1px 0 0;flex:none}
-html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}.dc .lk{display:flex;gap:4px;align-items:center;font-size:12px;padding:3px 0;word-break:break-all}.dc .addl{width:100%;margin-top:6px;font:inherit;font-size:12px;padding:4px;border:1px dashed var(--line);border-radius:6px;background:none;color:var(--mut)}</style></head><body>
+html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px solid var(--line);border-radius:6px;color:var(--mut);font-size:13px;padding:0 6px;height:22px;flex:none}.dc .lk{display:flex;gap:4px;align-items:center;font-size:12px;padding:3px 0;word-break:break-all}.dc .addl{width:100%;margin-top:6px;font:inherit;font-size:12px;padding:4px;border:1px dashed var(--line);border-radius:6px;background:none;color:var(--mut)}.dc .go{user-select:none;-webkit-user-select:none;touch-action:manipulation}</style></head><body>
 <a href="./">← Back to notes</a>
 <div class="card"><div class="mut">Days to exam (Nov 16)</div><div class="big" id="d"></div></div>
 <div class="g"><div class="card"><div class="mut">Hours left</div><div class="big" id="h"></div></div>
@@ -27,6 +27,7 @@ html,body{overflow-x:hidden}.dc .go{margin-left:auto;background:none;border:1px 
 <div class="card"><div class="bar"><i id="b"></i></div><div class="mut" id="pc"></div></div>
 <div class="card"><div class="mut">Study next</div><div class="big" style="font-size:22px" id="n"></div><div class="mut" id="m"></div></div>
 <h2>This week</h2>
+<div class="mut" style="margin:-2px 0 8px;font-size:12px">Tap → to move a chapter to the next day. Hold → to move it back.</div>
 <div id="week"></div>
 <h2 id="tef">TEF practice sources</h2>
 <div class="card" style="text-align:left" id="tefList"></div>
@@ -57,6 +58,7 @@ function lt(d){const x=new Date();return x.getFullYear()+'-'+String(x.getMonth()
 function lk(){try{return JSON.parse(localStorage.getItem('plan_links')||'{}')}catch(e){return{}}}
 function setLk(o){try{localStorage.setItem('plan_links',JSON.stringify(o))}catch(e){}}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+let LP=false,LT=null;
 function mv(){try{return JSON.parse(localStorage.getItem('plan_moves')||'{}')}catch(e){return{}}}
 function setMv(o){try{localStorage.setItem('plan_moves',JSON.stringify(o))}catch(e){}}
 function renderWeek(){const A=acts(),M=mv(),T=lt(),byN={};CH.forEach(c=>byN[c.n]=c);
@@ -66,8 +68,8 @@ function renderWeek(){const A=acts(),M=mv(),T=lt(),byN={};CH.forEach(c=>byN[c.n]
  const eff={};Object.keys(orig).forEach(n=>{let d=M[n]||orig[n];if(d<T&&!done(n))d=T;if(d<first)d=first;if(d>last)d=last;if(!days.includes(d)){d=days.find(x=>x>=d)||last}eff[n]=d});
  let h='<div class="wk">';
  W.forEach(d=>{const cls=d.d===T?' today':(d.d<T?' past':'');const parts=d.l.split(' ');
-  const lab=(n,own)=>{const c=byN[n];if(!c)return'';const k='c'+c.n,on=done(n);const nxt=days[days.indexOf(d.d)+1];
-   return '<label class="'+(on?'done':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><span>📚 '+c.name+'</span>'+(!on&&nxt?'<button class="go" data-n="'+n+'" data-to="'+nxt+'" title="Move to next day">→</button>':'')+'</label>'};
+  const lab=(n,own)=>{const c=byN[n];if(!c)return'';const k='c'+c.n,on=done(n);const nxt=days[days.indexOf(d.d)+1],prv=days[days.indexOf(d.d)-1];
+   return '<label class="'+(on?'done':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><span>📚 '+c.name+'</span>'+(!on&&(nxt||prv)?'<button class="go" data-n="'+n+'" data-to="'+(nxt||'')+'" data-back="'+(prv||'')+'" title="Tap: next day. Hold: previous day">→</button>':'')+'</label>'};
   const carried=Object.keys(eff).filter(n=>eff[n]===d.d&&orig[n]!==d.d);
   h+='<div class="card day dc'+cls+'"><div class="hd"><b>'+parts[0]+'</b><span>'+parts[2]+'</span></div><div class="nt">'+d.n+'</div>';
   if(carried.length)h+='<div class="blk"><b>Moved here</b>'+carried.map(n=>lab(+n)).join('')+'</div>';
@@ -79,7 +81,12 @@ function renderWeek(){const A=acts(),M=mv(),T=lt(),byN={};CH.forEach(c=>byN[c.n]
  document.querySelectorAll('#week .addl').forEach(b=>b.onclick=()=>{let u=(prompt('Paste the link')||'').trim();if(!u)return;if(!/^https?:\/\//i.test(u))u='https://'+u;const n=(prompt('Name (optional)')||'').trim()||u.replace(/^https?:\/\/(www\.)?/,'').slice(0,28);const a=lk();(a[b.dataset.d]=a[b.dataset.d]||[]).push({n:n,u:u});setLk(a);renderWeek()});
  document.querySelectorAll('#week [data-ld]').forEach(b=>b.onclick=()=>{const a=lk();a[b.dataset.ld].splice(+b.dataset.i,1);setLk(a);renderWeek()});
  document.querySelectorAll('#week input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);renderWeek()});
- document.querySelectorAll('#week .go').forEach(b=>b.onclick=ev=>{ev.preventDefault();const m=mv();m[b.dataset.n]=b.dataset.to;setMv(m);renderWeek()});
+ document.querySelectorAll('#week .go[data-n]').forEach(b=>{
+  const go=to=>{if(!to)return;const m=mv();m[b.dataset.n]=to;setMv(m);renderWeek()};
+  b.onpointerdown=()=>{LP=false;clearTimeout(LT);LT=setTimeout(()=>{LP=true;go(b.dataset.back)},500)};
+  const stop=()=>{clearTimeout(LT)};b.onpointerup=stop;b.onpointerleave=stop;b.onpointercancel=stop;
+  b.oncontextmenu=e=>e.preventDefault();
+  b.onclick=ev=>{ev.preventDefault();if(LP){LP=false;return}go(b.dataset.to)}});
  const t=document.querySelector&&document.querySelector('#week .today');if(t&&t.scrollIntoView)t.scrollIntoView({inline:'start',block:'nearest'})}
 renderWeek();
 
