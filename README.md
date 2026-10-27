@@ -34,7 +34,6 @@ tap, and self-test progress with per-topic checklists.
 6. Verbes -IR (regular 2nd-group verbs, present tense)
 7. Verbes -RE (regular 3rd-group verbs, present tense)
 8. Verbes Pronominaux (reflexive verb mechanism)
-9. Cheat Sheet (quick-reference conjugation tables — 4 example verbs for each of the 4 verb patterns, plus avoir/être)
 10. Greetings
 11. Calendar
 12. Classroom
@@ -91,6 +90,8 @@ tap, and self-test progress with per-topic checklists.
 60. Le Pluriel des Noms (plural rules for nouns — -s/-x/-z, -al → -aux, -eau → -x, -ou exceptions, compound nouns — plus gender-changes-meaning pairs and the feminine of people)
 61. Les Pronoms — Vue d'Ensemble (the pronoun map plus the gaps: tonic, possessive, demonstrative, lequel, ce qui/ce que, indefinite, interrogative, and the order of two pronouns)
 62. Les Pronoms Possessifs (possessive pronouns — forms, the 3-step method, answering questions with the point-of-view switch, completing sentences, spelling rules, à/de merging, common mistakes)
+
+**Cheat sheets** (purple = A1, red = A2, in their own nav buttons): *A1 Cheat Sheet* (the verb-pattern conjugation tables plus the reference tables moved out of the A1 chapters) and *A2 Cheat Sheet* (the quick-revision tables moved out of the A2 chapters).
 
 *Remaining A2 classes will be updated weekly.*
 

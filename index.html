@@ -12,7 +12,7 @@
   stated in prose anywhere (including this comment); check the actual
   `classOrder` array (search "const classOrder =") and `<nav id="toc">`
   for ground truth. As of 2026-10-14: 56 lesson cards. A1 = classes
-  1,2,35-40,47,3-21 (35-40 is the dedicated verb-conjugation arc,
+  1,2,35-40,3-21 (35-40 is the dedicated verb-conjugation arc,
   positioned early in classOrder/nav despite high ids, so verb
   foundations come before anything that needs them; 47 is a verb-
   conjugation cheat-sheet reference card, positioned right after the
@@ -677,6 +677,27 @@
   .ch-ind { margin-left: 8px; font-weight: 600; font-size: 13px; color: #667; }
   .gem-bottom { margin: 6px 0 10px; }
   .gem-bottom .copy-btn { display: inline-block; }
+  /* ---- Cheat sheets: A1 = purple, A2 = red ---- */
+  nav a.cs-link { display: block; padding: 12px 14px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; margin-top: 8px; }
+  nav a.cs-a1 { background: #f3e5f5; color: #6a1b9a; border: 2px solid #6a1b9a; }
+  nav a.cs-a2 { background: #fdecea; color: #c62828; border: 2px solid #c62828; }
+  nav a.cs-link.active { background: #6a1b9a; color: #fff; }
+  nav a.cs-a2.active { background: #c62828; color: #fff; }
+  .lesson-card.cheat-a1 .lesson-header { background: #6a1b9a; }
+  .lesson-card.cheat-a2 .lesson-header { background: #c62828; }
+  .lesson-card.cheat-a1 .topic, .lesson-card.cheat-a2 .topic { font-style: normal; }
+  .cheat-a1 th { background: #6a1b9a !important; color: #fff !important; }
+  .cheat-a2 th { background: #c62828 !important; color: #fff !important; }
+  .cheat-a1 .note { background: #f3e5f5 !important; border-left: 4px solid #6a1b9a !important; }
+  .cheat-a2 .note { background: #fdecea !important; border-left: 4px solid #c62828 !important; }
+  .cheat-a1 h3, .cheat-a1 h4 { color: #6a1b9a; border-bottom-color: #ce93d8; }
+  .cheat-a2 h3, .cheat-a2 h4 { color: #c62828; border-bottom-color: #ef9a9a; }
+  .cs-from { margin: 22px 0 -6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #667; }
+  .cs-from a { color: inherit; text-decoration: underline dotted; }
+  .cs-ptr { font-size: 13px; background: #f3e5f5; border-left: 4px solid #6a1b9a; }
+  .cs-ptr a { font-weight: 700; color: #6a1b9a; }
+  .cs-ptr-a2 { background: #fdecea; border-left-color: #c62828; }
+  .cs-ptr-a2 a { color: #c62828; }
 </style>
 </head>
 <body>
@@ -751,7 +772,6 @@
       <a href="#" onclick="goToClass(38)">Groupe (-IR) <span class="study-time">· 20 min</span></a>
       <a href="#" onclick="goToClass(39)">Groupe (-RE) <span class="study-time">· 25 min</span></a>
       <a href="#" onclick="goToClass(40)">Verbes Pronominaux <span class="study-time">· 20 min</span></a>
-      <a href="#" onclick="goToClass(47)">Cheat Sheet <span class="study-time">· 15 min</span></a>
       <a href="#" onclick="goToClass(3)">Greetings <span class="study-time">· 55 min</span></a>
       <a href="#" onclick="goToClass(4)">Calendar <span class="study-time">· 30 min</span></a>
       <a href="#" onclick="goToClass(5)">Classroom <span class="study-time">· 20 min</span></a>
@@ -810,6 +830,8 @@
       <a href="#" onclick="goToClass(62)">Les Pronoms — Vue d'Ensemble <span class="study-time">· 40 min</span></a>
       <a href="#" onclick="goToClass(63)">Les Pronoms Possessifs <span class="study-time">· 35 min</span></a>
     </div>
+    <a href="#" class="cs-link cs-a1" onclick="goToClass(64)">📌 A1 Cheat Sheet</a>
+    <a href="#" class="cs-link cs-a2" onclick="goToClass(65)">📌 A2 Cheat Sheet</a>
   </div>
 </nav>
 <button class="chapter-btn" id="nextBtn" onclick="nextChapter()" aria-label="Next chapter">→</button>
@@ -1325,7 +1347,7 @@
 
   <p class="topic">Topic: How to correctly identify which of the 3 French verb groups a new verb belongs to — the key skill for tackling any verb you haven't memorized yet.</p>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class35">0 / 4 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class35">0 / 5 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class35"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter teaches how to correctly identify which of the three French verb groups a new verb belongs to. First group is -er verbs, except aller. Second group is -ir verbs whose present participle ends in issant. Third group is everything else, including all -re verbs, all -oir verbs, and any -ir verb that doesn't take the issant ending." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -1416,7 +1438,7 @@
 
   <p class="topic">Topic: The 3 most essential irregular verbs — être (to be), avoir (to have), and aller (to go) — used in almost every French sentence, including avoir's many idiomatic uses (age, hunger, fear...).</p>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class36">0 / 4 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class36">0 / 5 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class36"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers the three most essential irregular verbs: être, meaning to be, avoir, meaning to have, and aller, meaning to go. These are used constantly and must be memorized before anything else, including avoir's many idiomatic uses like age and hunger, where French uses to have where English uses to be." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -1520,7 +1542,7 @@
 
   <p class="topic">Topic: Regular -ER verbs in the present tense — ~90% of all French verbs — including the silent-endings trick and the three common spelling quirks (-GER, -CER, -ELER/-ETER).</p>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class37">0 / 5 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class37">0 / 6 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class37"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers regular -er verbs in the present tense, about ninety percent of all French verbs. Remove -er and add -e, -es, -e, -ons, -ez, -ent. Four of the six forms sound identical because the endings are silent. It also covers three spelling quirks: -ger verbs, -cer verbs, and -eler or -eter verbs that double their consonant." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -1634,7 +1656,7 @@
 
   <p class="topic">Topic: Regular 2nd-group -IR verbs in the present tense (finir, choisir, and more) — identified by the -issant present participle, with the signature double-s pattern.</p>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class38">0 / 3 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class38">0 / 4 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class38"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers regular second-group -ir verbs in the present tense, like finir and choisir. Remove -ir and add -is, -is, -it, -issons, -issez, -issent. The double s in nous, vous, and ils forms is the signature of this group." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -1712,7 +1734,7 @@
 
   <p class="topic">Topic: Regular -RE verbs in the present tense (vendre, attendre, perdre, répondre...) — a clean, learnable pattern that's often never taught as its own rule — plus a warning that mettre and prendre are irregular exceptions.</p>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class39">0 / 4 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class39">0 / 5 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class39"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers regular -re verbs in the present tense, using vendre as the model. Remove -re and add -s, -s, nothing, -ons, -ez, -ent. The il or elle form has no added ending at all. It also warns that some -re verbs, like mettre and prendre, are irregular and don't follow this pattern." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -1801,7 +1823,7 @@
 
   <p class="topic">Topic: How pronominal (reflexive) verbs work — the subject + reflexive-pronoun + verb structure, with s'appeler and the laver/se laver contrast as the two core examples.</p>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class40">0 / 3 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class40">0 / 4 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class40"></div></div>
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers the mechanism of pronominal, or reflexive, verbs - verbs whose infinitive starts with se, where the action reflects back onto the subject. The structure is subject plus reflexive pronoun plus verb. The reflexive pronoun changes with the subject: me, te, se, nous, vous, se." data-lang="en-US">🔎 What's in this chapter?</button>
@@ -2760,23 +2782,8 @@
     <li><input type="checkbox" id="c6-7"><label for="c6-7">Common exceptions (le père, le frère, etc.) — learned</label></li>
   </ul>
 
-  <h3>Quick Reference: Gender Ending Chart</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Feminine Endings</th><th>Examples</th><th>Masculine Endings</th><th>Examples</th></tr>
-  <tr><td><span class="fr">-tion/-ion</span></td><td><span class="fr">connexion</span>, <span class="fr">option</span></td><td><span class="fr">-ment</span></td><td><span class="fr">gouvernement</span>, <span class="fr">département</span></td></tr>
-  <tr><td><span class="fr">-ure</span></td><td><span class="fr">nature</span>, <span class="fr">voiture</span></td><td><span class="fr">-age</span></td><td><span class="fr">village</span>, <span class="fr">fromage</span></td></tr>
-  <tr><td><span class="fr">-ade</span></td><td><span class="fr">promenade</span>, <span class="fr">salade</span></td><td><span class="fr">-oir</span></td><td><span class="fr">miroir</span>, <span class="fr">tiroir</span></td></tr>
-  <tr><td><span class="fr">-e (most)</span></td><td><span class="fr">porte</span>, <span class="fr">maison</span></td><td><span class="fr">-isme</span></td><td><span class="fr">tourisme</span>, <span class="fr">journalisme</span></td></tr>
-  <tr><td><span class="fr">-té</span></td><td><span class="fr">liberté</span>, <span class="fr">beauté</span></td><td><span class="fr">-eau</span></td><td><span class="fr">bateau</span>, <span class="fr">château</span></td></tr>
-  <tr><td><span class="fr">-ette</span></td><td><span class="fr">bicyclette</span>, <span class="fr">fourchette</span></td><td><span class="fr">-phone / -scope</span></td><td><span class="fr">téléphone</span>, <span class="fr">télescope</span></td></tr>
-  <tr><td><span class="fr">-ance / -ence</span></td><td><span class="fr">différence</span>, <span class="fr">chance</span></td><td><span class="fr">-eur (machines)</span></td><td><span class="fr">ordinateur</span>, <span class="fr">moteur</span></td></tr>
-  <tr><td><span class="fr">-esse</span></td><td><span class="fr">jeunesse</span>, <span class="fr">tristesse</span></td><td colspan="2"><strong>Épicène (same word, either gender):</strong> <span class="fr">artiste</span>, <span class="fr">architecte</span>, <span class="fr">journaliste</span></td></tr>
-  <tr><td colspan="2"><strong>Special: Days, Months, Seasons = MASCULINE</strong><br>Days: <span class="fr">lundi</span>, <span class="fr">mardi</span>... / Months: <span class="fr">janvier</span>, <span class="fr">février</span>... / Seasons: <span class="fr">printemps</span>, <span class="fr">été</span>, <span class="fr">automne</span>, <span class="fr">hiver</span></td><td colspan="2"><strong>Special: English words = MASCULINE</strong><br><span class="fr">week-end</span>, <span class="fr">parking</span>, <span class="fr">sport</span>, <span class="fr">tennis</span></td></tr>
-</table>
-</div>
-
-  <h4>❌ Common Mistakes to Avoid</h4>
+    <div class="note cs-ptr">📌 Reference table moved to the <a href="#" onclick="showClass(64); window.scrollTo(0,0); return false;">A1 Cheat Sheet</a>.</div>
+<h4>❌ Common Mistakes to Avoid</h4>
   <div class="table-wrap">
 <table>
   <tr><th>❌ WRONG</th><th>✓ CORRECT</th><th>Explanation</th></tr>
@@ -3076,23 +3083,8 @@
     <li><input type="checkbox" id="c8-3"><label for="c8-3">Nationality adjectives Rules 2 & 3 (ien/een and already 'e') — learned</label></li>
   </ul>
 
-  <h3>Nationality Adjectives — reference table</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Masculine</th><th>Feminine</th><th>Plural</th></tr>
-  <tr><td><span class="fr">le Français</span></td><td><span class="fr">la Française</span></td><td><span class="fr">les Français / Françaises</span></td></tr>
-  <tr><td><span class="fr">le Chinois</span></td><td><span class="fr">la Chinoise</span></td><td><span class="fr">les Chinois / Chinoises</span></td></tr>
-  <tr><td><span class="fr">l'Allemand</span></td><td><span class="fr">l'Allemande</span></td><td><span class="fr">les Allemands / Allemandes</span></td></tr>
-  <tr><td><span class="fr">l'Espagnol</span></td><td><span class="fr">l'Espagnole</span></td><td><span class="fr">les Espagnols / Espagnoles</span></td></tr>
-  <tr><td><span class="fr">l'Italien</span></td><td><span class="fr">l'Italienne</span></td><td><span class="fr">les Italiens / Italiennes</span></td></tr>
-  <tr><td><span class="fr">le Coréen</span></td><td><span class="fr">la Coréenne</span></td><td><span class="fr">les Coréens / Coréennes</span></td></tr>
-  <tr><td><span class="fr">tchèque</span></td><td><span class="fr">tchèque</span></td><td><span class="fr">tchèques</span></td></tr>
-  <tr><td><span class="fr">japonais</span></td><td><span class="fr">japonaise</span></td><td><span class="fr">japonais / japonaises</span></td></tr>
-  <tr><td><span class="fr">indien</span></td><td><span class="fr">indienne</span></td><td><span class="fr">indiens / indiennes</span></td></tr>
-  </table>
-</div>
-
-  <ul class="checklist" data-lesson="class8" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr">📌 Reference table moved to the <a href="#" onclick="showClass(64); window.scrollTo(0,0); return false;">A1 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class8" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c8-4"><label for="c8-4">8+ nationality forms (masculine/feminine/plural) — mastered</label></li>
   </ul>
 
@@ -3528,22 +3520,8 @@
     </div>
   </div>
 
-  <h3>Possessive Adjectives — Masculine Singular Reference</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>French</th><th>English</th></tr>
-  <tr><td>mon</td><td>my</td></tr>
-  <tr><td>ton</td><td>your</td></tr>
-  <tr><td>son</td><td>his / her</td></tr>
-  <tr><td>notre</td><td>our</td></tr>
-  <tr><td>votre</td><td>your</td></tr>
-  <tr><td>leur</td><td>their</td></tr>
-  </table>
-</div>
-  <p class="example">son stylo — his pen<br>
-  son stylo — her pen (same word — context tells you which)</p>
-
-  <h3>Exception: Feminine Words Starting with Vowel or Mute H</h3>
+    <div class="note cs-ptr">📌 Reference table moved to the <a href="#" onclick="showClass(64); window.scrollTo(0,0); return false;">A1 Cheat Sheet</a>.</div>
+<h3>Exception: Feminine Words Starting with Vowel or Mute H</h3>
   <div class="expandable-section">
     <button class="expand-btn" onclick="toggleExpandable(this)" data-audio="There is an important exception to the feminine possessive adjectives rule. When a feminine noun starts with a vowel sound or a mute h, use the masculine form of the possessive adjective instead of the feminine form. This is purely for pronunciation smoothness. So instead of saying ma amie, you say mon amie even though amie is feminine. Similarly, you say ton amie instead of ta amie, and son amie instead of sa amie. Another example is son honnêteté, meaning his or her honesty, where you use son instead of sa because honnêteté starts with h." data-lang="en-US">
       🎧 Vowel Consonant Exception Explained
@@ -4219,22 +4197,8 @@
     </div>
   </div>
 
-  <h3>Demonstrative Adjectives Reference Table</h3>
-  <div class="note">Used to say "this/that/these/those." Like all French adjectives, they agree in gender and number with the noun.</div>
-  <div class="table-wrap">
-<table>
-  <tr><th>Form</th><th>Used for</th><th>Example</th></tr>
-  <tr><td class="fr">ce</td><td>masculine singular</td><td>ce stylo — this pen<br>ce canapé — this sofa</td></tr>
-  <tr><td class="fr">cet</td><td><span class="fr">masculine singular, noun starts with a vowel or (silent) "h"</span></td><td><span class="fr">cet ami — this friend<br>cet étudiant — this student<br>cet homme — this man<br>cet appareil — this device<br>cet hôpital — this hospital</span></td></tr>
-  <tr><td class="fr">cette</td><td>feminine singular</td><td>cette voiture — this car<br>cette femme — this woman<br>cette fille — this girl<br>cette maison — this house</td></tr>
-  <tr><td class="fr">ces</td><td>plural (masc. or fem.)</td><td>ces stylos — these pens<br>ces valises — these suitcases<br>ces amis — these friends<br>ces appareils — these devices</td></tr>
-  </table>
-</div>
-  <div class="note">
-  "Cet" exists purely for pronunciation — it links smoothly with a following vowel/h sound. Context tells you gender when the pronunciation is identical (e.g. "cet ami" for a male friend vs "cette amie" for a female friend sound similar when spoken).
-  </div>
-
-  <ul class="checklist" data-lesson="class14" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr">📌 Reference table moved to the <a href="#" onclick="showClass(64); window.scrollTo(0,0); return false;">A1 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class14" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c14-2"><label for="c14-2">Demonstrative adjectives (ce/cet/cette/ces) — learned</label></li>
   </ul>
 
@@ -4282,17 +4246,8 @@
     </div>
   </div>
 
-  <h3>C'est vs Il/Elle Est Reference Table</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Form</th><th>Meaning</th><th>Used for</th></tr>
-  <tr><td class="fr">c'est</td><td>it is / this is</td><td>followed by an article + noun (un/une/le/la + noun)</td></tr>
-  <tr><td class="fr">il est / elle est</td><td>he is / she is</td><td>followed directly by an adjective or nationality</td></tr>
-  </table>
-</div>
-  <p class="example">C'est un artiste. — This is an artist.<br>C'est une visite d'1 heure. — This is a one-hour visit.<br>C'est le quartier historique. — This is the historical neighborhood.<br>C'est la place du Capitole. — This is the Capitol place.<br>Il est américain. — He is American.<br>Elle est calme. — She is calm.</p>
-
-  <ul class="checklist" data-lesson="class14" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr">📌 Reference table moved to the <a href="#" onclick="showClass(64); window.scrollTo(0,0); return false;">A1 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class14" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c14-4"><label for="c14-4">C'est vs il/elle est difference — understood & can use</label></li>
   </ul>
 
@@ -4518,22 +4473,8 @@
     </div>
   </div>
 
-  <h3>Core Connectors Reference</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Connector</th><th>Meaning</th><th>Expresses</th><th>Followed by</th></tr>
-  <tr><td class="fr">pour</td><td>for / in order to</td><td>the goal</td><td>verb (infinitive) or noun</td></tr>
-  <tr><td class="fr">parce que</td><td>because</td><td>the cause</td><td>full clause (subject + verb + noun)</td></tr>
-  <tr><td class="fr">à cause de</td><td>because of / due to</td><td>the cause</td><td>noun or pronoun only</td></tr>
-  <tr><td class="fr">mais</td><td>but</td><td>opposition</td><td>full clause</td></tr>
-  <tr><td class="fr">avec</td><td>with</td><td>presence</td><td>noun/pronoun</td></tr>
-  <tr><td class="fr">sans</td><td>without</td><td>absence</td><td>noun/pronoun</td></tr>
-  </table>
-</div>
-  <div class="note">See Class 16 for more worked examples and the assignment correction on these same connectors.</div>
-  <p class="example">Je vais au collège pour étudier. — I go to college to study.<br>L'Espagne a gagné parce qu'ils ont bien joué. — Spain won because they played well.<br>Je ne suis pas venu à cause de toi. — I didn't come because of you.<br>Il est drôle mais il est méchant. — He's funny but he's mean.<br>Je vais au magasin avec mon ami. — I go to the shop with my friend.<br>Je vais au magasin sans mon ami. — I go to the shop without my friend.</p>
-
-  <ul class="checklist" data-lesson="class16" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr">📌 Reference table moved to the <a href="#" onclick="showClass(64); window.scrollTo(0,0); return false;">A1 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class16" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c16-3"><label for="c16-3">5 connectors (pour/parce que/à cause de/mais/avec/sans) — understood & can use</label></li>
   </ul>
 
@@ -5395,18 +5336,8 @@
     </div>
   </div>
 
-  <h3>Descriptive Adjectives Reference Table</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>English</th><th>Masculine</th><th>Feminine</th></tr>
-  <tr><td>light</td><td><span class="fr">léger</span></td><td><span class="fr">légère</span></td></tr>
-  <tr><td>heavy</td><td>lourd</td><td>lourde</td></tr>
-  <tr><td>round</td><td>rond</td><td>ronde</td></tr>
-  </table>
-</div>
-  <p class="example">Le porte-clé est rond. — The keychain is round.</p>
-
-  <ul class="checklist" data-lesson="class21">
+    <div class="note cs-ptr">📌 Reference table moved to the <a href="#" onclick="showClass(64); window.scrollTo(0,0); return false;">A1 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class21">
     <li><input type="checkbox" id="c21-2"><label for="c21-2">Léger/légère, lourd/lourde, rond/ronde with correct gender agreement — learned</label></li>
   </ul>
 
@@ -5898,24 +5829,8 @@
 
   <p class="topic">Topic: Complete adverb mastery — all types, formation patterns, placement rules in all tenses, nuanced distinctions, and practical usage.</p>
 
-  <h3>🚀 QUICK REVISION CHEAT SHEET</h3>
-  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
-    <strong>Golden Rule:</strong> Adverbs are INVARIABLE (never change). Ask yourself: "What question do they answer?"
-  </div>
-  <div class="table-wrap">
-<table style="font-size: 13px;">
-  <tr><th>Type</th><th>Question</th><th>Examples</th><th>Placement</th></tr>
-  <tr><td><strong>MANNER</strong></td><td>Comment ?</td><td>bien, mal, lentement, rapidement, facilement, poliment, sérieusement</td><td>After verb (simple); after participle (compound)</td></tr>
-  <tr><td><strong>TIME</strong></td><td>Quand ?</td><td>aujourd'hui, hier, demain, bientôt, déjà, maintenant, récemment, enfin, tard, en retard</td><td>Start/end of sentence; between aux & participle (short ones)</td></tr>
-  <tr><td><strong>PLACE</strong></td><td>Où ?</td><td>ici, là, là-bas, dehors, dedans, devant, derrière, près, loin, partout, nulle part, ailleurs</td><td>After verb or at end</td></tr>
-  <tr><td><strong>FREQUENCY</strong></td><td>Combien de fois ?</td><td>toujours, souvent, habituellement, généralement, normalement, parfois, rarement, jamais, presque jamais</td><td>After verb; with ne for negation</td></tr>
-  <tr><td><strong>QUANTITY/INTENSITY</strong></td><td>À quel degré ?</td><td>très, trop, assez, beaucoup, plus, moins, presque, tellement, vraiment, complètement</td><td><strong>BEFORE adjectives/adverbs</strong></td></tr>
-  <tr><td><strong>INTERROGATIVE</strong></td><td>N/A</td><td>où, quand, comment, pourquoi, combien</td><td>Question words (inversion or standard order)</td></tr>
-  <tr><td><strong>CONNECTORS</strong></td><td>Link ideas</td><td>pourtant, cependant, ainsi, ensuite, enfin, également, malheureusement, heureusement</td><td>Between sentences (often with comma)</td></tr>
-</table>
-</div>
-
-  <h3>📚 Learning Objectives</h3>
+    <div class="note cs-ptr cs-ptr-a2">📌 Reference table moved to the <a href="#" onclick="showClass(65); window.scrollTo(0,0); return false;">A2 Cheat Sheet</a>.</div>
+<h3>📚 Learning Objectives</h3>
   <div class="note">
   Master ALL 7 adverb types and their functions. Understand formation rules (feminine adjective + -ment). Master placement in simple present, passé composé, before adjectives, before other adverbs. Learn nuanced distinctions (rater/manquer, aussi/également, tard/en retard, personne usage). Practice using adverbs in complete sentences. Memorize by asking what question each adverb answers.
   </div>
@@ -6735,23 +6650,8 @@
 
   <p class="topic">Topic: Complete mastery of French prepositions — all 6 categories, regional rules (cities vs. countries), context-dependent meanings, and practical usage in real classroom situations.</p>
 
-  <h3>🚀 QUICK REVISION CHEAT SHEET</h3>
-  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
-    <strong>Golden Rule:</strong> Prepositions are INVARIABLE (never change). Ask: "What relationship am I showing? Where? When? How?"
-  </div>
-  <div class="table-wrap">
-<table style="font-size: 12px;">
-  <tr><th>Category</th><th>Key Examples</th><th>Key Question</th></tr>
-  <tr><td><strong>LIEU (Place)</strong></td><td>à, dans, sur, sous, devant, derrière, chez, entre, près de, loin de</td><td>Où ? (Where?)</td></tr>
-  <tr><td><strong>TEMPS (Time)</strong></td><td>à, en, dans, depuis, pendant, pour, avant, après</td><td>Quand ? (When?)</td></tr>
-  <tr><td><strong>DIRECTION (Movement)</strong></td><td>à, vers, jusqu'à, chez, de</td><td>Vers où ? (Toward where?)</td></tr>
-  <tr><td><strong>ORIGINE (Origin)</strong></td><td>de, du, de la, des</td><td>D'où ? (From where?)</td></tr>
-  <tr><td><strong>MOYEN (Means)</strong></td><td>en, par, avec, à (for pied/vélo)</td><td>Comment ? (How?)</td></tr>
-  <tr><td><strong>CAUSE (Reason)</strong></td><td>à cause de, grâce à, en raison de</td><td>Pourquoi ? (Why?)</td></tr>
-</table>
-</div>
-
-  <h3>📚 Learning Objectives</h3>
+    <div class="note cs-ptr cs-ptr-a2">📌 Reference table moved to the <a href="#" onclick="showClass(65); window.scrollTo(0,0); return false;">A2 Cheat Sheet</a>.</div>
+<h3>📚 Learning Objectives</h3>
   <div class="note">
   Master all 6 preposition categories and their functions. Understand regional rules (à/en/au/aux for cities & countries). Learn context-dependent meanings (à can be place OR time). Practice using prepositions in complete sentences. Build fluency through real classroom examples.
   </div>
@@ -7276,23 +7176,8 @@
 
   <p class="topic">Topic: Master using prepositions in future tense contexts — combining futur proche (aller + infinitive) and futur simple with time, location, and manner prepositions for complete fluency.</p>
 
-  <h3>🚀 QUICK REVISION CHEAT SHEET</h3>
-  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
-    <strong>Golden Rule:</strong> Future tense + prepositions = showing WHEN (à, en, dans, pendant, jusqu'à), WHERE (à, de, chez, vers), HOW (en, avec, par), and DURATION (pour, pendant) of future actions.
-  </div>
-
-  <div class="table-wrap">
-<table style="font-size: 12px;">
-  <tr><th>Future Tense Type</th><th>Formula</th><th>Example</th><th>English</th></tr>
-  <tr><td><strong>Futur Proche</strong></td><td>aller (present) + infinitive</td><td><span class="fr">Je vais manger à 18h</span></td><td>I will eat at 6pm</td></tr>
-  <tr><td><strong>Futur Simple</strong></td><td>verb stem + ai/as/a/ons/ez/ont</td><td><span class="fr">Je mangerai à 18h</span></td><td>I will eat at 6pm</td></tr>
-  <tr><td><strong>With Duration</strong></td><td>future + pour/pendant + time</td><td><span class="fr">Je travaillerai pendant 3 heures</span></td><td>I will work for 3 hours</td></tr>
-  <tr><td><strong>With Time</strong></td><td>future + à/en/dans/jusqu'à + time</td><td><span class="fr">Elle arrivera dans 2 jours</span></td><td>She will arrive in 2 days</td></tr>
-  <tr><td><strong>With Location</strong></td><td>future + à/de/chez/vers + place</td><td><span class="fr">Il ira à Paris demain</span></td><td>He will go to Paris tomorrow</td></tr>
-</table>
-</div>
-
-  <h3>📚 Learning Objectives</h3>
+    <div class="note cs-ptr cs-ptr-a2">📌 Reference table moved to the <a href="#" onclick="showClass(65); window.scrollTo(0,0); return false;">A2 Cheat Sheet</a>.</div>
+<h3>📚 Learning Objectives</h3>
   <div class="note">
   Master both futur proche and futur simple. Use time prepositions correctly in future contexts (dans = in X days/hours, pendant = for X duration). Build complete sentences showing WHEN + WHERE + HOW of future actions. Practice real-world scenarios (travel, work, plans, commitments).
   </div>
@@ -7632,20 +7517,8 @@
     <li><input type="checkbox" id="ca27-5"><label for="ca27-5"><strong>ADJECTIVE + PREPOSITION:</strong> I know être fier de, capable de, prêt à, intéressé par, responsable de, and satisfait de — and that this pattern extends to other adjectives too</label></li>
   </ul>
 
-  <h3>6️⃣ Quick Review: Contracted Articles</h3>
-
-  <div class="table-wrap">
-  <table>
-    <tr><th>Preposition + Article</th><th>Contracts to</th><th>Example</th></tr>
-    <tr><td>à + le</td><td><span class="fr">au</span></td><td><span class="fr">Je vais au marché</span></td></tr>
-    <tr><td>à + les</td><td><span class="fr">aux</span></td><td><span class="fr">Je parle aux étudiants</span></td></tr>
-    <tr><td>de + le</td><td><span class="fr">du</span></td><td><span class="fr">Je reviens du bureau</span></td></tr>
-    <tr><td>de + les</td><td><span class="fr">des</span></td><td><span class="fr">Je parle des problèmes</span></td></tr>
-    <tr><td>à/de + la, à/de + l'</td><td>unchanged</td><td><span class="fr">Je vais à la banque</span>, <span class="fr">Je reviens de l'université</span></td></tr>
-  </table>
-  </div>
-
-  <ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr cs-ptr-a2">📌 Reference table moved to the <a href="#" onclick="showClass(65); window.scrollTo(0,0); return false;">A2 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class27" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="ca27-6"><label for="ca27-6"><strong>CONTRACTED ARTICLES:</strong> I can apply au, aux, du, and des without hesitating</label></li>
   </ul>
 
@@ -8019,7 +7892,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter teaches the core être-agreement rule in the passé composé: no change for masculine singular, add e for feminine singular, add s for masculine plural, and add es for feminine plural. It then shows the exact same rule organized by subject pronoun instead, covering je, tu, il, elle, nous, vous, ils and elles." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class30">0 / 3 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class30">0 / 4 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class30"></div></div>
 
   <div class="note">
@@ -8118,7 +7991,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter covers the special cases of être-agreement: a mixed group of men and women always takes the masculine plural form, named subjects follow their own gender and number, and there is one pronunciation exception with the verb mourir. It also gives the complete agreement reference table for all sixteen Dr and Mrs Vandertramp verbs." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class31">0 / 4 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class31">0 / 5 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class31"></div></div>
 
   <div class="note">
@@ -8157,31 +8030,8 @@
     <li><input type="checkbox" id="c31-2"><label for="c31-2"><strong>PRONUNCIATION:</strong> I know agreement endings are normally silent, except the "t" in "morte"</label></li>
   </ul>
 
-  <h3>3️⃣ All 16 Dr &amp; Mrs Vandertramp Verbs — Full Agreement Table</h3>
-  <p>The complete reference — every verb in all four forms:</p>
-  <div class="table-wrap">
-  <table>
-    <tr><th>Verb</th><th>Masc. sing.</th><th>Fém. sing.</th><th>Masc. plur.</th><th>Fém. plur.</th></tr>
-    <tr><td><span class="fr">aller</span></td><td><span class="fr">allé</span></td><td><span class="fr">allée</span></td><td><span class="fr">allés</span></td><td><span class="fr">allées</span></td></tr>
-    <tr><td><span class="fr">venir</span></td><td><span class="fr">venu</span></td><td><span class="fr">venue</span></td><td><span class="fr">venus</span></td><td><span class="fr">venues</span></td></tr>
-    <tr><td><span class="fr">partir</span></td><td><span class="fr">parti</span></td><td><span class="fr">partie</span></td><td><span class="fr">partis</span></td><td><span class="fr">parties</span></td></tr>
-    <tr><td><span class="fr">sortir</span></td><td><span class="fr">sorti</span></td><td><span class="fr">sortie</span></td><td><span class="fr">sortis</span></td><td><span class="fr">sorties</span></td></tr>
-    <tr><td><span class="fr">arriver</span></td><td><span class="fr">arrivé</span></td><td><span class="fr">arrivée</span></td><td><span class="fr">arrivés</span></td><td><span class="fr">arrivées</span></td></tr>
-    <tr><td><span class="fr">entrer</span></td><td><span class="fr">entré</span></td><td><span class="fr">entrée</span></td><td><span class="fr">entrés</span></td><td><span class="fr">entrées</span></td></tr>
-    <tr><td><span class="fr">rentrer</span></td><td><span class="fr">rentré</span></td><td><span class="fr">rentrée</span></td><td><span class="fr">rentrés</span></td><td><span class="fr">rentrées</span></td></tr>
-    <tr><td><span class="fr">retourner</span></td><td><span class="fr">retourné</span></td><td><span class="fr">retournée</span></td><td><span class="fr">retournés</span></td><td><span class="fr">retournées</span></td></tr>
-    <tr><td><span class="fr">rester</span></td><td><span class="fr">resté</span></td><td><span class="fr">restée</span></td><td><span class="fr">restés</span></td><td><span class="fr">restées</span></td></tr>
-    <tr><td><span class="fr">tomber</span></td><td><span class="fr">tombé</span></td><td><span class="fr">tombée</span></td><td><span class="fr">tombés</span></td><td><span class="fr">tombées</span></td></tr>
-    <tr><td><span class="fr">monter</span></td><td><span class="fr">monté</span></td><td><span class="fr">montée</span></td><td><span class="fr">montés</span></td><td><span class="fr">montées</span></td></tr>
-    <tr><td><span class="fr">descendre</span></td><td><span class="fr">descendu</span></td><td><span class="fr">descendue</span></td><td><span class="fr">descendus</span></td><td><span class="fr">descendues</span></td></tr>
-    <tr><td><span class="fr">naître</span></td><td><span class="fr">né</span></td><td><span class="fr">née</span></td><td><span class="fr">nés</span></td><td><span class="fr">nées</span></td></tr>
-    <tr><td><span class="fr">mourir</span></td><td><span class="fr">mort</span></td><td><span class="fr">morte</span></td><td><span class="fr">morts</span></td><td><span class="fr">mortes</span></td></tr>
-    <tr><td><span class="fr">devenir</span></td><td><span class="fr">devenu</span></td><td><span class="fr">devenue</span></td><td><span class="fr">devenus</span></td><td><span class="fr">devenues</span></td></tr>
-    <tr><td><span class="fr">revenir</span></td><td><span class="fr">revenu</span></td><td><span class="fr">revenue</span></td><td><span class="fr">revenus</span></td><td><span class="fr">revenues</span></td></tr>
-  </table>
-  </div>
-
-  <ul class="checklist" data-lesson="class31" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr cs-ptr-a2">📌 Reference table moved to the <a href="#" onclick="showClass(65); window.scrollTo(0,0); return false;">A2 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class31" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c31-3"><label for="c31-3"><strong>FULL TABLE:</strong> I can produce all four agreement forms for each of the 16 Dr &amp; Mrs Vandertramp verbs</label></li>
   </ul>
 
@@ -8207,7 +8057,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter walks through real sentences corrected live in class, applying everything from the previous two chapters on être-agreement, then covers the most common mistakes learners make with this rule." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class32">0 / 3 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class32">0 / 4 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class32"></div></div>
 
   <div class="note">
@@ -8573,7 +8423,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter is about narrating a story by combining passé composé and imparfait together, the way French speakers actually tell stories. Passé composé moves the story forward with events. Imparfait paints the background: descriptions, ongoing states, emotions. It also covers nine new verbs that came up while narrating, and walks through a full worked story from class." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class41">0 / 5 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class41">0 / 6 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class41"></div></div>
 
   <div class="note">
@@ -8696,7 +8546,7 @@
 
   <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter introduces the COD, the direct object complement - the part of a sentence that directly receives the verb's action. It answers the question who or what, asked right after the verb, with no preposition. It also contrasts this with the COI, the indirect object, which always has a preposition like à qui, de qui, or avec qui." data-lang="en-US">🔎 What's in this chapter?</button>
 
-  <div class="progress-label"><span class="progress-count" data-lesson="class42">0 / 3 done</span></div>
+  <div class="progress-label"><span class="progress-count" data-lesson="class42">0 / 4 done</span></div>
   <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class42"></div></div>
 
   <div class="note">
@@ -9077,19 +8927,8 @@
   This builds directly on <span class="fr">Le COD</span>, an earlier class — it assumes you can already tell a COD apart from a COI. This class is about the <strong>pronouns</strong> that replace them.
   </div>
 
-  <h3>1️⃣ Quick Recap: COD vs COI</h3>
-
-  <div class="table-wrap">
-  <table>
-    <tr><th></th><th>COD</th><th>COI</th></tr>
-    <tr><td>Receives the action</td><td>Directly</td><td>Indirectly — through a preposition</td></tr>
-    <tr><td>Answers the question</td><td>qui ? / quoi ?</td><td>à qui ? / à quoi ? / de qui ? / de quoi ?</td></tr>
-    <tr><td>Preposition in front?</td><td>No</td><td>Yes (à, de, pour, avec, en, chez, sur...)</td></tr>
-    <tr><td>Example</td><td><span class="fr">Je vois un film.</span></td><td><span class="fr">Je parle à mon ami.</span></td></tr>
-  </table>
-  </div>
-
-  <ul class="checklist" data-lesson="class45" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr cs-ptr-a2">📌 Reference table moved to the <a href="#" onclick="showClass(65); window.scrollTo(0,0); return false;">A2 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class45" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c45-1"><label for="c45-1"><strong>RECAP:</strong> I can tell a COD apart from a COI using the question test and the preposition check</label></li>
   </ul>
 
@@ -9670,113 +9509,6 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
-<!-- ===================== CLASS 47: CHEAT SHEET — VERB CONJUGATION REFERENCE ===================== -->
-<div class="lesson-card" id="class47">
-  <div class="lesson-header">
-    <h2>Cheat Sheet: Verb Conjugation Reference <span class="date">— Quick Reference</span></h2>
-  </div>
-
-  <button class="copy-btn" onclick="mergeClassAndPrompt(this, '📚 COMPLETE SITE FEATURES & HOW TO USE THEM\n═════════════════════════════════════════\n\n✅ INTERACTIVE CHECKLISTS:\n• 💚 GREEN CHECKBOXES: Light green unchecked, dark green when mastered\n• 📊 PROGRESS BAR: Shows % complete at top\n• 📈 COUNTER: Displays &quot;X / Y done&quot;\n• 💚 GREEN TEXT: A1 checklists in green (#2e7d32), fades to gray + strikethrough once checked\n• ⚪ SMOOTH ANIMATIONS: Fade to gray when checked\n\n🎓 LEVEL COMPLETION BADGES:\n• Shows 🎓 on A1 button when all A1 classes (1-19, 21) are 100% complete\n\n📖 LEARNING CONTENT:\n• 🔊 AUDIO BUTTONS for explanations\n• 📝 PRACTICE TABLES with examples\n• 📋 EXPANDABLE SECTIONS\n\n🚀 LEARNING STRATEGY:\n• ✅ CHECKLIST ITEMS SIT RIGHT AFTER THEIR OWN TOPIC: read a topic\'s content, check its item(s), then move to the next topic\n• 💡 ALWAYS GIVE A CONCRETE EXAMPLE: never ask or explain a grammar point in the abstract (e.g. don\'t just ask “is this word feminine or masculine?” with no context). Every explanation and every question needs a real French sentence attached, so I can see how it is actually used - grammar rules alone are useless to me without seeing them in a sentence I could really say.\n• 🎯 CHECK ONLY WHEN YOU UNDERSTAND\n• 💾 AUTO-SAVE with localStorage\n• 🎤 BEFORE ANY SPEAKING/PRONUNCIATION PRACTICE: ask me to turn on your voice/speaking mode first (tap the mic/voice icon in Gemini), so you can actually hear me say the words out loud\n• 🌐 ALWAYS EXPLAIN IN ENGLISH: keep every explanation, correction, hint and instruction in English, even when I answer in French or the lesson text is in French. Only French examples and my own French answers stay in French. Never switch your explanations to French unless I ask for it.\n• 🚫 DURING THE EXAM: never tell me to check off a box or go back to the website - that interrupts my focus mid-test. Just keep testing me straight through both passes. The checklist is something I handle myself afterward, not something you should mention or prompt while I am being tested.\n• 📝 MAKE THE EXAM THOROUGH: ask at least 2-3 questions per topic, not just one - a 4-5 question exam is too short. Mix it up: fill-in-the-blank, translate a sentence, build your own sentence, correct a mistake. Give me example sentences alongside your questions so I have a model to work from, not just a bare question.\n• ✅ GRADE CAREFULLY, DON\'T JUST MOVE ON: before saying &quot;Correct&quot;, compare what I said word-for-word against the actual expected answer - a fragment, a partial sentence, or something that only reuses one or two words from the question is NOT correct, even if it sounds close. If I say &quot;I don\'t know&quot;, skip the question, or give an incomplete/wrong answer, do NOT silently move to the next question - tell me the correct answer, then ask me to repeat it back correctly myself, and only move on once I\'ve actually said the right answer out loud or in writing.\n• 🏁 RUN THE EXAM TWICE: first pass with typed answers — when I finish, say &quot;Well done! Now turn on voice mode and let\'s do this exam again, out loud this time.&quot; Second pass with spoken answers — only once I finish THAT, say &quot;Excellent ✅ You are done here, go back to next lesson.&quot;\n\n═════════════════════════════════════════\n\nThis class is a CHEAT SHEET - a set of quick-reference tables, not new content. It consolidates the verb-conjugation patterns already taught across earlier classes (&quot;Les Groupes de Verbes&quot;, &quot;Verbes Essentiels&quot;, and the three Groupe(-ER)/Groupe(-IR)/Groupe(-RE) classes) into one place, now with FOUR example verbs per regular/irregular pattern (not just one), plus avoir and être on their own since they\'re irregular and don\'t belong to any of the four patterns.\n\nTHE FIVE GROUPS:\n1st Group (-ER): manger, parler, habiter, aimer - je/tu/il endings -e/-es/-e, nous/vous -ons/-ez, ils -ent\n2nd Group (-IR, regular, the -issant type): finir, choisir, réussir, grandir - je/tu -is, il -it, nous/vous/ils add -iss- before -ons/-ez/-ent\n3rd Group (-RE): attendre, vendre, perdre, répondre - je/tu -s, il has NO ending at all (just the bare stem), nous/vous -ons/-ez, ils -ent\n3rd Group (-IR irregular, the partir family): partir, sortir, dormir, sentir - je/tu/il drop the final stem consonant (pars not &quot;parts&quot;), nous/vous/ils add it back (partons)\nAvoir and être (fully irregular, memorize by sight): avoir - j\'ai, tu as, il a, nous avons, vous avez, ils ont. être - je suis, tu es, il est, nous sommes, vous êtes, ils sont.\n\nTHE POINT of giving four verbs per pattern instead of one: it proves the ENDING pattern is what matters, not the specific verb - once I can conjugate manger correctly, I should be able to conjugate parler/habiter/aimer the exact same way without re-learning anything, because they all share the same 1st-group ending pattern. Same logic for each of the other three groups.\n\nQuiz me across all five groups, mixed together, not one at a time - give me a pronoun and ANY verb from the list above (or a different verb from the same family I\'ve learned in an earlier class) and have me conjugate it correctly, including naming which group it\'s from. Mix up the order so I can\'t just pattern-match by position. Pay special attention to testing me on a NEW verb from a group I haven\'t seen conjugated yet, to prove I\'m applying the pattern and not just memorizing these specific four examples. When I can do this fluently across all five groups (plus avoir/être) without hesitating, I\'ll check it off.')" style="background: #e8f5e9; color: #2e7d32; border-color: #2e7d32;">📋 Copy for Gemini</button>
-  <span class="copy-hint">Copy to Gemini for practicing</span>
-
-  <p class="topic">Topic: Quick-reference conjugation tables for all four verb patterns (1st group -ER, 2nd group -IR, 3rd group -RE, 3rd group irregular -IR), four example verbs each, plus avoir and être on their own. Reference only — no new grammar, see the earlier verb-group classes for the full rules.</p>
-
-  <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="This chapter is a quick-reference cheat sheet with conjugation tables for all four verb patterns, four example verbs each, plus avoir and être on their own since they're irregular. It's for reviewing and drilling conjugation recall, not for learning new rules." data-lang="en-US">🔎 What's in this chapter?</button>
-
-  <div class="progress-label"><span class="progress-count" data-lesson="class47">0 / 3 done</span></div>
-  <div class="progress-bar-wrap"><div class="progress-bar" data-lesson="class47"></div></div>
-
-  <div class="note">
-  This is a <strong>reference cheat sheet</strong>, not a new lesson — it assumes you already know all four patterns from <span class="fr">Les Groupes de Verbes</span>, <span class="fr">Groupe (-ER)</span>, <span class="fr">Groupe (-IR)</span>, and <span class="fr">Groupe (-RE)</span>, plus <span class="fr">avoir</span>/<span class="fr">être</span> from <span class="fr">Verbes Essentiels</span>. Four example verbs per pattern this time, to prove the ending pattern generalizes — not just one.
-  </div>
-
-  <h3>The Four Patterns — 4 Verbs Each</h3>
-
-
-  <h3>1️⃣ 1st Group (-ER)</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Person</th><th>manger</th><th>parler</th><th>habiter</th><th>aimer</th></tr>
-  <tr><td><strong>Je</strong></td><td><span class="fr">je mange</span></td><td><span class="fr">je parle</span></td><td><span class="fr">j'habite</span></td><td><span class="fr">j'aime</span></td></tr>
-  <tr><td><strong>Tu</strong></td><td><span class="fr">tu manges</span></td><td><span class="fr">tu parles</span></td><td><span class="fr">tu habites</span></td><td><span class="fr">tu aimes</span></td></tr>
-  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il mange</span></td><td><span class="fr">il parle</span></td><td><span class="fr">il habite</span></td><td><span class="fr">il aime</span></td></tr>
-  <tr><td><strong>Nous</strong></td><td><span class="fr">nous mangeons</span></td><td><span class="fr">nous parlons</span></td><td><span class="fr">nous habitons</span></td><td><span class="fr">nous aimons</span></td></tr>
-  <tr><td><strong>Vous</strong></td><td><span class="fr">vous mangez</span></td><td><span class="fr">vous parlez</span></td><td><span class="fr">vous habitez</span></td><td><span class="fr">vous aimez</span></td></tr>
-  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils mangent</span></td><td><span class="fr">ils parlent</span></td><td><span class="fr">ils habitent</span></td><td><span class="fr">ils aiment</span></td></tr>
-</table>
-  </div>
-
-  <h3>2️⃣ 2nd Group (-IR, regular)</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Person</th><th>finir</th><th>choisir</th><th>réussir</th><th>grandir</th></tr>
-  <tr><td><strong>Je</strong></td><td><span class="fr">je finis</span></td><td><span class="fr">je choisis</span></td><td><span class="fr">je réussis</span></td><td><span class="fr">je grandis</span></td></tr>
-  <tr><td><strong>Tu</strong></td><td><span class="fr">tu finis</span></td><td><span class="fr">tu choisis</span></td><td><span class="fr">tu réussis</span></td><td><span class="fr">tu grandis</span></td></tr>
-  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il finit</span></td><td><span class="fr">il choisit</span></td><td><span class="fr">il réussit</span></td><td><span class="fr">il grandit</span></td></tr>
-  <tr><td><strong>Nous</strong></td><td><span class="fr">nous finissons</span></td><td><span class="fr">nous choisissons</span></td><td><span class="fr">nous réussissons</span></td><td><span class="fr">nous grandissons</span></td></tr>
-  <tr><td><strong>Vous</strong></td><td><span class="fr">vous finissez</span></td><td><span class="fr">vous choisissez</span></td><td><span class="fr">vous réussissez</span></td><td><span class="fr">vous grandissez</span></td></tr>
-  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils finissent</span></td><td><span class="fr">ils choisissent</span></td><td><span class="fr">ils réussissent</span></td><td><span class="fr">ils grandissent</span></td></tr>
-</table>
-  </div>
-
-  <h3>3️⃣ 3rd Group (-RE)</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Person</th><th>attendre</th><th>vendre</th><th>perdre</th><th>répondre</th></tr>
-  <tr><td><strong>Je</strong></td><td><span class="fr">j'attends</span></td><td><span class="fr">je vends</span></td><td><span class="fr">je perds</span></td><td><span class="fr">je réponds</span></td></tr>
-  <tr><td><strong>Tu</strong></td><td><span class="fr">tu attends</span></td><td><span class="fr">tu vends</span></td><td><span class="fr">tu perds</span></td><td><span class="fr">tu réponds</span></td></tr>
-  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il attend</span></td><td><span class="fr">il vend</span></td><td><span class="fr">il perd</span></td><td><span class="fr">il répond</span></td></tr>
-  <tr><td><strong>Nous</strong></td><td><span class="fr">nous attendons</span></td><td><span class="fr">nous vendons</span></td><td><span class="fr">nous perdons</span></td><td><span class="fr">nous répondons</span></td></tr>
-  <tr><td><strong>Vous</strong></td><td><span class="fr">vous attendez</span></td><td><span class="fr">vous vendez</span></td><td><span class="fr">vous perdez</span></td><td><span class="fr">vous répondez</span></td></tr>
-  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils attendent</span></td><td><span class="fr">ils vendent</span></td><td><span class="fr">ils perdent</span></td><td><span class="fr">ils répondent</span></td></tr>
-</table>
-  </div>
-
-  <h3>4️⃣ 3rd Group (-IR irregular)</h3>
-  <div class="table-wrap">
-<table>
-  <tr><th>Person</th><th>partir</th><th>sortir</th><th>dormir</th><th>sentir</th></tr>
-  <tr><td><strong>Je</strong></td><td><span class="fr">je pars</span></td><td><span class="fr">je sors</span></td><td><span class="fr">je dors</span></td><td><span class="fr">je sens</span></td></tr>
-  <tr><td><strong>Tu</strong></td><td><span class="fr">tu pars</span></td><td><span class="fr">tu sors</span></td><td><span class="fr">tu dors</span></td><td><span class="fr">tu sens</span></td></tr>
-  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il part</span></td><td><span class="fr">il sort</span></td><td><span class="fr">il dort</span></td><td><span class="fr">il sent</span></td></tr>
-  <tr><td><strong>Nous</strong></td><td><span class="fr">nous partons</span></td><td><span class="fr">nous sortons</span></td><td><span class="fr">nous dormons</span></td><td><span class="fr">nous sentons</span></td></tr>
-  <tr><td><strong>Vous</strong></td><td><span class="fr">vous partez</span></td><td><span class="fr">vous sortez</span></td><td><span class="fr">vous dormez</span></td><td><span class="fr">vous sentez</span></td></tr>
-  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils partent</span></td><td><span class="fr">ils sortent</span></td><td><span class="fr">ils dorment</span></td><td><span class="fr">ils sentent</span></td></tr>
-</table>
-  </div>
-
-  <h3>5️⃣ Avoir &amp; Être (the two essential irregulars)</h3>
-  <p>These two don’t follow any of the four patterns above — they’re irregular and have to be memorized by sight. They’re also the two most-used verbs in the entire language, so there’s only one example each, not four — there’s nothing else quite like them to compare against.</p>
-  <div class="table-wrap">
-<table>
-  <tr><th>Person</th><th>avoir</th><th>être</th></tr>
-  <tr><td><strong>Je</strong></td><td><span class="fr">j'ai</span></td><td><span class="fr">je suis</span></td></tr>
-  <tr><td><strong>Tu</strong></td><td><span class="fr">tu as</span></td><td><span class="fr">tu es</span></td></tr>
-  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il a</span></td><td><span class="fr">il est</span></td></tr>
-  <tr><td><strong>Nous</strong></td><td><span class="fr">nous avons</span></td><td><span class="fr">nous sommes</span></td></tr>
-  <tr><td><strong>Vous</strong></td><td><span class="fr">vous avez</span></td><td><span class="fr">vous êtes</span></td></tr>
-  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils ont</span></td><td><span class="fr">ils sont</span></td></tr>
-</table>
-  </div>
-
-  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
-  <strong>Watch out:</strong> <span class="fr">partir</span>, <span class="fr">sortir</span>, <span class="fr">dormir</span>, and <span class="fr">sentir</span> all end in <span class="fr">-ir</span> just like <span class="fr">finir</span>, but none of them take the <span class="fr">-iss-</span> endings (<span class="fr">nous partons</span>, not "nous partissons"). Run the <span class="fr">-issant</span> test from <span class="fr">Les Groupes de Verbes</span> if you're ever unsure: "en partissant" isn't a real word, so <span class="fr">partir</span> is 3rd group (irregular), not 2nd group.
-  </div>
-
-  <ul class="checklist" data-lesson="class47" style="margin: 12px 0 20px;">
-    <li><input type="checkbox" id="c47-1"><label for="c47-1"><strong>FOUR PATTERNS:</strong> I can use this table to conjugate any verb from these four patterns correctly, on sight — including verbs not in this table's examples</label></li>
-    <li><input type="checkbox" id="c47-2"><label for="c47-2"><strong>AVOIR &amp; ÊTRE:</strong> I can conjugate avoir and être instantly, without hesitating</label></li>
-  </ul>
-
-  <h3>✅ Overall Mastery</h3>
-  <ul class="checklist" data-lesson="class47">
-    <li><input type="checkbox" id="gemini-skill-class47"><label for="gemini-skill-class47"><strong>GEMINI TEST:</strong> I completed the Gemini skill test for this chapter</label></li>
-  </ul>
-
-  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
-</div>
-
-<!-- ===================== CLASS 48: CHOOSING THE RIGHT "WHAT" ===================== -->
 <div class="lesson-card" id="class48">
   <div class="lesson-header">
     <h2>A2: Choisir le Bon "WHAT" — Quoi / Que / Quel / Qu'est-ce que <span class="date">— Vocabulary Reference</span></h2>
@@ -10458,16 +10190,8 @@
     <li><input type="checkbox" id="c54-3"><label for="c54-3"><strong>VERB/NOUN:</strong> I can build verb + plus/moins/autant que, and plus/moins/autant DE + noun + que, including the de→d' elision</label></li>
   </ul>
 
-  <h3>5️⃣ Quick Decision Flowchart</h3>
-  <div class="table-wrap">
-  <table>
-    <tr><th>Step</th><th>Question</th><th>Pattern</th></tr>
-    <tr><td>1</td><td>Is it a noun?</td><td>Use <span class="fr">de</span>: <span class="fr">plus de / moins de / autant de</span> + noun + <span class="fr">que</span></td></tr>
-    <tr><td>2</td><td>Is it a verb?</td><td>Verb + <span class="fr">plus que / moins que / autant que</span></td></tr>
-    <tr><td>3</td><td>Adjective or adverb?</td><td><span class="fr">plus / moins / aussi</span> + word + <span class="fr">que</span></td></tr>
-  </table>
-  </div>
-  <ul class="checklist" data-lesson="class54" style="margin: 12px 0 20px;">
+    <div class="note cs-ptr cs-ptr-a2">📌 Reference table moved to the <a href="#" onclick="showClass(65); window.scrollTo(0,0); return false;">A2 Cheat Sheet</a>.</div>
+<ul class="checklist" data-lesson="class54" style="margin: 12px 0 20px;">
     <li><input type="checkbox" id="c54-4"><label for="c54-4"><strong>FLOWCHART:</strong> I can quickly identify which of the 4 patterns a new sentence needs</label></li>
   </ul>
 
@@ -11763,6 +11487,323 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<!-- ===================== CLASS 64: A1 CHEAT SHEET ===================== -->
+<div class="lesson-card cheat cheat-a1" id="class64">
+  <div class="lesson-header">
+    <h2>📌 A1 Cheat Sheet <span class="date">— Quick reference</span></h2>
+  </div>
+
+  <p class="topic">Quick-reference tables from the A1 chapters, in one place. Tap a "From" link to open the chapter behind a table.</p>
+
+  <div class="cs-from">From the verb chapters</div>
+<h3>The Four Patterns — 4 Verbs Each</h3>
+
+
+  <h3>1️⃣ 1st Group (-ER)</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Person</th><th>manger</th><th>parler</th><th>habiter</th><th>aimer</th></tr>
+  <tr><td><strong>Je</strong></td><td><span class="fr">je mange</span></td><td><span class="fr">je parle</span></td><td><span class="fr">j'habite</span></td><td><span class="fr">j'aime</span></td></tr>
+  <tr><td><strong>Tu</strong></td><td><span class="fr">tu manges</span></td><td><span class="fr">tu parles</span></td><td><span class="fr">tu habites</span></td><td><span class="fr">tu aimes</span></td></tr>
+  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il mange</span></td><td><span class="fr">il parle</span></td><td><span class="fr">il habite</span></td><td><span class="fr">il aime</span></td></tr>
+  <tr><td><strong>Nous</strong></td><td><span class="fr">nous mangeons</span></td><td><span class="fr">nous parlons</span></td><td><span class="fr">nous habitons</span></td><td><span class="fr">nous aimons</span></td></tr>
+  <tr><td><strong>Vous</strong></td><td><span class="fr">vous mangez</span></td><td><span class="fr">vous parlez</span></td><td><span class="fr">vous habitez</span></td><td><span class="fr">vous aimez</span></td></tr>
+  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils mangent</span></td><td><span class="fr">ils parlent</span></td><td><span class="fr">ils habitent</span></td><td><span class="fr">ils aiment</span></td></tr>
+</table>
+  </div>
+
+  <h3>2️⃣ 2nd Group (-IR, regular)</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Person</th><th>finir</th><th>choisir</th><th>réussir</th><th>grandir</th></tr>
+  <tr><td><strong>Je</strong></td><td><span class="fr">je finis</span></td><td><span class="fr">je choisis</span></td><td><span class="fr">je réussis</span></td><td><span class="fr">je grandis</span></td></tr>
+  <tr><td><strong>Tu</strong></td><td><span class="fr">tu finis</span></td><td><span class="fr">tu choisis</span></td><td><span class="fr">tu réussis</span></td><td><span class="fr">tu grandis</span></td></tr>
+  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il finit</span></td><td><span class="fr">il choisit</span></td><td><span class="fr">il réussit</span></td><td><span class="fr">il grandit</span></td></tr>
+  <tr><td><strong>Nous</strong></td><td><span class="fr">nous finissons</span></td><td><span class="fr">nous choisissons</span></td><td><span class="fr">nous réussissons</span></td><td><span class="fr">nous grandissons</span></td></tr>
+  <tr><td><strong>Vous</strong></td><td><span class="fr">vous finissez</span></td><td><span class="fr">vous choisissez</span></td><td><span class="fr">vous réussissez</span></td><td><span class="fr">vous grandissez</span></td></tr>
+  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils finissent</span></td><td><span class="fr">ils choisissent</span></td><td><span class="fr">ils réussissent</span></td><td><span class="fr">ils grandissent</span></td></tr>
+</table>
+  </div>
+
+  <h3>3️⃣ 3rd Group (-RE)</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Person</th><th>attendre</th><th>vendre</th><th>perdre</th><th>répondre</th></tr>
+  <tr><td><strong>Je</strong></td><td><span class="fr">j'attends</span></td><td><span class="fr">je vends</span></td><td><span class="fr">je perds</span></td><td><span class="fr">je réponds</span></td></tr>
+  <tr><td><strong>Tu</strong></td><td><span class="fr">tu attends</span></td><td><span class="fr">tu vends</span></td><td><span class="fr">tu perds</span></td><td><span class="fr">tu réponds</span></td></tr>
+  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il attend</span></td><td><span class="fr">il vend</span></td><td><span class="fr">il perd</span></td><td><span class="fr">il répond</span></td></tr>
+  <tr><td><strong>Nous</strong></td><td><span class="fr">nous attendons</span></td><td><span class="fr">nous vendons</span></td><td><span class="fr">nous perdons</span></td><td><span class="fr">nous répondons</span></td></tr>
+  <tr><td><strong>Vous</strong></td><td><span class="fr">vous attendez</span></td><td><span class="fr">vous vendez</span></td><td><span class="fr">vous perdez</span></td><td><span class="fr">vous répondez</span></td></tr>
+  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils attendent</span></td><td><span class="fr">ils vendent</span></td><td><span class="fr">ils perdent</span></td><td><span class="fr">ils répondent</span></td></tr>
+</table>
+  </div>
+
+  <h3>4️⃣ 3rd Group (-IR irregular)</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Person</th><th>partir</th><th>sortir</th><th>dormir</th><th>sentir</th></tr>
+  <tr><td><strong>Je</strong></td><td><span class="fr">je pars</span></td><td><span class="fr">je sors</span></td><td><span class="fr">je dors</span></td><td><span class="fr">je sens</span></td></tr>
+  <tr><td><strong>Tu</strong></td><td><span class="fr">tu pars</span></td><td><span class="fr">tu sors</span></td><td><span class="fr">tu dors</span></td><td><span class="fr">tu sens</span></td></tr>
+  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il part</span></td><td><span class="fr">il sort</span></td><td><span class="fr">il dort</span></td><td><span class="fr">il sent</span></td></tr>
+  <tr><td><strong>Nous</strong></td><td><span class="fr">nous partons</span></td><td><span class="fr">nous sortons</span></td><td><span class="fr">nous dormons</span></td><td><span class="fr">nous sentons</span></td></tr>
+  <tr><td><strong>Vous</strong></td><td><span class="fr">vous partez</span></td><td><span class="fr">vous sortez</span></td><td><span class="fr">vous dormez</span></td><td><span class="fr">vous sentez</span></td></tr>
+  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils partent</span></td><td><span class="fr">ils sortent</span></td><td><span class="fr">ils dorment</span></td><td><span class="fr">ils sentent</span></td></tr>
+</table>
+  </div>
+
+  <h3>5️⃣ Avoir &amp; Être (the two essential irregulars)</h3>
+  <p>These two don’t follow any of the four patterns above — they’re irregular and have to be memorized by sight. They’re also the two most-used verbs in the entire language, so there’s only one example each, not four — there’s nothing else quite like them to compare against.</p>
+  <div class="table-wrap">
+<table>
+  <tr><th>Person</th><th>avoir</th><th>être</th></tr>
+  <tr><td><strong>Je</strong></td><td><span class="fr">j'ai</span></td><td><span class="fr">je suis</span></td></tr>
+  <tr><td><strong>Tu</strong></td><td><span class="fr">tu as</span></td><td><span class="fr">tu es</span></td></tr>
+  <tr><td><strong>Il / Elle</strong></td><td><span class="fr">il a</span></td><td><span class="fr">il est</span></td></tr>
+  <tr><td><strong>Nous</strong></td><td><span class="fr">nous avons</span></td><td><span class="fr">nous sommes</span></td></tr>
+  <tr><td><strong>Vous</strong></td><td><span class="fr">vous avez</span></td><td><span class="fr">vous êtes</span></td></tr>
+  <tr><td><strong>Ils / Elles</strong></td><td><span class="fr">ils ont</span></td><td><span class="fr">ils sont</span></td></tr>
+</table>
+  </div>
+
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+  <strong>Watch out:</strong> <span class="fr">partir</span>, <span class="fr">sortir</span>, <span class="fr">dormir</span>, and <span class="fr">sentir</span> all end in <span class="fr">-ir</span> just like <span class="fr">finir</span>, but none of them take the <span class="fr">-iss-</span> endings (<span class="fr">nous partons</span>, not "nous partissons"). Run the <span class="fr">-issant</span> test from <span class="fr">Les Groupes de Verbes</span> if you're ever unsure: "en partissant" isn't a real word, so <span class="fr">partir</span> is 3rd group (irregular), not 2nd group.
+  </div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(6); window.scrollTo(0,0); return false;">Endings</a></div>
+<h3>Quick Reference: Gender Ending Chart</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Feminine Endings</th><th>Examples</th><th>Masculine Endings</th><th>Examples</th></tr>
+  <tr><td><span class="fr">-tion/-ion</span></td><td><span class="fr">connexion</span>, <span class="fr">option</span></td><td><span class="fr">-ment</span></td><td><span class="fr">gouvernement</span>, <span class="fr">département</span></td></tr>
+  <tr><td><span class="fr">-ure</span></td><td><span class="fr">nature</span>, <span class="fr">voiture</span></td><td><span class="fr">-age</span></td><td><span class="fr">village</span>, <span class="fr">fromage</span></td></tr>
+  <tr><td><span class="fr">-ade</span></td><td><span class="fr">promenade</span>, <span class="fr">salade</span></td><td><span class="fr">-oir</span></td><td><span class="fr">miroir</span>, <span class="fr">tiroir</span></td></tr>
+  <tr><td><span class="fr">-e (most)</span></td><td><span class="fr">porte</span>, <span class="fr">maison</span></td><td><span class="fr">-isme</span></td><td><span class="fr">tourisme</span>, <span class="fr">journalisme</span></td></tr>
+  <tr><td><span class="fr">-té</span></td><td><span class="fr">liberté</span>, <span class="fr">beauté</span></td><td><span class="fr">-eau</span></td><td><span class="fr">bateau</span>, <span class="fr">château</span></td></tr>
+  <tr><td><span class="fr">-ette</span></td><td><span class="fr">bicyclette</span>, <span class="fr">fourchette</span></td><td><span class="fr">-phone / -scope</span></td><td><span class="fr">téléphone</span>, <span class="fr">télescope</span></td></tr>
+  <tr><td><span class="fr">-ance / -ence</span></td><td><span class="fr">différence</span>, <span class="fr">chance</span></td><td><span class="fr">-eur (machines)</span></td><td><span class="fr">ordinateur</span>, <span class="fr">moteur</span></td></tr>
+  <tr><td><span class="fr">-esse</span></td><td><span class="fr">jeunesse</span>, <span class="fr">tristesse</span></td><td colspan="2"><strong>Épicène (same word, either gender):</strong> <span class="fr">artiste</span>, <span class="fr">architecte</span>, <span class="fr">journaliste</span></td></tr>
+  <tr><td colspan="2"><strong>Special: Days, Months, Seasons = MASCULINE</strong><br>Days: <span class="fr">lundi</span>, <span class="fr">mardi</span>... / Months: <span class="fr">janvier</span>, <span class="fr">février</span>... / Seasons: <span class="fr">printemps</span>, <span class="fr">été</span>, <span class="fr">automne</span>, <span class="fr">hiver</span></td><td colspan="2"><strong>Special: English words = MASCULINE</strong><br><span class="fr">week-end</span>, <span class="fr">parking</span>, <span class="fr">sport</span>, <span class="fr">tennis</span></td></tr>
+</table>
+</div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(8); window.scrollTo(0,0); return false;">Gender</a></div>
+<h3>Nationality Adjectives — reference table</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Masculine</th><th>Feminine</th><th>Plural</th></tr>
+  <tr><td><span class="fr">le Français</span></td><td><span class="fr">la Française</span></td><td><span class="fr">les Français / Françaises</span></td></tr>
+  <tr><td><span class="fr">le Chinois</span></td><td><span class="fr">la Chinoise</span></td><td><span class="fr">les Chinois / Chinoises</span></td></tr>
+  <tr><td><span class="fr">l'Allemand</span></td><td><span class="fr">l'Allemande</span></td><td><span class="fr">les Allemands / Allemandes</span></td></tr>
+  <tr><td><span class="fr">l'Espagnol</span></td><td><span class="fr">l'Espagnole</span></td><td><span class="fr">les Espagnols / Espagnoles</span></td></tr>
+  <tr><td><span class="fr">l'Italien</span></td><td><span class="fr">l'Italienne</span></td><td><span class="fr">les Italiens / Italiennes</span></td></tr>
+  <tr><td><span class="fr">le Coréen</span></td><td><span class="fr">la Coréenne</span></td><td><span class="fr">les Coréens / Coréennes</span></td></tr>
+  <tr><td><span class="fr">tchèque</span></td><td><span class="fr">tchèque</span></td><td><span class="fr">tchèques</span></td></tr>
+  <tr><td><span class="fr">japonais</span></td><td><span class="fr">japonaise</span></td><td><span class="fr">japonais / japonaises</span></td></tr>
+  <tr><td><span class="fr">indien</span></td><td><span class="fr">indienne</span></td><td><span class="fr">indiens / indiennes</span></td></tr>
+  </table>
+</div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(11); window.scrollTo(0,0); return false;">Professions</a></div>
+<h3>Possessive Adjectives — Masculine Singular Reference</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>French</th><th>English</th></tr>
+  <tr><td>mon</td><td>my</td></tr>
+  <tr><td>ton</td><td>your</td></tr>
+  <tr><td>son</td><td>his / her</td></tr>
+  <tr><td>notre</td><td>our</td></tr>
+  <tr><td>votre</td><td>your</td></tr>
+  <tr><td>leur</td><td>their</td></tr>
+  </table>
+</div>
+  <p class="example">son stylo — his pen<br>
+  son stylo — her pen (same word — context tells you which)</p>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(14); window.scrollTo(0,0); return false;">Demonstratives</a></div>
+<h3>C'est vs Il/Elle Est Reference Table</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Form</th><th>Meaning</th><th>Used for</th></tr>
+  <tr><td class="fr">c'est</td><td>it is / this is</td><td>followed by an article + noun (un/une/le/la + noun)</td></tr>
+  <tr><td class="fr">il est / elle est</td><td>he is / she is</td><td>followed directly by an adjective or nationality</td></tr>
+  </table>
+</div>
+  <p class="example">C'est un artiste. — This is an artist.<br>C'est une visite d'1 heure. — This is a one-hour visit.<br>C'est le quartier historique. — This is the historical neighborhood.<br>C'est la place du Capitole. — This is the Capitol place.<br>Il est américain. — He is American.<br>Elle est calme. — She is calm.</p>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(14); window.scrollTo(0,0); return false;">Demonstratives</a></div>
+<h3>Demonstrative Adjectives Reference Table</h3>
+  <div class="note">Used to say "this/that/these/those." Like all French adjectives, they agree in gender and number with the noun.</div>
+  <div class="table-wrap">
+<table>
+  <tr><th>Form</th><th>Used for</th><th>Example</th></tr>
+  <tr><td class="fr">ce</td><td>masculine singular</td><td>ce stylo — this pen<br>ce canapé — this sofa</td></tr>
+  <tr><td class="fr">cet</td><td><span class="fr">masculine singular, noun starts with a vowel or (silent) "h"</span></td><td><span class="fr">cet ami — this friend<br>cet étudiant — this student<br>cet homme — this man<br>cet appareil — this device<br>cet hôpital — this hospital</span></td></tr>
+  <tr><td class="fr">cette</td><td>feminine singular</td><td>cette voiture — this car<br>cette femme — this woman<br>cette fille — this girl<br>cette maison — this house</td></tr>
+  <tr><td class="fr">ces</td><td>plural (masc. or fem.)</td><td>ces stylos — these pens<br>ces valises — these suitcases<br>ces amis — these friends<br>ces appareils — these devices</td></tr>
+  </table>
+</div>
+  <div class="note">
+  "Cet" exists purely for pronunciation — it links smoothly with a following vowel/h sound. Context tells you gender when the pronunciation is identical (e.g. "cet ami" for a male friend vs "cette amie" for a female friend sound similar when spoken).
+  </div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(16); window.scrollTo(0,0); return false;">Colors</a></div>
+<h3>Core Connectors Reference</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>Connector</th><th>Meaning</th><th>Expresses</th><th>Followed by</th></tr>
+  <tr><td class="fr">pour</td><td>for / in order to</td><td>the goal</td><td>verb (infinitive) or noun</td></tr>
+  <tr><td class="fr">parce que</td><td>because</td><td>the cause</td><td>full clause (subject + verb + noun)</td></tr>
+  <tr><td class="fr">à cause de</td><td>because of / due to</td><td>the cause</td><td>noun or pronoun only</td></tr>
+  <tr><td class="fr">mais</td><td>but</td><td>opposition</td><td>full clause</td></tr>
+  <tr><td class="fr">avec</td><td>with</td><td>presence</td><td>noun/pronoun</td></tr>
+  <tr><td class="fr">sans</td><td>without</td><td>absence</td><td>noun/pronoun</td></tr>
+  </table>
+</div>
+  <div class="note">See Class 16 for more worked examples and the assignment correction on these same connectors.</div>
+  <p class="example">Je vais au collège pour étudier. — I go to college to study.<br>L'Espagne a gagné parce qu'ils ont bien joué. — Spain won because they played well.<br>Je ne suis pas venu à cause de toi. — I didn't come because of you.<br>Il est drôle mais il est méchant. — He's funny but he's mean.<br>Je vais au magasin avec mon ami. — I go to the shop with my friend.<br>Je vais au magasin sans mon ami. — I go to the shop without my friend.</p>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(21); window.scrollTo(0,0); return false;">Description</a></div>
+<h3>Descriptive Adjectives Reference Table</h3>
+  <div class="table-wrap">
+<table>
+  <tr><th>English</th><th>Masculine</th><th>Feminine</th></tr>
+  <tr><td>light</td><td><span class="fr">léger</span></td><td><span class="fr">légère</span></td></tr>
+  <tr><td>heavy</td><td>lourd</td><td>lourde</td></tr>
+  <tr><td>round</td><td>rond</td><td>ronde</td></tr>
+  </table>
+</div>
+  <p class="example">Le porte-clé est rond. — The keychain is round.</p>
+
+  
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
+<!-- ===================== CLASS 65: A2 CHEAT SHEET ===================== -->
+<div class="lesson-card cheat cheat-a2" id="class65">
+  <div class="lesson-header">
+    <h2>📌 A2 Cheat Sheet <span class="date">— Quick reference</span></h2>
+  </div>
+
+  <p class="topic">Quick-reference tables from the A2 chapters, in one place. Tap a "From" link to open the chapter behind a table.</p>
+
+  <div class="cs-from">From <a href="#" onclick="showClass(23); window.scrollTo(0,0); return false;">Adverbs</a></div>
+<h3>🚀 QUICK REVISION CHEAT SHEET</h3>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    <strong>Golden Rule:</strong> Adverbs are INVARIABLE (never change). Ask yourself: "What question do they answer?"
+  </div>
+  <div class="table-wrap">
+<table style="font-size: 13px;">
+  <tr><th>Type</th><th>Question</th><th>Examples</th><th>Placement</th></tr>
+  <tr><td><strong>MANNER</strong></td><td>Comment ?</td><td>bien, mal, lentement, rapidement, facilement, poliment, sérieusement</td><td>After verb (simple); after participle (compound)</td></tr>
+  <tr><td><strong>TIME</strong></td><td>Quand ?</td><td>aujourd'hui, hier, demain, bientôt, déjà, maintenant, récemment, enfin, tard, en retard</td><td>Start/end of sentence; between aux & participle (short ones)</td></tr>
+  <tr><td><strong>PLACE</strong></td><td>Où ?</td><td>ici, là, là-bas, dehors, dedans, devant, derrière, près, loin, partout, nulle part, ailleurs</td><td>After verb or at end</td></tr>
+  <tr><td><strong>FREQUENCY</strong></td><td>Combien de fois ?</td><td>toujours, souvent, habituellement, généralement, normalement, parfois, rarement, jamais, presque jamais</td><td>After verb; with ne for negation</td></tr>
+  <tr><td><strong>QUANTITY/INTENSITY</strong></td><td>À quel degré ?</td><td>très, trop, assez, beaucoup, plus, moins, presque, tellement, vraiment, complètement</td><td><strong>BEFORE adjectives/adverbs</strong></td></tr>
+  <tr><td><strong>INTERROGATIVE</strong></td><td>N/A</td><td>où, quand, comment, pourquoi, combien</td><td>Question words (inversion or standard order)</td></tr>
+  <tr><td><strong>CONNECTORS</strong></td><td>Link ideas</td><td>pourtant, cependant, ainsi, ensuite, enfin, également, malheureusement, heureusement</td><td>Between sentences (often with comma)</td></tr>
+</table>
+</div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(25); window.scrollTo(0,0); return false;">Prepositions</a></div>
+<h3>🚀 QUICK REVISION CHEAT SHEET</h3>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    <strong>Golden Rule:</strong> Prepositions are INVARIABLE (never change). Ask: "What relationship am I showing? Where? When? How?"
+  </div>
+  <div class="table-wrap">
+<table style="font-size: 12px;">
+  <tr><th>Category</th><th>Key Examples</th><th>Key Question</th></tr>
+  <tr><td><strong>LIEU (Place)</strong></td><td>à, dans, sur, sous, devant, derrière, chez, entre, près de, loin de</td><td>Où ? (Where?)</td></tr>
+  <tr><td><strong>TEMPS (Time)</strong></td><td>à, en, dans, depuis, pendant, pour, avant, après</td><td>Quand ? (When?)</td></tr>
+  <tr><td><strong>DIRECTION (Movement)</strong></td><td>à, vers, jusqu'à, chez, de</td><td>Vers où ? (Toward where?)</td></tr>
+  <tr><td><strong>ORIGINE (Origin)</strong></td><td>de, du, de la, des</td><td>D'où ? (From where?)</td></tr>
+  <tr><td><strong>MOYEN (Means)</strong></td><td>en, par, avec, à (for pied/vélo)</td><td>Comment ? (How?)</td></tr>
+  <tr><td><strong>CAUSE (Reason)</strong></td><td>à cause de, grâce à, en raison de</td><td>Pourquoi ? (Why?)</td></tr>
+</table>
+</div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(26); window.scrollTo(0,0); return false;">Prepositions + Future</a></div>
+<h3>🚀 QUICK REVISION CHEAT SHEET</h3>
+  <div class="note" style="background: #fff9c4; border-left: 4px solid #fbc02d;">
+    <strong>Golden Rule:</strong> Future tense + prepositions = showing WHEN (à, en, dans, pendant, jusqu'à), WHERE (à, de, chez, vers), HOW (en, avec, par), and DURATION (pour, pendant) of future actions.
+  </div>
+
+  <div class="table-wrap">
+<table style="font-size: 12px;">
+  <tr><th>Future Tense Type</th><th>Formula</th><th>Example</th><th>English</th></tr>
+  <tr><td><strong>Futur Proche</strong></td><td>aller (present) + infinitive</td><td><span class="fr">Je vais manger à 18h</span></td><td>I will eat at 6pm</td></tr>
+  <tr><td><strong>Futur Simple</strong></td><td>verb stem + ai/as/a/ons/ez/ont</td><td><span class="fr">Je mangerai à 18h</span></td><td>I will eat at 6pm</td></tr>
+  <tr><td><strong>With Duration</strong></td><td>future + pour/pendant + time</td><td><span class="fr">Je travaillerai pendant 3 heures</span></td><td>I will work for 3 hours</td></tr>
+  <tr><td><strong>With Time</strong></td><td>future + à/en/dans/jusqu'à + time</td><td><span class="fr">Elle arrivera dans 2 jours</span></td><td>She will arrive in 2 days</td></tr>
+  <tr><td><strong>With Location</strong></td><td>future + à/de/chez/vers + place</td><td><span class="fr">Il ira à Paris demain</span></td><td>He will go to Paris tomorrow</td></tr>
+</table>
+</div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(27); window.scrollTo(0,0); return false;">Expressions</a></div>
+<h3>6️⃣ Quick Review: Contracted Articles</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Preposition + Article</th><th>Contracts to</th><th>Example</th></tr>
+    <tr><td>à + le</td><td><span class="fr">au</span></td><td><span class="fr">Je vais au marché</span></td></tr>
+    <tr><td>à + les</td><td><span class="fr">aux</span></td><td><span class="fr">Je parle aux étudiants</span></td></tr>
+    <tr><td>de + le</td><td><span class="fr">du</span></td><td><span class="fr">Je reviens du bureau</span></td></tr>
+    <tr><td>de + les</td><td><span class="fr">des</span></td><td><span class="fr">Je parle des problèmes</span></td></tr>
+    <tr><td>à/de + la, à/de + l'</td><td>unchanged</td><td><span class="fr">Je vais à la banque</span>, <span class="fr">Je reviens de l'université</span></td></tr>
+  </table>
+  </div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(31); window.scrollTo(0,0); return false;">Cas Particuliers</a></div>
+<h3>3️⃣ All 16 Dr &amp; Mrs Vandertramp Verbs — Full Agreement Table</h3>
+  <p>The complete reference — every verb in all four forms:</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Verb</th><th>Masc. sing.</th><th>Fém. sing.</th><th>Masc. plur.</th><th>Fém. plur.</th></tr>
+    <tr><td><span class="fr">aller</span></td><td><span class="fr">allé</span></td><td><span class="fr">allée</span></td><td><span class="fr">allés</span></td><td><span class="fr">allées</span></td></tr>
+    <tr><td><span class="fr">venir</span></td><td><span class="fr">venu</span></td><td><span class="fr">venue</span></td><td><span class="fr">venus</span></td><td><span class="fr">venues</span></td></tr>
+    <tr><td><span class="fr">partir</span></td><td><span class="fr">parti</span></td><td><span class="fr">partie</span></td><td><span class="fr">partis</span></td><td><span class="fr">parties</span></td></tr>
+    <tr><td><span class="fr">sortir</span></td><td><span class="fr">sorti</span></td><td><span class="fr">sortie</span></td><td><span class="fr">sortis</span></td><td><span class="fr">sorties</span></td></tr>
+    <tr><td><span class="fr">arriver</span></td><td><span class="fr">arrivé</span></td><td><span class="fr">arrivée</span></td><td><span class="fr">arrivés</span></td><td><span class="fr">arrivées</span></td></tr>
+    <tr><td><span class="fr">entrer</span></td><td><span class="fr">entré</span></td><td><span class="fr">entrée</span></td><td><span class="fr">entrés</span></td><td><span class="fr">entrées</span></td></tr>
+    <tr><td><span class="fr">rentrer</span></td><td><span class="fr">rentré</span></td><td><span class="fr">rentrée</span></td><td><span class="fr">rentrés</span></td><td><span class="fr">rentrées</span></td></tr>
+    <tr><td><span class="fr">retourner</span></td><td><span class="fr">retourné</span></td><td><span class="fr">retournée</span></td><td><span class="fr">retournés</span></td><td><span class="fr">retournées</span></td></tr>
+    <tr><td><span class="fr">rester</span></td><td><span class="fr">resté</span></td><td><span class="fr">restée</span></td><td><span class="fr">restés</span></td><td><span class="fr">restées</span></td></tr>
+    <tr><td><span class="fr">tomber</span></td><td><span class="fr">tombé</span></td><td><span class="fr">tombée</span></td><td><span class="fr">tombés</span></td><td><span class="fr">tombées</span></td></tr>
+    <tr><td><span class="fr">monter</span></td><td><span class="fr">monté</span></td><td><span class="fr">montée</span></td><td><span class="fr">montés</span></td><td><span class="fr">montées</span></td></tr>
+    <tr><td><span class="fr">descendre</span></td><td><span class="fr">descendu</span></td><td><span class="fr">descendue</span></td><td><span class="fr">descendus</span></td><td><span class="fr">descendues</span></td></tr>
+    <tr><td><span class="fr">naître</span></td><td><span class="fr">né</span></td><td><span class="fr">née</span></td><td><span class="fr">nés</span></td><td><span class="fr">nées</span></td></tr>
+    <tr><td><span class="fr">mourir</span></td><td><span class="fr">mort</span></td><td><span class="fr">morte</span></td><td><span class="fr">morts</span></td><td><span class="fr">mortes</span></td></tr>
+    <tr><td><span class="fr">devenir</span></td><td><span class="fr">devenu</span></td><td><span class="fr">devenue</span></td><td><span class="fr">devenus</span></td><td><span class="fr">devenues</span></td></tr>
+    <tr><td><span class="fr">revenir</span></td><td><span class="fr">revenu</span></td><td><span class="fr">revenue</span></td><td><span class="fr">revenus</span></td><td><span class="fr">revenues</span></td></tr>
+  </table>
+  </div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(45); window.scrollTo(0,0); return false;">Pronoms Compléments</a></div>
+<h3>1️⃣ Quick Recap: COD vs COI</h3>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th></th><th>COD</th><th>COI</th></tr>
+    <tr><td>Receives the action</td><td>Directly</td><td>Indirectly — through a preposition</td></tr>
+    <tr><td>Answers the question</td><td>qui ? / quoi ?</td><td>à qui ? / à quoi ? / de qui ? / de quoi ?</td></tr>
+    <tr><td>Preposition in front?</td><td>No</td><td>Yes (à, de, pour, avec, en, chez, sur...)</td></tr>
+    <tr><td>Example</td><td><span class="fr">Je vois un film.</span></td><td><span class="fr">Je parle à mon ami.</span></td></tr>
+  </table>
+  </div>
+
+    <div class="cs-from">From <a href="#" onclick="showClass(54); window.scrollTo(0,0); return false;">Le Comparatif</a></div>
+<h3>5️⃣ Quick Decision Flowchart</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Step</th><th>Question</th><th>Pattern</th></tr>
+    <tr><td>1</td><td>Is it a noun?</td><td>Use <span class="fr">de</span>: <span class="fr">plus de / moins de / autant de</span> + noun + <span class="fr">que</span></td></tr>
+    <tr><td>2</td><td>Is it a verb?</td><td>Verb + <span class="fr">plus que / moins que / autant que</span></td></tr>
+    <tr><td>3</td><td>Adjective or adverb?</td><td><span class="fr">plus / moins / aussi</span> + word + <span class="fr">que</span></td></tr>
+  </table>
+  </div>
+  
+  <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
+</div>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -11917,7 +11958,7 @@
 let currentClass = 1;
 // Real class numbers in order. There is no class 24 (renumbered away), so
 // navigation must walk this list instead of assuming a contiguous 1..N range.
-const classOrder = [1,2,35,36,37,38,39,40,47,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,25,26,27,28,29,30,31,32,33,34,50,41,42,43,44,45,46,48,49,51,52,53,54,55,56,57,58,59,20,60,61,62,63];
+const classOrder = [1,2,35,36,37,38,39,40,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,21,22,23,25,26,27,28,29,30,31,32,33,34,50,41,42,43,44,45,46,48,49,51,52,53,54,55,56,57,58,59,20,60,61,62,63,64,65];
 const totalClasses = classOrder.length;
 
 // Update chapter colors based on completion
@@ -12198,7 +12239,6 @@ function updateGlobalProgress() {
     class38: ["c38-1","c38-2","c38-3","gemini-skill-class38"],
     class39: ["c39-1","c39-2","c39-3","c39-4","gemini-skill-class39"],
     class40: ["c40-1","c40-2","c40-3","gemini-skill-class40"],
-    class47: ["c47-1","c47-2","gemini-skill-class47"],
     class3:  ["c3-1","c3-2","c3-3","c3-4","c3-5","c3-6","c3-7","c3-8","gemini-skill-class3"],
     class4:  ["c4-1","c4-2","c4-3","c4-4","c4-5","c4-6","gemini-skill-class4"],
     class5:  ["c5-1","c5-2","c5-3","c5-4","c5-5","c5-6","gemini-skill-class5"],
@@ -12513,7 +12553,7 @@ window.addEventListener('DOMContentLoaded', function() {
       const label = link && link.firstChild ? link.firstChild.textContent.trim() : '';
       const h2 = card.querySelector('h2');
       const title = (h2 ? h2.firstChild.textContent : label).replace(/\s+/g, ' ').trim() || label;
-      const lvl = link && link.closest('.level-content') && link.closest('.level-content').classList.contains('a2') ? 'A2' : 'A1';
+      const lvl = link && link.classList.contains('cs-link') ? '' : (link && link.closest('.level-content') && link.closest('.level-content').classList.contains('a2') ? 'A2' : 'A1');
       const text = card.textContent.replace(/\s+/g, ' ');
       index.push({ n, name: label || title, title, lvl, text, ntext: norm(text), nname: norm(label + ' ' + title) });
     });
@@ -12533,7 +12573,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const others = idx.filter(e => e.nname.indexOf(q) < 0 && e.ntext.indexOf(q) >= 0);
     let h = '';
     if (names.length) {
-      h += '<div class="sg">Chapters</div>' + names.map(e => '<a class="si" data-n="' + e.n + '"><b>' + esc(e.lvl) + '</b> · ' + esc(e.name) + '</a>').join('');
+      h += '<div class="sg">Chapters</div>' + names.map(e => '<a class="si" data-n="' + e.n + '">' + (e.lvl ? '<b>' + esc(e.lvl) + '</b> · ' : '') + esc(e.name) + '</a>').join('');
     }
     if (others.length) {
       h += '<div class="sg">Other matches</div>' + others.slice(0, 30).map(e => '<a class="si" data-n="' + e.n + '">' + esc(e.name) + ' <small>' + snippet(e, q) + '</small></a>').join('');
