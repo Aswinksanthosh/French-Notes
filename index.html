@@ -642,6 +642,16 @@
     font-size: 14px;
   }
   .back-to-top-btn:hover { background: var(--blue); color: white; }
+
+  #siteSearch { position: relative; margin: 0 0 12px; }
+  #ssq { width: 100%; box-sizing: border-box; font: inherit; font-size: 15px; padding: 10px 12px; border: 2px solid var(--blue); border-radius: 10px; background: #fff; color: #1b2a3a; }
+  #ssr { position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 50; max-height: 65vh; overflow-y: auto; background: #fff; border: 1px solid #cfd8e3; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,.18); padding: 4px 0; }
+  #ssr .sg { font-size: 12px; font-weight: 700; color: #667; text-transform: uppercase; padding: 8px 12px 4px; }
+  #ssr .si { display: block; padding: 8px 12px; border-top: 1px solid #eef1f5; cursor: pointer; font-size: 14px; color: #1b2a3a; }
+  #ssr .si b { color: var(--blue); }
+  #ssr .si small { display: block; color: #667; font-size: 12px; margin-top: 2px; line-height: 1.35; }
+  #ssr mark { background: #fff3a8; padding: 0 1px; }
+  #ssr .sn { padding: 10px 12px; color: #667; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -683,6 +693,11 @@
 </div>
 
 <div style="text-align:center;margin:-12px 0 16px"><a href="plan.html" style="color:var(--blue);font-weight:600;font-size:14px">📅 Study Plan — how much is left?</a></div>
+
+<div id="siteSearch">
+  <input id="ssq" type="search" placeholder="🔍 Search chapter names or notes" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <div id="ssr" hidden></div>
+</div>
 
 <div class="chapter-nav">
   <button class="chapter-btn" id="prevBtn" onclick="previousChapter()">← Previous</button>
@@ -12312,6 +12327,74 @@ window.addEventListener('DOMContentLoaded', function() {
   updateGlobalProgress();
   updateChapterColors();
 });
+</script>
+
+<script>
+// Site search: chapter-name matches first, then matches inside chapter notes.
+(function() {
+  const input = document.getElementById('ssq');
+  const panel = document.getElementById('ssr');
+  if (!input || !panel) return;
+  const norm = s => s.split('').map(c => {
+    const n = c.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return n.length ? n.charAt(0) : ' ';
+  }).join('');
+  const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  let index = null;
+  function build() {
+    if (index) return index;
+    index = [];
+    classOrder.forEach(n => {
+      const card = document.getElementById('class' + n);
+      if (!card) return;
+      const link = document.querySelector('nav a[onclick="goToClass(' + n + ')"]');
+      const label = link && link.firstChild ? link.firstChild.textContent.trim() : '';
+      const h2 = card.querySelector('h2');
+      const title = (h2 ? h2.firstChild.textContent : label).replace(/\s+/g, ' ').trim() || label;
+      const lvl = link && link.closest('.level-content') && link.closest('.level-content').classList.contains('a2') ? 'A2' : 'A1';
+      const text = card.textContent.replace(/\s+/g, ' ');
+      index.push({ n, name: label || title, title, lvl, text, ntext: norm(text), nname: norm(label + ' ' + title) });
+    });
+    return index;
+  }
+  function snippet(e, q) {
+    const i = e.ntext.indexOf(q);
+    if (i < 0) return '';
+    const a = Math.max(0, i - 40), b = Math.min(e.text.length, i + q.length + 60);
+    return (a > 0 ? '…' : '') + esc(e.text.slice(a, i)) + '<mark>' + esc(e.text.slice(i, i + q.length)) + '</mark>' + esc(e.text.slice(i + q.length, b)) + (b < e.text.length ? '…' : '');
+  }
+  function run() {
+    const q = norm(input.value.trim());
+    if (q.length < 2) { panel.hidden = true; return; }
+    const idx = build();
+    const names = idx.filter(e => e.nname.indexOf(q) >= 0);
+    const others = idx.filter(e => e.nname.indexOf(q) < 0 && e.ntext.indexOf(q) >= 0);
+    let h = '';
+    if (names.length) {
+      h += '<div class="sg">Chapters</div>' + names.map(e => '<a class="si" data-n="' + e.n + '"><b>' + esc(e.lvl) + '</b> · ' + esc(e.name) + '</a>').join('');
+    }
+    if (others.length) {
+      h += '<div class="sg">Other matches</div>' + others.slice(0, 30).map(e => '<a class="si" data-n="' + e.n + '">' + esc(e.name) + ' <small>' + snippet(e, q) + '</small></a>').join('');
+    }
+    if (!h) h = '<div class="sn">No results for "' + esc(input.value.trim()) + '"</div>';
+    panel.innerHTML = h;
+    panel.hidden = false;
+  }
+  let timer = null;
+  input.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(run, 150); });
+  input.addEventListener('focus', () => { if (input.value.trim().length >= 2) run(); });
+  panel.addEventListener('click', ev => {
+    const a = ev.target.closest('.si');
+    if (!a) return;
+    ev.preventDefault();
+    showClass(parseInt(a.dataset.n, 10));
+    panel.hidden = true;
+    input.blur();
+  });
+  document.addEventListener('click', ev => {
+    if (!ev.target.closest('#siteSearch')) panel.hidden = true;
+  });
+})();
 </script>
 
 </body>
