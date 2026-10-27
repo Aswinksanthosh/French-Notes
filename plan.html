@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Study Plan</title>
-<style>
+<style>#tefList input[type=text],#tefList input:not([type=checkbox]){width:100%;font:inherit;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);box-sizing:border-box}
 :root{--bg:#f7f9fc;--card:#fff;--ink:#1b2a3a;--mut:#667;--green:#2e7d32;--line:#dde3ea;--blue:#1976d2}
 @media(prefers-color-scheme:dark){:root{--bg:#10151b;--card:#1a222b;--ink:#e8eef4;--mut:#9aa7b4;--green:#81c784;--line:#2b3744;--blue:#64b5f6}}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,sans-serif;padding:16px;max-width:560px;margin:auto}
@@ -84,8 +84,18 @@ const TEF=[
 ['TEF leaflet, Centre Yves-Thériault (PDF)','https://centre-yves-theriault.cssdm.gouv.qc.ca/files/TEF-depliant-1.pdf.pdf'],
 ['TV5Monde Apprendre le français (listening + reading by level)','https://apprendre.tv5monde.com/'],
 ['RFI Journal en français facile (listening)','https://francaisfacile.rfi.fr/']];
-(function(){const A=acts();document.getElementById('tefList').innerHTML=TEF.map((s,i)=>{const k='tef'+i,on=A[k];return '<label class="'+(on?'done':'')+'" style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+' style="width:18px;height:18px;flex:none"><a href="'+s[1]+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+s[0]+'</a></label>'}).join('');
-document.querySelectorAll('#tefList input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);e.parentNode.classList.toggle('done',e.checked)})})();
+function xs(){try{return JSON.parse(localStorage.getItem('tef_extra')||'[]')}catch(e){return[]}}
+function setXs(a){try{localStorage.setItem('tef_extra',JSON.stringify(a))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function renderTef(){const A=acts(),X=xs();
+ const row=(k,name,url,del)=>{const on=A[k];const nm=url?'<a href="'+esc(url)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+esc(name)+'</a>':'<span>'+esc(name)+'</span>';
+  return '<label class="'+(on?'done':'')+'" style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--line)"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+' style="width:18px;height:18px;flex:none">'+nm+(del!=null?'<button class="go" data-del="'+del+'" title="Delete">×</button>':'')+'</label>'};
+ document.getElementById('tefList').innerHTML=TEF.map((s,i)=>row('tef'+i,s[0],s[1],null)).join('')+X.map((x,i)=>row('tefx'+x.id,x.n,x.u,i)).join('')+
+ '<div style="margin-top:12px"><input id="tn" placeholder="Name of the source" style="width:100%;margin-bottom:6px"><input id="tu" placeholder="Link (optional)" inputmode="url" style="width:100%;margin-bottom:6px"><button id="ta" style="font:inherit;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)">+ Add source</button></div>';
+ document.querySelectorAll('#tefList input[type=checkbox]').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);e.parentNode.classList.toggle('done',e.checked)});
+ document.querySelectorAll('#tefList .go').forEach(b=>b.onclick=ev=>{ev.preventDefault();const a=xs();a.splice(+b.dataset.del,1);setXs(a);renderTef()});
+ document.getElementById('ta').onclick=()=>{const n=document.getElementById('tn').value.trim();let u=document.getElementById('tu').value.trim();if(!n&&!u)return;if(u&&!/^https?:\/\//i.test(u))u='https://'+u;const a=xs();a.push({id:Date.now(),n:n||u,u:u});setXs(a);renderTef()}}
+renderTef();
 function copyProg(){const A=acts(),L=[];W.forEach(d=>{const s=[];d.b.forEach((b,i)=>{(b.c||[]).forEach(n=>{if(A['c'+n])s.push(CH.find(c=>c.n===n).name)});(b.a||[]).forEach((a,j)=>{if(A[d.d+'-'+i+'-'+j])s.push(a)})});if(s.length)L.push(d.l+': '+s.join(', '))});
  const t=L.join('\n')||'Nothing ticked yet';try{navigator.clipboard.writeText(t);document.getElementById('cp').textContent='Copied ✓'}catch(e){prompt('Copy this:',t)}}
 </script></body></html>
