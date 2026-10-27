@@ -663,7 +663,7 @@
   .tool-btn.on { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
   #toolPanel { margin-top: 8px; }
   #planLink { text-align: center; padding: 10px; background: var(--lightblue); border: 1px solid var(--border); border-radius: 8px; }
-  #planLink > a { color: var(--blue); font-weight: 700; font-size: 14px; text-decoration: none; }
+  #planLink > a.plan-open { display: block; background: var(--blue); color: #fff; font-weight: 700; font-size: 15px; text-decoration: none; padding: 11px 14px; border-radius: 8px; text-align: center; }
   #todayList { margin-top: 8px; text-align: left; }
   #todayList .tl { font-size: 12px; font-weight: 700; color: #667; text-transform: uppercase; margin: 4px 2px; }
   #todayList a { display: block; padding: 9px 10px; margin-top: 4px; background: #fff; border: 1px solid var(--border); border-radius: 8px; color: var(--blue); font-weight: 600; font-size: 14px; text-decoration: none; cursor: pointer; }
@@ -693,7 +693,7 @@
       <div id="ssr" hidden></div>
     </div>
     <div id="planLink" hidden>
-      <a href="plan.html">📅 Study Plan — how much is left? →</a>
+      <a href="plan.html" class="plan-open">Open study plan</a>
       <div id="todayList"></div>
     </div>
   </div>
