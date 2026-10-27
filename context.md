@@ -2804,3 +2804,6 @@ parse via `new Function`.
 
 ## 2026-10-27 — Class 63 Les Pronoms Possessifs
 - New A2 chapter class63 from the teacher's possessive-pronouns cheat sheet (c63-1..8 + gemini, 0/9). Its Copy for Gemini button is written at the bottom directly (inside .gem-bottom); the runtime mover skips buttons already in .gem-bottom. Class 62 section 3 now just points to it. classOrder ends ...,60,61,62,63. plan.html CH data regenerated.
+
+## 2026-10-28 — Cheat sheets (class64 A1 purple, class65 A2 red)
+- Moved reference tables out of normal chapters into two checkbox-free cards: class64 (A1 Cheat Sheet: old class 47 conjugation chapter + tables from classes 6, 8, 11, 14x2, 16, 21) and class65 (A2: QUICK REVISION blocks of 23/25/26, plus 27, 31, 45, 54). Each source spot now has a '📌 Reference table moved to the … Cheat Sheet' pointer (.cs-ptr). Class 47 was deleted (its checklist_class47 ticks are simply unused). classOrder ends ...,63,64,65; nav has two .cs-link buttons after the A2 list. Colour: .cheat-a1 purple (#6a1b9a), .cheat-a2 red (#c62828). Also fixed stale 'N / M done' declared counts in 11 old chapters (35-42, 30-32).
