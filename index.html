@@ -673,6 +673,8 @@
   .chap-bar nav { flex: 1; min-width: 0; margin-bottom: 0 !important; }
   .chap-bar .chapter-btn { flex: none; height: 48px; width: 46px; padding: 0; font-size: 20px; border-radius: 10px; }
   .ch-ind { margin-left: 8px; font-weight: 600; font-size: 13px; color: #667; }
+  .gem-bottom { margin: 6px 0 10px; }
+  .gem-bottom .copy-btn { display: inline-block; }
 </style>
 </head>
 <body>
@@ -12563,6 +12565,27 @@ window.addEventListener('DOMContentLoaded', function() {
   });
   sb.addEventListener('click', () => show('search'));
   pb.addEventListener('click', () => show('plan'));
+})();
+</script>
+
+<script>
+// Move each chapter's "Copy for Gemini" button from the top to the bottom,
+// right above the "GEMINI TEST" checkbox, so the flow is: read notes ->
+// practice with Gemini -> tick the box.
+(function() {
+  document.querySelectorAll('.lesson-card').forEach(card => {
+    const btn = card.querySelector('.copy-btn[onclick*="mergeClassAndPrompt"]');
+    const box = card.querySelector('input[id^="gemini-skill-class"]');
+    if (!btn || !box) return;
+    const list = box.closest('ul');
+    if (!list) return;
+    const hint = btn.nextElementSibling && btn.nextElementSibling.classList.contains('copy-hint') ? btn.nextElementSibling : null;
+    const wrap = document.createElement('div');
+    wrap.className = 'gem-bottom';
+    wrap.appendChild(btn);
+    if (hint) wrap.appendChild(hint);
+    list.parentNode.insertBefore(wrap, list);
+  });
 })();
 </script>
 
