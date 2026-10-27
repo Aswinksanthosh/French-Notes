@@ -12079,6 +12079,14 @@ function updateGlobalProgress() {
 
 // RESTORE LAST VIEWED CHAPTER ON PAGE LOAD
 function restoreLastViewedChapter() {
+  // Deep link from the Study Plan page: index.html#class12 opens chapter 12.
+  const hm = /^#class(\d+)$/.exec(location.hash);
+  if (hm && classOrder.includes(parseInt(hm[1], 10))) {
+    showClass(parseInt(hm[1], 10));
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+    history.replaceState(null, '', location.pathname + location.search);
+    return;
+  }
   const lastViewed = localStorage.getItem('lastViewedClass');
   if (lastViewed) {
     const classNum = parseInt(lastViewed, 10);
