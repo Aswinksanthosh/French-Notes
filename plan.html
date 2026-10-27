@@ -13,7 +13,13 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,san
 .blk{padding:6px 0;border-top:1px solid var(--line);font-size:15px}.blk b{display:block;font-size:13px;color:var(--mut);font-weight:600}
 .blk label{display:block;padding:3px 0}.blk input{width:18px;height:18px;vertical-align:middle;margin-right:8px}.done{text-decoration:line-through;color:var(--mut)}
 .nt{font-size:13px;color:var(--mut);margin-bottom:4px}h2{font-size:16px;margin:20px 0 4px}
-</style></head><body>
+.wk{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin:0 -16px;padding-left:16px;padding-right:16px}
+.dc{flex:0 0 138px;scroll-snap-align:start;margin:0;padding:10px;text-align:left}
+.dc .hd{text-align:center;border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:6px}.dc .hd b{display:block;font-size:12px;color:var(--mut);text-transform:uppercase}.dc .hd span{font-size:24px;font-weight:700}
+.dc.today .hd span{background:var(--green);color:#fff;border-radius:50%;display:inline-block;width:36px;height:36px;line-height:36px}
+.dc .nt{font-size:11px;text-align:center}.dc .blk{font-size:13px;padding:5px 0}.dc .blk b{font-size:11px}
+.dc label{display:flex;gap:6px;align-items:flex-start;padding:4px 0;line-height:1.25}.dc label input{width:16px;height:16px;margin:1px 0 0;flex:none}
+html,body{overflow-x:hidden}</style></head><body>
 <a href="./">← Back to notes</a>
 <div class="card"><div class="mut">Days to exam (Nov 16)</div><div class="big" id="d"></div></div>
 <div class="g"><div class="card"><div class="mut">Hours left</div><div class="big" id="h"></div></div>
@@ -46,16 +52,18 @@ const W=[
 function acts(){try{return JSON.parse(localStorage.getItem('plan_acts')||'{}')}catch(e){return{}}}
 function tog(k,on){const a=acts();if(on)a[k]=1;else delete a[k];try{localStorage.setItem('plan_acts',JSON.stringify(a))}catch(e){}}
 function lt(d){const x=new Date();return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')}
-(function(){const A=acts(),T=lt(),byN={};CH.forEach(c=>byN[c.n]=c);let h='';
-W.forEach(d=>{const cls=d.d===T?' today':(d.d<T?' past':'');
- h+='<div class="card day'+cls+'"><h3>'+d.l+(d.d===T?' · today':'')+'</h3><div class="nt">'+d.n+'</div>';
+(function(){const A=acts(),T=lt(),byN={};CH.forEach(c=>byN[c.n]=c);let h='<div class="wk">';
+W.forEach(d=>{const cls=d.d===T?' today':(d.d<T?' past':'');const parts=d.l.split(' ');
+ h+='<div class="card day dc'+cls+'" id="d'+d.d+'"><div class="hd"><b>'+parts[0]+'</b><span>'+parts[2]+'</span></div><div class="nt">'+d.n+'</div>';
  d.b.forEach((b,i)=>{h+='<div class="blk"><b>'+b.t+'</b>';
-  (b.c||[]).forEach(n=>{const c=byN[n];if(!c)return;const f=c.ids?prog(c.n,c.ids)/c.ids:0;const k='c'+c.n;h+='<label class="'+((A[k]||f>=1)?'done':'')+'"><input type="checkbox" data-k="'+k+'"'+((A[k]||f>=1)?' checked':'')+'>📚 '+c.name+' <span class="mut">('+c.min+' min)</span></label>'});
-  (b.a||[]).forEach((a,j)=>{const k=d.d+'-'+i+'-'+j;h+='<label><input type="checkbox" data-k="'+k+'"'+(A[k]?' checked':'')+'>'+a+'</label>'});
+  (b.c||[]).forEach(n=>{const c=byN[n];if(!c)return;const f=c.ids?prog(c.n,c.ids)/c.ids:0;const k='c'+c.n,on=A[k]||f>=1;h+='<label class="'+(on?'done':'')+'"><input type="checkbox" data-k="'+k+'"'+(on?' checked':'')+'><span>📚 '+c.name+'</span></label>'});
+  (b.a||[]).forEach((a,j)=>{const k=d.d+'-'+i+'-'+j;h+='<label><input type="checkbox" data-k="'+k+'"'+(A[k]?' checked':'')+'><span>'+a+'</span></label>'});
   h+='</div>'});
  h+='</div>'});
+h+='</div>';
 document.getElementById('week').innerHTML=h;
-document.querySelectorAll('#week input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);e.parentNode.classList.toggle('done',e.checked)})})();
+document.querySelectorAll('#week input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);e.parentNode.classList.toggle('done',e.checked)});
+const t=document.querySelector&&document.querySelector('#week .today');if(t&&t.scrollIntoView)t.scrollIntoView({inline:'start',block:'nearest'})})();
 function copyProg(){const A=acts(),L=[];W.forEach(d=>{const s=[];d.b.forEach((b,i)=>{(b.c||[]).forEach(n=>{if(A['c'+n])s.push(CH.find(c=>c.n===n).name)});(b.a||[]).forEach((a,j)=>{if(A[d.d+'-'+i+'-'+j])s.push(a)})});if(s.length)L.push(d.l+': '+s.join(', '))});
  const t=L.join('\n')||'Nothing ticked yet';try{navigator.clipboard.writeText(t);document.getElementById('cp').textContent='Copied ✓'}catch(e){prompt('Copy this:',t)}}
 </script></body></html>
