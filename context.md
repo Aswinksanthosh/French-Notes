@@ -2798,3 +2798,6 @@ parse via `new Function`.
 
 ## 2026-10-27 — Site search
 - Added a search box (id siteSearch) above the chapter nav in index.html: "Chapters" group = nav-label/h2 matches, "Other matches" = matches inside chapter text with a highlighted snippet. Accent- and case-insensitive; index built lazily from classOrder + lesson-card textContent. Script is the last <script> in index.html.
+
+## 2026-10-27 — Study Plan shared data
+- plan-data.js holds the weekly schedule (const W) and planEff(); loaded by plan.html and index.html. Update W there when planning a new week. index.html shows today's chapters under the 📅 button (done = every checkbox in the chapter ticked).

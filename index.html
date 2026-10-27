@@ -663,7 +663,12 @@
   .tool-btn.on { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
   #toolPanel { margin-top: 8px; }
   #planLink { text-align: center; padding: 10px; background: var(--lightblue); border: 1px solid var(--border); border-radius: 8px; }
-  #planLink a { color: var(--blue); font-weight: 700; font-size: 14px; text-decoration: none; }
+  #planLink > a { color: var(--blue); font-weight: 700; font-size: 14px; text-decoration: none; }
+  #todayList { margin-top: 8px; text-align: left; }
+  #todayList .tl { font-size: 12px; font-weight: 700; color: #667; text-transform: uppercase; margin: 4px 2px; }
+  #todayList a { display: block; padding: 9px 10px; margin-top: 4px; background: #fff; border: 1px solid var(--border); border-radius: 8px; color: var(--blue); font-weight: 600; font-size: 14px; text-decoration: none; cursor: pointer; }
+  #todayList a.done { color: #667; text-decoration: line-through; }
+  #todayList .tn { font-size: 13px; color: #667; padding: 4px 2px; }
   .chap-bar { display: flex; gap: 6px; align-items: flex-start; margin: 14px 0 34px; }
   .chap-bar nav { flex: 1; min-width: 0; margin-bottom: 0 !important; }
   .chap-bar .chapter-btn { flex: none; height: 48px; width: 46px; padding: 0; font-size: 20px; border-radius: 10px; }
@@ -686,7 +691,10 @@
       <input id="ssq" type="search" placeholder="🔍 Search chapter names or notes" autocomplete="off" autocapitalize="off" spellcheck="false">
       <div id="ssr" hidden></div>
     </div>
-    <div id="planLink" hidden><a href="plan.html">📅 Study Plan — how much is left? →</a></div>
+    <div id="planLink" hidden>
+      <a href="plan.html">📅 Study Plan — how much is left? →</a>
+      <div id="todayList"></div>
+    </div>
   </div>
   <div class="intro-content" id="introContent">
     <ol class="howto-steps">
@@ -12496,6 +12504,7 @@ window.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
+<script src="plan-data.js"></script>
 <script>
 // Header tool buttons: 🔍 expands the search box, 📅 expands the Study Plan link.
 (function() {
@@ -12514,7 +12523,45 @@ window.addEventListener('DOMContentLoaded', function() {
     sb.classList.toggle('on', wantSearch);
     pb.classList.toggle('on', wantPlan);
     if (wantSearch) document.getElementById('ssq').focus();
+    if (wantPlan) renderToday();
   }
+  const isDone = n => {
+    const card = document.getElementById('class' + n);
+    if (!card) return false;
+    const boxes = card.querySelectorAll('input[type=checkbox]');
+    return boxes.length > 0 && Array.from(boxes).every(b => b.checked);
+  };
+  function todayKey() {
+    const x = new Date();
+    return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0');
+  }
+  function renderToday() {
+    const box = document.getElementById('todayList');
+    if (typeof planEff !== 'function') { box.innerHTML = ''; return; }
+    let M = {};
+    try { M = JSON.parse(localStorage.getItem('plan_moves') || '{}'); } catch (e) {}
+    const T = todayKey(), r = planEff(isDone, M, T);
+    let list;
+    if (r.days.includes(T)) list = Object.keys(r.eff).filter(n => r.eff[n] === T);
+    else if (T > r.days[r.days.length - 1]) list = Object.keys(r.eff).filter(n => !isDone(+n));
+    else list = [];
+    list = list.map(Number);
+    if (!list.length) { box.innerHTML = '<div class="tn">No chapters planned for today.</div>'; return; }
+    box.innerHTML = '<div class="tl">Today\'s chapters</div>' + list.map(n => {
+      const link = document.querySelector('nav a[onclick="goToClass(' + n + ')"]');
+      const name = link && link.firstChild ? link.firstChild.textContent.trim() : 'Chapter ' + n;
+      const d = isDone(n);
+      return '<a data-n="' + n + '" class="' + (d ? 'done' : '') + '">' + (d ? '✓ ' : '📚 ') + name + '</a>';
+    }).join('');
+  }
+  document.getElementById('todayList').addEventListener('click', ev => {
+    const a = ev.target.closest('a[data-n]');
+    if (!a) return;
+    ev.preventDefault();
+    showClass(parseInt(a.dataset.n, 10));
+    window.scrollTo(0, 0);
+    panel.hidden = true; plan.hidden = true; pb.classList.remove('on');
+  });
   sb.addEventListener('click', () => show('search'));
   pb.addEventListener('click', () => show('plan'));
 })();
