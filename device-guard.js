@@ -4,6 +4,7 @@
 (function () {
   try {
     if (/[?&]desktop=1\b/.test(location.search)) return;
+    try { if (sessionStorage.getItem('guardUnlocked') === '1') return; } catch (e) {}
     var mm = window.matchMedia;
     if (!mm) return;
     // Phone/tablet signals: touch is the primary input, or a mobile browser. These stay true
@@ -26,6 +27,19 @@
       document.body.appendChild(d);
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+      // Cheat code: type "opensimsim" (no input box needed) to open the site.
+      var CODE = 'opensimsim', buf = '';
+      document.addEventListener('keydown', function onKey(ev) {
+        if (!ev.key || ev.key.length !== 1) return;
+        buf = (buf + ev.key.toLowerCase()).slice(-CODE.length);
+        if (buf === CODE) {
+          document.removeEventListener('keydown', onKey);
+          try { sessionStorage.setItem('guardUnlocked', '1'); } catch (e) {}
+          if (d.parentNode) d.parentNode.removeChild(d);
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
+        }
+      });
     }
     if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
   } catch (e) {}
