@@ -2807,3 +2807,6 @@ parse via `new Function`.
 
 ## 2026-10-28 — Cheat sheets (class64 A1 purple, class65 A2 red)
 - Moved reference tables out of normal chapters into two checkbox-free cards: class64 (A1 Cheat Sheet: old class 47 conjugation chapter + tables from classes 6, 8, 11, 14x2, 16, 21) and class65 (A2: QUICK REVISION blocks of 23/25/26, plus 27, 31, 45, 54). Each source spot now has a '📌 Reference table moved to the … Cheat Sheet' pointer (.cs-ptr). Class 47 was deleted (its checklist_class47 ticks are simply unused). classOrder ends ...,63,64,65; nav has two .cs-link buttons after the A2 list. Colour: .cheat-a1 purple (#6a1b9a), .cheat-a2 red (#c62828). Also fixed stale 'N / M done' declared counts in 11 old chapters (35-42, 30-32).
+
+## 2026-11-02 — COD / COI rebuilt as 3 chapters
+- class42 = Le COD (c42-1..6 + gemini), class45 = Le COI (c45-1..6 + gemini; was Les Pronoms Compléments), new class66 = COD vs COI (c66-1..6 + gemini). classOrder: ...41,42,45,66,43,44,46... Old content (exercises, pronoun sets, going-further two-pronouns) was folded in; the A2 Cheat Sheet keeps the 'Quick Recap: COD vs COI' table (its 'From' link now says Le COI).
