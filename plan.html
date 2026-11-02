@@ -114,5 +114,5 @@ const TEF=[
 document.querySelectorAll('#tefList input').forEach(e=>e.onchange=()=>{tog(e.dataset.k,e.checked);e.parentNode.classList.toggle('done',e.checked)})})();
 function copyProg(){const A=acts(),L=[];W.forEach(d=>{const s=[];d.b.forEach((b,i)=>{(b.c||[]).forEach(n=>{const c=CH.find(c=>c.n===n);if(c&&c.ids&&prog(c.n,c.ids)/c.ids>=1)s.push(c.name)});(b.a||[]).forEach((a,j)=>{if(A[d.d+'-'+i+'-'+j])s.push(a)})});if(s.length)L.push(d.l+': '+s.join(', '))});
  const t=L.join('\n')||'Nothing ticked yet';try{navigator.clipboard.writeText(t);document.getElementById('cp').textContent='Copied ✓'}catch(e){prompt('Copy this:',t)}}
-</script><script type="module" src="cloud-sync.js?v=1"></script>
+</script><script type="module" src="cloud-sync.js?v=2"></script>
 </body></html>

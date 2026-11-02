@@ -3,7 +3,7 @@
 // progress keys below are copied to Firestore (users/{uid}) and merged across devices.
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { initializeFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA8CRdGJctshXn7lECGxJ6Yr4PUSAP9k-4",
@@ -153,7 +153,8 @@ function start() {
   buildUI();
   app = initializeApp(firebaseConfig);
   auth = getAuth(app);
-  db = getFirestore(app);
+  // auto-detect long polling: works on networks / blockers that break the default connection
+  db = initializeFirestore(app, { experimentalAutoDetectLongPolling: true });
   onAuthStateChanged(auth, u => { user = u; renderUser(); if (u) syncNow(); });
   document.addEventListener('visibilitychange', () => { if (!document.hidden) syncNow(); });
   window.addEventListener('online', syncNow);
