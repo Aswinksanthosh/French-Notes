@@ -700,9 +700,49 @@
   .cs-ptr a { font-weight: 700; color: #6a1b9a; }
   .cs-ptr-a2 { background: #fdecea; border-left-color: #c62828; }
   .cs-ptr-a2 a { color: #c62828; }
+
+  /* ---------- Laptop layout (wide screens only; phones are unchanged) ---------- */
+  #themeBtn { display: none; }
+  html.dark { filter: invert(1) hue-rotate(180deg); background: #fff; }
+  .kbd-hint { display: none; }
+  @media (min-width: 1100px) {
+    body { max-width: 1000px; margin: 0 0 0 330px; padding: 28px 44px 80px; font-size: 17px; }
+    h1 { font-size: 34px; }
+    #themeBtn { display: block; }
+    #toolSearchBtn, #toolPlanBtn { display: none; }
+    #toolPanel[hidden], #siteSearch[hidden], #planLink[hidden] { display: block !important; }
+    #toolPanel[hidden] { display: block !important; }
+    #planLink { margin: 10px 0 0; display: flex !important; flex-wrap: wrap; gap: 8px; align-items: center; text-align: left; padding: 10px 12px; }
+    #planLink > a.plan-open { flex: none; padding: 9px 18px; font-size: 14px; }
+    #todayList { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; flex: 1 1 100%; }
+    #todayList .tl { flex: 1 1 100%; margin: 4px 2px 0; }
+    #todayList a { display: inline-block; margin: 0; padding: 7px 12px; }
+    #todayList .tn { flex: 1 1 100%; }
+    #ssq { font-size: 16px; padding: 12px 14px; }
+    .kbd-hint { display: block; font-size: 12px; color: #667; margin: 4px 2px 0; }
+    /* sidebar: the chapter list is always open on the left */
+    .chap-bar { justify-content: space-between; margin: 12px 0 28px; }
+    .chap-bar .chapter-btn { width: auto; min-width: 150px; padding: 0 22px; font-size: 16px; }
+    .chap-bar .chapter-btn#prevBtn::after { content: " Previous"; font-size: 15px; }
+    .chap-bar .chapter-btn#nextBtn::before { content: "Next "; font-size: 15px; }
+    nav#toc { position: fixed; left: 0; top: 0; bottom: 0; width: 310px; height: 100vh; max-height: none !important; margin: 0 !important; border: 0; border-right: 1px solid var(--border); border-radius: 0; box-shadow: none; overflow-y: auto; z-index: 40; background: #fff; }
+    nav#toc::before { content: "📚 Chapters"; display: block; padding: 18px 18px 4px; font-weight: 800; font-size: 20px; color: var(--blue); }
+    .nav-toggle { display: none !important; }
+    nav .nav-scroll { display: flex !important; flex-direction: column; max-height: none !important; overflow: visible; padding: 8px 12px 40px; gap: 6px; }
+    .level-content { display: flex !important; flex-direction: column; gap: 3px; }
+    nav a { display: block; margin: 0; padding: 7px 12px; font-size: 14px; }
+    nav a.cs-link { margin-top: 8px; }
+    .level-btn { cursor: default; margin-top: 10px; }
+    .lesson-card { padding: 36px 48px; }
+    .lesson-header { margin: -36px -48px 24px; padding: 18px 48px; }
+    .table-wrap table { width: 100%; }
+    #ssr { max-height: 70vh; }
+    #smBar { left: calc(50% + 165px); }
+  }
 </style>
 </head>
 <body>
+<script src="theme.js?v=1"></script>
 <script src="device-guard.js?v=3"></script>
 
 <h1>French Class Notes</h1>
@@ -712,11 +752,13 @@
     <button class="intro-toggle" id="introToggle" onclick="toggleIntro()">📖 How to use this site <span id="introArrow">▾</span></button>
     <button class="tool-btn" id="toolSearchBtn" aria-label="Search" title="Search">🔍</button>
     <button class="tool-btn" id="toolPlanBtn" aria-label="Study Plan" title="Study Plan">📅</button>
+    <button class="tool-btn" id="themeBtn" aria-label="Dark mode" title="Dark mode">🌙</button>
   </div>
   <div id="toolPanel" hidden>
     <div id="siteSearch" hidden>
       <input id="ssq" type="search" placeholder="🔍 Search chapter names or notes" autocomplete="off" autocapitalize="off" spellcheck="false">
       <div id="ssr" hidden></div>
+      <div class="kbd-hint">Press / to search · ← → to change chapter · Enter opens the first result</div>
     </div>
     <div id="planLink" hidden>
       <a href="plan.html" class="plan-open">Open study plan</a>
@@ -12872,6 +12914,11 @@ window.addEventListener('DOMContentLoaded', function() {
     window.scrollTo(0, 0);
     panel.hidden = true; plan.hidden = true; pb.classList.remove('on');
   });
+  // On a laptop the 📅 panel is always open, so keep Today's chapters fresh.
+  const refreshToday = () => { if (window.matchMedia('(min-width: 1100px)').matches) renderToday(); };
+  refreshToday();
+  document.addEventListener('change', () => setTimeout(refreshToday, 50));
+  window.addEventListener('resize', refreshToday);
   sb.addEventListener('click', () => show('search'));
   pb.addEventListener('click', () => show('plan'));
 })();
@@ -12895,6 +12942,36 @@ window.addEventListener('DOMContentLoaded', function() {
     if (hint) wrap.appendChild(hint);
     list.parentNode.insertBefore(wrap, list);
   });
+})();
+</script>
+
+<script>
+// Laptop extras: keyboard shortcuts, sidebar follows the open chapter, Today's list always shown.
+(function () {
+  const wide = () => window.matchMedia('(min-width: 1100px)').matches;
+  const q = document.getElementById('ssq');
+  document.addEventListener('keydown', ev => {
+    if (!wide() || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    const tag = (ev.target.tagName || '').toLowerCase();
+    const typing = tag === 'input' || tag === 'textarea' || ev.target.isContentEditable;
+    if (ev.key === 'Escape' && typing) { ev.target.blur(); const r = document.getElementById('ssr'); if (r) r.hidden = true; return; }
+    if (typing) return;
+    if (ev.key === '/') { ev.preventDefault(); if (q) { q.focus(); q.select(); } }
+    else if (ev.key === 'ArrowRight') { const b = document.getElementById('nextBtn'); if (b && !b.disabled) b.click(); }
+    else if (ev.key === 'ArrowLeft') { const b = document.getElementById('prevBtn'); if (b && !b.disabled) b.click(); }
+  });
+  if (q) q.addEventListener('keydown', ev => {
+    if (ev.key !== 'Enter') return;
+    const first = document.querySelector('#ssr .si');
+    if (first) { ev.preventDefault(); first.click(); }
+  });
+  // keep the active chapter visible in the sidebar
+  const toc = document.getElementById('toc');
+  if (toc) new MutationObserver(() => {
+    if (!wide()) return;
+    const a = toc.querySelector('a.active');
+    if (a && a.scrollIntoView) a.scrollIntoView({ block: 'nearest' });
+  }).observe(toc, { subtree: true, attributes: true, attributeFilter: ['class'] });
 })();
 </script>
 
