@@ -702,13 +702,10 @@
   .cs-ptr-a2 a { color: #c62828; }
 
   /* ---------- Laptop layout (wide screens only; phones are unchanged) ---------- */
-  #themeBtn { display: none; }
-  html.dark { filter: invert(1) hue-rotate(180deg); background: #fff; }
   .kbd-hint { display: none; }
   @media (min-width: 1100px) {
     body { max-width: 1000px; margin: 0 0 0 330px; padding: 28px 44px 80px; font-size: 17px; }
     h1 { font-size: 34px; }
-    #themeBtn { display: block; }
     #toolSearchBtn, #toolPlanBtn { display: none; }
     #toolPanel[hidden], #siteSearch[hidden], #planLink[hidden] { display: block !important; }
     #toolPanel[hidden] { display: block !important; }
@@ -747,7 +744,6 @@
 </style>
 </head>
 <body>
-<script src="theme.js?v=1"></script>
 <script src="device-guard.js?v=3"></script>
 
 <h1>French Class Notes</h1>
@@ -757,7 +753,6 @@
     <button class="intro-toggle" id="introToggle" onclick="toggleIntro()">📖 How to use this site <span id="introArrow">▾</span></button>
     <button class="tool-btn" id="toolSearchBtn" aria-label="Search" title="Search">🔍</button>
     <button class="tool-btn" id="toolPlanBtn" aria-label="Study Plan" title="Study Plan">📅</button>
-    <button class="tool-btn" id="themeBtn" aria-label="Dark mode" title="Dark mode">🌙</button>
   </div>
   <div id="toolPanel" hidden>
     <div id="siteSearch" hidden>
