@@ -739,6 +739,11 @@
     #ssr { max-height: 70vh; }
     #smBar { left: calc(50% + 165px); }
   }
+  #feedbackBox { margin: 40px 0 8px; padding: 18px; background: #fff; border: 1px solid var(--border); border-radius: 10px; }
+  #feedbackBox h3 { margin: 0 0 6px; }
+  #feedbackBox p { margin: 0 0 12px; font-size: 14px; color: #555; }
+  #feedbackBox select, #feedbackBox textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: 15px; padding: 10px 12px; border: 1px solid #cfd8e3; border-radius: 8px; margin-bottom: 10px; background: #fff; color: #1b2a3a; }
+  #feedbackBox button { background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 11px 18px; font: inherit; font-weight: 700; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -11989,6 +11994,19 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<section id="feedbackBox">
+  <h3>💬 Feedback</h3>
+  <p>Found a mistake or have an idea? Write it here and tap send. It opens your email app with the message ready.</p>
+  <select id="fbType" aria-label="Type of feedback">
+    <option>Mistake in the notes</option>
+    <option>Idea / feature request</option>
+    <option>Something is broken</option>
+    <option>Other</option>
+  </select>
+  <textarea id="fbText" rows="4" placeholder="Your message…"></textarea>
+  <button type="button" id="fbSend">✉️ Send by email</button>
+</section>
+
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
   <p>
@@ -12972,6 +12990,23 @@ window.addEventListener('DOMContentLoaded', function() {
     const a = toc.querySelector('a.active');
     if (a && a.scrollIntoView) a.scrollIntoView({ block: 'nearest' });
   }).observe(toc, { subtree: true, attributes: true, attributeFilter: ['class'] });
+})();
+</script>
+
+<script>
+// Feedback: opens the visitor's own email app with a pre-filled message (no server or API needed).
+(function () {
+  const btn = document.getElementById('fbSend');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const text = document.getElementById('fbText').value.trim();
+    if (!text) { alert('Please write your message first.'); return; }
+    const type = document.getElementById('fbType').value;
+    const h2 = document.querySelector('.lesson-card.active h2');
+    const chapter = h2 ? h2.firstChild.textContent.trim() : '';
+    const body = text + '\n\n---\nType: ' + type + '\nChapter: ' + chapter + '\nPage: ' + location.origin + location.pathname;
+    location.href = 'mailto:aswinksanthosh000@gmail.com?subject=' + encodeURIComponent('French Notes feedback: ' + type) + '&body=' + encodeURIComponent(body);
+  });
 })();
 </script>
 
