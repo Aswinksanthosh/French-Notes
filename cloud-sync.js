@@ -95,7 +95,10 @@ function keepTicked(finalV, ids) {
 
 // ---- the question shown when a sync would un-tick boxes ----
 function describe(k, id) {
-  if (k === 'plan_acts') return { chapter: 'Study Plan', text: id.replace(/^c(\d+)$/, 'Chapter $1') };
+  if (k === 'plan_acts') {
+    const m = /^(\d{4}-\d{2}-\d{2})-/.exec(id);
+    return { chapter: 'Study Plan', text: m ? 'Combo ticked on ' + m[1] : id };
+  }
   let chapter = k.replace('checklist_class', 'Chapter '), text = id;
   try {
     const input = document.getElementById(id);
