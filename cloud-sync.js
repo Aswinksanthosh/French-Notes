@@ -48,7 +48,7 @@ export function mergeVals(key, localStr, cloudStr) {
 }
 
 // ---- sync ----
-let app, auth, db, user = null, timer = null, busy = false, lastSync = null;
+let app, auth, db, user = null, timer = null, busy = false, lastSync = null, suppressAutoUntil = 0;
 
 function localKeys() {
   const ks = [];
@@ -63,28 +63,114 @@ function reloadOnce() {
   } catch (e) {}
   location.reload();
 }
-async function syncNow() {
+
+// Boxes that are ticked in `fromStr` but not in `toStr` (JSON objects of id -> truthy).
+const isTickKey = k => /^checklist_class/.test(k) || k === 'plan_acts';
+export function tickedDiff(fromStr, toStr) {
+  const a = parse(fromStr), b = parse(toStr);
+  if (!a || !b) return [];
+  return Object.keys(a).filter(id => a[id] && !b[id]);
+}
+// Decide what a key should become. Pure function, so it can be tested.
+//   lv/lt = local value + last local change time (0 = never synced), c = cloud {v,t} or undefined
+export function decide(k, lv, lt, c, now) {
+  if (c && lv !== null && lt === 0) {                     // first meeting: merge, never lose ticks
+    return { action: 'merge', finalV: mergeVals(k, lv, c.v), t: now, removed: [], side: '' };
+  }
+  if (c && (lv === null || c.t > lt)) {                    // cloud is newer: this device would change
+    return { action: 'pull', finalV: c.v, t: c.t, side: 'un-ticked on another device',
+             removed: lv !== null && isTickKey(k) ? tickedDiff(lv, c.v) : [] };
+  }
+  if (lv !== null && (!c || lt > c.t)) {                   // this device is newer: the cloud would change
+    return { action: 'push', finalV: lv, t: lt || now, side: 'un-ticked on this device',
+             removed: c && isTickKey(k) ? tickedDiff(c.v, lv) : [] };
+  }
+  return { action: 'none', finalV: lv, t: lt, removed: [], side: '' };
+}
+function keepTicked(finalV, ids) {
+  const o = parse(finalV) || {};
+  ids.forEach(id => { o[id] = true; });
+  return JSON.stringify(o);
+}
+
+// ---- the question shown when a sync would un-tick boxes ----
+function describe(k, id) {
+  if (k === 'plan_acts') return { chapter: 'Study Plan', text: id.replace(/^c(\d+)$/, 'Chapter $1') };
+  let chapter = k.replace('checklist_class', 'Chapter '), text = id;
+  try {
+    const input = document.getElementById(id);
+    if (input) {
+      const card = input.closest('.lesson-card'), h2 = card && card.querySelector('h2');
+      if (h2) chapter = h2.firstChild.textContent.replace(/^A2:\s*/, '').trim();
+      const lab = document.querySelector('label[for="' + id + '"]');
+      if (lab) text = lab.textContent.trim().slice(0, 110);
+    }
+  } catch (e) {}
+  return { chapter: chapter, text: text };
+}
+function askAboutUnticks(items) {
+  return new Promise(resolve => {
+    const ov = document.createElement('div');
+    ov.style.cssText = 'position:fixed;inset:0;z-index:2147483000;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:14px;font:15px/1.4 system-ui,sans-serif';
+    const rows = items.map((it, i) => {
+      const d = describe(it.k, it.id);
+      return '<label style="display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid #e3e8ef"><input type="checkbox" checked data-i="' + i + '" style="width:20px;height:20px;flex:none;margin-top:2px">' +
+        '<span><b>' + d.chapter.replace(/</g, '&lt;') + '</b><br>' + d.text.replace(/</g, '&lt;') +
+        '<br><small style="color:#8a4b00">' + it.side + '</small></span></label>';
+    }).join('');
+    ov.innerHTML = '<div style="background:#fff;color:#1b2a3a;border-radius:14px;max-width:520px;width:100%;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 12px 40px rgba(0,0,0,.35)">' +
+      '<div style="padding:16px 16px 6px"><div style="font-size:18px;font-weight:800">⚠️ Sync would un-tick ' + items.length + ' box' + (items.length > 1 ? 'es' : '') + '</div>' +
+      '<div style="color:#556;margin-top:4px">Leave a box <b>ticked</b> to keep it ticked everywhere. <b>Untick</b> it only if you really want it un-ticked.</div></div>' +
+      '<div style="padding:0 16px;overflow:auto;flex:1">' + rows + '</div>' +
+      '<div style="display:flex;gap:8px;padding:14px 16px"><button id="uOk" style="flex:1;padding:11px;border:0;border-radius:10px;background:#1976d2;color:#fff;font:inherit;font-weight:700;cursor:pointer">Apply</button>' +
+      '<button id="uNo" style="flex:1;padding:11px;border:1px solid #cfd8e3;border-radius:10px;background:#fff;font:inherit;cursor:pointer">Cancel sync</button></div></div>';
+    document.body.appendChild(ov);
+    const done = v => { ov.remove(); resolve(v); };
+    ov.querySelector('#uNo').onclick = () => done(null);
+    ov.querySelector('#uOk').onclick = () => {
+      const keep = new Set();
+      ov.querySelectorAll('input[data-i]').forEach(cb => { if (cb.checked) keep.add(Number(cb.dataset.i)); });
+      done(keep);
+    };
+  });
+}
+
+async function syncNow(manual) {
   if (!user || busy) return;
+  if (manual !== true && Date.now() < suppressAutoUntil) return;  // you cancelled recently
   busy = true; setStatus('Syncing…');
   try {
     const ref = doc(db, 'users', user.uid);
     const snap = await getDoc(ref);
     const cloud = snap.exists() && snap.data().data ? snap.data().data : {};
-    const meta = getMeta(), out = Object.assign({}, cloud);
-    let changedLocal = false;
+    const meta = getMeta(), now = Date.now();
     const keys = new Set(Object.keys(cloud).filter(isSync).concat(localKeys()));
+    const plan = {}, items = [];
     keys.forEach(k => {
       const lv = store.getItem(k), lt = meta[k] || 0, c = cloud[k];
-      if (c && lv !== null && lt === 0) {                    // first meeting: merge, never lose ticks
-        const m = mergeVals(k, lv, c.v);
-        if (m !== lv) { origSet.call(store, k, m); changedLocal = true; }
-        const t = Date.now(); out[k] = { v: m, t: t }; meta[k] = t;
-      } else if (c && (lv === null || c.t > lt)) {           // cloud is newer
-        if (lv !== c.v) { origSet.call(store, k, c.v); changedLocal = true; }
-        meta[k] = c.t;
-      } else if (lv !== null && (!c || lt > c.t)) {          // this device is newer
-        const t = lt || Date.now(); out[k] = { v: lv, t: t }; meta[k] = t;
+      const d = decide(k, lv, lt, c, now);
+      plan[k] = d;
+      d.removed.forEach(id => items.push({ k: k, id: id, side: d.side }));
+    });
+    if (items.length) {                               // ask before any box gets un-ticked
+      setStatus('Waiting for your choice…');
+      const keep = await askAboutUnticks(items);
+      if (keep === null) {
+        suppressAutoUntil = Date.now() + 5 * 60 * 1000;
+        setStatus('Sync cancelled'); busy = false; return;
       }
+      const byKey = {};
+      items.forEach((it, i) => { if (keep.has(i)) (byKey[it.k] = byKey[it.k] || []).push(it.id); });
+      Object.keys(byKey).forEach(k => { plan[k].finalV = keepTicked(plan[k].finalV, byKey[k]); plan[k].t = now; });
+    }
+    const out = Object.assign({}, cloud);
+    let changedLocal = false;
+    Object.keys(plan).forEach(k => {
+      const d = plan[k], lv = store.getItem(k), c = cloud[k];
+      if (d.action === 'none' || d.finalV === null) return;
+      if (d.finalV !== lv) { origSet.call(store, k, d.finalV); changedLocal = true; }
+      if (!c || d.finalV !== c.v) out[k] = { v: d.finalV, t: d.t };
+      meta[k] = d.t;
     });
     await setDoc(ref, { data: out, updatedAt: Date.now() });
     saveMeta(meta);
@@ -99,7 +185,7 @@ async function syncNow() {
 function schedulePush() {
   if (!user) return;
   clearTimeout(timer);
-  timer = setTimeout(syncNow, 2000);
+  timer = setTimeout(() => syncNow(false), 2000);
 }
 // record when a synced key changes on this device, then push
 Storage.prototype.setItem = function (k, v) {
@@ -126,7 +212,7 @@ function buildUI() {
     '<button id="acctOut" style="width:100%;padding:8px;border-radius:8px;border:1px solid #cfd8e3;background:#fff;font:inherit;cursor:pointer">Sign out</button>';
   document.body.appendChild(panel);
   statusEl = panel.querySelector('#acctStatus');
-  panel.querySelector('#acctSync').onclick = syncNow;
+  panel.querySelector('#acctSync').onclick = () => syncNow(true);
   panel.querySelector('#acctOut').onclick = async () => { await signOut(auth); panel.hidden = true; };
   btn.addEventListener('click', async () => {
     if (!user) {
@@ -155,8 +241,8 @@ function start() {
   auth = getAuth(app);
   // auto-detect long polling: works on networks / blockers that break the default connection
   db = initializeFirestore(app, { experimentalAutoDetectLongPolling: true });
-  onAuthStateChanged(auth, u => { user = u; renderUser(); if (u) syncNow(); });
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) syncNow(); });
-  window.addEventListener('online', syncNow);
+  onAuthStateChanged(auth, u => { user = u; renderUser(); if (u) syncNow(false); });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) syncNow(false); });
+  window.addEventListener('online', () => syncNow(false));
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
