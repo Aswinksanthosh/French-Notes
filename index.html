@@ -761,12 +761,26 @@
   .howto-more { margin: 8px 0; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; background: #fff; }
   .howto-more summary { cursor: pointer; font-weight: 700; color: var(--blue); }
   @media (min-width: 1100px) { .howto-cards { grid-template-columns: repeat(4, 1fr); } }
+  .start-wrap { margin: 4px 0 12px; }
+  .start-wrap .howto-start { margin: 0; }
+  /* arrows between the 4 steps (2x2 on a phone, one row on a laptop) */
+  .hc::after { position: absolute; z-index: 2; width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(0,0,0,.15); display: none; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: var(--blue); }
+  .hc1::after { content: "➜"; display: flex; right: -18px; top: calc(50% - 13px); }
+  .hc2::after { content: "↙"; display: flex; left: 18px; bottom: -18px; }
+  .hc3::after { content: "➜"; display: flex; right: -18px; top: calc(50% - 13px); }
+  @media (min-width: 1100px) {
+    .hc2::after { content: "➜"; left: auto; bottom: auto; right: -18px; top: calc(50% - 13px); }
+  }
 </style>
 </head>
 <body>
 <script src="device-guard.js?v=3"></script>
 
 <h1>French Class Notes</h1>
+
+<div class="start-wrap">
+  <button type="button" class="howto-start" id="howtoStart">▶ Start today's chapter <small id="howtoStartName"></small></button>
+</div>
 
 <div class="intro-wrap">
   <div class="intro-row">
@@ -787,7 +801,6 @@
     </div>
   </div>
   <div class="intro-content" id="introContent">
-    <button type="button" class="howto-start" id="howtoStart">▶ Start today's chapter <small id="howtoStartName"></small></button>
     <div class="howto-cards">
       <div class="hc hc1"><span class="n">1</span><span class="e">📖</span><b>Read</b><small>Read the notes. Tap the blue words to hear them.</small></div>
       <div class="hc hc2"><span class="n">2</span><span class="e">📋</span><b>Copy for Gemini</b><small>Tap the button at the bottom of the chapter, then paste it into Gemini.</small></div>
