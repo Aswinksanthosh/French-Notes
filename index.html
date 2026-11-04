@@ -745,6 +745,22 @@
   #feedbackBox p { margin: 0 0 12px; font-size: 14px; color: #555; }
   #feedbackBox select, #feedbackBox textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: 15px; padding: 10px 12px; border: 1px solid #cfd8e3; border-radius: 8px; margin-bottom: 10px; background: #fff; color: #1b2a3a; }
   #feedbackBox button { background: var(--blue); color: #fff; border: 0; border-radius: 8px; padding: 11px 18px; font: inherit; font-weight: 700; cursor: pointer; }
+  /* ---- How to use: start button + step cards ---- */
+  .howto-start { width: 100%; padding: 13px 16px; margin: 6px 0 12px; border: 0; border-radius: 12px; background: linear-gradient(135deg, #1976d2, #1565c0); color: #fff; font: inherit; font-size: 17px; font-weight: 800; cursor: pointer; box-shadow: 0 3px 10px rgba(21,101,192,.3); }
+  .howto-start small { display: block; font-size: 13px; font-weight: 600; opacity: .9; margin-top: 2px; }
+  .howto-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px; }
+  .hc { position: relative; padding: 14px 12px 12px; border-radius: 12px; border: 1px solid transparent; text-align: left; }
+  .hc .n { position: absolute; top: 8px; right: 10px; font-size: 12px; font-weight: 800; opacity: .55; }
+  .hc .e { display: block; font-size: 26px; line-height: 1.1; margin-bottom: 6px; }
+  .hc b { display: block; font-size: 15px; }
+  .hc small { display: block; font-size: 12.5px; line-height: 1.4; margin-top: 3px; color: #445; }
+  .hc1 { background: #e3f2fd; border-color: #bbdefb; color: #0d47a1; }
+  .hc2 { background: #e8f5e9; border-color: #c8e6c9; color: #1b5e20; }
+  .hc3 { background: #f3e5f5; border-color: #e1bee7; color: #6a1b9a; }
+  .hc4 { background: #fff3e0; border-color: #ffe0b2; color: #e65100; }
+  .howto-more { margin: 8px 0; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; background: #fff; }
+  .howto-more summary { cursor: pointer; font-weight: 700; color: var(--blue); }
+  @media (min-width: 1100px) { .howto-cards { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
 <body>
@@ -771,16 +787,20 @@
     </div>
   </div>
   <div class="intro-content" id="introContent">
-    <p class="howto-lead">🙋 My study routine (so you know what to do with this site):</p>
+    <button type="button" class="howto-start" id="howtoStart">▶ Start today's chapter <small id="howtoStartName"></small></button>
+    <div class="howto-cards">
+      <div class="hc hc1"><span class="n">1</span><span class="e">📖</span><b>Read</b><small>Read the notes. Tap the blue words to hear them.</small></div>
+      <div class="hc hc2"><span class="n">2</span><span class="e">📋</span><b>Copy for Gemini</b><small>Tap the button at the bottom of the chapter, then paste it into Gemini.</small></div>
+      <div class="hc hc3"><span class="n">3</span><span class="e">🗣️</span><b>Practice</b><small>Do a writing and a speaking test, or ask Gemini questions.</small></div>
+      <div class="hc hc4"><span class="n">4</span><span class="e">✅</span><b>Tick</b><small>Tick the boxes when you're confident. The chapter turns white.</small></div>
+    </div>
+    <details class="howto-more">
+      <summary>🙋 My study routine</summary>
     <button class="expand-btn section-summary-btn" onclick="toggleSectionSummary(this)" data-audio="My own study routine is this. I read all the content in the chapter first. Then I copy it to Gemini and do a writing exam and a speaking exam with it, or just ask Gemini questions if something's unclear. Once I'm confident, I come back and check everything off." data-lang="en-US">🔊 Listen to my study routine</button>
     <p>I read all the content in the chapter first. Then I tap <strong>📋 Copy for Gemini</strong> and paste it into the Gemini app, and do a writing exam and a speaking exam with it — or just ask Gemini questions about the chapter content if something's unclear. Once I'm confident, I come back here and check off everything in that chapter.</p>
-    <ol class="howto-steps">
-      <li><strong>📖 Read</strong> all notes and click blue words to hear them — like <span class="fr">bonjour</span>.</li>
-      <li><strong>📋 Click this button</strong> to copy all contents of chapter — <button class="copy-btn" style="background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; vertical-align: middle;">📋 Copy for Gemini</button></li>
-      <li><strong>✅ Check off</strong> all the items when you finish — <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; vertical-align: middle;"><input type="checkbox" style="width: 17px; height: 17px; accent-color: var(--blue); cursor: pointer;" onchange="this.nextElementSibling.style.textDecoration = this.checked ? 'line-through' : 'none'; this.nextElementSibling.style.color = this.checked ? '#999' : '';"><span>I understand this topic</span></label></li>
-      <li><strong>⚪ Done —</strong> the chapter turns white in the dropdown (e.g. "Alphabet" turns white once fully checked).</li>
-    </ol>
-    <p class="howto-lead">Also:</p>
+    </details>
+    <details class="howto-more">
+      <summary>💡 More tips</summary>
     <ul>
       <li><strong>📱</strong> This website is best experienced on mobile, not a laptop.</li>
       <li><strong>🧭</strong> Dropdown, Prev/Next, or swipe to move around.</li>
@@ -789,6 +809,7 @@
       <li><strong>⚠️</strong> Progress is stored like a cookie, in this browser only — switch browsers or phones and it resets to zero.</li>
       <li><strong>🎧</strong> Long or dense sections have a green audio button (e.g. "Explained") — tap it to hear it read aloud instead of reading the wall of text. Every chapter also has a purple <strong>🔎 What's in this chapter?</strong> button near the top for a quick spoken summary of the whole thing.</li>
     </ul>
+    </details>
     <label class="intro-close" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;"><input type="checkbox" style="width: 17px; height: 17px; accent-color: var(--blue); cursor: pointer;" onchange="if (this.checked) toggleIntro(false);"><span>I understood everything above</span></label>
   </div>
 </div>
@@ -13012,5 +13033,48 @@ window.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script type="module" src="cloud-sync.js?v=4"></script>
+<script>
+// "Start today's chapter" button: opens the first unfinished chapter planned for today.
+(function () {
+  const btn = document.getElementById('howtoStart');
+  if (!btn) return;
+  const isDone = n => {
+    const card = document.getElementById('class' + n);
+    if (!card) return true;
+    const boxes = card.querySelectorAll('.checklist input[type="checkbox"]');
+    return boxes.length > 0 && Array.from(boxes).every(b => b.checked);
+  };
+  const dateKey = () => { const x = new Date(); return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0'); };
+  const label = n => { const l = document.querySelector('nav a[onclick="goToClass(' + n + ')"]'); return l && l.firstChild ? l.firstChild.textContent.trim() : 'Chapter ' + n; };
+  function pick() {
+    let list = [];
+    try {
+      if (typeof planEff === 'function') {
+        let M = {}; try { M = JSON.parse(localStorage.getItem('plan_moves') || '{}'); } catch (e) {}
+        const T = dateKey(), r = planEff(isDone, M, T);
+        if (r.days.includes(T)) list = Object.keys(r.eff).filter(n => r.eff[n] === T).map(Number);
+      }
+    } catch (e) {}
+    let n = list.find(x => !isDone(x));
+    if (n === undefined) n = classOrder.find(x => x < 64 && !isDone(x));   // fall back to the next unfinished chapter
+    return n;
+  }
+  function refresh() {
+    const n = pick();
+    btn.dataset.n = n === undefined ? '' : String(n);
+    document.getElementById('howtoStartName').textContent = n === undefined ? 'All chapters done 🎉' : label(n);
+  }
+  btn.addEventListener('click', () => {
+    const n = parseInt(btn.dataset.n, 10);
+    if (!n) return;
+    showClass(n);
+    if (typeof toggleIntro === 'function') toggleIntro(false);
+    window.scrollTo(0, 0);
+  });
+  refresh();
+  document.addEventListener('change', () => setTimeout(refresh, 80));
+})();
+</script>
+
 </body>
 </html>
