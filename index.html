@@ -779,7 +779,7 @@
 <h1>French Class Notes</h1>
 
 <div class="start-wrap">
-  <button type="button" class="howto-start" id="howtoStart">▶ Start today's chapter <small id="howtoStartName"></small></button>
+  <button type="button" class="howto-start" id="howtoStart">▶ Continue studying <small id="howtoStartName"></small></button>
 </div>
 
 <div class="intro-wrap">
@@ -13045,37 +13045,37 @@ window.addEventListener('DOMContentLoaded', function() {
 })();
 </script>
 
-<script type="module" src="cloud-sync.js?v=4"></script>
+<script type="module" src="cloud-sync.js?v=5"></script>
 <script>
-// "Start today's chapter" button: opens the first unfinished chapter planned for today.
+// "Continue studying" button: opens the chapter you ticked last (or the next unfinished one).
 (function () {
   const btn = document.getElementById('howtoStart');
   if (!btn) return;
-  const isDone = n => {
+  const LAST = 'lastTickedClass';
+  const stats = n => {
     const card = document.getElementById('class' + n);
-    if (!card) return true;
-    const boxes = card.querySelectorAll('.checklist input[type="checkbox"]');
-    return boxes.length > 0 && Array.from(boxes).every(b => b.checked);
+    if (!card) return null;
+    const boxes = Array.from(card.querySelectorAll('.checklist input[type="checkbox"]'));
+    return boxes.length ? { total: boxes.length, done: boxes.filter(b => b.checked).length } : null;
   };
-  const dateKey = () => { const x = new Date(); return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0'); };
+  const isDone = n => { const s = stats(n); return !s || s.done === s.total; };
   const label = n => { const l = document.querySelector('nav a[onclick="goToClass(' + n + ')"]'); return l && l.firstChild ? l.firstChild.textContent.trim() : 'Chapter ' + n; };
+  const chapters = () => classOrder.filter(n => n < 64);
   function pick() {
-    let list = [];
-    try {
-      if (typeof planEff === 'function') {
-        let M = {}; try { M = JSON.parse(localStorage.getItem('plan_moves') || '{}'); } catch (e) {}
-        const T = dateKey(), r = planEff(isDone, M, T);
-        if (r.days.includes(T)) list = Object.keys(r.eff).filter(n => r.eff[n] === T).map(Number);
-      }
-    } catch (e) {}
-    let n = list.find(x => !isDone(x));
-    if (n === undefined) n = classOrder.find(x => x < 64 && !isDone(x));   // fall back to the next unfinished chapter
-    return n;
+    const list = chapters();
+    const last = parseInt(localStorage.getItem(LAST) || '0', 10);
+    if (last && list.includes(last)) {
+      if (!isDone(last)) return last;                         // still working on it
+      const after = list.slice(list.indexOf(last) + 1).find(n => !isDone(n));
+      if (after !== undefined) return after;                  // next unfinished chapter after it
+    }
+    return list.find(n => !isDone(n));                        // nothing ticked yet: the first unfinished chapter
   }
   function refresh() {
     const n = pick();
     btn.dataset.n = n === undefined ? '' : String(n);
-    document.getElementById('howtoStartName').textContent = n === undefined ? 'All chapters done 🎉' : label(n);
+    const s = n === undefined ? null : stats(n);
+    document.getElementById('howtoStartName').textContent = n === undefined ? 'All chapters done 🎉' : label(n) + (s ? ' · ' + s.done + '/' + s.total + ' done' : '');
   }
   btn.addEventListener('click', () => {
     const n = parseInt(btn.dataset.n, 10);
@@ -13084,8 +13084,17 @@ window.addEventListener('DOMContentLoaded', function() {
     if (typeof toggleIntro === 'function') toggleIntro(false);
     window.scrollTo(0, 0);
   });
+  // remember the chapter of the last box you ticked
+  document.addEventListener('change', ev => {
+    const cb = ev.target;
+    if (cb && cb.type === 'checkbox' && cb.checked) {
+      const card = cb.closest('.lesson-card');
+      const m = card && /^class(\d+)$/.exec(card.id);
+      if (m && cb.closest('.checklist') && parseInt(m[1], 10) < 64) localStorage.setItem(LAST, m[1]);
+    }
+    setTimeout(refresh, 80);
+  });
   refresh();
-  document.addEventListener('change', () => setTimeout(refresh, 80));
 })();
 </script>
 

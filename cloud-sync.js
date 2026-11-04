@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 // ---- which localStorage keys are synced ----
-const FIXED = ['plan_acts', 'plan_moves', 'plan_rewards', 'plan_links'];
+const FIXED = ['plan_acts', 'plan_moves', 'plan_rewards', 'plan_links', 'lastTickedClass'];
 const isSync = k => /^checklist_class\d+$/.test(k) || FIXED.indexOf(k) >= 0;
 const META = 'cloud_meta'; // { key: lastChangedMillis } for keys changed on this device
 
@@ -28,6 +28,7 @@ const saveMeta = m => origSet.call(store, META, JSON.stringify(m));
 // ---- merge used only the first time a device meets existing cloud data ----
 function parse(s) { try { return JSON.parse(s); } catch (e) { return null; } }
 export function mergeVals(key, localStr, cloudStr) {
+  if (key === 'lastTickedClass') return localStr;                   // a single number: keep this device's
   const a = parse(localStr), b = parse(cloudStr);
   if (a === null || b === null) return localStr;
   if (/^checklist_class/.test(key) || key === 'plan_acts') {          // a tick on either side stays
