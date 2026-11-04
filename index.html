@@ -764,35 +764,6 @@
     body.panel-hidden #panelToggle { left: 0; }
     body.panel-hidden .lesson-card { max-width: 1000px; margin-left: auto; margin-right: auto; }
   }
-  #panelToggleR { display: none; }
-  @media (min-width: 1250px) {
-    body.two { padding-left: 340px; padding-right: 340px; }
-    body.two #sidePanel { width: 300px; }
-    body.two #panelToggle { left: 300px; }
-    body.two.panel-hidden { padding-left: 64px; }
-    body.two.panel-hidden #panelToggle { left: 0; }
-    #rightPanel { display: none; }
-    body.two #rightPanel { display: flex; flex-direction: column; position: fixed; right: 0; top: 0; bottom: 0; width: 300px; overflow-y: auto; background: #fff; border-left: 1px solid var(--border); padding: 18px 16px 28px; z-index: 40; }
-    body.two #panelToggleR { display: flex; position: fixed; z-index: 45; right: 300px; top: 50%; transform: translateY(-50%); width: 34px; height: 84px; border-radius: 14px 0 0 14px; border: 0; background: var(--blue); color: #fff; font-size: 22px; font-weight: 800; align-items: center; justify-content: center; cursor: pointer; box-shadow: -2px 0 8px rgba(0,0,0,.25); padding: 0; }
-    body.two.right-hidden #rightPanel { display: none; }
-    body.two.right-hidden { padding-right: 64px; }
-    body.two.right-hidden #panelToggleR { right: 0; }
-    /* in two-panel mode: search lives on the left, the study plan block is always open on the right */
-    body.two #toolSearchBtn, body.two #toolPlanBtn { display: none; }
-    body.two #siteSearch[hidden], body.two #toolPanel[hidden], body.two #planLink[hidden] { display: block !important; }
-    body.two #sidePanel #siteSearch { order: 3; margin-top: 4px; }
-    body.two #rightPanel h2.rp-title { font-size: 18px; color: var(--blue); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--blue); }
-    body.two #rightPanel .intro-wrap { margin-bottom: 14px; }
-    body.two #rightPanel #globalProgress { margin-top: 4px; }
-    body.two #rightPanel #feedbackBox { margin: 14px 0 0; }
-    body.two #rightPanel .site-credits { margin-top: 18px; }
-    body.two #planLink { margin: 8px 0 0; text-align: left; padding: 10px 12px; }
-    body.two #todayList { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 0; }
-    body.two #todayList .tl { flex: 1 1 100%; margin: 4px 2px 0; }
-    body.two #todayList a { display: inline-block; margin: 0; padding: 7px 12px; }
-    body.two .howto-cards { grid-template-columns: 1fr 1fr; }
-    body.two #smBar { left: 50%; }
-  }
 </style>
 </head>
 <body>
@@ -946,8 +917,6 @@
 <button class="chapter-btn" id="nextBtn" onclick="nextChapter()" aria-label="Next chapter">→</button>
 </div>
 </aside>
-<aside id="rightPanel"></aside>
-<button type="button" id="panelToggleR" aria-label="Hide or show the right panel" title="Hide / show the right panel">▶</button>
 
 <!-- ===================== CLASS 1: ALPHABET ===================== -->
 <div class="lesson-card" id="class1">
@@ -13056,42 +13025,17 @@ window.addEventListener('DOMContentLoaded', function() {
     const first = document.querySelector('#ssr .si');
     if (first) { ev.preventDefault(); first.click(); }
   });
-  // Laptop layout: elements move between the page, the left panel and (on wide screens) the right panel.
-  const mqWide = window.matchMedia('(min-width: 1100px)');
-  const mqTwo = window.matchMedia('(min-width: 1250px)');
-  const homes = new Map();           // element -> placeholder left where it came from
-  function home(el) {
-    if (!homes.has(el)) { const ph = document.createComment('home'); el.parentNode.insertBefore(ph, el); homes.set(el, ph); }
-    return homes.get(el);
-  }
-  function put(el, target) {
-    if (!el) return;
-    const ph = home(el);
-    if (target) target.appendChild(el); else ph.parentNode.insertBefore(el, ph.nextSibling);
-  }
-  function layout() {
-    const left = document.getElementById('sidePanel'), right = document.getElementById('rightPanel');
+  // on a laptop the feedback box and credits move into the left panel, so the page is just the chapter
+  const mq = window.matchMedia('(min-width: 1100px)');
+  function placeExtras() {
+    const aside = document.getElementById('sidePanel'), home = document.getElementById('extrasHome');
     const fb = document.getElementById('feedbackBox'), ft = document.querySelector('footer.site-credits');
-    const intro = document.querySelector('.intro-wrap'), prog = document.getElementById('globalProgress'), srch = document.getElementById('siteSearch');
-    if (!left || !right || !fb || !ft || !intro || !prog || !srch) return;
-    const two = mqTwo.matches, wide = mqWide.matches;
-    document.body.classList.toggle('two', two);
-    if (two) {
-      if (!right.querySelector('.rp-title')) { const h = document.createElement('h2'); h.className = 'rp-title'; h.textContent = 'Study tools'; right.prepend(h); }
-      put(srch, left); put(intro, right); put(prog, right); put(fb, right); put(ft, right);
-    } else if (wide) {
-      put(srch, null); put(intro, null); put(prog, null); put(fb, left); put(ft, left);
-    } else {
-      put(srch, null); put(intro, null); put(prog, null); put(fb, null); put(ft, null);
-    }
+    if (!aside || !home || !fb || !ft) return;
+    if (mq.matches) { aside.appendChild(fb); aside.appendChild(ft); }
+    else { home.after(fb, ft); }
   }
-  // restore elements to their original spots in the right order when going narrower
-  function relayout() {
-    ['sidePanel'].forEach(() => {});
-    layout();
-  }
-  layout();
-  if (mqWide.addEventListener) { mqWide.addEventListener('change', relayout); mqTwo.addEventListener('change', relayout); }
+  placeExtras();
+  if (mq.addEventListener) mq.addEventListener('change', placeExtras);
   // keep the active chapter visible in the sidebar
   const toc = document.getElementById('toc');
   if (toc) new MutationObserver(() => {
@@ -13191,23 +13135,6 @@ window.addEventListener('DOMContentLoaded', function() {
     const tag = (ev.target.tagName || '').toLowerCase();
     if (ev.key.toLowerCase() === 'b' && !ev.ctrlKey && !ev.metaKey && !ev.altKey && tag !== 'input' && tag !== 'textarea' && window.matchMedia('(min-width: 1100px)').matches) btn.click();
   });
-})();
-</script>
-
-<script>
-// ▶ / ◀ tab on the right edge hides the right panel (wide screens only).
-(function () {
-  const btn = document.getElementById('panelToggleR');
-  if (!btn) return;
-  const KEY = 'panelHiddenR';
-  const apply = hidden => {
-    document.body.classList.toggle('right-hidden', hidden);
-    btn.textContent = hidden ? '◀' : '▶';
-    try { localStorage.setItem(KEY, hidden ? '1' : '0'); } catch (e) {}
-  };
-  let saved = null; try { saved = localStorage.getItem(KEY); } catch (e) {}
-  apply(saved === '1');
-  btn.addEventListener('click', () => apply(!document.body.classList.contains('right-hidden')));
 })();
 </script>
 
