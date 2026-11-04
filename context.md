@@ -2816,3 +2816,6 @@ parse via `new Function`.
 
 ## 2026-11-04 — Private journal
 - private.html: standalone password journal (AES-GCM + PBKDF2 250k via WebCrypto), entries saved only in localStorage key private_journal (encrypted); noindex, not linked from the site. Optional encrypted cloud backup to Firestore journals/{uid} (needs the updated firestore.rules published). Not part of cloud-sync.js on purpose (that sync merges JSON by key and would corrupt a vault).
+
+## 2026-11-04 — Laptop two-panel layout
+On screens ≥1250px: left panel = Continue, chapters dropdown, search; right panel = study plan, how-to, account, progress, feedback, credits. Each has its own hide/show tab (keys panelHidden, panelHiddenR). 1100–1249px keeps the single left panel; phones unchanged.
