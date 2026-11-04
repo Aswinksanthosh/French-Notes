@@ -755,11 +755,20 @@
   .hc1::after { content: "➜"; display: flex; right: -18px; top: calc(50% - 13px); }
   .hc2::after { content: "↙"; display: flex; left: 18px; bottom: -18px; }
   .hc3::after { content: "➜"; display: flex; right: -18px; top: calc(50% - 13px); }
+  #panelToggle { display: none; }
+  @media (min-width: 1100px) {
+    #panelToggle { display: flex; position: fixed; z-index: 45; left: 346px; top: 14px; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border); background: #fff; color: var(--blue); font-size: 12px; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,.2); padding: 0; }
+    body.panel-hidden #sidePanel { display: none; }
+    body.panel-hidden { padding-left: 64px; }
+    body.panel-hidden #panelToggle { left: 14px; }
+    body.panel-hidden .lesson-card { max-width: 1000px; margin-left: auto; margin-right: auto; }
+  }
 </style>
 </head>
 <body>
 <script src="device-guard.js?v=3"></script>
 
+<button type="button" id="panelToggle" aria-label="Hide or show the side panel" title="Hide / show the panel">◀</button>
 <aside id="sidePanel">
 <h1>French Class Notes</h1>
 
@@ -12527,6 +12536,11 @@ function toggleIntro(forceOpen) {
   localStorage.setItem('introOpen', open ? 'true' : 'false');
 }
 toggleIntro(localStorage.getItem('introOpen') !== 'false');
+if (window.matchMedia('(min-width: 1100px)').matches) {   // laptop: always start with the help closed
+  const savedIntro = localStorage.getItem('introOpen');
+  toggleIntro(false);
+  if (savedIntro !== null) localStorage.setItem('introOpen', savedIntro);
+}
 
 // TEXT-TO-SPEECH FOR FRENCH WORDS
 function speakFrench(text, el) {
@@ -13098,6 +13112,28 @@ window.addEventListener('DOMContentLoaded', function() {
     setTimeout(refresh, 80);
   });
   refresh();
+})();
+</script>
+
+<script>
+// Laptop: ◀ / ▶ button hides the left panel so only the chapter is on screen.
+(function () {
+  const btn = document.getElementById('panelToggle');
+  if (!btn) return;
+  const KEY = 'panelHidden';
+  const apply = hidden => {
+    document.body.classList.toggle('panel-hidden', hidden);
+    btn.textContent = hidden ? '▶' : '◀';
+    try { localStorage.setItem(KEY, hidden ? '1' : '0'); } catch (e) {}
+  };
+  let saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === '1');
+  btn.addEventListener('click', () => apply(!document.body.classList.contains('panel-hidden')));
+  document.addEventListener('keydown', ev => {            // press B to hide / show the panel
+    const tag = (ev.target.tagName || '').toLowerCase();
+    if (ev.key.toLowerCase() === 'b' && !ev.ctrlKey && !ev.metaKey && !ev.altKey && tag !== 'input' && tag !== 'textarea' && window.matchMedia('(min-width: 1100px)').matches) btn.click();
+  });
 })();
 </script>
 
