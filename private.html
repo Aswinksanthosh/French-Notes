@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Private Journal</title>
+<style>
+:root{--bg:#f6f4f9;--card:#fff;--ink:#241a33;--mut:#6b6479;--line:#e3deec;--accent:#6a1b9a;--soft:#f3e5f5;--red:#c62828}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;padding:16px;max-width:680px;margin:auto}
+h1{font-size:24px;margin:8px 0 2px}
+h2{font-size:17px;margin:0 0 10px}
+.mut{color:var(--mut);font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+input,textarea,select{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);margin:4px 0 10px}
+textarea{min-height:84px;resize:vertical}
+label.l{font-size:13px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.03em}
+button{font:inherit;cursor:pointer;border-radius:10px;padding:10px 16px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+button.pri{background:var(--accent);color:#fff;border:0;font-weight:700}
+button.danger{color:var(--red);border-color:#f0c4c4}
+button.sm{padding:5px 10px;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 12px}
+.chip{padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:14px}
+.chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--accent)}
+.entry{border-top:1px solid var(--line);padding:12px 0}
+.entry:first-child{border-top:0}
+.entry p{margin:6px 0;white-space:pre-wrap}
+.entry .k{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase}
+.err{color:var(--red);font-size:14px;min-height:20px}
+.ok{color:#2e7d32;font-size:14px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px}
+details summary{cursor:pointer;font-weight:700;padding:4px 0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="bar"><div><h1>🔒 Private Journal</h1><div class="mut" id="sub">Only you can open this.</div></div><button id="lockBtn" hidden>🔒 Lock</button></div>
+
+<!-- first time: create a password -->
+<div class="card" id="viewCreate" hidden>
+  <h2>Create your password</h2>
+  <p class="mut">Everything you write is scrambled with this password, on this device. <b>There is no way to recover it</b>: if you forget it, the journal can't be opened. Choose something you will remember (8+ characters).</p>
+  <label class="l">Password</label><input type="password" id="pw1" autocomplete="new-password">
+  <label class="l">Repeat password</label><input type="password" id="pw2" autocomplete="new-password">
+  <div class="err" id="errCreate"></div>
+  <button class="pri" id="btnCreate">Create journal</button>
+</div>
+
+<!-- unlock -->
+<div class="card" id="viewUnlock" hidden>
+  <h2>Enter your password</h2>
+  <input type="password" id="pwU" autocomplete="current-password" placeholder="Password">
+  <div class="err" id="errUnlock"></div>
+  <div class="row"><button class="pri" id="btnUnlock">Unlock</button>
+  <button class="sm danger" id="btnForgot">Forgot password?</button></div>
+</div>
+
+<!-- journal -->
+<div id="viewJournal" hidden>
+  <div class="card">
+    <h2>New entry</h2>
+    <label class="l">What is this?</label>
+    <div class="chips" id="kinds"></div>
+    <label class="l">What happened / how I feel</label>
+    <textarea id="fWhat" placeholder="Write it down honestly. This is just for you."></textarea>
+    <label class="l">The honest reason</label>
+    <textarea id="fWhy" placeholder="Why did it happen? (tired, work, avoided it, no energy…)"></textarea>
+    <label class="l">One small thing I'll try next (optional)</label>
+    <input id="fNext" placeholder="e.g. 15 minutes tomorrow morning">
+    <div class="row"><button class="pri" id="btnSave">Save entry</button><button id="btnCancelEdit" hidden>Cancel edit</button><span class="ok" id="okMsg"></span></div>
+  </div>
+
+  <div class="card">
+    <div class="bar"><h2 style="margin:0">Entries <span class="mut" id="count"></span></h2></div>
+    <div class="chips" id="filters"></div>
+    <div id="list"></div>
+    <div class="mut" id="empty" hidden>No entries yet. Your first one is only a few lines.</div>
+  </div>
+
+  <div class="card">
+    <details><summary>Backup &amp; settings</summary>
+      <p class="mut">The journal lives only on this device (encrypted). Clearing your browser data would erase it, so keep a backup.</p>
+      <div class="row">
+        <button id="btnExport">⬇️ Download encrypted backup</button>
+        <button id="btnImport">⬆️ Restore from backup</button>
+        <input type="file" id="fileImport" accept=".json,application/json" hidden>
+      </div>
+      <div class="row" style="margin-top:10px"><button id="btnText">📄 Download as readable text</button></div>
+      <p class="mut" style="margin-top:6px">The text file is <b>not encrypted</b>. Keep it somewhere safe.</p>
+      <hr style="border:0;border-top:1px solid var(--line);margin:12px 0">
+      <b>Cloud backup (optional)</b>
+      <p class="mut">Stores the <i>encrypted</i> journal in your Google account's Firebase, so you can restore it on another device. Google cannot read it without your password.</p>
+      <div class="row"><button id="btnCloudIn">Sign in with Google</button><button id="btnCloudUp" disabled>☁️ Upload backup</button><button id="btnCloudDown" disabled>☁️ Restore from cloud</button></div>
+      <div class="mut" id="cloudMsg"></div>
+      <hr style="border:0;border-top:1px solid var(--line);margin:12px 0">
+      <b>Change password</b>
+      <input type="password" id="pwOld" placeholder="Current password" autocomplete="current-password">
+      <input type="password" id="pwNew" placeholder="New password (8+ characters)" autocomplete="new-password">
+      <div class="err" id="errChange"></div>
+      <button id="btnChange">Change password</button>
+    </details>
+  </div>
+</div>
+
+<script>
+(function () {
+  var KEY = 'private_journal';
+  var KINDS = ['Disappointment', 'Failure', 'Laziness', 'Reason', 'Small win', 'Other'];
+  var enc = new TextEncoder(), dec = new TextDecoder();
+  var session = null;            // { key, salt, entries } while unlocked
+  var kind = 'Disappointment', filter = 'All', editId = null, idleTimer = null;
+  var $ = function (id) { return document.getElementById(id); };
+
+  // ---------- crypto ----------
+  function toB64(buf) { var u = new Uint8Array(buf), s = ''; for (var i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); }
+  function fromB64(s) { var b = atob(s), u = new Uint8Array(b.length); for (var i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u; }
+  async function deriveKey(pw, salt) {
+    var km = await crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: 250000, hash: 'SHA-256' }, km, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+  }
+  async function seal(key, salt, entries) {
+    var iv = crypto.getRandomValues(new Uint8Array(12));
+    var ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, key, enc.encode(JSON.stringify({ entries: entries })));
+    return { v: 1, salt: toB64(salt), iv: toB64(iv), ct: toB64(ct) };
+  }
+  async function open(vault, pw) {
+    var salt = fromB64(vault.salt), key = await deriveKey(pw, salt);
+    var pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: fromB64(vault.iv) }, key, fromB64(vault.ct));
+    return { key: key, salt: salt, entries: JSON.parse(dec.decode(pt)).entries || [] };
+  }
+  function getVault() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
+  async function persist() {
+    var v = await seal(session.key, session.salt, session.entries);
+    localStorage.setItem(KEY, JSON.stringify(v));
+    return v;
+  }
+
+  // ---------- views ----------
+  function show(which) {
+    ['viewCreate', 'viewUnlock', 'viewJournal'].forEach(function (id) { $(id).hidden = id !== which; });
+    $('lockBtn').hidden = which !== 'viewJournal';
+    $('sub').textContent = which === 'viewJournal' ? 'Unlocked · locks itself after 5 minutes of no use.' : 'Only you can open this.';
+  }
+  function route() { show(getVault() ? 'viewUnlock' : 'viewCreate'); }
+  function lock() { session = null; clearTimeout(idleTimer); $('pwU').value = ''; $('errUnlock').textContent = ''; $('list').innerHTML = ''; route(); }
+  function touch() {
+    if (!session) return;
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(lock, 5 * 60 * 1000);
+  }
+  ['click', 'keydown', 'touchstart'].forEach(function (ev) { document.addEventListener(ev, touch, { passive: true }); });
+
+  // ---------- create / unlock ----------
+  $('btnCreate').onclick = async function () {
+    var a = $('pw1').value, b = $('pw2').value;
+    if (a.length < 8) { $('errCreate').textContent = 'Use at least 8 characters.'; return; }
+    if (a !== b) { $('errCreate').textContent = 'The two passwords do not match.'; return; }
+    $('errCreate').textContent = 'Creating…';
+    var salt = crypto.getRandomValues(new Uint8Array(16));
+    session = { key: await deriveKey(a, salt), salt: salt, entries: [] };
+    await persist();
+    $('pw1').value = ''; $('pw2').value = ''; $('errCreate').textContent = '';
+    enter();
+  };
+  $('btnUnlock').onclick = async function () {
+    var v = getVault(); if (!v) { route(); return; }
+    $('errUnlock').textContent = 'Checking…';
+    try { session = await open(v, $('pwU').value); $('pwU').value = ''; $('errUnlock').textContent = ''; enter(); }
+    catch (e) { session = null; $('errUnlock').textContent = 'Wrong password.'; }
+  };
+  $('pwU').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('btnUnlock').click(); });
+  $('btnForgot').onclick = function () {
+    if (!confirm('Without the password, the journal can never be opened. Erasing it deletes everything on this device. Erase it?')) return;
+    if (prompt('Type ERASE to confirm.') !== 'ERASE') return;
+    localStorage.removeItem(KEY); route();
+  };
+  $('lockBtn').onclick = lock;
+
+  // ---------- journal ----------
+  function enter() { show('viewJournal'); renderKinds(); renderFilters(); render(); touch(); }
+  function renderKinds() {
+    $('kinds').innerHTML = KINDS.map(function (k) { return '<button type="button" class="chip' + (k === kind ? ' on' : '') + '" data-k="' + k + '">' + k + '</button>'; }).join('');
+    $('kinds').querySelectorAll('.chip').forEach(function (b) { b.onclick = function () { kind = b.dataset.k; renderKinds(); }; });
+  }
+  function renderFilters() {
+    var opts = ['All'].concat(KINDS);
+    $('filters').innerHTML = opts.map(function (k) { return '<button type="button" class="chip' + (k === filter ? ' on' : '') + '" data-f="' + k + '">' + k + '</button>'; }).join('');
+    $('filters').querySelectorAll('.chip').forEach(function (b) { b.onclick = function () { filter = b.dataset.f; renderFilters(); render(); }; });
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function fmt(iso) { var d = new Date(iso); return d.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }) + ' · ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); }
+  function render() {
+    var list = session.entries.filter(function (e) { return filter === 'All' || e.kind === filter; });
+    $('count').textContent = '(' + session.entries.length + ')';
+    $('empty').hidden = session.entries.length > 0;
+    $('list').innerHTML = list.map(function (e) {
+      return '<div class="entry" data-id="' + e.id + '"><div class="row" style="justify-content:space-between"><span class="badge">' + esc(e.kind) + '</span><span class="mut">' + fmt(e.t) + '</span></div>' +
+        (e.what ? '<div class="k">What happened</div><p>' + esc(e.what) + '</p>' : '') +
+        (e.why ? '<div class="k">The honest reason</div><p>' + esc(e.why) + '</p>' : '') +
+        (e.next ? '<div class="k">Next small step</div><p>' + esc(e.next) + '</p>' : '') +
+        '<div class="row"><button class="sm" data-a="edit">Edit</button><button class="sm danger" data-a="del">Delete</button></div></div>';
+    }).join('');
+    $('list').querySelectorAll('.entry').forEach(function (el) {
+      el.querySelector('[data-a=edit]').onclick = function () { startEdit(el.dataset.id); };
+      el.querySelector('[data-a=del]').onclick = function () { removeEntry(el.dataset.id); };
+    });
+  }
+  function clearForm() { $('fWhat').value = ''; $('fWhy').value = ''; $('fNext').value = ''; editId = null; $('btnCancelEdit').hidden = true; $('btnSave').textContent = 'Save entry'; }
+  function startEdit(id) {
+    var e = session.entries.find(function (x) { return x.id === id; }); if (!e) return;
+    editId = id; kind = e.kind; renderKinds();
+    $('fWhat').value = e.what || ''; $('fWhy').value = e.why || ''; $('fNext').value = e.next || '';
+    $('btnSave').textContent = 'Update entry'; $('btnCancelEdit').hidden = false; window.scrollTo(0, 0);
+  }
+  $('btnCancelEdit').onclick = clearForm;
+  $('btnSave').onclick = async function () {
+    var what = $('fWhat').value.trim(), why = $('fWhy').value.trim(), next = $('fNext').value.trim();
+    if (!what && !why) { $('okMsg').textContent = 'Write at least one line.'; return; }
+    if (editId) {
+      var e = session.entries.find(function (x) { return x.id === editId; });
+      if (e) { e.kind = kind; e.what = what; e.why = why; e.next = next; }
+    } else {
+      session.entries.unshift({ id: String(Date.now()) + Math.random().toString(36).slice(2, 6), t: new Date().toISOString(), kind: kind, what: what, why: why, next: next });
+    }
+    await persist(); clearForm(); render();
+    $('okMsg').textContent = 'Saved ✓'; setTimeout(function () { $('okMsg').textContent = ''; }, 2500);
+  };
+  async function removeEntry(id) {
+    if (!confirm('Delete this entry?')) return;
+    session.entries = session.entries.filter(function (x) { return x.id !== id; });
+    await persist(); render();
+  }
+
+  // ---------- backup / settings ----------
+  function download(name, text, type) {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: type || 'application/json' }));
+    a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  }
+  $('btnExport').onclick = function () { var v = localStorage.getItem(KEY); if (v) download('journal-backup-' + new Date().toISOString().slice(0, 10) + '.json', v); };
+  $('btnText').onclick = function () {
+    if (!confirm('The text file is NOT encrypted. Continue?')) return;
+    var t = session.entries.slice().reverse().map(function (e) {
+      return fmt(e.t) + ' — ' + e.kind + '\nWhat happened: ' + (e.what || '') + '\nThe honest reason: ' + (e.why || '') + (e.next ? '\nNext small step: ' + e.next : '') + '\n';
+    }).join('\n');
+    download('journal-' + new Date().toISOString().slice(0, 10) + '.txt', t, 'text/plain');
+  };
+  $('btnImport').onclick = function () { $('fileImport').click(); };
+  $('fileImport').onchange = function () {
+    var f = this.files[0]; if (!f) return;
+    var r = new FileReader();
+    r.onload = function () {
+      try {
+        var v = JSON.parse(r.result); if (!v.salt || !v.iv || !v.ct) throw 0;
+        if (!confirm('This replaces the journal on this device with the backup. You will need the backup\'s password. Continue?')) return;
+        localStorage.setItem(KEY, JSON.stringify(v)); lock();
+      } catch (e) { alert('That does not look like a journal backup.'); }
+    };
+    r.readAsText(f); this.value = '';
+  };
+  $('btnChange').onclick = async function () {
+    var o = $('pwOld').value, n = $('pwNew').value;
+    if (n.length < 8) { $('errChange').textContent = 'Use at least 8 characters.'; return; }
+    try { await open(getVault(), o); } catch (e) { $('errChange').textContent = 'Current password is wrong.'; return; }
+    var salt = crypto.getRandomValues(new Uint8Array(16));
+    session.salt = salt; session.key = await deriveKey(n, salt); await persist();
+    $('pwOld').value = ''; $('pwNew').value = ''; $('errChange').textContent = 'Password changed ✓';
+  };
+
+  // ---------- cloud backup (module script below provides window.JournalCloud) ----------
+  function cloudMsg(s) { $('cloudMsg').textContent = s; }
+  $('btnCloudIn').onclick = async function () {
+    if (!window.JournalCloud) { cloudMsg('Cloud is still loading, or offline. Try again.'); return; }
+    try { var u = await window.JournalCloud.signIn(); cloudMsg('Signed in as ' + (u.email || u.displayName)); $('btnCloudUp').disabled = false; $('btnCloudDown').disabled = false; }
+    catch (e) { cloudMsg('Sign-in failed: ' + (e.code || e.message)); }
+  };
+  $('btnCloudUp').onclick = async function () {
+    var v = localStorage.getItem(KEY); if (!v) return;
+    try { await window.JournalCloud.upload(v); cloudMsg('Uploaded ✓ ' + new Date().toLocaleTimeString()); }
+    catch (e) { cloudMsg('Upload failed: ' + (e.code || e.message) + (e.code === 'permission-denied' ? ' — publish the updated rules (see firestore.rules).' : '')); }
+  };
+  $('btnCloudDown').onclick = async function () {
+    try {
+      var v = await window.JournalCloud.download();
+      if (!v) { cloudMsg('No cloud backup found.'); return; }
+      if (!confirm('This replaces the journal on this device with the cloud copy. Continue?')) return;
+      localStorage.setItem(KEY, v); lock(); cloudMsg('Restored. Enter that journal\'s password.');
+    } catch (e) { cloudMsg('Restore failed: ' + (e.code || e.message)); }
+  };
+
+  if (!window.crypto || !crypto.subtle) {
+    document.body.innerHTML = '<div class="card"><h2>Not supported here</h2><p>This page needs a secure (https) connection and a modern browser.</p></div>';
+    return;
+  }
+  route();
+})();
+</script>
+
+<script type="module">
+// Optional encrypted-backup storage in your own Firebase (collection "journals", one document per user).
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { initializeFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const app = initializeApp({
+  apiKey: "AIzaSyA8CRdGJctshXn7lECGxJ6Yr4PUSAP9k-4",
+  authDomain: "french-notes-ca66e.firebaseapp.com",
+  projectId: "french-notes-ca66e",
+  storageBucket: "french-notes-ca66e.firebasestorage.app",
+  messagingSenderId: "488650197180",
+  appId: "1:488650197180:web:5bd8690a874fca1e53a8b9"
+}, 'private-journal');
+const auth = getAuth(app);
+const db = initializeFirestore(app, { experimentalAutoDetectLongPolling: true });
+window.JournalCloud = {
+  signIn: async function () { const r = await signInWithPopup(auth, new GoogleAuthProvider()); return r.user; },
+  upload: async function (vaultStr) { await setDoc(doc(db, 'journals', auth.currentUser.uid), { vault: vaultStr, updatedAt: Date.now() }); },
+  download: async function () { const s = await getDoc(doc(db, 'journals', auth.currentUser.uid)); return s.exists() ? s.data().vault : null; }
+};
+</script>
+</body>
+</html>
