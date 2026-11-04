@@ -2813,3 +2813,6 @@ parse via `new Function`.
 
 ## 2026-11-02 — Firebase sign-in + sync
 - cloud-sync.js (ES module, Firebase 10.12.2 from gstatic) loaded by index.html and plan.html. 👤 button (#acctBtn): Google popup sign-in (redirect fallback). Syncs localStorage keys checklist_class*, plan_acts, plan_moves, plan_rewards, plan_links to Firestore users/{uid}.data[key]={v,t}. Per-key last-write-wins using local meta (localStorage cloud_meta); first meeting of a device with cloud data merges (ticks never lost). firestore.rules holds the rules to paste into the Firebase console. Project: french-notes-ca66e (Spark plan). Needs in console: Google provider enabled, Firestore created + rules, authorized domain aswinksanthosh.github.io.
+
+## 2026-11-04 — Private journal
+- private.html: standalone password journal (AES-GCM + PBKDF2 250k via WebCrypto), entries saved only in localStorage key private_journal (encrypted); noindex, not linked from the site. Optional encrypted cloud backup to Firestore journals/{uid} (needs the updated firestore.rules published). Not part of cloud-sync.js on purpose (that sync merges JSON by key and would corrupt a vault).
