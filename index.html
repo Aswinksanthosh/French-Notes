@@ -701,40 +701,28 @@
   .cs-ptr-a2 { background: #fdecea; border-left-color: #c62828; }
   .cs-ptr-a2 a { color: #c62828; }
 
-  /* ---------- Laptop layout (wide screens only; phones are unchanged) ---------- */
+  /* ---------- Laptop layout: the page shows only the chapter; everything else lives in the left panel ---------- */
   .kbd-hint { display: none; }
   @media (min-width: 1100px) {
-    body { max-width: 1000px; margin: 0 0 0 330px; padding: 28px 44px 80px; font-size: 17px; }
-    h1 { font-size: 34px; }
-    #toolSearchBtn, #toolPlanBtn { display: none; }
-    #toolPanel[hidden], #siteSearch[hidden], #planLink[hidden] { display: block !important; }
-    #toolPanel[hidden] { display: block !important; }
-    #planLink { margin: 10px 0 0; display: flex !important; flex-wrap: wrap; gap: 8px; align-items: center; text-align: left; padding: 10px 12px; }
-    #planLink > a.plan-open { flex: none; padding: 9px 18px; font-size: 14px; }
-    #todayList { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; flex: 1 1 100%; }
-    #todayList .tl { flex: 1 1 100%; margin: 4px 2px 0; }
-    #todayList a { display: inline-block; margin: 0; padding: 7px 12px; }
-    #todayList .tn { flex: 1 1 100%; }
-    #ssq { font-size: 16px; padding: 12px 14px; }
+    body { max-width: none; margin: 0; padding: 28px 48px 80px 400px; font-size: 17px; }
+    #sidePanel { position: fixed; left: 0; top: 0; bottom: 0; width: 360px; overflow-y: auto; background: #fff; border-right: 1px solid var(--border); padding: 18px 16px 28px; display: flex; flex-direction: column; z-index: 40; }
+    #sidePanel h1 { font-size: 22px; margin: 0 0 12px; padding-bottom: 10px; }
+    #sidePanel .start-wrap { order: 1; }
+    #sidePanel .nav-toggle { padding: 12px 10px; font-size: 14px; }
+    #sidePanel .nav-toggle span { white-space: nowrap; }
+    #sidePanel .ch-ind { margin-left: 4px; font-size: 12px; }
+    #sidePanel .intro-row .intro-toggle { font-size: 13px; padding: 10px 10px; }
+    #sidePanel .chap-bar { order: 2; margin: 4px 0 14px; }
+    #sidePanel .intro-wrap { order: 3; }
+    #sidePanel #globalProgress { order: 4; }
+    #sidePanel #feedbackBox { order: 5; margin: 14px 0 0; }
+    #sidePanel .site-credits { order: 6; margin-top: 18px; }
     .kbd-hint { display: block; font-size: 12px; color: #667; margin: 4px 2px 0; }
-    /* sidebar: the chapter list is always open on the left */
-    .chap-bar { justify-content: space-between; margin: 12px 0 28px; }
-    .chap-bar .chapter-btn { width: auto; min-width: 150px; padding: 0 22px; font-size: 16px; }
-    .chap-bar .chapter-btn#prevBtn::after { content: " Previous"; font-size: 15px; }
-    .chap-bar .chapter-btn#nextBtn::before { content: "Next "; font-size: 15px; }
-    nav#toc { position: fixed; left: 0; top: 0; bottom: 0; width: 310px; height: 100vh; max-height: none !important; margin: 0 !important; border: 0; border-right: 1px solid var(--border); border-radius: 0; box-shadow: none; overflow-y: auto; z-index: 40; background: #fff; }
-    nav#toc::before { content: "📚 Chapters"; display: block; padding: 18px 18px 4px; font-weight: 800; font-size: 20px; color: var(--blue); }
-    .nav-toggle { display: none !important; }
-    nav .nav-scroll { display: flex !important; flex-direction: column; max-height: none !important; overflow: visible; padding: 8px 12px 40px; gap: 6px; }
-    .level-content { display: flex !important; flex-direction: column; gap: 3px; }
-    nav a { display: block; margin: 0; padding: 7px 12px; font-size: 14px; }
-    nav a.cs-link { margin-top: 8px; }
-    .level-btn { cursor: default; margin-top: 10px; }
-    .lesson-card { padding: 36px 48px; }
+    .lesson-card { max-width: 900px; padding: 36px 48px; }
     .lesson-header { margin: -36px -48px 24px; padding: 18px 48px; }
     .table-wrap table { width: 100%; }
-    #ssr { max-height: 70vh; }
-    #smBar { left: calc(50% + 165px); }
+    #ssr { max-height: 55vh; }
+    #smBar { left: calc(50% + 200px); }
   }
   #feedbackBox { margin: 40px 0 8px; padding: 18px; background: #fff; border: 1px solid var(--border); border-radius: 10px; }
   #feedbackBox summary { cursor: pointer; font-weight: 800; font-size: 17px; color: var(--blue); list-style: none; }
@@ -760,7 +748,6 @@
   .hc4 { background: #fff3e0; border-color: #ffe0b2; color: #e65100; }
   .howto-more { margin: 8px 0; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; background: #fff; }
   .howto-more summary { cursor: pointer; font-weight: 700; color: var(--blue); }
-  @media (min-width: 1100px) { .howto-cards { grid-template-columns: repeat(4, 1fr); } }
   .start-wrap { margin: 4px 0 12px; }
   .start-wrap .howto-start { margin: 0; }
   /* arrows between the 4 steps (2x2 on a phone, one row on a laptop) */
@@ -768,14 +755,12 @@
   .hc1::after { content: "➜"; display: flex; right: -18px; top: calc(50% - 13px); }
   .hc2::after { content: "↙"; display: flex; left: 18px; bottom: -18px; }
   .hc3::after { content: "➜"; display: flex; right: -18px; top: calc(50% - 13px); }
-  @media (min-width: 1100px) {
-    .hc2::after { content: "➜"; left: auto; bottom: auto; right: -18px; top: calc(50% - 13px); }
-  }
 </style>
 </head>
 <body>
 <script src="device-guard.js?v=3"></script>
 
+<aside id="sidePanel">
 <h1>French Class Notes</h1>
 
 <div class="start-wrap">
@@ -921,6 +906,7 @@
 </nav>
 <button class="chapter-btn" id="nextBtn" onclick="nextChapter()" aria-label="Next chapter">→</button>
 </div>
+</aside>
 
 <!-- ===================== CLASS 1: ALPHABET ===================== -->
 <div class="lesson-card" id="class1">
@@ -12028,6 +12014,7 @@
   <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Back to Top</button>
 </div>
 
+<div id="extrasHome"></div>
 <details id="feedbackBox">
   <summary>💬 Send feedback</summary>
   <p>Found a mistake or have an idea? Write it here and tap send. It opens your email app with the message ready.</p>
@@ -13009,7 +12996,12 @@ window.addEventListener('DOMContentLoaded', function() {
     const typing = tag === 'input' || tag === 'textarea' || ev.target.isContentEditable;
     if (ev.key === 'Escape' && typing) { ev.target.blur(); const r = document.getElementById('ssr'); if (r) r.hidden = true; return; }
     if (typing) return;
-    if (ev.key === '/') { ev.preventDefault(); if (q) { q.focus(); q.select(); } }
+    if (ev.key === '/') {
+      ev.preventDefault();
+      const s = document.getElementById('siteSearch'), sb = document.getElementById('toolSearchBtn');
+      if (s && s.hidden && sb) sb.click();
+      if (q) { q.focus(); q.select(); }
+    }
     else if (ev.key === 'ArrowRight') { const b = document.getElementById('nextBtn'); if (b && !b.disabled) b.click(); }
     else if (ev.key === 'ArrowLeft') { const b = document.getElementById('prevBtn'); if (b && !b.disabled) b.click(); }
   });
@@ -13018,6 +13010,17 @@ window.addEventListener('DOMContentLoaded', function() {
     const first = document.querySelector('#ssr .si');
     if (first) { ev.preventDefault(); first.click(); }
   });
+  // on a laptop the feedback box and credits move into the left panel, so the page is just the chapter
+  const mq = window.matchMedia('(min-width: 1100px)');
+  function placeExtras() {
+    const aside = document.getElementById('sidePanel'), home = document.getElementById('extrasHome');
+    const fb = document.getElementById('feedbackBox'), ft = document.querySelector('footer.site-credits');
+    if (!aside || !home || !fb || !ft) return;
+    if (mq.matches) { aside.appendChild(fb); aside.appendChild(ft); }
+    else { home.after(fb, ft); }
+  }
+  placeExtras();
+  if (mq.addEventListener) mq.addEventListener('change', placeExtras);
   // keep the active chapter visible in the sidebar
   const toc = document.getElementById('toc');
   if (toc) new MutationObserver(() => {
