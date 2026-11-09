@@ -633,6 +633,8 @@
   .site-credits p { margin: 4px 0; }
   .site-credits a { color: var(--blue); text-decoration: none; font-weight: 600; }
   .site-credits a:hover { text-decoration: underline; }
+  .coffee-btn { display: inline-block; background: #ffdd00; color: #222 !important; padding: 8px 16px; border-radius: 20px; font-weight: 700; text-decoration: none !important; }
+  .coffee-btn:hover { background: #ffd000; }
   .site-credits .credits-sep { margin: 0 8px; color: #bbb; }
 
   .back-to-top-btn {
@@ -12186,6 +12188,8 @@
 
 <footer class="site-credits">
   <p>Made by <strong>Aswin K Santhosh</strong></p>
+  <p id="coffeeWrap" hidden><a id="coffeeBtn" class="coffee-btn" href="#" target="_blank" rel="noopener">☕ Buy me a coffee</a></p>
+  <p style="font-size:12px;color:#777;">© 2026 Aswin K Santhosh. All rights reserved. Please do not copy or republish these notes.</p>
   <p>
     <a href="https://github.com/Aswinksanthosh" target="_blank" rel="noopener">GitHub</a>
     <span class="credits-sep">·</span>
@@ -13280,6 +13284,16 @@ window.addEventListener('DOMContentLoaded', function() {
     const tag = (ev.target.tagName || '').toLowerCase();
     if (ev.key.toLowerCase() === 'b' && !ev.ctrlKey && !ev.metaKey && !ev.altKey && tag !== 'input' && tag !== 'textarea' && window.matchMedia('(min-width: 1100px)').matches) btn.click();
   });
+})();
+</script>
+
+<script>
+// Coffee button: set your Ko-fi / Buy Me a Coffee link here. Empty = button stays hidden.
+(function () {
+  const COFFEE_URL = '';
+  if (!COFFEE_URL) return;
+  const w = document.getElementById('coffeeWrap'), b = document.getElementById('coffeeBtn');
+  if (w && b) { b.href = COFFEE_URL; w.hidden = false; }
 })();
 </script>
 
