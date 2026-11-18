@@ -13,7 +13,7 @@ const W=[
 {d:"2026-11-29",l:"Sun Nov 29",n:"Study day",b:[{t:"Chapters",c:[52,46],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)"]}]},
 {d:"2026-11-30",l:"Mon Nov 30",n:"Study day",b:[{t:"Chapters",c:[26,30,31,32],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)"]}]},
 {d:"2026-12-01",l:"Tue Dec 1",n:"Study day",b:[{t:"Chapters",c:[33],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)"]}]},
-{d:"2026-12-02",l:"Wed Dec 2",n:"Practice 1: Speaking",b:[{t:"Practice",a:["Speaking: sujets 1 and 2 (beach/mountain, sport/culture) with the connectors, record yourself","Writing: fill a form + 40-word text, timed 20 min"]}]},
+{d:"2026-12-02",l:"Wed Dec 2",n:"Practice 1: Speaking",b:[{t:"Practice",a:["Speaking: sujets 1 and 2 (beach/mountain, sport/culture) with the connectors from chapter 70, record yourself","Writing: fill a form + 40-word text, timed 20 min"]}]},
 {d:"2026-12-03",l:"Thu Dec 3",n:"Practice 2: Writing + Speaking",b:[{t:"Practice",a:["Speaking: sujets 3 and 4 (Canada/India, cook/restaurant) with the 4 steps","Writing: 40+ word text, timed 20 min, then check with Gemini"]}]},
 {d:"2026-12-04",l:"Fri Dec 4",n:"Practice 3: Mock",b:[{t:"Practice",a:["Speaking: sujet 5 (yoga/gym) + role-play: phone call to ask for information, with joker questions","Writing: one full timed mock (form + text); listening: 1 practice audio twice"]}]},
 {d:"2026-12-05",l:"Sat Dec 5",n:"Buffer day",b:[{t:"Buffer",a:["Catch up anything unfinished, or rest. Light read: A1 and A2 cheat sheets (15 min)","Prepare: ID, device charged, quiet room, sleep early"]}]},
