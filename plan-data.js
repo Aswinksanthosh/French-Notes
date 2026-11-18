@@ -1,5 +1,5 @@
 const W=[
-{d:"2026-11-18",l:"Wed Nov 18",n:"Study day",b:[{t:"Chapters",c:[67,68,69],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)","Add class connectors list (opinion, argument, example, contrast) to your notes"]}]},
+{d:"2026-11-18",l:"Wed Nov 18",n:"Study day",b:[{t:"Chapters",c:[67,68,69,70],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)"]}]},
 {d:"2026-11-19",l:"Thu Nov 19",n:"Study day",b:[{t:"Chapters",c:[28,34,41],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)"]}]},
 {d:"2026-11-20",l:"Fri Nov 20",n:"Study day",b:[{t:"Chapters",c:[20,60,58],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)"]}]},
 {d:"2026-11-21",l:"Sat Nov 21",n:"Study day",b:[{t:"Chapters",c:[42,45,66,44],a:["Speak: say 5 sentences aloud using today's chapters (voice mode, 15 min)"]}]},
